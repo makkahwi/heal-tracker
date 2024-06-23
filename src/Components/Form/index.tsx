@@ -23,7 +23,7 @@ interface inputProps {
 
 interface props {
   inputs: inputProps[];
-  onSubmit: ({}) => void;
+  onSubmit: (x: any) => void;
 }
 
 const Form = ({ inputs, onSubmit }: props) => {

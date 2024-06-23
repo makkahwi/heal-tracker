@@ -1,6 +1,7 @@
 import { Fragment } from "react/jsx-runtime";
 
 export interface MealViewProps {
+  meal?: string;
   count: string;
   element: string;
   alternatives?: MealViewProps[];

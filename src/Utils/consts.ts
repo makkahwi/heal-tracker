@@ -1,7 +1,7 @@
 export const meals = [
   "Breakfast",
-  "Light Meal",
+  "Light Meal 1",
   "Drink",
   "Lunch",
-  "Light Meal",
+  "Light Meal 2",
 ];
