@@ -1,4 +1,5 @@
 import { Fragment } from "react/jsx-runtime";
+import MealView from "../../Components/MealView";
 
 const Schedule = () => {
   const meals = ["Breakfast", "Light Meal", "Drink", "Lunch", "Light Meal"];
@@ -32,11 +33,11 @@ const Schedule = () => {
     [{ element: "Green Tea", count: "1 Cup" }],
     [
       {
-        element: "Chicken Breast 'Boiled OR Baked OR BBQ'",
+        element: "Chicken Breast",
         count: "120gm",
         alternatives: [
-          { element: "Fish 'Boiled OR Baked OR BBQ'", count: "120gm" },
-          { element: "Beef 'Boiled OR Baked OR BBQ'", count: "120gm" },
+          { element: "Fish", count: "120gm" },
+          { element: "Beef", count: "120gm" },
         ],
       },
       {
@@ -69,22 +70,12 @@ const Schedule = () => {
               <td>
                 <ul className="text-start">
                   {mealContents.map(({ element, count, alternatives }, y) => (
-                    <li key={y}>
-                      {count +
-                        " of " +
-                        element +
-                        (alternatives
-                          ? " OR " +
-                            alternatives
-                              .map(
-                                (alternative, z) =>
-                                  alternative.count +
-                                  " of " +
-                                  alternative.element
-                              )
-                              .join(" OR ")
-                          : "")}
-                    </li>
+                    <MealView
+                      count={count}
+                      element={element}
+                      alternatives={alternatives}
+                      key={y}
+                    />
                   ))}
                 </ul>
               </td>
