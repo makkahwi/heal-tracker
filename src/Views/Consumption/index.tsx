@@ -1,10 +1,11 @@
+import moment from "moment";
 import MealView from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
 
 const Consumption = () => {
   const consumption = [
     {
-      timestamp: new Date(),
+      timestamp: moment(),
       meal: "Breakfast",
       contents: [
         { element: "Bread", count: "1 Slice" },
@@ -34,7 +35,7 @@ const Consumption = () => {
       ],
     },
     {
-      timestamp: new Date(),
+      timestamp: moment(),
       meal: "Lunch",
       contents: [
         { element: "Various Vegetables", count: "Slices" },
@@ -62,7 +63,7 @@ const Consumption = () => {
     <PageSection title="Consumed Meals">
       <table className="table table-responsive table-striped">
         <thead>
-          <tr>
+          <tr className="align-middle">
             <th>Date</th>
 
             <th>Time</th>
@@ -82,8 +83,8 @@ const Consumption = () => {
         <tbody>
           {consumption.map(({ timestamp, meal, contents, supposed }, x) => (
             <tr key={x}>
-              <td>{timestamp.getDate()}</td>
-              <td>{timestamp.getTime()}</td>
+              <td>{timestamp.format("ddd, D MMM YYYY")}</td>
+              <td>{timestamp.format("h:mm a")}</td>
               <td>{meal}</td>
 
               <td>

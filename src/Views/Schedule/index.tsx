@@ -53,7 +53,7 @@ const Schedule = () => {
     <PageSection title="Scheduled Meals">
       <table className="table table-responsive table-striped">
         <thead>
-          <tr>
+          <tr className="align-middle">
             <th>Meal of Day</th>
 
             <th>Meal Contents</th>
