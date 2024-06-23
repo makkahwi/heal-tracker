@@ -3,10 +3,10 @@ import * as scheduleAPI from "../../API/schedule";
 import MealView, { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
 import Form from "../../Components/Form";
+import { meals } from "../../Utils/consts";
 
 const Schedule = () => {
   const [data, setData] = useState<MealViewProps[][]>([]);
-  const meals = ["Breakfast", "Light Meal", "Drink", "Lunch", "Light Meal"];
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
@@ -28,16 +28,16 @@ const Schedule = () => {
       inputs: [
         { name: "element", label: "Element", required: true },
         { name: "count", label: "Count", required: true },
-        {
-          name: "alternatives",
-          label: "Alternatives",
-          type: "dynamicList",
-          inputs: [
-            { name: "element", label: "Element", required: true },
-            { name: "count", label: "Count", required: true },
-          ],
-          required: false,
-        },
+        // {
+        //   name: "alternatives",
+        //   label: "Alternatives",
+        //   type: "dynamicList",
+        //   inputs: [
+        //     { name: "element", label: "Element", required: true },
+        //     { name: "count", label: "Count", required: true },
+        //   ],
+        //   required: false,
+        // },
       ],
       required: true,
     },
