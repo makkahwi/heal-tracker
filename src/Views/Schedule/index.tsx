@@ -1,16 +1,51 @@
 import { Fragment } from "react/jsx-runtime";
 
 const Schedule = () => {
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const meals = ["Breakfast", "Light Meal", "Drink", "Lunch", "Light Meal"];
   const schedule = [
-    ["Breakfast", "Light Meal", "Drink", "Lunch", "Light Meal"],
-    ["Breakfast", "Light Meal", "Drink", "Lunch", "Light Meal"],
-    ["Breakfast", "Light Meal", "Drink", "Lunch", "Light Meal"],
-    ["Breakfast", "Light Meal", "Drink", "Lunch", "Light Meal"],
-    ["Breakfast", "Light Meal", "Drink", "Lunch", "Light Meal"],
-    ["Breakfast", "Light Meal", "Drink", "Lunch", "Light Meal"],
-    ["Breakfast", "Light Meal", "Drink", "Lunch", "Light Meal"],
+    [
+      { element: "Bread", count: "1 Slice" },
+      { element: "Various Vegetables", count: "Slices" },
+      { element: "Olive", count: "4 Pieces" },
+      { element: "Yoghurt", count: "1 Cup" },
+      {
+        element: "Egg",
+        count: "2",
+        alternatives: [
+          { element: "Labaneh", count: "90gm" },
+          { element: "Areesh Cheese", count: "90gm" },
+          { element: "Chickpeas", count: "100gm" },
+          { element: "Lentil", count: "100gm" },
+        ],
+      },
+    ],
+    [
+      {
+        element: "Salad",
+        count: "1",
+        alternatives: [{ element: "Various Vegetables", count: "Slices" }],
+      },
+      { element: "Yoghurt", count: "1 Cup" },
+      { element: "Fruit", count: "1 Small Piece" },
+      { element: "Walnuts", count: "4 Pieces" },
+    ],
+    [{ element: "Green Tea", count: "1 Cup" }],
+    [
+      {
+        element: "Chicken Breast 'Boiled OR Baked OR BBQ'",
+        count: "120gm",
+        alternatives: [
+          { element: "Fish 'Boiled OR Baked OR BBQ'", count: "120gm" },
+          { element: "Beef 'Boiled OR Baked OR BBQ'", count: "120gm" },
+        ],
+      },
+      {
+        element: "Salad",
+        count: "1",
+      },
+      { element: "Rice", count: "300gm" },
+    ],
+    [{ element: "Yoghurt", count: "1 Cup" }],
   ];
 
   return (
@@ -20,22 +55,39 @@ const Schedule = () => {
       <table className="table table-responsive table-striped">
         <thead>
           <tr>
-            <th>Day</th>
+            <th>Meal of Day</th>
 
-            {meals.map((meal, i) => (
-              <th key={i}>{meal}</th>
-            ))}
+            <th>Meal Contents</th>
           </tr>
         </thead>
 
         <tbody>
-          {schedule.map((daySchedule, i) => (
-            <tr key={i}>
-              <th>{days[i % days.length]}</th>
+          {schedule.map((mealContents, x) => (
+            <tr key={x}>
+              <th>{meals[x % meals.length]}</th>
 
-              {daySchedule.map((meal, y) => (
-                <td key={y}>{meal}</td>
-              ))}
+              <td>
+                <ul className="text-start">
+                  {mealContents.map(({ element, count, alternatives }, y) => (
+                    <li key={y}>
+                      {count +
+                        " of " +
+                        element +
+                        (alternatives
+                          ? " OR " +
+                            alternatives
+                              .map(
+                                (alternative, z) =>
+                                  alternative.count +
+                                  " of " +
+                                  alternative.element
+                              )
+                              .join(" OR ")
+                          : "")}
+                    </li>
+                  ))}
+                </ul>
+              </td>
             </tr>
           ))}
         </tbody>
