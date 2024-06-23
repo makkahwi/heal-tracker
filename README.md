@@ -1,1 +1,1 @@
-# personal-diet-follower
+# Personal Diet Tracker
