@@ -1,63 +1,23 @@
-import moment from "moment";
-import MealView from "../../Components/MealView";
+import { useEffect, useState } from "react";
+import * as consumptionAPI from "../../API/consumption";
+import MealView, { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
+import moment, { MomentInput } from "moment";
+
+interface props {
+  timestamp: MomentInput;
+  meal: string;
+  contents: MealViewProps[];
+  supposed: MealViewProps[];
+}
 
 const Consumption = () => {
-  const consumption = [
-    {
-      timestamp: moment(),
-      meal: "Breakfast",
-      contents: [
-        { element: "Bread", count: "1 Slice" },
-        { element: "Various Vegetables", count: "Slices" },
-        { element: "Olive", count: "4 Pieces" },
-        { element: "Yoghurt", count: "1 Cup" },
-        {
-          element: "Egg",
-          count: "2",
-        },
-      ],
-      supposed: [
-        { element: "Bread", count: "1 Slice" },
-        { element: "Various Vegetables", count: "Slices" },
-        { element: "Olive", count: "4 Pieces" },
-        { element: "Yoghurt", count: "1 Cup" },
-        {
-          element: "Egg",
-          count: "2",
-          alternatives: [
-            { element: "Labaneh", count: "90gm" },
-            { element: "Areesh Cheese", count: "90gm" },
-            { element: "Chickpeas", count: "100gm" },
-            { element: "Lentil", count: "100gm" },
-          ],
-        },
-      ],
-    },
-    {
-      timestamp: moment(),
-      meal: "Lunch",
-      contents: [
-        { element: "Various Vegetables", count: "Slices" },
-        { element: "Olive", count: "4 Pieces" },
-      ],
-      supposed: [
-        {
-          element: "Chicken Breast",
-          count: "120gm",
-          alternatives: [
-            { element: "Fish", count: "120gm" },
-            { element: "Beef", count: "120gm" },
-          ],
-        },
-        {
-          element: "Salad",
-          count: "1",
-        },
-        { element: "Rice", count: "300gm" },
-      ],
-    },
-  ];
+  const [data, setData] = useState<props[]>([]);
+
+  useEffect(() => {
+    // consumptionAPI.getAll().then((res: MealViewProps[][]) => setData(res));
+    setData(consumptionAPI.getAll());
+  }, []);
 
   return (
     <PageSection title="Consumed Meals">
@@ -81,10 +41,10 @@ const Consumption = () => {
         </thead>
 
         <tbody>
-          {consumption.map(({ timestamp, meal, contents, supposed }, x) => (
+          {data.map(({ timestamp, meal, contents, supposed }, x) => (
             <tr key={x}>
-              <td>{timestamp.format("ddd, D MMM YYYY")}</td>
-              <td>{timestamp.format("h:mm a")}</td>
+              <td>{moment(timestamp).format("ddd, D MMM YYYY")}</td>
+              <td>{moment(timestamp).format("h:mm a")}</td>
               <td>{meal}</td>
 
               <td>
