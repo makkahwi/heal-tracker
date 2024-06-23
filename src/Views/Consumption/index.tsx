@@ -1,5 +1,5 @@
-import { Fragment } from "react/jsx-runtime";
 import MealView from "../../Components/MealView";
+import PageSection from "../../Components/PageSection";
 
 const Consumption = () => {
   const consumption = [
@@ -59,9 +59,7 @@ const Consumption = () => {
   ];
 
   return (
-    <Fragment>
-      <h4 className="mb-4">Consumed Meals</h4>
-
+    <PageSection title="Consumed Meals">
       <table className="table table-responsive table-striped">
         <thead>
           <tr>
@@ -152,7 +150,7 @@ const Consumption = () => {
           ))}
         </tbody>
       </table>
-    </Fragment>
+    </PageSection>
   );
 };
 
