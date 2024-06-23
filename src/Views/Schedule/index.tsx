@@ -6,7 +6,7 @@ import Form from "../../Components/Form";
 import { meals } from "../../Utils/consts";
 
 const Schedule = () => {
-  const [data, setData] = useState<MealViewProps[][]>([]);
+  const [data, setData] = useState<MealViewProps[]>([]);
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
@@ -43,8 +43,17 @@ const Schedule = () => {
     },
   ];
 
-  const onSubmit = (values = {}) => {
-    console.log("Submitting", values);
+  interface submitProps {
+    meal: string;
+    contents: MealViewProps[];
+  }
+
+  const onSubmit = (values: submitProps) => {
+    const finalValue = values?.contents?.map((content) => ({
+      ...content,
+      meal: values?.meal,
+    }));
+    setData((current) => [...current, ...finalValue]);
   };
 
   return (
@@ -62,23 +71,24 @@ const Schedule = () => {
           </thead>
 
           <tbody>
-            {data.map((mealContents, x) => (
+            {meals.map((meal, x) => (
               <tr key={x}>
-                <th>{meals[x % meals.length]}</th>
+                <th>{meal}</th>
 
                 <td>
-                  <ul className="text-start">
-                    {mealContents?.map(
-                      ({ element, count, alternatives }, y) => (
+                  {data
+                    .filter((rec) => rec.meal === meal)
+                    .map(({ element = "", count = "", alternatives }, y) => (
+                      <ul className="text-start" key={y}>
                         <MealView
+                          meal={meal}
                           count={count}
                           element={element}
                           alternatives={alternatives}
                           key={y}
                         />
-                      )
-                    )}
-                  </ul>
+                      </ul>
+                    ))}
                 </td>
               </tr>
             ))}

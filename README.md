@@ -11,4 +11,3 @@ This is to setup the schedule of meals you are following (diet), and insert what
 
 - Build login UI
 - Fix DynamicList of Dynamic List Rendering
-- Fix Scheduled Meals Data Structure

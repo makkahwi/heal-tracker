@@ -1,9 +1,10 @@
+import moment, { MomentInput } from "moment";
 import { Fragment, useEffect, useState } from "react";
 import * as consumptionAPI from "../../API/consumption";
+import * as scheduleAPI from "../../API/schedule";
+import Form from "../../Components/Form";
 import MealView, { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
-import moment, { MomentInput } from "moment";
-import Form from "../../Components/Form";
 import { meals } from "../../Utils/consts";
 
 interface props {
@@ -15,10 +16,12 @@ interface props {
 
 const Consumption = () => {
   const [data, setData] = useState<props[]>([]);
+  const [scheduled, setScheduled] = useState<MealViewProps[]>([]);
 
   useEffect(() => {
     // consumptionAPI.getAll().then((res: MealViewProps[][]) => setData(res));
     setData(consumptionAPI.getAll());
+    setScheduled(scheduleAPI.getAll());
   }, []);
 
   const formInputs = [
@@ -55,8 +58,26 @@ const Consumption = () => {
     },
   ];
 
-  const onSubmit = (values = {}) => {
-    console.log("Submitting", values);
+  interface submitProps {
+    date: string;
+    time: string;
+    meal: string;
+    contents: MealViewProps[];
+    supposed: MealViewProps[];
+  }
+
+  const onSubmit = (values: submitProps) => {
+    const date = values.date || moment().format("yyyy-MM-DD");
+    const time = values.time || moment().format("HH:mm");
+
+    const finalValue = {
+      meal: values.meal,
+      contents: values.contents,
+      supposed: scheduled.filter(({ meal }) => meal === values.meal),
+      timestamp: moment(date + "T" + time),
+    };
+
+    setData((current) => [...current, finalValue]);
   };
 
   return (
@@ -77,9 +98,9 @@ const Consumption = () => {
 
               <th>Supposed To Consume Meal Contents</th>
 
-              <th>Missed Supposes</th>
-
               <th>Added Consumptions</th>
+
+              <th>Missed Supposes</th>
             </tr>
           </thead>
 
@@ -93,7 +114,12 @@ const Consumption = () => {
                 <td>
                   <ul className="text-start">
                     {contents.map(({ element, count }, y) => (
-                      <MealView count={count} element={element} key={y} />
+                      <MealView
+                        meal={meal}
+                        count={count}
+                        element={element}
+                        key={y}
+                      />
                     ))}
                   </ul>
                 </td>
@@ -102,6 +128,7 @@ const Consumption = () => {
                   <ul className="text-start">
                     {supposed.map(({ element, count, alternatives }, y) => (
                       <MealView
+                        meal={meal}
                         count={count}
                         element={element}
                         alternatives={alternatives}
@@ -124,7 +151,12 @@ const Consumption = () => {
                               ?.count
                       )
                       .map(({ element, count }, y) => (
-                        <MealView count={count} element={element} key={y} />
+                        <MealView
+                          meal={meal}
+                          count={count}
+                          element={element}
+                          key={y}
+                        />
                       ))}
                   </ul>
                 </td>
@@ -143,6 +175,7 @@ const Consumption = () => {
                       )
                       .map(({ element, count, alternatives }, y) => (
                         <MealView
+                          meal={meal}
                           count={count}
                           element={element}
                           alternatives={alternatives}
