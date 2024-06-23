@@ -1,10 +1,13 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.css";
 
 const Layout = ({ children = <></> }) => {
   return (
-    <div className="App">
-      <header className="App-header">{children}</header>
-    </div>
+    <main>
+      <body className="bg-dark min-vh-100 text-white text-center my-auto">
+        {children}
+      </body>
+    </main>
   );
 };
 
