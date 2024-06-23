@@ -1,5 +1,5 @@
-import { Fragment } from "react/jsx-runtime";
 import MealView from "../../Components/MealView";
+import PageSection from "../../Components/PageSection";
 
 const Schedule = () => {
   const meals = ["Breakfast", "Light Meal", "Drink", "Lunch", "Light Meal"];
@@ -50,9 +50,7 @@ const Schedule = () => {
   ];
 
   return (
-    <Fragment>
-      <h4 className="mb-4">Scheduled Meals</h4>
-
+    <PageSection title="Scheduled Meals">
       <table className="table table-responsive table-striped">
         <thead>
           <tr>
@@ -83,7 +81,7 @@ const Schedule = () => {
           ))}
         </tbody>
       </table>
-    </Fragment>
+    </PageSection>
   );
 };
 
