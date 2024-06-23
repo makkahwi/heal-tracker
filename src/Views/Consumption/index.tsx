@@ -94,7 +94,7 @@ const Consumption = () => {
               <td>
                 <ul className="text-start">
                   {contents.map(({ element, count }, y) => (
-                    <MealView count={count} element={element} />
+                    <MealView count={count} element={element} key={y} />
                   ))}
                 </ul>
               </td>
@@ -102,7 +102,7 @@ const Consumption = () => {
               <td>
                 <ul className="text-start">
                   {supposed.map(({ element, count }, y) => (
-                    <MealView count={count} element={element} />
+                    <MealView count={count} element={element} key={y} />
                   ))}
                 </ul>
               </td>
@@ -111,7 +111,7 @@ const Consumption = () => {
                 <ul className="text-start">
                   {contents
                     .filter(
-                      ({ element, count }, y) =>
+                      ({ element, count }) =>
                         element !==
                           supposed.find((sup) => sup.element === element)
                             ?.element ||
@@ -119,7 +119,7 @@ const Consumption = () => {
                           supposed.find((sup) => sup.element === element)?.count
                     )
                     .map(({ element, count }, y) => (
-                      <MealView count={count} element={element} />
+                      <MealView count={count} element={element} key={y} />
                     ))}
                 </ul>
               </td>
@@ -128,7 +128,7 @@ const Consumption = () => {
                 <ul className="text-start">
                   {supposed
                     .filter(
-                      ({ element, count }, y) =>
+                      ({ element, count }) =>
                         element !==
                           contents.find((cont) => cont.element === element)
                             ?.element ||
@@ -137,7 +137,7 @@ const Consumption = () => {
                             ?.count
                     )
                     .map(({ element, count }, y) => (
-                      <MealView count={count} element={element} />
+                      <MealView count={count} element={element} key={y} />
                     ))}
                 </ul>
               </td>
