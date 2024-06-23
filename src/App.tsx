@@ -1,26 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Fragment } from "react/jsx-runtime";
+import Layout from "./Layout";
+import logo from "./logo.svg";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
+    <Layout>
+      <Fragment>
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+        <p>Welcome To `Personal Diet Tracker`</p>
+      </Fragment>
+    </Layout>
   );
-}
+};
 
 export default App;
