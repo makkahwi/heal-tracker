@@ -15,7 +15,7 @@ const MealView = ({ count, element, alternatives }: MealViewProps) => (
       <Fragment>
         <OrView />
         {alternatives.map((alternative, i) => (
-          <Fragment>
+          <Fragment key={i}>
             {alternative.count + " of " + alternative.element}
             {i !== alternatives.length - 1 ? <OrView /> : ""}
           </Fragment>
