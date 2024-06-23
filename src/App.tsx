@@ -1,9 +1,8 @@
 import { Fragment } from "react/jsx-runtime";
 import Layout from "./Layout";
-import logo from "./logo.svg";
-import Schedule from "./Views/Schedule";
 import Consumption from "./Views/Consumption";
-import Tracker from "./Views/Tracker";
+import Schedule from "./Views/Schedule";
+import logo from "./logo.svg";
 
 const App = () => {
   return (
@@ -16,8 +15,6 @@ const App = () => {
         <Schedule />
 
         <Consumption />
-
-        <Tracker />
       </Fragment>
     </Layout>
   );
