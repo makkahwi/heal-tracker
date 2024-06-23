@@ -1,4 +1,5 @@
 import { Fragment } from "react/jsx-runtime";
+import MealView from "../../Components/MealView";
 
 const Consumption = () => {
   const consumption = [
@@ -41,11 +42,11 @@ const Consumption = () => {
       ],
       supposed: [
         {
-          element: "Chicken Breast 'Boiled OR Baked OR BBQ'",
+          element: "Chicken Breast",
           count: "120gm",
           alternatives: [
-            { element: "Fish 'Boiled OR Baked OR BBQ'", count: "120gm" },
-            { element: "Beef 'Boiled OR Baked OR BBQ'", count: "120gm" },
+            { element: "Fish", count: "120gm" },
+            { element: "Beef", count: "120gm" },
           ],
         },
         {
@@ -56,10 +57,6 @@ const Consumption = () => {
       ],
     },
   ];
-
-  const MealView = ({ count = "", element = "" }) => (
-    <li>{count + " of " + element}</li>
-  );
 
   return (
     <Fragment>
@@ -101,8 +98,13 @@ const Consumption = () => {
 
               <td>
                 <ul className="text-start">
-                  {supposed.map(({ element, count }, y) => (
-                    <MealView count={count} element={element} key={y} />
+                  {supposed.map(({ element, count, alternatives }, y) => (
+                    <MealView
+                      count={count}
+                      element={element}
+                      alternatives={alternatives}
+                      key={y}
+                    />
                   ))}
                 </ul>
               </td>
@@ -136,8 +138,13 @@ const Consumption = () => {
                           contents.find((cont) => cont.element === element)
                             ?.count
                     )
-                    .map(({ element, count }, y) => (
-                      <MealView count={count} element={element} key={y} />
+                    .map(({ element, count, alternatives }, y) => (
+                      <MealView
+                        count={count}
+                        element={element}
+                        alternatives={alternatives}
+                        key={y}
+                      />
                     ))}
                 </ul>
               </td>
