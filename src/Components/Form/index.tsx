@@ -1,3 +1,9 @@
+import {
+  faPlus,
+  faPlusCircle,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, useState } from "react";
 
 interface dynamicObject {
@@ -99,9 +105,9 @@ const Form = ({ inputs, onSubmit }: props) => {
                             : [{}],
                         }))
                       }
-                      className="bg-success text-white"
+                      className="text-success"
                     >
-                      Add
+                      <FontAwesomeIcon icon={faPlus} />
                     </th>
                   </tr>
                 </thead>
@@ -145,9 +151,9 @@ const Form = ({ inputs, onSubmit }: props) => {
                             ),
                           }))
                         }
-                        className="bg-danger text-white"
+                        className="text-danger"
                       >
-                        Delete
+                        <FontAwesomeIcon icon={faTrash} />
                       </td>
                     </tr>
                   ))}
