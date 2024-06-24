@@ -1,29 +1,30 @@
+import service, { demoStatus } from ".";
 import { mockConsumptionData } from "./mockData";
 
 const getAll = () => {
-  switch (true) {
+  switch (demoStatus()) {
     case true:
       return mockConsumptionData;
     default:
-      return mockConsumptionData;
+      return service.get("consumption.json");
   }
 };
 
 const create = () => {
-  switch (true) {
+  switch (demoStatus()) {
     case true:
       return mockConsumptionData[0];
     default:
-      return mockConsumptionData[0];
+      return service.get("consumption.json");
   }
 };
 
 const update = () => {
-  switch (true) {
+  switch (demoStatus()) {
     case true:
       return mockConsumptionData[0];
     default:
-      return mockConsumptionData[0];
+      return service.get("consumption.json");
   }
 };
 
