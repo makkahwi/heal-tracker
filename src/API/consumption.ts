@@ -1,30 +1,27 @@
+import { AxiosResponse } from "axios";
 import service, { demoStatus } from ".";
 import { mockConsumptionData } from "./mockData";
 
-const getAll = () => {
+const getAll = async () => {
   switch (demoStatus()) {
-    case true:
-      return mockConsumptionData;
     default:
-      return service.get("consumption.json");
+      return await service
+        .get("consumption.json")
+        .then((res: AxiosResponse) => Object.values(res.data));
   }
 };
 
-const create = () => {
+const create = async (data = {}) => {
   switch (demoStatus()) {
-    case true:
-      return mockConsumptionData[0];
     default:
-      return service.get("consumption.json");
+      return await service.post("consumption.json", data);
   }
 };
 
-const update = () => {
+const update = async (data = {}) => {
   switch (demoStatus()) {
-    case true:
-      return mockConsumptionData[0];
     default:
-      return service.get("consumption.json");
+      return await service.put("consumption.json", data);
   }
 };
 

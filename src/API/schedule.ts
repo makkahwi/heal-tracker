@@ -1,12 +1,10 @@
 import service, { demoStatus } from ".";
 import { mockScheduleData } from "./mockData";
 
-const getAll = () => {
+const getAll = async () => {
   switch (demoStatus()) {
-    case true:
-      return mockScheduleData;
     default:
-      return service.get("schedule.json");
+      return await service.get("schedule.json").then((res) => res.data);
   }
 };
 

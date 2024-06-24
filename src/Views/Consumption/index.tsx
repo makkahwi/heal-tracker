@@ -18,10 +18,19 @@ const Consumption = () => {
   const [data, setData] = useState<props[]>([]);
   const [scheduled, setScheduled] = useState<MealViewProps[]>([]);
 
+  const getData = () => {
+    scheduleAPI.getAll().then((res: MealViewProps[]) => setScheduled(res));
+    consumptionAPI
+      .getAll()
+      .then((res: any) =>
+        setData(
+          res.sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
+        )
+      );
+  };
+
   useEffect(() => {
-    // consumptionAPI.getAll().then((res: MealViewProps[][]) => setData(res));
-    setData(consumptionAPI.getAll());
-    setScheduled(scheduleAPI.getAll());
+    getData();
   }, []);
 
   const formInputs = [
@@ -77,7 +86,9 @@ const Consumption = () => {
       timestamp: moment(date + "T" + time),
     };
 
-    setData((current) => [...current, finalValue]);
+    consumptionAPI.create(finalValue).then(() => {
+      getData();
+    });
   };
 
   return (
@@ -105,7 +116,7 @@ const Consumption = () => {
           </thead>
 
           <tbody>
-            {data.map(({ timestamp, meal, contents, supposed }, x) => (
+            {data?.map(({ timestamp, meal, contents, supposed }, x) => (
               <tr key={x}>
                 <td>{moment(timestamp).format("ddd, D MMM YYYY")}</td>
                 <td>{moment(timestamp).format("h:mm a")}</td>
