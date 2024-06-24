@@ -1,29 +1,30 @@
+import service, { demoStatus } from ".";
 import { mockScheduleData } from "./mockData";
 
 const getAll = () => {
-  switch (true) {
+  switch (demoStatus()) {
     case true:
       return mockScheduleData;
     default:
-      return mockScheduleData;
+      return service.get("schedule.json");
   }
 };
 
-const create = () => {
-  switch (true) {
+const create = (data = {}) => {
+  switch (demoStatus()) {
     case true:
       return mockScheduleData[0];
     default:
-      return mockScheduleData[0];
+      return service.post("schedule.json", data);
   }
 };
 
-const update = () => {
-  switch (true) {
+const update = (data = {}) => {
+  switch (demoStatus()) {
     case true:
       return mockScheduleData[0];
     default:
-      return mockScheduleData[0];
+      return service.put("schedule.json", data);
   }
 };
 
