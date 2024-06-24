@@ -10,7 +10,7 @@ const Schedule = () => {
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
-    setData(scheduleAPI.getAll());
+    scheduleAPI.getAll().then((res: MealViewProps[]) => setData(res));
   }, []);
 
   const formInputs = [
@@ -77,7 +77,7 @@ const Schedule = () => {
 
                 <td>
                   {data
-                    .filter((rec) => rec.meal === meal)
+                    ?.filter((rec) => rec.meal === meal)
                     .map(({ element = "", count = "", alternatives }, y) => (
                       <ul className="text-start" key={y}>
                         <MealView
