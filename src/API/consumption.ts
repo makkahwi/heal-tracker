@@ -21,11 +21,11 @@ const create = async (data = {}) => {
   }
 };
 
-const update = async (data = {}) => {
+const remove = async (id = "") => {
   switch (demoStatus()) {
     default:
-      return await service.put("consumption.json", data);
+      return await service.delete(`consumption/${id}.json`);
   }
 };
 
-export { getAll, create, update };
+export { getAll, create, remove };
