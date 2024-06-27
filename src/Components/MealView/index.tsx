@@ -2,6 +2,7 @@ import { Fragment } from "react/jsx-runtime";
 
 export interface MealViewProps {
   meal?: string;
+  note?: string;
   count: string;
   element: string;
   alternatives?: MealViewProps[];
@@ -9,9 +10,9 @@ export interface MealViewProps {
 
 const OrView = () => <span className="mx-1 text-danger">OR</span>;
 
-const MealView = ({ count, element, alternatives }: MealViewProps) => (
+const MealView = ({ count, element, alternatives, note }: MealViewProps) => (
   <li>
-    {count + " of " + element}
+    {count + " of " + element + (note ? " (" + note + ")" : "")}
     {alternatives ? (
       <Fragment>
         <OrView />

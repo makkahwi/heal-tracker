@@ -1,5 +1,6 @@
 import moment, { MomentInput } from "moment";
 import { Fragment, useEffect, useState } from "react";
+
 import * as consumptionAPI from "../../API/consumption";
 import * as scheduleAPI from "../../API/schedule";
 import Form from "../../Components/Form";
@@ -19,7 +20,7 @@ const Consumption = () => {
   const [scheduled, setScheduled] = useState<MealViewProps[]>([]);
 
   const getData = () => {
-    scheduleAPI.getAll().then((res: MealViewProps[]) => setScheduled(res));
+    scheduleAPI.getAll().then((res: any) => setScheduled(res));
     consumptionAPI
       .getAll()
       .then((res: any) =>
@@ -62,6 +63,7 @@ const Consumption = () => {
       inputs: [
         { name: "element", label: "Element", required: true },
         { name: "count", label: "Count", required: true },
+        { name: "note", label: "Note", required: false },
       ],
       required: true,
     },
@@ -124,11 +126,12 @@ const Consumption = () => {
 
                 <td>
                   <ul className="text-start">
-                    {contents.map(({ element, count }, y) => (
+                    {contents.map(({ element, count, note }, y) => (
                       <MealView
                         meal={meal}
                         count={count}
                         element={element}
+                        note={note}
                         key={y}
                       />
                     ))}
@@ -155,11 +158,8 @@ const Consumption = () => {
                       .filter(
                         ({ element, count }) =>
                           element !==
-                            supposed.find((sup) => sup.element === element)
-                              ?.element ||
-                          count !==
-                            supposed.find((sup) => sup.element === element)
-                              ?.count
+                          supposed.find((sup) => sup.element === element)
+                            ?.element
                       )
                       .map(({ element, count }, y) => (
                         <MealView
@@ -178,11 +178,8 @@ const Consumption = () => {
                       .filter(
                         ({ element, count }) =>
                           element !==
-                            contents.find((cont) => cont.element === element)
-                              ?.element ||
-                          count !==
-                            contents.find((cont) => cont.element === element)
-                              ?.count
+                          contents.find((cont) => cont.element === element)
+                            ?.element
                       )
                       .map(({ element, count, alternatives }, y) => (
                         <MealView
