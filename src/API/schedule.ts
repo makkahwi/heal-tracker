@@ -1,29 +1,31 @@
+import { AxiosResponse } from "axios";
+
 import service, { demoStatus } from ".";
 import { mockScheduleData } from "./mockData";
 
 const getAll = async () => {
   switch (demoStatus()) {
     default:
-      return await service.get("schedule.json").then((res) => res.data);
+      return await service
+        .get("schedule.json")
+        .then((res: AxiosResponse) =>
+          Object.keys(res.data).map((key) => ({ ...res.data[key], id: key }))
+        );
   }
 };
 
-const create = (data = {}) => {
+const create = async (data = {}) => {
   switch (demoStatus()) {
-    case true:
-      return mockScheduleData[0];
     default:
-      return service.post("schedule.json", data);
+      return await service.post("schedule.json", data);
   }
 };
 
-const update = (data = {}) => {
+const remove = async (id = "") => {
   switch (demoStatus()) {
-    case true:
-      return mockScheduleData[0];
     default:
-      return service.put("schedule.json", data);
+      return await service.delete(`schedule/${id}.json`);
   }
 };
 
-export { getAll, create, update };
+export { getAll, create, remove };
