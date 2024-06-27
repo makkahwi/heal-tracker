@@ -1,16 +1,19 @@
 import { Fragment, useEffect, useState } from "react";
+
 import * as scheduleAPI from "../../API/schedule";
+import Form from "../../Components/Form";
 import MealView, { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
-import Form from "../../Components/Form";
 import { meals } from "../../Utils/consts";
 
 const Schedule = () => {
   const [data, setData] = useState<MealViewProps[]>([]);
 
+  const getData = () => scheduleAPI.getAll().then((res: any) => setData(res));
+
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
-    scheduleAPI.getAll().then((res: MealViewProps[]) => setData(res));
+    getData();
   }, []);
 
   const formInputs = [
@@ -53,7 +56,12 @@ const Schedule = () => {
       ...content,
       meal: values?.meal,
     }));
-    setData((current) => [...current, ...finalValue]);
+
+    finalValue.forEach((value) =>
+      scheduleAPI.create(value).then(() => {
+        getData();
+      })
+    );
   };
 
   return (
@@ -78,17 +86,20 @@ const Schedule = () => {
                 <td>
                   {data
                     ?.filter((rec) => rec.meal === meal)
-                    .map(({ element = "", count = "", alternatives }, y) => (
-                      <ul className="text-start" key={y}>
-                        <MealView
-                          meal={meal}
-                          count={count}
-                          element={element}
-                          alternatives={alternatives}
-                          key={y}
-                        />
-                      </ul>
-                    ))}
+                    .map(
+                      ({ element = "", count = "", alternatives, note }, y) => (
+                        <ul className="text-start" key={y}>
+                          <MealView
+                            meal={meal}
+                            count={count}
+                            element={element}
+                            alternatives={alternatives}
+                            note={note}
+                            key={y}
+                          />
+                        </ul>
+                      )
+                    )}
                 </td>
               </tr>
             ))}
