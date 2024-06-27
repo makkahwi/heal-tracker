@@ -25,7 +25,8 @@
         },
         {
           "count": "1 Small Piece",
-          "element": "Fruit"
+          "element": "Fruit",
+          "note": "Half Banana"
         }
       ],
       "meal": "Light Meal 1",
@@ -63,7 +64,8 @@
       "contents": [
         {
           "count": "1 Slice",
-          "element": "Bread"
+          "element": "Bread",
+          "note": "Half Small Reef"
         },
         {
           "count": "Slices",
@@ -130,7 +132,8 @@
       "contents": [
         {
           "count": "1 Slice",
-          "element": "Bread"
+          "element": "Bread",
+          "note": "Half Small Reef"
         },
         {
           "count": "Slices",
@@ -179,7 +182,8 @@
       "contents": [
         {
           "count": "1 Slice",
-          "element": "Bread"
+          "element": "Bread",
+          "note": "Half Small Reef"
         },
         {
           "count": "Slices",
@@ -301,7 +305,8 @@
       "contents": [
         {
           "count": "1 Small Piece",
-          "element": "Fruit"
+          "element": "Fruit",
+          "note": "Half Banana"
         },
         {
           "count": "300gm",
@@ -346,7 +351,8 @@
       "contents": [
         {
           "count": "3 Slices",
-          "element": "Bread"
+          "element": "Bread",
+          "note": "One & Half Small Reef"
         },
         {
           "count": "Slices",
@@ -492,7 +498,8 @@
       "contents": [
         {
           "count": "1 Small Piece",
-          "element": "Fruit"
+          "element": "Fruit",
+          "note": "Half Orange"
         }
       ],
       "meal": "Drink",
@@ -509,7 +516,8 @@
       "contents": [
         {
           "count": "4 Slices",
-          "element": "Bread"
+          "element": "Bread",
+          "note": "2 Small Reef"
         },
         {
           "count": "Slices",
@@ -701,7 +709,8 @@
       "contents": [
         {
           "count": "2 Slices",
-          "element": "Bread"
+          "element": "Bread",
+          "note": "1 Small Reef"
         },
         {
           "count": "90gm",
@@ -784,6 +793,7 @@
           "element": "Various Vegetables"
         },
         {
+          "Note": "Half Orange",
           "count": "1 Small Piece",
           "element": "Fruit"
         }
@@ -822,12 +832,12 @@
     "-O0PkxL-cSZbGQHIyIqH": {
       "contents": [
         {
-          "count": "400gm",
-          "element": "Rice"
-        },
-        {
           "count": "140gm",
           "element": "Chicken Breast"
+        },
+        {
+          "count": "400gm",
+          "element": "Rice"
         }
       ],
       "meal": "Lunch",
