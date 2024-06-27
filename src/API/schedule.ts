@@ -21,13 +21,11 @@ const create = async (data = {}) => {
   }
 };
 
-const update = (data = {}) => {
+const remove = async (id = "") => {
   switch (demoStatus()) {
-    case true:
-      return mockScheduleData[0];
     default:
-      return service.put("schedule.json", data);
+      return await service.delete(`schedule/${id}.json`);
   }
 };
 
-export { getAll, create, update };
+export { getAll, create, remove };
