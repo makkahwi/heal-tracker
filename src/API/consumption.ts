@@ -1,4 +1,5 @@
 import { AxiosResponse } from "axios";
+
 import service, { demoStatus } from ".";
 import { mockConsumptionData } from "./mockData";
 
@@ -7,7 +8,9 @@ const getAll = async () => {
     default:
       return await service
         .get("consumption.json")
-        .then((res: AxiosResponse) => Object.values(res.data));
+        .then((res: AxiosResponse) =>
+          Object.keys(res.data).map((key) => ({ ...res.data[key], id: key }))
+        );
   }
 };
 

@@ -8,7 +8,9 @@ const getAll = async () => {
     default:
       return await service
         .get("schedule.json")
-        .then((res: AxiosResponse) => Object.values(res.data));
+        .then((res: AxiosResponse) =>
+          Object.keys(res.data).map((key) => ({ ...res.data[key], id: key }))
+        );
   }
 };
 
