@@ -1,3 +1,5 @@
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment, { MomentInput } from "moment";
 import { Fragment, useEffect, useState } from "react";
 
@@ -9,6 +11,7 @@ import PageSection from "../../Components/PageSection";
 import { meals } from "../../Utils/consts";
 
 interface props {
+  id?: string;
   timestamp: MomentInput;
   meal: string;
   contents: MealViewProps[];
@@ -93,6 +96,11 @@ const Consumption = () => {
     });
   };
 
+  const onDelete = (id: string) =>
+    consumptionAPI.remove(id).then(() => {
+      getData();
+    });
+
   return (
     <PageSection title="Consumed Meals">
       <Fragment>
@@ -114,11 +122,13 @@ const Consumption = () => {
               <th>Added Consumptions</th>
 
               <th>Missed Supposes</th>
+
+              <th>Actions</th>
             </tr>
           </thead>
 
           <tbody>
-            {data?.map(({ timestamp, meal, contents, supposed }, x) => (
+            {data?.map(({ timestamp, meal, contents, supposed, id }, x) => (
               <tr key={x}>
                 <td>{moment(timestamp).format("ddd, D MMM YYYY")}</td>
                 <td>{moment(timestamp).format("h:mm a")}</td>
@@ -191,6 +201,15 @@ const Consumption = () => {
                         />
                       ))}
                   </ul>
+                </td>
+
+                <td>
+                  <FontAwesomeIcon
+                    icon={faTrash}
+                    role="button"
+                    className="mx-1 text-danger"
+                    onClick={() => onDelete(id || "")}
+                  />
                 </td>
               </tr>
             ))}
