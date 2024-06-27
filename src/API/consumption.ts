@@ -1,4 +1,5 @@
 import { AxiosResponse } from "axios";
+
 import service, { demoStatus } from ".";
 import { mockConsumptionData } from "./mockData";
 
@@ -7,7 +8,9 @@ const getAll = async () => {
     default:
       return await service
         .get("consumption.json")
-        .then((res: AxiosResponse) => Object.values(res.data));
+        .then((res: AxiosResponse) =>
+          Object.keys(res.data).map((key) => ({ ...res.data[key], id: key }))
+        );
   }
 };
 
@@ -18,11 +21,11 @@ const create = async (data = {}) => {
   }
 };
 
-const update = async (data = {}) => {
+const remove = async (id = "") => {
   switch (demoStatus()) {
     default:
-      return await service.put("consumption.json", data);
+      return await service.delete(`consumption/${id}.json`);
   }
 };
 
-export { getAll, create, update };
+export { getAll, create, remove };
