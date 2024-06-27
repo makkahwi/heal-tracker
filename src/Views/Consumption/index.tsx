@@ -119,9 +119,9 @@ const Consumption = () => {
 
               <th>Supposed To Consume Meal Contents</th>
 
-              <th>Added Consumptions</th>
+              {/* <th>Added Consumptions</th>
 
-              <th>Missed Supposes</th>
+              <th>Missed Supposes</th> */}
 
               <th>Actions</th>
             </tr>
@@ -162,7 +162,7 @@ const Consumption = () => {
                   </ul>
                 </td>
 
-                <td>
+                {/* <td>
                   <ul className="text-start">
                     {contents
                       .filter(
@@ -201,7 +201,7 @@ const Consumption = () => {
                         />
                       ))}
                   </ul>
-                </td>
+                </td> */}
 
                 <td>
                   <FontAwesomeIcon
