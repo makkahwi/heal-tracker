@@ -106,63 +106,64 @@ const Consumption = () => {
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
-        <table className="table table-responsive table-striped">
-          <thead>
-            <tr className="align-middle">
-              <th>Date</th>
+        <div className="d-none d-md-block">
+          <table className="table table-responsive table-striped">
+            <thead>
+              <tr className="align-middle">
+                <th>Date</th>
 
-              <th>Time</th>
+                <th>Time</th>
 
-              <th>Meal of Day</th>
+                <th>Meal of Day</th>
 
-              <th>Consumed Meal Contents</th>
+                <th>Consumed Meal Contents</th>
 
-              <th>Supposed To Consume Meal Contents</th>
+                <th>Supposed To Consume Meal Contents</th>
 
-              {/* <th>Added Consumptions</th>
+                {/* <th>Added Consumptions</th>
 
               <th>Missed Supposes</th> */}
 
-              <th>Actions</th>
-            </tr>
-          </thead>
+                <th>Actions</th>
+              </tr>
+            </thead>
 
-          <tbody>
-            {data?.map(({ timestamp, meal, contents, supposed, id }, x) => (
-              <tr key={x}>
-                <td>{moment(timestamp).format("ddd, D MMM YYYY")}</td>
-                <td>{moment(timestamp).format("h:mm a")}</td>
-                <td>{meal}</td>
+            <tbody>
+              {data?.map(({ timestamp, meal, contents, supposed, id }, x) => (
+                <tr key={x}>
+                  <td>{moment(timestamp).format("ddd, D MMM YYYY")}</td>
+                  <td>{moment(timestamp).format("h:mm a")}</td>
+                  <td>{meal}</td>
 
-                <td>
-                  <ul className="text-start">
-                    {contents.map(({ element, count, note }, y) => (
-                      <MealView
-                        meal={meal}
-                        count={count}
-                        element={element}
-                        note={note}
-                        key={y}
-                      />
-                    ))}
-                  </ul>
-                </td>
+                  <td>
+                    <ul className="text-start">
+                      {contents.map(({ element, count, note }, y) => (
+                        <MealView
+                          meal={meal}
+                          count={count}
+                          element={element}
+                          note={note}
+                          key={y}
+                        />
+                      ))}
+                    </ul>
+                  </td>
 
-                <td>
-                  <ul className="text-start">
-                    {supposed.map(({ element, count, alternatives }, y) => (
-                      <MealView
-                        meal={meal}
-                        count={count}
-                        element={element}
-                        alternatives={alternatives}
-                        key={y}
-                      />
-                    ))}
-                  </ul>
-                </td>
+                  <td>
+                    <ul className="text-start">
+                      {supposed.map(({ element, count, alternatives }, y) => (
+                        <MealView
+                          meal={meal}
+                          count={count}
+                          element={element}
+                          alternatives={alternatives}
+                          key={y}
+                        />
+                      ))}
+                    </ul>
+                  </td>
 
-                {/* <td>
+                  {/* <td>
                   <ul className="text-start">
                     {contents
                       .filter(
@@ -203,18 +204,130 @@ const Consumption = () => {
                   </ul>
                 </td> */}
 
-                <td>
-                  <FontAwesomeIcon
-                    icon={faTrash}
-                    role="button"
-                    className="mx-1 text-danger"
-                    onClick={() => onDelete(id || "")}
-                  />
+                  <td>
+                    <FontAwesomeIcon
+                      icon={faTrash}
+                      role="button"
+                      className="mx-1 text-danger"
+                      onClick={() => onDelete(id || "")}
+                    />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div className="d-block d-md-none">
+          {data?.map(({ timestamp, meal, contents, supposed, id }, x) => (
+            <div className="card p-3 py-5 my-3 w-100" key={x}>
+              <table className="table table-responsive m-0">
+                <tbody>
+                  <tr>
+                    <th className="w-25">Date</th>
+                    <td className="text-start">
+                      {moment(timestamp).format("ddd, D MMM YYYY")}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th>Time</th>
+                    <td className="text-start">
+                      {moment(timestamp).format("h:mm a")}
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th>Consumed</th>
+                    <td className="text-start">
+                      <ul>
+                        {contents.map(({ element, count, note }, y) => (
+                          <MealView
+                            meal={meal}
+                            count={count}
+                            element={element}
+                            note={note}
+                            key={y}
+                          />
+                        ))}
+                      </ul>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th>Supposed</th>
+                    <td className="text-start">
+                      <ul>
+                        {supposed.map(({ element, count, alternatives }, y) => (
+                          <MealView
+                            meal={meal}
+                            count={count}
+                            element={element}
+                            alternatives={alternatives}
+                            key={y}
+                          />
+                        ))}
+                      </ul>
+                    </td>
+                  </tr>
+
+                  {/* <td>
+                  <ul className="text-start">
+                    {contents
+                      .filter(
+                        ({ element, count }) =>
+                          element !==
+                          supposed.find((sup) => sup.element === element)
+                            ?.element
+                      )
+                      .map(({ element, count }, y) => (
+                        <MealView
+                          meal={meal}
+                          count={count}
+                          element={element}
+                          key={y}
+                        />
+                      ))}
+                  </ul>
                 </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+
+                <td>
+                  <ul className="text-start">
+                    {supposed
+                      .filter(
+                        ({ element, count }) =>
+                          element !==
+                          contents.find((cont) => cont.element === element)
+                            ?.element
+                      )
+                      .map(({ element, count, alternatives }, y) => (
+                        <MealView
+                          meal={meal}
+                          count={count}
+                          element={element}
+                          alternatives={alternatives}
+                          key={y}
+                        />
+                      ))}
+                  </ul>
+                </td> */}
+
+                  <tr>
+                    <th>Actions</th>
+                    <td className="text-start">
+                      <FontAwesomeIcon
+                        icon={faTrash}
+                        role="button"
+                        className="mx-1 text-danger"
+                        onClick={() => onDelete(id || "")}
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          ))}
+        </div>
       </Fragment>
     </PageSection>
   );
