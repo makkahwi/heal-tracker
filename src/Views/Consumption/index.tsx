@@ -225,7 +225,7 @@ const Consumption = () => {
           {data
             ?.filter((_, i) => i < showCount)
             ?.map(({ timestamp, meal, contents, supposed, id }, x) => (
-              <div className="card p-3 py-5 my-3 w-100" key={x}>
+              <div className="card p-3 py-4 my-4 w-100" key={x}>
                 <table className="table table-responsive m-0">
                   <tbody>
                     <tr>
