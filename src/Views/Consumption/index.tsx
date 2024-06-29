@@ -65,7 +65,7 @@ const Consumption = () => {
       name: "meal",
       label: "Meal of Day",
       type: "select",
-      options: meals,
+      options: meals.map(({ meal }) => meal),
       required: true,
     },
     {
@@ -144,7 +144,12 @@ const Consumption = () => {
                   <tr key={x}>
                     <td>{moment(timestamp).format("ddd, D MMM YYYY")}</td>
                     <td>{moment(timestamp).format("h:mm a")}</td>
-                    <td>{meal}</td>
+                    <td>
+                      {meal +
+                        " (" +
+                        meals.find((m) => m.meal == meal)?.time +
+                        ")"}
+                    </td>
 
                     <td>
                       <ul className="text-start">
