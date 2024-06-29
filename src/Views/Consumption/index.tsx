@@ -24,14 +24,22 @@ const Consumption = () => {
   const [scheduled, setScheduled] = useState<MealViewProps[]>([]);
 
   const getData = () => {
-    scheduleAPI.getAll().then((res: any) => setScheduled(res));
-    consumptionAPI
+    scheduleAPI
       .getAll()
-      .then((res: any) =>
-        setData(
-          res.sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
-        )
+      .then((res: MealViewProps[]) =>
+        setScheduled(res?.sort((a, b) => (a.element > b.element ? 1 : -1)))
       );
+    consumptionAPI.getAll().then((res: props[]) =>
+      setData(
+        res
+          .sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
+          .map(({ contents, supposed, ...rest }) => ({
+            ...rest,
+            contents: contents.sort((a, b) => (a.element > b.element ? 1 : -1)),
+            supposed: supposed.sort((a, b) => (a.element > b.element ? 1 : -1)),
+          }))
+      )
+    );
   };
 
   useEffect(() => {
@@ -244,9 +252,7 @@ const Consumption = () => {
 
                     <tr>
                       <th>Meal</th>
-                      <td className="text-start">
-                        {meal}
-                      </td>
+                      <td className="text-start">{meal}</td>
                     </tr>
 
                     <tr>

@@ -84,35 +84,40 @@ const Schedule = () => {
           </thead>
 
           <tbody>
-            {meals.map((meal, x) => (
-              <tr key={x}>
-                <th>{meal}</th>
+            {meals
+              .filter(
+                (meal) => data?.filter((rec) => rec.meal === meal)?.length
+              )
+              .map((meal, x) => (
+                <tr key={x}>
+                  <th>{meal}</th>
 
-                <td>
-                  {data
-                    ?.filter((rec) => rec.meal === meal)
-                    .map(
-                      (
-                        { element = "", count = "", alternatives, note, id },
-                        y
-                      ) => (
-                        <ul className="text-start" key={y}>
-                          <MealView
-                            id={id}
-                            meal={meal}
-                            count={count}
-                            element={element}
-                            alternatives={alternatives}
-                            note={note}
-                            onDelete={onDelete}
-                            key={y}
-                          />
-                        </ul>
-                      )
-                    )}
-                </td>
-              </tr>
-            ))}
+                  <td>
+                    {data
+                      ?.sort((a, b) => (a.element > b.element ? 1 : -1))
+                      ?.filter((rec) => rec.meal === meal)
+                      .map(
+                        (
+                          { element = "", count = "", alternatives, note, id },
+                          y
+                        ) => (
+                          <ul className="text-start" key={y}>
+                            <MealView
+                              id={id}
+                              meal={meal}
+                              count={count}
+                              element={element}
+                              alternatives={alternatives}
+                              note={note}
+                              onDelete={onDelete}
+                              key={y}
+                            />
+                          </ul>
+                        )
+                      )}
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </Fragment>
