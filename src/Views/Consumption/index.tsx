@@ -243,6 +243,13 @@ const Consumption = () => {
                     </tr>
 
                     <tr>
+                      <th>Meal</th>
+                      <td className="text-start">
+                        {meal}
+                      </td>
+                    </tr>
+
+                    <tr>
                       <th>Consumed</th>
                       <td className="text-start">
                         <ul>
