@@ -21,7 +21,7 @@ const Schedule = () => {
       name: "meal",
       label: "Meal of Day",
       type: "select",
-      options: meals,
+      options: meals.map(({ meal }) => meal),
       required: true,
     },
     {
@@ -86,11 +86,11 @@ const Schedule = () => {
           <tbody>
             {meals
               .filter(
-                (meal) => data?.filter((rec) => rec.meal === meal)?.length
+                ({ meal }) => data?.filter((rec) => rec.meal === meal)?.length
               )
-              .map((meal, x) => (
+              .map(({ meal, time }, x) => (
                 <tr key={x}>
-                  <th>{meal}</th>
+                  <th>{meal + " (" + time + ")"}</th>
 
                   <td>
                     {data
