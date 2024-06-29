@@ -24,14 +24,22 @@ const Consumption = () => {
   const [scheduled, setScheduled] = useState<MealViewProps[]>([]);
 
   const getData = () => {
-    scheduleAPI.getAll().then((res: any) => setScheduled(res));
-    consumptionAPI
+    scheduleAPI
       .getAll()
-      .then((res: any) =>
-        setData(
-          res.sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
-        )
+      .then((res: MealViewProps[]) =>
+        setScheduled(res?.sort((a, b) => (a.element > b.element ? 1 : -1)))
       );
+    consumptionAPI.getAll().then((res: props[]) =>
+      setData(
+        res
+          .sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
+          .map(({ contents, supposed, ...rest }) => ({
+            ...rest,
+            contents: contents.sort((a, b) => (a.element > b.element ? 1 : -1)),
+            supposed: supposed.sort((a, b) => (a.element > b.element ? 1 : -1)),
+          }))
+      )
+    );
   };
 
   useEffect(() => {
@@ -57,7 +65,7 @@ const Consumption = () => {
       name: "meal",
       label: "Meal of Day",
       type: "select",
-      options: meals,
+      options: meals.map(({ meal }) => meal),
       required: true,
     },
     {
@@ -136,7 +144,12 @@ const Consumption = () => {
                   <tr key={x}>
                     <td>{moment(timestamp).format("ddd, D MMM YYYY")}</td>
                     <td>{moment(timestamp).format("h:mm a")}</td>
-                    <td>{meal}</td>
+                    <td>
+                      {meal +
+                        " (" +
+                        meals.find((m) => m.meal == meal)?.time +
+                        ")"}
+                    </td>
 
                     <td>
                       <ul className="text-start">
@@ -240,6 +253,11 @@ const Consumption = () => {
                       <td className="text-start">
                         {moment(timestamp).format("h:mm a")}
                       </td>
+                    </tr>
+
+                    <tr>
+                      <th>Meal</th>
+                      <td className="text-start">{meal}</td>
                     </tr>
 
                     <tr>
