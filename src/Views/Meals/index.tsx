@@ -7,7 +7,7 @@ import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
 
-interface MealProps {
+export interface MealProps {
   id?: string;
   meal: string;
   time: string;

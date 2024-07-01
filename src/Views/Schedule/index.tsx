@@ -1,15 +1,20 @@
 import { Fragment, useEffect, useState } from "react";
 
+import * as mealsAPI from "../../API/meals";
 import * as scheduleAPI from "../../API/schedule";
 import Form from "../../Components/Form";
 import MealView, { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
-import { meals } from "../../Utils/consts";
+import { MealProps } from "../Meals";
 
 const Schedule = () => {
   const [data, setData] = useState<MealViewProps[]>([]);
+  const [meals, setMeals] = useState<MealProps[]>([]);
 
-  const getData = () => scheduleAPI.getAll().then((res: any) => setData(res));
+  const getData = () => {
+    scheduleAPI.getAll().then((res: any) => setData(res));
+    mealsAPI.getAll().then((res: any) => setMeals(res));
+  };
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
