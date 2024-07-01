@@ -17,6 +17,7 @@ interface inputProps {
   required?: boolean;
   type?: string;
   defaultValue?: any;
+  onChange?: any;
   options?: string[];
   inputs?: inputProps[];
 }
@@ -47,6 +48,7 @@ const Form = ({ inputs, onSubmit }: props) => {
             inputs,
             required,
             defaultValue,
+            onChange,
             ...rest
           },
           i
@@ -63,10 +65,12 @@ const Form = ({ inputs, onSubmit }: props) => {
                 className="form-control"
                 value={formValues[name]}
                 onChange={(e) =>
-                  setFormValues((current) => ({
-                    ...current,
-                    [name]: e.target.value,
-                  }))
+                  onChange
+                    ? onChange(e, setFormValues)
+                    : setFormValues((current) => ({
+                        ...current,
+                        [name]: e.target.value,
+                      }))
                 }
                 required={required}
                 defaultValue={defaultValue}
@@ -81,7 +85,7 @@ const Form = ({ inputs, onSubmit }: props) => {
                 ))}
               </select>
             ) : type === "dynamicList" ? (
-              <table className="table table-responsive">
+              <table className="table table-bordered table-responsive">
                 <thead>
                   <tr>
                     {inputs?.map((input, x) => (
@@ -122,17 +126,20 @@ const Form = ({ inputs, onSubmit }: props) => {
                             name={input.name}
                             value={value[input.name]}
                             onChange={(e) =>
-                              setFormValues((current) => ({
-                                ...current,
-                                [name]: current[name].map((ele = {}, z = 0) =>
-                                  z === x
-                                    ? {
-                                        ...ele,
-                                        [input.name]: e.target.value,
-                                      }
-                                    : ele
-                                ),
-                              }))
+                              onChange
+                                ? onChange(e, setFormValues)
+                                : setFormValues((current) => ({
+                                    ...current,
+                                    [name]: current[name].map(
+                                      (ele = {}, z = 0) =>
+                                        z === x
+                                          ? {
+                                              ...ele,
+                                              [input.name]: e.target.value,
+                                            }
+                                          : ele
+                                    ),
+                                  }))
                             }
                             required={input.required}
                             defaultValue={input.defaultValue}
@@ -165,10 +172,12 @@ const Form = ({ inputs, onSubmit }: props) => {
                 type={type}
                 value={formValues[name]}
                 onChange={(e) =>
-                  setFormValues((current) => ({
-                    ...current,
-                    [name]: e.target.value,
-                  }))
+                  onChange
+                    ? onChange(e, setFormValues)
+                    : setFormValues((current) => ({
+                        ...current,
+                        [name]: e.target.value,
+                      }))
                 }
                 className="form-control"
                 required={required}
@@ -180,7 +189,7 @@ const Form = ({ inputs, onSubmit }: props) => {
         )
       )}
 
-      <button className="btn btn-light float-end my-4 p-3" type="submit">
+      <button className="btn btn-secondary float-end my-4 p-3" type="submit">
         Submit
       </button>
     </form>

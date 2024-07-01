@@ -4,16 +4,17 @@ import moment, { MomentInput } from "moment";
 import { Fragment, useEffect, useState } from "react";
 
 import * as consumptionAPI from "../../API/consumption";
+import * as mealsAPI from "../../API/meals";
 import * as scheduleAPI from "../../API/schedule";
 import Form from "../../Components/Form";
 import MealView, { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
-import { meals } from "../../Utils/consts";
+import { MealProps } from "../Meals";
 
 interface props {
   id?: string;
   timestamp: MomentInput;
-  meal: string;
+  meal: MealProps;
   contents: MealViewProps[];
   supposed: MealViewProps[];
 }
@@ -22,6 +23,7 @@ const Consumption = () => {
   const [data, setData] = useState<props[]>([]);
   const [showCount, setShowCount] = useState(5);
   const [scheduled, setScheduled] = useState<MealViewProps[]>([]);
+  const [meals, setMeals] = useState<MealProps[]>([]);
 
   const getData = () => {
     scheduleAPI
@@ -40,6 +42,7 @@ const Consumption = () => {
           }))
       )
     );
+    mealsAPI.getAll().then((res: any) => setMeals(res));
   };
 
   useEffect(() => {
@@ -66,6 +69,13 @@ const Consumption = () => {
       label: "Meal of Day",
       type: "select",
       options: meals.map(({ meal }) => meal),
+      onChange: (e: any, setValues: any) => {
+        setValues((current: any) => ({
+          ...current,
+          [e.target.name]: e.target.value,
+          contents: scheduled.filter(({ meal }) => meal === e.target.value),
+        }));
+      },
       required: true,
     },
     {
@@ -94,7 +104,7 @@ const Consumption = () => {
     const time = values.time || moment().format("HH:mm");
 
     const finalValue = {
-      meal: values.meal,
+      meal: meals.find((m) => m.meal == values.meal),
       contents: values.contents,
       supposed: scheduled.filter(({ meal }) => meal === values.meal),
       timestamp: moment(date + "T" + time),
@@ -116,14 +126,14 @@ const Consumption = () => {
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
         <div className="d-none d-md-block">
-          <table className="table table-responsive table-striped">
+          <table className="table table-bordered table-responsive table-striped">
             <thead>
               <tr className="align-middle">
                 <th>Date</th>
 
-                <th>Time</th>
-
                 <th>Meal of Day</th>
+
+                <th>Time</th>
 
                 <th>Consumed Meal Contents</th>
 
@@ -143,19 +153,25 @@ const Consumption = () => {
                 ?.map(({ timestamp, meal, contents, supposed, id }, x) => (
                   <tr key={x}>
                     <td>{moment(timestamp).format("ddd, D MMM YYYY")}</td>
-                    <td>{moment(timestamp).format("h:mm a")}</td>
+
                     <td>
-                      {meal +
+                      {meal.meal +
                         " (" +
-                        meals.find((m) => m.meal == meal)?.time +
+                        moment(
+                          "2024-07-01T" +
+                            meals.find((m) => m.meal == meal.meal)?.time
+                        ).format("h:mm a") +
                         ")"}
                     </td>
+
+                    <td>{moment(timestamp).format("h:mm a")}</td>
 
                     <td>
                       <ul className="text-start">
                         {contents.map(({ element, count, note }, y) => (
                           <MealView
-                            meal={meal}
+                            dark={y % 2 == 1}
+                            meal={meal.meal}
                             count={count}
                             element={element}
                             note={note}
@@ -169,7 +185,8 @@ const Consumption = () => {
                       <ul className="text-start">
                         {supposed.map(({ element, count, alternatives }, y) => (
                           <MealView
-                            meal={meal}
+                            dark={y % 2 == 1}
+                            meal={meal.meal}
                             count={count}
                             element={element}
                             alternatives={alternatives}
@@ -239,7 +256,7 @@ const Consumption = () => {
             ?.filter((_, i) => i < showCount)
             ?.map(({ timestamp, meal, contents, supposed, id }, x) => (
               <div className="card p-3 py-4 my-4 w-100" key={x}>
-                <table className="table table-responsive m-0">
+                <table className="table table-bordered table-responsive m-0">
                   <tbody>
                     <tr>
                       <th className="w-25">Date</th>
@@ -257,7 +274,7 @@ const Consumption = () => {
 
                     <tr>
                       <th>Meal</th>
-                      <td className="text-start">{meal}</td>
+                      <td className="text-start">{meal.meal}</td>
                     </tr>
 
                     <tr>
@@ -266,7 +283,8 @@ const Consumption = () => {
                         <ul>
                           {contents.map(({ element, count, note }, y) => (
                             <MealView
-                              meal={meal}
+                              dark={y % 2 == 1}
+                              meal={meal.meal}
                               count={count}
                               element={element}
                               note={note}
@@ -284,7 +302,8 @@ const Consumption = () => {
                           {supposed.map(
                             ({ element, count, alternatives }, y) => (
                               <MealView
-                                meal={meal}
+                                dark={y % 2 == 1}
+                                meal={meal.meal}
                                 count={count}
                                 element={element}
                                 alternatives={alternatives}
@@ -356,7 +375,7 @@ const Consumption = () => {
 
         {data.length > showCount ? (
           <button
-            className="btn btn-light"
+            className="btn btn-secondary"
             onClick={() => setShowCount((current) => current + 5)}
           >
             Show More

@@ -1,15 +1,21 @@
 import { Fragment, useEffect, useState } from "react";
 
+import * as mealsAPI from "../../API/meals";
 import * as scheduleAPI from "../../API/schedule";
 import Form from "../../Components/Form";
 import MealView, { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
-import { meals } from "../../Utils/consts";
+import { MealProps } from "../Meals";
+import moment from "moment";
 
 const Schedule = () => {
   const [data, setData] = useState<MealViewProps[]>([]);
+  const [meals, setMeals] = useState<MealProps[]>([]);
 
-  const getData = () => scheduleAPI.getAll().then((res: any) => setData(res));
+  const getData = () => {
+    scheduleAPI.getAll().then((res: any) => setData(res));
+    mealsAPI.getAll().then((res: any) => setMeals(res));
+  };
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
@@ -74,7 +80,7 @@ const Schedule = () => {
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
-        <table className="table table-responsive table-striped">
+        <table className="table table-bordered table-responsive table-striped">
           <thead>
             <tr className="align-middle">
               <th>Meal of Day</th>
@@ -90,7 +96,12 @@ const Schedule = () => {
               )
               .map(({ meal, time }, x) => (
                 <tr key={x}>
-                  <th>{meal + " (" + time + ")"}</th>
+                  <th>
+                    {meal +
+                      " (" +
+                      moment("2024-07-01T" + time).format("h:mm a") +
+                      ")"}
+                  </th>
 
                   <td>
                     {data
@@ -103,6 +114,7 @@ const Schedule = () => {
                         ) => (
                           <ul className="text-start" key={y}>
                             <MealView
+                              dark={y % 2 == 1}
                               id={id}
                               meal={meal}
                               count={count}
