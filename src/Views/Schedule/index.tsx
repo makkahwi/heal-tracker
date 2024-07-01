@@ -80,7 +80,7 @@ const Schedule = () => {
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
-        <table className="table table-responsive table-striped">
+        <table className="table table-bordered table-responsive table-striped">
           <thead>
             <tr className="align-middle">
               <th>Meal of Day</th>

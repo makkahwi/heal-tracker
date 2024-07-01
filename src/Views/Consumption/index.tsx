@@ -126,7 +126,7 @@ const Consumption = () => {
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
         <div className="d-none d-md-block">
-          <table className="table table-responsive table-striped">
+          <table className="table table-bordered table-responsive table-striped">
             <thead>
               <tr className="align-middle">
                 <th>Date</th>
@@ -256,7 +256,7 @@ const Consumption = () => {
             ?.filter((_, i) => i < showCount)
             ?.map(({ timestamp, meal, contents, supposed, id }, x) => (
               <div className="card p-3 py-4 my-4 w-100" key={x}>
-                <table className="table table-responsive m-0">
+                <table className="table table-bordered table-responsive m-0">
                   <tbody>
                     <tr>
                       <th className="w-25">Date</th>
