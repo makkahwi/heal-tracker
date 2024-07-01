@@ -69,6 +69,13 @@ const Consumption = () => {
       label: "Meal of Day",
       type: "select",
       options: meals.map(({ meal }) => meal),
+      onChange: (e: any, setValues: any) => {
+        setValues((current: any) => ({
+          ...current,
+          [e.target.name]: e.target.value,
+          contents: scheduled.filter(({ meal }) => meal === e.target.value),
+        }));
+      },
       required: true,
     },
     {
@@ -124,9 +131,9 @@ const Consumption = () => {
               <tr className="align-middle">
                 <th>Date</th>
 
-                <th>Time</th>
-
                 <th>Meal of Day</th>
+
+                <th>Time</th>
 
                 <th>Consumed Meal Contents</th>
 
@@ -146,7 +153,7 @@ const Consumption = () => {
                 ?.map(({ timestamp, meal, contents, supposed, id }, x) => (
                   <tr key={x}>
                     <td>{moment(timestamp).format("ddd, D MMM YYYY")}</td>
-                    <td>{moment(timestamp).format("h:mm a")}</td>
+
                     <td>
                       {meal.meal +
                         " (" +
@@ -156,6 +163,8 @@ const Consumption = () => {
                         ).format("h:mm a") +
                         ")"}
                     </td>
+
+                    <td>{moment(timestamp).format("h:mm a")}</td>
 
                     <td>
                       <ul className="text-start">
