@@ -14,7 +14,7 @@ import { MealProps } from "../Meals";
 interface props {
   id?: string;
   timestamp: MomentInput;
-  meal: string;
+  meal: MealProps;
   contents: MealViewProps[];
   supposed: MealViewProps[];
 }
@@ -97,7 +97,7 @@ const Consumption = () => {
     const time = values.time || moment().format("HH:mm");
 
     const finalValue = {
-      meal: values.meal,
+      meal: meals.find((m) => m.meal == values.meal),
       contents: values.contents,
       supposed: scheduled.filter(({ meal }) => meal === values.meal),
       timestamp: moment(date + "T" + time),
@@ -148,9 +148,9 @@ const Consumption = () => {
                     <td>{moment(timestamp).format("ddd, D MMM YYYY")}</td>
                     <td>{moment(timestamp).format("h:mm a")}</td>
                     <td>
-                      {meal +
+                      {meal.meal +
                         " (" +
-                        meals.find((m) => m.meal == meal)?.time +
+                        meals.find((m) => m.meal == meal.meal)?.time +
                         ")"}
                     </td>
 
@@ -158,7 +158,7 @@ const Consumption = () => {
                       <ul className="text-start">
                         {contents.map(({ element, count, note }, y) => (
                           <MealView
-                            meal={meal}
+                            meal={meal.meal}
                             count={count}
                             element={element}
                             note={note}
@@ -172,7 +172,7 @@ const Consumption = () => {
                       <ul className="text-start">
                         {supposed.map(({ element, count, alternatives }, y) => (
                           <MealView
-                            meal={meal}
+                            meal={meal.meal}
                             count={count}
                             element={element}
                             alternatives={alternatives}
@@ -260,7 +260,7 @@ const Consumption = () => {
 
                     <tr>
                       <th>Meal</th>
-                      <td className="text-start">{meal}</td>
+                      <td className="text-start">{meal.meal}</td>
                     </tr>
 
                     <tr>
@@ -269,7 +269,7 @@ const Consumption = () => {
                         <ul>
                           {contents.map(({ element, count, note }, y) => (
                             <MealView
-                              meal={meal}
+                              meal={meal.meal}
                               count={count}
                               element={element}
                               note={note}
@@ -287,7 +287,7 @@ const Consumption = () => {
                           {supposed.map(
                             ({ element, count, alternatives }, y) => (
                               <MealView
-                                meal={meal}
+                                meal={meal.meal}
                                 count={count}
                                 element={element}
                                 alternatives={alternatives}
