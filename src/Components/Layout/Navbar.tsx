@@ -6,10 +6,10 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark position-fixed fixed-top w-100 m-0">
+    <nav className="navbar navbar-expand-lg navbar-primary bg-primary position-fixed fixed-top w-100 m-0">
       <div className="container-fluid px-5 py-2">
         <span
-          className="navbar-brand"
+          className="navbar-brand text-white fw-bold"
           role="button"
           onClick={() => navigate("/")}
         >
@@ -29,7 +29,7 @@ const Navbar = () => {
                   className={
                     "nav-link text-decoration-none" +
                     (location.pathname === "/" + path
-                      ? " text-secondary"
+                      ? " text-info"
                       : " text-white")
                   }
                 >
