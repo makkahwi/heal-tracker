@@ -85,7 +85,7 @@ const Form = ({ inputs, onSubmit }: props) => {
                 ))}
               </select>
             ) : type === "dynamicList" ? (
-              <table className="table table-responsive">
+              <table className="table table-bordered table-responsive">
                 <thead>
                   <tr>
                     {inputs?.map((input, x) => (
