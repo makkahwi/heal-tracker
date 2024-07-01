@@ -161,6 +161,7 @@ const Consumption = () => {
                       <ul className="text-start">
                         {contents.map(({ element, count, note }, y) => (
                           <MealView
+                            dark={y % 2 == 1}
                             meal={meal.meal}
                             count={count}
                             element={element}
@@ -175,6 +176,7 @@ const Consumption = () => {
                       <ul className="text-start">
                         {supposed.map(({ element, count, alternatives }, y) => (
                           <MealView
+                            dark={y % 2 == 1}
                             meal={meal.meal}
                             count={count}
                             element={element}
@@ -272,6 +274,7 @@ const Consumption = () => {
                         <ul>
                           {contents.map(({ element, count, note }, y) => (
                             <MealView
+                              dark={y % 2 == 1}
                               meal={meal.meal}
                               count={count}
                               element={element}
@@ -290,6 +293,7 @@ const Consumption = () => {
                           {supposed.map(
                             ({ element, count, alternatives }, y) => (
                               <MealView
+                                dark={y % 2 == 1}
                                 meal={meal.meal}
                                 count={count}
                                 element={element}
