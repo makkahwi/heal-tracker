@@ -189,7 +189,7 @@ const Form = ({ inputs, onSubmit }: props) => {
         )
       )}
 
-      <button className="btn btn-light float-end my-4 p-3" type="submit">
+      <button className="btn btn-secondary float-end my-4 p-3" type="submit">
         Submit
       </button>
     </form>
