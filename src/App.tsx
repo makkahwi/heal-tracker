@@ -1,10 +1,11 @@
 import { Fragment } from "react/jsx-runtime";
 
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Consumption from "./Views/Consumption";
 import Meals from "./Views/Meals";
 import Schedule from "./Views/Schedule";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Welcome from "./Views/Welcome";
+import Navbar from "./Components/Layout/App";
 
 export const routes = [
   {
@@ -28,6 +29,8 @@ const App = () => {
   return (
     <Fragment>
       <BrowserRouter>
+        <Navbar />
+
         <Routes>
           {routes.map(({ name, path, Comp }, i) => (
             <Route path={path} element={Comp} key={i} />
