@@ -375,7 +375,7 @@ const Consumption = () => {
 
         {data.length > showCount ? (
           <button
-            className="btn btn-light"
+            className="btn btn-secondary"
             onClick={() => setShowCount((current) => current + 5)}
           >
             Show More

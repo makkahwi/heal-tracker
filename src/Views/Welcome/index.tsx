@@ -14,7 +14,7 @@ const Welcome = () => {
         <div className="btn-group my-4">
           {routes.map(({ name, path }, x) => (
             <button
-              className="btn btn-light"
+              className="btn btn-secondary"
               onClick={() => navigate(path)}
               key={x}
             >
