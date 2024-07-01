@@ -4,11 +4,12 @@ import moment, { MomentInput } from "moment";
 import { Fragment, useEffect, useState } from "react";
 
 import * as consumptionAPI from "../../API/consumption";
+import * as mealsAPI from "../../API/meals";
 import * as scheduleAPI from "../../API/schedule";
 import Form from "../../Components/Form";
 import MealView, { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
-import { meals } from "../../Utils/consts";
+import { MealProps } from "../Meals";
 
 interface props {
   id?: string;
@@ -22,6 +23,7 @@ const Consumption = () => {
   const [data, setData] = useState<props[]>([]);
   const [showCount, setShowCount] = useState(5);
   const [scheduled, setScheduled] = useState<MealViewProps[]>([]);
+  const [meals, setMeals] = useState<MealProps[]>([]);
 
   const getData = () => {
     scheduleAPI
@@ -40,6 +42,7 @@ const Consumption = () => {
           }))
       )
     );
+    mealsAPI.getAll().then((res: any) => setMeals(res));
   };
 
   useEffect(() => {
