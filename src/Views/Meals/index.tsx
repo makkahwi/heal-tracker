@@ -6,6 +6,7 @@ import * as mealsAPI from "../../API/meals";
 import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
+import moment from "moment";
 
 export interface MealProps {
   id?: string;
@@ -76,7 +77,7 @@ const Meals = () => {
               .map(({ id, time, meal }, y) => (
                 <tr key={y}>
                   <td>{meal}</td>
-                  <td>{time}</td>
+                  <td>{moment("2024-07-01T" + time).format("h:mm a")}</td>
                   <td>
                     {id && (
                       <FontAwesomeIcon

@@ -150,7 +150,10 @@ const Consumption = () => {
                     <td>
                       {meal.meal +
                         " (" +
-                        meals.find((m) => m.meal == meal.meal)?.time +
+                        moment(
+                          "2024-07-01T" +
+                            meals.find((m) => m.meal == meal.meal)?.time
+                        ).format("h:mm a") +
                         ")"}
                     </td>
 

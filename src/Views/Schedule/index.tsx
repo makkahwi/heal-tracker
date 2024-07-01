@@ -6,6 +6,7 @@ import Form from "../../Components/Form";
 import MealView, { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
 import { MealProps } from "../Meals";
+import moment from "moment";
 
 const Schedule = () => {
   const [data, setData] = useState<MealViewProps[]>([]);
@@ -95,7 +96,12 @@ const Schedule = () => {
               )
               .map(({ meal, time }, x) => (
                 <tr key={x}>
-                  <th>{meal + " (" + time + ")"}</th>
+                  <th>
+                    {meal +
+                      " (" +
+                      moment("2024-07-01T" + time).format("h:mm a") +
+                      ")"}
+                  </th>
 
                   <td>
                     {data
