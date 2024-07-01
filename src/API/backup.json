@@ -7,7 +7,10 @@
           "element": "Green Tea"
         }
       ],
-      "meal": "Drink",
+      "meal": {
+        "meal": "Drink",
+        "time": "15:00"
+      },
       "supposed": [
         {
           "count": "1 Cup",
@@ -29,7 +32,10 @@
           "note": "Half Banana"
         }
       ],
-      "meal": "Light Meal 1",
+      "meal": {
+        "meal": "Light Meal 1",
+        "time": "13:00"
+      },
       "supposed": [
         {
           "alternatives": [
@@ -80,7 +86,10 @@
           "element": "Areesh Cheese"
         }
       ],
-      "meal": "Breakfast",
+      "meal": {
+        "meal": "Breakfast",
+        "time": "09:00"
+      },
       "supposed": [
         {
           "count": "1 Slice",
@@ -148,7 +157,10 @@
           "element": "Areesh Cheese"
         }
       ],
-      "meal": "Lunch",
+      "meal": {
+        "meal": "Lunch",
+        "time": "18:00"
+      },
       "supposed": [
         {
           "alternatives": [
@@ -198,7 +210,10 @@
           "element": "Egg"
         }
       ],
-      "meal": "Breakfast",
+      "meal": {
+        "meal": "Breakfast",
+        "time": "09:00"
+      },
       "supposed": [
         {
           "count": "1 Slice",
@@ -253,7 +268,10 @@
           "element": "Green Tea"
         }
       ],
-      "meal": "Drink",
+      "meal": {
+        "meal": "Drink",
+        "time": "15:00"
+      },
       "supposed": [
         {
           "count": "1 Cup",
@@ -270,7 +288,10 @@
           "element": "Various Vegetables"
         }
       ],
-      "meal": "Light Meal 1",
+      "meal": {
+        "meal": "Light Meal 1",
+        "time": "13:00"
+      },
       "supposed": [
         {
           "alternatives": [
@@ -317,7 +338,10 @@
           "element": "Chicken Breast"
         }
       ],
-      "meal": "Lunch",
+      "meal": {
+        "meal": "Lunch",
+        "time": "18:00"
+      },
       "supposed": [
         {
           "alternatives": [
@@ -363,7 +387,10 @@
           "element": "Labaneh"
         }
       ],
-      "meal": "Breakfast",
+      "meal": {
+        "meal": "Breakfast",
+        "time": "09:00"
+      },
       "supposed": [
         {
           "count": "1 Slice",
@@ -418,7 +445,10 @@
           "element": "Various Vegetables"
         }
       ],
-      "meal": "Light Meal 1",
+      "meal": {
+        "meal": "Light Meal 1",
+        "time": "13:00"
+      },
       "supposed": [
         {
           "alternatives": [
@@ -464,7 +494,10 @@
           "element": "Yoghurt"
         }
       ],
-      "meal": "Lunch",
+      "meal": {
+        "meal": "Lunch",
+        "time": "18:00"
+      },
       "supposed": [
         {
           "alternatives": [
@@ -502,7 +535,10 @@
           "note": "Half Orange"
         }
       ],
-      "meal": "Drink",
+      "meal": {
+        "meal": "Drink",
+        "time": "15:00"
+      },
       "supposed": [
         {
           "count": "1 Cup",
@@ -532,7 +568,10 @@
           "element": "Yogurt"
         }
       ],
-      "meal": "Breakfast",
+      "meal": {
+        "meal": "Breakfast",
+        "time": "09:00"
+      },
       "supposed": [
         {
           "count": "1 Slice",
@@ -595,7 +634,10 @@
           "element": "Fruit"
         }
       ],
-      "meal": "Light Meal 1",
+      "meal": {
+        "meal": "Light Meal 1",
+        "time": "13:00"
+      },
       "supposed": [
         {
           "alternatives": [
@@ -633,7 +675,10 @@
           "element": "Green Tea"
         }
       ],
-      "meal": "Drink",
+      "meal": {
+        "meal": "Drink",
+        "time": "15:00"
+      },
       "supposed": [
         {
           "count": "1 Cup",
@@ -658,7 +703,10 @@
           "element": "Salad"
         }
       ],
-      "meal": "Lunch",
+      "meal": {
+        "meal": "Lunch",
+        "time": "18:00"
+      },
       "supposed": [
         {
           "alternatives": [
@@ -695,7 +743,10 @@
           "element": "Yogurt"
         }
       ],
-      "meal": "Light Meal 2",
+      "meal": {
+        "meal": "Light Meal 2",
+        "time": "18:00"
+      },
       "supposed": [
         {
           "count": "1 Cup",
@@ -721,7 +772,10 @@
           "element": "Olive"
         }
       ],
-      "meal": "Breakfast",
+      "meal": {
+        "meal": "Breakfast",
+        "time": "09:00"
+      },
       "supposed": [
         {
           "count": "1 Slice",
@@ -776,7 +830,10 @@
           "element": "Green Tea"
         }
       ],
-      "meal": "Drink",
+      "meal": {
+        "meal": "Drink",
+        "time": "15:00"
+      },
       "supposed": [
         {
           "count": "1 Cup",
@@ -798,7 +855,10 @@
           "element": "Fruit"
         }
       ],
-      "meal": "Light Meal 1",
+      "meal": {
+        "meal": "Light Meal 1",
+        "time": "13:00"
+      },
       "supposed": [
         {
           "alternatives": [
@@ -840,7 +900,10 @@
           "element": "Rice"
         }
       ],
-      "meal": "Lunch",
+      "meal": {
+        "meal": "Lunch",
+        "time": "18:00"
+      },
       "supposed": [
         {
           "alternatives": [
@@ -878,7 +941,10 @@
           "note": "2 Bananas"
         }
       ],
-      "meal": "Light Meal 2",
+      "meal": {
+        "meal": "Light Meal 2",
+        "time": "18:00"
+      },
       "supposed": [
         {
           "count": "1 Cup",
@@ -904,7 +970,10 @@
           "note": "Pepper"
         }
       ],
-      "meal": "Breakfast",
+      "meal": {
+        "meal": "Breakfast",
+        "time": "09:00"
+      },
       "supposed": [
         {
           "count": "4 Pieces",
@@ -968,7 +1037,10 @@
           "element": "Rice"
         }
       ],
-      "meal": "Lunch",
+      "meal": {
+        "meal": "Lunch",
+        "time": "18:00"
+      },
       "supposed": [
         {
           "count": "1 Cup",
@@ -1018,7 +1090,10 @@
           "note": "2 Carrots"
         }
       ],
-      "meal": "Light Meal 1",
+      "meal": {
+        "meal": "Light Meal 1",
+        "time": "13:00"
+      },
       "supposed": [
         {
           "alternatives": [
@@ -1070,7 +1145,10 @@
           "note": "2 Carrots"
         }
       ],
-      "meal": "Breakfast",
+      "meal": {
+        "meal": "Breakfast",
+        "time": "09:00"
+      },
       "supposed": [
         {
           "count": "1/2 Slice",
@@ -1122,6 +1200,345 @@
         }
       ],
       "timestamp": "2024-06-29T11:00:00.000Z"
+    },
+    "-O0_V8XJN6lO6rMzjzXa": {
+      "contents": [
+        {
+          "count": "60gm",
+          "element": "Chicken Breast"
+        },
+        {
+          "count": "200gm",
+          "element": "Rice"
+        }
+      ],
+      "meal": {
+        "meal": "Lunch",
+        "time": "20:00"
+      },
+      "supposed": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Fish"
+            },
+            {
+              "count": "120gm",
+              "element": "Beef"
+            }
+          ],
+          "count": "120gm",
+          "element": "Chicken Breast",
+          "id": "-O0Qp5vwjQroAX36dsqn",
+          "meal": "Lunch"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "150gm",
+              "element": "Bulgur"
+            },
+            {
+              "count": "150gm",
+              "element": "Sauteed Potato & Carrot"
+            },
+            {
+              "count": "150gm",
+              "element": "Cooked Green beans"
+            }
+          ],
+          "count": "150gm",
+          "element": "Rice",
+          "id": "-O0ZuA6RzMt_Fn4wE_lU",
+          "meal": "Lunch"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Salad",
+          "id": "-O0Qp5vu7hxTYQIA5e3W",
+          "meal": "Lunch"
+        }
+      ],
+      "timestamp": "2024-06-29T19:30:00.000Z"
+    },
+    "-O0cGmyMlzghHyRIPnEP": {
+      "contents": [
+        {
+          "count": "1/2 Slice",
+          "element": "Bread",
+          "note": "Reef"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Yogurt"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Various Vegetables",
+          "note": "Carrot"
+        }
+      ],
+      "meal": {
+        "meal": "Breakfast",
+        "time": "09:00"
+      },
+      "supposed": [
+        {
+          "count": "1/2 Slice",
+          "element": "Bread",
+          "id": "-O0Ztaaa_cNF7xEmfxHC",
+          "meal": "Breakfast"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "60gm",
+              "element": "Labaneh"
+            },
+            {
+              "count": "60gm",
+              "element": "Areesh Cheese"
+            },
+            {
+              "count": "50gm",
+              "element": "Chickpeas"
+            },
+            {
+              "count": "Small Can",
+              "element": "Tuna"
+            }
+          ],
+          "count": "2",
+          "element": "Egg",
+          "id": "-O0Qob3DhS-zRoIKYYL5",
+          "meal": "Breakfast"
+        },
+        {
+          "count": "4 Pieces",
+          "element": "Olive",
+          "id": "-O0QoQUrm7vSKZTaniuB",
+          "meal": "Breakfast"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Various Vegetables",
+          "id": "-O0ZtUQcrELg3_G3he1A",
+          "meal": "Breakfast"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Yogurt",
+          "id": "-O0QoQW6n9gd2RXkJQKc",
+          "meal": "Breakfast"
+        }
+      ],
+      "timestamp": "2024-06-30T08:30:00.000Z"
+    },
+    "-O0eJbpdPvBFBcaYZnjj": {
+      "contents": [
+        {
+          "count": "120gm",
+          "element": "Chicken Breast"
+        },
+        {
+          "count": "150gm",
+          "element": "Rice"
+        }
+      ],
+      "meal": {
+        "meal": "Lunch",
+        "time": "20:00"
+      },
+      "supposed": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Fish"
+            },
+            {
+              "count": "120gm",
+              "element": "Beef"
+            }
+          ],
+          "count": "120gm",
+          "element": "Chicken Breast",
+          "id": "-O0Qp5vwjQroAX36dsqn",
+          "meal": "Lunch"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "150gm",
+              "element": "Bulgur"
+            },
+            {
+              "count": "150gm",
+              "element": "Sauteed Potato & Carrot"
+            },
+            {
+              "count": "150gm",
+              "element": "Cooked Green beans"
+            }
+          ],
+          "count": "150gm",
+          "element": "Rice",
+          "id": "-O0ZuA6RzMt_Fn4wE_lU",
+          "meal": "Lunch"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Salad",
+          "id": "-O0Qp5vu7hxTYQIA5e3W",
+          "meal": "Lunch"
+        }
+      ],
+      "timestamp": "2024-06-30T18:00:00.000Z"
+    },
+    "-O0hHxm_12bOpdDsRMRg": {
+      "contents": [
+        {
+          "count": "4 Pieces",
+          "element": "Olive"
+        },
+        {
+          "count": "1/2 Slice",
+          "element": "Bread",
+          "note": "Reef"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Yogurt"
+        },
+        {
+          "count": "60gm",
+          "element": "Areesh Cheese"
+        }
+      ],
+      "meal": {
+        "meal": "Breakfast",
+        "time": "09:00"
+      },
+      "supposed": [
+        {
+          "count": "1/2 Slice",
+          "element": "Bread",
+          "id": "-O0Ztaaa_cNF7xEmfxHC",
+          "meal": "Breakfast"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "60gm",
+              "element": "Labaneh"
+            },
+            {
+              "count": "60gm",
+              "element": "Areesh Cheese"
+            },
+            {
+              "count": "50gm",
+              "element": "Chickpeas"
+            },
+            {
+              "count": "Small Can",
+              "element": "Tuna"
+            }
+          ],
+          "count": "2",
+          "element": "Egg",
+          "id": "-O0Qob3DhS-zRoIKYYL5",
+          "meal": "Breakfast"
+        },
+        {
+          "count": "4 Pieces",
+          "element": "Olive",
+          "id": "-O0QoQUrm7vSKZTaniuB",
+          "meal": "Breakfast"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Various Vegetables",
+          "id": "-O0ZtUQcrELg3_G3he1A",
+          "meal": "Breakfast"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Yogurt",
+          "id": "-O0QoQW6n9gd2RXkJQKc",
+          "meal": "Breakfast"
+        }
+      ],
+      "timestamp": "2024-07-01T06:30:00.000Z"
+    },
+    "-O0i6TPPJYEnIRKdA_G8": {
+      "contents": [
+        {
+          "count": "4 Pieces",
+          "element": "Fruit",
+          "note": "Apricot"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Yogurt"
+        }
+      ],
+      "meal": {
+        "meal": "Light Meal 1",
+        "time": "13:00"
+      },
+      "supposed": [
+        {
+          "alternatives": [
+            {
+              "count": "4 Pieces",
+              "element": "Apricot"
+            },
+            {
+              "count": "3/4 Cup",
+              "element": "Strawberry"
+            },
+            {
+              "count": "1 Piece",
+              "element": "Apple"
+            },
+            {
+              "count": "1 Cup",
+              "element": "Blueberry"
+            }
+          ],
+          "count": "1 Cup",
+          "element": "Fruit",
+          "id": "-O0Ztuqksqb6QVVK83uP",
+          "meal": "Light Meal 1"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Yogurt",
+          "id": "-O0Qopkbit-Vs4gusMUG",
+          "meal": "Light Meal 1"
+        }
+      ],
+      "timestamp": "2024-07-01T11:30:00.000Z"
+    }
+  },
+  "meals": {
+    "-O0iEAfGgeq-_ckBCRMm": {
+      "meal": "Breakfast",
+      "time": "09:00"
+    },
+    "-O0iEIvsESDC37ue4cnB": {
+      "meal": "Light Meal 1",
+      "time": "13:00"
+    },
+    "-O0iEKRI9rRn_ct7Hij6": {
+      "meal": "Light Meal 2",
+      "time": "16:00"
+    },
+    "-O0iEwBVV12nbht0k09y": {
+      "meal": "Lunch",
+      "time": "20:00"
     }
   },
   "schedule": {
