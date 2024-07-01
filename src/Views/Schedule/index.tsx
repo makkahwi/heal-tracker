@@ -114,6 +114,7 @@ const Schedule = () => {
                         ) => (
                           <ul className="text-start" key={y}>
                             <MealView
+                              dark={y % 2 == 1}
                               id={id}
                               meal={meal}
                               count={count}
