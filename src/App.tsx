@@ -1,6 +1,7 @@
 import {
   faCalendar,
   faClock,
+  faPills,
   faRunning,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
@@ -13,6 +14,7 @@ import Meals from "./Views/Meals";
 import Schedule from "./Views/Schedule";
 import Welcome from "./Views/Welcome";
 import Sports from "./Views/Sports";
+import Medicine from "./Views/Medicine";
 
 export const routes = [
   {
@@ -38,6 +40,12 @@ export const routes = [
     path: "sport-sessions",
     icon: faRunning,
     Comp: <Sports />,
+  },
+  {
+    name: "Medicine",
+    path: "medicine",
+    icon: faPills,
+    Comp: <Medicine />,
   },
 ];
 
