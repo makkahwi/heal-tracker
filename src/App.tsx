@@ -17,13 +17,13 @@ export const routes = [
   {
     name: "Schedule",
     path: "schedule",
-    icon: "fa-solid fa-table",
+    icon: "fa-solid fa-calendar",
     Comp: <Schedule />,
   },
   {
     name: "Meals",
     path: "meals",
-    icon: "fa-solid fa-timeline",
+    icon: "fa-solid fa-clock",
     Comp: <Meals />,
   },
 ];
