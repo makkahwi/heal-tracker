@@ -1,7 +1,6 @@
 import { AxiosResponse } from "axios";
 
 import service, { demoStatus } from ".";
-import { mockConsumptionData } from "./mockData";
 
 const getAll = async () => {
   switch (demoStatus()) {

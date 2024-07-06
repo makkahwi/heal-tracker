@@ -67,6 +67,7 @@ const Footer = () => {
                 <a
                   href="https://suhaib.dev"
                   target="_blank"
+                  rel="noreferrer"
                   className="text-decoration-none text-dark"
                 >
                   Suhaib Ahmad
@@ -84,6 +85,7 @@ const Footer = () => {
                         href={link}
                         className="link-dark link-opacity-75-hover"
                         target="_blank"
+                        rel="noreferrer"
                       >
                         <i className={icon} />
                       </a>
