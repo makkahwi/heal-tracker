@@ -104,7 +104,7 @@ const Consumption = () => {
     const time = values.time || moment().format("HH:mm");
 
     const finalValue = {
-      meal: meals.find((m) => m.meal == values.meal),
+      meal: meals.find((m) => m.meal === values.meal),
       contents: values.contents,
       supposed: scheduled.filter(({ meal }) => meal === values.meal),
       timestamp: moment(date + "T" + time),
@@ -159,7 +159,7 @@ const Consumption = () => {
                         " (" +
                         moment(
                           "2024-07-01T" +
-                            meals.find((m) => m.meal == meal.meal)?.time
+                            meals.find((m) => m.meal === meal.meal)?.time
                         ).format("h:mm a") +
                         ")"}
                     </td>
@@ -170,7 +170,7 @@ const Consumption = () => {
                       <ul className="text-start">
                         {contents.map(({ element, count, note }, y) => (
                           <MealView
-                            dark={y % 2 == 1}
+                            dark={y % 2 === 1}
                             meal={meal.meal}
                             count={count}
                             element={element}
@@ -185,7 +185,7 @@ const Consumption = () => {
                       <ul className="text-start">
                         {supposed.map(({ element, count, alternatives }, y) => (
                           <MealView
-                            dark={y % 2 == 1}
+                            dark={y % 2 === 1}
                             meal={meal.meal}
                             count={count}
                             element={element}
@@ -283,7 +283,7 @@ const Consumption = () => {
                         <ul>
                           {contents.map(({ element, count, note }, y) => (
                             <MealView
-                              dark={y % 2 == 1}
+                              dark={y % 2 === 1}
                               meal={meal.meal}
                               count={count}
                               element={element}
@@ -302,7 +302,7 @@ const Consumption = () => {
                           {supposed.map(
                             ({ element, count, alternatives }, y) => (
                               <MealView
-                                dark={y % 2 == 1}
+                                dark={y % 2 === 1}
                                 meal={meal.meal}
                                 count={count}
                                 element={element}
