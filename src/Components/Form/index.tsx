@@ -24,7 +24,12 @@ interface props {
 }
 
 const Form = ({ inputs, onSubmit }: props) => {
-  const [formValues, setFormValues] = useState<dynamicObject>({});
+  const [formValues, setFormValues] = useState<dynamicObject>(
+    inputs.reduce(
+      (final, { defaultValue, name }) => ({ ...final, [name]: defaultValue }),
+      {}
+    )
+  );
 
   return (
     <form
