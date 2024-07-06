@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { routes } from "../../App";
@@ -34,7 +35,7 @@ const Navbar = () => {
                       : " text-white")
                   }
                 >
-                  <i className={icon} />
+                  <FontAwesomeIcon icon={icon} />
                   <span className="ms-2 d-none d-md-inline">{name}</span>
                 </span>
               </li>
