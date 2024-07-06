@@ -3087,6 +3087,30 @@
         }
       ],
       "timestamp": "2024-07-06T18:00:00.000Z"
+    },
+    "-O18Uo-vNswa1o5uuEjx": {
+      "contents": [
+        {
+          "count": "1 Cup",
+          "element": "Milk (Low Fat)",
+          "id": "-O174mlebVdrsY2Y0uHb",
+          "meal": "Light Meal 2"
+        }
+      ],
+      "meal": {
+        "id": "-O0iEKRI9rRn_ct7Hij6",
+        "meal": "Light Meal 2",
+        "time": "16:00"
+      },
+      "supposed": [
+        {
+          "count": "1 Cup",
+          "element": "Milk (Low Fat)",
+          "id": "-O174mlebVdrsY2Y0uHb",
+          "meal": "Light Meal 2"
+        }
+      ],
+      "timestamp": "2024-07-06T14:00:00.000Z"
     }
   },
   "meals": {
@@ -3105,6 +3129,14 @@
     "-O0iEwBVV12nbht0k09y": {
       "meal": "Lunch",
       "time": "20:00"
+    }
+  },
+  "medicine": {
+    "-O18U0st5vAjgxhB6U7k": {
+      "date": "2024-07-06",
+      "medicine": "Vitamine D",
+      "quantity": 2,
+      "time": "21:00"
     }
   },
   "schedule": {
@@ -3222,6 +3254,14 @@
       "count": "1 Cup",
       "element": "Milk (Low Fat)",
       "meal": "Light Meal 2"
+    }
+  },
+  "sessions": {
+    "-O18RnddJDibhYcNTT6N": {
+      "date": "2024-07-06",
+      "distance": "6",
+      "endTime": "19:30",
+      "startTime": "18:25"
     }
   }
 }
