@@ -1,4 +1,9 @@
-import { faCalendar, faClock, faUtensils } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalendar,
+  faClock,
+  faRunning,
+  faUtensils,
+} from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
 
@@ -7,6 +12,7 @@ import Consumption from "./Views/Consumption";
 import Meals from "./Views/Meals";
 import Schedule from "./Views/Schedule";
 import Welcome from "./Views/Welcome";
+import Sports from "./Views/Sports";
 
 export const routes = [
   {
@@ -26,6 +32,12 @@ export const routes = [
     path: "meals",
     icon: faClock,
     Comp: <Meals />,
+  },
+  {
+    name: "Sport Sessions",
+    path: "sport-sessions",
+    icon: faRunning,
+    Comp: <Sports />,
   },
 ];
 
