@@ -1,8 +1,4 @@
-import {
-  faPlus,
-  faPlusCircle,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, useState } from "react";
 
@@ -28,7 +24,12 @@ interface props {
 }
 
 const Form = ({ inputs, onSubmit }: props) => {
-  const [formValues, setFormValues] = useState<dynamicObject>({});
+  const [formValues, setFormValues] = useState<dynamicObject>(
+    inputs.reduce(
+      (final, { defaultValue, name }) => ({ ...final, [name]: defaultValue }),
+      {}
+    )
+  );
 
   return (
     <form
