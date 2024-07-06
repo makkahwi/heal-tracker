@@ -1,3 +1,4 @@
+import { faCalendar, faClock, faUtensils } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
 
@@ -11,19 +12,19 @@ export const routes = [
   {
     name: "Consumption",
     path: "consumption",
-    icon: "fa-solid fa-utensils",
+    icon: faUtensils,
     Comp: <Consumption />,
   },
   {
     name: "Schedule",
     path: "schedule",
-    icon: "fa-solid fa-calendar",
+    icon: faCalendar,
     Comp: <Schedule />,
   },
   {
     name: "Meals",
     path: "meals",
-    icon: "fa-solid fa-clock",
+    icon: faClock,
     Comp: <Meals />,
   },
 ];
