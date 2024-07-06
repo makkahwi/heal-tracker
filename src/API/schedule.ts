@@ -1,7 +1,6 @@
 import { AxiosResponse } from "axios";
 
 import service, { demoStatus } from ".";
-import { mockScheduleData } from "./mockData";
 
 const getAll = async () => {
   switch (demoStatus()) {
@@ -28,4 +27,4 @@ const remove = async (id = "") => {
   }
 };
 
-export { getAll, create, remove };
+export { create, getAll, remove };
