@@ -82,6 +82,7 @@ const Consumption = () => {
       name: "contents",
       label: "Meal Contents",
       type: "dynamicList",
+      fullWidth: true,
       inputs: [
         { name: "element", label: "Element", required: true },
         { name: "count", label: "Count", required: true },

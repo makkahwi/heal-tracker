@@ -36,7 +36,7 @@ const Navbar = () => {
                   }
                 >
                   <FontAwesomeIcon icon={icon} />
-                  <span className="ms-2 d-none d-md-inline">{name}</span>
+                  <span className="ms-2 d-none d-lg-inline">{name}</span>
                 </span>
               </li>
             ))}
