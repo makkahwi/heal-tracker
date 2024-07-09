@@ -4,6 +4,7 @@ import {
   faPills,
   faRunning,
   faUtensils,
+  faWeight,
 } from "@fortawesome/free-solid-svg-icons";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
@@ -11,10 +12,11 @@ import { Fragment } from "react/jsx-runtime";
 import Navbar from "./Components/Layout/Navbar";
 import Consumption from "./Views/Consumption";
 import Meals from "./Views/Meals";
-import Schedule from "./Views/Schedule";
-import Welcome from "./Views/Welcome";
-import Sports from "./Views/Sports";
 import Medicine from "./Views/Medicine";
+import Schedule from "./Views/Schedule";
+import Sports from "./Views/Sports";
+import WeightReadings from "./Views/WeightReadings";
+import Welcome from "./Views/Welcome";
 
 export const routes = [
   {
@@ -46,6 +48,12 @@ export const routes = [
     path: "medicine",
     icon: faPills,
     Comp: <Medicine />,
+  },
+  {
+    name: "Weight Readings",
+    path: "weight-readings",
+    icon: faWeight,
+    Comp: <WeightReadings />,
   },
 ];
 
