@@ -11,6 +11,7 @@ interface inputProps {
   name: string;
   label: string;
   required?: boolean;
+  fullWidth?: boolean;
   type?: string;
   defaultValue?: any;
   onChange?: any;
@@ -33,7 +34,7 @@ const Form = ({ inputs, onSubmit }: props) => {
 
   return (
     <form
-      className="my-4"
+      className="my-4 row"
       onSubmit={(e) => {
         e.preventDefault();
         onSubmit(formValues);
@@ -50,11 +51,12 @@ const Form = ({ inputs, onSubmit }: props) => {
             required,
             defaultValue,
             onChange,
+            fullWidth,
             ...rest
           },
           i
         ) => (
-          <Fragment key={i}>
+          <div className={fullWidth ? "" : "col-md-6 col-lg-4"} key={i}>
             <label className="form-label text-start w-100 mt-4">
               {label}
               {required ? <span className="ms-1 text-danger"> *</span> : ""}
@@ -186,7 +188,7 @@ const Form = ({ inputs, onSubmit }: props) => {
                 {...rest}
               />
             )}
-          </Fragment>
+          </div>
         )
       )}
 
