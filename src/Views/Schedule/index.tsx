@@ -1,3 +1,4 @@
+import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
 
 import * as mealsAPI from "../../API/meals";
@@ -6,7 +7,6 @@ import Form from "../../Components/Form";
 import MealView, { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
 import { MealProps } from "../Meals";
-import moment from "moment";
 
 const Schedule = () => {
   const [data, setData] = useState<MealViewProps[]>([]);
@@ -34,6 +34,7 @@ const Schedule = () => {
       name: "contents",
       label: "Meal Contents",
       type: "dynamicList",
+      fullWidth: true,
       inputs: [
         { name: "element", label: "Element", required: true },
         { name: "count", label: "Count", required: true },
