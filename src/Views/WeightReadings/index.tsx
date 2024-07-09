@@ -1,6 +1,8 @@
 import {
   faArrowCircleDown,
   faArrowCircleUp,
+  faEye,
+  faEyeSlash,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,6 +27,11 @@ export interface props {
 
 const WeightReadings = () => {
   const [data, setData] = useState<props[]>([]);
+  const [showData, setShowData] = useState({
+    readings: [-1],
+    weekly: [-1],
+    sinceStart: [-1],
+  });
 
   const getData = () =>
     weightAPI
@@ -166,8 +173,51 @@ const WeightReadings = () => {
               ({ id, date, weight, fat, water, waist, muscles, x, y }, i) => (
                 <Fragment key={i}>
                   <tr className="align-middle">
-                    <td rowSpan={3}>
+                    <td
+                      rowSpan={
+                        1 +
+                        (showData.weekly.includes(i) ? 1 : 0) +
+                        (showData.sinceStart.includes(i) ? 1 : 0)
+                      }
+                    >
                       {moment(date).format("ddd, D MMM YYYY")}
+
+                      {!showData.weekly.includes(i) && i < data.length - 1 ? (
+                        <span
+                          role="button"
+                          onClick={() =>
+                            setShowData((current) => ({
+                              ...current,
+                              weekly: [...current.weekly, i],
+                            }))
+                          }
+                        >
+                          <br />
+                          <FontAwesomeIcon icon={faEye} className="me-1" />
+                          Weekly Change
+                        </span>
+                      ) : (
+                        ""
+                      )}
+
+                      {!showData.sinceStart.includes(i) &&
+                      i < data.length - 1 ? (
+                        <span
+                          role="button"
+                          onClick={() =>
+                            setShowData((current) => ({
+                              ...current,
+                              sinceStart: [...current.sinceStart, i],
+                            }))
+                          }
+                        >
+                          <br />
+                          <FontAwesomeIcon icon={faEye} className="me-1" />
+                          Since-Start Change
+                        </span>
+                      ) : (
+                        ""
+                      )}
                     </td>
                     <td>Reading</td>
                     <td>{weight + " KG"}</td>
@@ -186,7 +236,13 @@ const WeightReadings = () => {
                     </td>
                     <td>{x}</td>
                     <td>{y}</td>
-                    <td rowSpan={3}>
+                    <td
+                      rowSpan={
+                        1 +
+                        (showData.weekly.includes(i) ? 1 : 0) +
+                        (showData.sinceStart.includes(i) ? 1 : 0)
+                      }
+                    >
                       {id && (
                         <FontAwesomeIcon
                           icon={faTrash}
@@ -198,234 +254,271 @@ const WeightReadings = () => {
                     </td>
                   </tr>
 
-                  <tr className="align-middle">
-                    <td>
-                      Weekly
-                      <br />
-                      Change
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(
-                            data[i + 1]?.weight,
-                            weight,
-                            false,
-                            " KG"
-                          )
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(data[i + 1]?.fat, fat, false, "%")
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(
-                            parseFloat(
-                              (
+                  {showData.weekly.includes(i) ? (
+                    <tr className="align-middle">
+                      <td>
+                        Weekly
+                        <br />
+                        Change
+                        <br />
+                        <FontAwesomeIcon
+                          role="button"
+                          icon={faEyeSlash}
+                          onClick={() =>
+                            setShowData((current) => ({
+                              ...current,
+                              weekly: current.weekly.filter((idx) => idx !== i),
+                            }))
+                          }
+                        />
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(
+                              data[i + 1]?.weight,
+                              weight,
+                              false,
+                              " KG"
+                            )
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(data[i + 1]?.fat, fat, false, "%")
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(
+                              parseFloat(
+                                (
+                                  Math.round(
+                                    data[i + 1]?.fat * data[i + 1]?.weight
+                                  ) / 100
+                                ).toFixed(2)
+                              ),
+                              parseFloat(
+                                (Math.round(fat * weight) / 100).toFixed(2)
+                              ),
+                              false,
+                              " KG"
+                            )
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(
+                              data[i + 1]?.water,
+                              water,
+                              true,
+                              "%"
+                            )
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(
+                              parseFloat(
+                                (
+                                  Math.round(
+                                    data[i + 1]?.water * data[i + 1]?.weight
+                                  ) / 100
+                                ).toFixed(2)
+                              ),
+                              parseFloat(
+                                (Math.round(water * weight) / 100).toFixed(2)
+                              ),
+                              true,
+                              " KG"
+                            )
+                          : ""}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(data[i + 1]?.waist, waist, false)
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(
+                              data[i + 1]?.muscles,
+                              muscles,
+                              true,
+                              " KG"
+                            )
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(
+                              parseFloat(
                                 Math.round(
-                                  data[i + 1]?.fat * data[i + 1]?.weight
-                                ) / 100
-                              ).toFixed(2)
-                            ),
-                            parseFloat(
-                              (Math.round(fat * weight) / 100).toFixed(2)
-                            ),
-                            false,
-                            " KG"
-                          )
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(data[i + 1]?.water, water, true, "%")
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(
-                            parseFloat(
-                              (
-                                Math.round(
-                                  data[i + 1]?.water * data[i + 1]?.weight
-                                ) / 100
-                              ).toFixed(2)
-                            ),
-                            parseFloat(
-                              (Math.round(water * weight) / 100).toFixed(2)
-                            ),
-                            true,
-                            " KG"
-                          )
-                        : ""}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(data[i + 1]?.waist, waist, false)
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(
-                            data[i + 1]?.muscles,
-                            muscles,
-                            true,
-                            " KG"
-                          )
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(
-                            parseFloat(
-                              Math.round(
-                                (data[i + 1]?.muscles / data[i + 1]?.weight) *
-                                  100
-                              ).toFixed(2)
-                            ),
-                            parseFloat(
-                              Math.round((muscles / weight) * 100).toFixed(2)
-                            ),
-                            true,
-                            "%"
-                          )
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(data[i + 1]?.x, x, true)
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(data[i + 1]?.y, y, true)
-                        : "-"}
-                    </td>
-                  </tr>
+                                  (data[i + 1]?.muscles / data[i + 1]?.weight) *
+                                    100
+                                ).toFixed(2)
+                              ),
+                              parseFloat(
+                                Math.round((muscles / weight) * 100).toFixed(2)
+                              ),
+                              true,
+                              "%"
+                            )
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(data[i + 1]?.x, x, true)
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(data[i + 1]?.y, y, true)
+                          : "-"}
+                      </td>
+                    </tr>
+                  ) : (
+                    ""
+                  )}
 
-                  <tr className="align-middle">
-                    <td>
-                      Since-Start
-                      <br />
-                      Change
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(
-                            data[data.length - 1]?.weight,
-                            weight,
-                            false,
-                            " KG"
-                          )
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(
-                            data[data.length - 1]?.fat,
-                            fat,
-                            false,
-                            "%"
-                          )
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(
-                            parseFloat(
-                              (
+                  {showData.sinceStart.includes(i) ? (
+                    <tr className="align-middle">
+                      <td>
+                        Since-Start
+                        <br />
+                        Change
+                        <br />
+                        <FontAwesomeIcon
+                          role="button"
+                          icon={faEyeSlash}
+                          onClick={() =>
+                            setShowData((current) => ({
+                              ...current,
+                              sinceStart: current.sinceStart.filter(
+                                (idx) => idx !== i
+                              ),
+                            }))
+                          }
+                        />
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(
+                              data[data.length - 1]?.weight,
+                              weight,
+                              false,
+                              " KG"
+                            )
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(
+                              data[data.length - 1]?.fat,
+                              fat,
+                              false,
+                              "%"
+                            )
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(
+                              parseFloat(
+                                (
+                                  Math.round(
+                                    data[data.length - 1]?.fat *
+                                      data[data.length - 1]?.weight
+                                  ) / 100
+                                ).toFixed(2)
+                              ),
+                              parseFloat(
+                                (Math.round(fat * weight) / 100).toFixed(2)
+                              ),
+                              false,
+                              " KG"
+                            )
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(
+                              data[data.length - 1]?.water,
+                              water,
+                              true,
+                              "%"
+                            )
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(
+                              parseFloat(
+                                (
+                                  Math.round(
+                                    data[data.length - 1]?.water *
+                                      data[data.length - 1]?.weight
+                                  ) / 100
+                                ).toFixed(2)
+                              ),
+                              parseFloat(
+                                (Math.round(water * weight) / 100).toFixed(2)
+                              ),
+                              true,
+                              " KG"
+                            )
+                          : ""}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(
+                              data[data.length - 1]?.waist,
+                              waist,
+                              false
+                            )
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(
+                              data[data.length - 1]?.muscles,
+                              muscles,
+                              true,
+                              " KG"
+                            )
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(
+                              parseFloat(
                                 Math.round(
-                                  data[data.length - 1]?.fat *
-                                    data[data.length - 1]?.weight
-                                ) / 100
-                              ).toFixed(2)
-                            ),
-                            parseFloat(
-                              (Math.round(fat * weight) / 100).toFixed(2)
-                            ),
-                            false,
-                            " KG"
-                          )
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(
-                            data[data.length - 1]?.water,
-                            water,
-                            true,
-                            "%"
-                          )
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(
-                            parseFloat(
-                              (
-                                Math.round(
-                                  data[data.length - 1]?.water *
-                                    data[data.length - 1]?.weight
-                                ) / 100
-                              ).toFixed(2)
-                            ),
-                            parseFloat(
-                              (Math.round(water * weight) / 100).toFixed(2)
-                            ),
-                            true,
-                            " KG"
-                          )
-                        : ""}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(
-                            data[data.length - 1]?.waist,
-                            waist,
-                            false
-                          )
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(
-                            data[data.length - 1]?.muscles,
-                            muscles,
-                            true,
-                            " KG"
-                          )
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(
-                            parseFloat(
-                              Math.round(
-                                (data[data.length - 1]?.muscles /
-                                  data[data.length - 1]?.weight) *
-                                  100
-                              ).toFixed(2)
-                            ),
-                            parseFloat(
-                              Math.round((muscles / weight) * 100).toFixed(2)
-                            ),
-                            true,
-                            "%"
-                          )
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(data[data.length - 1]?.x, x, true)
-                        : "-"}
-                    </td>
-                    <td>
-                      {i < data.length - 1
-                        ? changeCalculator(data[data.length - 1]?.y, y, true)
-                        : "-"}
-                    </td>
-                  </tr>
+                                  (data[data.length - 1]?.muscles /
+                                    data[data.length - 1]?.weight) *
+                                    100
+                                ).toFixed(2)
+                              ),
+                              parseFloat(
+                                Math.round((muscles / weight) * 100).toFixed(2)
+                              ),
+                              true,
+                              "%"
+                            )
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(data[data.length - 1]?.x, x, true)
+                          : "-"}
+                      </td>
+                      <td>
+                        {i < data.length - 1
+                          ? changeCalculator(data[data.length - 1]?.y, y, true)
+                          : "-"}
+                      </td>
+                    </tr>
+                  ) : (
+                    ""
+                  )}
                 </Fragment>
               )
             )}
