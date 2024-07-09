@@ -1,12 +1,12 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
 
 import * as sessionsAPI from "../../API/sessions";
 import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
-import moment from "moment";
 
 export interface MealProps {
   id?: string;
@@ -98,7 +98,7 @@ const Sports = () => {
 
           <tbody>
             {data
-              ?.sort((a, b) => (a.date > b.date ? 1 : -1))
+              ?.sort((a, b) => (a.date < b.date ? 1 : -1))
               .map(({ id, startTime, endTime, distance, date }, y) => (
                 <tr key={y}>
                   <td>{moment(date).format("ddd, D MMM YYYY")}</td>
