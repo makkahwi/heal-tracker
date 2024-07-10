@@ -196,7 +196,7 @@ const WeightReadings = () => {
                 ? changeCalculator(sortedRes[i + 1]?.y, y, true)
                 : "-",
             weightSinceStartChange:
-              i < sortedRes.length - 1
+              i < sortedRes.length - 2
                 ? changeCalculator(
                     sortedRes[sortedRes.length - 1]?.weight,
                     weight,
@@ -205,7 +205,7 @@ const WeightReadings = () => {
                   )
                 : "-",
             fatSinceStartChange:
-              i < sortedRes.length - 1
+              i < sortedRes.length - 2
                 ? changeCalculator(
                     sortedRes[sortedRes.length - 1]?.fat,
                     fat,
@@ -214,7 +214,7 @@ const WeightReadings = () => {
                   )
                 : "-",
             fatWeightSinceStartChange:
-              i < sortedRes.length - 1
+              i < sortedRes.length - 2
                 ? changeCalculator(
                     parseFloat(
                       (
@@ -230,7 +230,7 @@ const WeightReadings = () => {
                   )
                 : "-",
             waterSinceStartChange:
-              i < sortedRes.length - 1
+              i < sortedRes.length - 2
                 ? changeCalculator(
                     sortedRes[sortedRes.length - 1]?.water,
                     water,
@@ -239,7 +239,7 @@ const WeightReadings = () => {
                   )
                 : "-",
             waterWeightSinceStartChange:
-              i < sortedRes.length - 1
+              i < sortedRes.length - 2
                 ? changeCalculator(
                     parseFloat(
                       (
@@ -255,7 +255,7 @@ const WeightReadings = () => {
                   )
                 : "-",
             waistSinceStartChange:
-              i < sortedRes.length - 1
+              i < sortedRes.length - 2
                 ? changeCalculator(
                     sortedRes[sortedRes.length - 1]?.waist,
                     waist,
@@ -263,7 +263,7 @@ const WeightReadings = () => {
                   )
                 : "-",
             musclesSinceStartChange:
-              i < sortedRes.length - 1
+              i < sortedRes.length - 2
                 ? changeCalculator(
                     sortedRes[sortedRes.length - 1]?.muscles,
                     muscles,
@@ -272,7 +272,7 @@ const WeightReadings = () => {
                   )
                 : "-",
             musclesPercentageSinceStartChange:
-              i < sortedRes.length - 1
+              i < sortedRes.length - 2
                 ? changeCalculator(
                     parseFloat(
                       Math.round(
@@ -287,11 +287,11 @@ const WeightReadings = () => {
                   )
                 : "-",
             xSinceStartChange:
-              i < sortedRes.length - 1
+              i < sortedRes.length - 2
                 ? changeCalculator(sortedRes[sortedRes.length - 1]?.x, x, true)
                 : "-",
             ySinceStartChange:
-              i < sortedRes.length - 1
+              i < sortedRes.length - 2
                 ? changeCalculator(sortedRes[sortedRes.length - 1]?.y, y, true)
                 : "-",
           })
@@ -506,32 +506,36 @@ const WeightReadings = () => {
                               title="Weekly Change"
                             />
 
-                            <FontAwesomeIcon
-                              role="button"
-                              onClick={() =>
-                                !showData.sinceStart.includes(i)
-                                  ? setShowData((current) => ({
-                                      ...current,
-                                      sinceStart: [...current.sinceStart, i],
-                                    }))
-                                  : setShowData((current) => ({
-                                      ...current,
-                                      sinceStart: current.sinceStart.filter(
-                                        (idx) => idx !== i
-                                      ),
-                                    }))
-                              }
-                              icon={faCalendar}
-                              className={
-                                "me-1 text-" +
-                                (!showData.sinceStart.includes(i)
-                                  ? "success"
-                                  : "danger")
-                              }
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="top"
-                              title="Since-Start Change"
-                            />
+                            {i < data.length - 2 ? (
+                              <FontAwesomeIcon
+                                role="button"
+                                onClick={() =>
+                                  !showData.sinceStart.includes(i)
+                                    ? setShowData((current) => ({
+                                        ...current,
+                                        sinceStart: [...current.sinceStart, i],
+                                      }))
+                                    : setShowData((current) => ({
+                                        ...current,
+                                        sinceStart: current.sinceStart.filter(
+                                          (idx) => idx !== i
+                                        ),
+                                      }))
+                                }
+                                icon={faCalendar}
+                                className={
+                                  "me-1 text-" +
+                                  (!showData.sinceStart.includes(i)
+                                    ? "success"
+                                    : "danger")
+                                }
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                title="Since-Start Change"
+                              />
+                            ) : (
+                              ""
+                            )}
                           </Fragment>
                         ) : (
                           ""
@@ -873,32 +877,36 @@ const WeightReadings = () => {
                               title="Weekly Change"
                             />
 
-                            <FontAwesomeIcon
-                              role="button"
-                              onClick={() =>
-                                !showData.sinceStart.includes(i)
-                                  ? setShowData((current) => ({
-                                      ...current,
-                                      sinceStart: [...current.sinceStart, i],
-                                    }))
-                                  : setShowData((current) => ({
-                                      ...current,
-                                      sinceStart: current.sinceStart.filter(
-                                        (idx) => idx !== i
-                                      ),
-                                    }))
-                              }
-                              icon={faCalendar}
-                              className={
-                                "me-1 text-" +
-                                (!showData.sinceStart.includes(i)
-                                  ? "success"
-                                  : "danger")
-                              }
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="top"
-                              title="Since-Start Change"
-                            />
+                            {i < data.length - 2 ? (
+                              <FontAwesomeIcon
+                                role="button"
+                                onClick={() =>
+                                  !showData.sinceStart.includes(i)
+                                    ? setShowData((current) => ({
+                                        ...current,
+                                        sinceStart: [...current.sinceStart, i],
+                                      }))
+                                    : setShowData((current) => ({
+                                        ...current,
+                                        sinceStart: current.sinceStart.filter(
+                                          (idx) => idx !== i
+                                        ),
+                                      }))
+                                }
+                                icon={faCalendar}
+                                className={
+                                  "me-1 text-" +
+                                  (!showData.sinceStart.includes(i)
+                                    ? "success"
+                                    : "danger")
+                                }
+                                data-bs-toggle="tooltip"
+                                data-bs-placement="top"
+                                title="Since-Start Change"
+                              />
+                            ) : (
+                              ""
+                            )}
                           </Fragment>
                         ) : (
                           ""
