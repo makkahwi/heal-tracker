@@ -1,10 +1,4 @@
-import {
-  faArrowCircleDown,
-  faArrowCircleUp,
-  faCalendar,
-  faCalendarDays,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleDown, faArrowCircleUp, faCalendar, faCalendarDays, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, ReactNode, useEffect, useState } from "react";
@@ -381,7 +375,7 @@ const WeightReadings = () => {
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
-        <div className="d-none d-lg-block">
+        <div className="d-none d-xl-block">
           <table className="table table-bordered table-responsive table-striped">
             <thead>
               <tr className="align-middle">
@@ -593,7 +587,7 @@ const WeightReadings = () => {
           </table>
         </div>
 
-        <div className="d-block d-lg-none">
+        <div className="d-block d-xl-none">
           {data.map(
             (
               {
