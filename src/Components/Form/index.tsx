@@ -1,6 +1,6 @@
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 
 interface dynamicObject {
   [key: string]: any;
@@ -76,7 +76,6 @@ const Form = ({ inputs, onSubmit }: props) => {
                       }))
                 }
                 required={required}
-                defaultValue={defaultValue}
                 {...rest}
               >
                 <option>Please Choose...</option>
@@ -145,7 +144,6 @@ const Form = ({ inputs, onSubmit }: props) => {
                                   }))
                             }
                             required={input.required}
-                            defaultValue={input.defaultValue}
                             className="form-control"
                           />
                         </td>
@@ -184,7 +182,6 @@ const Form = ({ inputs, onSubmit }: props) => {
                 }
                 className="form-control"
                 required={required}
-                defaultValue={defaultValue}
                 {...rest}
               />
             )}
