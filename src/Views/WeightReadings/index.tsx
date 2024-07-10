@@ -1,7 +1,13 @@
-import { faArrowCircleDown, faArrowCircleUp, faCalendar, faCalendarDays, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowCircleDown,
+  faArrowCircleUp,
+  faCalendar,
+  faCalendarDays,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, ReactNode, useEffect, useState } from "react";
 
 import * as weightAPI from "../../API/weight";
 import Form from "../../Components/Form";
@@ -19,20 +25,279 @@ export interface props {
   y: number;
 }
 
+interface calculationsProps {
+  fatWeight: string;
+  waterWeight: string;
+  musclesPercentage: string;
+
+  weightWeeklyChange: ReactNode;
+  fatWeeklyChange: ReactNode;
+  fatWeightWeeklyChange: ReactNode;
+  waterWeeklyChange: ReactNode;
+  waterWeightWeeklyChange: ReactNode;
+  waistWeeklyChange: ReactNode;
+  musclesWeeklyChange: ReactNode;
+  musclesPercentageWeeklyChange: ReactNode;
+  xWeeklyChange: ReactNode;
+  yWeeklyChange: ReactNode;
+
+  weightSinceStartChange: ReactNode;
+  fatSinceStartChange: ReactNode;
+  fatWeightSinceStartChange: ReactNode;
+  waterSinceStartChange: ReactNode;
+  waterWeightSinceStartChange: ReactNode;
+  waistSinceStartChange: ReactNode;
+  musclesSinceStartChange: ReactNode;
+  musclesPercentageSinceStartChange: ReactNode;
+  xSinceStartChange: ReactNode;
+  ySinceStartChange: ReactNode;
+}
+
+type fullProps = props & calculationsProps;
+
 const WeightReadings = () => {
-  const [data, setData] = useState<props[]>([]);
+  const [data, setData] = useState<fullProps[]>([]);
   const [showData, setShowData] = useState({
     readings: [-1],
     weekly: [-1],
     sinceStart: [-1],
   });
 
+  const changeCalculator = (
+    first: number,
+    second: number,
+    flip: boolean,
+    unit?: string
+  ) => {
+    let icon = faArrowCircleUp;
+    let color = flip ? "success" : "danger";
+
+    if (first > second) {
+      icon = faArrowCircleDown;
+      color = flip ? "danger" : "success";
+    }
+
+    const changeAmount = parseFloat((second - first).toFixed(2));
+    const changePercentage = ((changeAmount / first) * 100).toFixed(2);
+
+    return (
+      <span className={"text-" + color}>
+        {changeAmount} {unit}
+        <br />
+        {changePercentage + "%"}
+        <br />
+        <FontAwesomeIcon icon={icon} />
+      </span>
+    );
+  };
+
   const getData = () =>
-    weightAPI
-      .getAll()
-      .then((res: props[]) =>
-        setData(res?.sort((a: props, b: props) => (a.date < b.date ? 1 : -1)))
+    weightAPI.getAll().then((res: props[]) => {
+      const sortedRes = res?.sort((a: props, b: props) =>
+        a.date < b.date ? 1 : -1
       );
+
+      setData(
+        sortedRes.map(
+          ({ id, date, weight, fat, water, waist, muscles, x, y }, i) => ({
+            id,
+            date,
+            weight,
+            fat,
+            water,
+            waist,
+            muscles,
+            x,
+            y,
+            fatWeight: (Math.round(fat * weight) / 100).toFixed(2) + " KG",
+            waterWeight: (Math.round(water * weight) / 100).toFixed(2) + " KG",
+            musclesPercentage:
+              Math.round((muscles / weight) * 100).toFixed(2) + "%",
+            weightWeeklyChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(
+                    sortedRes[i + 1]?.weight,
+                    weight,
+                    false,
+                    " KG"
+                  )
+                : "-",
+            fatWeeklyChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(sortedRes[i + 1]?.fat, fat, false, "%")
+                : "-",
+            fatWeightWeeklyChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(
+                    parseFloat(
+                      (
+                        Math.round(
+                          sortedRes[i + 1]?.fat * sortedRes[i + 1]?.weight
+                        ) / 100
+                      ).toFixed(2)
+                    ),
+                    parseFloat((Math.round(fat * weight) / 100).toFixed(2)),
+                    false,
+                    " KG"
+                  )
+                : "-",
+            waterWeeklyChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(sortedRes[i + 1]?.water, water, true, "%")
+                : "-",
+            waterWeightWeeklyChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(
+                    parseFloat(
+                      (
+                        Math.round(
+                          sortedRes[i + 1]?.water * sortedRes[i + 1]?.weight
+                        ) / 100
+                      ).toFixed(2)
+                    ),
+                    parseFloat((Math.round(water * weight) / 100).toFixed(2)),
+                    true,
+                    " KG"
+                  )
+                : "-",
+            waistWeeklyChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(sortedRes[i + 1]?.waist, waist, false)
+                : "-",
+            musclesWeeklyChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(
+                    sortedRes[i + 1]?.muscles,
+                    muscles,
+                    true,
+                    " KG"
+                  )
+                : "-",
+            musclesPercentageWeeklyChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(
+                    parseFloat(
+                      Math.round(
+                        (sortedRes[i + 1]?.muscles / sortedRes[i + 1]?.weight) *
+                          100
+                      ).toFixed(2)
+                    ),
+                    parseFloat(Math.round((muscles / weight) * 100).toFixed(2)),
+                    true,
+                    "%"
+                  )
+                : "-",
+            xWeeklyChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(sortedRes[i + 1]?.x, x, true)
+                : "-",
+            yWeeklyChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(sortedRes[i + 1]?.y, y, true)
+                : "-",
+            weightSinceStartChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(
+                    sortedRes[sortedRes.length - 1]?.weight,
+                    weight,
+                    false,
+                    " KG"
+                  )
+                : "-",
+            fatSinceStartChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(
+                    sortedRes[sortedRes.length - 1]?.fat,
+                    fat,
+                    false,
+                    "%"
+                  )
+                : "-",
+            fatWeightSinceStartChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(
+                    parseFloat(
+                      (
+                        Math.round(
+                          sortedRes[sortedRes.length - 1]?.fat *
+                            sortedRes[sortedRes.length - 1]?.weight
+                        ) / 100
+                      ).toFixed(2)
+                    ),
+                    parseFloat((Math.round(fat * weight) / 100).toFixed(2)),
+                    false,
+                    " KG"
+                  )
+                : "-",
+            waterSinceStartChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(
+                    sortedRes[sortedRes.length - 1]?.water,
+                    water,
+                    true,
+                    "%"
+                  )
+                : "-",
+            waterWeightSinceStartChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(
+                    parseFloat(
+                      (
+                        Math.round(
+                          sortedRes[sortedRes.length - 1]?.water *
+                            sortedRes[sortedRes.length - 1]?.weight
+                        ) / 100
+                      ).toFixed(2)
+                    ),
+                    parseFloat((Math.round(water * weight) / 100).toFixed(2)),
+                    true,
+                    " KG"
+                  )
+                : "-",
+            waistSinceStartChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(
+                    sortedRes[sortedRes.length - 1]?.waist,
+                    waist,
+                    false
+                  )
+                : "-",
+            musclesSinceStartChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(
+                    sortedRes[sortedRes.length - 1]?.muscles,
+                    muscles,
+                    true,
+                    " KG"
+                  )
+                : "-",
+            musclesPercentageSinceStartChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(
+                    parseFloat(
+                      Math.round(
+                        (sortedRes[sortedRes.length - 1]?.muscles /
+                          sortedRes[sortedRes.length - 1]?.weight) *
+                          100
+                      ).toFixed(2)
+                    ),
+                    parseFloat(Math.round((muscles / weight) * 100).toFixed(2)),
+                    true,
+                    "%"
+                  )
+                : "-",
+            xSinceStartChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(sortedRes[sortedRes.length - 1]?.x, x, true)
+                : "-",
+            ySinceStartChange:
+              i < sortedRes.length - 1
+                ? changeCalculator(sortedRes[sortedRes.length - 1]?.y, y, true)
+                : "-",
+          })
+        )
+      );
+    });
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
@@ -111,34 +376,6 @@ const WeightReadings = () => {
       getData();
     });
 
-  const changeCalculator = (
-    first: number,
-    second: number,
-    flip: boolean,
-    unit?: string
-  ) => {
-    let icon = faArrowCircleUp;
-    let color = flip ? "success" : "danger";
-
-    if (first > second) {
-      icon = faArrowCircleDown;
-      color = flip ? "danger" : "success";
-    }
-
-    const changeAmount = parseFloat((second - first).toFixed(2));
-    const changePercentage = ((changeAmount / first) * 100).toFixed(2);
-
-    return (
-      <span className={"text-" + color}>
-        {changeAmount} {unit}
-        <br />
-        {changePercentage + "%"}
-        <br />
-        <FontAwesomeIcon icon={icon} />
-      </span>
-    );
-  };
-
   return (
     <PageSection title="Weight Readings List">
       <Fragment>
@@ -165,7 +402,43 @@ const WeightReadings = () => {
 
             <tbody>
               {data.map(
-                ({ id, date, weight, fat, water, waist, muscles, x, y }, i) => (
+                (
+                  {
+                    id,
+                    date,
+                    weight,
+                    fat,
+                    water,
+                    waist,
+                    muscles,
+                    fatWeight,
+                    waterWeight,
+                    musclesPercentage,
+                    weightWeeklyChange,
+                    fatWeeklyChange,
+                    fatWeightWeeklyChange,
+                    waterWeeklyChange,
+                    waterWeightWeeklyChange,
+                    waistWeeklyChange,
+                    musclesWeeklyChange,
+                    musclesPercentageWeeklyChange,
+                    xWeeklyChange,
+                    yWeeklyChange,
+                    weightSinceStartChange,
+                    fatSinceStartChange,
+                    fatWeightSinceStartChange,
+                    waterSinceStartChange,
+                    waterWeightSinceStartChange,
+                    waistSinceStartChange,
+                    musclesSinceStartChange,
+                    musclesPercentageSinceStartChange,
+                    xSinceStartChange,
+                    ySinceStartChange,
+                    x,
+                    y,
+                  },
+                  i
+                ) => (
                   <Fragment key={i}>
                     <tr className="align-middle">
                       <td
@@ -180,18 +453,12 @@ const WeightReadings = () => {
                       <td>Reading</td>
                       <td>{weight + " KG"}</td>
                       <td>{fat + "%"}</td>
-                      <td>
-                        {(Math.round(fat * weight) / 100).toFixed(2) + " KG"}
-                      </td>
+                      <td>{fatWeight}</td>
                       <td>{water + "%"}</td>
-                      <td>
-                        {(Math.round(water * weight) / 100).toFixed(2) + " KG"}
-                      </td>
+                      <td>{waterWeight}</td>
                       <td>{waist}</td>
                       <td>{muscles + " KG"}</td>
-                      <td>
-                        {Math.round((muscles / weight) * 100).toFixed(2) + "%"}
-                      </td>
+                      <td>{musclesPercentage}</td>
                       <td>{x}</td>
                       <td>{y}</td>
                       <td
@@ -279,117 +546,16 @@ const WeightReadings = () => {
                           <br />
                           Change
                         </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[i + 1]?.weight,
-                                weight,
-                                false,
-                                " KG"
-                              )
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[i + 1]?.fat,
-                                fat,
-                                false,
-                                "%"
-                              )
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                parseFloat(
-                                  (
-                                    Math.round(
-                                      data[i + 1]?.fat * data[i + 1]?.weight
-                                    ) / 100
-                                  ).toFixed(2)
-                                ),
-                                parseFloat(
-                                  (Math.round(fat * weight) / 100).toFixed(2)
-                                ),
-                                false,
-                                " KG"
-                              )
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[i + 1]?.water,
-                                water,
-                                true,
-                                "%"
-                              )
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                parseFloat(
-                                  (
-                                    Math.round(
-                                      data[i + 1]?.water * data[i + 1]?.weight
-                                    ) / 100
-                                  ).toFixed(2)
-                                ),
-                                parseFloat(
-                                  (Math.round(water * weight) / 100).toFixed(2)
-                                ),
-                                true,
-                                " KG"
-                              )
-                            : ""}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(data[i + 1]?.waist, waist, false)
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[i + 1]?.muscles,
-                                muscles,
-                                true,
-                                " KG"
-                              )
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                parseFloat(
-                                  Math.round(
-                                    (data[i + 1]?.muscles /
-                                      data[i + 1]?.weight) *
-                                      100
-                                  ).toFixed(2)
-                                ),
-                                parseFloat(
-                                  Math.round((muscles / weight) * 100).toFixed(
-                                    2
-                                  )
-                                ),
-                                true,
-                                "%"
-                              )
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(data[i + 1]?.x, x, true)
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(data[i + 1]?.y, y, true)
-                            : "-"}
-                        </td>
+                        <td>{weightWeeklyChange}</td>
+                        <td>{fatWeeklyChange}</td>
+                        <td>{fatWeightWeeklyChange}</td>
+                        <td>{waterWeeklyChange}</td>
+                        <td>{waterWeightWeeklyChange}</td>
+                        <td>{waistWeeklyChange}</td>
+                        <td>{musclesWeeklyChange}</td>
+                        <td>{musclesPercentageWeeklyChange}</td>
+                        <td>{xWeeklyChange}</td>
+                        <td>{yWeeklyChange}</td>
                       </tr>
                     ) : (
                       ""
@@ -402,131 +568,16 @@ const WeightReadings = () => {
                           <br />
                           Change
                         </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[data.length - 1]?.weight,
-                                weight,
-                                false,
-                                " KG"
-                              )
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[data.length - 1]?.fat,
-                                fat,
-                                false,
-                                "%"
-                              )
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                parseFloat(
-                                  (
-                                    Math.round(
-                                      data[data.length - 1]?.fat *
-                                        data[data.length - 1]?.weight
-                                    ) / 100
-                                  ).toFixed(2)
-                                ),
-                                parseFloat(
-                                  (Math.round(fat * weight) / 100).toFixed(2)
-                                ),
-                                false,
-                                " KG"
-                              )
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[data.length - 1]?.water,
-                                water,
-                                true,
-                                "%"
-                              )
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                parseFloat(
-                                  (
-                                    Math.round(
-                                      data[data.length - 1]?.water *
-                                        data[data.length - 1]?.weight
-                                    ) / 100
-                                  ).toFixed(2)
-                                ),
-                                parseFloat(
-                                  (Math.round(water * weight) / 100).toFixed(2)
-                                ),
-                                true,
-                                " KG"
-                              )
-                            : ""}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[data.length - 1]?.waist,
-                                waist,
-                                false
-                              )
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[data.length - 1]?.muscles,
-                                muscles,
-                                true,
-                                " KG"
-                              )
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                parseFloat(
-                                  Math.round(
-                                    (data[data.length - 1]?.muscles /
-                                      data[data.length - 1]?.weight) *
-                                      100
-                                  ).toFixed(2)
-                                ),
-                                parseFloat(
-                                  Math.round((muscles / weight) * 100).toFixed(
-                                    2
-                                  )
-                                ),
-                                true,
-                                "%"
-                              )
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[data.length - 1]?.x,
-                                x,
-                                true
-                              )
-                            : "-"}
-                        </td>
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[data.length - 1]?.y,
-                                y,
-                                true
-                              )
-                            : "-"}
-                        </td>
+                        <td>{weightSinceStartChange}</td>
+                        <td>{fatSinceStartChange}</td>
+                        <td>{fatWeightSinceStartChange}</td>
+                        <td>{waterSinceStartChange}</td>
+                        <td>{waterWeightSinceStartChange}</td>
+                        <td>{waistSinceStartChange}</td>
+                        <td>{musclesSinceStartChange}</td>
+                        <td>{musclesPercentageSinceStartChange}</td>
+                        <td>{xSinceStartChange}</td>
+                        <td>{ySinceStartChange}</td>
                       </tr>
                     ) : (
                       ""
@@ -540,7 +591,43 @@ const WeightReadings = () => {
 
         <div className="d-block d-lg-none">
           {data.map(
-            ({ id, date, weight, fat, water, waist, muscles, x, y }, i) => (
+            (
+              {
+                id,
+                date,
+                weight,
+                fat,
+                water,
+                waist,
+                muscles,
+                fatWeight,
+                waterWeight,
+                musclesPercentage,
+                weightWeeklyChange,
+                fatWeeklyChange,
+                fatWeightWeeklyChange,
+                waterWeeklyChange,
+                waterWeightWeeklyChange,
+                waistWeeklyChange,
+                musclesWeeklyChange,
+                musclesPercentageWeeklyChange,
+                xWeeklyChange,
+                yWeeklyChange,
+                weightSinceStartChange,
+                fatSinceStartChange,
+                fatWeightSinceStartChange,
+                waterSinceStartChange,
+                waterWeightSinceStartChange,
+                waistSinceStartChange,
+                musclesSinceStartChange,
+                musclesPercentageSinceStartChange,
+                xSinceStartChange,
+                ySinceStartChange,
+                x,
+                y,
+              },
+              i
+            ) => (
               <div className="card p-3 py-4 my-4 w-100" key={i}>
                 <table className="table table-bordered table-responsive table-striped">
                   <tbody>
@@ -574,31 +661,13 @@ const WeightReadings = () => {
                       <td>{weight + " KG"}</td>
 
                       {showData.weekly.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[i + 1]?.weight,
-                                weight,
-                                false,
-                                " KG"
-                              )
-                            : "-"}
-                        </td>
+                        <td>{weightWeeklyChange}</td>
                       ) : (
                         ""
                       )}
 
                       {showData.sinceStart.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[data.length - 1]?.weight,
-                                weight,
-                                false,
-                                " KG"
-                              )
-                            : "-"}
-                        </td>
+                        <td>{weightSinceStartChange}</td>
                       ) : (
                         ""
                       )}
@@ -609,31 +678,13 @@ const WeightReadings = () => {
                       <td>{fat + "%"}</td>
 
                       {showData.weekly.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[i + 1]?.fat,
-                                fat,
-                                false,
-                                "%"
-                              )
-                            : "-"}
-                        </td>
+                        <td>{fatWeeklyChange}</td>
                       ) : (
                         ""
                       )}
 
                       {showData.sinceStart.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[data.length - 1]?.fat,
-                                fat,
-                                false,
-                                "%"
-                              )
-                            : "-"}
-                        </td>
+                        <td>{fatSinceStartChange}</td>
                       ) : (
                         ""
                       )}
@@ -641,53 +692,16 @@ const WeightReadings = () => {
 
                     <tr className="align-middle">
                       <th>Fat Weight</th>
-                      <td>
-                        {(Math.round(fat * weight) / 100).toFixed(2) + " KG"}
-                      </td>
+                      <td>{fatWeight}</td>
 
                       {showData.weekly.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                parseFloat(
-                                  (
-                                    Math.round(
-                                      data[i + 1]?.fat * data[i + 1]?.weight
-                                    ) / 100
-                                  ).toFixed(2)
-                                ),
-                                parseFloat(
-                                  (Math.round(fat * weight) / 100).toFixed(2)
-                                ),
-                                false,
-                                " KG"
-                              )
-                            : "-"}
-                        </td>
+                        <td>{fatWeightWeeklyChange}</td>
                       ) : (
                         ""
                       )}
 
                       {showData.sinceStart.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                parseFloat(
-                                  (
-                                    Math.round(
-                                      data[data.length - 1]?.fat *
-                                        data[data.length - 1]?.weight
-                                    ) / 100
-                                  ).toFixed(2)
-                                ),
-                                parseFloat(
-                                  (Math.round(fat * weight) / 100).toFixed(2)
-                                ),
-                                false,
-                                " KG"
-                              )
-                            : "-"}
-                        </td>
+                        <td>{fatWeightSinceStartChange}</td>
                       ) : (
                         ""
                       )}
@@ -698,31 +712,13 @@ const WeightReadings = () => {
                       <td>{water + "%"}</td>
 
                       {showData.weekly.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[i + 1]?.water,
-                                water,
-                                true,
-                                "%"
-                              )
-                            : "-"}
-                        </td>
+                        <td>{waterWeeklyChange}</td>
                       ) : (
                         ""
                       )}
 
                       {showData.sinceStart.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[data.length - 1]?.water,
-                                water,
-                                true,
-                                "%"
-                              )
-                            : "-"}
-                        </td>
+                        <td>{waterSinceStartChange}</td>
                       ) : (
                         ""
                       )}
@@ -730,53 +726,16 @@ const WeightReadings = () => {
 
                     <tr className="align-middle">
                       <th>Water Weight</th>
-                      <td>
-                        {(Math.round(water * weight) / 100).toFixed(2) + " KG"}
-                      </td>
+                      <td>{waterWeight}</td>
 
                       {showData.weekly.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                parseFloat(
-                                  (
-                                    Math.round(
-                                      data[i + 1]?.water * data[i + 1]?.weight
-                                    ) / 100
-                                  ).toFixed(2)
-                                ),
-                                parseFloat(
-                                  (Math.round(water * weight) / 100).toFixed(2)
-                                ),
-                                true,
-                                " KG"
-                              )
-                            : ""}
-                        </td>
+                        <td>{waterWeightWeeklyChange}</td>
                       ) : (
                         ""
                       )}
 
                       {showData.sinceStart.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                parseFloat(
-                                  (
-                                    Math.round(
-                                      data[data.length - 1]?.water *
-                                        data[data.length - 1]?.weight
-                                    ) / 100
-                                  ).toFixed(2)
-                                ),
-                                parseFloat(
-                                  (Math.round(water * weight) / 100).toFixed(2)
-                                ),
-                                true,
-                                " KG"
-                              )
-                            : ""}
-                        </td>
+                        <td>{waterWeightSinceStartChange}</td>
                       ) : (
                         ""
                       )}
@@ -787,25 +746,13 @@ const WeightReadings = () => {
                       <td>{waist}</td>
 
                       {showData.weekly.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(data[i + 1]?.waist, waist, false)
-                            : "-"}
-                        </td>
+                        <td>{waistWeeklyChange}</td>
                       ) : (
                         ""
                       )}
 
                       {showData.sinceStart.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[data.length - 1]?.waist,
-                                waist,
-                                false
-                              )
-                            : "-"}
-                        </td>
+                        <td>{waistSinceStartChange}</td>
                       ) : (
                         ""
                       )}
@@ -816,31 +763,13 @@ const WeightReadings = () => {
                       <td>{muscles + " KG"}</td>
 
                       {showData.weekly.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[i + 1]?.muscles,
-                                muscles,
-                                true,
-                                " KG"
-                              )
-                            : "-"}
-                        </td>
+                        <td>{musclesWeeklyChange}</td>
                       ) : (
                         ""
                       )}
 
                       {showData.sinceStart.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[data.length - 1]?.muscles,
-                                muscles,
-                                true,
-                                " KG"
-                              )
-                            : "-"}
-                        </td>
+                        <td>{musclesSinceStartChange}</td>
                       ) : (
                         ""
                       )}
@@ -848,56 +777,16 @@ const WeightReadings = () => {
 
                     <tr className="align-middle">
                       <th>Muscles Percentage</th>
-                      <td>
-                        {Math.round((muscles / weight) * 100).toFixed(2) + "%"}
-                      </td>
+                      <td>{musclesPercentage}</td>
 
                       {showData.weekly.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                parseFloat(
-                                  Math.round(
-                                    (data[i + 1]?.muscles /
-                                      data[i + 1]?.weight) *
-                                      100
-                                  ).toFixed(2)
-                                ),
-                                parseFloat(
-                                  Math.round((muscles / weight) * 100).toFixed(
-                                    2
-                                  )
-                                ),
-                                true,
-                                "%"
-                              )
-                            : "-"}
-                        </td>
+                        <td>{musclesPercentageWeeklyChange}</td>
                       ) : (
                         ""
                       )}
 
                       {showData.sinceStart.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                parseFloat(
-                                  Math.round(
-                                    (data[data.length - 1]?.muscles /
-                                      data[data.length - 1]?.weight) *
-                                      100
-                                  ).toFixed(2)
-                                ),
-                                parseFloat(
-                                  Math.round((muscles / weight) * 100).toFixed(
-                                    2
-                                  )
-                                ),
-                                true,
-                                "%"
-                              )
-                            : "-"}
-                        </td>
+                        <td>{musclesPercentageSinceStartChange}</td>
                       ) : (
                         ""
                       )}
@@ -908,25 +797,13 @@ const WeightReadings = () => {
                       <td>{x}</td>
 
                       {showData.weekly.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(data[i + 1]?.x, x, true)
-                            : "-"}
-                        </td>
+                        <td>{xWeeklyChange}</td>
                       ) : (
                         ""
                       )}
 
                       {showData.sinceStart.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[data.length - 1]?.x,
-                                x,
-                                true
-                              )
-                            : "-"}
-                        </td>
+                        <td>{xSinceStartChange}</td>
                       ) : (
                         ""
                       )}
@@ -937,25 +814,13 @@ const WeightReadings = () => {
                       <td>{y}</td>
 
                       {showData.weekly.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(data[i + 1]?.y, y, true)
-                            : "-"}
-                        </td>
+                        <td>{yWeeklyChange}</td>
                       ) : (
                         ""
                       )}
 
                       {showData.sinceStart.includes(i) ? (
-                        <td>
-                          {i < data.length - 1
-                            ? changeCalculator(
-                                data[data.length - 1]?.y,
-                                y,
-                                true
-                              )
-                            : "-"}
-                        </td>
+                        <td>{ySinceStartChange}</td>
                       ) : (
                         ""
                       )}
