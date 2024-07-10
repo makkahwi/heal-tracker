@@ -1,10 +1,4 @@
-import {
-  faArrowCircleDown,
-  faArrowCircleUp,
-  faCalendar,
-  faCalendarDays,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleDown, faArrowCircleUp, faCalendar, faCalendarDays, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
@@ -547,7 +541,7 @@ const WeightReadings = () => {
         <div className="d-block d-lg-none">
           {data.map(
             ({ id, date, weight, fat, water, waist, muscles, x, y }, i) => (
-              <div className="card p-3 py-4 my-4 w-100" key={x}>
+              <div className="card p-3 py-4 my-4 w-100" key={i}>
                 <table className="table table-bordered table-responsive table-striped">
                   <tbody>
                     <tr className="align-middle">

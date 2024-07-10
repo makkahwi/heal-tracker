@@ -123,7 +123,6 @@ const Schedule = () => {
                               alternatives={alternatives}
                               note={note}
                               onDelete={onDelete}
-                              key={y}
                             />
                           </ul>
                         )
