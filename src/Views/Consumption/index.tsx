@@ -10,8 +10,9 @@ import Form from "../../Components/Form";
 import MealView, { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageSection";
 import { MealProps } from "../Meals";
+import WeeklyCalendar from "./WeeklyCalendar";
 
-interface props {
+export interface props {
   id?: string;
   timestamp: MomentInput;
   meal: MealProps;
@@ -125,6 +126,8 @@ const Consumption = () => {
     <PageSection title="Consumed Meals">
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
+
+        <WeeklyCalendar data={data} meals={meals} />
 
         <div className="d-none d-md-block">
           <table className="table table-bordered table-responsive table-striped">
