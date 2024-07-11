@@ -29,7 +29,7 @@ const WeeklyCalendar = ({
         )
       )
     );
-  }, [currentWeek]);
+  }, [currentWeek, data]);
 
   const generateCurrentWeek = (date: Moment) => {
     const startOfWeek = date.clone().startOf("week"); // Start of the week is Sunday by default
