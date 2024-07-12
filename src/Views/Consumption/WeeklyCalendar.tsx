@@ -32,7 +32,7 @@ const WeeklyCalendar = ({
   }, [currentWeek, data]);
 
   const generateCurrentWeek = (date: Moment) => {
-    const startOfWeek = date.clone().startOf("week"); // Start of the week is Sunday by default
+    const startOfWeek = date.clone().isoWeekday(6); // Start of the week is Sunday by default
     const days: Moment[] = [];
 
     for (let i = 0; i < 7; i++) {
@@ -51,7 +51,7 @@ const WeeklyCalendar = ({
   };
 
   return (
-    <table className="table table-bordered table-responsive table-striped">
+    <table className="table table-bordered table-responsive table-striped bg-white">
       <tr>
         <th>
           <button className="btn btn-secondary" onClick={handlePreviousWeek}>
@@ -97,18 +97,42 @@ const WeeklyCalendar = ({
         //   .map(({ meal }) => meal)
         .map((meal, i) => (
           <tr key={i}>
-            <th>{meal}</th>
+            <th className="text-start">
+              {meal}
 
-            {currentWeek.map((day, x) => (
-              <td className="text-start" key={x}>
-                {currentWeekData
-                  .find(
-                    (dat) =>
-                      meal === dat.meal.meal &&
-                      moment(dat.timestamp).format("yyyy-MM-DD") ===
-                        day.format("yyyy-MM-DD")
-                  )
-                  ?.contents.map(({ element, count, note }, y) => (
+              {currentWeekData
+                .find((dat) => meal === dat.meal.meal)
+                ?.supposed.map(({ element, count, note }, y) => (
+                  <MealView
+                    dark={y % 2 === 1}
+                    meal={meal}
+                    count={count}
+                    element={element}
+                    note={note}
+                    key={y}
+                  />
+                )) || ""}
+            </th>
+
+            {currentWeek.map((day, x) => {
+              const theMeal: props | undefined = currentWeekData.find(
+                (dat) =>
+                  meal === dat.meal.meal &&
+                  moment(dat.timestamp).format("yyyy-MM-DD") ===
+                    day.format("yyyy-MM-DD")
+              );
+
+              return (
+                <td className="text-start align-top" key={x}>
+                  {theMeal?.timestamp ? (
+                    <span className="d-block bg-dark text-white">
+                      {"@ " + moment(theMeal?.timestamp).format("h:mm a")}
+                    </span>
+                  ) : (
+                    ""
+                  )}
+
+                  {theMeal?.contents.map(({ element, count, note }, y) => (
                     <MealView
                       dark={y % 2 === 1}
                       meal={meal}
@@ -118,8 +142,9 @@ const WeeklyCalendar = ({
                       key={y}
                     />
                   ))}
-              </td>
-            ))}
+                </td>
+              );
+            })}
           </tr>
         ))}
     </table>

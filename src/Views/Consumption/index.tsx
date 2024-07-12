@@ -127,7 +127,9 @@ const Consumption = () => {
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
-        <WeeklyCalendar data={data} meals={meals} />
+        <div className="d-none d-lg-block">
+          <WeeklyCalendar data={data} meals={meals} />
+        </div>
 
         <div className="d-none d-md-block">
           <table className="table table-bordered table-responsive table-striped">
