@@ -24,7 +24,7 @@ const WeeklyCalendar = ({
     setCurrentWeekData(
       data.filter(({ timestamp }) =>
         moment(timestamp).isBetween(
-          moment(currentWeek[0]),
+          moment(currentWeek[0]).subtract(1, "days"),
           moment(currentWeek[6])
         )
       )
