@@ -15,6 +15,8 @@ export interface inputProps {
   type?: string;
   defaultValue?: any;
   onChange?: any;
+  lowEnd?: number;
+  highEnd?: number;
   options?: string[];
   inputs?: inputProps[];
   render?: Function;
