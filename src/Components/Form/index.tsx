@@ -7,7 +7,7 @@ interface dynamicObject {
   // | number | object | string[] | number[] | object[];
 }
 
-interface inputProps {
+export interface inputProps {
   name: string;
   label: string;
   required?: boolean;
@@ -15,8 +15,11 @@ interface inputProps {
   type?: string;
   defaultValue?: any;
   onChange?: any;
+  lowEnd?: number;
+  highEnd?: number;
   options?: string[];
   inputs?: inputProps[];
+  render?: Function;
 }
 
 interface props {

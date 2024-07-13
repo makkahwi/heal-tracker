@@ -64,8 +64,6 @@ const Medicine = () => {
   }
 
   const onSubmit = (values: submitProps) => {
-    console.log({ values });
-
     medicineAPI.create(values).then(() => {
       getData();
     });
