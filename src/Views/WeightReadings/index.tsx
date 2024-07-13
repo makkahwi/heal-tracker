@@ -1,4 +1,10 @@
-import { faArrowCircleDown, faArrowCircleUp, faCalendar, faCalendarDays, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowCircleDown,
+  faArrowCircleUp,
+  faCalendar,
+  faCalendarDays,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, ReactNode, useEffect, useState } from "react";
@@ -358,8 +364,6 @@ const WeightReadings = () => {
   ];
 
   const onSubmit = (values: props) => {
-    console.log({ values });
-
     weightAPI.create(values).then(() => {
       getData();
     });
