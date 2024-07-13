@@ -7,7 +7,7 @@ interface dynamicObject {
   // | number | object | string[] | number[] | object[];
 }
 
-interface inputProps {
+export interface inputProps {
   name: string;
   label: string;
   required?: boolean;
@@ -17,6 +17,7 @@ interface inputProps {
   onChange?: any;
   options?: string[];
   inputs?: inputProps[];
+  render?: Function;
 }
 
 interface props {
