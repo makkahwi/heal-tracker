@@ -1,6 +1,7 @@
 import {
   faCalendar,
   faClock,
+  faFileMedical,
   faPills,
   faRunning,
   faUtensils,
@@ -11,6 +12,7 @@ import { Fragment } from "react/jsx-runtime";
 
 import Navbar from "./Components/Layout/Navbar";
 import Consumption from "./Views/Consumption";
+import LabTests from "./Views/LabTests";
 import Meals from "./Views/Meals";
 import Medicine from "./Views/Medicine";
 import Schedule from "./Views/Schedule";
@@ -54,6 +56,12 @@ export const routes = [
     path: "weight-readings",
     icon: faWeight,
     Comp: <WeightReadings />,
+  },
+  {
+    name: "Lab Tests",
+    path: "lab-tests",
+    icon: faFileMedical,
+    Comp: <LabTests />,
   },
 ];
 
