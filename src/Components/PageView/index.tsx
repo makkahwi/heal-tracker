@@ -19,12 +19,12 @@ const PageView = ({ title, data, inputs, onSubmit, onDelete }: props) => {
       <Fragment>
         <Form inputs={inputs} onSubmit={onSubmit} />
 
-        <div className="d-none d-xl-block">
+        <div className={"d-none " + (inputs.length > 15 ? "" : "d-lg-block")}>
           <table className="table table-bordered table-responsive table-striped">
             <thead>
               <tr className="align-middle">
                 {inputs.map(({ label }, x) => (
-                  <th>{label}</th>
+                  <th key={x}>{label}</th>
                 ))}
 
                 <th>Actions</th>
@@ -52,6 +52,43 @@ const PageView = ({ title, data, inputs, onSubmit, onDelete }: props) => {
               ))}
             </tbody>
           </table>
+        </div>
+
+        <div className={"d-block " + (inputs.length > 15 ? "" : "d-lg-none")}>
+          {data.map(({ id, ...row }, i) => (
+            <div className="card mb-4" key={i}>
+              <table className="table table-bordered table-responsive table-striped m-0">
+                <tbody>
+                  {inputs
+                    .filter(({ name, render }) =>
+                      render ? render(row) : (row as any)[name]
+                    )
+                    .map(({ label, name, render }, x) => (
+                      <tr className="align-middle" key={x}>
+                        <th>{label}</th>
+
+                        <td>{render ? render(row) : (row as any)[name]}</td>
+                      </tr>
+                    ))}
+
+                  <tr className="align-middle">
+                    <th>Actions</th>
+
+                    <td>
+                      {id && (
+                        <FontAwesomeIcon
+                          icon={faTrash}
+                          role="button"
+                          className="mx-1 text-danger"
+                          onClick={() => onDelete(id)}
+                        />
+                      )}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          ))}
         </div>
       </Fragment>
     </PageSection>
