@@ -64,8 +64,6 @@ const Sports = () => {
   }
 
   const onSubmit = (values: submitProps) => {
-    console.log({ values });
-
     sessionsAPI.create(values).then(() => {
       getData();
     });
