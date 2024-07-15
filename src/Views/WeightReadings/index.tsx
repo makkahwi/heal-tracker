@@ -1,10 +1,4 @@
-import {
-  faArrowCircleDown,
-  faArrowCircleUp,
-  faCalendar,
-  faCalendarDays,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleDown, faArrowCircleUp, faCalendar, faCalendarDays, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, ReactNode, useEffect, useState } from "react";
@@ -403,8 +397,8 @@ const WeightReadings = () => {
                 <th>Waist Fat</th>
                 <th>Muscles Reading</th>
                 <th>Muscles Percentage</th>
-                <th>X</th>
-                <th>Y</th>
+                <th>Physique Rating</th>
+                <th>Bones Mass</th>
                 <th>Actions</th>
               </tr>
             </thead>
