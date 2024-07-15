@@ -1,12 +1,9 @@
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import * as medicineAPI from "../../API/medicine";
-import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
-import PageSection from "../../Components/PageSection";
+import PageView from "../../Components/PageView";
 
 export interface MealProps {
   id?: string;
@@ -32,6 +29,7 @@ const Medicine = () => {
       label: "Date",
       type: "date",
       defaultValue: moment().format("yyyy-MM-DD"),
+      render: (row: any) => moment(row.date).format("ddd, D MMM YYYY"),
       required: true,
     },
     {
@@ -75,50 +73,13 @@ const Medicine = () => {
     });
 
   return (
-    <PageSection title="Medicine List">
-      <Fragment>
-        <Form inputs={formInputs} onSubmit={onSubmit} />
-
-        <table className="table table-bordered table-responsive table-striped">
-          <thead>
-            <tr className="align-middle">
-              <th>Date</th>
-
-              <th>Time</th>
-
-              <th>Medicine</th>
-
-              <th>Quantity</th>
-
-              <th>Actions</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {data
-              ?.sort((a, b) => (a.date < b.date ? 1 : -1))
-              .map(({ id, time, medicine, quantity, date }, y) => (
-                <tr key={y}>
-                  <td>{moment(date).format("ddd, D MMM YYYY")}</td>
-                  <td>{moment("2024-07-01T" + time).format("h:mm a")}</td>
-                  <td>{medicine}</td>
-                  <td>{quantity}</td>
-                  <td>
-                    {id && (
-                      <FontAwesomeIcon
-                        icon={faTrash}
-                        role="button"
-                        className="mx-1 text-danger"
-                        onClick={() => onDelete(id)}
-                      />
-                    )}
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
-      </Fragment>
-    </PageSection>
+    <PageView
+      title="Medicine List"
+      data={data}
+      inputs={formInputs}
+      onSubmit={onSubmit}
+      onDelete={onDelete}
+    />
   );
 };
 
