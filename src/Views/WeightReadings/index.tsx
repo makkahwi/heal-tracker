@@ -21,8 +21,8 @@ export interface props {
   water: number;
   waist: number;
   muscles: number;
-  x: number;
-  y: number;
+  physique: number;
+  bones: number;
 }
 
 interface calculationsProps {
@@ -38,8 +38,8 @@ interface calculationsProps {
   waistWeeklyChange: ReactNode;
   musclesWeeklyChange: ReactNode;
   musclesPercentageWeeklyChange: ReactNode;
-  xWeeklyChange: ReactNode;
-  yWeeklyChange: ReactNode;
+  physiqueWeeklyChange: ReactNode;
+  bonesWeeklyChange: ReactNode;
 
   weightSinceStartChange: ReactNode;
   fatSinceStartChange: ReactNode;
@@ -49,8 +49,8 @@ interface calculationsProps {
   waistSinceStartChange: ReactNode;
   musclesSinceStartChange: ReactNode;
   musclesPercentageSinceStartChange: ReactNode;
-  xSinceStartChange: ReactNode;
-  ySinceStartChange: ReactNode;
+  physiqueSinceStartChange: ReactNode;
+  bonesSinceStartChange: ReactNode;
 }
 
 type fullProps = props & calculationsProps;
@@ -99,7 +99,10 @@ const WeightReadings = () => {
 
       setData(
         sortedRes.map(
-          ({ id, date, weight, fat, water, waist, muscles, x, y }, i) => ({
+          (
+            { id, date, weight, fat, water, waist, muscles, physique, bones },
+            i
+          ) => ({
             id,
             date,
             weight,
@@ -107,8 +110,8 @@ const WeightReadings = () => {
             water,
             waist,
             muscles,
-            x,
-            y,
+            physique,
+            bones,
             fatWeight: (Math.round(fat * weight) / 100).toFixed(2) + " KG",
             waterWeight: (Math.round(water * weight) / 100).toFixed(2) + " KG",
             musclesPercentage:
@@ -187,13 +190,13 @@ const WeightReadings = () => {
                     "%"
                   )
                 : "-",
-            xWeeklyChange:
+            physiqueWeeklyChange:
               i < sortedRes.length - 1
-                ? changeCalculator(sortedRes[i + 1]?.x, x, true)
+                ? changeCalculator(sortedRes[i + 1]?.physique, physique, true)
                 : "-",
-            yWeeklyChange:
+            bonesWeeklyChange:
               i < sortedRes.length - 1
-                ? changeCalculator(sortedRes[i + 1]?.y, y, true)
+                ? changeCalculator(sortedRes[i + 1]?.bones, bones, true)
                 : "-",
             weightSinceStartChange:
               i < sortedRes.length - 2
@@ -286,13 +289,21 @@ const WeightReadings = () => {
                     "%"
                   )
                 : "-",
-            xSinceStartChange:
+            physiqueSinceStartChange:
               i < sortedRes.length - 2
-                ? changeCalculator(sortedRes[sortedRes.length - 1]?.x, x, true)
+                ? changeCalculator(
+                    sortedRes[sortedRes.length - 1]?.physique,
+                    physique,
+                    true
+                  )
                 : "-",
-            ySinceStartChange:
+            bonesSinceStartChange:
               i < sortedRes.length - 2
-                ? changeCalculator(sortedRes[sortedRes.length - 1]?.y, y, true)
+                ? changeCalculator(
+                    sortedRes[sortedRes.length - 1]?.bones,
+                    bones,
+                    true
+                  )
                 : "-",
           })
         )
@@ -348,15 +359,15 @@ const WeightReadings = () => {
       required: true,
     },
     {
-      name: "x",
-      label: "X Reading",
+      name: "physique",
+      label: "Physique Rating",
       type: "number",
       step: "0.1",
       required: true,
     },
     {
-      name: "y",
-      label: "Y Reading",
+      name: "bones",
+      label: "Bones Mass",
       type: "number",
       step: "0.1",
       required: true,
@@ -420,8 +431,8 @@ const WeightReadings = () => {
                     waistWeeklyChange,
                     musclesWeeklyChange,
                     musclesPercentageWeeklyChange,
-                    xWeeklyChange,
-                    yWeeklyChange,
+                    physiqueWeeklyChange,
+                    bonesWeeklyChange,
                     weightSinceStartChange,
                     fatSinceStartChange,
                     fatWeightSinceStartChange,
@@ -430,10 +441,10 @@ const WeightReadings = () => {
                     waistSinceStartChange,
                     musclesSinceStartChange,
                     musclesPercentageSinceStartChange,
-                    xSinceStartChange,
-                    ySinceStartChange,
-                    x,
-                    y,
+                    physiqueSinceStartChange,
+                    bonesSinceStartChange,
+                    physique,
+                    bones,
                   },
                   i
                 ) => (
@@ -457,8 +468,8 @@ const WeightReadings = () => {
                       <td>{waist}</td>
                       <td>{muscles + " KG"}</td>
                       <td>{musclesPercentage}</td>
-                      <td>{x}</td>
-                      <td>{y}</td>
+                      <td>{physique}</td>
+                      <td>{bones}</td>
                       <td
                         rowSpan={
                           1 +
@@ -556,8 +567,8 @@ const WeightReadings = () => {
                         <td>{waistWeeklyChange}</td>
                         <td>{musclesWeeklyChange}</td>
                         <td>{musclesPercentageWeeklyChange}</td>
-                        <td>{xWeeklyChange}</td>
-                        <td>{yWeeklyChange}</td>
+                        <td>{physiqueWeeklyChange}</td>
+                        <td>{bonesWeeklyChange}</td>
                       </tr>
                     ) : (
                       ""
@@ -578,8 +589,8 @@ const WeightReadings = () => {
                         <td>{waistSinceStartChange}</td>
                         <td>{musclesSinceStartChange}</td>
                         <td>{musclesPercentageSinceStartChange}</td>
-                        <td>{xSinceStartChange}</td>
-                        <td>{ySinceStartChange}</td>
+                        <td>{physiqueSinceStartChange}</td>
+                        <td>{bonesSinceStartChange}</td>
                       </tr>
                     ) : (
                       ""
@@ -613,8 +624,8 @@ const WeightReadings = () => {
                 waistWeeklyChange,
                 musclesWeeklyChange,
                 musclesPercentageWeeklyChange,
-                xWeeklyChange,
-                yWeeklyChange,
+                physiqueWeeklyChange,
+                bonesWeeklyChange,
                 weightSinceStartChange,
                 fatSinceStartChange,
                 fatWeightSinceStartChange,
@@ -623,10 +634,10 @@ const WeightReadings = () => {
                 waistSinceStartChange,
                 musclesSinceStartChange,
                 musclesPercentageSinceStartChange,
-                xSinceStartChange,
-                ySinceStartChange,
-                x,
-                y,
+                physiqueSinceStartChange,
+                bonesSinceStartChange,
+                physique,
+                bones,
               },
               i
             ) => (
@@ -796,16 +807,16 @@ const WeightReadings = () => {
 
                     <tr className="align-middle">
                       <th>X</th>
-                      <td>{x}</td>
+                      <td>{physique}</td>
 
                       {showData.weekly.includes(i) ? (
-                        <td>{xWeeklyChange}</td>
+                        <td>{physiqueWeeklyChange}</td>
                       ) : (
                         ""
                       )}
 
                       {showData.sinceStart.includes(i) ? (
-                        <td>{xSinceStartChange}</td>
+                        <td>{physiqueSinceStartChange}</td>
                       ) : (
                         ""
                       )}
@@ -813,16 +824,16 @@ const WeightReadings = () => {
 
                     <tr className="align-middle">
                       <th>Y</th>
-                      <td>{y}</td>
+                      <td>{bones}</td>
 
                       {showData.weekly.includes(i) ? (
-                        <td>{yWeeklyChange}</td>
+                        <td>{bonesWeeklyChange}</td>
                       ) : (
                         ""
                       )}
 
                       {showData.sinceStart.includes(i) ? (
-                        <td>{ySinceStartChange}</td>
+                        <td>{bonesSinceStartChange}</td>
                       ) : (
                         ""
                       )}
