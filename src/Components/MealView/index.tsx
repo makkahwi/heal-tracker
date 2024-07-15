@@ -27,7 +27,11 @@ const MealView = ({
   onDelete,
   dark,
 }: MealViewProps & props) => (
-  <li className={dark && onDelete ? "bg-light p-2" : " py-1 px-2"}>
+  <li
+    className={
+      "text-start " + (dark && onDelete ? "bg-light p-2" : " py-1 px-2")
+    }
+  >
     {count + " of " + element + (note ? " (" + note + ")" : "")}
 
     {onDelete && (
