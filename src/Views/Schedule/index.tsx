@@ -1,11 +1,10 @@
 import moment from "moment";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import * as mealsAPI from "../../API/meals";
 import * as scheduleAPI from "../../API/schedule";
-import Form from "../../Components/Form";
 import MealView, { MealViewProps } from "../../Components/MealView";
-import PageSection from "../../Components/PageSection";
+import PageView from "../../Components/PageView";
 import { MealProps } from "../Meals";
 
 const Schedule = () => {
@@ -13,8 +12,15 @@ const Schedule = () => {
   const [meals, setMeals] = useState<MealProps[]>([]);
 
   const getData = () => {
-    scheduleAPI.getAll().then((res: any) => setData(res));
-    mealsAPI.getAll().then((res: any) => setMeals(res));
+    mealsAPI.getAll().then((meals: MealProps[]) => {
+      setMeals(meals);
+
+      scheduleAPI
+        .getAll()
+        .then((res: MealViewProps[]) =>
+          setData(res.sort((a: any, b: any) => (a.meal < b.meal ? -1 : 1)))
+        );
+    });
   };
 
   useEffect(() => {
@@ -28,6 +34,14 @@ const Schedule = () => {
       label: "Meal of Day",
       type: "select",
       options: meals.map(({ meal }) => meal),
+      render: (row: MealViewProps, i: number) =>
+        i > 0 && row.meal === data[i - 1].meal
+          ? "^^^^^"
+          : row.meal +
+            " @ " +
+            moment(
+              "2022-01-01T" + meals.find(({ meal }) => meal === row.meal)?.time
+            ).format("h:mm a"),
       required: true,
     },
     {
@@ -35,6 +49,7 @@ const Schedule = () => {
       label: "Meal Contents",
       type: "dynamicList",
       fullWidth: true,
+      render: (row: MealViewProps) => <MealView {...row} />,
       inputs: [
         { name: "element", label: "Element", required: true },
         { name: "count", label: "Count", required: true },
@@ -77,63 +92,13 @@ const Schedule = () => {
     });
 
   return (
-    <PageSection title="Scheduled Meals">
-      <Fragment>
-        <Form inputs={formInputs} onSubmit={onSubmit} />
-
-        <table className="table table-bordered table-responsive table-striped">
-          <thead>
-            <tr className="align-middle">
-              <th>Meal of Day</th>
-
-              <th>Meal Contents</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {meals
-              .filter(
-                ({ meal }) => data?.filter((rec) => rec.meal === meal)?.length
-              )
-              .map(({ meal, time }, x) => (
-                <tr key={x}>
-                  <th>
-                    {meal +
-                      " (" +
-                      moment("2024-07-01T" + time).format("h:mm a") +
-                      ")"}
-                  </th>
-
-                  <td>
-                    {data
-                      ?.sort((a, b) => (a.element > b.element ? 1 : -1))
-                      ?.filter((rec) => rec.meal === meal)
-                      .map(
-                        (
-                          { element = "", count = "", alternatives, note, id },
-                          y
-                        ) => (
-                          <ul className="text-start" key={y}>
-                            <MealView
-                              dark={y % 2 === 1}
-                              id={id}
-                              meal={meal}
-                              count={count}
-                              element={element}
-                              alternatives={alternatives}
-                              note={note}
-                              onDelete={onDelete}
-                            />
-                          </ul>
-                        )
-                      )}
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
-      </Fragment>
-    </PageSection>
+    <PageView
+      title="Scheduled Meals List"
+      data={data}
+      inputs={formInputs}
+      onSubmit={onSubmit}
+      onDelete={onDelete}
+    />
   );
 };
 

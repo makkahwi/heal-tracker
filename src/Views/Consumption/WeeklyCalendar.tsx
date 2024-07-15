@@ -1,17 +1,10 @@
 import moment, { Moment } from "moment";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 import MealView from "../../Components/MealView";
 import { props } from "../../Views/Consumption";
-import { MealProps } from "../../Views/Meals";
 
-const WeeklyCalendar = ({
-  meals,
-  data,
-}: {
-  meals: MealProps[];
-  data: props[];
-}) => {
+const WeeklyCalendar = ({ data }: { data: props[] }) => {
   const [currentWeek, setCurrentWeek] = useState<Moment[]>([]);
   const [currentDate, setCurrentDate] = useState<Moment>(moment());
   const [currentWeekData, setCurrentWeekData] = useState<props[]>([]);
@@ -102,7 +95,7 @@ const WeeklyCalendar = ({
 
               {currentWeekData
                 .find((dat) => meal === dat.meal.meal)
-                ?.supposed.map(({ element, count, note }, y) => (
+                ?.supposed?.map(({ element, count, note }, y) => (
                   <MealView
                     dark={y % 2 === 1}
                     meal={meal}
@@ -115,32 +108,38 @@ const WeeklyCalendar = ({
             </th>
 
             {currentWeek.map((day, x) => {
-              const theMeal: props | undefined = currentWeekData.find(
-                (dat) =>
-                  meal === dat.meal.meal &&
-                  moment(dat.timestamp).format("yyyy-MM-DD") ===
-                    day.format("yyyy-MM-DD")
-              );
+              const theMeals: props[] | undefined = currentWeekData
+                .filter(
+                  (dat) =>
+                    meal === dat.meal.meal &&
+                    moment(dat.timestamp).format("yyyy-MM-DD") ===
+                      day.format("yyyy-MM-DD")
+                )
+                .sort((a: any, b: any) => (a.timestamp < b.timestamp ? -1 : 1));
 
               return (
                 <td className="text-start align-top" key={x}>
-                  {theMeal?.timestamp ? (
-                    <span className="d-block bg-dark text-white">
-                      {"@ " + moment(theMeal?.timestamp).format("h:mm a")}
-                    </span>
-                  ) : (
-                    ""
-                  )}
+                  {theMeals?.map((theMeal) => (
+                    <Fragment>
+                      {theMeal.timestamp ? (
+                        <span className="d-block bg-dark text-white">
+                          {"@ " + moment(theMeal?.timestamp).format("h:mm a")}
+                        </span>
+                      ) : (
+                        ""
+                      )}
 
-                  {theMeal?.contents.map(({ element, count, note }, y) => (
-                    <MealView
-                      dark={y % 2 === 1}
-                      meal={meal}
-                      count={count}
-                      element={element}
-                      note={note}
-                      key={y}
-                    />
+                      {theMeal.contents.map(({ element, count, note }, y) => (
+                        <MealView
+                          dark={y % 2 === 1}
+                          meal={meal}
+                          count={count}
+                          element={element}
+                          note={note}
+                          key={y}
+                        />
+                      ))}
+                    </Fragment>
                   ))}
                 </td>
               );
