@@ -102,7 +102,7 @@ const WeeklyCalendar = ({
 
               {currentWeekData
                 .find((dat) => meal === dat.meal.meal)
-                ?.supposed.map(({ element, count, note }, y) => (
+                ?.supposed?.map(({ element, count, note }, y) => (
                   <MealView
                     dark={y % 2 === 1}
                     meal={meal}
