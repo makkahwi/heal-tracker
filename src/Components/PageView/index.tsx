@@ -52,8 +52,7 @@ const PageView = ({ title, data, inputs, onSubmit, onDelete }: props) => {
                   {inputs.map(({ name, render, lowEnd, highEnd }, x) => (
                     <td
                       className={
-                        "fw-bold " +
-                        (lowEnd && highEnd
+                        lowEnd && highEnd
                           ? parseFloat((row as any)[name]) >= lowEnd &&
                             parseFloat((row as any)[name]) <= highEnd
                             ? "text-success"
@@ -66,11 +65,11 @@ const PageView = ({ title, data, inputs, onSubmit, onDelete }: props) => {
                           ? parseFloat((row as any)[name]) <= highEnd
                             ? "text-success"
                             : "text-danger"
-                          : "")
+                          : ""
                       }
                       key={x}
                     >
-                      {render ? render(row) : (row as any)[name]}
+                      {render ? render(row, i) : (row as any)[name]}
 
                       {(lowEnd || highEnd) && (row as any)[name] ? (
                         <FontAwesomeIcon
@@ -132,8 +131,7 @@ const PageView = ({ title, data, inputs, onSubmit, onDelete }: props) => {
 
                         <td
                           className={
-                            "fw-bold " +
-                            (lowEnd && highEnd
+                            lowEnd && highEnd
                               ? parseFloat((row as any)[name]) >= lowEnd &&
                                 parseFloat((row as any)[name]) <= highEnd
                                 ? "text-success"
@@ -146,7 +144,7 @@ const PageView = ({ title, data, inputs, onSubmit, onDelete }: props) => {
                               ? parseFloat((row as any)[name]) <= highEnd
                                 ? "text-success"
                                 : "text-danger"
-                              : "")
+                              : ""
                           }
                         >
                           {render ? render(row) : (row as any)[name]}
