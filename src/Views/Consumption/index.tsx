@@ -39,11 +39,13 @@ const Consumption = () => {
           .map(({ contents, supposed, ...rest }) => ({
             ...rest,
             contents: contents.sort((a, b) => (a.element > b.element ? 1 : -1)),
-            supposed: supposed.sort((a, b) => (a.element > b.element ? 1 : -1)),
+            supposed: supposed?.sort((a, b) =>
+              a.element > b.element ? 1 : -1
+            ),
           }))
       )
     );
-    mealsAPI.getAll().then((res: any) => setMeals(res));
+    mealsAPI.getAll().then((res: any) => setMeals([...res, { meal: "Other" }]));
   };
 
   useEffect(() => {
@@ -162,12 +164,14 @@ const Consumption = () => {
 
                     <td>
                       {meal.meal +
-                        " (" +
-                        moment(
-                          "2024-07-01T" +
-                            meals.find((m) => m.meal === meal.meal)?.time
-                        ).format("h:mm a") +
-                        ")"}
+                        (meals.find((m) => m.meal === meal.meal)?.time
+                          ? " (" +
+                            moment(
+                              "2024-07-01T" +
+                                meals.find((m) => m.meal === meal.meal)?.time
+                            ).format("h:mm a") +
+                            ")"
+                          : "")}
                     </td>
 
                     <td>{moment(timestamp).format("h:mm a")}</td>
@@ -189,16 +193,18 @@ const Consumption = () => {
 
                     <td>
                       <ul className="text-start">
-                        {supposed.map(({ element, count, alternatives }, y) => (
-                          <MealView
-                            dark={y % 2 === 1}
-                            meal={meal.meal}
-                            count={count}
-                            element={element}
-                            alternatives={alternatives}
-                            key={y}
-                          />
-                        ))}
+                        {supposed?.map(
+                          ({ element, count, alternatives }, y) => (
+                            <MealView
+                              dark={y % 2 === 1}
+                              meal={meal.meal}
+                              count={count}
+                              element={element}
+                              alternatives={alternatives}
+                              key={y}
+                            />
+                          )
+                        )}
                       </ul>
                     </td>
 
@@ -305,7 +311,7 @@ const Consumption = () => {
                       <th>Supposed</th>
                       <td className="text-start">
                         <ul>
-                          {supposed.map(
+                          {supposed?.map(
                             ({ element, count, alternatives }, y) => (
                               <MealView
                                 dark={y % 2 === 1}
