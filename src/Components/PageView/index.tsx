@@ -69,7 +69,7 @@ const PageView = ({ title, data, inputs, onSubmit, onDelete }: props) => {
                       }
                       key={x}
                     >
-                      {render ? render(row) : (row as any)[name]}
+                      {render ? render(row, i) : (row as any)[name]}
 
                       {(lowEnd || highEnd) && (row as any)[name] ? (
                         <FontAwesomeIcon
