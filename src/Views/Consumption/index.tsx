@@ -130,7 +130,7 @@ const Consumption = () => {
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
         <div className="d-none d-lg-block">
-          <WeeklyCalendar data={data} meals={meals} />
+          <WeeklyCalendar data={data} />
         </div>
 
         <div className="d-none d-md-block">
