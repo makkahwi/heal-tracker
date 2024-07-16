@@ -33,7 +33,8 @@ const WeeklyCalendar = ({
   }, [currentWeek, data]);
 
   const generateCurrentWeek = (date: Moment) => {
-    const startOfWeek = date.clone().isoWeekday(6); // Start of the week is Sunday by default
+    // Adjust to get the previous or current Saturday
+    const startOfWeek = date.clone().startOf("week").isoWeekday(6);
     const days: Moment[] = [];
 
     for (let i = 0; i < 7; i++) {
