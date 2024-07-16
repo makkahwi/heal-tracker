@@ -2,6 +2,7 @@ import Footer from "./Components/Layout/Footer";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 
 const Layout = ({ children = <></> }) => {
   return (

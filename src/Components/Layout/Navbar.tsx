@@ -20,24 +20,43 @@ const Navbar = () => {
 
         <div>
           <ul className="nav me-auto mb-2 mb-lg-0">
-            {routes.map(({ name, path, icon }, x) => (
-              <li
-                className="nav-item"
-                role="button"
-                onClick={() => navigate(path)}
-                key={x}
-              >
-                <span
-                  className={
-                    "nav-link text-decoration-none" +
-                    (location.pathname === "/" + path
-                      ? " text-info"
-                      : " text-white")
-                  }
-                >
-                  <FontAwesomeIcon icon={icon} />
-                  <span className="ms-2 d-none d-lg-inline">{name}</span>
-                </span>
+            {routes.map(({ name, path, icon, list }, x) => (
+              <li className="nav-item" role="button" key={x}>
+                {list ? (
+                  <div className="text-white my-2 mx-3 dropdown">
+                    <span data-bs-toggle="dropdown" aria-expanded="false">
+                      <FontAwesomeIcon icon={icon} />
+                      <span className="ms-2 d-none d-lg-inline">{name}</span>
+                    </span>
+
+                    <ul className="dropdown-menu">
+                      {list.map(({ name, path, icon }, y) => (
+                        <li key={y}>
+                          <a
+                            className="dropdown-item"
+                            onClick={() => navigate(path)}
+                          >
+                            <FontAwesomeIcon icon={icon} />
+                            <span className="ms-2">{name}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  <span
+                    className={
+                      "nav-link text-decoration-none" +
+                      (location.pathname === "/" + path
+                        ? " text-info"
+                        : " text-white")
+                    }
+                    onClick={() => navigate(path)}
+                  >
+                    <FontAwesomeIcon icon={icon} />
+                    <span className="ms-2 d-none d-lg-inline">{name}</span>
+                  </span>
+                )}
               </li>
             ))}
           </ul>
