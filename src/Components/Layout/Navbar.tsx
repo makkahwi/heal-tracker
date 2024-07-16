@@ -33,7 +33,10 @@ const Navbar = () => {
                       {list.map(({ name, path, icon }, y) => (
                         <li key={y}>
                           <a
-                            className="dropdown-item"
+                            className={
+                              "dropdown-item " +
+                              (location.pathname === "/" + path ? "active" : "")
+                            }
                             onClick={() => navigate(path)}
                           >
                             <FontAwesomeIcon icon={icon} />
@@ -46,10 +49,10 @@ const Navbar = () => {
                 ) : (
                   <span
                     className={
-                      "nav-link text-decoration-none" +
+                      "nav-link text-decoration-none " +
                       (location.pathname === "/" + path
-                        ? " text-info"
-                        : " text-white")
+                        ? "text-info"
+                        : "text-white")
                     }
                     onClick={() => navigate(path)}
                   >
