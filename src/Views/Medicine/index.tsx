@@ -5,7 +5,7 @@ import * as medicineAPI from "../../API/medicine";
 import { MealViewProps } from "../../Components/MealView";
 import PageView from "../../Components/PageView";
 
-export interface MealProps {
+export interface props {
   id?: string;
   date: string;
   time: string;
@@ -14,9 +14,14 @@ export interface MealProps {
 }
 
 const Medicine = () => {
-  const [data, setData] = useState<MealProps[]>([]);
+  const [data, setData] = useState<props[]>([]);
 
-  const getData = () => medicineAPI.getAll().then((res: any) => setData(res));
+  const getData = () =>
+    medicineAPI
+      .getAll()
+      .then((res: any) =>
+        setData(res.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
+      );
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));

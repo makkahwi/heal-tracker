@@ -5,7 +5,7 @@ import * as sessionsAPI from "../../API/sessions";
 import { MealViewProps } from "../../Components/MealView";
 import PageView from "../../Components/PageView";
 
-export interface MealProps {
+export interface props {
   id?: string;
   date: string;
   startTime: string;
@@ -14,9 +14,14 @@ export interface MealProps {
 }
 
 const Sports = () => {
-  const [data, setData] = useState<MealProps[]>([]);
+  const [data, setData] = useState<props[]>([]);
 
-  const getData = () => sessionsAPI.getAll().then((res: any) => setData(res));
+  const getData = () =>
+    sessionsAPI
+      .getAll()
+      .then((res: any) =>
+        setData(res.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
+      );
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
