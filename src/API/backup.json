@@ -3896,59 +3896,8 @@
       ],
       "meal": {
         "id": "-O0iEAfGgeq-_ckBCRMm",
-        "meal": "Breakfast",
-        "time": "09:00"
+        "meal": "Other"
       },
-      "supposed": [
-        {
-          "count": "1/2 Slice",
-          "element": "Bread",
-          "id": "-O0iQN_1ZtUFdU6jNkRX",
-          "meal": "Breakfast"
-        },
-        {
-          "alternatives": [
-            {
-              "count": "60gm",
-              "element": "Labaneh"
-            },
-            {
-              "count": "60gm",
-              "element": "Areesh Cheese"
-            },
-            {
-              "count": "50gm",
-              "element": "Chickpeas"
-            },
-            {
-              "count": "Small Can",
-              "element": "Tuna"
-            }
-          ],
-          "count": "2",
-          "element": "Egg",
-          "id": "-O0Qob3DhS-zRoIKYYL5",
-          "meal": "Breakfast"
-        },
-        {
-          "count": "1 Cup",
-          "element": "Milk (Low Fat)",
-          "id": "-O174lq2c7RMqTQ8nDLC",
-          "meal": "Breakfast"
-        },
-        {
-          "count": "4 Pieces",
-          "element": "Olive",
-          "id": "-O0QoQUrm7vSKZTaniuB",
-          "meal": "Breakfast"
-        },
-        {
-          "count": "1 Cup",
-          "element": "Various Vegetables",
-          "id": "-O0ZtUQcrELg3_G3he1A",
-          "meal": "Breakfast"
-        }
-      ],
       "timestamp": "2024-07-09T23:50:00.000Z"
     },
     "-O1QB0_oS2NJ6SCUDdwA": {
@@ -4735,6 +4684,827 @@
         }
       ],
       "timestamp": "2024-07-13T18:15:00.000Z"
+    },
+    "-O1vquBJkcmb6Kdy2L6p": {
+      "contents": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Fish"
+            },
+            {
+              "count": "120gm",
+              "element": "Beef"
+            }
+          ],
+          "count": "120gm",
+          "element": "Chicken Breast",
+          "id": "-O0Qp5vwjQroAX36dsqn",
+          "meal": "Lunch",
+          "note": "Boiled"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "100gm",
+              "element": "Bulgur"
+            },
+            {
+              "count": "100gm",
+              "element": "Brown Pasta"
+            }
+          ],
+          "count": "100gm",
+          "element": "Pasta",
+          "id": "-O0ZuA6RzMt_Fn4wE_lU",
+          "meal": "Lunch",
+          "note": "Brown"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "1/2 Cup",
+              "element": "Cooked Green beans"
+            }
+          ],
+          "count": "1/2 Cup",
+          "element": "Cooked Vegetables",
+          "id": "-O0Qp5vu7hxTYQIA5e3W",
+          "meal": "Lunch"
+        }
+      ],
+      "meal": {
+        "id": "-O1gOiC3wQ1Sl_j5sCCl",
+        "meal": "Lunch",
+        "time": "14:00"
+      },
+      "supposed": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Fish"
+            },
+            {
+              "count": "120gm",
+              "element": "Beef"
+            }
+          ],
+          "count": "120gm",
+          "element": "Chicken Breast",
+          "id": "-O0Qp5vwjQroAX36dsqn",
+          "meal": "Lunch"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "100gm",
+              "element": "Bulgur"
+            },
+            {
+              "count": "100gm",
+              "element": "Brown Pasta"
+            }
+          ],
+          "count": "100gm",
+          "element": "Rice",
+          "id": "-O0ZuA6RzMt_Fn4wE_lU",
+          "meal": "Lunch"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "1/2 Cup",
+              "element": "Cooked Green beans"
+            }
+          ],
+          "count": "1 Cup",
+          "element": "Salad",
+          "id": "-O0Qp5vu7hxTYQIA5e3W",
+          "meal": "Lunch"
+        }
+      ],
+      "timestamp": "2024-07-16T13:15:00.000Z"
+    },
+    "-O1vqxg7jejSpIIM3htf": {
+      "contents": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Labaneh"
+            },
+            {
+              "count": "120gm",
+              "element": "Areesh Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "White Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "Chickpeas"
+            },
+            {
+              "count": "120gm",
+              "element": "Tuna"
+            }
+          ],
+          "count": "60gm",
+          "element": "Labaneh",
+          "id": "-O0Qob3DhS-zRoIKYYL5",
+          "meal": "Breakfast",
+          "note": ""
+        },
+        {
+          "count": "1 Cup",
+          "element": "Various Vegetables",
+          "id": "-O0ZtUQcrELg3_G3he1A",
+          "meal": "Breakfast",
+          "note": "Pepper"
+        }
+      ],
+      "meal": {
+        "id": "-O0iEAfGgeq-_ckBCRMm",
+        "meal": "Breakfast",
+        "time": "09:00"
+      },
+      "supposed": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Labaneh"
+            },
+            {
+              "count": "120gm",
+              "element": "Areesh Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "White Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "Chickpeas"
+            },
+            {
+              "count": "120gm",
+              "element": "Tuna"
+            }
+          ],
+          "count": "2",
+          "element": "Egg",
+          "id": "-O0Qob3DhS-zRoIKYYL5",
+          "meal": "Breakfast"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Various Vegetables",
+          "id": "-O0ZtUQcrELg3_G3he1A",
+          "meal": "Breakfast"
+        }
+      ],
+      "timestamp": "2024-07-16T06:00:00.000Z"
+    },
+    "-O1vr4NIcCFM6yjMAUzE": {
+      "contents": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Fish"
+            },
+            {
+              "count": "120gm",
+              "element": "Beef"
+            }
+          ],
+          "count": "120gm",
+          "element": "Fish",
+          "id": "-O0Qp5vwjQroAX36dsqn",
+          "meal": "Lunch"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "100gm",
+              "element": "Bulgur"
+            },
+            {
+              "count": "100gm",
+              "element": "Brown Pasta"
+            }
+          ],
+          "count": "100gm",
+          "element": "Rice",
+          "id": "-O0ZuA6RzMt_Fn4wE_lU",
+          "meal": "Lunch",
+          "note": "Brown"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "1/2 Cup",
+              "element": "Cooked Green beans"
+            }
+          ],
+          "count": "1 Cup",
+          "element": "Salad",
+          "id": "-O0Qp5vu7hxTYQIA5e3W",
+          "meal": "Lunch",
+          "note": "Pepper"
+        }
+      ],
+      "meal": {
+        "id": "-O1gOiC3wQ1Sl_j5sCCl",
+        "meal": "Lunch",
+        "time": "14:00"
+      },
+      "supposed": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Fish"
+            },
+            {
+              "count": "120gm",
+              "element": "Beef"
+            }
+          ],
+          "count": "120gm",
+          "element": "Chicken Breast",
+          "id": "-O0Qp5vwjQroAX36dsqn",
+          "meal": "Lunch"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "100gm",
+              "element": "Bulgur"
+            },
+            {
+              "count": "100gm",
+              "element": "Brown Pasta"
+            }
+          ],
+          "count": "100gm",
+          "element": "Rice",
+          "id": "-O0ZuA6RzMt_Fn4wE_lU",
+          "meal": "Lunch"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "1/2 Cup",
+              "element": "Cooked Green beans"
+            }
+          ],
+          "count": "1 Cup",
+          "element": "Salad",
+          "id": "-O0Qp5vu7hxTYQIA5e3W",
+          "meal": "Lunch"
+        }
+      ],
+      "timestamp": "2024-07-15T12:00:00.000Z"
+    },
+    "-O1vrAVKr24n21zzMS5e": {
+      "contents": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Labaneh"
+            },
+            {
+              "count": "120gm",
+              "element": "Areesh Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "White Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "Chickpeas"
+            },
+            {
+              "count": "120gm",
+              "element": "Tuna"
+            }
+          ],
+          "count": "100gm",
+          "element": "Falafel",
+          "id": "-O1gQTDXkri2ImvlsJJr",
+          "meal": "Dinner",
+          "note": "Air Fryed"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Various Vegetables",
+          "id": "-O1gQTD_g3NOixgGDLQr",
+          "meal": "Dinner",
+          "note": "Salad"
+        }
+      ],
+      "meal": {
+        "id": "-O1gOkZDROV2ZPdfzpIF",
+        "meal": "Dinner",
+        "time": "20:00"
+      },
+      "supposed": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Labaneh"
+            },
+            {
+              "count": "120gm",
+              "element": "Areesh Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "White Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "Chickpeas"
+            },
+            {
+              "count": "120gm",
+              "element": "Tuna"
+            }
+          ],
+          "count": "2",
+          "element": "Egg",
+          "id": "-O1gQTDXkri2ImvlsJJr",
+          "meal": "Dinner"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Various Vegetables",
+          "id": "-O1gQTD_g3NOixgGDLQr",
+          "meal": "Dinner"
+        }
+      ],
+      "timestamp": "2024-07-14T19:30:00.000Z"
+    },
+    "-O1vrMpJCA33JN25t_JZ": {
+      "contents": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Fish"
+            },
+            {
+              "count": "120gm",
+              "element": "Beef"
+            }
+          ],
+          "count": "120gm",
+          "element": "Chicken Liver",
+          "id": "-O0Qp5vwjQroAX36dsqn",
+          "meal": "Lunch"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "100gm",
+              "element": "Bulgur"
+            },
+            {
+              "count": "100gm",
+              "element": "Brown Pasta"
+            }
+          ],
+          "count": "1/2 Slice",
+          "element": "Bread",
+          "id": "-O0ZuA6RzMt_Fn4wE_lU",
+          "meal": "Lunch"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "1/2 Cup",
+              "element": "Cooked Green beans"
+            }
+          ],
+          "count": "1/2 Cup",
+          "element": "Cooked Vegetables",
+          "id": "-O0Qp5vu7hxTYQIA5e3W",
+          "meal": "Lunch"
+        }
+      ],
+      "meal": {
+        "id": "-O1gOiC3wQ1Sl_j5sCCl",
+        "meal": "Lunch",
+        "time": "14:00"
+      },
+      "supposed": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Fish"
+            },
+            {
+              "count": "120gm",
+              "element": "Beef"
+            }
+          ],
+          "count": "120gm",
+          "element": "Chicken Breast",
+          "id": "-O0Qp5vwjQroAX36dsqn",
+          "meal": "Lunch"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "100gm",
+              "element": "Bulgur"
+            },
+            {
+              "count": "100gm",
+              "element": "Brown Pasta"
+            }
+          ],
+          "count": "100gm",
+          "element": "Rice",
+          "id": "-O0ZuA6RzMt_Fn4wE_lU",
+          "meal": "Lunch"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "1/2 Cup",
+              "element": "Cooked Green beans"
+            }
+          ],
+          "count": "1 Cup",
+          "element": "Salad",
+          "id": "-O0Qp5vu7hxTYQIA5e3W",
+          "meal": "Lunch"
+        }
+      ],
+      "timestamp": "2024-07-13T17:00:00.000Z"
+    },
+    "-O1vrTWzhB0t8es8Elh2": {
+      "contents": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Labaneh"
+            },
+            {
+              "count": "120gm",
+              "element": "Areesh Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "White Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "Chickpeas"
+            },
+            {
+              "count": "120gm",
+              "element": "Tuna"
+            }
+          ],
+          "count": "100gm",
+          "element": "Chickpeas",
+          "id": "-O0Qob3DhS-zRoIKYYL5",
+          "meal": "Breakfast"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Various Vegetables",
+          "id": "-O0ZtUQcrELg3_G3he1A",
+          "meal": "Breakfast"
+        }
+      ],
+      "meal": {
+        "id": "-O0iEAfGgeq-_ckBCRMm",
+        "meal": "Breakfast",
+        "time": "09:00"
+      },
+      "supposed": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Labaneh"
+            },
+            {
+              "count": "120gm",
+              "element": "Areesh Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "White Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "Chickpeas"
+            },
+            {
+              "count": "120gm",
+              "element": "Tuna"
+            }
+          ],
+          "count": "2",
+          "element": "Egg",
+          "id": "-O0Qob3DhS-zRoIKYYL5",
+          "meal": "Breakfast"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Various Vegetables",
+          "id": "-O0ZtUQcrELg3_G3he1A",
+          "meal": "Breakfast"
+        }
+      ],
+      "timestamp": "2024-07-14T06:00:00.000Z"
+    },
+    "-O1vrVdw3avDyZw8M1vw": {
+      "contents": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Labaneh"
+            },
+            {
+              "count": "120gm",
+              "element": "Areesh Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "White Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "Chickpeas"
+            },
+            {
+              "count": "120gm",
+              "element": "Tuna"
+            }
+          ],
+          "count": "2",
+          "element": "Egg",
+          "id": "-O0Qob3DhS-zRoIKYYL5",
+          "meal": "Breakfast"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Various Vegetables",
+          "id": "-O0ZtUQcrELg3_G3he1A",
+          "meal": "Breakfast"
+        }
+      ],
+      "meal": {
+        "id": "-O0iEAfGgeq-_ckBCRMm",
+        "meal": "Breakfast",
+        "time": "09:00"
+      },
+      "supposed": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Labaneh"
+            },
+            {
+              "count": "120gm",
+              "element": "Areesh Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "White Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "Chickpeas"
+            },
+            {
+              "count": "120gm",
+              "element": "Tuna"
+            }
+          ],
+          "count": "2",
+          "element": "Egg",
+          "id": "-O0Qob3DhS-zRoIKYYL5",
+          "meal": "Breakfast"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Various Vegetables",
+          "id": "-O0ZtUQcrELg3_G3he1A",
+          "meal": "Breakfast"
+        }
+      ],
+      "timestamp": "2024-07-15T06:00:00.000Z"
+    },
+    "-O1vrd-YMa4OWAY-er7G": {
+      "contents": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Fish"
+            },
+            {
+              "count": "120gm",
+              "element": "Beef"
+            }
+          ],
+          "count": "120gm",
+          "element": "Fish",
+          "id": "-O0Qp5vwjQroAX36dsqn",
+          "meal": "Lunch"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "100gm",
+              "element": "Bulgur"
+            },
+            {
+              "count": "100gm",
+              "element": "Brown Pasta"
+            }
+          ],
+          "count": "100gm",
+          "element": "Pasta",
+          "id": "-O0ZuA6RzMt_Fn4wE_lU",
+          "meal": "Lunch",
+          "note": "Brown"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "1/2 Cup",
+              "element": "Cooked Green beans"
+            }
+          ],
+          "count": "1 Cup",
+          "element": "Salad",
+          "id": "-O0Qp5vu7hxTYQIA5e3W",
+          "meal": "Lunch"
+        }
+      ],
+      "meal": {
+        "id": "-O1gOiC3wQ1Sl_j5sCCl",
+        "meal": "Lunch",
+        "time": "14:00"
+      },
+      "supposed": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Fish"
+            },
+            {
+              "count": "120gm",
+              "element": "Beef"
+            }
+          ],
+          "count": "120gm",
+          "element": "Chicken Breast",
+          "id": "-O0Qp5vwjQroAX36dsqn",
+          "meal": "Lunch"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "100gm",
+              "element": "Bulgur"
+            },
+            {
+              "count": "100gm",
+              "element": "Brown Pasta"
+            }
+          ],
+          "count": "100gm",
+          "element": "Rice",
+          "id": "-O0ZuA6RzMt_Fn4wE_lU",
+          "meal": "Lunch"
+        },
+        {
+          "alternatives": [
+            {
+              "count": "1/2 Cup",
+              "element": "Cooked Green beans"
+            }
+          ],
+          "count": "1 Cup",
+          "element": "Salad",
+          "id": "-O0Qp5vu7hxTYQIA5e3W",
+          "meal": "Lunch"
+        }
+      ],
+      "timestamp": "2024-07-14T13:00:00.000Z"
+    },
+    "-O1vrjnYfel_Rf4eKDde": {
+      "contents": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Labaneh"
+            },
+            {
+              "count": "120gm",
+              "element": "Areesh Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "White Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "Chickpeas"
+            },
+            {
+              "count": "120gm",
+              "element": "Tuna"
+            }
+          ],
+          "count": "120gm",
+          "element": "Chickpeas",
+          "id": "-O1gQTDXkri2ImvlsJJr",
+          "meal": "Dinner"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Various Vegetables",
+          "id": "-O1gQTD_g3NOixgGDLQr",
+          "meal": "Dinner"
+        }
+      ],
+      "meal": {
+        "id": "-O1gOkZDROV2ZPdfzpIF",
+        "meal": "Dinner",
+        "time": "20:00"
+      },
+      "supposed": [
+        {
+          "alternatives": [
+            {
+              "count": "120gm",
+              "element": "Labaneh"
+            },
+            {
+              "count": "120gm",
+              "element": "Areesh Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "White Cheese"
+            },
+            {
+              "count": "120gm",
+              "element": "Chickpeas"
+            },
+            {
+              "count": "120gm",
+              "element": "Tuna"
+            }
+          ],
+          "count": "2",
+          "element": "Egg",
+          "id": "-O1gQTDXkri2ImvlsJJr",
+          "meal": "Dinner"
+        },
+        {
+          "count": "1 Cup",
+          "element": "Various Vegetables",
+          "id": "-O1gQTD_g3NOixgGDLQr",
+          "meal": "Dinner"
+        }
+      ],
+      "timestamp": "2024-07-15T18:00:00.000Z"
+    },
+    "-O1vsfWwKG4ydYobw85x": {
+      "contents": [
+        {
+          "count": "170gm",
+          "element": "Tuna"
+        }
+      ],
+      "meal": {
+        "meal": "Other"
+      },
+      "timestamp": "2024-07-13T20:30:00.000Z"
     }
   },
   "meals": {
