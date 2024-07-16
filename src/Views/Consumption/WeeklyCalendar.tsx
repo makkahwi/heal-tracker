@@ -25,8 +25,10 @@ const WeeklyCalendar = ({
     setCurrentWeekData(
       data.filter(({ timestamp }) =>
         moment(timestamp).isBetween(
-          moment(currentWeek[0]).subtract(1, "days"),
-          moment(currentWeek[6])
+          moment(currentWeek[0]),
+          moment(currentWeek[6]).add(1, "day"),
+          undefined,
+          "[]"
         )
       )
     );
@@ -53,7 +55,12 @@ const WeeklyCalendar = ({
   };
 
   return (
-    <table className="table table-bordered table-responsive table-striped bg-white">
+    <table
+      className="table table-bordered table-striped bg-white"
+      style={{
+        minWidth: "1000px",
+      }}
+    >
       <tr>
         <th>
           <button className="btn btn-secondary" onClick={handlePreviousWeek}>
