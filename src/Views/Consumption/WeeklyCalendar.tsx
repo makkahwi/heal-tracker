@@ -1,10 +1,18 @@
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment, { Moment } from "moment";
 import { Fragment, useEffect, useState } from "react";
 
 import MealView from "../../Components/MealView";
 import { props } from "../../Views/Consumption";
 
-const WeeklyCalendar = ({ data }: { data: props[] }) => {
+const WeeklyCalendar = ({
+  data,
+  onDelete,
+}: {
+  data: props[];
+  onDelete: Function;
+}) => {
   const [currentWeek, setCurrentWeek] = useState<Moment[]>([]);
   const [currentDate, setCurrentDate] = useState<Moment>(moment());
   const [currentWeekData, setCurrentWeekData] = useState<props[]>([]);
@@ -25,7 +33,8 @@ const WeeklyCalendar = ({ data }: { data: props[] }) => {
   }, [currentWeek, data]);
 
   const generateCurrentWeek = (date: Moment) => {
-    const startOfWeek = date.clone().isoWeekday(6); // Start of the week is Sunday by default
+    // Adjust to get the previous or current Saturday
+    const startOfWeek = date.clone().startOf("week").isoWeekday(6);
     const days: Moment[] = [];
 
     for (let i = 0; i < 7; i++) {
@@ -124,6 +133,13 @@ const WeeklyCalendar = ({ data }: { data: props[] }) => {
                       {theMeal.timestamp ? (
                         <span className="d-block bg-dark text-white">
                           {"@ " + moment(theMeal?.timestamp).format("h:mm a")}
+
+                          <FontAwesomeIcon
+                            icon={faTrashCan}
+                            className="me-1 mt-1 text-danger float-end"
+                            role="button"
+                            onClick={() => onDelete(theMeal.id)}
+                          />
                         </span>
                       ) : (
                         ""
