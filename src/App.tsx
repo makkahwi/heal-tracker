@@ -22,22 +22,29 @@ import Welcome from "./Views/Welcome";
 
 export const routes = [
   {
-    name: "Consumption",
-    path: "consumption",
+    name: "Diet",
+    path: "diet",
     icon: faUtensils,
-    Comp: <Consumption />,
-  },
-  {
-    name: "Schedule",
-    path: "schedule",
-    icon: faCalendar,
-    Comp: <Schedule />,
-  },
-  {
-    name: "Meals",
-    path: "meals",
-    icon: faClock,
-    Comp: <Meals />,
+    list: [
+      {
+        name: "Consumption",
+        path: "consumption",
+        icon: faUtensils,
+        Comp: <Consumption />,
+      },
+      {
+        name: "Schedule",
+        path: "schedule",
+        icon: faCalendar,
+        Comp: <Schedule />,
+      },
+      {
+        name: "Meals",
+        path: "meals",
+        icon: faClock,
+        Comp: <Meals />,
+      },
+    ],
   },
   {
     name: "Sport Sessions",
@@ -72,9 +79,15 @@ const App = () => {
         <Navbar />
 
         <Routes>
-          {routes.map(({ name, path, Comp }, i) => (
-            <Route path={path} element={Comp} key={i} />
-          ))}
+          {routes.map(({ name, path, Comp, list }, i) =>
+            list ? (
+              list.map(({ name, path, Comp }, x) => (
+                <Route path={path} element={Comp} key={x} />
+              ))
+            ) : (
+              <Route path={path} element={Comp} key={i} />
+            )
+          )}
 
           <Route path="*" element={<Welcome />} />
         </Routes>
