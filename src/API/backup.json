@@ -3896,59 +3896,8 @@
       ],
       "meal": {
         "id": "-O0iEAfGgeq-_ckBCRMm",
-        "meal": "Breakfast",
-        "time": "09:00"
+        "meal": "Other"
       },
-      "supposed": [
-        {
-          "count": "1/2 Slice",
-          "element": "Bread",
-          "id": "-O0iQN_1ZtUFdU6jNkRX",
-          "meal": "Breakfast"
-        },
-        {
-          "alternatives": [
-            {
-              "count": "60gm",
-              "element": "Labaneh"
-            },
-            {
-              "count": "60gm",
-              "element": "Areesh Cheese"
-            },
-            {
-              "count": "50gm",
-              "element": "Chickpeas"
-            },
-            {
-              "count": "Small Can",
-              "element": "Tuna"
-            }
-          ],
-          "count": "2",
-          "element": "Egg",
-          "id": "-O0Qob3DhS-zRoIKYYL5",
-          "meal": "Breakfast"
-        },
-        {
-          "count": "1 Cup",
-          "element": "Milk (Low Fat)",
-          "id": "-O174lq2c7RMqTQ8nDLC",
-          "meal": "Breakfast"
-        },
-        {
-          "count": "4 Pieces",
-          "element": "Olive",
-          "id": "-O0QoQUrm7vSKZTaniuB",
-          "meal": "Breakfast"
-        },
-        {
-          "count": "1 Cup",
-          "element": "Various Vegetables",
-          "id": "-O0ZtUQcrELg3_G3he1A",
-          "meal": "Breakfast"
-        }
-      ],
       "timestamp": "2024-07-09T23:50:00.000Z"
     },
     "-O1QB0_oS2NJ6SCUDdwA": {
@@ -5544,6 +5493,18 @@
         }
       ],
       "timestamp": "2024-07-15T18:00:00.000Z"
+    },
+    "-O1vsfWwKG4ydYobw85x": {
+      "contents": [
+        {
+          "count": "170gm",
+          "element": "Tuna"
+        }
+      ],
+      "meal": {
+        "meal": "Other"
+      },
+      "timestamp": "2024-07-13T20:30:00.000Z"
     }
   },
   "meals": {
