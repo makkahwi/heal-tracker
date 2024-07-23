@@ -1,9 +1,13 @@
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 import * as sessionsAPI from "../../API/sessions";
+import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
-import PageView from "../../Components/PageView";
+import MonthlyCalendar from "../../Components/PageView/MonthlyCalendar";
+import PageSection from "../../Components/PageView/PageSection";
 
 export interface props {
   id?: string;
@@ -56,6 +60,7 @@ const Sports = () => {
       type: "number",
       defaultValue: 6,
       step: "0.1",
+      unit: "KM",
       required: true,
       total: true,
     },
@@ -77,14 +82,31 @@ const Sports = () => {
       getData();
     });
 
+  const renderDistanceEvent = (event: any, date: string, id: string) => (
+    <div>
+      <FontAwesomeIcon
+        icon={faTrash}
+        role="button"
+        className="mx-1 text-danger"
+        onClick={() => onDelete(id)}
+      />
+
+      <p>{moment(date).format("yyyy-MM-DD")}</p>
+      <p>Distance: {event.distance} km</p>
+      <p>
+        From: {event.startTime} To: {event.endTime}
+      </p>
+    </div>
+  );
+
   return (
-    <PageView
-      title="Sport Sessions List"
-      data={data}
-      inputs={formInputs}
-      onSubmit={onSubmit}
-      onDelete={onDelete}
-    />
+    <PageSection title="Sport Sessions List">
+      <Fragment>
+        <Form inputs={formInputs} onSubmit={onSubmit} />
+
+        <MonthlyCalendar data={data} renderEvent={renderDistanceEvent} />
+      </Fragment>
+    </PageSection>
   );
 };
 
