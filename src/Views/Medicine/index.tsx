@@ -1,9 +1,14 @@
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 import * as medicineAPI from "../../API/medicine";
+import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
 import PageView from "../../Components/PageView";
+import MonthlyCalendar from "../../Components/PageView/MonthlyCalendar";
+import PageSection from "../../Components/PageView/PageSection";
 
 export interface props {
   id?: string;
@@ -76,14 +81,35 @@ const Medicine = () => {
       getData();
     });
 
+  const renderDistanceEvent = (event: any, date: string, id: string) => (
+    <div>
+      {date ? (
+        <span className="d-block bg-dark text-white p-2 my-2">
+          @ {moment("2024-07-23T" + event.time).format("h:mm a")}{" "}
+          <FontAwesomeIcon
+            icon={faTrashCan}
+            className="mt-1 text-danger"
+            role="button"
+            onClick={() => onDelete(id)}
+          />
+        </span>
+      ) : (
+        ""
+      )}
+      <div className="fw-bold">
+        {event.quantity} of {event.medicine}
+      </div>
+    </div>
+  );
+
   return (
-    <PageView
-      title="Medicine List"
-      data={data}
-      inputs={formInputs}
-      onSubmit={onSubmit}
-      onDelete={onDelete}
-    />
+    <PageSection title="Medicine List">
+      <Fragment>
+        <Form inputs={formInputs} onSubmit={onSubmit} />
+
+        <MonthlyCalendar data={data} renderEvent={renderDistanceEvent} />
+      </Fragment>
+    </PageSection>
   );
 };
 
