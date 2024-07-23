@@ -1,4 +1,4 @@
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
@@ -84,18 +84,23 @@ const Sports = () => {
 
   const renderDistanceEvent = (event: any, date: string, id: string) => (
     <div>
-      <FontAwesomeIcon
-        icon={faTrash}
-        role="button"
-        className="mx-1 text-danger"
-        onClick={() => onDelete(id)}
-      />
-
-      <p>{moment(date).format("yyyy-MM-DD")}</p>
-      <p>Distance: {event.distance} km</p>
-      <p>
-        From: {event.startTime} To: {event.endTime}
-      </p>
+      {date ? (
+        <span className="d-block bg-dark text-white p-2 my-2">
+          @ {moment("2024-07-23T" + event.startTime).format("h:mm")} -{" "}
+          {moment("2024-07-23T" + event.endTime).format("h:mm a")}{" "}
+        </span>
+      ) : (
+        ""
+      )}
+      <div className="fw-bold">
+        {event.distance} km{" "}
+        <FontAwesomeIcon
+          icon={faTrashCan}
+          className="mt-1 text-danger"
+          role="button"
+          onClick={() => onDelete(id)}
+        />
+      </div>
     </div>
   );
 

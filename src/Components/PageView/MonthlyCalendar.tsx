@@ -91,13 +91,17 @@ const MonthlyCalendar = ({ data, renderEvent }: props) => {
           {weeks.map((week, weekIndex) => (
             <tr key={weekIndex}>
               <td className="fw-bold">{week.weekNumber}</td>
+
               {week.days.map((day, dayIndex) => (
                 <td
                   key={dayIndex}
                   className={
-                    day.isSame(currentMonth, "month") ? "" : "bg-light"
+                    (day.isSame(currentMonth, "month") ? "" : "bg-light ") +
+                    "text-start"
                   }
                 >
+                  {day.format("YYYY-MM-DD")}
+
                   {renderEvents(day.format("YYYY-MM-DD"), data, renderEvent)}
                 </td>
               ))}
