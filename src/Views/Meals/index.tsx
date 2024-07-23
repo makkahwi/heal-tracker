@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
-import * as mealsAPI from "../../API/meals";
+import * as BeAPI from "../../API";
 import { MealViewProps } from "../../Components/MealView";
 import PageView from "../../Components/PageView";
+import { RootState } from "../../Store/store";
 import { timeFormat } from "../../Utils/consts";
 
 export interface MealProps {
@@ -12,9 +14,13 @@ export interface MealProps {
 }
 
 const Meals = () => {
+  const user = useSelector((state: RootState) => state.auth.user);
   const [data, setData] = useState<MealProps[]>([]);
 
-  const getData = () => mealsAPI.getAll().then((res: any) => setData(res));
+  const getData = () =>
+    BeAPI.getAll("meals", user.idToken)
+      .then((res: any) => setData(res))
+      .catch((err) => console.log({ err }));
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
@@ -43,15 +49,19 @@ const Meals = () => {
   }
 
   const onSubmit = (values: submitProps) => {
-    mealsAPI.create(values).then(() => {
-      getData();
-    });
+    BeAPI.create("meals", values, user.idToken, user.localId)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
   };
 
   const onDelete = (id: string) =>
-    mealsAPI.remove(id).then(() => {
-      getData();
-    });
+    BeAPI.remove("meals", id, user.idToken)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
 
   return (
     <PageView

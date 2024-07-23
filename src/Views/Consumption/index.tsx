@@ -1,12 +1,12 @@
 import moment, { MomentInput } from "moment";
 import { Fragment, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
-import * as consumptionAPI from "../../API/consumption";
-import * as mealsAPI from "../../API/meals";
-import * as scheduleAPI from "../../API/schedule";
+import * as BeAPI from "../../API";
 import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageView/PageSection";
+import { RootState } from "../../Store/store";
 import { MealProps } from "../Meals";
 import WeeklyCalendar from "./WeeklyCalendar";
 
@@ -20,30 +20,38 @@ export interface props {
 }
 
 const Consumption = () => {
+  const user = useSelector((state: RootState) => state.auth.user);
+
   const [data, setData] = useState<props[]>([]);
   const [scheduled, setScheduled] = useState<MealViewProps[]>([]);
   const [meals, setMeals] = useState<MealProps[]>([]);
 
   const getData = () => {
-    scheduleAPI
-      .getAll()
+    BeAPI.getAll("schedule", user.idToken)
       .then((res: MealViewProps[]) =>
         setScheduled(res?.sort((a, b) => (a.element > b.element ? 1 : -1)))
-      );
-    consumptionAPI.getAll().then((res: props[]) =>
-      setData(
-        res
-          .sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
-          .map(({ contents, supposed, ...rest }) => ({
-            ...rest,
-            contents: contents.sort((a, b) => (a.element > b.element ? 1 : -1)),
-            supposed: supposed?.sort((a, b) =>
-              a.element > b.element ? 1 : -1
-            ),
-          }))
       )
-    );
-    mealsAPI.getAll().then((res: any) => setMeals([...res, { meal: "Other" }]));
+      .catch((err) => console.log({ err }));
+    BeAPI.getAll("consumption", user.idToken)
+      .then((res: props[]) =>
+        setData(
+          res
+            .sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
+            .map(({ contents, supposed, ...rest }) => ({
+              ...rest,
+              contents: contents.sort((a, b) =>
+                a.element > b.element ? 1 : -1
+              ),
+              supposed: supposed?.sort((a, b) =>
+                a.element > b.element ? 1 : -1
+              ),
+            }))
+        )
+      )
+      .catch((err) => console.log({ err }));
+    BeAPI.getAll("meals", user.idToken)
+      .then((res: any) => setMeals([...res, { meal: "Other" }]))
+      .catch((err) => console.log({ err }));
   };
 
   useEffect(() => {
@@ -123,15 +131,19 @@ const Consumption = () => {
       timestamp: moment(date + "T" + time),
     };
 
-    consumptionAPI.create(finalValue).then(() => {
-      getData();
-    });
+    BeAPI.create("consumption", finalValue, user.idToken)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
   };
 
   const onDelete = (id: string) =>
-    consumptionAPI.remove(id).then(() => {
-      getData();
-    });
+    BeAPI.remove("consumption", id, user.idToken)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
 
   return (
     <PageSection title="Consumed Meals">

@@ -1,12 +1,14 @@
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
-import * as sessionsAPI from "../../API/sessions";
+import * as BeAPI from "../../API";
 import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
 import MonthlyCalendar from "../../Components/PageView/MonthlyCalendar";
 import PageSection from "../../Components/PageView/PageSection";
+import { RootState } from "../../Store/store";
 import { timeFormat } from "../../Utils/consts";
 
 export interface props {
@@ -18,14 +20,16 @@ export interface props {
 }
 
 const Sports = () => {
+  const user = useSelector((state: RootState) => state.auth.user);
+
   const [data, setData] = useState<props[]>([]);
 
   const getData = () =>
-    sessionsAPI
-      .getAll()
+    BeAPI.getAll("sportSessions", user.idToken)
       .then((res: any) =>
         setData(res.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
-      );
+      )
+      .catch((err) => console.log({ err }));
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
@@ -69,15 +73,19 @@ const Sports = () => {
   }
 
   const onSubmit = (values: submitProps) => {
-    sessionsAPI.create(values).then(() => {
-      getData();
-    });
+    BeAPI.create("sportSessions", values, user.idToken, user.localId)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
   };
 
   const onDelete = (id: string) =>
-    sessionsAPI.remove(id).then(() => {
-      getData();
-    });
+    BeAPI.remove("sportSessions", id, user.idToken)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
 
   const renderDistanceEvent = (event: any, date: string, id: string) => (
     <div>
