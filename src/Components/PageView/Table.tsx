@@ -45,56 +45,58 @@ const PageTable = ({ data, inputs, onDelete }: props) => {
           <tbody>
             {data.map(({ id, ...row }, i) => (
               <tr className="align-middle" key={i}>
-                {inputs.map(({ name, render, lowEnd, highEnd, type }, x) => (
-                  <td
-                    className={
-                      lowEnd && highEnd
-                        ? parseFloat((row as any)[name]) >= lowEnd &&
-                          parseFloat((row as any)[name]) <= highEnd
-                          ? "text-success"
-                          : "text-danger"
-                        : lowEnd
-                        ? parseFloat((row as any)[name]) >= lowEnd
-                          ? "text-success"
-                          : "text-danger"
-                        : highEnd
-                        ? parseFloat((row as any)[name]) <= highEnd
-                          ? "text-success"
-                          : "text-danger"
-                        : ""
-                    }
-                    key={x}
-                  >
-                    {render
-                      ? render(row, i)
-                      : type === "date"
-                      ? moment((row as any)[name]).format("ddd, D MMM YYYY")
-                      : type === "time"
-                      ? moment("2024-07-23T" + (row as any)[name]).format(
-                          "hh:mm a"
-                        )
-                      : (row as any)[name]}
+                {inputs.map(
+                  ({ name, render, lowEnd, highEnd, type, unit }, x) => (
+                    <td
+                      className={
+                        lowEnd && highEnd
+                          ? parseFloat((row as any)[name]) >= lowEnd &&
+                            parseFloat((row as any)[name]) <= highEnd
+                            ? "text-success"
+                            : "text-danger"
+                          : lowEnd
+                          ? parseFloat((row as any)[name]) >= lowEnd
+                            ? "text-success"
+                            : "text-danger"
+                          : highEnd
+                          ? parseFloat((row as any)[name]) <= highEnd
+                            ? "text-success"
+                            : "text-danger"
+                          : ""
+                      }
+                      key={x}
+                    >
+                      {render
+                        ? render(row, i)
+                        : type === "date"
+                        ? moment((row as any)[name]).format("ddd, D MMM YYYY")
+                        : type === "time"
+                        ? moment("2024-07-23T" + (row as any)[name]).format(
+                            "hh:mm a"
+                          )
+                        : (row as any)[name] + (unit ? " " + unit : "")}
 
-                    {(lowEnd || highEnd) && (row as any)[name] ? (
-                      <FontAwesomeIcon
-                        className="ms-1"
-                        icon={
-                          lowEnd
-                            ? parseFloat((row as any)[name]) >= lowEnd
-                              ? faCheckCircle
-                              : faArrowCircleDown
-                            : highEnd
-                            ? parseFloat((row as any)[name]) <= highEnd
-                              ? faCheckCircle
-                              : faArrowCircleUp
-                            : faCheckCircle
-                        }
-                      />
-                    ) : (
-                      ""
-                    )}
-                  </td>
-                ))}
+                      {(lowEnd || highEnd) && (row as any)[name] ? (
+                        <FontAwesomeIcon
+                          className="ms-1"
+                          icon={
+                            lowEnd
+                              ? parseFloat((row as any)[name]) >= lowEnd
+                                ? faCheckCircle
+                                : faArrowCircleDown
+                              : highEnd
+                              ? parseFloat((row as any)[name]) <= highEnd
+                                ? faCheckCircle
+                                : faArrowCircleUp
+                              : faCheckCircle
+                          }
+                        />
+                      ) : (
+                        ""
+                      )}
+                    </td>
+                  )
+                )}
 
                 <td>
                   {id && (
@@ -142,59 +144,74 @@ const PageTable = ({ data, inputs, onDelete }: props) => {
                   .filter(({ name, render }) =>
                     render ? render(row) : (row as any)[name]
                   )
-                  .map(({ label, name, render, lowEnd, highEnd }, x) => (
-                    <tr className="align-middle" key={x}>
-                      <th>
-                        {lowEnd || highEnd
-                          ? (lowEnd || symbol) +
-                            " > " +
-                            label +
-                            " < " +
-                            (highEnd || symbol)
-                          : label}
-                      </th>
+                  .map(
+                    (
+                      { label, name, render, lowEnd, highEnd, type, unit },
+                      x
+                    ) => (
+                      <tr className="align-middle" key={x}>
+                        <th>
+                          {lowEnd || highEnd
+                            ? (lowEnd || symbol) +
+                              " > " +
+                              label +
+                              " < " +
+                              (highEnd || symbol)
+                            : label}
+                        </th>
 
-                      <td
-                        className={
-                          lowEnd && highEnd
-                            ? parseFloat((row as any)[name]) >= lowEnd &&
-                              parseFloat((row as any)[name]) <= highEnd
-                              ? "text-success"
-                              : "text-danger"
-                            : lowEnd
-                            ? parseFloat((row as any)[name]) >= lowEnd
-                              ? "text-success"
-                              : "text-danger"
-                            : highEnd
-                            ? parseFloat((row as any)[name]) <= highEnd
-                              ? "text-success"
-                              : "text-danger"
-                            : ""
-                        }
-                      >
-                        {render ? render(row) : (row as any)[name]}
+                        <td
+                          className={
+                            lowEnd && highEnd
+                              ? parseFloat((row as any)[name]) >= lowEnd &&
+                                parseFloat((row as any)[name]) <= highEnd
+                                ? "text-success"
+                                : "text-danger"
+                              : lowEnd
+                              ? parseFloat((row as any)[name]) >= lowEnd
+                                ? "text-success"
+                                : "text-danger"
+                              : highEnd
+                              ? parseFloat((row as any)[name]) <= highEnd
+                                ? "text-success"
+                                : "text-danger"
+                              : ""
+                          }
+                        >
+                          {render
+                            ? render(row, i)
+                            : type === "date"
+                            ? moment((row as any)[name]).format(
+                                "ddd, D MMM YYYY"
+                              )
+                            : type === "time"
+                            ? moment("2024-07-23T" + (row as any)[name]).format(
+                                "hh:mm a"
+                              )
+                            : (row as any)[name] + (unit ? " " + unit : "")}
 
-                        {(lowEnd || highEnd) && (row as any)[name] ? (
-                          <FontAwesomeIcon
-                            className="ms-1"
-                            icon={
-                              lowEnd
-                                ? parseFloat((row as any)[name]) >= lowEnd
-                                  ? faCheckCircle
-                                  : faArrowCircleDown
-                                : highEnd
-                                ? parseFloat((row as any)[name]) <= highEnd
-                                  ? faCheckCircle
-                                  : faArrowCircleUp
-                                : faCheckCircle
-                            }
-                          />
-                        ) : (
-                          ""
-                        )}
-                      </td>
-                    </tr>
-                  ))}
+                          {(lowEnd || highEnd) && (row as any)[name] ? (
+                            <FontAwesomeIcon
+                              className="ms-1"
+                              icon={
+                                lowEnd
+                                  ? parseFloat((row as any)[name]) >= lowEnd
+                                    ? faCheckCircle
+                                    : faArrowCircleDown
+                                  : highEnd
+                                  ? parseFloat((row as any)[name]) <= highEnd
+                                    ? faCheckCircle
+                                    : faArrowCircleUp
+                                  : faCheckCircle
+                              }
+                            />
+                          ) : (
+                            ""
+                          )}
+                        </td>
+                      </tr>
+                    )
+                  )}
 
                 <tr className="align-middle">
                   <th>Actions</th>
