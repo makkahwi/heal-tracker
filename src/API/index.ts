@@ -1,13 +1,14 @@
 import axios from "axios";
 
+import store from "../Store/store";
+
+const PROJECT_ID = "personal-diet-tracker";
+
 const service = axios.create({
-  baseURL:
-    "https://personal-diet-tracker-default-rtdb.europe-west1.firebasedatabase.app//",
+  baseURL: `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents/`,
   headers: {
     "Content-Type": "application/json",
   },
 });
-
-export const demoStatus = () => false;
 
 export default service;
