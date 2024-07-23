@@ -13,8 +13,6 @@ export interface props {
 }
 
 const PageView = ({ title, data, inputs, onSubmit, onDelete }: props) => {
-  const symbol = String.fromCodePoint(8734);
-
   return (
     <PageSection title={title}>
       <Fragment>

@@ -5,11 +5,10 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import moment from "moment";
 import { Fragment } from "react";
 
-import Form, { inputProps } from "../Form";
-import PageSection from "./PageSection";
+import { dayDateFormat, timeFormat } from "../../Utils/consts";
+import { inputProps } from "../Form";
 
 export interface props {
   data: { id?: string }[];
@@ -69,11 +68,9 @@ const PageTable = ({ data, inputs, onDelete }: props) => {
                       {render
                         ? render(row, i)
                         : type === "date"
-                        ? moment((row as any)[name]).format("ddd, D MMM YYYY")
+                        ? dayDateFormat((row as any)[name])
                         : type === "time"
-                        ? moment("2024-07-23T" + (row as any)[name]).format(
-                            "hh:mm a"
-                          )
+                        ? timeFormat((row as any)[name])
                         : (row as any)[name] + (unit ? " " + unit : "")}
 
                       {(lowEnd || highEnd) && (row as any)[name] ? (
@@ -181,13 +178,9 @@ const PageTable = ({ data, inputs, onDelete }: props) => {
                           {render
                             ? render(row, i)
                             : type === "date"
-                            ? moment((row as any)[name]).format(
-                                "ddd, D MMM YYYY"
-                              )
+                            ? dayDateFormat((row as any)[name])
                             : type === "time"
-                            ? moment("2024-07-23T" + (row as any)[name]).format(
-                                "hh:mm a"
-                              )
+                            ? timeFormat((row as any)[name])
                             : (row as any)[name] + (unit ? " " + unit : "")}
 
                           {(lowEnd || highEnd) && (row as any)[name] ? (

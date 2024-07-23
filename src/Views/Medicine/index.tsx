@@ -1,14 +1,13 @@
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
 
 import * as medicineAPI from "../../API/medicine";
 import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
-import PageView from "../../Components/PageView";
 import MonthlyCalendar from "../../Components/PageView/MonthlyCalendar";
 import PageSection from "../../Components/PageView/PageSection";
+import { timeFormat } from "../../Utils/consts";
 
 export interface props {
   id?: string;
@@ -38,14 +37,12 @@ const Medicine = () => {
       name: "date",
       label: "Date",
       type: "date",
-      defaultValue: moment().format("yyyy-MM-DD"),
       required: true,
     },
     {
       name: "time",
       label: "Time",
       type: "time",
-      defaultValue: moment().format("HH:mm"),
       required: true,
     },
     {
@@ -85,7 +82,7 @@ const Medicine = () => {
     <div>
       {date ? (
         <span className="d-block bg-dark text-white p-2 my-2">
-          @ {moment("2024-07-23T" + event.time).format("h:mm a")}{" "}
+          @ {timeFormat(event.time)}{" "}
           <FontAwesomeIcon
             icon={faTrashCan}
             className="mt-1 text-danger"

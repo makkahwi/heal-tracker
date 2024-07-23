@@ -1,13 +1,6 @@
 import moment from "moment";
 import { ReactNode, useState } from "react";
-import {
-  HorizontalGridLines,
-  LineMarkSeries,
-  VerticalGridLines,
-  XAxis,
-  XYPlot,
-  YAxis,
-} from "react-vis";
+import { HorizontalGridLines, LineMarkSeries, VerticalGridLines, XAxis, XYPlot, YAxis } from "react-vis";
 
 export interface props {
   id?: string;
