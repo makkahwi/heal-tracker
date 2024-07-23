@@ -164,11 +164,12 @@ const WeightReadingCharts = ({ data }: { data: fullProps[] }) => {
 
           <div style={{ color: colors[x % colors.length] }}>
             {hovered?.title === title && (
-              <label>
-                {hovered?.date} | {hovered?.value} |
-              </label>
-            )}{" "}
+              <label className="me-1">{hovered?.value}</label>
+            )}
             {title}
+            {hovered?.title === title && (
+              <label className="ms-1">@ {hovered?.date}</label>
+            )}
           </div>
         </div>
       ))}

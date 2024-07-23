@@ -1,4 +1,7 @@
-import { faArrowCircleDown, faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowCircleDown,
+  faArrowCircleUp,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, ReactNode, useEffect, useState } from "react";
@@ -379,9 +382,37 @@ const WeightReadings = () => {
   return (
     <PageSection title="Weight Readings List">
       <Fragment>
-        <WeightReadingCharts data={data} />
+        <div className="btn-group my-3 w-100">
+          <button
+            className="btn btn-secondary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#analysis"
+            aria-expanded="false"
+            aria-controls="analysis"
+          >
+            Analysis
+          </button>
 
-        <Form inputs={formInputs} onSubmit={onSubmit} />
+          <button
+            className="btn btn-primary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#input"
+            aria-expanded="false"
+            aria-controls="input"
+          >
+            Input
+          </button>
+        </div>
+
+        <div className="collapse multi-collapse" id="analysis">
+          <WeightReadingCharts data={data} />
+        </div>
+
+        <div className="collapse multi-collapse" id="input">
+          <Form inputs={formInputs} onSubmit={onSubmit} />
+        </div>
 
         <WeightReadingsTable data={data} onDelete={onDelete} />
       </Fragment>
