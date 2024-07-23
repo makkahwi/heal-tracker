@@ -1,10 +1,10 @@
-import moment from "moment";
 import { useEffect, useState } from "react";
 
 import * as mealsAPI from "../../API/meals";
 import * as scheduleAPI from "../../API/schedule";
 import MealView, { MealViewProps } from "../../Components/MealView";
 import PageView from "../../Components/PageView";
+import { timeFormat } from "../../Utils/consts";
 import { MealProps } from "../Meals";
 
 const Schedule = () => {
@@ -39,9 +39,7 @@ const Schedule = () => {
           ? "^^^^^"
           : row.meal +
             " @ " +
-            moment(
-              "2022-01-01T" + meals.find(({ meal }) => meal === row.meal)?.time
-            ).format("h:mm a"),
+            timeFormat(meals.find(({ meal }) => meal === row.meal)?.time),
       required: true,
     },
     {

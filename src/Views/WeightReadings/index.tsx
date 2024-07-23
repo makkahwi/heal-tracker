@@ -1,14 +1,10 @@
-import {
-  faArrowCircleDown,
-  faArrowCircleUp,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleDown, faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import moment from "moment";
 import { Fragment, ReactNode, useEffect, useState } from "react";
 
 import * as weightAPI from "../../API/weight";
 import Form from "../../Components/Form";
-import PageSection from "../../Components/PageSection";
+import PageSection from "../../Components/PageView/PageSection";
 import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
 
@@ -313,7 +309,6 @@ const WeightReadings = () => {
       name: "date",
       label: "Date",
       type: "date",
-      defaultValue: moment().format("yyyy-MM-DD"),
       required: true,
     },
     {
@@ -322,7 +317,6 @@ const WeightReadings = () => {
       type: "number",
       step: "0.1",
       required: true,
-      chart: true,
     },
     {
       name: "weight",

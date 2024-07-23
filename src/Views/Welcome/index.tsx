@@ -1,5 +1,5 @@
 import { Fragment } from "react/jsx-runtime";
-import PageSection from "../../Components/PageSection";
+import PageSection from "../../Components/PageView/PageSection";
 
 const Welcome = () => {
   return (
