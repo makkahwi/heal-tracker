@@ -71,7 +71,7 @@ const Form = ({ inputs, onSubmit }: props) => {
           },
           i
         ) => (
-          <div className={fullWidth ? "" : "col-md-6 col-lg-4"} key={i}>
+          <div className={fullWidth ? "col-12" : "col-md-6 col-lg-4"} key={i}>
             <label className="form-label text-start w-100 mt-4">
               {label}
               {required ? <span className="ms-1 text-danger"> *</span> : ""}
@@ -204,9 +204,11 @@ const Form = ({ inputs, onSubmit }: props) => {
         )
       )}
 
-      <button className="btn btn-secondary float-end my-4 p-3" type="submit">
-        Submit
-      </button>
+      <div className="col-xs-12">
+        <button className="btn btn-secondary my-4 p-3 w-100" type="submit">
+          Submit
+        </button>
+      </div>
     </form>
   );
 };
