@@ -8,7 +8,7 @@ import { Fragment, ReactNode, useEffect, useState } from "react";
 
 import * as weightAPI from "../../API/weight";
 import Form from "../../Components/Form";
-import PageSection from "../../Components/PageSection";
+import PageSection from "../../Components/PageView/PageSection";
 import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
 

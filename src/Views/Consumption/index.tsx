@@ -6,7 +6,7 @@ import * as mealsAPI from "../../API/meals";
 import * as scheduleAPI from "../../API/schedule";
 import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
-import PageSection from "../../Components/PageSection";
+import PageSection from "../../Components/PageView/PageSection";
 import { MealProps } from "../Meals";
 import WeeklyCalendar from "./WeeklyCalendar";
 
