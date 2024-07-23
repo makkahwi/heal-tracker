@@ -1,30 +1,35 @@
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
-import * as mealsAPI from "../../API/meals";
-import * as scheduleAPI from "../../API/schedule";
+import * as BeAPI from "../../API";
 import MealView, { MealViewProps } from "../../Components/MealView";
 import PageView from "../../Components/PageView";
+import { RootState } from "../../Store/store";
 import { timeFormat } from "../../Utils/consts";
 import { MealProps } from "../Meals";
 
 const Schedule = () => {
+  const user = useSelector((state: RootState) => state.auth.user);
+
   const [data, setData] = useState<MealViewProps[]>([]);
   const [meals, setMeals] = useState<MealProps[]>([]);
 
   const getData = () => {
-    mealsAPI.getAll().then((meals: MealProps[]) => {
-      setMeals(meals);
+    BeAPI.getAll("meals", user.idToken)
+      .then((meals: MealProps[]) => {
+        setMeals(meals);
 
-      scheduleAPI
-        .getAll()
-        .then((res: MealViewProps[]) =>
-          setData(res.sort((a: any, b: any) => (a.meal < b.meal ? -1 : 1)))
-        );
-    });
+        BeAPI.getAll("schedule", user.idToken)
+          .then((res: MealViewProps[]) =>
+            setData(res.sort((a: any, b: any) => (a.meal < b.meal ? -1 : 1)))
+          )
+          .catch((err) => console.log({ err }));
+      })
+      .catch((err) => console.log({ err }));
   };
 
   useEffect(() => {
-    // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
+    // BeAPI.getAll().then((res: MealViewProps[][]) => setData(res));
     getData();
   }, []);
 
@@ -78,16 +83,18 @@ const Schedule = () => {
     }));
 
     finalValue.forEach((value) =>
-      scheduleAPI.create(value).then(() => {
+      BeAPI.create("schedule", value, user.idToken).then(() => {
         getData();
       })
     );
   };
 
   const onDelete = (id: string) =>
-    scheduleAPI.remove(id).then(() => {
-      getData();
-    });
+    BeAPI.remove("schedule", id, user.idToken)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
 
   return (
     <PageView
