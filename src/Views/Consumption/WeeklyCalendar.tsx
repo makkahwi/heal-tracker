@@ -55,121 +55,119 @@ const WeeklyCalendar = ({
   };
 
   return (
-    <table
-      className="table table-bordered table-striped bg-white"
-      style={{
-        minWidth: "1000px",
-      }}
-    >
-      <tr>
-        <th>
-          <button className="btn btn-secondary" onClick={handlePreviousWeek}>
-            Previous
-          </button>
-        </th>
+    <Fragment>
+      <div className="d-flex justify-content-between mb-2">
+        <button className="btn btn-primary" onClick={handlePreviousWeek}>
+          Previous Week
+        </button>
 
-        <th colSpan={6} className="h3 py-4">
-          Weekly Calendar
-        </th>
+        <h2 className="text-center">{"Weekly Calendar"}</h2>
 
-        <th>
-          <button className="btn btn-secondary" onClick={handleNextWeek}>
-            Next
-          </button>
-        </th>
-      </tr>
+        <button className="btn btn-primary" onClick={handleNextWeek}>
+          Next Week
+        </button>
+      </div>
 
-      <tr>
-        <th rowSpan={2}>Meal</th>
+      <table
+        className="table table-bordered table-striped bg-white"
+        style={{
+          minWidth: "1000px",
+        }}
+      >
+        <tr>
+          <th rowSpan={2}>Meal</th>
 
-        {currentWeek.map((day, i) => (
-          <td key={i}>{day.format("ddd")}</td>
-        ))}
-      </tr>
+          {currentWeek.map((day, i) => (
+            <td key={i}>{day.format("ddd")}</td>
+          ))}
+        </tr>
 
-      <tr>
-        {currentWeek.map((day, i) => (
-          <th key={i}>{day.format("D MMM YY")}</th>
-        ))}
-      </tr>
+        <tr>
+          {currentWeek.map((day, i) => (
+            <th key={i}>{day.format("D MMM YY")}</th>
+          ))}
+        </tr>
 
-      {currentWeekData
-        .map(({ meal }) => meal)
-        .sort((a: any, b: any) => (a.time < b.time ? -1 : 1))
-        .map(({ meal }) => meal)
-        .reduce<string[]>(
-          (final, current) =>
-            final.includes(current) ? final : [...final, current],
-          []
-        )
-        // meals
-        //   .map(({ meal }) => meal)
-        .map((meal, i) => (
-          <tr key={i}>
-            <th className="text-start">
-              {meal}
+        {currentWeekData
+          .map(({ meal }) => meal)
+          .sort((a: any, b: any) => (a.time < b.time ? -1 : 1))
+          .map(({ meal }) => meal)
+          .reduce<string[]>(
+            (final, current) =>
+              final.includes(current) ? final : [...final, current],
+            []
+          )
+          // meals
+          //   .map(({ meal }) => meal)
+          .map((meal, i) => (
+            <tr key={i}>
+              <th className="text-start">
+                {meal}
 
-              {currentWeekData
-                .find((dat) => meal === dat.meal.meal)
-                ?.supposed?.map(({ element, count, note }, y) => (
-                  <MealView
-                    dark={y % 2 === 1}
-                    meal={meal}
-                    count={count}
-                    element={element}
-                    note={note}
-                    key={y}
-                  />
-                )) || ""}
-            </th>
+                {currentWeekData
+                  .find((dat) => meal === dat.meal.meal)
+                  ?.supposed?.map(({ element, count, note }, y) => (
+                    <MealView
+                      dark={y % 2 === 1}
+                      meal={meal}
+                      count={count}
+                      element={element}
+                      note={note}
+                      key={y}
+                    />
+                  )) || ""}
+              </th>
 
-            {currentWeek.map((day, x) => {
-              const theMeals: props[] | undefined = currentWeekData
-                .filter(
-                  (dat) =>
-                    meal === dat.meal.meal &&
-                    moment(dat.timestamp).format("yyyy-MM-DD") ===
-                      day.format("yyyy-MM-DD")
-                )
-                .sort((a: any, b: any) => (a.timestamp < b.timestamp ? -1 : 1));
+              {currentWeek.map((day, x) => {
+                const theMeals: props[] | undefined = currentWeekData
+                  .filter(
+                    (dat) =>
+                      meal === dat.meal.meal &&
+                      moment(dat.timestamp).format("yyyy-MM-DD") ===
+                        day.format("yyyy-MM-DD")
+                  )
+                  .sort((a: any, b: any) =>
+                    a.timestamp < b.timestamp ? -1 : 1
+                  );
 
-              return (
-                <td className="text-start align-top" key={x}>
-                  {theMeals?.map((theMeal) => (
-                    <Fragment>
-                      {theMeal.timestamp ? (
-                        <span className="d-block bg-dark text-white">
-                          {"@ " + moment(theMeal?.timestamp).format("h:mm a")}
+                return (
+                  <td className="text-start align-top" key={x}>
+                    {theMeals?.map((theMeal) => (
+                      <Fragment>
+                        {theMeal.timestamp ? (
+                          <span className="d-block bg-dark text-white">
+                            {"@ " + moment(theMeal?.timestamp).format("h:mm a")}
 
-                          <FontAwesomeIcon
-                            icon={faTrashCan}
-                            className="me-1 mt-1 text-danger float-end"
-                            role="button"
-                            onClick={() => onDelete(theMeal.id)}
+                            <FontAwesomeIcon
+                              icon={faTrashCan}
+                              className="me-1 mt-1 text-danger float-end"
+                              role="button"
+                              onClick={() => onDelete(theMeal.id)}
+                            />
+                          </span>
+                        ) : (
+                          ""
+                        )}
+
+                        {theMeal.contents.map(({ element, count, note }, y) => (
+                          <MealView
+                            dark={y % 2 === 1}
+                            meal={meal}
+                            count={count}
+                            element={element}
+                            note={note}
+                            key={y}
                           />
-                        </span>
-                      ) : (
-                        ""
-                      )}
-
-                      {theMeal.contents.map(({ element, count, note }, y) => (
-                        <MealView
-                          dark={y % 2 === 1}
-                          meal={meal}
-                          count={count}
-                          element={element}
-                          note={note}
-                          key={y}
-                        />
-                      ))}
-                    </Fragment>
-                  ))}
-                </td>
-              );
-            })}
-          </tr>
-        ))}
-    </table>
+                        ))}
+                      </Fragment>
+                    ))}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+      </table>
+    </Fragment>
   );
 };
 
