@@ -14,6 +14,7 @@ export interface props {
   id?: string;
   timestamp: MomentInput;
   meal: MealProps;
+  note?: string;
   contents: MealViewProps[];
   supposed: MealViewProps[];
 }
@@ -73,10 +74,23 @@ const Consumption = () => {
         setValues((current: any) => ({
           ...current,
           [e.target.name]: e.target.value,
-          contents: scheduled.filter(({ meal }) => meal === e.target.value),
+          contents: scheduled
+            .filter(({ meal }) => meal === e.target.value)
+            .reduce(
+              (final: MealViewProps[], { alternatives, ...rest }) =>
+                alternatives
+                  ? [...final, rest, ...alternatives]
+                  : [...final, rest],
+              []
+            ),
         }));
       },
       required: true,
+    },
+    {
+      name: "note",
+      label: "Note",
+      fullWidth: true,
     },
     {
       name: "contents",

@@ -34,7 +34,6 @@ const Sports = () => {
       label: "Date",
       type: "date",
       defaultValue: moment().format("yyyy-MM-DD"),
-      render: (row: any) => moment(row.date).format("ddd, D MMM YYYY"),
       required: true,
     },
     {
@@ -58,6 +57,7 @@ const Sports = () => {
       defaultValue: 6,
       step: "0.1",
       required: true,
+      total: true,
     },
   ];
 
