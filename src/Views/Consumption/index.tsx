@@ -73,7 +73,15 @@ const Consumption = () => {
         setValues((current: any) => ({
           ...current,
           [e.target.name]: e.target.value,
-          contents: scheduled.filter(({ meal }) => meal === e.target.value),
+          contents: scheduled
+            .filter(({ meal }) => meal === e.target.value)
+            .reduce(
+              (final: MealViewProps[], { alternatives, ...rest }) =>
+                alternatives
+                  ? [...final, rest, ...alternatives]
+                  : [...final, rest],
+              []
+            ),
         }));
       },
       required: true,
