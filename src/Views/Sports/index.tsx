@@ -1,6 +1,5 @@
-import { faTrash, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
 
 import * as sessionsAPI from "../../API/sessions";
@@ -8,6 +7,7 @@ import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
 import MonthlyCalendar from "../../Components/PageView/MonthlyCalendar";
 import PageSection from "../../Components/PageView/PageSection";
+import { timeFormat } from "../../Utils/consts";
 
 export interface props {
   id?: string;
@@ -37,21 +37,18 @@ const Sports = () => {
       name: "date",
       label: "Date",
       type: "date",
-      defaultValue: moment().format("yyyy-MM-DD"),
       required: true,
     },
     {
       name: "startTime",
       label: "Start Time",
       type: "time",
-      defaultValue: moment().format("HH:mm"),
       required: true,
     },
     {
       name: "endTime",
       label: "End Time",
       type: "time",
-      defaultValue: moment().format("HH:mm"),
       required: true,
     },
     {
@@ -86,8 +83,7 @@ const Sports = () => {
     <div>
       {date ? (
         <span className="d-block bg-dark text-white p-2 my-2">
-          @ {moment("2024-07-23T" + event.startTime).format("h:mm")} -{" "}
-          {moment("2024-07-23T" + event.endTime).format("h:mm a")}{" "}
+          @ {timeFormat(event.startTime)} - {timeFormat(event.endTime)}{" "}
         </span>
       ) : (
         ""

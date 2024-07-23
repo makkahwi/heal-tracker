@@ -1,9 +1,9 @@
-import moment from "moment";
 import { useEffect, useState } from "react";
 
 import * as mealsAPI from "../../API/meals";
 import { MealViewProps } from "../../Components/MealView";
 import PageView from "../../Components/PageView";
+import { timeFormat } from "../../Utils/consts";
 
 export interface MealProps {
   id?: string;
@@ -32,7 +32,7 @@ const Meals = () => {
       name: "time",
       label: "Time of Meal",
       type: "time",
-      render: (row: any) => moment("2024-07-01T" + row.time).format("h:mm a"),
+      render: (row: any) => timeFormat(row.time),
       required: true,
     },
   ];

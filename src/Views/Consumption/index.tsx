@@ -55,14 +55,12 @@ const Consumption = () => {
       name: "date",
       label: "Date",
       type: "date",
-      defaultValue: moment().format("yyyy-MM-DD"),
       required: true,
     },
     {
       name: "time",
       label: "Time",
       type: "time",
-      defaultValue: moment().format("HH:mm"),
       required: true,
     },
     {
