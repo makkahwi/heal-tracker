@@ -2,6 +2,16 @@
   "name": "personal-diet-tracker",
   "version": "0.1.0",
   "private": true,
+  "description": "A React.js-Based Personal Diet Tracker",
+  "author": {
+    "name": "Suhaib Ahmad",
+    "url": "https://www.Suhaib.dev/",
+    "github": "https://github.com/makkahwi",
+    "linkedin": "https://linkedin.com/in/makkahwi",
+    "facebook": "https://facebook.com/makkahwi/",
+    "instagram": "https://www.instagram.com/makkahwi/",
+    "email": "SuhaibAhmadAi@hotmail.com"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
