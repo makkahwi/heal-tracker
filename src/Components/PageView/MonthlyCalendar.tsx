@@ -20,30 +20,31 @@ const MonthlyCalendar = ({ data, renderEvent }: props) => {
   const [currentMonth, setCurrentMonth] = useState<Moment>(moment());
 
   const daysOfWeek = [
-    "Saturday",
     "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
+    "Saturday",
   ];
 
   const startOfMonth = currentMonth.clone().startOf("month");
   const endOfMonth = currentMonth.clone().endOf("month");
 
-  // Ensure the calendar starts on the Saturday before the first day of the month, and ends on the Friday after the last day of the month
-  const startOfCalendar = startOfMonth.clone().startOf("week").day(6);
-  const endOfCalendar = endOfMonth.clone().endOf("week").day(5);
+  const startOfCalendar = startOfMonth.clone().startOf("week");
+  const endOfCalendar = endOfMonth.clone().endOf("week");
 
   const weeks: { weekNumber: number; days: Moment[] }[] = [];
   let day = startOfCalendar.clone().subtract(1, "day");
 
   while (day.isBefore(endOfCalendar, "day")) {
     const week: Moment[] = [];
+
     for (let i = 0; i < 7; i++) {
       week.push(day.add(1, "day").clone());
     }
+
     weeks.push({ weekNumber: week[0].isoWeek(), days: week });
   }
 
