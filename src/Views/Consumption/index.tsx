@@ -14,6 +14,7 @@ export interface props {
   id?: string;
   timestamp: MomentInput;
   meal: MealProps;
+  note?: string;
   contents: MealViewProps[];
   supposed: MealViewProps[];
 }
@@ -85,6 +86,11 @@ const Consumption = () => {
         }));
       },
       required: true,
+    },
+    {
+      name: "note",
+      label: "Note",
+      fullWidth: true,
     },
     {
       name: "contents",
