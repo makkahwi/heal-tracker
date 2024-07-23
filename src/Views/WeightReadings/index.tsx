@@ -800,7 +800,7 @@ const WeightReadings = () => {
                     </tr>
 
                     <tr className="align-middle">
-                      <th>X</th>
+                      <th>Physique Rating</th>
                       <td>{physique}</td>
 
                       {showData.weekly.includes(i) ? (
@@ -817,7 +817,7 @@ const WeightReadings = () => {
                     </tr>
 
                     <tr className="align-middle">
-                      <th>Y</th>
+                      <th>Bones Mass</th>
                       <td>{bones}</td>
 
                       {showData.weekly.includes(i) ? (
