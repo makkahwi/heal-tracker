@@ -1,30 +1,16 @@
 import { AxiosResponse } from "axios";
 
-import service, { demoStatus } from ".";
+import service from ".";
 
-const getAll = async () => {
-  switch (demoStatus()) {
-    default:
-      return await service
-        .get("sessions.json")
-        .then((res: AxiosResponse) =>
-          Object.keys(res.data).map((key) => ({ ...res.data[key], id: key }))
-        );
-  }
-};
+const getAll = async () =>
+  await service
+    .get("sessions.json")
+    .then((res: AxiosResponse) =>
+      Object.keys(res.data).map((key) => ({ ...res.data[key], id: key }))
+    );
 
-const create = async (data = {}) => {
-  switch (demoStatus()) {
-    default:
-      return await service.post("sessions.json", data);
-  }
-};
+const create = async (data = {}) => await service.post("sessions.json", data);
 
-const remove = async (id = "") => {
-  switch (demoStatus()) {
-    default:
-      return await service.delete(`sessions/${id}.json`);
-  }
-};
+const remove = async (id = "") => await service.delete(`sessions/${id}.json`);
 
 export { getAll, create, remove };
