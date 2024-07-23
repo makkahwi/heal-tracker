@@ -1,7 +1,24 @@
-import { faArrowCircleDown, faArrowCircleUp, faCalendar, faCalendarDays, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowCircleDown,
+  faArrowCircleUp,
+  faCalendar,
+  faCalendarDays,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, ReactNode, useEffect, useState } from "react";
+import {
+  HorizontalGridLines,
+  LabelSeries,
+  LineMarkSeries,
+  LineSeries,
+  VerticalBarSeries,
+  VerticalGridLines,
+  XAxis,
+  XYPlot,
+  YAxis,
+} from "react-vis";
 
 import * as weightAPI from "../../API/weight";
 import Form from "../../Components/Form";
@@ -48,9 +65,15 @@ interface calculationsProps {
 }
 
 type fullProps = props & calculationsProps;
+export const PI = Math.PI;
 
 const WeightReadings = () => {
   const [data, setData] = useState<fullProps[]>([]);
+  const [hovered, setHovered] = useState<{
+    date?: string;
+    title?: string;
+    value?: number;
+  }>({});
   const [showData, setShowData] = useState({
     readings: [-1],
     weekly: [-1],
@@ -78,7 +101,7 @@ const WeightReadings = () => {
       <span className={"text-" + color}>
         {changeAmount} {unit}
         <br />
-        {changePercentage + "%"}
+        {changePercentage}
         <br />
         <FontAwesomeIcon icon={icon} />
       </span>
@@ -106,10 +129,9 @@ const WeightReadings = () => {
             muscles,
             physique,
             bones,
-            fatWeight: (Math.round(fat * weight) / 100).toFixed(2) + " KG",
-            waterWeight: (Math.round(water * weight) / 100).toFixed(2) + " KG",
-            musclesPercentage:
-              Math.round((muscles / weight) * 100).toFixed(2) + "%",
+            fatWeight: (Math.round(fat * weight) / 100).toFixed(2),
+            waterWeight: (Math.round(water * weight) / 100).toFixed(2),
+            musclesPercentage: Math.round((muscles / weight) * 100).toFixed(2),
             weightWeeklyChange:
               i < sortedRes.length - 1
                 ? changeCalculator(
@@ -323,6 +345,7 @@ const WeightReadings = () => {
       type: "number",
       step: "0.1",
       required: true,
+      chart: true,
     },
     {
       name: "weight",
@@ -379,9 +402,127 @@ const WeightReadings = () => {
       getData();
     });
 
+  const chart = [
+    {
+      data: data.map(({ weight, date }) => ({ x: date, y: weight })),
+      title: "Weight",
+    },
+    {
+      data: data.map(({ fat, date }) => ({
+        x: date,
+        y: fat,
+      })),
+      title: "Fat",
+    },
+    {
+      data: data.map(({ fatWeight, date }) => ({
+        x: date,
+        y: parseFloat(fatWeight),
+      })),
+      title: "Fat Weight",
+    },
+    {
+      data: data.map(({ water, date }) => ({
+        x: date,
+        y: water,
+      })),
+      title: "Water",
+    },
+    {
+      data: data.map(({ waterWeight, date }) => ({
+        x: date,
+        y: parseFloat(waterWeight),
+      })),
+      title: "Water Weight",
+    },
+    {
+      data: data.map(({ waist, date }) => ({
+        x: date,
+        y: waist,
+      })),
+      title: "Waist",
+    },
+    {
+      data: data.map(({ muscles, date }) => ({
+        x: date,
+        y: muscles,
+      })),
+      title: "Muscles",
+    },
+    {
+      data: data.map(({ musclesPercentage, date }) => ({
+        x: date,
+        y: parseFloat(musclesPercentage),
+      })),
+      title: "Muscles Percentage",
+    },
+    {
+      data: data.map(({ physique, date }) => ({
+        x: date,
+        y: physique,
+      })),
+      title: "Physique",
+    },
+    {
+      data: data.map(({ bones, date }) => ({
+        x: date,
+        y: bones,
+      })),
+      title: "Bones",
+    },
+  ];
+
+  const colors = [
+    "#184e77",
+    "#1e6091",
+    "#1a759f",
+    "#168aad",
+    "#34a0a4",
+    "#52b69a",
+    "#76c893",
+    "#99d98c",
+  ];
+
   return (
     <PageSection title="Weight Readings List">
       <Fragment>
+        <div className="row">
+          {chart.map(({ data, title }, x) => (
+            <div
+              className="col-md-6 col-lg-4 col-xl-3 my-3 justify-center"
+              key={x}
+            >
+              <XYPlot xType="time" width={300} height={300}>
+                <VerticalGridLines />
+                <HorizontalGridLines />
+                <XAxis title="Date" />
+                <YAxis title="Reading" />
+                <LineMarkSeries
+                  data={data.map(({ x, y }) => ({ x: moment(x).valueOf(), y }))}
+                  color={colors[x % colors.length]}
+                  onValueMouseOver={(v) =>
+                    setHovered({
+                      date: String(moment(v.x).format("DD MMM yyyy")),
+                      value: parseFloat(String(v.y)),
+                      title,
+                    })
+                  }
+                  onValueMouseOut={() => setHovered({})}
+                />
+              </XYPlot>
+
+              <div style={{ color: colors[x % colors.length] }}>
+                {hovered?.title === title && (
+                  <label>
+                    {hovered?.date} | {hovered?.value} |
+                  </label>
+                )}{" "}
+                {title}
+              </div>
+            </div>
+          ))}
+        </div>
+
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
         <div className="d-none d-xl-block">
@@ -454,13 +595,13 @@ const WeightReadings = () => {
                         {moment(date).format("ddd, D MMM YYYY")}
                       </td>
                       <td>Reading</td>
-                      <td>{weight + " KG"}</td>
-                      <td>{fat + "%"}</td>
+                      <td>{weight}</td>
+                      <td>{fat}</td>
                       <td>{fatWeight}</td>
-                      <td>{water + "%"}</td>
+                      <td>{water}</td>
                       <td>{waterWeight}</td>
                       <td>{waist}</td>
-                      <td>{muscles + " KG"}</td>
+                      <td>{muscles}</td>
                       <td>{musclesPercentage}</td>
                       <td>{physique}</td>
                       <td>{bones}</td>
@@ -665,7 +806,7 @@ const WeightReadings = () => {
 
                     <tr className="align-middle">
                       <th>Weight</th>
-                      <td>{weight + " KG"}</td>
+                      <td>{weight}</td>
 
                       {showData.weekly.includes(i) ? (
                         <td>{weightWeeklyChange}</td>
@@ -682,7 +823,7 @@ const WeightReadings = () => {
 
                     <tr className="align-middle">
                       <th>Fat Reading</th>
-                      <td>{fat + "%"}</td>
+                      <td>{fat}</td>
 
                       {showData.weekly.includes(i) ? (
                         <td>{fatWeeklyChange}</td>
@@ -716,7 +857,7 @@ const WeightReadings = () => {
 
                     <tr className="align-middle">
                       <th>Water Reading</th>
-                      <td>{water + "%"}</td>
+                      <td>{water}</td>
 
                       {showData.weekly.includes(i) ? (
                         <td>{waterWeeklyChange}</td>
@@ -767,7 +908,7 @@ const WeightReadings = () => {
 
                     <tr className="align-middle">
                       <th>Muscles Reading</th>
-                      <td>{muscles + " KG"}</td>
+                      <td>{muscles}</td>
 
                       {showData.weekly.includes(i) ? (
                         <td>{musclesWeeklyChange}</td>
