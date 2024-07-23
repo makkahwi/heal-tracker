@@ -57,6 +57,7 @@ const Sports = () => {
       defaultValue: 6,
       step: "0.1",
       required: true,
+      total: true,
     },
   ];
 

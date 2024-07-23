@@ -20,6 +20,7 @@ export interface inputProps {
   options?: string[];
   inputs?: inputProps[];
   render?: Function;
+  total?: boolean;
 }
 
 interface props {
