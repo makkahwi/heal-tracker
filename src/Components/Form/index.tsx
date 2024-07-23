@@ -21,6 +21,7 @@ export interface inputProps {
   inputs?: inputProps[];
   render?: Function;
   total?: boolean;
+  unit?: string;
 }
 
 interface props {
