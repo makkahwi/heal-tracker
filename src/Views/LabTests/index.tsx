@@ -30,7 +30,6 @@ const LabTests = () => {
       label: "Date",
       type: "date",
       defaultValue: moment().format("yyyy-MM-DD"),
-      render: (row: any) => moment(row.date).format("ddd, D MMM YYYY"),
       required: true,
     },
     {

@@ -5,6 +5,7 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import moment from "moment";
 import { Fragment } from "react";
 
 import Form, { inputProps } from "../../Components/Form";
@@ -49,7 +50,7 @@ const PageView = ({ title, data, inputs, onSubmit, onDelete }: props) => {
             <tbody>
               {data.map(({ id, ...row }, i) => (
                 <tr className="align-middle" key={i}>
-                  {inputs.map(({ name, render, lowEnd, highEnd }, x) => (
+                  {inputs.map(({ name, render, lowEnd, highEnd, type }, x) => (
                     <td
                       className={
                         lowEnd && highEnd
@@ -69,7 +70,15 @@ const PageView = ({ title, data, inputs, onSubmit, onDelete }: props) => {
                       }
                       key={x}
                     >
-                      {render ? render(row, i) : (row as any)[name]}
+                      {render
+                        ? render(row, i)
+                        : type === "date"
+                        ? moment((row as any)[name]).format("ddd, D MMM YYYY")
+                        : type === "time"
+                        ? moment("2024-07-23T" + (row as any)[name]).format(
+                            "hh:mm a"
+                          )
+                        : (row as any)[name]}
 
                       {(lowEnd || highEnd) && (row as any)[name] ? (
                         <FontAwesomeIcon
