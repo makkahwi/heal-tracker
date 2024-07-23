@@ -6,7 +6,7 @@ import * as mealsAPI from "../../API/meals";
 import * as scheduleAPI from "../../API/schedule";
 import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
-import PageSection from "../../Components/PageSection";
+import PageSection from "../../Components/PageView/PageSection";
 import { MealProps } from "../Meals";
 import WeeklyCalendar from "./WeeklyCalendar";
 
@@ -55,14 +55,12 @@ const Consumption = () => {
       name: "date",
       label: "Date",
       type: "date",
-      defaultValue: moment().format("yyyy-MM-DD"),
       required: true,
     },
     {
       name: "time",
       label: "Time",
       type: "time",
-      defaultValue: moment().format("HH:mm"),
       required: true,
     },
     {

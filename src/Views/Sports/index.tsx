@@ -1,9 +1,13 @@
-import moment from "moment";
-import { useEffect, useState } from "react";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Fragment, useEffect, useState } from "react";
 
 import * as sessionsAPI from "../../API/sessions";
+import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
-import PageView from "../../Components/PageView";
+import MonthlyCalendar from "../../Components/PageView/MonthlyCalendar";
+import PageSection from "../../Components/PageView/PageSection";
+import { timeFormat } from "../../Utils/consts";
 
 export interface props {
   id?: string;
@@ -33,21 +37,18 @@ const Sports = () => {
       name: "date",
       label: "Date",
       type: "date",
-      defaultValue: moment().format("yyyy-MM-DD"),
       required: true,
     },
     {
       name: "startTime",
       label: "Start Time",
       type: "time",
-      defaultValue: moment().format("HH:mm"),
       required: true,
     },
     {
       name: "endTime",
       label: "End Time",
       type: "time",
-      defaultValue: moment().format("HH:mm"),
       required: true,
     },
     {
@@ -56,6 +57,7 @@ const Sports = () => {
       type: "number",
       defaultValue: 6,
       step: "0.1",
+      unit: "KM",
       required: true,
       total: true,
     },
@@ -77,14 +79,35 @@ const Sports = () => {
       getData();
     });
 
+  const renderDistanceEvent = (event: any, date: string, id: string) => (
+    <div>
+      {date ? (
+        <span className="d-block bg-dark text-white p-2 my-2">
+          @ {timeFormat(event.startTime)} - {timeFormat(event.endTime)}{" "}
+        </span>
+      ) : (
+        ""
+      )}
+      <div className="fw-bold">
+        {event.distance} km{" "}
+        <FontAwesomeIcon
+          icon={faTrashCan}
+          className="mt-1 text-danger"
+          role="button"
+          onClick={() => onDelete(id)}
+        />
+      </div>
+    </div>
+  );
+
   return (
-    <PageView
-      title="Sport Sessions List"
-      data={data}
-      inputs={formInputs}
-      onSubmit={onSubmit}
-      onDelete={onDelete}
-    />
+    <PageSection title="Sport Sessions List">
+      <Fragment>
+        <Form inputs={formInputs} onSubmit={onSubmit} />
+
+        <MonthlyCalendar data={data} renderEvent={renderDistanceEvent} />
+      </Fragment>
+    </PageSection>
   );
 };
 

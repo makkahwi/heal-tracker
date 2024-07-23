@@ -1,5 +1,6 @@
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import moment from "moment";
 import { useState } from "react";
 
 interface dynamicObject {
@@ -21,6 +22,7 @@ export interface inputProps {
   inputs?: inputProps[];
   render?: Function;
   total?: boolean;
+  unit?: string;
 }
 
 interface props {
@@ -31,7 +33,16 @@ interface props {
 const Form = ({ inputs, onSubmit }: props) => {
   const [formValues, setFormValues] = useState<dynamicObject>(
     inputs.reduce(
-      (final, { defaultValue, name }) => ({ ...final, [name]: defaultValue }),
+      (final, { defaultValue, type, name }) => ({
+        ...final,
+        [name]: defaultValue
+          ? defaultValue
+          : type === "date"
+          ? moment().format("yyyy-MM-DD")
+          : type === "time"
+          ? moment().format("HH:mm")
+          : undefined,
+      }),
       {}
     )
   );
@@ -60,7 +71,7 @@ const Form = ({ inputs, onSubmit }: props) => {
           },
           i
         ) => (
-          <div className={fullWidth ? "" : "col-md-6 col-lg-4"} key={i}>
+          <div className={fullWidth ? "col-12" : "col-md-6 col-lg-4"} key={i}>
             <label className="form-label text-start w-100 mt-4">
               {label}
               {required ? <span className="ms-1 text-danger"> *</span> : ""}
@@ -193,9 +204,11 @@ const Form = ({ inputs, onSubmit }: props) => {
         )
       )}
 
-      <button className="btn btn-secondary float-end my-4 p-3" type="submit">
-        Submit
-      </button>
+      <div className="col-xs-12">
+        <button className="btn btn-secondary my-4 p-3 w-100" type="submit">
+          Submit
+        </button>
+      </div>
     </form>
   );
 };

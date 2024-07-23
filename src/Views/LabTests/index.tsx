@@ -29,7 +29,6 @@ const LabTests = () => {
       name: "date",
       label: "Date",
       type: "date",
-      defaultValue: moment().format("yyyy-MM-DD"),
       required: true,
     },
     {

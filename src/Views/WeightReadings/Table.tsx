@@ -1,11 +1,8 @@
-import {
-  faCalendar,
-  faCalendarDays,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCalendar, faCalendarDays, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import moment from "moment";
 import { Fragment, ReactNode, useState } from "react";
+
+import { dayDateFormat } from "../../Utils/consts";
 
 export interface props {
   id?: string;
@@ -131,7 +128,7 @@ const WeightReadingsTable = ({
                         (showData.sinceStart.includes(i) ? 1 : 0)
                       }
                     >
-                      {moment(date).format("ddd, D MMM YYYY")}
+                      {dayDateFormat(date)}
                     </td>
                     <td>Reading</td>
                     <td>{weight}</td>
@@ -320,7 +317,7 @@ const WeightReadingsTable = ({
                 <tbody>
                   <tr className="align-middle">
                     <th>Date</th>
-                    <td>{moment(date).format("ddd, D MMM YYYY")}</td>
+                    <td>{dayDateFormat(date)}</td>
 
                     {showData.weekly.includes(i) ? (
                       <td>
