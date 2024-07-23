@@ -114,6 +114,27 @@ const PageView = ({ title, data, inputs, onSubmit, onDelete }: props) => {
                 </tr>
               ))}
             </tbody>
+
+            {inputs.filter(({ total }) => total)?.length ? (
+              <tfoot>
+                <tr>
+                  {inputs.map(({ name, total, label }, x) => (
+                    <td key={x}>
+                      {total
+                        ? "Total " +
+                          label +
+                          " | " +
+                          data
+                            .map((row) => parseFloat((row as any)[name]))
+                            .reduce((final, current) => (final += current), 0)
+                        : ""}
+                    </td>
+                  ))}
+                </tr>
+              </tfoot>
+            ) : (
+              ""
+            )}
           </table>
         </div>
 
