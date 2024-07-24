@@ -49,21 +49,12 @@ service.interceptors.response.use(
 const getAll = async (table = "") => {
   const user = store.getState().auth.user;
 
-  return await service
-    .get(`${table}/${user.localId}.json`)
-    .then((res) => {
-      const data = res
-        ? Object.entries(res).map(([id, values]) => ({ id, ...values }))
-        : [];
-      return data;
-    })
-    .catch((error) => {
-      console.error(
-        "Get All Error:",
-        error.response ? error.response.data : error.message
-      );
-      throw error;
-    });
+  return await service.get(`${table}/${user.localId}.json`).then((res) => {
+    const data = res
+      ? Object.entries(res).map(([id, values]) => ({ id, ...values }))
+      : [];
+    return data;
+  });
 };
 
 const create = async (table = "", data = {}) => {
