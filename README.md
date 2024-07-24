@@ -16,6 +16,7 @@ This is to setup the schedule of meals you are following (diet), and insert what
 - Build LabTest analysis
 - Reflect units in WeightReadings table
 - Build update functionality
+- Move firebase API key to env vars
 - Localize app
 - Convert lab tests to not required
 - Turn sport sessions to "Walk Exercises"
@@ -28,7 +29,17 @@ This is to setup the schedule of meals you are following (diet), and insert what
   - Time
   - Name
   - Quantity
+- Build user profile service
+  - Name
+  - Photo
+  - Bio & geo data
 - Build user settings
-  - Defaults data for...
-    - Sport distance
+  - Default data inputs for...
+    - Walk distance
     - Medicine type & quantity
+- Build admin panel
+  - List of users
+    - Create
+    - Delete
+    - Password reset
+  - Across-user analysis
