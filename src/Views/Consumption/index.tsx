@@ -27,19 +27,19 @@ const Consumption = () => {
   const [meals, setMeals] = useState<MealProps[]>([]);
 
   const getData = () => {
-    BeAPI.getAll("schedule", user.idToken)
+    BeAPI.getAll("schedule")
       .then((res: MealViewProps[]) =>
         setScheduled(res?.sort((a, b) => (a.element > b.element ? 1 : -1)))
       )
       .catch((err) => console.log({ err }));
-    BeAPI.getAll("consumption", user.idToken)
+    BeAPI.getAll("consumption")
       .then((res: props[]) =>
         setData(
           res
-            .sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
-            .map(({ contents, supposed, ...rest }) => ({
+            ?.sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
+            ?.map(({ contents, supposed, ...rest }) => ({
               ...rest,
-              contents: contents.sort((a, b) =>
+              contents: contents?.sort((a, b) =>
                 a.element > b.element ? 1 : -1
               ),
               supposed: supposed?.sort((a, b) =>
@@ -49,7 +49,7 @@ const Consumption = () => {
         )
       )
       .catch((err) => console.log({ err }));
-    BeAPI.getAll("meals", user.idToken)
+    BeAPI.getAll("meals")
       .then((res: any) => setMeals([...res, { meal: "Other" }]))
       .catch((err) => console.log({ err }));
   };
@@ -75,13 +75,13 @@ const Consumption = () => {
       name: "meal",
       label: "Meal of Day",
       type: "select",
-      options: meals.map(({ meal }) => meal),
+      options: meals?.map(({ meal }) => meal),
       onChange: (e: any, setValues: any) => {
         setValues((current: any) => ({
           ...current,
           [e.target.name]: e.target.value,
           contents: scheduled
-            .filter(({ meal }) => meal === e.target.value)
+            ?.filter(({ meal }) => meal === e.target.value)
             .reduce(
               (final: MealViewProps[], { alternatives, ...rest }) =>
                 alternatives
@@ -127,11 +127,11 @@ const Consumption = () => {
     const finalValue = {
       meal: meals.find((m) => m.meal === values.meal),
       contents: values.contents,
-      supposed: scheduled.filter(({ meal }) => meal === values.meal),
+      supposed: scheduled?.filter(({ meal }) => meal === values.meal),
       timestamp: moment(date + "T" + time),
     };
 
-    BeAPI.create("consumption", finalValue, user.idToken)
+    BeAPI.create("consumption", finalValue, user.localId)
       .then(() => {
         getData();
       })
@@ -139,7 +139,7 @@ const Consumption = () => {
   };
 
   const onDelete = (id: string) =>
-    BeAPI.remove("consumption", id, user.idToken)
+    BeAPI.remove("consumption", id)
       .then(() => {
         getData();
       })

@@ -25,9 +25,9 @@ const Sports = () => {
   const [data, setData] = useState<props[]>([]);
 
   const getData = () =>
-    BeAPI.getAll("sportSessions", user.idToken)
+    BeAPI.getAll("sportSessions")
       .then((res: any) =>
-        setData(res.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
+        setData(res?.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
       )
       .catch((err) => console.log({ err }));
 
@@ -73,7 +73,7 @@ const Sports = () => {
   }
 
   const onSubmit = (values: submitProps) => {
-    BeAPI.create("sportSessions", values, user.idToken, user.localId)
+    BeAPI.create("sportSessions", values, user.localId)
       .then(() => {
         getData();
       })
@@ -81,7 +81,7 @@ const Sports = () => {
   };
 
   const onDelete = (id: string) =>
-    BeAPI.remove("sportSessions", id, user.idToken)
+    BeAPI.remove("sportSessions", id)
       .then(() => {
         getData();
       })

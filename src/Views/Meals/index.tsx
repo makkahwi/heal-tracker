@@ -18,7 +18,7 @@ const Meals = () => {
   const [data, setData] = useState<MealProps[]>([]);
 
   const getData = () =>
-    BeAPI.getAll("meals", user.idToken)
+    BeAPI.getAll("meals")
       .then((res: any) => setData(res))
       .catch((err) => console.log({ err }));
 
@@ -49,7 +49,7 @@ const Meals = () => {
   }
 
   const onSubmit = (values: submitProps) => {
-    BeAPI.create("meals", values, user.idToken, user.localId)
+    BeAPI.create("meals", values, user.localId)
       .then(() => {
         getData();
       })
@@ -57,7 +57,7 @@ const Meals = () => {
   };
 
   const onDelete = (id: string) =>
-    BeAPI.remove("meals", id, user.idToken)
+    BeAPI.remove("meals", id)
       .then(() => {
         getData();
       })

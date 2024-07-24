@@ -15,13 +15,13 @@ const Schedule = () => {
   const [meals, setMeals] = useState<MealProps[]>([]);
 
   const getData = () => {
-    BeAPI.getAll("meals", user.idToken)
+    BeAPI.getAll("meals")
       .then((meals: MealProps[]) => {
         setMeals(meals);
 
-        BeAPI.getAll("schedule", user.idToken)
+        BeAPI.getAll("schedule")
           .then((res: MealViewProps[]) =>
-            setData(res.sort((a: any, b: any) => (a.meal < b.meal ? -1 : 1)))
+            setData(res?.sort((a: any, b: any) => (a.meal < b.meal ? -1 : 1)))
           )
           .catch((err) => console.log({ err }));
       })
@@ -38,7 +38,7 @@ const Schedule = () => {
       name: "meal",
       label: "Meal of Day",
       type: "select",
-      options: meals.map(({ meal }) => meal),
+      options: meals?.map(({ meal }) => meal),
       render: (row: MealViewProps, i: number) =>
         i > 0 && row.meal === data[i - 1].meal
           ? "^^^^^"
@@ -83,14 +83,14 @@ const Schedule = () => {
     }));
 
     finalValue.forEach((value) =>
-      BeAPI.create("schedule", value, user.idToken).then(() => {
+      BeAPI.create("schedule", value, user.localId).then(() => {
         getData();
       })
     );
   };
 
   const onDelete = (id: string) =>
-    BeAPI.remove("schedule", id, user.idToken)
+    BeAPI.remove("schedule", id)
       .then(() => {
         getData();
       })

@@ -1,4 +1,8 @@
-import { faCalendar, faCalendarDays, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalendar,
+  faCalendarDays,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, ReactNode, useState } from "react";
 
@@ -81,7 +85,7 @@ const WeightReadingsTable = ({
           </thead>
 
           <tbody>
-            {data.map(
+            {data?.map(
               (
                 {
                   id,
@@ -169,7 +173,7 @@ const WeightReadingsTable = ({
                                   }))
                                 : setShowData((current) => ({
                                     ...current,
-                                    weekly: current.weekly.filter(
+                                    weekly: current.weekly?.filter(
                                       (idx) => idx !== i
                                     ),
                                   }))
@@ -197,7 +201,7 @@ const WeightReadingsTable = ({
                                     }))
                                   : setShowData((current) => ({
                                       ...current,
-                                      sinceStart: current.sinceStart.filter(
+                                      sinceStart: current.sinceStart?.filter(
                                         (idx) => idx !== i
                                       ),
                                     }))
@@ -274,7 +278,7 @@ const WeightReadingsTable = ({
       </div>
 
       <div className="d-block d-xl-none">
-        {data.map(
+        {data?.map(
           (
             {
               id,
@@ -540,7 +544,7 @@ const WeightReadingsTable = ({
                                   }))
                                 : setShowData((current) => ({
                                     ...current,
-                                    weekly: current.weekly.filter(
+                                    weekly: current.weekly?.filter(
                                       (idx) => idx !== i
                                     ),
                                   }))
@@ -568,7 +572,7 @@ const WeightReadingsTable = ({
                                     }))
                                   : setShowData((current) => ({
                                       ...current,
-                                      sinceStart: current.sinceStart.filter(
+                                      sinceStart: current.sinceStart?.filter(
                                         (idx) => idx !== i
                                       ),
                                     }))
