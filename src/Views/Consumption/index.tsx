@@ -1,12 +1,10 @@
 import moment, { MomentInput } from "moment";
 import { Fragment, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 
 import * as BeAPI from "../../API";
 import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageView/PageSection";
-import { RootState } from "../../Store/store";
 import { MealProps } from "../Meals";
 import WeeklyCalendar from "./WeeklyCalendar";
 
@@ -20,8 +18,6 @@ export interface props {
 }
 
 const Consumption = () => {
-  const user = useSelector((state: RootState) => state.auth.user);
-
   const [data, setData] = useState<props[]>([]);
   const [scheduled, setScheduled] = useState<MealViewProps[]>([]);
   const [meals, setMeals] = useState<MealProps[]>([]);
@@ -131,7 +127,7 @@ const Consumption = () => {
       timestamp: moment(date + "T" + time),
     };
 
-    BeAPI.create("consumption", finalValue, user.localId)
+    BeAPI.create("consumption", finalValue)
       .then(() => {
         getData();
       })

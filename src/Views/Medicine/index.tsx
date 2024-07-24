@@ -1,14 +1,12 @@
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 
 import * as BeAPI from "../../API";
 import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
 import MonthlyCalendar from "../../Components/PageView/MonthlyCalendar";
 import PageSection from "../../Components/PageView/PageSection";
-import { RootState } from "../../Store/store";
 import { timeFormat } from "../../Utils/consts";
 
 export interface props {
@@ -20,8 +18,6 @@ export interface props {
 }
 
 const Medicine = () => {
-  const user = useSelector((state: RootState) => state.auth.user);
-
   const [data, setData] = useState<props[]>([]);
 
   const getData = () =>
@@ -72,7 +68,7 @@ const Medicine = () => {
   }
 
   const onSubmit = (values: submitProps) => {
-    BeAPI.create("medicine", values, user.localId)
+    BeAPI.create("medicine", values)
       .then(() => {
         getData();
       })

@@ -1,10 +1,7 @@
-import moment from "moment";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 
 import * as BeAPI from "../../API";
 import PageView from "../../Components/PageView";
-import { RootState } from "../../Store/store";
 
 export interface props {
   id?: string;
@@ -12,8 +9,6 @@ export interface props {
 }
 
 const LabTests = () => {
-  const user = useSelector((state: RootState) => state.auth.user);
-
   const [data, setData] = useState<props[]>([]);
 
   const getData = () =>
@@ -503,7 +498,7 @@ const LabTests = () => {
   ];
 
   const onSubmit = (values: props) => {
-    BeAPI.create("labTests", values, user.localId)
+    BeAPI.create("labTests", values)
       .then(() => {
         getData();
       })

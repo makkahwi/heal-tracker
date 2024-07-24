@@ -4,12 +4,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, ReactNode, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 
 import * as BeAPI from "../../API";
 import Form from "../../Components/Form";
 import PageSection from "../../Components/PageView/PageSection";
-import { RootState } from "../../Store/store";
 import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
 
@@ -56,8 +54,6 @@ interface calculationsProps {
 type fullProps = props & calculationsProps;
 
 const WeightReadings = () => {
-  const user = useSelector((state: RootState) => state.auth.user);
-
   const [data, setData] = useState<fullProps[]>([]);
 
   const changeCalculator = (
@@ -379,7 +375,7 @@ const WeightReadings = () => {
   ];
 
   const onSubmit = (values: props) => {
-    BeAPI.create("WeightReadings", values, user.localId)
+    BeAPI.create("WeightReadings", values)
       .then(() => {
         getData();
       })
