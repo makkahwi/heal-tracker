@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 
 import * as BeAPI from "../../API";
 import { MealViewProps } from "../../Components/MealView";
 import PageView from "../../Components/PageView";
-import { RootState } from "../../Store/store";
 import { timeFormat } from "../../Utils/consts";
 
 export interface MealProps {
@@ -14,7 +12,6 @@ export interface MealProps {
 }
 
 const Meals = () => {
-  const user = useSelector((state: RootState) => state.auth.user);
   const [data, setData] = useState<MealProps[]>([]);
 
   const getData = () =>
@@ -49,7 +46,7 @@ const Meals = () => {
   }
 
   const onSubmit = (values: submitProps) => {
-    BeAPI.create("meals", values, user.localId)
+    BeAPI.create("meals", values)
       .then(() => {
         getData();
       })

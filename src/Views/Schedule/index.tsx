@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 
 import * as BeAPI from "../../API";
 import MealView, { MealViewProps } from "../../Components/MealView";
 import PageView from "../../Components/PageView";
-import { RootState } from "../../Store/store";
 import { timeFormat } from "../../Utils/consts";
 import { MealProps } from "../Meals";
 
 const Schedule = () => {
-  const user = useSelector((state: RootState) => state.auth.user);
-
   const [data, setData] = useState<MealViewProps[]>([]);
   const [meals, setMeals] = useState<MealProps[]>([]);
 
@@ -83,7 +79,7 @@ const Schedule = () => {
     }));
 
     finalValue.forEach((value) =>
-      BeAPI.create("schedule", value, user.localId).then(() => {
+      BeAPI.create("schedule", value).then(() => {
         getData();
       })
     );

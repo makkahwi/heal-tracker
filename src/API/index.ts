@@ -34,13 +34,11 @@ service.interceptors.response.use(
     }
 
     if (res?.status == 401 || res?.status == 403) {
-      // unauthErrorHandle(res);
       store.dispatch(signOut());
     }
   },
   (err) => {
     if (err?.response?.status == 401 || err?.response?.status == 403) {
-      // unauthErrorHandle(res);
       store.dispatch(signOut());
     }
   }
@@ -58,27 +56,33 @@ const getAll = async (table = "") =>
       )
     );
 
-const create = async (table = "", data = {}, localId = "") =>
-  await service.post(table, {
-    fields: Object.keys(data).reduce(
-      (final, key) => ({
-        ...final,
-        [key]: { stringValue: (data as any)[key] },
-      }),
-      { uid: { stringValue: localId } }
-    ),
-  });
+const create = async (table = "", data = {}) => {
+  const user = store.getState().auth.user;
 
-const update = async (table = "", data = { id: "" }, localId = "") =>
-  await service.patch(`${table}/${data.id}`, {
+  return await service.post(table, {
     fields: Object.keys(data).reduce(
       (final, key) => ({
         ...final,
         [key]: { stringValue: (data as any)[key] },
       }),
-      { uid: { stringValue: localId } }
+      { uid: { stringValue: user.localId } }
     ),
   });
+};
+
+const update = async (table = "", data = { id: "" }) => {
+  const user = store.getState().auth.user;
+
+  return await service.patch(`${table}/${data.id}`, {
+    fields: Object.keys(data).reduce(
+      (final, key) => ({
+        ...final,
+        [key]: { stringValue: (data as any)[key] },
+      }),
+      { uid: { stringValue: user.localId } }
+    ),
+  });
+};
 
 const remove = async (table = "", id = "") =>
   await service.delete(`${table}/${id}`);
