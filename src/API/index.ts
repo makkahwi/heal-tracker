@@ -3,10 +3,9 @@ import axios from "axios";
 import { signOut } from "../Store/authSlice";
 import store from "../Store/store";
 
-const PROJECT_ID = "personal-diet-tracker";
-
 const service = axios.create({
-  baseURL: `https://firestore.googleapis.com/v1/projects/${PROJECT_ID}/databases/(default)/documents/`,
+  baseURL:
+    "https://personal-diet-tracker-default-rtdb.europe-west1.firebasedatabase.app/",
   headers: {
     "Content-Type": "application/json",
   },
@@ -44,9 +43,11 @@ service.interceptors.response.use(
   }
 );
 
-const getAll = async (table = "") =>
-  await service
-    .get(table)
+const getAll = async (table = "") => {
+  const user = store.getState().auth.user;
+
+  return await service
+    .get(table + "/" + user.localId + ".json")
     .then((res: any) =>
       res.documents?.map(({ name, fields }: any) =>
         Object.keys(fields).reduce(
@@ -55,36 +56,33 @@ const getAll = async (table = "") =>
         )
       )
     );
+};
 
 const create = async (table = "", data = {}) => {
   const user = store.getState().auth.user;
 
-  return await service.post(table, {
-    fields: Object.keys(data).reduce(
-      (final, key) => ({
-        ...final,
-        [key]: { stringValue: (data as any)[key] },
-      }),
-      { uid: { stringValue: user.localId } }
-    ),
+  return await service.post(table + "/" + user.localId + ".json", {
+    ...data,
+    uid: user.localId,
   });
 };
 
 const update = async (table = "", data = { id: "" }) => {
   const user = store.getState().auth.user;
 
-  return await service.patch(`${table}/${data.id}`, {
-    fields: Object.keys(data).reduce(
-      (final, key) => ({
-        ...final,
-        [key]: { stringValue: (data as any)[key] },
-      }),
-      { uid: { stringValue: user.localId } }
-    ),
-  });
+  return await service.patch(
+    table + "/" + user.localId + "/" + data.id + ".json",
+    {
+      ...data,
+      uid: user.localId,
+    }
+  );
 };
 
-const remove = async (table = "", id = "") =>
-  await service.delete(`${table}/${id}`);
+const remove = async (table = "", id = "") => {
+  const user = store.getState().auth.user;
+
+  return await service.delete(table + "/" + user.localId + "/" + id + ".json");
+};
 
 export { create, getAll, remove, update };
