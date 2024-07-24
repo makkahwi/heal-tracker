@@ -23,7 +23,7 @@ const WeeklyCalendar = ({
 
   useEffect(() => {
     setCurrentWeekData(
-      data.filter(({ timestamp }) =>
+      data?.filter(({ timestamp }) =>
         moment(timestamp).isBetween(
           moment(currentWeek[0]),
           moment(currentWeek[6]).add(1, "day"),
@@ -77,29 +77,29 @@ const WeeklyCalendar = ({
         <tr>
           <th rowSpan={2}>Meal</th>
 
-          {currentWeek.map((day, i) => (
+          {currentWeek?.map((day, i) => (
             <td key={i}>{day.format("ddd")}</td>
           ))}
         </tr>
 
         <tr>
-          {currentWeek.map((day, i) => (
+          {currentWeek?.map((day, i) => (
             <th key={i}>{day.format("D MMM YY")}</th>
           ))}
         </tr>
 
         {currentWeekData
-          .map(({ meal }) => meal)
-          .sort((a: any, b: any) => (a.time < b.time ? -1 : 1))
-          .map(({ meal }) => meal)
+          ?.map(({ meal }) => meal)
+          ?.sort((a: any, b: any) => (a.time < b.time ? -1 : 1))
+          ?.map(({ meal }) => meal)
           .reduce<string[]>(
             (final, current) =>
               final.includes(current) ? final : [...final, current],
             []
           )
           // meals
-          //   .map(({ meal }) => meal)
-          .map((meal, i) => (
+          //   ?.map(({ meal }) => meal)
+          ?.map((meal, i) => (
             <tr key={i}>
               <th className="text-start">
                 {meal}
@@ -118,15 +118,15 @@ const WeeklyCalendar = ({
                   )) || ""}
               </th>
 
-              {currentWeek.map((day, x) => {
+              {currentWeek?.map((day, x) => {
                 const theMeals: props[] | undefined = currentWeekData
-                  .filter(
+                  ?.filter(
                     (dat) =>
                       meal === dat.meal.meal &&
                       moment(dat.timestamp).format("yyyy-MM-DD") ===
                         day.format("yyyy-MM-DD")
                   )
-                  .sort((a: any, b: any) =>
+                  ?.sort((a: any, b: any) =>
                     a.timestamp < b.timestamp ? -1 : 1
                   );
 
@@ -148,16 +148,18 @@ const WeeklyCalendar = ({
                           ""
                         )}
 
-                        {theMeal.contents.map(({ element, count, note }, y) => (
-                          <MealView
-                            dark={y % 2 === 1}
-                            meal={meal}
-                            count={count}
-                            element={element}
-                            note={note}
-                            key={y}
-                          />
-                        ))}
+                        {theMeal.contents?.map(
+                          ({ element, count, note }, y) => (
+                            <MealView
+                              dark={y % 2 === 1}
+                              meal={meal}
+                              count={count}
+                              element={element}
+                              note={note}
+                              key={y}
+                            />
+                          )
+                        )}
                       </Fragment>
                     ))}
                   </td>

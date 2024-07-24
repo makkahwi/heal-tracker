@@ -1,6 +1,13 @@
 import moment from "moment";
 import { ReactNode, useState } from "react";
-import { HorizontalGridLines, LineMarkSeries, VerticalGridLines, XAxis, XYPlot, YAxis } from "react-vis";
+import {
+  HorizontalGridLines,
+  LineMarkSeries,
+  VerticalGridLines,
+  XAxis,
+  XYPlot,
+  YAxis,
+} from "react-vis";
 
 export interface props {
   id?: string;
@@ -53,67 +60,67 @@ const WeightReadingCharts = ({ data }: { data: fullProps[] }) => {
 
   const chart = [
     {
-      data: data.map(({ weight, date }) => ({ x: date, y: weight })),
+      data: data?.map(({ weight, date }) => ({ x: date, y: weight })),
       title: "Weight",
     },
     {
-      data: data.map(({ fat, date }) => ({
+      data: data?.map(({ fat, date }) => ({
         x: date,
         y: fat,
       })),
       title: "Fat",
     },
     {
-      data: data.map(({ fatWeight, date }) => ({
+      data: data?.map(({ fatWeight, date }) => ({
         x: date,
         y: parseFloat(fatWeight),
       })),
       title: "Fat Weight",
     },
     {
-      data: data.map(({ water, date }) => ({
+      data: data?.map(({ water, date }) => ({
         x: date,
         y: water,
       })),
       title: "Water",
     },
     {
-      data: data.map(({ waterWeight, date }) => ({
+      data: data?.map(({ waterWeight, date }) => ({
         x: date,
         y: parseFloat(waterWeight),
       })),
       title: "Water Weight",
     },
     {
-      data: data.map(({ waist, date }) => ({
+      data: data?.map(({ waist, date }) => ({
         x: date,
         y: waist,
       })),
       title: "Waist",
     },
     {
-      data: data.map(({ muscles, date }) => ({
+      data: data?.map(({ muscles, date }) => ({
         x: date,
         y: muscles,
       })),
       title: "Muscles",
     },
     {
-      data: data.map(({ musclesPercentage, date }) => ({
+      data: data?.map(({ musclesPercentage, date }) => ({
         x: date,
         y: parseFloat(musclesPercentage),
       })),
       title: "Muscles Percentage",
     },
     {
-      data: data.map(({ physique, date }) => ({
+      data: data?.map(({ physique, date }) => ({
         x: date,
         y: physique,
       })),
       title: "Physique",
     },
     {
-      data: data.map(({ bones, date }) => ({
+      data: data?.map(({ bones, date }) => ({
         x: date,
         y: bones,
       })),
@@ -134,7 +141,7 @@ const WeightReadingCharts = ({ data }: { data: fullProps[] }) => {
 
   return (
     <div className="row">
-      {chart.map(({ data, title }, x) => (
+      {chart?.map(({ data, title }, x) => (
         <div className="col-md-6 col-lg-4 col-xl-3 my-3 justify-center" key={x}>
           <XYPlot xType="time" width={300} height={300}>
             <VerticalGridLines />
@@ -142,7 +149,7 @@ const WeightReadingCharts = ({ data }: { data: fullProps[] }) => {
             <XAxis title="Date" />
             <YAxis title="Reading" />
             <LineMarkSeries
-              data={data.map(({ x, y }) => ({ x: moment(x).valueOf(), y }))}
+              data={data?.map(({ x, y }) => ({ x: moment(x).valueOf(), y }))}
               color={colors[x % colors.length]}
               onValueMouseOver={(v) =>
                 setHovered({
