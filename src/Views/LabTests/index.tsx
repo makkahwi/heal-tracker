@@ -1,7 +1,6 @@
-import moment from "moment";
 import { useEffect, useState } from "react";
 
-import * as testsAPI from "../../API/tests";
+import * as BeAPI from "../../API";
 import PageView from "../../Components/PageView";
 
 export interface props {
@@ -13,11 +12,11 @@ const LabTests = () => {
   const [data, setData] = useState<props[]>([]);
 
   const getData = () =>
-    testsAPI
-      .getAll()
+    BeAPI.getAll("labTests")
       .then((res: props[]) =>
-        setData(res.sort((a, b) => (a.date > b.date ? -1 : 1)))
-      );
+        setData(res?.sort((a, b) => (a.date > b.date ? -1 : 1)))
+      )
+      .catch((err) => console.log({ err }));
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
@@ -499,15 +498,19 @@ const LabTests = () => {
   ];
 
   const onSubmit = (values: props) => {
-    testsAPI.create(values).then(() => {
-      getData();
-    });
+    BeAPI.create("labTests", values)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
   };
 
   const onDelete = (id: string) =>
-    testsAPI.remove(id).then(() => {
-      getData();
-    });
+    BeAPI.remove("labTests", id)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
 
   return (
     <PageView

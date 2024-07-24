@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
-import * as mealsAPI from "../../API/meals";
-import * as scheduleAPI from "../../API/schedule";
+import * as BeAPI from "../../API";
 import MealView, { MealViewProps } from "../../Components/MealView";
 import PageView from "../../Components/PageView";
 import { timeFormat } from "../../Utils/consts";
@@ -12,19 +11,21 @@ const Schedule = () => {
   const [meals, setMeals] = useState<MealProps[]>([]);
 
   const getData = () => {
-    mealsAPI.getAll().then((meals: MealProps[]) => {
-      setMeals(meals);
+    BeAPI.getAll("meals")
+      .then((meals: MealProps[]) => {
+        setMeals(meals);
 
-      scheduleAPI
-        .getAll()
-        .then((res: MealViewProps[]) =>
-          setData(res.sort((a: any, b: any) => (a.meal < b.meal ? -1 : 1)))
-        );
-    });
+        BeAPI.getAll("schedule")
+          .then((res: MealViewProps[]) =>
+            setData(res?.sort((a: any, b: any) => (a.meal < b.meal ? -1 : 1)))
+          )
+          .catch((err) => console.log({ err }));
+      })
+      .catch((err) => console.log({ err }));
   };
 
   useEffect(() => {
-    // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
+    // BeAPI.getAll().then((res: MealViewProps[][]) => setData(res));
     getData();
   }, []);
 
@@ -33,7 +34,7 @@ const Schedule = () => {
       name: "meal",
       label: "Meal of Day",
       type: "select",
-      options: meals.map(({ meal }) => meal),
+      options: meals?.map(({ meal }) => meal),
       render: (row: MealViewProps, i: number) =>
         i > 0 && row.meal === data[i - 1].meal
           ? "^^^^^"
@@ -78,16 +79,18 @@ const Schedule = () => {
     }));
 
     finalValue.forEach((value) =>
-      scheduleAPI.create(value).then(() => {
+      BeAPI.create("schedule", value).then(() => {
         getData();
       })
     );
   };
 
   const onDelete = (id: string) =>
-    scheduleAPI.remove(id).then(() => {
-      getData();
-    });
+    BeAPI.remove("schedule", id)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
 
   return (
     <PageView
