@@ -29,8 +29,6 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
   (res) => {
-    console.log({ resp: res });
-
     if (res?.status == 200 || res?.status == 201 || res?.status == 204) {
       return res.data;
     }
@@ -41,7 +39,6 @@ service.interceptors.response.use(
     }
   },
   (err) => {
-    console.log({ error: err });
     if (err?.response?.status == 401 || err?.response?.status == 403) {
       // unauthErrorHandle(res);
       store.dispatch(signOut());
