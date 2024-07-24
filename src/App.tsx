@@ -7,12 +7,14 @@ import {
   faUtensils,
   faWeight,
 } from "@fortawesome/free-solid-svg-icons";
+import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Fragment } from "react/jsx-runtime";
 
 import Navbar from "./Components/Layout/Navbar";
+import store from "./Store/store";
 import Consumption from "./Views/Consumption";
 import LabTests from "./Views/LabTests";
+import Login from "./Views/Login";
 import Meals from "./Views/Meals";
 import Medicine from "./Views/Medicine";
 import Schedule from "./Views/Schedule";
@@ -74,25 +76,31 @@ export const routes = [
 
 const App = () => {
   return (
-    <Fragment>
+    <Provider store={store}>
       <BrowserRouter>
         <Navbar />
 
-        <Routes>
-          {routes.map(({ name, path, Comp, list }, i) =>
-            list ? (
-              list.map(({ name, path, Comp }, x) => (
-                <Route path={path} element={Comp} key={x} />
-              ))
-            ) : (
-              <Route path={path} element={Comp} key={i} />
-            )
-          )}
+        {store.getState().auth.user ? (
+          <Routes>
+            {routes.map(({ name, path, Comp, list }, i) =>
+              list ? (
+                list.map(({ name, path, Comp }, x) => (
+                  <Route path={path} element={Comp} key={x} />
+                ))
+              ) : (
+                <Route path={path} element={Comp} key={i} />
+              )
+            )}
 
-          <Route path="*" element={<Welcome />} />
-        </Routes>
+            <Route path="*" element={<Welcome />} />
+          </Routes>
+        ) : (
+          <Routes>
+            <Route path="*" element={<Login />} />
+          </Routes>
+        )}
       </BrowserRouter>
-    </Fragment>
+    </Provider>
   );
 };
 
