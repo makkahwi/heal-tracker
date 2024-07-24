@@ -1,9 +1,7 @@
 import moment, { MomentInput } from "moment";
 import { Fragment, useEffect, useState } from "react";
 
-import * as consumptionAPI from "../../API/consumption";
-import * as mealsAPI from "../../API/meals";
-import * as scheduleAPI from "../../API/schedule";
+import * as BeAPI from "../../API";
 import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
 import PageSection from "../../Components/PageView/PageSection";
@@ -25,25 +23,31 @@ const Consumption = () => {
   const [meals, setMeals] = useState<MealProps[]>([]);
 
   const getData = () => {
-    scheduleAPI
-      .getAll()
+    BeAPI.getAll("schedule")
       .then((res: MealViewProps[]) =>
         setScheduled(res?.sort((a, b) => (a.element > b.element ? 1 : -1)))
-      );
-    consumptionAPI.getAll().then((res: props[]) =>
-      setData(
-        res
-          .sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
-          .map(({ contents, supposed, ...rest }) => ({
-            ...rest,
-            contents: contents.sort((a, b) => (a.element > b.element ? 1 : -1)),
-            supposed: supposed?.sort((a, b) =>
-              a.element > b.element ? 1 : -1
-            ),
-          }))
       )
-    );
-    mealsAPI.getAll().then((res: any) => setMeals([...res, { meal: "Other" }]));
+      .catch((err) => console.log({ err }));
+    BeAPI.getAll("consumption")
+      .then((res: props[]) =>
+        setData(
+          res
+            ?.sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
+            ?.map(({ contents, supposed, ...rest }) => ({
+              ...rest,
+              contents: contents?.sort((a, b) =>
+                a.element > b.element ? 1 : -1
+              ),
+              supposed: supposed?.sort((a, b) =>
+                a.element > b.element ? 1 : -1
+              ),
+            }))
+        )
+      )
+      .catch((err) => console.log({ err }));
+    BeAPI.getAll("meals")
+      .then((res: any) => setMeals([...res, { meal: "Other" }]))
+      .catch((err) => console.log({ err }));
   };
 
   useEffect(() => {
@@ -67,13 +71,13 @@ const Consumption = () => {
       name: "meal",
       label: "Meal of Day",
       type: "select",
-      options: meals.map(({ meal }) => meal),
+      options: meals?.map(({ meal }) => meal),
       onChange: (e: any, setValues: any) => {
         setValues((current: any) => ({
           ...current,
           [e.target.name]: e.target.value,
           contents: scheduled
-            .filter(({ meal }) => meal === e.target.value)
+            ?.filter(({ meal }) => meal === e.target.value)
             .reduce(
               (final: MealViewProps[], { alternatives, ...rest }) =>
                 alternatives
@@ -119,19 +123,23 @@ const Consumption = () => {
     const finalValue = {
       meal: meals.find((m) => m.meal === values.meal),
       contents: values.contents,
-      supposed: scheduled.filter(({ meal }) => meal === values.meal),
+      supposed: scheduled?.filter(({ meal }) => meal === values.meal),
       timestamp: moment(date + "T" + time),
     };
 
-    consumptionAPI.create(finalValue).then(() => {
-      getData();
-    });
+    BeAPI.create("consumption", finalValue)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
   };
 
   const onDelete = (id: string) =>
-    consumptionAPI.remove(id).then(() => {
-      getData();
-    });
+    BeAPI.remove("consumption", id)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
 
   return (
     <PageSection title="Consumed Meals">

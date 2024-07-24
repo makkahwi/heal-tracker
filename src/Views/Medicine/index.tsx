@@ -2,7 +2,7 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, useEffect, useState } from "react";
 
-import * as medicineAPI from "../../API/medicine";
+import * as BeAPI from "../../API";
 import Form from "../../Components/Form";
 import { MealViewProps } from "../../Components/MealView";
 import MonthlyCalendar from "../../Components/PageView/MonthlyCalendar";
@@ -21,11 +21,11 @@ const Medicine = () => {
   const [data, setData] = useState<props[]>([]);
 
   const getData = () =>
-    medicineAPI
-      .getAll()
+    BeAPI.getAll("medicine")
       .then((res: any) =>
-        setData(res.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
-      );
+        setData(res?.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
+      )
+      .catch((err) => console.log({ err }));
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
@@ -68,15 +68,19 @@ const Medicine = () => {
   }
 
   const onSubmit = (values: submitProps) => {
-    medicineAPI.create(values).then(() => {
-      getData();
-    });
+    BeAPI.create("medicine", values)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
   };
 
   const onDelete = (id: string) =>
-    medicineAPI.remove(id).then(() => {
-      getData();
-    });
+    BeAPI.remove("medicine", id)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
 
   const renderDistanceEvent = (event: any, date: string, id: string) => (
     <div>
