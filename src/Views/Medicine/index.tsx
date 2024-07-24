@@ -25,9 +25,9 @@ const Medicine = () => {
   const [data, setData] = useState<props[]>([]);
 
   const getData = () =>
-    BeAPI.getAll("medicine", user.idToken)
+    BeAPI.getAll("medicine")
       .then((res: any) =>
-        setData(res.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
+        setData(res?.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
       )
       .catch((err) => console.log({ err }));
 
@@ -72,7 +72,7 @@ const Medicine = () => {
   }
 
   const onSubmit = (values: submitProps) => {
-    BeAPI.create("medicine", values, user.idToken, user.localId)
+    BeAPI.create("medicine", values, user.localId)
       .then(() => {
         getData();
       })
@@ -80,7 +80,7 @@ const Medicine = () => {
   };
 
   const onDelete = (id: string) =>
-    BeAPI.remove("medicine", id, user.idToken)
+    BeAPI.remove("medicine", id)
       .then(() => {
         getData();
       })

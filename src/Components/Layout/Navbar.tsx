@@ -77,7 +77,6 @@ const Navbar = () => {
                   className="nav-link text-decoration-none text-white"
                   onClick={() => {
                     dispatch(signOut());
-                    navigate(0);
                   }}
                 >
                   <FontAwesomeIcon icon={faSignOut} />

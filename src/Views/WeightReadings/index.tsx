@@ -89,14 +89,14 @@ const WeightReadings = () => {
   };
 
   const getData = () =>
-    BeAPI.getAll("WeightReadings", user.idToken)
+    BeAPI.getAll("WeightReadings")
       .then((res: props[]) => {
         const sortedRes = res?.sort((a: props, b: props) =>
           a.date < b.date ? 1 : -1
         );
 
         setData(
-          sortedRes.map(
+          sortedRes?.map(
             (
               { id, date, weight, fat, water, waist, muscles, physique, bones },
               i
@@ -379,7 +379,7 @@ const WeightReadings = () => {
   ];
 
   const onSubmit = (values: props) => {
-    BeAPI.create("WeightReadings", values, user.idToken, user.localId)
+    BeAPI.create("WeightReadings", values, user.localId)
       .then(() => {
         getData();
       })
@@ -387,7 +387,7 @@ const WeightReadings = () => {
   };
 
   const onDelete = (id: string) =>
-    BeAPI.remove("WeightReadings", id, user.idToken)
+    BeAPI.remove("WeightReadings", id)
       .then(() => {
         getData();
       })

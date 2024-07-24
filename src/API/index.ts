@@ -1,4 +1,7 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
+
+import { signOut } from "../Store/authSlice";
+import store from "../Store/store";
 
 const PROJECT_ID = "personal-diet-tracker";
 
@@ -9,15 +12,48 @@ const service = axios.create({
   },
 });
 
-const getAll = async (table = "", token = "") =>
+service.interceptors.request.use(
+  (config) => {
+    const user = store.getState().auth?.user;
+
+    if (user.idToken) {
+      config.headers.Authorization = `Bearer ${user.idToken}`;
+    }
+
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+service.interceptors.response.use(
+  (res) => {
+    console.log({ resp: res });
+
+    if (res?.status == 200 || res?.status == 201 || res?.status == 204) {
+      return res.data;
+    }
+
+    if (res?.status == 401 || res?.status == 403) {
+      // unauthErrorHandle(res);
+      store.dispatch(signOut());
+    }
+  },
+  (err) => {
+    console.log({ error: err });
+    if (err?.response?.status == 401 || err?.response?.status == 403) {
+      // unauthErrorHandle(res);
+      store.dispatch(signOut());
+    }
+  }
+);
+
+const getAll = async (table = "") =>
   await service
-    .get(table, {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    })
-    .then((res: AxiosResponse) =>
-      res.data.documents.map(({ name, fields }: any) =>
+    .get(table)
+    .then((res: any) =>
+      res.documents?.map(({ name, fields }: any) =>
         Object.keys(fields).reduce(
           (final, key) => ({ ...final, [key]: fields[key]?.stringValue }),
           { id: name.split("/")[name.split("/").length - 1] }
@@ -25,54 +61,29 @@ const getAll = async (table = "", token = "") =>
       )
     );
 
-const create = async (table = "", data = {}, token = "", localId = "") =>
-  await service.post(
-    table,
-    {
-      fields: Object.keys(data).reduce(
-        (final, key) => ({
-          ...final,
-          [key]: { stringValue: (data as any)[key] },
-        }),
-        { uid: { stringValue: localId } }
-      ),
-    },
-    {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    }
-  );
-
-const update = async (
-  table = "",
-  data = { id: "" },
-  token = "",
-  localId = ""
-) =>
-  await service.patch(
-    `${table}/${data.id}`,
-    {
-      fields: Object.keys(data).reduce(
-        (final, key) => ({
-          ...final,
-          [key]: { stringValue: (data as any)[key] },
-        }),
-        { uid: { stringValue: localId } }
-      ),
-    },
-    {
-      headers: {
-        Authorization: "Bearer " + token,
-      },
-    }
-  );
-
-const remove = async (table = "", id = "", token = "") =>
-  await service.delete(`${table}/${id}`, {
-    headers: {
-      Authorization: "Bearer " + token,
-    },
+const create = async (table = "", data = {}, localId = "") =>
+  await service.post(table, {
+    fields: Object.keys(data).reduce(
+      (final, key) => ({
+        ...final,
+        [key]: { stringValue: (data as any)[key] },
+      }),
+      { uid: { stringValue: localId } }
+    ),
   });
 
-export { getAll, create, update, remove };
+const update = async (table = "", data = { id: "" }, localId = "") =>
+  await service.patch(`${table}/${data.id}`, {
+    fields: Object.keys(data).reduce(
+      (final, key) => ({
+        ...final,
+        [key]: { stringValue: (data as any)[key] },
+      }),
+      { uid: { stringValue: localId } }
+    ),
+  });
+
+const remove = async (table = "", id = "") =>
+  await service.delete(`${table}/${id}`);
+
+export { create, getAll, remove, update };
