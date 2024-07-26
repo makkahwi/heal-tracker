@@ -1,4 +1,12 @@
-import { faCalendar, faClock, faFileMedical, faPills, faRunning, faUtensils, faWeight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCalendar,
+  faClock,
+  faFileMedical,
+  faPills,
+  faRunning,
+  faUtensils,
+  faWeight,
+} from "@fortawesome/free-solid-svg-icons";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -41,8 +49,8 @@ export const routes = [
     ],
   },
   {
-    name: "Sport Sessions",
-    path: "sport-sessions",
+    name: "Walk Exercises",
+    path: "walk-exercises",
     icon: faRunning,
     Comp: <Sports />,
   },

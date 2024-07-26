@@ -21,7 +21,6 @@ This is to setup the schedule of meals you are following (diet), and insert what
 - Enhance UX
   - Loading indicators
 - Convert lab tests to not required
-- Turn sport sessions to "Walk Exercises"
 - Build welcome dashboard
   - Monthly calendar with all collections data (modal for details show)
   - Build health indicators progress analysis
