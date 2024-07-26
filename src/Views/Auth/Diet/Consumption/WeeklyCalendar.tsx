@@ -3,19 +3,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment, { Moment } from "moment";
 import { Fragment, useEffect, useState } from "react";
 
-import { props } from ".";
+import { consumptionProps } from ".";
 import MealView from "../../../../Components/MealView";
 
 const WeeklyCalendar = ({
   data,
   onDelete,
 }: {
-  data: props[];
+  data: consumptionProps[];
   onDelete: Function;
 }) => {
   const [currentWeek, setCurrentWeek] = useState<Moment[]>([]);
   const [currentDate, setCurrentDate] = useState<Moment>(moment());
-  const [currentWeekData, setCurrentWeekData] = useState<props[]>([]);
+  const [currentWeekData, setCurrentWeekData] = useState<consumptionProps[]>(
+    []
+  );
 
   useEffect(() => {
     generateCurrentWeek(currentDate);
@@ -127,16 +129,17 @@ const WeeklyCalendar = ({
                 </th>
 
                 {currentWeek?.map((day, x) => {
-                  const theMeals: props[] | undefined = currentWeekData
-                    ?.filter(
-                      (dat) =>
-                        meal === dat.meal.meal &&
-                        moment(dat.timestamp).format("yyyy-MM-DD") ===
-                          day.format("yyyy-MM-DD")
-                    )
-                    ?.sort((a: any, b: any) =>
-                      a.timestamp < b.timestamp ? -1 : 1
-                    );
+                  const theMeals: consumptionProps[] | undefined =
+                    currentWeekData
+                      ?.filter(
+                        (dat) =>
+                          meal === dat.meal.meal &&
+                          moment(dat.timestamp).format("yyyy-MM-DD") ===
+                            day.format("yyyy-MM-DD")
+                      )
+                      ?.sort((a: any, b: any) =>
+                        a.timestamp < b.timestamp ? -1 : 1
+                      );
 
                   return (
                     <td className="text-start align-top" key={x}>

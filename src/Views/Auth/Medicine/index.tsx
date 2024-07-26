@@ -9,7 +9,7 @@ import MonthlyCalendar from "../../../Components/PageView/MonthlyCalendar";
 import PageSection from "../../../Components/PageView/PageSection";
 import { timeFormat } from "../../../Utils/consts";
 
-export interface props {
+export interface medicineProps {
   id?: string;
   date: string;
   time: string;
@@ -18,12 +18,16 @@ export interface props {
 }
 
 const Medicine = () => {
-  const [data, setData] = useState<props[]>([]);
+  const [data, setData] = useState<medicineProps[]>([]);
 
   const getData = () =>
     BeAPI.getAll("medicine")
       .then((res: any) =>
-        setData(res?.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
+        setData(
+          res?.sort((a: medicineProps, b: medicineProps) =>
+            a.date > b.date ? -1 : 1
+          )
+        )
       )
       .catch((err) => console.log({ err }));
 
