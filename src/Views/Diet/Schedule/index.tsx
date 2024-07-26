@@ -51,14 +51,14 @@ const Schedule = () => {
       render: (row: MealViewProps) => <MealView {...row} />,
       inputs: [
         { name: "element", label: "Element", required: true },
-        { name: "count", label: "Count", required: true },
+        { name: "count", label: "Quantity", required: true },
         // {
         //   name: "alternatives",
         //   label: "Alternatives",
         //   type: "dynamicList",
         //   inputs: [
         //     { name: "element", label: "Element", required: true },
-        //     { name: "count", label: "Count", required: true },
+        //     { name: "count", label: "Quantity", required: true },
         //   ],
         //   required: false,
         // },
