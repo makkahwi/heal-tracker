@@ -18,6 +18,8 @@ This is to setup the schedule of meals you are following (diet), and insert what
 - Build update functionality
 - Move firebase API key to env vars
 - Localize app
+- Enhance UX
+  - Loading indicators
 - Convert lab tests to not required
 - Turn sport sessions to "Walk Exercises"
 - Build welcome dashboard
