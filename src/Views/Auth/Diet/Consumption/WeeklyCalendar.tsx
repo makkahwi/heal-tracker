@@ -4,7 +4,7 @@ import moment, { Moment } from "moment";
 import { Fragment, useEffect, useState } from "react";
 
 import { props } from ".";
-import MealView from "../../../Components/MealView";
+import MealView from "../../../../Components/MealView";
 
 const WeeklyCalendar = ({
   data,

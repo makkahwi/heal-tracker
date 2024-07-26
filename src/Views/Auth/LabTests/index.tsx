@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
-import * as BeAPI from "../../API";
-import PageView from "../../Components/PageView";
+import * as BeAPI from "../../../API";
+import PageView from "../../../Components/PageView";
 
 export interface props {
   id?: string;
