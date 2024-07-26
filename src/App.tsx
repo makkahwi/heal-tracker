@@ -12,15 +12,15 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Navbar from "./Components/Layout/Navbar";
 import store from "./Store/store";
-import Consumption from "./Views/Consumption";
-import LabTests from "./Views/LabTests";
-import Login from "./Views/Login";
-import Meals from "./Views/Meals";
-import Medicine from "./Views/Medicine";
-import Schedule from "./Views/Schedule";
-import Sports from "./Views/Sports";
-import WeightReadings from "./Views/WeightReadings";
-import Welcome from "./Views/Welcome";
+import Dashboard from "./Views/Auth/Dashboard";
+import Consumption from "./Views/Auth/Diet/Consumption";
+import Meals from "./Views/Auth/Diet/Meals";
+import Schedule from "./Views/Auth/Diet/Schedule";
+import LabTests from "./Views/Auth/LabTests";
+import Medicine from "./Views/Auth/Medicine";
+import Sports from "./Views/Auth/Sports/WalkExercises";
+import WeightReadings from "./Views/Auth/WeightReadings";
+import Login from "./Views/Public/Login";
 
 export const routes = [
   {
@@ -49,8 +49,8 @@ export const routes = [
     ],
   },
   {
-    name: "Sport Sessions",
-    path: "sport-sessions",
+    name: "Walk Exercises",
+    path: "walk-exercises",
     icon: faRunning,
     Comp: <Sports />,
   },
@@ -92,7 +92,7 @@ const App = () => {
               )
             )}
 
-            <Route path="*" element={<Welcome />} />
+            <Route path="*" element={<Dashboard />} />
           </Routes>
         ) : (
           <Routes>

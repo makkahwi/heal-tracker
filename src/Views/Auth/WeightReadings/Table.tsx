@@ -6,19 +6,8 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, ReactNode, useState } from "react";
 
-import { dayDateFormat } from "../../Utils/consts";
-
-export interface props {
-  id?: string;
-  date: string;
-  weight: number;
-  fat: number;
-  water: number;
-  waist: number;
-  muscles: number;
-  physique: number;
-  bones: number;
-}
+import { dayDateFormat } from "../../../Utils/consts";
+import { weightReadingProps } from ".";
 
 interface calculationsProps {
   fatWeight: string;
@@ -48,7 +37,7 @@ interface calculationsProps {
   bonesSinceStartChange: ReactNode;
 }
 
-type fullProps = props & calculationsProps;
+type fullProps = weightReadingProps & calculationsProps;
 
 const WeightReadingsTable = ({
   data,

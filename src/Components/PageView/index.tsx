@@ -4,7 +4,7 @@ import Form, { inputProps } from "../../Components/Form";
 import PageSection from "./PageSection";
 import PageTable from "./Table";
 
-export interface props {
+interface props {
   title: string;
   data: { id?: string }[];
   inputs: inputProps[];

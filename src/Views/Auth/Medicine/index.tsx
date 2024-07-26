@@ -2,14 +2,14 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, useEffect, useState } from "react";
 
-import * as BeAPI from "../../API";
-import Form from "../../Components/Form";
-import { MealViewProps } from "../../Components/MealView";
-import MonthlyCalendar from "../../Components/PageView/MonthlyCalendar";
-import PageSection from "../../Components/PageView/PageSection";
-import { timeFormat } from "../../Utils/consts";
+import * as BeAPI from "../../../API";
+import Form from "../../../Components/Form";
+import { MealViewProps } from "../../../Components/MealView";
+import MonthlyCalendar from "../../../Components/PageView/MonthlyCalendar";
+import PageSection from "../../../Components/PageView/PageSection";
+import { timeFormat } from "../../../Utils/consts";
 
-export interface props {
+export interface medicineProps {
   id?: string;
   date: string;
   time: string;
@@ -17,13 +17,42 @@ export interface props {
   medicine: string;
 }
 
+export const renderMedicineUI =
+  (onDelete?: Function) => (event: any, date: string, id: string) =>
+    (
+      <div>
+        {date ? (
+          <span className="d-block bg-dark text-white p-2 my-2">
+            @ {timeFormat(event.time)}{" "}
+            {onDelete && (
+              <FontAwesomeIcon
+                icon={faTrashCan}
+                className="mt-1 text-danger"
+                role="button"
+                onClick={() => onDelete(id)}
+              />
+            )}
+          </span>
+        ) : (
+          ""
+        )}
+        <div className="fw-bold">
+          {event.quantity} of {event.medicine}
+        </div>
+      </div>
+    );
+
 const Medicine = () => {
-  const [data, setData] = useState<props[]>([]);
+  const [data, setData] = useState<medicineProps[]>([]);
 
   const getData = () =>
     BeAPI.getAll("medicine")
       .then((res: any) =>
-        setData(res?.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
+        setData(
+          res?.sort((a: medicineProps, b: medicineProps) =>
+            a.date > b.date ? -1 : 1
+          )
+        )
       )
       .catch((err) => console.log({ err }));
 
@@ -82,33 +111,12 @@ const Medicine = () => {
       })
       .catch((err) => console.log({ err }));
 
-  const renderDistanceEvent = (event: any, date: string, id: string) => (
-    <div>
-      {date ? (
-        <span className="d-block bg-dark text-white p-2 my-2">
-          @ {timeFormat(event.time)}{" "}
-          <FontAwesomeIcon
-            icon={faTrashCan}
-            className="mt-1 text-danger"
-            role="button"
-            onClick={() => onDelete(id)}
-          />
-        </span>
-      ) : (
-        ""
-      )}
-      <div className="fw-bold">
-        {event.quantity} of {event.medicine}
-      </div>
-    </div>
-  );
-
   return (
     <PageSection title="Medicine List">
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
-        <MonthlyCalendar data={data} renderEvent={renderDistanceEvent} />
+        <MonthlyCalendar data={data} renderEvent={renderMedicineUI(onDelete)} />
       </Fragment>
     </PageSection>
   );

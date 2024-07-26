@@ -5,13 +5,13 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, ReactNode, useEffect, useState } from "react";
 
-import * as BeAPI from "../../API";
-import Form from "../../Components/Form";
-import PageSection from "../../Components/PageView/PageSection";
+import * as BeAPI from "../../../API";
+import Form from "../../../Components/Form";
+import PageSection from "../../../Components/PageView/PageSection";
 import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
 
-export interface props {
+export interface weightReadingProps {
   id?: string;
   date: string;
   weight: number;
@@ -51,7 +51,7 @@ interface calculationsProps {
   bonesSinceStartChange: ReactNode;
 }
 
-type fullProps = props & calculationsProps;
+type fullProps = weightReadingProps & calculationsProps;
 
 const WeightReadings = () => {
   const [data, setData] = useState<fullProps[]>([]);
@@ -86,9 +86,10 @@ const WeightReadings = () => {
 
   const getData = () =>
     BeAPI.getAll("WeightReadings")
-      .then((res: props[]) => {
-        const sortedRes = res?.sort((a: props, b: props) =>
-          a.date < b.date ? 1 : -1
+      .then((res: weightReadingProps[]) => {
+        const sortedRes = res?.sort(
+          (a: weightReadingProps, b: weightReadingProps) =>
+            a.date < b.date ? 1 : -1
         );
 
         setData(
@@ -328,6 +329,7 @@ const WeightReadings = () => {
       label: "Fat Reading",
       type: "number",
       step: "0.1",
+      unit: "%",
       required: true,
     },
     {
@@ -335,6 +337,7 @@ const WeightReadings = () => {
       label: "Weight",
       type: "number",
       step: "0.1",
+      unit: "KG",
       required: true,
     },
     {
@@ -342,6 +345,7 @@ const WeightReadings = () => {
       label: "Water Reading",
       type: "number",
       step: "0.1",
+      unit: "%",
       required: true,
     },
     {
@@ -356,6 +360,7 @@ const WeightReadings = () => {
       label: "Muscles Reading",
       type: "number",
       step: "0.1",
+      unit: "KG",
       required: true,
     },
     {
@@ -374,7 +379,7 @@ const WeightReadings = () => {
     },
   ];
 
-  const onSubmit = (values: props) => {
+  const onSubmit = (values: weightReadingProps) => {
     BeAPI.create("WeightReadings", values)
       .then(() => {
         getData();
@@ -390,7 +395,7 @@ const WeightReadings = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title="Weight Readings List">
+    <PageSection title="Weight Readings">
       <Fragment>
         <div className="btn-group my-3 w-100">
           <button
