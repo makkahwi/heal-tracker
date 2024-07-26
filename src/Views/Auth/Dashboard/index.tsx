@@ -4,9 +4,10 @@ import PageSection from "../../../Components/PageView/PageSection";
 
 const Dashboard = () => {
   return (
-    <PageSection title="Welcome To `Personal Diet Tracker`">
+    <PageSection title="Dashboard">
       <Fragment>
-        <h4 className="mt-5 my-2">Pick of Above Links</h4>
+        <h3 className="mt-5 my-2">Dashboard is Coming Soon</h3>
+        <h4 className="mt-5 my-2">Now You May Pick of Above Links</h4>
       </Fragment>
     </PageSection>
   );
