@@ -9,7 +9,7 @@ import MonthlyCalendar from "../../../../Components/PageView/MonthlyCalendar";
 import PageSection from "../../../../Components/PageView/PageSection";
 import { timeFormat } from "../../../../Utils/consts";
 
-export interface props {
+export interface walkExerciseProps {
   id?: string;
   date: string;
   startTime: string;
@@ -18,12 +18,16 @@ export interface props {
 }
 
 const WalkExercises = () => {
-  const [data, setData] = useState<props[]>([]);
+  const [data, setData] = useState<walkExerciseProps[]>([]);
 
   const getData = () =>
     BeAPI.getAll("sportSessions")
       .then((res: any) =>
-        setData(res?.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
+        setData(
+          res?.sort((a: walkExerciseProps, b: walkExerciseProps) =>
+            a.date > b.date ? -1 : 1
+          )
+        )
       )
       .catch((err) => console.log({ err }));
 

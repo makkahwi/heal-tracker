@@ -8,7 +8,7 @@ import PageSection from "../../../../Components/PageView/PageSection";
 import { MealProps } from "../Meals";
 import WeeklyCalendar from "./WeeklyCalendar";
 
-export interface props {
+export interface consumptionProps {
   id?: string;
   timestamp: MomentInput;
   meal: MealProps;
@@ -18,7 +18,7 @@ export interface props {
 }
 
 const Consumption = () => {
-  const [data, setData] = useState<props[]>([]);
+  const [data, setData] = useState<consumptionProps[]>([]);
   const [scheduled, setScheduled] = useState<MealViewProps[]>([]);
   const [meals, setMeals] = useState<MealProps[]>([]);
 
@@ -29,7 +29,7 @@ const Consumption = () => {
       )
       .catch((err) => console.log({ err }));
     BeAPI.getAll("consumption")
-      .then((res: props[]) =>
+      .then((res: consumptionProps[]) =>
         setData(
           res
             ?.sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
