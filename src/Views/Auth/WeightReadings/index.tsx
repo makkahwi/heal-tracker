@@ -11,7 +11,7 @@ import PageSection from "../../../Components/PageView/PageSection";
 import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
 
-export interface props {
+export interface weightReadingProps {
   id?: string;
   date: string;
   weight: number;
@@ -51,7 +51,7 @@ interface calculationsProps {
   bonesSinceStartChange: ReactNode;
 }
 
-type fullProps = props & calculationsProps;
+type fullProps = weightReadingProps & calculationsProps;
 
 const WeightReadings = () => {
   const [data, setData] = useState<fullProps[]>([]);
@@ -86,9 +86,10 @@ const WeightReadings = () => {
 
   const getData = () =>
     BeAPI.getAll("WeightReadings")
-      .then((res: props[]) => {
-        const sortedRes = res?.sort((a: props, b: props) =>
-          a.date < b.date ? 1 : -1
+      .then((res: weightReadingProps[]) => {
+        const sortedRes = res?.sort(
+          (a: weightReadingProps, b: weightReadingProps) =>
+            a.date < b.date ? 1 : -1
         );
 
         setData(
@@ -378,7 +379,7 @@ const WeightReadings = () => {
     },
   ];
 
-  const onSubmit = (values: props) => {
+  const onSubmit = (values: weightReadingProps) => {
     BeAPI.create("WeightReadings", values)
       .then(() => {
         getData();

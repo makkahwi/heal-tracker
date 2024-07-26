@@ -17,6 +17,31 @@ export interface medicineProps {
   medicine: string;
 }
 
+export const renderMedicineUI =
+  (onDelete?: Function) => (event: any, date: string, id: string) =>
+    (
+      <div>
+        {date ? (
+          <span className="d-block bg-dark text-white p-2 my-2">
+            @ {timeFormat(event.time)}{" "}
+            {onDelete && (
+              <FontAwesomeIcon
+                icon={faTrashCan}
+                className="mt-1 text-danger"
+                role="button"
+                onClick={() => onDelete(id)}
+              />
+            )}
+          </span>
+        ) : (
+          ""
+        )}
+        <div className="fw-bold">
+          {event.quantity} of {event.medicine}
+        </div>
+      </div>
+    );
+
 const Medicine = () => {
   const [data, setData] = useState<medicineProps[]>([]);
 
@@ -86,33 +111,12 @@ const Medicine = () => {
       })
       .catch((err) => console.log({ err }));
 
-  const renderDistanceEvent = (event: any, date: string, id: string) => (
-    <div>
-      {date ? (
-        <span className="d-block bg-dark text-white p-2 my-2">
-          @ {timeFormat(event.time)}{" "}
-          <FontAwesomeIcon
-            icon={faTrashCan}
-            className="mt-1 text-danger"
-            role="button"
-            onClick={() => onDelete(id)}
-          />
-        </span>
-      ) : (
-        ""
-      )}
-      <div className="fw-bold">
-        {event.quantity} of {event.medicine}
-      </div>
-    </div>
-  );
-
   return (
     <PageSection title="Medicine List">
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
-        <MonthlyCalendar data={data} renderEvent={renderDistanceEvent} />
+        <MonthlyCalendar data={data} renderEvent={renderMedicineUI(onDelete)} />
       </Fragment>
     </PageSection>
   );

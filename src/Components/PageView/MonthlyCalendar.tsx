@@ -6,13 +6,13 @@ interface props {
   renderEvent: (event: any, date: string, id: string) => JSX.Element;
 }
 
-const renderEvents = (
+export const renderEvents = (
   date: string,
-  events: any[],
-  renderFunc: (event: any, date: string, id: string) => JSX.Element
+  renderFunc: (event: any, date: string, id: string) => JSX.Element,
+  events?: any[]
 ) => {
   return events
-    .filter((event) => event.date === date)
+    ?.filter((event) => event.date === date)
     .map((event) => renderFunc(event, date, event.id));
 };
 
@@ -103,7 +103,7 @@ const MonthlyCalendar = ({ data, renderEvent }: props) => {
                 >
                   {day.format("YYYY-MM-DD")}
 
-                  {renderEvents(day.format("YYYY-MM-DD"), data, renderEvent)}
+                  {renderEvents(day.format("YYYY-MM-DD"), renderEvent, data)}
                 </td>
               ))}
             </tr>

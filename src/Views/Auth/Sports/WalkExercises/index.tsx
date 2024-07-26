@@ -17,6 +17,31 @@ export interface walkExerciseProps {
   distance: number;
 }
 
+export const renderExerciseUI =
+  (onDelete?: Function) => (event: any, date: string, id: string) =>
+    (
+      <div>
+        {date ? (
+          <span className="d-block bg-dark text-white p-2 my-2">
+            @ {timeFormat(event.startTime)} - {timeFormat(event.endTime)}{" "}
+          </span>
+        ) : (
+          ""
+        )}
+        <div className="fw-bold">
+          {event.distance} km{" "}
+          {onDelete && (
+            <FontAwesomeIcon
+              icon={faTrashCan}
+              className="mt-1 text-danger"
+              role="button"
+              onClick={() => onDelete(id)}
+            />
+          )}
+        </div>
+      </div>
+    );
+
 const WalkExercises = () => {
   const [data, setData] = useState<walkExerciseProps[]>([]);
 
@@ -87,33 +112,12 @@ const WalkExercises = () => {
       })
       .catch((err) => console.log({ err }));
 
-  const renderDistanceEvent = (event: any, date: string, id: string) => (
-    <div>
-      {date ? (
-        <span className="d-block bg-dark text-white p-2 my-2">
-          @ {timeFormat(event.startTime)} - {timeFormat(event.endTime)}{" "}
-        </span>
-      ) : (
-        ""
-      )}
-      <div className="fw-bold">
-        {event.distance} km{" "}
-        <FontAwesomeIcon
-          icon={faTrashCan}
-          className="mt-1 text-danger"
-          role="button"
-          onClick={() => onDelete(id)}
-        />
-      </div>
-    </div>
-  );
-
   return (
     <PageSection title="Walk Exercises">
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
-        <MonthlyCalendar data={data} renderEvent={renderDistanceEvent} />
+        <MonthlyCalendar data={data} renderEvent={renderExerciseUI(onDelete)} />
       </Fragment>
     </PageSection>
   );

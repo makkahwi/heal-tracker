@@ -10,7 +10,7 @@ import { Fragment } from "react";
 import { dayDateFormat, timeFormat } from "../../Utils/consts";
 import { inputProps } from "../Form";
 
-export interface props {
+interface props {
   data: { id?: string }[];
   inputs: inputProps[];
   onDelete: Function;

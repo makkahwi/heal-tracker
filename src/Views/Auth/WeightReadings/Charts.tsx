@@ -8,18 +8,7 @@ import {
   XYPlot,
   YAxis,
 } from "react-vis";
-
-export interface props {
-  id?: string;
-  date: string;
-  weight: number;
-  fat: number;
-  water: number;
-  waist: number;
-  muscles: number;
-  physique: number;
-  bones: number;
-}
+import { weightReadingProps } from ".";
 
 interface calculationsProps {
   fatWeight: string;
@@ -49,7 +38,7 @@ interface calculationsProps {
   bonesSinceStartChange: ReactNode;
 }
 
-type fullProps = props & calculationsProps;
+type fullProps = weightReadingProps & calculationsProps;
 
 const WeightReadingCharts = ({ data }: { data: fullProps[] }) => {
   const [hovered, setHovered] = useState<{
