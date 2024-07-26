@@ -37,7 +37,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 0.27,
       highEnd: 5.0,
-      required: true,
     },
     {
       name: "sgot",
@@ -45,7 +44,6 @@ const LabTests = () => {
       type: "number",
       step: "0.01",
       highEnd: 50,
-      required: true,
     },
     {
       name: "sgpt",
@@ -53,7 +51,6 @@ const LabTests = () => {
       type: "number",
       step: "0.01",
       highEnd: 50,
-      required: true,
     },
     {
       name: "ferritin",
@@ -61,7 +58,6 @@ const LabTests = () => {
       type: "number",
       step: "0.01",
       highEnd: 50,
-      required: true,
     },
     {
       name: "sugar",
@@ -70,7 +66,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 70,
       highEnd: 110,
-      required: true,
     },
     {
       name: "glucose",
@@ -78,7 +73,6 @@ const LabTests = () => {
       type: "number",
       step: "0.01",
       highEnd: 6.1,
-      required: true,
     },
     {
       name: "insulin",
@@ -87,7 +81,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 1.1,
       highEnd: 17.0,
-      required: true,
     },
     {
       name: "insulinResistance",
@@ -95,7 +88,6 @@ const LabTests = () => {
       type: "number",
       step: "0.01",
       highEnd: 2.8,
-      required: true,
     },
     {
       name: "cholesterolTotal",
@@ -103,7 +95,6 @@ const LabTests = () => {
       type: "number",
       step: "0.01",
       highEnd: 190,
-      required: true,
     },
     {
       name: "triglycerides",
@@ -111,7 +102,6 @@ const LabTests = () => {
       type: "number",
       step: "0.01",
       highEnd: 150,
-      required: true,
     },
     {
       name: "cholesterolHdl",
@@ -120,7 +110,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 35,
       highEnd: 65,
-      required: true,
     },
     {
       name: "cholesterolLdl",
@@ -128,7 +117,6 @@ const LabTests = () => {
       type: "number",
       step: "0.01",
       highEnd: 130,
-      required: true,
     },
     {
       name: "ldl",
@@ -136,7 +124,6 @@ const LabTests = () => {
       type: "number",
       step: "0.01",
       highEnd: 3.22,
-      required: true,
     },
     {
       name: "cholesterolT",
@@ -144,7 +131,6 @@ const LabTests = () => {
       type: "number",
       step: "0.01",
       highEnd: 4.44,
-      required: true,
     },
     {
       name: "vldl",
@@ -153,7 +139,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 5,
       highEnd: 40,
-      required: true,
     },
     {
       name: "hemoglobin",
@@ -162,7 +147,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 13.2,
       highEnd: 17.3,
-      required: true,
     },
     {
       name: "redCellCount",
@@ -171,7 +155,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 4.3,
       highEnd: 5.7,
-      required: true,
     },
     {
       name: "hematocrit",
@@ -180,7 +163,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 39,
       highEnd: 49,
-      required: true,
     },
     {
       name: "mcv",
@@ -189,7 +171,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 80,
       highEnd: 99,
-      required: true,
     },
     {
       name: "mch",
@@ -198,7 +179,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 27,
       highEnd: 34,
-      required: true,
     },
     {
       name: "mchc",
@@ -207,7 +187,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 32,
       highEnd: 37,
-      required: true,
     },
     {
       name: "rdwcv",
@@ -216,7 +195,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 11,
       highEnd: 16,
-      required: true,
     },
     {
       name: "rdwsd",
@@ -225,7 +203,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 37,
       highEnd: 54,
-      required: true,
     },
     {
       name: "whiteCellCount",
@@ -234,7 +211,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 5,
       highEnd: 11,
-      required: true,
     },
     {
       name: "neutrophils",
@@ -243,7 +219,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 2,
       highEnd: 7,
-      required: true,
     },
     {
       name: "lymphocytes",
@@ -252,7 +227,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 0.8,
       highEnd: 4.8,
-      required: true,
     },
     {
       name: "monocytes",
@@ -261,7 +235,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 0.2,
       highEnd: 1,
-      required: true,
     },
     {
       name: "eosinophils",
@@ -270,7 +243,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 80,
       highEnd: 360,
-      required: true,
     },
     {
       name: "basophils",
@@ -279,7 +251,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 0,
       highEnd: 1,
-      required: true,
     },
     {
       name: "plateletsCount",
@@ -288,7 +259,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 150,
       highEnd: 450,
-      required: true,
     },
     {
       name: "mpv",
@@ -297,7 +267,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 0.8,
       highEnd: 12,
-      required: true,
     },
     {
       name: "serum",
@@ -306,7 +275,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 12.5,
       highEnd: 32.2,
-      required: true,
     },
     {
       name: "transferrin",
@@ -315,7 +283,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 2.0,
       highEnd: 3.6,
-      required: true,
     },
     {
       name: "tibc",
@@ -324,7 +291,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 45,
       highEnd: 80,
-      required: true,
     },
     {
       name: "urea",
@@ -333,7 +299,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 2.8,
       highEnd: 7.2,
-      required: true,
     },
     {
       name: "Creatinine",
@@ -342,7 +307,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 59,
       highEnd: 104,
-      required: true,
     },
     {
       name: "uricAcid",
@@ -351,7 +315,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 208,
       highEnd: 428,
-      required: true,
     },
     {
       name: "sodium",
@@ -360,7 +323,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 136,
       highEnd: 146,
-      required: true,
     },
     {
       name: "potassium",
@@ -369,7 +331,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 3.5,
       highEnd: 5.1,
-      required: true,
     },
     {
       name: "chloride",
@@ -378,7 +339,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 101,
       highEnd: 109,
-      required: true,
     },
     {
       name: "calcium",
@@ -387,7 +347,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 2.2,
       highEnd: 2.65,
-      required: true,
     },
     {
       name: "correctedCalcium",
@@ -396,7 +355,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 2.1,
       highEnd: 2.6,
-      required: true,
     },
     {
       name: "phosphorus",
@@ -405,7 +363,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 0.81,
       highEnd: 1.45,
-      required: true,
     },
     {
       name: "magnesium",
@@ -414,7 +371,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 0.73,
       highEnd: 1.06,
-      required: true,
     },
     {
       name: "bilirubin",
@@ -423,7 +379,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 5,
       highEnd: 21,
-      required: true,
     },
     {
       name: "protein",
@@ -432,7 +387,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 66,
       highEnd: 83,
-      required: true,
     },
     {
       name: "albumin",
@@ -441,7 +395,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 32,
       highEnd: 52,
-      required: true,
     },
     {
       name: "globulin",
@@ -450,7 +403,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 21,
       highEnd: 40,
-      required: true,
     },
     {
       name: "agRatio",
@@ -459,7 +411,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 1.0,
       highEnd: 2.2,
-      required: true,
     },
     {
       name: "phosphatase",
@@ -468,7 +419,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 43,
       highEnd: 115,
-      required: true,
     },
     {
       name: "ggt",
@@ -476,7 +426,6 @@ const LabTests = () => {
       type: "number",
       step: "0.01",
       highEnd: 55,
-      required: true,
     },
     {
       name: "vitamineB12",
@@ -485,7 +434,6 @@ const LabTests = () => {
       step: "0.01",
       lowEnd: 180,
       highEnd: 914,
-      required: true,
     },
     {
       name: "vitamineD",
@@ -493,7 +441,6 @@ const LabTests = () => {
       type: "number",
       step: "0.01",
       lowEnd: 30,
-      required: true,
     },
   ];
 

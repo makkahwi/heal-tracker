@@ -20,7 +20,6 @@ This is to setup the schedule of meals you are following (diet), and insert what
 - Localize app
 - Enhance UX
   - Loading indicators
-- Convert lab tests to not required
 - Build welcome dashboard
   - Monthly calendar with all collections data (modal for details show)
   - Build health indicators progress analysis
