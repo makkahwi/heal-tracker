@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import * as BeAPI from "../../../API";
 import PageView from "../../../Components/PageView";
 
-export interface props {
+interface props {
   id?: string;
   date: string;
 }
