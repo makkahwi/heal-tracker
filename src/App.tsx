@@ -1,23 +1,15 @@
-import {
-  faCalendar,
-  faClock,
-  faFileMedical,
-  faPills,
-  faRunning,
-  faUtensils,
-  faWeight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCalendar, faClock, faFileMedical, faPills, faRunning, faUtensils, faWeight } from "@fortawesome/free-solid-svg-icons";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Navbar from "./Components/Layout/Navbar";
 import store from "./Store/store";
-import Consumption from "./Views/Consumption";
+import Consumption from "./Views/Diet/Consumption";
+import Meals from "./Views/Diet/Meals";
+import Schedule from "./Views/Diet/Schedule";
 import LabTests from "./Views/LabTests";
 import Login from "./Views/Login";
-import Meals from "./Views/Meals";
 import Medicine from "./Views/Medicine";
-import Schedule from "./Views/Schedule";
 import Sports from "./Views/Sports";
 import WeightReadings from "./Views/WeightReadings";
 import Welcome from "./Views/Welcome";
