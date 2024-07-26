@@ -101,7 +101,7 @@ const Consumption = () => {
       fullWidth: true,
       inputs: [
         { name: "element", label: "Element", required: true },
-        { name: "count", label: "Count", required: true },
+        { name: "count", label: "Quantity", required: true },
         { name: "note", label: "Note", required: false },
       ],
       required: true,

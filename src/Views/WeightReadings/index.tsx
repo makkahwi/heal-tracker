@@ -1,7 +1,4 @@
-import {
-  faArrowCircleDown,
-  faArrowCircleUp,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowCircleDown, faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, ReactNode, useEffect, useState } from "react";
 
@@ -328,6 +325,7 @@ const WeightReadings = () => {
       label: "Fat Reading",
       type: "number",
       step: "0.1",
+      unit: "%",
       required: true,
     },
     {
@@ -335,6 +333,7 @@ const WeightReadings = () => {
       label: "Weight",
       type: "number",
       step: "0.1",
+      unit: "KG",
       required: true,
     },
     {
@@ -342,6 +341,7 @@ const WeightReadings = () => {
       label: "Water Reading",
       type: "number",
       step: "0.1",
+      unit: "%",
       required: true,
     },
     {
@@ -356,6 +356,7 @@ const WeightReadings = () => {
       label: "Muscles Reading",
       type: "number",
       step: "0.1",
+      unit: "KG",
       required: true,
     },
     {
