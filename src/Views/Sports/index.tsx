@@ -105,7 +105,7 @@ const Sports = () => {
   );
 
   return (
-    <PageSection title="Sport Sessions List">
+    <PageSection title="Walk Exercises">
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 

@@ -1,4 +1,7 @@
-import { faArrowCircleDown, faArrowCircleUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowCircleDown,
+  faArrowCircleUp,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, ReactNode, useEffect, useState } from "react";
 
@@ -391,7 +394,7 @@ const WeightReadings = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title="Weight Readings List">
+    <PageSection title="Weight Readings">
       <Fragment>
         <div className="btn-group my-3 w-100">
           <button

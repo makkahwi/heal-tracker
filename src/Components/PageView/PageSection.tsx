@@ -1,7 +1,7 @@
 const PageSection = ({ children = <></>, title = "" }) => {
   return (
     <section className="my-5">
-      <h4 className="mb-4">{title}</h4>
+      <h3 className="mb-4 text-start">{title}</h3>
 
       {children}
     </section>
