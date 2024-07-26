@@ -2,26 +2,26 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, useEffect, useState } from "react";
 
-import * as BeAPI from "../../API";
-import Form from "../../Components/Form";
-import { MealViewProps } from "../../Components/MealView";
-import MonthlyCalendar from "../../Components/PageView/MonthlyCalendar";
-import PageSection from "../../Components/PageView/PageSection";
-import { timeFormat } from "../../Utils/consts";
+import * as BeAPI from "../../../../API";
+import Form from "../../../../Components/Form";
+import { MealViewProps } from "../../../../Components/MealView";
+import MonthlyCalendar from "../../../../Components/PageView/MonthlyCalendar";
+import PageSection from "../../../../Components/PageView/PageSection";
+import { timeFormat } from "../../../../Utils/consts";
 
 export interface props {
   id?: string;
   date: string;
-  time: string;
-  quantity: number;
-  medicine: string;
+  startTime: string;
+  endTime: string;
+  distance: number;
 }
 
-const Medicine = () => {
+const Sports = () => {
   const [data, setData] = useState<props[]>([]);
 
   const getData = () =>
-    BeAPI.getAll("medicine")
+    BeAPI.getAll("sportSessions")
       .then((res: any) =>
         setData(res?.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
       )
@@ -40,25 +40,26 @@ const Medicine = () => {
       required: true,
     },
     {
-      name: "time",
-      label: "Time",
+      name: "startTime",
+      label: "Start Time",
       type: "time",
       required: true,
     },
     {
-      name: "quantity",
-      label: "Quantity",
-      type: "number",
-      defaultValue: 2,
+      name: "endTime",
+      label: "End Time",
+      type: "time",
       required: true,
     },
     {
-      name: "medicine",
-      label: "Medicine",
-      type: "select",
-      options: ["Vitamine D"],
-      defaultValue: "Vitamine D",
+      name: "distance",
+      label: "Distance",
+      type: "number",
+      defaultValue: 6,
+      step: "0.1",
+      unit: "KM",
       required: true,
+      total: true,
     },
   ];
 
@@ -68,7 +69,7 @@ const Medicine = () => {
   }
 
   const onSubmit = (values: submitProps) => {
-    BeAPI.create("medicine", values)
+    BeAPI.create("sportSessions", values)
       .then(() => {
         getData();
       })
@@ -76,7 +77,7 @@ const Medicine = () => {
   };
 
   const onDelete = (id: string) =>
-    BeAPI.remove("medicine", id)
+    BeAPI.remove("sportSessions", id)
       .then(() => {
         getData();
       })
@@ -86,25 +87,25 @@ const Medicine = () => {
     <div>
       {date ? (
         <span className="d-block bg-dark text-white p-2 my-2">
-          @ {timeFormat(event.time)}{" "}
-          <FontAwesomeIcon
-            icon={faTrashCan}
-            className="mt-1 text-danger"
-            role="button"
-            onClick={() => onDelete(id)}
-          />
+          @ {timeFormat(event.startTime)} - {timeFormat(event.endTime)}{" "}
         </span>
       ) : (
         ""
       )}
       <div className="fw-bold">
-        {event.quantity} of {event.medicine}
+        {event.distance} km{" "}
+        <FontAwesomeIcon
+          icon={faTrashCan}
+          className="mt-1 text-danger"
+          role="button"
+          onClick={() => onDelete(id)}
+        />
       </div>
     </div>
   );
 
   return (
-    <PageSection title="Medicine List">
+    <PageSection title="Walk Exercises">
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
@@ -114,4 +115,4 @@ const Medicine = () => {
   );
 };
 
-export default Medicine;
+export default Sports;

@@ -5,9 +5,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, ReactNode, useEffect, useState } from "react";
 
-import * as BeAPI from "../../API";
-import Form from "../../Components/Form";
-import PageSection from "../../Components/PageView/PageSection";
+import * as BeAPI from "../../../API";
+import Form from "../../../Components/Form";
+import PageSection from "../../../Components/PageView/PageSection";
 import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
 

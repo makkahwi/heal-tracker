@@ -6,7 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, ReactNode, useState } from "react";
 
-import { dayDateFormat } from "../../Utils/consts";
+import { dayDateFormat } from "../../../Utils/consts";
 
 export interface props {
   id?: string;
