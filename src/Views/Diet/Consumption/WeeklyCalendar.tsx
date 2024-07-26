@@ -109,23 +109,21 @@ const WeeklyCalendar = ({
                 <th className="text-start">
                   {meal}
 
-                  <ul>
-                    {currentWeekData
-                      .find((dat) => meal === dat.meal.meal)
-                      ?.supposed?.map(
-                        ({ element, count, note, alternatives }, y) => (
-                          <MealView
-                            dark={y % 2 === 1}
-                            meal={meal}
-                            count={count}
-                            element={element}
-                            note={note}
-                            alternatives={alternatives}
-                            key={y}
-                          />
-                        )
-                      ) || ""}
-                  </ul>
+                  {currentWeekData
+                    .find((dat) => meal === dat.meal.meal)
+                    ?.supposed?.map(
+                      ({ element, count, note, alternatives }, y) => (
+                        <MealView
+                          dark={y % 2 === 1}
+                          meal={meal}
+                          count={count}
+                          element={element}
+                          note={note}
+                          alternatives={alternatives}
+                          key={y}
+                        />
+                      )
+                    ) || ""}
                 </th>
 
                 {currentWeek?.map((day, x) => {
