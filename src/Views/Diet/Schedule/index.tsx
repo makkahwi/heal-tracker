@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-import * as BeAPI from "../../API";
-import MealView, { MealViewProps } from "../../Components/MealView";
-import PageView from "../../Components/PageView";
-import { timeFormat } from "../../Utils/consts";
+import * as BeAPI from "../../../API";
+import MealView, { MealViewProps } from "../../../Components/MealView";
+import PageView from "../../../Components/PageView";
+import { timeFormat } from "../../../Utils/consts";
 import { MealProps } from "../Meals";
 
 const Schedule = () => {

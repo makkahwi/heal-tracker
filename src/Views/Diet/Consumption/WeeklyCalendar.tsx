@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment, { Moment } from "moment";
 import { Fragment, useEffect, useState } from "react";
 
-import MealView from "../../Components/MealView";
-import { props } from "../../Views/Consumption";
+import { props } from ".";
+import MealView from "../../../Components/MealView";
 
 const WeeklyCalendar = ({
   data,

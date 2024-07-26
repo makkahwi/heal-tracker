@@ -1,10 +1,10 @@
 import moment, { MomentInput } from "moment";
 import { Fragment, useEffect, useState } from "react";
 
-import * as BeAPI from "../../API";
-import Form from "../../Components/Form";
-import { MealViewProps } from "../../Components/MealView";
-import PageSection from "../../Components/PageView/PageSection";
+import * as BeAPI from "../../../API";
+import Form from "../../../Components/Form";
+import { MealViewProps } from "../../../Components/MealView";
+import PageSection from "../../../Components/PageView/PageSection";
 import { MealProps } from "../Meals";
 import WeeklyCalendar from "./WeeklyCalendar";
 
