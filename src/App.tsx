@@ -12,15 +12,15 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Navbar from "./Components/Layout/Navbar";
 import store from "./Store/store";
+import Welcome from "./Views/Auth/Dashboard";
 import Consumption from "./Views/Auth/Diet/Consumption";
 import Meals from "./Views/Auth/Diet/Meals";
 import Schedule from "./Views/Auth/Diet/Schedule";
 import LabTests from "./Views/Auth/LabTests";
 import Medicine from "./Views/Auth/Medicine";
-import Login from "./Views/Public/Login";
 import Sports from "./Views/Auth/Sports/WalkExercises";
 import WeightReadings from "./Views/Auth/WeightReadings";
-import Welcome from "./Views/Auth/Welcome";
+import Login from "./Views/Public/Login";
 
 export const routes = [
   {

@@ -17,11 +17,11 @@ export interface props {
   distance: number;
 }
 
-const Sports = () => {
+const WalkExercises = () => {
   const [data, setData] = useState<props[]>([]);
 
   const getData = () =>
-    BeAPI.getAll("sportSessions")
+    BeAPI.getAll("WalkExercisesessions")
       .then((res: any) =>
         setData(res?.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
       )
@@ -69,7 +69,7 @@ const Sports = () => {
   }
 
   const onSubmit = (values: submitProps) => {
-    BeAPI.create("sportSessions", values)
+    BeAPI.create("WalkExercisesessions", values)
       .then(() => {
         getData();
       })
@@ -77,7 +77,7 @@ const Sports = () => {
   };
 
   const onDelete = (id: string) =>
-    BeAPI.remove("sportSessions", id)
+    BeAPI.remove("WalkExercisesessions", id)
       .then(() => {
         getData();
       })
@@ -115,4 +115,4 @@ const Sports = () => {
   );
 };
 
-export default Sports;
+export default WalkExercises;

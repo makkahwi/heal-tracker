@@ -1,7 +1,8 @@
 import { Fragment } from "react/jsx-runtime";
+
 import PageSection from "../../../Components/PageView/PageSection";
 
-const Welcome = () => {
+const Dashboard = () => {
   return (
     <PageSection title="Welcome To `Personal Diet Tracker`">
       <Fragment>
@@ -11,4 +12,4 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
+export default Dashboard;
