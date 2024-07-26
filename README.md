@@ -20,8 +20,12 @@ This is to setup the schedule of meals you are following (diet), and insert what
 - Localize app
 - Enhance UX
   - Loading indicators
+  - Build consumption comparisons to scheduled
+  - Build weekly schedules service
+- Enhance Functionality
+  - Replace supposed @ consumed to engage IDs of schedule
 - Build welcome dashboard
-  - Monthly calendar with all collections data (modal for details show)
+  - Weekly calendar with all collections data (modal for details show)
   - Build health indicators progress analysis
     - Weight
     - Lab tests
