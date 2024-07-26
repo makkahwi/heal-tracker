@@ -148,9 +148,7 @@ const Consumption = () => {
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
-        <div className="overflow-auto">
-          <WeeklyCalendar data={data} onDelete={onDelete} />
-        </div>
+        <WeeklyCalendar data={data} onDelete={onDelete} />
       </Fragment>
     </PageSection>
   );

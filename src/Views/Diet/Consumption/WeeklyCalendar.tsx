@@ -55,7 +55,7 @@ const WeeklyCalendar = ({
   };
 
   return (
-    <Fragment>
+    <div className="overflow-auto">
       <div className="d-flex justify-content-between mb-2">
         <button className="btn btn-primary" onClick={handlePreviousWeek}>
           Previous Week
@@ -179,7 +179,7 @@ const WeeklyCalendar = ({
             ))}
         </tbody>
       </table>
-    </Fragment>
+    </div>
   );
 };
 
