@@ -112,6 +112,7 @@ const Consumption = () => {
     date: string;
     time: string;
     meal: string;
+    note?: string;
     contents: MealViewProps[];
     supposed: MealViewProps[];
   }
@@ -125,6 +126,7 @@ const Consumption = () => {
       contents: values.contents,
       supposed: scheduled?.filter(({ meal }) => meal === values.meal),
       timestamp: moment(date + "T" + time),
+      note: values.note,
     };
 
     BeAPI.create("consumption", finalValue)
