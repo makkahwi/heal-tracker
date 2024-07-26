@@ -21,7 +21,7 @@ const WalkExercises = () => {
   const [data, setData] = useState<props[]>([]);
 
   const getData = () =>
-    BeAPI.getAll("WalkExercisesessions")
+    BeAPI.getAll("sportSessions")
       .then((res: any) =>
         setData(res?.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
       )
@@ -69,7 +69,7 @@ const WalkExercises = () => {
   }
 
   const onSubmit = (values: submitProps) => {
-    BeAPI.create("WalkExercisesessions", values)
+    BeAPI.create("sportSessions", values)
       .then(() => {
         getData();
       })
@@ -77,7 +77,7 @@ const WalkExercises = () => {
   };
 
   const onDelete = (id: string) =>
-    BeAPI.remove("WalkExercisesessions", id)
+    BeAPI.remove("sportSessions", id)
       .then(() => {
         getData();
       })

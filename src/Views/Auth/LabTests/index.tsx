@@ -445,7 +445,11 @@ const LabTests = () => {
   ];
 
   const onSubmit = (values: props) => {
-    BeAPI.create("labTests", values)
+    const finalValues = Object.keys(values)
+      .filter((key) => (values as any)[key])
+      .reduce((final, key) => ({ ...final, [key]: (values as any)[key] }), {});
+
+    BeAPI.create("labTests", finalValues)
       .then(() => {
         getData();
       })
