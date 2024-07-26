@@ -12,7 +12,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Navbar from "./Components/Layout/Navbar";
 import store from "./Store/store";
-import Welcome from "./Views/Auth/Dashboard";
+import Dashboard from "./Views/Auth/Dashboard";
 import Consumption from "./Views/Auth/Diet/Consumption";
 import Meals from "./Views/Auth/Diet/Meals";
 import Schedule from "./Views/Auth/Diet/Schedule";
@@ -92,7 +92,7 @@ const App = () => {
               )
             )}
 
-            <Route path="*" element={<Welcome />} />
+            <Route path="*" element={<Dashboard />} />
           </Routes>
         ) : (
           <Routes>
