@@ -16,7 +16,12 @@ interface props {
   onDelete?: (id: string) => void;
 }
 
-const OrView = () => <span className="mx-1 text-danger">OR</span>;
+const OrView = () => (
+  <span className="mx-1 text-danger">
+    <br />
+    OR
+  </span>
+);
 
 const MealView = ({
   id,

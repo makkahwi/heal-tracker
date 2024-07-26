@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const API_KEY = "AIzaSyDJqR5RBtO_CdMzx21ZogTX8mGAd7hJhwg";
 

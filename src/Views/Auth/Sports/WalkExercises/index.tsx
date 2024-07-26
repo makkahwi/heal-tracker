@@ -2,14 +2,14 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, useEffect, useState } from "react";
 
-import * as BeAPI from "../../API";
-import Form from "../../Components/Form";
-import { MealViewProps } from "../../Components/MealView";
-import MonthlyCalendar from "../../Components/PageView/MonthlyCalendar";
-import PageSection from "../../Components/PageView/PageSection";
-import { timeFormat } from "../../Utils/consts";
+import * as BeAPI from "../../../../API";
+import Form from "../../../../Components/Form";
+import { MealViewProps } from "../../../../Components/MealView";
+import MonthlyCalendar from "../../../../Components/PageView/MonthlyCalendar";
+import PageSection from "../../../../Components/PageView/PageSection";
+import { timeFormat } from "../../../../Utils/consts";
 
-export interface props {
+export interface walkExerciseProps {
   id?: string;
   date: string;
   startTime: string;
@@ -17,13 +17,42 @@ export interface props {
   distance: number;
 }
 
-const Sports = () => {
-  const [data, setData] = useState<props[]>([]);
+export const renderExerciseUI =
+  (onDelete?: Function) => (event: any, date: string, id: string) =>
+    (
+      <div>
+        {date ? (
+          <span className="d-block bg-dark text-white p-2 my-2">
+            @ {timeFormat(event.startTime)} - {timeFormat(event.endTime)}{" "}
+          </span>
+        ) : (
+          ""
+        )}
+        <div className="fw-bold">
+          {event.distance} km{" "}
+          {onDelete && (
+            <FontAwesomeIcon
+              icon={faTrashCan}
+              className="mt-1 text-danger"
+              role="button"
+              onClick={() => onDelete(id)}
+            />
+          )}
+        </div>
+      </div>
+    );
+
+const WalkExercises = () => {
+  const [data, setData] = useState<walkExerciseProps[]>([]);
 
   const getData = () =>
     BeAPI.getAll("sportSessions")
       .then((res: any) =>
-        setData(res?.sort((a: props, b: props) => (a.date > b.date ? -1 : 1)))
+        setData(
+          res?.sort((a: walkExerciseProps, b: walkExerciseProps) =>
+            a.date > b.date ? -1 : 1
+          )
+        )
       )
       .catch((err) => console.log({ err }));
 
@@ -83,36 +112,15 @@ const Sports = () => {
       })
       .catch((err) => console.log({ err }));
 
-  const renderDistanceEvent = (event: any, date: string, id: string) => (
-    <div>
-      {date ? (
-        <span className="d-block bg-dark text-white p-2 my-2">
-          @ {timeFormat(event.startTime)} - {timeFormat(event.endTime)}{" "}
-        </span>
-      ) : (
-        ""
-      )}
-      <div className="fw-bold">
-        {event.distance} km{" "}
-        <FontAwesomeIcon
-          icon={faTrashCan}
-          className="mt-1 text-danger"
-          role="button"
-          onClick={() => onDelete(id)}
-        />
-      </div>
-    </div>
-  );
-
   return (
-    <PageSection title="Sport Sessions List">
+    <PageSection title="Walk Exercises">
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
-        <MonthlyCalendar data={data} renderEvent={renderDistanceEvent} />
+        <MonthlyCalendar data={data} renderEvent={renderExerciseUI(onDelete)} />
       </Fragment>
     </PageSection>
   );
 };
 
-export default Sports;
+export default WalkExercises;

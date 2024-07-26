@@ -1,11 +1,10 @@
-import { Fragment } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-import Form from "../../Components/Form";
-import PageSection from "../../Components/PageView/PageSection";
-import { signIn, signUp } from "../../Store/authSlice";
-import { AppDispatch } from "../../Store/store";
+import Form from "../../../Components/Form";
+import PageSection from "../../../Components/PageView/PageSection";
+import { signIn, signUp } from "../../../Store/authSlice";
+import { AppDispatch } from "../../../Store/store";
 
 interface props {
   email: string;

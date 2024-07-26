@@ -1,14 +1,14 @@
 import moment, { MomentInput } from "moment";
 import { Fragment, useEffect, useState } from "react";
 
-import * as BeAPI from "../../API";
-import Form from "../../Components/Form";
-import { MealViewProps } from "../../Components/MealView";
-import PageSection from "../../Components/PageView/PageSection";
+import * as BeAPI from "../../../../API";
+import Form from "../../../../Components/Form";
+import { MealViewProps } from "../../../../Components/MealView";
+import PageSection from "../../../../Components/PageView/PageSection";
 import { MealProps } from "../Meals";
 import WeeklyCalendar from "./WeeklyCalendar";
 
-export interface props {
+export interface consumptionProps {
   id?: string;
   timestamp: MomentInput;
   meal: MealProps;
@@ -18,7 +18,7 @@ export interface props {
 }
 
 const Consumption = () => {
-  const [data, setData] = useState<props[]>([]);
+  const [data, setData] = useState<consumptionProps[]>([]);
   const [scheduled, setScheduled] = useState<MealViewProps[]>([]);
   const [meals, setMeals] = useState<MealProps[]>([]);
 
@@ -29,7 +29,7 @@ const Consumption = () => {
       )
       .catch((err) => console.log({ err }));
     BeAPI.getAll("consumption")
-      .then((res: props[]) =>
+      .then((res: consumptionProps[]) =>
         setData(
           res
             ?.sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
@@ -101,7 +101,7 @@ const Consumption = () => {
       fullWidth: true,
       inputs: [
         { name: "element", label: "Element", required: true },
-        { name: "count", label: "Count", required: true },
+        { name: "count", label: "Quantity", required: true },
         { name: "note", label: "Note", required: false },
       ],
       required: true,
@@ -112,6 +112,7 @@ const Consumption = () => {
     date: string;
     time: string;
     meal: string;
+    note?: string;
     contents: MealViewProps[];
     supposed: MealViewProps[];
   }
@@ -125,6 +126,7 @@ const Consumption = () => {
       contents: values.contents,
       supposed: scheduled?.filter(({ meal }) => meal === values.meal),
       timestamp: moment(date + "T" + time),
+      note: values.note,
     };
 
     BeAPI.create("consumption", finalValue)
@@ -146,9 +148,7 @@ const Consumption = () => {
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
-        <div className="overflow-auto">
-          <WeeklyCalendar data={data} onDelete={onDelete} />
-        </div>
+        <WeeklyCalendar data={data} onDelete={onDelete} />
       </Fragment>
     </PageSection>
   );

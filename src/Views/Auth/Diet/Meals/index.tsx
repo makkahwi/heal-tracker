@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-import * as BeAPI from "../../API";
-import { MealViewProps } from "../../Components/MealView";
-import PageView from "../../Components/PageView";
-import { timeFormat } from "../../Utils/consts";
+import * as BeAPI from "../../../../API";
+import { MealViewProps } from "../../../../Components/MealView";
+import PageView from "../../../../Components/PageView";
+import { timeFormat } from "../../../../Utils/consts";
 
 export interface MealProps {
   id?: string;
