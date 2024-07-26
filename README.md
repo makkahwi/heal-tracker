@@ -25,7 +25,6 @@ This is to setup the schedule of meals you are following (diet), and insert what
 - Enhance Functionality
   - Replace supposed @ consumed to engage IDs of schedule
 - Build main dashboard
-  - Weekly calendar with all collections data (modal for details show)
   - Build health indicators progress analysis
     - Weight
     - Lab tests
