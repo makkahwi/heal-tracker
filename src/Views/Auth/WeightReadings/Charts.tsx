@@ -1,13 +1,7 @@
 import moment from "moment";
 import { ReactNode, useState } from "react";
-import {
-  HorizontalGridLines,
-  LineMarkSeries,
-  VerticalGridLines,
-  XAxis,
-  XYPlot,
-  YAxis,
-} from "react-vis";
+import { HorizontalGridLines, LineMarkSeries, VerticalGridLines, XAxis, XYPlot, YAxis } from "react-vis";
+
 import { weightReadingProps } from ".";
 
 interface calculationsProps {
@@ -57,7 +51,7 @@ const WeightReadingCharts = ({ data }: { data: fullProps[] }) => {
         x: date,
         y: fat,
       })),
-      title: "Fat",
+      title: "Fat Percentage",
     },
     {
       data: data?.map(({ fatWeight, date }) => ({
@@ -71,7 +65,7 @@ const WeightReadingCharts = ({ data }: { data: fullProps[] }) => {
         x: date,
         y: water,
       })),
-      title: "Water",
+      title: "Water Percentage",
     },
     {
       data: data?.map(({ waterWeight, date }) => ({
@@ -92,7 +86,7 @@ const WeightReadingCharts = ({ data }: { data: fullProps[] }) => {
         x: date,
         y: muscles,
       })),
-      title: "Muscles",
+      title: "Muscles Weight",
     },
     {
       data: data?.map(({ musclesPercentage, date }) => ({
