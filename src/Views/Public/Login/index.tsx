@@ -71,13 +71,13 @@ const Login = () => {
 
   return (
     <div className="row">
-      <div className="col">
+      <div className="col-md-6">
         <PageSection title="Sign In">
           <Form inputs={signInInputs} onSubmit={onSignInSubmit} />
         </PageSection>
       </div>
 
-      <div className="col">
+      <div className="col-md-6">
         <PageSection title="Sign Up">
           <Form inputs={signUpInputs} onSubmit={onSignUpSubmit} />
         </PageSection>
