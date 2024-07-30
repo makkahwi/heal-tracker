@@ -15,6 +15,7 @@ export interface walkExerciseProps {
   startTime: string;
   endTime: string;
   distance: number;
+  note?: string;
 }
 
 export const renderExerciseUI =
@@ -89,6 +90,11 @@ const WalkExercises = () => {
       unit: "KM",
       required: true,
       total: true,
+    },
+    {
+      name: "note",
+      label: "Notes",
+      fuulWidth: true,
     },
   ];
 
