@@ -16,7 +16,11 @@ const Meals = () => {
 
   const getData = () =>
     BeAPI.getAll("meals")
-      .then((res: any) => setData(res))
+      .then((res: MealProps[]) =>
+        setData(
+          res.sort((a: MealProps, b: MealProps) => (a.time < b.time ? -1 : 1))
+        )
+      )
       .catch((err) => console.log({ err }));
 
   useEffect(() => {
