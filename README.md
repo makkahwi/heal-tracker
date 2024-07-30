@@ -28,6 +28,10 @@ This is to setup the schedule of meals you are following (diet), and insert what
   - Build health indicators progress analysis
     - Weight
     - Lab tests
+  - Summary of (how many done VS supposed) for ...
+    - Walks
+    - Medicine
+    - Meals
 - Build medicines supposed to take list
   - Time
   - Name

@@ -13,11 +13,28 @@ const Schedule = () => {
   const getData = () => {
     BeAPI.getAll("meals")
       .then((meals: MealProps[]) => {
-        setMeals(meals);
+        setMeals(
+          meals.sort((a: MealProps, b: MealProps) => (a.time < b.time ? -1 : 1))
+        );
 
         BeAPI.getAll("schedule")
           .then((res: MealViewProps[]) =>
-            setData(res?.sort((a: any, b: any) => (a.meal < b.meal ? -1 : 1)))
+            setData(
+              res.sort((a: MealViewProps, b: MealViewProps) => {
+                const firstMealTime = meals.find(
+                  (meal) => meal.meal === a.meal
+                )?.time;
+                const secondMealTime = meals.find(
+                  (meal) => meal.meal === b.meal
+                )?.time;
+
+                if (firstMealTime && secondMealTime) {
+                  return firstMealTime < secondMealTime ? -1 : 1;
+                }
+
+                return 1;
+              })
+            )
           )
           .catch((err) => console.log({ err }));
       })
