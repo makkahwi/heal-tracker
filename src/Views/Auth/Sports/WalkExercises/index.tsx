@@ -19,27 +19,27 @@ export interface walkExerciseProps {
 }
 
 export const renderExerciseUI =
-  (onDelete?: Function) => (event: any, date: string, id: string) =>
+  (onDelete?: Function) =>
+  (event: walkExerciseProps, date: string, id: string) =>
     (
       <div>
         {date ? (
           <span className="d-block bg-dark text-white p-2 my-2">
             @ {timeFormat(event.startTime)} - {timeFormat(event.endTime)}{" "}
+            {onDelete && (
+              <FontAwesomeIcon
+                icon={faTrashCan}
+                className="mt-1 text-danger"
+                role="button"
+                onClick={() => onDelete(id)}
+              />
+            )}
           </span>
         ) : (
           ""
         )}
-        <div className="fw-bold">
-          {event.distance} km{" "}
-          {onDelete && (
-            <FontAwesomeIcon
-              icon={faTrashCan}
-              className="mt-1 text-danger"
-              role="button"
-              onClick={() => onDelete(id)}
-            />
-          )}
-        </div>
+        <div className="fw-bold">{event.distance} km</div>
+        <small>{event.note}</small>
       </div>
     );
 
