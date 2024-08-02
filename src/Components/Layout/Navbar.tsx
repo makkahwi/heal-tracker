@@ -1,4 +1,4 @@
-import { faSignOut } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faSignOut } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -21,7 +21,10 @@ const Navbar = () => {
           role="button"
           onClick={() => navigate("/")}
         >
-          PDT
+          <span className="d-none d-lg-inline">PDT</span>
+          <span className="d-inline d-lg-none">
+            <FontAwesomeIcon icon={faHome} />
+          </span>
         </span>
 
         <div>
