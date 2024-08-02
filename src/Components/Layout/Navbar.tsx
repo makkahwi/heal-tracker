@@ -1,4 +1,8 @@
-import { faHome, faSignOut } from "@fortawesome/free-solid-svg-icons";
+import {
+  faDashboard,
+  faHome,
+  faSignOut,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -16,24 +20,30 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-primary bg-primary position-fixed fixed-top w-100 m-0">
       <div className="container-fluid px-5 py-1">
-        <span
-          className="navbar-brand text-white fw-bold"
-          role="button"
-          onClick={() => navigate("/")}
-        >
-          <span className="d-none d-lg-inline">PDT</span>
-          <span className="d-inline d-lg-none">
-            <FontAwesomeIcon icon={faHome} />
-          </span>
+        <span className="d-none d-lg-inline">
+          <span className="navbar-brand text-white fw-bold">PDT</span>
         </span>
 
         <div>
           {user ? (
             <ul className="nav me-auto mb-2 mb-lg-0">
+              <li className="nav-item" role="button">
+                <span
+                  className={
+                    "nav-link mx-2 px-0 text-decoration-none " +
+                    (location.pathname === "/" ? "text-info" : "text-white")
+                  }
+                  onClick={() => navigate("/")}
+                >
+                  <FontAwesomeIcon icon={faDashboard} />
+                  <span className="ms-2 d-none d-lg-inline">Dashboard</span>
+                </span>
+              </li>
+
               {routes.map(({ name, path, icon, list }, x) => (
                 <li className="nav-item" role="button" key={x}>
                   {list ? (
-                    <div className="text-white my-2 mx-3 dropdown">
+                    <div className="text-white my-2 mx-2 dropdown">
                       <span data-bs-toggle="dropdown" aria-expanded="false">
                         <FontAwesomeIcon icon={icon} />
                         <span className="ms-2 d-none d-lg-inline">{name}</span>
@@ -61,7 +71,7 @@ const Navbar = () => {
                   ) : (
                     <span
                       className={
-                        "nav-link text-decoration-none " +
+                        "nav-link mx-2 px-0 text-decoration-none " +
                         (location.pathname === "/" + path
                           ? "text-info"
                           : "text-white")
