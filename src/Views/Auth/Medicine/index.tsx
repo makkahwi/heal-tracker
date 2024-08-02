@@ -18,7 +18,7 @@ export interface medicineProps {
 }
 
 export const renderMedicineUI =
-  (onDelete?: Function) => (event: any, date: string, id: string) =>
+  (onDelete?: Function) => (event: medicineProps, date: string, id: string) =>
     (
       <div>
         {date ? (
@@ -85,7 +85,7 @@ const Medicine = () => {
       name: "medicine",
       label: "Medicine",
       type: "select",
-      options: ["Vitamine D"],
+      options: ["Vitamine D", "Sleeping Bills"],
       defaultValue: "Vitamine D",
       required: true,
     },
