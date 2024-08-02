@@ -1,4 +1,69 @@
 {
+  "WeightReadings": {
+    "908r1hATCyZHv6iIZBnGkgDrL1J3": {
+      "-O1LkTJDO-v7F_LPtL3A": {
+        "bones": 3.2,
+        "date": "2024-06-11",
+        "fat": "30.9",
+        "muscles": "60.8",
+        "physique": 3,
+        "waist": "12.5",
+        "water": "50.8",
+        "weight": "92.5"
+      },
+      "-O1LkYNWBzJMV85GK6b3": {
+        "bones": 3,
+        "date": "2024-06-29",
+        "fat": "33.3",
+        "muscles": "57.5",
+        "physique": 2,
+        "waist": "13",
+        "water": "50",
+        "weight": "90.7"
+      },
+      "-O1Lkb2ZnM2oohJSl00U": {
+        "bones": 3.1,
+        "date": "2024-07-06",
+        "fat": "30.7",
+        "muscles": "59",
+        "physique": 2,
+        "waist": "12",
+        "water": "51",
+        "weight": "89.6"
+      },
+      "-O1f-bhTL0BuxbEcGSJb": {
+        "bones": 3,
+        "date": "2024-07-13",
+        "fat": "31.5",
+        "muscles": "57.3",
+        "physique": 2,
+        "waist": "12",
+        "water": "50.7",
+        "weight": "87.9"
+      },
+      "-O2EjdPoq7xFOhGwAkqz": {
+        "bones": "3.1",
+        "date": "2024-07-20",
+        "fat": "27.5",
+        "muscles": "59.6",
+        "physique": "2",
+        "waist": "10",
+        "water": "52.5",
+        "weight": "86.4"
+      },
+      "-O2nLcGObZbaMKhEcz6v": {
+        "bones": "3.1",
+        "date": "2024-07-27",
+        "fat": "28.4",
+        "muscles": "57.7",
+        "physique": "2",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3",
+        "waist": "10.5",
+        "water": "52.1",
+        "weight": "84.8"
+      }
+    }
+  },
   "consumption": {
     "908r1hATCyZHv6iIZBnGkgDrL1J3": {
       "-O0ADG3DnfBNBqNHArd-": {
@@ -7259,295 +7324,1756 @@
           }
         ],
         "timestamp": "2024-07-24T14:30:00.000Z"
-      }
-    }
-  },
-  "meals": {
-    "908r1hATCyZHv6iIZBnGkgDrL1J3": {
-      "-O0iEAfGgeq-_ckBCRMm": {
-        "meal": "Breakfast",
-        "time": "09:00"
       },
-      "-O1gOiC3wQ1Sl_j5sCCl": {
-        "meal": "Lunch",
-        "time": "14:00"
-      },
-      "-O1gOkZDROV2ZPdfzpIF": {
-        "meal": "Dinner",
-        "time": "20:00"
-      }
-    }
-  },
-  "medicine": {
-    "908r1hATCyZHv6iIZBnGkgDrL1J3": {
-      "-O18U0st5vAjgxhB6U7k": {
-        "date": "2024-07-06",
-        "medicine": "Vitamine D",
-        "quantity": 2,
-        "time": "21:00"
-      },
-      "-O1IAw6oZHH9pPCaho8L": {
-        "date": "2024-07-07",
-        "medicine": "Vitamine D",
-        "quantity": 2,
-        "time": "23:00"
-      },
-      "-O1IfjHMRk-ciDO_gV1v": {
-        "date": "2024-07-08",
-        "medicine": "Vitamine D",
-        "quantity": 2,
-        "time": "21:50"
-      },
-      "-O1SwizPGHG_MihPrTvj": {
-        "date": "2024-07-10",
-        "medicine": "Vitamine D",
-        "quantity": 2,
-        "time": "20:30"
-      },
-      "-O1Xr38ltqFdOtOUQ6sc": {
-        "date": "2024-07-11",
-        "medicine": "Vitamine D",
-        "quantity": 2,
-        "time": "20:34"
-      },
-      "-O1cZ-hBtVVZZxFiiH8G": {
-        "date": "2024-07-12",
-        "medicine": "Vitamine D",
-        "quantity": 2,
-        "time": "22:30"
-      },
-      "-O1wE3ljZn1EnA0VafmN": {
-        "date": "2024-07-16",
-        "medicine": "Vitamine D",
-        "quantity": 2,
-        "time": "16:30"
-      },
-      "-O1wH34y5fVldJ-z-5dy": {
-        "date": "2024-07-14",
-        "medicine": "Vitamine D",
-        "quantity": 2,
-        "time": "18:00"
-      },
-      "-O1wH3upFPzWkcnx9O4L": {
-        "date": "2024-07-13",
-        "medicine": "Vitamine D",
-        "quantity": 2,
-        "time": "18:00"
-      },
-      "-O23jqdkMZjH6KWE9hgE": {
-        "date": "2024-07-17",
-        "medicine": "Vitamine D",
-        "quantity": 2,
-        "time": "20:30"
-      },
-      "-O29djCKZC1tOEU83dli": {
-        "date": "2024-07-19",
-        "medicine": "Vitamine D",
-        "quantity": 2,
-        "time": "14:00"
-      },
-      "-O2KFUyr_aKnCLRlO9nM": {
-        "date": "2024-07-21",
-        "medicine": "Vitamine D",
-        "quantity": 2,
-        "time": "15:15"
-      },
-      "-O2PR5jEOhplEViFQ51b": {
-        "date": "2024-07-22",
-        "medicine": "Vitamine D",
-        "quantity": 2,
-        "time": "15:35"
-      },
-      "-O2UqrL7wx7FPw2owzRH": {
-        "date": "2024-07-23",
-        "medicine": "Vitamine D",
-        "quantity": 2,
-        "time": "16:50"
-      }
-    }
-  },
-  "schedule": {
-    "908r1hATCyZHv6iIZBnGkgDrL1J3": {
-      "-O0Qob3DhS-zRoIKYYL5": {
-        "alternatives": [
-          {
-            "count": "120gm",
-            "element": "Labaneh"
-          },
+      "-O2aWUooM0FKJjTAqKbc": {
+        "contents": [
           {
             "count": "120gm",
             "element": "Areesh Cheese"
           },
           {
-            "count": "120gm",
-            "element": "White Cheese"
-          },
-          {
-            "count": "120gm",
-            "element": "Chickpeas"
-          },
-          {
-            "count": "120gm",
-            "element": "Tuna"
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O1gQTD_g3NOixgGDLQr",
+            "meal": "Dinner",
+            "note": "Tomato"
           }
         ],
-        "count": "2",
-        "element": "Egg",
-        "meal": "Breakfast"
+        "meal": {
+          "id": "-O1gOkZDROV2ZPdfzpIF",
+          "meal": "Dinner",
+          "time": "20:00"
+        },
+        "supposed": [
+          {
+            "alternatives": [
+              {
+                "count": "120gm",
+                "element": "Labaneh"
+              },
+              {
+                "count": "120gm",
+                "element": "Areesh Cheese"
+              },
+              {
+                "count": "120gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "120gm",
+                "element": "Chickpeas"
+              },
+              {
+                "count": "120gm",
+                "element": "Tuna"
+              }
+            ],
+            "count": "2",
+            "element": "Egg",
+            "id": "-O1gQTDXkri2ImvlsJJr",
+            "meal": "Dinner"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O1gQTD_g3NOixgGDLQr",
+            "meal": "Dinner"
+          }
+        ],
+        "timestamp": "2024-07-24T20:54:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       },
-      "-O0Qp5vu7hxTYQIA5e3W": {
-        "alternatives": [
+      "-O2cugljb7_ZtqXPAvi-": {
+        "contents": [
+          {
+            "count": "100gm",
+            "element": "Labaneh"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O0ZtUQcrELg3_G3he1A",
+            "meal": "Breakfast",
+            "note": "Cucumber "
+          },
+          {
+            "count": "60gm",
+            "element": "Bread"
+          }
+        ],
+        "meal": {
+          "id": "-O0iEAfGgeq-_ckBCRMm",
+          "meal": "Breakfast",
+          "time": "09:00"
+        },
+        "supposed": [
+          {
+            "alternatives": [
+              {
+                "count": "120gm",
+                "element": "Labaneh"
+              },
+              {
+                "count": "120gm",
+                "element": "Areesh Cheese"
+              },
+              {
+                "count": "120gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "120gm",
+                "element": "Chickpeas"
+              },
+              {
+                "count": "120gm",
+                "element": "Tuna"
+              }
+            ],
+            "count": "2",
+            "element": "Egg",
+            "id": "-O0Qob3DhS-zRoIKYYL5",
+            "meal": "Breakfast"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O0ZtUQcrELg3_G3he1A",
+            "meal": "Breakfast"
+          }
+        ],
+        "timestamp": "2024-07-25T07:30:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2edeR3MCKYxqqb0v6G": {
+        "contents": [
+          {
+            "count": "150gm",
+            "element": "Chicken Breast",
+            "id": "-O0Qp5vwjQroAX36dsqn",
+            "meal": "Lunch"
+          },
           {
             "count": "1/2 Cup",
-            "element": "Cooked Green beans"
+            "element": "Cooked Vegetables beans"
           }
         ],
-        "count": "1 Cup",
-        "element": "Salad",
-        "meal": "Lunch"
-      },
-      "-O0Qp5vwjQroAX36dsqn": {
-        "alternatives": [
+        "meal": {
+          "id": "-O1gOiC3wQ1Sl_j5sCCl",
+          "meal": "Lunch",
+          "time": "14:00"
+        },
+        "supposed": [
           {
+            "alternatives": [
+              {
+                "count": "120gm",
+                "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
+              }
+            ],
             "count": "120gm",
-            "element": "Fish"
+            "element": "Chicken Breast",
+            "id": "-O0Qp5vwjQroAX36dsqn",
+            "meal": "Lunch"
           },
           {
-            "count": "120gm",
-            "element": "Beef"
-          }
-        ],
-        "count": "120gm",
-        "element": "Chicken Breast",
-        "meal": "Lunch"
-      },
-      "-O0ZtUQcrELg3_G3he1A": {
-        "count": "1 Cup",
-        "element": "Various Vegetables",
-        "meal": "Breakfast"
-      },
-      "-O0ZuA6RzMt_Fn4wE_lU": {
-        "alternatives": [
-          {
+            "alternatives": [
+              {
+                "count": "100gm",
+                "element": "Bulgur"
+              },
+              {
+                "count": "100gm",
+                "element": "Brown Pasta"
+              }
+            ],
             "count": "100gm",
-            "element": "Bulgur"
+            "element": "Rice",
+            "id": "-O0ZuA6RzMt_Fn4wE_lU",
+            "meal": "Lunch"
           },
           {
-            "count": "100gm",
-            "element": "Brown Pasta"
+            "alternatives": [
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Green beans"
+              }
+            ],
+            "count": "1 Cup",
+            "element": "Salad",
+            "id": "-O0Qp5vu7hxTYQIA5e3W",
+            "meal": "Lunch"
           }
         ],
-        "count": "100gm",
-        "element": "Rice",
-        "meal": "Lunch"
+        "timestamp": "2024-07-25T15:30:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       },
-      "-O1gQTDXkri2ImvlsJJr": {
-        "alternatives": [
+      "-O2fR8Ny8XkuN94iEkuh": {
+        "contents": [
+          {
+            "count": "2",
+            "element": "Egg",
+            "id": "-O1gQTDXkri2ImvlsJJr",
+            "meal": "Dinner",
+            "note": "Fried"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables",
+            "id": "-O1gQTD_g3NOixgGDLQr",
+            "meal": "Dinner"
+          }
+        ],
+        "meal": {
+          "id": "-O1gOkZDROV2ZPdfzpIF",
+          "meal": "Dinner",
+          "time": "20:00"
+        },
+        "supposed": [
+          {
+            "alternatives": [
+              {
+                "count": "120gm",
+                "element": "Labaneh"
+              },
+              {
+                "count": "120gm",
+                "element": "Areesh Cheese"
+              },
+              {
+                "count": "120gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "120gm",
+                "element": "Chickpeas"
+              },
+              {
+                "count": "120gm",
+                "element": "Tuna"
+              }
+            ],
+            "count": "2",
+            "element": "Egg",
+            "id": "-O1gQTDXkri2ImvlsJJr",
+            "meal": "Dinner"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O1gQTD_g3NOixgGDLQr",
+            "meal": "Dinner"
+          }
+        ],
+        "timestamp": "2024-07-25T19:45:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2i8Pn4AIUiCb4blk-q": {
+        "contents": [
           {
             "count": "120gm",
             "element": "Labaneh"
           },
           {
-            "count": "120gm",
-            "element": "Areesh Cheese"
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O0ZtUQcrELg3_G3he1A",
+            "meal": "Breakfast",
+            "note": "Cucumber "
           },
           {
-            "count": "120gm",
-            "element": "White Cheese"
-          },
-          {
-            "count": "120gm",
-            "element": "Chickpeas"
-          },
-          {
-            "count": "120gm",
-            "element": "Tuna"
+            "count": "60gm",
+            "element": "Bread"
           }
         ],
-        "count": "2",
-        "element": "Egg",
-        "meal": "Dinner"
+        "meal": {
+          "id": "-O0iEAfGgeq-_ckBCRMm",
+          "meal": "Breakfast",
+          "time": "09:00"
+        },
+        "supposed": [
+          {
+            "alternatives": [
+              {
+                "count": "120gm",
+                "element": "Labaneh"
+              },
+              {
+                "count": "120gm",
+                "element": "Areesh Cheese"
+              },
+              {
+                "count": "120gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "120gm",
+                "element": "Chickpeas"
+              },
+              {
+                "count": "120gm",
+                "element": "Tuna"
+              }
+            ],
+            "count": "2",
+            "element": "Egg",
+            "id": "-O0Qob3DhS-zRoIKYYL5",
+            "meal": "Breakfast"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O0ZtUQcrELg3_G3he1A",
+            "meal": "Breakfast"
+          }
+        ],
+        "timestamp": "2024-07-26T08:15:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       },
-      "-O1gQTD_g3NOixgGDLQr": {
-        "count": "1 Cup",
-        "element": "Various Vegetables",
-        "meal": "Dinner"
-      }
-    }
-  },
-  "sportSessions": {
-    "908r1hATCyZHv6iIZBnGkgDrL1J3": {
-      "-O18RnddJDibhYcNTT6N": {
-        "date": "2024-07-06",
-        "distance": "6",
-        "endTime": "19:30",
-        "startTime": "18:25"
+      "-O2kFH73z8h4ClhOhMaN": {
+        "contents": [
+          {
+            "count": "150gm",
+            "element": "Chicken Breast",
+            "id": "-O0Qp5vwjQroAX36dsqn",
+            "meal": "Lunch"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables"
+          }
+        ],
+        "meal": {
+          "id": "-O1gOiC3wQ1Sl_j5sCCl",
+          "meal": "Lunch",
+          "time": "14:00"
+        },
+        "note": "Fajita",
+        "supposed": [
+          {
+            "alternatives": [
+              {
+                "count": "120gm",
+                "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
+              }
+            ],
+            "count": "120gm",
+            "element": "Chicken Breast",
+            "id": "-O0Qp5vwjQroAX36dsqn",
+            "meal": "Lunch"
+          },
+          {
+            "alternatives": [
+              {
+                "count": "100gm",
+                "element": "Bulgur"
+              },
+              {
+                "count": "100gm",
+                "element": "Brown Pasta"
+              }
+            ],
+            "count": "100gm",
+            "element": "Rice",
+            "id": "-O0ZuA6RzMt_Fn4wE_lU",
+            "meal": "Lunch"
+          },
+          {
+            "alternatives": [
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Green beans"
+              }
+            ],
+            "count": "1 Cup",
+            "element": "Salad",
+            "id": "-O0Qp5vu7hxTYQIA5e3W",
+            "meal": "Lunch"
+          }
+        ],
+        "timestamp": "2024-07-26T14:30:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       },
-      "-O1IB0AA-LJQckKROJAi": {
-        "date": "2024-07-07",
-        "distance": 6,
-        "endTime": "20:05",
-        "startTime": "18:45"
+      "-O2oKreuAF2fr7A3kkLk": {
+        "contents": [
+          {
+            "count": "2 Pieces",
+            "element": "Egg",
+            "id": "-O2o39Yv415ka6KXl3wC",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O2o35UYF0jH0IESukbB",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "4 Pieces",
+            "element": "Olive"
+          }
+        ],
+        "meal": {
+          "id": "-O0iEAfGgeq-_ckBCRMm",
+          "meal": "Breakfast",
+          "time": "09:00"
+        },
+        "supposed": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o35TU1r16gRMrsHMr",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Piece",
+            "element": "Egg",
+            "id": "-O2o39Yv415ka6KXl3wC",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "4 Pieces",
+            "element": "Olives",
+            "id": "-O2o35UV_A9o7f49tsom",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O2o35UYF0jH0IESukbB",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-27T09:30:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       },
-      "-O1IUjhbYY-wwyQfB4HT": {
-        "date": "2024-07-08",
-        "distance": 6,
-        "endTime": "20:40",
-        "startTime": "19:30"
+      "-O2r7ACkSbl5ladrYXNw": {
+        "contents": [
+          {
+            "count": "120gm",
+            "element": "Chicken Liver",
+            "id": "-O2o3M-6H2pFLGGXRrKu",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables",
+            "id": "-O2o3M-4DS04McQMb8nX",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "60gm",
+            "element": "Bread",
+            "id": "-O2o3M-3idzwlIJphP7p",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O1gOiC3wQ1Sl_j5sCCl",
+          "meal": "Lunch",
+          "time": "14:00"
+        },
+        "supposed": [
+          {
+            "alternatives": [
+              {
+                "count": "120gm",
+                "element": "Fish"
+              }
+            ],
+            "count": "120gm",
+            "element": "Chicken Breast",
+            "id": "-O2o3M-6H2pFLGGXRrKu",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables",
+            "id": "-O2o3M-4DS04McQMb8nX",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/3 Cup",
+            "element": "Rice",
+            "id": "-O2o3M-3idzwlIJphP7p",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-27T17:00:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       },
-      "-O1SweX3ykQIt3bD_ntp": {
-        "date": "2024-07-10",
-        "distance": 6,
-        "endTime": "19:43",
-        "startTime": "18:35"
+      "-O2sijQTBWo5jjXDBxXy": {
+        "contents": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o35TU1r16gRMrsHMr",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Piece",
+            "element": "Egg",
+            "id": "-O2o39Yv415ka6KXl3wC",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O2o35UYF0jH0IESukbB",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O0iEAfGgeq-_ckBCRMm",
+          "meal": "Breakfast",
+          "time": "09:00"
+        },
+        "supposed": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o35TU1r16gRMrsHMr",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Piece",
+            "element": "Egg",
+            "id": "-O2o39Yv415ka6KXl3wC",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "4 Pieces",
+            "element": "Olives",
+            "id": "-O2o35UV_A9o7f49tsom",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O2o35UYF0jH0IESukbB",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-28T09:45:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       },
-      "-O1Xqt_nHEyvyZPZla0x": {
-        "date": "2024-07-11",
-        "distance": "5",
-        "endTime": "20:12",
-        "startTime": "19:10"
+      "-O2tTX76stOKk3SzeoaV": {
+        "contents": [
+          {
+            "count": "120gm",
+            "element": "Chicken Liver",
+            "id": "-O2o3M-6H2pFLGGXRrKu",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables",
+            "id": "-O2o3M-4DS04McQMb8nX",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "100gm",
+            "element": "Pasta",
+            "id": "-O2o3M-3idzwlIJphP7p",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O1gOiC3wQ1Sl_j5sCCl",
+          "meal": "Lunch",
+          "time": "14:00"
+        },
+        "supposed": [
+          {
+            "alternatives": [
+              {
+                "count": "120gm",
+                "element": "Fish"
+              }
+            ],
+            "count": "120gm",
+            "element": "Chicken Breast",
+            "id": "-O2o3M-6H2pFLGGXRrKu",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables",
+            "id": "-O2o3M-4DS04McQMb8nX",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/3 Cup",
+            "element": "Rice",
+            "id": "-O2o3M-3idzwlIJphP7p",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-28T13:30:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       },
-      "-O1cYvnprpJEFBYmhfJj": {
-        "date": "2024-07-12",
-        "distance": "5",
-        "endTime": "19:59",
-        "startTime": "18:55"
+      "-O2uiYlkOb0yzGodXDDc": {
+        "contents": [
+          {
+            "count": "1 Cup",
+            "element": "Yogurt",
+            "id": "-O2o3_dZRjCAk1cfUyR0",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "30gm",
+            "element": "White Cheese",
+            "id": "-O2o3_S-NyyU_Z18fKra",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O1gOkZDROV2ZPdfzpIF",
+          "meal": "Dinner",
+          "time": "20:00"
+        },
+        "supposed": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o3_S454Uh9xS0ACZF",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Greek Yogurt",
+            "id": "-O2o3_dZRjCAk1cfUyR0",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "Tuna"
+              },
+              {
+                "count": "1 Piece",
+                "element": "Egg"
+              }
+            ],
+            "count": "30gm",
+            "element": "White Cheese",
+            "id": "-O2o3_S-NyyU_Z18fKra",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-28T19:00:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       },
-      "-O1wGsXU_MnrdgEhwR3O": {
-        "date": "2024-07-14",
-        "distance": 6,
-        "endTime": "20:05",
-        "startTime": "18:55"
+      "-O2x6_DgY9HoW862Wesa": {
+        "contents": [
+          {
+            "count": "2 Slice",
+            "element": "Bread",
+            "id": "-O2o35TU1r16gRMrsHMr",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "4 Pieces",
+            "element": "Olives",
+            "id": "-O2o35UV_A9o7f49tsom",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O2o35UYF0jH0IESukbB",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "30gm",
+            "element": "White Cheese"
+          }
+        ],
+        "meal": {
+          "id": "-O0iEAfGgeq-_ckBCRMm",
+          "meal": "Breakfast",
+          "time": "09:00"
+        },
+        "supposed": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o35TU1r16gRMrsHMr",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Piece",
+            "element": "Egg",
+            "id": "-O2o39Yv415ka6KXl3wC",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "4 Pieces",
+            "element": "Olives",
+            "id": "-O2o35UV_A9o7f49tsom",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O2o35UYF0jH0IESukbB",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-29T06:00:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       },
-      "-O1wGvL6z-1hfmHCDFku": {
-        "date": "2024-07-13",
-        "distance": 6,
-        "endTime": "19:35",
-        "startTime": "18:30"
+      "-O3--xZxXFhz56ENQPV4": {
+        "contents": [
+          {
+            "count": "120gm",
+            "element": "Chicken Breast",
+            "id": "-O2o3M-6H2pFLGGXRrKu",
+            "meal": "Lunch",
+            "note": "Tekka",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables",
+            "id": "-O2o3M-4DS04McQMb8nX",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/3 Cup",
+            "element": "Rice",
+            "id": "-O2o3M-3idzwlIJphP7p",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O1gOiC3wQ1Sl_j5sCCl",
+          "meal": "Lunch",
+          "time": "14:00"
+        },
+        "supposed": [
+          {
+            "alternatives": [
+              {
+                "count": "120gm",
+                "element": "Fish"
+              }
+            ],
+            "count": "120gm",
+            "element": "Chicken Breast",
+            "id": "-O2o3M-6H2pFLGGXRrKu",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables",
+            "id": "-O2o3M-4DS04McQMb8nX",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/3 Cup",
+            "element": "Rice",
+            "id": "-O2o3M-3idzwlIJphP7p",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-29T11:03:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       },
-      "-O23jnAnsCd8NN_v4z26": {
-        "date": "2024-07-17",
-        "distance": 6,
-        "endTime": "19:35",
-        "startTime": "18:25"
+      "-O3-1De1P4HQtVVRlFHY": {
+        "contents": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o3_S454Uh9xS0ACZF",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Yogurt",
+            "id": "-O2o3_dZRjCAk1cfUyR0",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "30gm",
+            "element": "White Cheese",
+            "id": "-O2o3_S-NyyU_Z18fKra",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O1gOkZDROV2ZPdfzpIF",
+          "meal": "Dinner",
+          "time": "20:00"
+        },
+        "supposed": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o3_S454Uh9xS0ACZF",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Greek Yogurt",
+            "id": "-O2o3_dZRjCAk1cfUyR0",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "Tuna"
+              },
+              {
+                "count": "1 Piece",
+                "element": "Egg"
+              }
+            ],
+            "count": "30gm",
+            "element": "White Cheese",
+            "id": "-O2o3_S-NyyU_Z18fKra",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-29T19:45:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       },
-      "-O25_ysn82CFCnztPxXy": {
-        "date": "2024-07-18",
-        "distance": "7",
-        "endTime": "19:00",
-        "startTime": "17:40"
+      "-O3-2eRLPKiaECpmf77F": {
+        "contents": [
+          {
+            "count": "6 Pieces",
+            "element": "Almond",
+            "id": "-O2o3oJbu4JWndhyr3bw",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O2o3emUEngUr3zBzXfT",
+          "meal": "Snack",
+          "time": "17:00",
+          "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+        },
+        "supposed": [
+          {
+            "count": "6 Pieces",
+            "element": "Almond",
+            "id": "-O2o3oJbu4JWndhyr3bw",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Strawbeery",
+            "id": "-O2o3oJUfIH1wPNKIoqQ",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Yogurt",
+            "id": "-O2o3oJYEKdQv81IMo2Y",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-29T19:45:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       },
-      "-O2Uoa7i2I7Ru6FpCdIA": {
-        "date": "2024-07-22",
-        "distance": "4.3",
-        "endTime": "19:21",
-        "startTime": "18:20"
+      "-O31Hy2dr71-AzCYlmbj": {
+        "contents": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o35TU1r16gRMrsHMr",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "4 Pieces",
+            "element": "Olives",
+            "id": "-O2o35UV_A9o7f49tsom",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O2o35UYF0jH0IESukbB",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "30gm",
+            "element": "White Cheese"
+          }
+        ],
+        "meal": {
+          "id": "-O0iEAfGgeq-_ckBCRMm",
+          "meal": "Breakfast",
+          "time": "09:00"
+        },
+        "supposed": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o35TU1r16gRMrsHMr",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Piece",
+            "element": "Egg",
+            "id": "-O2o39Yv415ka6KXl3wC",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "4 Pieces",
+            "element": "Olives",
+            "id": "-O2o35UV_A9o7f49tsom",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O2o35UYF0jH0IESukbB",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-30T06:15:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       },
-      "-O2Vr88wc4_VHYxHisBq": {
-        "date": "2024-07-23",
-        "distance": "8",
-        "endTime": "21:00",
-        "startTime": "19:16"
+      "-O32H8_9IcEKq66MX5KG": {
+        "contents": [
+          {
+            "count": "120gm",
+            "element": "Chicken Breast",
+            "id": "-O2o3M-6H2pFLGGXRrKu",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/3 Cup",
+            "element": "Rice",
+            "id": "-O2o3M-3idzwlIJphP7p",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "6 Pieces",
+            "element": "Almond"
+          }
+        ],
+        "meal": {
+          "id": "-O1gOiC3wQ1Sl_j5sCCl",
+          "meal": "Lunch",
+          "time": "14:00"
+        },
+        "supposed": [
+          {
+            "alternatives": [
+              {
+                "count": "120gm",
+                "element": "Fish"
+              }
+            ],
+            "count": "120gm",
+            "element": "Chicken Breast",
+            "id": "-O2o3M-6H2pFLGGXRrKu",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables",
+            "id": "-O2o3M-4DS04McQMb8nX",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/3 Cup",
+            "element": "Rice",
+            "id": "-O2o3M-3idzwlIJphP7p",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-30T11:00:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O3315XkgAT7Mwh1OO5X": {
+        "contents": [
+          {
+            "count": "1 Cup",
+            "element": "Strawbeery",
+            "id": "-O2o3oJUfIH1wPNKIoqQ",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Yogurt",
+            "id": "-O2o3oJYEKdQv81IMo2Y",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O2o3emUEngUr3zBzXfT",
+          "meal": "Snack",
+          "time": "17:00",
+          "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+        },
+        "supposed": [
+          {
+            "count": "6 Pieces",
+            "element": "Almond",
+            "id": "-O2o3oJbu4JWndhyr3bw",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Strawbeery",
+            "id": "-O2o3oJUfIH1wPNKIoqQ",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Yogurt",
+            "id": "-O2o3oJYEKdQv81IMo2Y",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-30T14:30:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O33vwJ6RbH0_hTwRxht": {
+        "contents": [
+          {
+            "count": "60gm",
+            "element": "White Cheese",
+            "id": "-O2o3_S-NyyU_Z18fKra",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O1gOkZDROV2ZPdfzpIF",
+          "meal": "Dinner",
+          "time": "20:00"
+        },
+        "supposed": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o3_S454Uh9xS0ACZF",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Greek Yogurt",
+            "id": "-O2o3_dZRjCAk1cfUyR0",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "Tuna"
+              },
+              {
+                "count": "1 Piece",
+                "element": "Egg"
+              }
+            ],
+            "count": "30gm",
+            "element": "White Cheese",
+            "id": "-O2o3_S-NyyU_Z18fKra",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-30T18:30:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O36SU7zwNlPU8i2Q3yf": {
+        "contents": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o35TU1r16gRMrsHMr",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "30gm",
+            "element": "White Cheese",
+            "id": "-O2o39Yv415ka6KXl3wC",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "4 Pieces",
+            "element": "Olives",
+            "id": "-O2o35UV_A9o7f49tsom",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O2o35UYF0jH0IESukbB",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O0iEAfGgeq-_ckBCRMm",
+          "meal": "Breakfast",
+          "time": "09:00"
+        },
+        "supposed": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o35TU1r16gRMrsHMr",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Piece",
+            "element": "Egg",
+            "id": "-O2o39Yv415ka6KXl3wC",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "4 Pieces",
+            "element": "Olives",
+            "id": "-O2o35UV_A9o7f49tsom",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O2o35UYF0jH0IESukbB",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-31T06:00:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O37hw-9rI8HMPm30rmX": {
+        "contents": [
+          {
+            "count": "120gm",
+            "element": "Chicken Breast",
+            "id": "-O2o3M-6H2pFLGGXRrKu",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables",
+            "id": "-O2o3M-4DS04McQMb8nX",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "50gm",
+            "element": "Pasta",
+            "id": "-O2o3M-3idzwlIJphP7p",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O1gOiC3wQ1Sl_j5sCCl",
+          "meal": "Lunch",
+          "time": "14:00"
+        },
+        "supposed": [
+          {
+            "alternatives": [
+              {
+                "count": "120gm",
+                "element": "Fish"
+              }
+            ],
+            "count": "120gm",
+            "element": "Chicken Breast",
+            "id": "-O2o3M-6H2pFLGGXRrKu",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables",
+            "id": "-O2o3M-4DS04McQMb8nX",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/3 Cup",
+            "element": "Rice",
+            "id": "-O2o3M-3idzwlIJphP7p",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-31T12:00:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O399dPbv-oGVmBWfGnW": {
+        "contents": [
+          {
+            "count": "6 Pieces",
+            "element": "Almond",
+            "id": "-O2o3oJbu4JWndhyr3bw",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Strawbeery",
+            "id": "-O2o3oJUfIH1wPNKIoqQ",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Yogurt",
+            "id": "-O2o3oJYEKdQv81IMo2Y",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O2o3emUEngUr3zBzXfT",
+          "meal": "Snack",
+          "time": "17:00",
+          "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+        },
+        "supposed": [
+          {
+            "count": "6 Pieces",
+            "element": "Almond",
+            "id": "-O2o3oJbu4JWndhyr3bw",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Strawbeery",
+            "id": "-O2o3oJUfIH1wPNKIoqQ",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Yogurt",
+            "id": "-O2o3oJYEKdQv81IMo2Y",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-07-31T17:00:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O3BX3U1cLd-deW1BS25": {
+        "contents": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o35TU1r16gRMrsHMr",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "60gm",
+            "element": "White Cheese",
+            "id": "-O2o39Yv415ka6KXl3wC",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "4 Pieces",
+            "element": "Olives",
+            "id": "-O2o35UV_A9o7f49tsom",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O2o35UYF0jH0IESukbB",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O0iEAfGgeq-_ckBCRMm",
+          "meal": "Breakfast",
+          "time": "09:00"
+        },
+        "supposed": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o35TU1r16gRMrsHMr",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Piece",
+            "element": "Egg",
+            "id": "-O2o39Yv415ka6KXl3wC",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "4 Pieces",
+            "element": "Olives",
+            "id": "-O2o35UV_A9o7f49tsom",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O2o35UYF0jH0IESukbB",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-08-01T06:00:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O3CnqdPw4OPIyjgDuJe": {
+        "contents": [
+          {
+            "count": "120gm",
+            "element": "Chicken Breast",
+            "id": "-O2o3M-6H2pFLGGXRrKu",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables",
+            "id": "-O2o3M-4DS04McQMb8nX",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "50gm",
+            "element": "Pasta",
+            "id": "-O2o3M-3idzwlIJphP7p",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O1gOiC3wQ1Sl_j5sCCl",
+          "meal": "Lunch",
+          "time": "14:00"
+        },
+        "supposed": [
+          {
+            "alternatives": [
+              {
+                "count": "120gm",
+                "element": "Fish"
+              }
+            ],
+            "count": "120gm",
+            "element": "Chicken Breast",
+            "id": "-O2o3M-6H2pFLGGXRrKu",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables",
+            "id": "-O2o3M-4DS04McQMb8nX",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/3 Cup",
+            "element": "Rice",
+            "id": "-O2o3M-3idzwlIJphP7p",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-08-01T11:30:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O3DINfywu9zyrxBWLmF": {
+        "contents": [
+          {
+            "count": "6 Pieces",
+            "element": "Almond",
+            "id": "-O2o3oJbu4JWndhyr3bw",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Strawbeery",
+            "id": "-O2o3oJUfIH1wPNKIoqQ",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Yogurt",
+            "id": "-O2o3oJYEKdQv81IMo2Y",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O2o3emUEngUr3zBzXfT",
+          "meal": "Snack",
+          "time": "17:00",
+          "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+        },
+        "supposed": [
+          {
+            "count": "6 Pieces",
+            "element": "Almond",
+            "id": "-O2o3oJbu4JWndhyr3bw",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Strawbeery",
+            "id": "-O2o3oJUfIH1wPNKIoqQ",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Yogurt",
+            "id": "-O2o3oJYEKdQv81IMo2Y",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-08-01T14:17:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O3GnM3GXaRvtT8giPFl": {
+        "contents": [
+          {
+            "count": "30gm",
+            "element": "White Cheese",
+            "id": "-O2o3_S-NyyU_Z18fKra",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "4 Pieces",
+            "element": "Potato "
+          }
+        ],
+        "meal": {
+          "id": "-O1gOkZDROV2ZPdfzpIF",
+          "meal": "Dinner",
+          "time": "20:00"
+        },
+        "supposed": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o3_S454Uh9xS0ACZF",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Greek Yogurt",
+            "id": "-O2o3_dZRjCAk1cfUyR0",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "Tuna"
+              },
+              {
+                "count": "1 Piece",
+                "element": "Egg"
+              }
+            ],
+            "count": "30gm",
+            "element": "White Cheese",
+            "id": "-O2o3_S-NyyU_Z18fKra",
+            "meal": "Dinner",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-08-01T18:30:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O3GsL_nYCNFtYnibABt": {
+        "contents": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o35TU1r16gRMrsHMr",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "30gm",
+            "element": "White Cheese",
+            "id": "-O2o39Yv415ka6KXl3wC",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "4 Pieces",
+            "element": "Olives",
+            "id": "-O2o35UV_A9o7f49tsom",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O2o35UYF0jH0IESukbB",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O0iEAfGgeq-_ckBCRMm",
+          "meal": "Breakfast",
+          "time": "09:00"
+        },
+        "supposed": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o35TU1r16gRMrsHMr",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Piece",
+            "element": "Egg",
+            "id": "-O2o39Yv415ka6KXl3wC",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "4 Pieces",
+            "element": "Olives",
+            "id": "-O2o35UV_A9o7f49tsom",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Various Vegetables",
+            "id": "-O2o35UYF0jH0IESukbB",
+            "meal": "Breakfast",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-08-02T06:45:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O3IiqOwczIhGCdxDJ9E": {
+        "contents": [
+          {
+            "count": "120gm",
+            "element": "Chicken Breast",
+            "id": "-O2o3M-6H2pFLGGXRrKu",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables",
+            "id": "-O2o3M-4DS04McQMb8nX",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "50gm",
+            "element": "Pasta",
+            "id": "-O2o3M-3idzwlIJphP7p",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O1gOiC3wQ1Sl_j5sCCl",
+          "meal": "Lunch",
+          "time": "14:00"
+        },
+        "supposed": [
+          {
+            "alternatives": [
+              {
+                "count": "120gm",
+                "element": "Fish"
+              }
+            ],
+            "count": "120gm",
+            "element": "Chicken Breast",
+            "id": "-O2o3M-6H2pFLGGXRrKu",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/2 Cup",
+            "element": "Cooked Vegetables",
+            "id": "-O2o3M-4DS04McQMb8nX",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1/3 Cup",
+            "element": "Rice",
+            "id": "-O2o3M-3idzwlIJphP7p",
+            "meal": "Lunch",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-08-02T12:30:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O3IjLNpW5GR0OpAx2yQ": {
+        "contents": [
+          {
+            "count": "6 Pieces",
+            "element": "Almond",
+            "id": "-O2o3oJbu4JWndhyr3bw",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Strawbeery",
+            "id": "-O2o3oJUfIH1wPNKIoqQ",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Yogurt",
+            "id": "-O2o3oJYEKdQv81IMo2Y",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "meal": {
+          "id": "-O2o3emUEngUr3zBzXfT",
+          "meal": "Snack",
+          "time": "17:00",
+          "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+        },
+        "supposed": [
+          {
+            "count": "6 Pieces",
+            "element": "Almond",
+            "id": "-O2o3oJbu4JWndhyr3bw",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Strawbeery",
+            "id": "-O2o3oJUfIH1wPNKIoqQ",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Yogurt",
+            "id": "-O2o3oJYEKdQv81IMo2Y",
+            "meal": "Snack",
+            "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+          }
+        ],
+        "timestamp": "2024-08-02T15:30:00.000Z",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       }
     }
   },
@@ -7707,57 +9233,366 @@
       }
     }
   },
-  "WeightReadings": {
+  "meals": {
     "908r1hATCyZHv6iIZBnGkgDrL1J3": {
-      "-O1LkTJDO-v7F_LPtL3A": {
-        "bones": 3.2,
-        "date": "2024-06-11",
-        "fat": "30.9",
-        "muscles": "60.8",
-        "physique": 3,
-        "waist": "12.5",
-        "water": "50.8",
-        "weight": "92.5"
+      "-O0iEAfGgeq-_ckBCRMm": {
+        "meal": "Breakfast",
+        "time": "09:00"
       },
-      "-O1LkYNWBzJMV85GK6b3": {
-        "bones": 3,
-        "date": "2024-06-29",
-        "fat": "33.3",
-        "muscles": "57.5",
-        "physique": 2,
-        "waist": "13",
-        "water": "50",
-        "weight": "90.7"
+      "-O1gOiC3wQ1Sl_j5sCCl": {
+        "meal": "Lunch",
+        "time": "14:00"
       },
-      "-O1Lkb2ZnM2oohJSl00U": {
-        "bones": 3.1,
+      "-O1gOkZDROV2ZPdfzpIF": {
+        "meal": "Dinner",
+        "time": "20:00"
+      },
+      "-O2o3emUEngUr3zBzXfT": {
+        "meal": "Snack",
+        "time": "17:00",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      }
+    }
+  },
+  "medicine": {
+    "908r1hATCyZHv6iIZBnGkgDrL1J3": {
+      "-O18U0st5vAjgxhB6U7k": {
         "date": "2024-07-06",
-        "fat": "30.7",
-        "muscles": "59",
-        "physique": 2,
-        "waist": "12",
-        "water": "51",
-        "weight": "89.6"
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "21:00"
       },
-      "-O1f-bhTL0BuxbEcGSJb": {
-        "bones": 3,
+      "-O1IAw6oZHH9pPCaho8L": {
+        "date": "2024-07-07",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "23:00"
+      },
+      "-O1IfjHMRk-ciDO_gV1v": {
+        "date": "2024-07-08",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "21:50"
+      },
+      "-O1SwizPGHG_MihPrTvj": {
+        "date": "2024-07-10",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "20:30"
+      },
+      "-O1Xr38ltqFdOtOUQ6sc": {
+        "date": "2024-07-11",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "20:34"
+      },
+      "-O1cZ-hBtVVZZxFiiH8G": {
+        "date": "2024-07-12",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "22:30"
+      },
+      "-O1wE3ljZn1EnA0VafmN": {
+        "date": "2024-07-16",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "16:30"
+      },
+      "-O1wH34y5fVldJ-z-5dy": {
+        "date": "2024-07-14",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "18:00"
+      },
+      "-O1wH3upFPzWkcnx9O4L": {
         "date": "2024-07-13",
-        "fat": "31.5",
-        "muscles": "57.3",
-        "physique": 2,
-        "waist": "12",
-        "water": "50.7",
-        "weight": "87.9"
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "18:00"
       },
-      "-O2EjdPoq7xFOhGwAkqz": {
-        "bones": "3.1",
-        "date": "2024-07-20",
-        "fat": "27.5",
-        "muscles": "59.6",
-        "physique": "2",
-        "waist": "10",
-        "water": "52.5",
-        "weight": "86.4"
+      "-O23jqdkMZjH6KWE9hgE": {
+        "date": "2024-07-17",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "20:30"
+      },
+      "-O29djCKZC1tOEU83dli": {
+        "date": "2024-07-19",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "14:00"
+      },
+      "-O2KFUyr_aKnCLRlO9nM": {
+        "date": "2024-07-21",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "15:15"
+      },
+      "-O2PR5jEOhplEViFQ51b": {
+        "date": "2024-07-22",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "15:35"
+      },
+      "-O2UqrL7wx7FPw2owzRH": {
+        "date": "2024-07-23",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "16:50"
+      },
+      "-O2edhxkjimBwlGq8-E4": {
+        "date": "2024-07-25",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "19:00",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O32L-Vzh_FUK0JEJdmu": {
+        "date": "2024-07-30",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "14:00",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O37iP_99Q-VUGPrpEhe": {
+        "date": "2024-07-31",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "15:15",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O3CnlC1XfvnYVHn_97z": {
+        "date": "2024-08-01",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "15:00",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O3Ijw3PqZRo9hAgsZlA": {
+        "date": "2024-08-02",
+        "medicine": "Vitamine D",
+        "quantity": 2,
+        "time": "18:30",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      }
+    }
+  },
+  "schedule": {
+    "908r1hATCyZHv6iIZBnGkgDrL1J3": {
+      "-O2o35TU1r16gRMrsHMr": {
+        "count": "1 Slice",
+        "element": "Bread",
+        "meal": "Breakfast",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2o35UV_A9o7f49tsom": {
+        "count": "4 Pieces",
+        "element": "Olives",
+        "meal": "Breakfast",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2o35UYF0jH0IESukbB": {
+        "count": "1 Cup",
+        "element": "Various Vegetables",
+        "meal": "Breakfast",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2o39Yv415ka6KXl3wC": {
+        "count": "1 Piece",
+        "element": "Egg",
+        "meal": "Breakfast",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2o3M-3idzwlIJphP7p": {
+        "count": "1/3 Cup",
+        "element": "Rice",
+        "meal": "Lunch",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2o3M-4DS04McQMb8nX": {
+        "count": "1/2 Cup",
+        "element": "Cooked Vegetables",
+        "meal": "Lunch",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2o3M-6H2pFLGGXRrKu": {
+        "alternatives": [
+          {
+            "count": "120gm",
+            "element": "Fish"
+          }
+        ],
+        "count": "120gm",
+        "element": "Chicken Breast",
+        "meal": "Lunch",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2o3_S-NyyU_Z18fKra": {
+        "alternatives": [
+          {
+            "count": "30gm",
+            "element": "Tuna"
+          },
+          {
+            "count": "1 Piece",
+            "element": "Egg"
+          }
+        ],
+        "count": "30gm",
+        "element": "White Cheese",
+        "meal": "Dinner",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2o3_S454Uh9xS0ACZF": {
+        "count": "1 Slice",
+        "element": "Bread",
+        "meal": "Dinner",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2o3_dZRjCAk1cfUyR0": {
+        "count": "1/2 Cup",
+        "element": "Greek Yogurt",
+        "meal": "Dinner",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2o3oJUfIH1wPNKIoqQ": {
+        "count": "1 Cup",
+        "element": "Strawbeery",
+        "meal": "Snack",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2o3oJYEKdQv81IMo2Y": {
+        "count": "1 Cup",
+        "element": "Yogurt",
+        "meal": "Snack",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2o3oJbu4JWndhyr3bw": {
+        "count": "6 Pieces",
+        "element": "Almond",
+        "meal": "Snack",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      }
+    }
+  },
+  "sportSessions": {
+    "908r1hATCyZHv6iIZBnGkgDrL1J3": {
+      "-O18RnddJDibhYcNTT6N": {
+        "date": "2024-07-06",
+        "distance": "6",
+        "endTime": "19:30",
+        "startTime": "18:25"
+      },
+      "-O1IB0AA-LJQckKROJAi": {
+        "date": "2024-07-07",
+        "distance": 6,
+        "endTime": "20:05",
+        "startTime": "18:45"
+      },
+      "-O1IUjhbYY-wwyQfB4HT": {
+        "date": "2024-07-08",
+        "distance": 6,
+        "endTime": "20:40",
+        "startTime": "19:30"
+      },
+      "-O1SweX3ykQIt3bD_ntp": {
+        "date": "2024-07-10",
+        "distance": 6,
+        "endTime": "19:43",
+        "startTime": "18:35"
+      },
+      "-O1Xqt_nHEyvyZPZla0x": {
+        "date": "2024-07-11",
+        "distance": "5",
+        "endTime": "20:12",
+        "startTime": "19:10"
+      },
+      "-O1cYvnprpJEFBYmhfJj": {
+        "date": "2024-07-12",
+        "distance": "5",
+        "endTime": "19:59",
+        "startTime": "18:55"
+      },
+      "-O1wGsXU_MnrdgEhwR3O": {
+        "date": "2024-07-14",
+        "distance": 6,
+        "endTime": "20:05",
+        "startTime": "18:55"
+      },
+      "-O1wGvL6z-1hfmHCDFku": {
+        "date": "2024-07-13",
+        "distance": 6,
+        "endTime": "19:35",
+        "startTime": "18:30"
+      },
+      "-O23jnAnsCd8NN_v4z26": {
+        "date": "2024-07-17",
+        "distance": 6,
+        "endTime": "19:35",
+        "startTime": "18:25"
+      },
+      "-O25_ysn82CFCnztPxXy": {
+        "date": "2024-07-18",
+        "distance": "7",
+        "endTime": "19:00",
+        "startTime": "17:40"
+      },
+      "-O2Uoa7i2I7Ru6FpCdIA": {
+        "date": "2024-07-22",
+        "distance": "4.3",
+        "endTime": "19:21",
+        "startTime": "18:20"
+      },
+      "-O2Vr88wc4_VHYxHisBq": {
+        "date": "2024-07-23",
+        "distance": "8",
+        "endTime": "21:00",
+        "startTime": "19:16"
+      },
+      "-O2aMvIFRi_gZBIlmbEa": {
+        "date": "2024-07-24",
+        "distance": "8",
+        "endTime": "23:09",
+        "startTime": "21:28",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2kGE83W7AdH8A6RouB": {
+        "date": "2024-07-26",
+        "distance": "8",
+        "endTime": "20:45",
+        "startTime": "19:05",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O2x6AC34DLtzw5eASge": {
+        "date": "2024-07-28",
+        "distance": "7",
+        "endTime": "19:55",
+        "startTime": "18:08",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O3-0AHrgOqfyzTImtsj": {
+        "date": "2024-07-29",
+        "distance": "7",
+        "endTime": "19:40",
+        "note": "3 KG for 3 KM",
+        "startTime": "17:55",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O398793EC_2T1i399P9": {
+        "date": "2024-07-31",
+        "distance": "7",
+        "endTime": "21:38",
+        "note": "3 KG for 3 KM",
+        "startTime": "20:08",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
+      },
+      "-O3DhGo-Htv0aoTQGDJg": {
+        "date": "2024-08-01",
+        "distance": "7",
+        "endTime": "19:10",
+        "note": "4 KG weight",
+        "startTime": "17:40",
+        "uid": "908r1hATCyZHv6iIZBnGkgDrL1J3"
       }
     }
   }
