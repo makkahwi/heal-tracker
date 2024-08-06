@@ -17,8 +17,13 @@ export interface sleepCycleProps {
 }
 
 export const renderSleepCycleUI =
-  (onDelete?: Function) => (event: sleepCycleProps, date: string, id: string) =>
-    (
+  (onDelete?: Function) =>
+  (event: sleepCycleProps, date: string, id: string) => {
+    const duration = moment.duration(
+      moment(event.endTime).diff(moment(event.startTime))
+    );
+
+    return (
       <div>
         {date ? (
           <span className="d-block bg-dark text-white p-2 my-2">
@@ -32,6 +37,10 @@ export const renderSleepCycleUI =
                 onClick={() => onDelete(id)}
               />
             )}
+            <br />
+            {Math.trunc(duration.asHours())}
+            {":"}
+            {duration.minutes()}
           </span>
         ) : (
           ""
@@ -39,6 +48,7 @@ export const renderSleepCycleUI =
         <small>{event.note}</small>
       </div>
     );
+  };
 
 const SleepCycles = () => {
   const [data, setData] = useState<sleepCycleProps[]>([]);
