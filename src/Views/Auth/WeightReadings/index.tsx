@@ -70,15 +70,17 @@ const WeightReadings = () => {
     let icon = faArrowCircleUp;
     let color = flip ? "success" : "danger";
 
-    if (first > second) {
+    if (parseFloat(String(first)) > parseFloat(String(second))) {
       icon = faArrowCircleDown;
       color = flip ? "danger" : "success";
-    } else if (first == second) {
+    } else if (first === second) {
       icon = faMinusCircle;
       color = "secondary";
     }
 
-    const changeAmount = parseFloat((second - first).toFixed(2));
+    const changeAmount = parseFloat(
+      (parseFloat(String(second)) - parseFloat(String(first))).toFixed(2)
+    );
     const changePercentage = ((changeAmount / first) * 100).toFixed(2);
 
     return {
