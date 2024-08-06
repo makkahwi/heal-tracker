@@ -41,6 +41,8 @@ const Form = ({ inputs, onSubmit }: props) => {
           ? moment().format("yyyy-MM-DD")
           : type === "time"
           ? moment().format("HH:mm")
+          : type === "datetime-local"
+          ? moment().format("yyyy-MM-DDTHH:mm")
           : undefined,
       }),
       {}

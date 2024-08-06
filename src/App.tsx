@@ -1,4 +1,5 @@
 import {
+  faBed,
   faCalendar,
   faClock,
   faFileMedical,
@@ -18,6 +19,7 @@ import Meals from "./Views/Auth/Diet/Meals";
 import Schedule from "./Views/Auth/Diet/Schedule";
 import LabTests from "./Views/Auth/LabTests";
 import Medicine from "./Views/Auth/Medicine";
+import SleepCycles from "./Views/Auth/SleepCycles";
 import Sports from "./Views/Auth/Sports/WalkExercises";
 import WeightReadings from "./Views/Auth/WeightReadings";
 import Login from "./Views/Public/Login";
@@ -53,6 +55,12 @@ export const routes = [
     path: "walk-exercises",
     icon: faRunning,
     Comp: <Sports />,
+  },
+  {
+    name: "Sleep Cycles",
+    path: "sleep-cycles",
+    icon: faBed,
+    Comp: <SleepCycles />,
   },
   {
     name: "Medicine",
