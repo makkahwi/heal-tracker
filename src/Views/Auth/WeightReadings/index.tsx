@@ -198,7 +198,7 @@ const WeightReadings = () => {
                     ? changeCalculator(previousRecord?.bones, bones, true)
                     : emptyCalculations,
                 weightSinceStartChange:
-                  i < sortedRes.length - 1
+                  i < sortedRes.length - 2
                     ? changeCalculator(
                         firstRecord?.weight,
                         weight,
@@ -207,11 +207,11 @@ const WeightReadings = () => {
                       )
                     : emptyCalculations,
                 fatSinceStartChange:
-                  i < sortedRes.length - 1
+                  i < sortedRes.length - 2
                     ? changeCalculator(firstRecord?.fat, fat, false, "%")
                     : emptyCalculations,
                 fatWeightSinceStartChange:
-                  i < sortedRes.length - 1
+                  i < sortedRes.length - 2
                     ? changeCalculator(
                         parseFloat(
                           (
@@ -225,15 +225,15 @@ const WeightReadings = () => {
                       )
                     : emptyCalculations,
                 waterSinceStartChange:
-                  i < sortedRes.length - 1
+                  i < sortedRes.length - 2
                     ? changeCalculator(firstRecord?.water, water, true, "%")
                     : emptyCalculations,
                 waistSinceStartChange:
-                  i < sortedRes.length - 1
+                  i < sortedRes.length - 2
                     ? changeCalculator(firstRecord?.waist, waist, false)
                     : emptyCalculations,
                 musclesSinceStartChange:
-                  i < sortedRes.length - 1
+                  i < sortedRes.length - 2
                     ? changeCalculator(
                         firstRecord?.muscles,
                         muscles,
@@ -242,7 +242,7 @@ const WeightReadings = () => {
                       )
                     : emptyCalculations,
                 musclesPercentageSinceStartChange:
-                  i < sortedRes.length - 1
+                  i < sortedRes.length - 2
                     ? changeCalculator(
                         parseFloat(
                           Math.round(
@@ -257,11 +257,11 @@ const WeightReadings = () => {
                       )
                     : emptyCalculations,
                 physiqueSinceStartChange:
-                  i < sortedRes.length - 1
+                  i < sortedRes.length - 2
                     ? changeCalculator(firstRecord?.physique, physique, true)
                     : emptyCalculations,
                 bonesSinceStartChange:
-                  i < sortedRes.length - 1
+                  i < sortedRes.length - 2
                     ? changeCalculator(firstRecord?.bones, bones, true)
                     : emptyCalculations,
               };
