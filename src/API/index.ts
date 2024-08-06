@@ -60,19 +60,13 @@ const getAll = async (table = "") => {
 const create = async (table = "", data = {}) => {
   const user = store.getState().auth.user;
 
-  return await service.post(`${table}/${user.localId}.json`, {
-    ...data,
-    uid: user.localId,
-  });
+  return await service.post(`${table}/${user.localId}.json`, data);
 };
 
 const update = async (table = "", data = { id: "" }) => {
   const user = store.getState().auth.user;
 
-  return await service.patch(`${table}/${user.localId}/${data.id}.json`, {
-    ...data,
-    uid: user.localId,
-  });
+  return await service.patch(`${table}/${user.localId}/${data.id}.json`, data);
 };
 
 const remove = async (table = "", id = "") => {

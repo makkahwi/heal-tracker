@@ -6,3 +6,5 @@ export const dateFormat = (date: string | Moment) =>
   moment(date).format("D MMM YYYY");
 export const timeFormat = (time?: string | Moment) =>
   moment("2024-07-23T" + time).format("h:mm a");
+export const dateTotTimeFormat = (date?: string | Moment) =>
+  moment(date).format("h:mm a");

@@ -1,115 +1,158 @@
 import moment from "moment";
-import { ReactNode, useState } from "react";
-import { HorizontalGridLines, LineMarkSeries, VerticalGridLines, XAxis, XYPlot, YAxis } from "react-vis";
+import { Fragment, useState } from "react";
+import {
+  HorizontalGridLines,
+  LineMarkSeries,
+  VerticalGridLines,
+  XAxis,
+  XYPlot,
+  YAxis,
+} from "react-vis";
 
-import { weightReadingProps } from ".";
+import { changeCalculationProps, fullWeightReadingProps } from ".";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-interface calculationsProps {
-  fatWeight: string;
-  waterWeight: string;
-  musclesPercentage: string;
-
-  weightWeeklyChange: ReactNode;
-  fatWeeklyChange: ReactNode;
-  fatWeightWeeklyChange: ReactNode;
-  waterWeeklyChange: ReactNode;
-  waterWeightWeeklyChange: ReactNode;
-  waistWeeklyChange: ReactNode;
-  musclesWeeklyChange: ReactNode;
-  musclesPercentageWeeklyChange: ReactNode;
-  physiqueWeeklyChange: ReactNode;
-  bonesWeeklyChange: ReactNode;
-
-  weightSinceStartChange: ReactNode;
-  fatSinceStartChange: ReactNode;
-  fatWeightSinceStartChange: ReactNode;
-  waterSinceStartChange: ReactNode;
-  waterWeightSinceStartChange: ReactNode;
-  waistSinceStartChange: ReactNode;
-  musclesSinceStartChange: ReactNode;
-  musclesPercentageSinceStartChange: ReactNode;
-  physiqueSinceStartChange: ReactNode;
-  bonesSinceStartChange: ReactNode;
+interface hoverProps {
+  date?: string;
+  title?: string;
+  value?: number;
 }
 
-type fullProps = weightReadingProps & calculationsProps;
-
-const WeightReadingCharts = ({ data }: { data: fullProps[] }) => {
-  const [hovered, setHovered] = useState<{
-    date?: string;
-    title?: string;
-    value?: number;
-  }>({});
-
+const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
   const chart = [
     {
-      data: data?.map(({ weight, date }) => ({ x: date, y: weight })),
+      data: data?.map(
+        ({ weight, date, weightWeeklyChange, weightSinceStartChange }) => ({
+          x: date,
+          y: weight,
+          weekly: weightWeeklyChange,
+          sinceStart: weightSinceStartChange,
+        })
+      ),
       title: "Weight",
+      unit: "KG",
     },
     {
-      data: data?.map(({ fat, date }) => ({
-        x: date,
-        y: fat,
-      })),
+      data: data?.map(
+        ({ fat, date, fatWeeklyChange, fatSinceStartChange }) => ({
+          x: date,
+          y: fat,
+          weekly: fatWeeklyChange,
+          sinceStart: fatSinceStartChange,
+        })
+      ),
       title: "Fat Percentage",
+      unit: "%",
     },
     {
-      data: data?.map(({ fatWeight, date }) => ({
-        x: date,
-        y: parseFloat(fatWeight),
-      })),
+      data: data?.map(
+        ({
+          fatWeight,
+          date,
+          fatWeightWeeklyChange,
+          fatWeightSinceStartChange,
+        }) => ({
+          x: date,
+          y: parseFloat(fatWeight),
+          weekly: fatWeightWeeklyChange,
+          sinceStart: fatWeightSinceStartChange,
+        })
+      ),
       title: "Fat Weight",
+      unit: "KG",
     },
     {
-      data: data?.map(({ water, date }) => ({
-        x: date,
-        y: water,
-      })),
+      data: data?.map(
+        ({ water, date, waterWeeklyChange, waterSinceStartChange }) => ({
+          x: date,
+          y: water,
+          weekly: waterWeeklyChange,
+          sinceStart: waterSinceStartChange,
+        })
+      ),
       title: "Water Percentage",
+      unit: "%",
     },
     {
-      data: data?.map(({ waterWeight, date }) => ({
-        x: date,
-        y: parseFloat(waterWeight),
-      })),
-      title: "Water Weight",
-    },
-    {
-      data: data?.map(({ waist, date }) => ({
-        x: date,
-        y: waist,
-      })),
+      data: data?.map(
+        ({ waist, date, waistWeeklyChange, waistSinceStartChange }) => ({
+          x: date,
+          y: waist,
+          weekly: waistWeeklyChange,
+          sinceStart: waistSinceStartChange,
+        })
+      ),
       title: "Waist",
     },
     {
-      data: data?.map(({ muscles, date }) => ({
-        x: date,
-        y: muscles,
-      })),
+      data: data?.map(
+        ({ muscles, date, musclesWeeklyChange, musclesSinceStartChange }) => ({
+          x: date,
+          y: muscles,
+          weekly: musclesWeeklyChange,
+          sinceStart: musclesSinceStartChange,
+        })
+      ),
       title: "Muscles Weight",
+      unit: "KG",
     },
     {
-      data: data?.map(({ musclesPercentage, date }) => ({
-        x: date,
-        y: parseFloat(musclesPercentage),
-      })),
+      data: data?.map(
+        ({
+          musclesPercentage,
+          date,
+          musclesPercentageWeeklyChange,
+          musclesPercentageSinceStartChange,
+        }) => ({
+          x: date,
+          y: parseFloat(musclesPercentage),
+          weekly: musclesPercentageWeeklyChange,
+          sinceStart: musclesPercentageSinceStartChange,
+        })
+      ),
       title: "Muscles Percentage",
+      unit: "%",
     },
     {
-      data: data?.map(({ physique, date }) => ({
-        x: date,
-        y: physique,
-      })),
-      title: "Physique",
+      data: data?.map(
+        ({
+          physique,
+          date,
+          physiqueWeeklyChange,
+          physiqueSinceStartChange,
+        }) => ({
+          x: date,
+          y: physique,
+          weekly: physiqueWeeklyChange,
+          sinceStart: physiqueSinceStartChange,
+        })
+      ),
+      title: "Physique Rating",
     },
     {
-      data: data?.map(({ bones, date }) => ({
-        x: date,
-        y: bones,
-      })),
-      title: "Bones",
+      data: data?.map(
+        ({ bones, date, bonesWeeklyChange, bonesSinceStartChange }) => ({
+          x: date,
+          y: bones,
+          weekly: bonesWeeklyChange,
+          sinceStart: bonesSinceStartChange,
+        })
+      ),
+      title: "Bones Mass",
     },
   ];
+
+  const initialHovered = chart?.map(({ data, title }) => {
+    const row = data[0];
+
+    return {
+      date: String(moment(row?.x).format("DD MMM yyyy")),
+      value: parseFloat(String(row?.y)),
+      title,
+    };
+  });
+
+  const [hovered, setHovered] = useState<hoverProps[]>(initialHovered);
 
   const colors = [
     "#184e77",
@@ -122,40 +165,117 @@ const WeightReadingCharts = ({ data }: { data: fullProps[] }) => {
     "#99d98c",
   ];
 
+  const changeUI = (data?: changeCalculationProps) => (
+    <Fragment>
+      <td className={"text-" + data?.color}>
+        {data?.changeAmount} {data?.unit}
+      </td>
+
+      <td className={"text-" + data?.color}>{data?.changePercentage}%</td>
+
+      <td className={"text-" + data?.color}>
+        <FontAwesomeIcon icon={data?.icon} />
+      </td>
+    </Fragment>
+  );
+
   return (
     <div className="row">
-      {chart?.map(({ data, title }, x) => (
-        <div className="col-md-6 col-lg-4 col-xl-3 my-3 justify-center" key={x}>
-          <XYPlot xType="time" width={300} height={300}>
-            <VerticalGridLines />
-            <HorizontalGridLines />
-            <XAxis title="Date" />
-            <YAxis title="Reading" />
-            <LineMarkSeries
-              data={data?.map(({ x, y }) => ({ x: moment(x).valueOf(), y }))}
-              color={colors[x % colors.length]}
-              onValueMouseOver={(v) =>
-                setHovered({
-                  date: String(moment(v.x).format("DD MMM yyyy")),
-                  value: parseFloat(String(v.y)),
-                  title,
-                })
-              }
-              onValueMouseOut={() => setHovered({})}
-            />
-          </XYPlot>
+      {chart?.map(({ data, title, unit }, x) => {
+        const rowData = hovered?.find((h) => h.title === title);
+        const changes = data?.find(
+          ({ x, y }) =>
+            String(moment(x).format("DD MMM yyyy")) === rowData?.date &&
+            parseFloat(String(y)) === rowData?.value
+        );
 
-          <div style={{ color: colors[x % colors.length] }}>
-            {hovered?.title === title && (
-              <label className="me-1">{hovered?.value}</label>
-            )}
-            {title}
-            {hovered?.title === title && (
-              <label className="ms-1">@ {hovered?.date}</label>
-            )}
+        const values = data.map(({ y }) => y);
+        const min = Math.min.apply(Math, values);
+        const max = Math.max.apply(Math, values);
+
+        return (
+          <div className="col-md-6 col-lg-4 my-3 justify-center" key={x}>
+            <table
+              className="table table-responsive"
+              style={{ color: colors[x % colors.length] }}
+            >
+              <tbody>
+                <tr>
+                  <td colSpan={4} className="text-center py-3">
+                    <XYPlot
+                      xType="time"
+                      width={300}
+                      height={300}
+                      yDomain={[min - min * 0.025, max + max * 0.025]}
+                    >
+                      <VerticalGridLines />
+                      <HorizontalGridLines />
+                      <XAxis title="Date" />
+                      <YAxis
+                        title={"Reading" + (unit ? " ( " + unit + " )" : "")}
+                      />
+                      <LineMarkSeries
+                        data={data?.map(({ x, y }) => ({
+                          x: moment(x).valueOf(),
+                          y,
+                        }))}
+                        color={colors[x % colors.length]}
+                        onValueMouseOver={(v) =>
+                          setHovered((current) =>
+                            current.map((c) =>
+                              c.title === title
+                                ? {
+                                    date: String(
+                                      moment(v.x).format("DD MMM yyyy")
+                                    ),
+                                    value: parseFloat(String(v.y)),
+                                    title,
+                                  }
+                                : c
+                            )
+                          )
+                        }
+                        onValueMouseOut={() => setHovered(initialHovered)}
+                      />
+                    </XYPlot>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th colSpan={4}>
+                    {title} @{" "}
+                    <span className="text-decoration-underline">
+                      {rowData?.date}
+                    </span>
+                  </th>
+                </tr>
+
+                <tr>
+                  <th colSpan={4}>
+                    <h4>
+                      {rowData?.value} {unit}
+                    </h4>
+                  </th>
+                </tr>
+
+                {changes?.weekly?.icon && (
+                  <tr className="text-start">
+                    <th>Weekly Change</th>
+                    {changeUI(changes?.weekly)}
+                  </tr>
+                )}
+
+                {changes?.sinceStart?.icon && (
+                  <tr className="text-start">
+                    <th>Since Start Change</th>
+                    {changeUI(changes?.sinceStart)}
+                  </tr>
+                )}
+              </tbody>
+            </table>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
