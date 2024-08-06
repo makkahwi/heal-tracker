@@ -91,184 +91,162 @@ const WeightReadings = () => {
             (
               { id, date, weight, fat, water, waist, muscles, physique, bones },
               i
-            ) => ({
-              id,
-              date,
-              weight,
-              fat,
-              water,
-              waist,
-              muscles,
-              physique,
-              bones,
-              fatWeight: (Math.round(fat * weight) / 100).toFixed(2),
-              musclesPercentage: Math.round((muscles / weight) * 100).toFixed(
-                2
-              ),
-              weightWeeklyChange:
-                i < sortedRes.length - 1
-                  ? changeCalculator(
-                      sortedRes[i + 1]?.weight,
-                      weight,
-                      false,
-                      " KG"
-                    )
-                  : "-",
-              fatWeeklyChange:
-                i < sortedRes.length - 1
-                  ? changeCalculator(sortedRes[i + 1]?.fat, fat, false, "%")
-                  : "-",
-              fatWeightWeeklyChange:
-                i < sortedRes.length - 1
-                  ? changeCalculator(
-                      parseFloat(
-                        (
+            ) => {
+              const previousRecord = sortedRes[i + 1];
+              const firstRecord = sortedRes[sortedRes.length - 1];
+
+              return {
+                id,
+                date,
+                weight,
+                fat,
+                water,
+                waist,
+                muscles,
+                physique,
+                bones,
+                fatWeight: (Math.round(fat * weight) / 100).toFixed(2),
+                musclesPercentage: Math.round((muscles / weight) * 100).toFixed(
+                  2
+                ),
+                weightWeeklyChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(
+                        previousRecord?.weight,
+                        weight,
+                        false,
+                        " KG"
+                      )
+                    : "-",
+                fatWeeklyChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(previousRecord?.fat, fat, false, "%")
+                    : "-",
+                fatWeightWeeklyChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(
+                        parseFloat(
+                          (
+                            Math.round(
+                              previousRecord?.fat * previousRecord?.weight
+                            ) / 100
+                          ).toFixed(2)
+                        ),
+                        parseFloat((Math.round(fat * weight) / 100).toFixed(2)),
+                        false,
+                        " KG"
+                      )
+                    : "-",
+                waterWeeklyChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(previousRecord?.water, water, true, "%")
+                    : "-",
+                waistWeeklyChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(previousRecord?.waist, waist, false)
+                    : "-",
+                musclesWeeklyChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(
+                        previousRecord?.muscles,
+                        muscles,
+                        true,
+                        " KG"
+                      )
+                    : "-",
+                musclesPercentageWeeklyChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(
+                        parseFloat(
                           Math.round(
-                            sortedRes[i + 1]?.fat * sortedRes[i + 1]?.weight
-                          ) / 100
-                        ).toFixed(2)
-                      ),
-                      parseFloat((Math.round(fat * weight) / 100).toFixed(2)),
-                      false,
-                      " KG"
-                    )
-                  : "-",
-              waterWeeklyChange:
-                i < sortedRes.length - 1
-                  ? changeCalculator(sortedRes[i + 1]?.water, water, true, "%")
-                  : "-",
-              waistWeeklyChange:
-                i < sortedRes.length - 1
-                  ? changeCalculator(sortedRes[i + 1]?.waist, waist, false)
-                  : "-",
-              musclesWeeklyChange:
-                i < sortedRes.length - 1
-                  ? changeCalculator(
-                      sortedRes[i + 1]?.muscles,
-                      muscles,
-                      true,
-                      " KG"
-                    )
-                  : "-",
-              musclesPercentageWeeklyChange:
-                i < sortedRes.length - 1
-                  ? changeCalculator(
-                      parseFloat(
-                        Math.round(
-                          (sortedRes[i + 1]?.muscles /
-                            sortedRes[i + 1]?.weight) *
+                            (previousRecord?.muscles / previousRecord?.weight) *
+                              100
+                          ).toFixed(2)
+                        ),
+                        parseFloat(
+                          Math.round((muscles / weight) * 100).toFixed(2)
+                        ),
+                        true,
+                        "%"
+                      )
+                    : "-",
+                physiqueWeeklyChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(previousRecord?.physique, physique, true)
+                    : "-",
+                bonesWeeklyChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(previousRecord?.bones, bones, true)
+                    : "-",
+                weightSinceStartChange:
+                  i < sortedRes.length - 2
+                    ? changeCalculator(
+                        firstRecord?.weight,
+                        weight,
+                        false,
+                        " KG"
+                      )
+                    : "-",
+                fatSinceStartChange:
+                  i < sortedRes.length - 2
+                    ? changeCalculator(firstRecord?.fat, fat, false, "%")
+                    : "-",
+                fatWeightSinceStartChange:
+                  i < sortedRes.length - 2
+                    ? changeCalculator(
+                        parseFloat(
+                          (
+                            Math.round(firstRecord?.fat * firstRecord?.weight) /
                             100
-                        ).toFixed(2)
-                      ),
-                      parseFloat(
-                        Math.round((muscles / weight) * 100).toFixed(2)
-                      ),
-                      true,
-                      "%"
-                    )
-                  : "-",
-              physiqueWeeklyChange:
-                i < sortedRes.length - 1
-                  ? changeCalculator(sortedRes[i + 1]?.physique, physique, true)
-                  : "-",
-              bonesWeeklyChange:
-                i < sortedRes.length - 1
-                  ? changeCalculator(sortedRes[i + 1]?.bones, bones, true)
-                  : "-",
-              weightSinceStartChange:
-                i < sortedRes.length - 2
-                  ? changeCalculator(
-                      sortedRes[sortedRes.length - 1]?.weight,
-                      weight,
-                      false,
-                      " KG"
-                    )
-                  : "-",
-              fatSinceStartChange:
-                i < sortedRes.length - 2
-                  ? changeCalculator(
-                      sortedRes[sortedRes.length - 1]?.fat,
-                      fat,
-                      false,
-                      "%"
-                    )
-                  : "-",
-              fatWeightSinceStartChange:
-                i < sortedRes.length - 2
-                  ? changeCalculator(
-                      parseFloat(
-                        (
+                          ).toFixed(2)
+                        ),
+                        parseFloat((Math.round(fat * weight) / 100).toFixed(2)),
+                        false,
+                        " KG"
+                      )
+                    : "-",
+                waterSinceStartChange:
+                  i < sortedRes.length - 2
+                    ? changeCalculator(firstRecord?.water, water, true, "%")
+                    : "-",
+                waistSinceStartChange:
+                  i < sortedRes.length - 2
+                    ? changeCalculator(firstRecord?.waist, waist, false)
+                    : "-",
+                musclesSinceStartChange:
+                  i < sortedRes.length - 2
+                    ? changeCalculator(
+                        firstRecord?.muscles,
+                        muscles,
+                        true,
+                        " KG"
+                      )
+                    : "-",
+                musclesPercentageSinceStartChange:
+                  i < sortedRes.length - 2
+                    ? changeCalculator(
+                        parseFloat(
                           Math.round(
-                            sortedRes[sortedRes.length - 1]?.fat *
-                              sortedRes[sortedRes.length - 1]?.weight
-                          ) / 100
-                        ).toFixed(2)
-                      ),
-                      parseFloat((Math.round(fat * weight) / 100).toFixed(2)),
-                      false,
-                      " KG"
-                    )
-                  : "-",
-              waterSinceStartChange:
-                i < sortedRes.length - 2
-                  ? changeCalculator(
-                      sortedRes[sortedRes.length - 1]?.water,
-                      water,
-                      true,
-                      "%"
-                    )
-                  : "-",
-              waistSinceStartChange:
-                i < sortedRes.length - 2
-                  ? changeCalculator(
-                      sortedRes[sortedRes.length - 1]?.waist,
-                      waist,
-                      false
-                    )
-                  : "-",
-              musclesSinceStartChange:
-                i < sortedRes.length - 2
-                  ? changeCalculator(
-                      sortedRes[sortedRes.length - 1]?.muscles,
-                      muscles,
-                      true,
-                      " KG"
-                    )
-                  : "-",
-              musclesPercentageSinceStartChange:
-                i < sortedRes.length - 2
-                  ? changeCalculator(
-                      parseFloat(
-                        Math.round(
-                          (sortedRes[sortedRes.length - 1]?.muscles /
-                            sortedRes[sortedRes.length - 1]?.weight) *
-                            100
-                        ).toFixed(2)
-                      ),
-                      parseFloat(
-                        Math.round((muscles / weight) * 100).toFixed(2)
-                      ),
-                      true,
-                      "%"
-                    )
-                  : "-",
-              physiqueSinceStartChange:
-                i < sortedRes.length - 2
-                  ? changeCalculator(
-                      sortedRes[sortedRes.length - 1]?.physique,
-                      physique,
-                      true
-                    )
-                  : "-",
-              bonesSinceStartChange:
-                i < sortedRes.length - 2
-                  ? changeCalculator(
-                      sortedRes[sortedRes.length - 1]?.bones,
-                      bones,
-                      true
-                    )
-                  : "-",
-            })
+                            (firstRecord?.muscles / firstRecord?.weight) * 100
+                          ).toFixed(2)
+                        ),
+                        parseFloat(
+                          Math.round((muscles / weight) * 100).toFixed(2)
+                        ),
+                        true,
+                        "%"
+                      )
+                    : "-",
+                physiqueSinceStartChange:
+                  i < sortedRes.length - 2
+                    ? changeCalculator(firstRecord?.physique, physique, true)
+                    : "-",
+                bonesSinceStartChange:
+                  i < sortedRes.length - 2
+                    ? changeCalculator(firstRecord?.bones, bones, true)
+                    : "-",
+              };
+            }
           )
         );
       })
