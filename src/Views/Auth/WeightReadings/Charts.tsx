@@ -258,14 +258,14 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
                   </th>
                 </tr>
 
-                {changes?.weekly?.changeAmount && (
+                {changes?.weekly?.icon && (
                   <tr className="text-start">
                     <th>Weekly Change</th>
                     {changeUI(changes?.weekly)}
                   </tr>
                 )}
 
-                {changes?.sinceStart?.changeAmount && (
+                {changes?.sinceStart?.icon && (
                   <tr className="text-start">
                     <th>Since Start Change</th>
                     {changeUI(changes?.sinceStart)}
