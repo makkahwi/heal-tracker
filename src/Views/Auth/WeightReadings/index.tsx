@@ -23,16 +23,14 @@ export interface weightReadingProps {
   bones: number;
 }
 
-interface calculationsProps {
+export interface calculationsProps {
   fatWeight: string;
-  waterWeight: string;
   musclesPercentage: string;
 
   weightWeeklyChange: ReactNode;
   fatWeeklyChange: ReactNode;
   fatWeightWeeklyChange: ReactNode;
   waterWeeklyChange: ReactNode;
-  waterWeightWeeklyChange: ReactNode;
   waistWeeklyChange: ReactNode;
   musclesWeeklyChange: ReactNode;
   musclesPercentageWeeklyChange: ReactNode;
@@ -43,7 +41,6 @@ interface calculationsProps {
   fatSinceStartChange: ReactNode;
   fatWeightSinceStartChange: ReactNode;
   waterSinceStartChange: ReactNode;
-  waterWeightSinceStartChange: ReactNode;
   waistSinceStartChange: ReactNode;
   musclesSinceStartChange: ReactNode;
   musclesPercentageSinceStartChange: ReactNode;
@@ -51,10 +48,10 @@ interface calculationsProps {
   bonesSinceStartChange: ReactNode;
 }
 
-type fullProps = weightReadingProps & calculationsProps;
+export type fullWeightReadingProps = weightReadingProps & calculationsProps;
 
 const WeightReadings = () => {
-  const [data, setData] = useState<fullProps[]>([]);
+  const [data, setData] = useState<fullWeightReadingProps[]>([]);
 
   const changeCalculator = (
     first: number,
@@ -75,10 +72,7 @@ const WeightReadings = () => {
 
     return (
       <span className={"text-" + color}>
-        {changeAmount} {unit}
-        <br />
-        {changePercentage}
-        <br />
+        {changeAmount} {unit} | {changePercentage}% |{" "}
         <FontAwesomeIcon icon={icon} />
       </span>
     );
@@ -108,7 +102,6 @@ const WeightReadings = () => {
               physique,
               bones,
               fatWeight: (Math.round(fat * weight) / 100).toFixed(2),
-              waterWeight: (Math.round(water * weight) / 100).toFixed(2),
               musclesPercentage: Math.round((muscles / weight) * 100).toFixed(
                 2
               ),
@@ -143,21 +136,6 @@ const WeightReadings = () => {
               waterWeeklyChange:
                 i < sortedRes.length - 1
                   ? changeCalculator(sortedRes[i + 1]?.water, water, true, "%")
-                  : "-",
-              waterWeightWeeklyChange:
-                i < sortedRes.length - 1
-                  ? changeCalculator(
-                      parseFloat(
-                        (
-                          Math.round(
-                            sortedRes[i + 1]?.water * sortedRes[i + 1]?.weight
-                          ) / 100
-                        ).toFixed(2)
-                      ),
-                      parseFloat((Math.round(water * weight) / 100).toFixed(2)),
-                      true,
-                      " KG"
-                    )
                   : "-",
               waistWeeklyChange:
                 i < sortedRes.length - 1
@@ -238,22 +216,6 @@ const WeightReadings = () => {
                       water,
                       true,
                       "%"
-                    )
-                  : "-",
-              waterWeightSinceStartChange:
-                i < sortedRes.length - 2
-                  ? changeCalculator(
-                      parseFloat(
-                        (
-                          Math.round(
-                            sortedRes[sortedRes.length - 1]?.water *
-                              sortedRes[sortedRes.length - 1]?.weight
-                          ) / 100
-                        ).toFixed(2)
-                      ),
-                      parseFloat((Math.round(water * weight) / 100).toFixed(2)),
-                      true,
-                      " KG"
                     )
                   : "-",
               waistSinceStartChange:
