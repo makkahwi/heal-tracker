@@ -94,7 +94,7 @@ const WalkExercises = () => {
     {
       name: "note",
       label: "Notes",
-      fuulWidth: true,
+      fullWidth: true,
     },
   ];
 
