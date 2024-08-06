@@ -11,8 +11,6 @@ This is to setup the schedule of meals you are following (diet), and insert what
 
 - Fix dynamicList of dynamicList Rendering
 - Add alternatives To Schedule
-- Reflect weekly & since-start changes on WeightReadings analysis
-- Remove special actions on WeightReadings table
 - Build LabTest analysis
 - Reflect units in WeightReadings table
 - Build update functionality
