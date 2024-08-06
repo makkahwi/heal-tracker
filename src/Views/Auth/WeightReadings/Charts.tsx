@@ -187,7 +187,9 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
                       <VerticalGridLines />
                       <HorizontalGridLines />
                       <XAxis title="Date" />
-                      <YAxis title="Reading" />
+                      <YAxis
+                        title={"Reading" + (unit ? " ( " + unit + " )" : "")}
+                      />
                       <LineMarkSeries
                         data={data?.map(({ x, y }) => ({
                           x: moment(x).valueOf(),
