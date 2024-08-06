@@ -1,9 +1,9 @@
 import {
   faArrowCircleDown,
   faArrowCircleUp,
+  faMinusCircle,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Fragment, ReactNode, useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
@@ -23,29 +23,37 @@ export interface weightReadingProps {
   bones: number;
 }
 
+export interface changeCalculationProps {
+  color: string;
+  changeAmount: string | number;
+  unit?: string;
+  changePercentage: string;
+  icon: any;
+}
+
 export interface calculationsProps {
   fatWeight: string;
   musclesPercentage: string;
 
-  weightWeeklyChange: ReactNode;
-  fatWeeklyChange: ReactNode;
-  fatWeightWeeklyChange: ReactNode;
-  waterWeeklyChange: ReactNode;
-  waistWeeklyChange: ReactNode;
-  musclesWeeklyChange: ReactNode;
-  musclesPercentageWeeklyChange: ReactNode;
-  physiqueWeeklyChange: ReactNode;
-  bonesWeeklyChange: ReactNode;
+  weightWeeklyChange: changeCalculationProps;
+  fatWeeklyChange: changeCalculationProps;
+  fatWeightWeeklyChange: changeCalculationProps;
+  waterWeeklyChange: changeCalculationProps;
+  waistWeeklyChange: changeCalculationProps;
+  musclesWeeklyChange: changeCalculationProps;
+  musclesPercentageWeeklyChange: changeCalculationProps;
+  physiqueWeeklyChange: changeCalculationProps;
+  bonesWeeklyChange: changeCalculationProps;
 
-  weightSinceStartChange: ReactNode;
-  fatSinceStartChange: ReactNode;
-  fatWeightSinceStartChange: ReactNode;
-  waterSinceStartChange: ReactNode;
-  waistSinceStartChange: ReactNode;
-  musclesSinceStartChange: ReactNode;
-  musclesPercentageSinceStartChange: ReactNode;
-  physiqueSinceStartChange: ReactNode;
-  bonesSinceStartChange: ReactNode;
+  weightSinceStartChange: changeCalculationProps;
+  fatSinceStartChange: changeCalculationProps;
+  fatWeightSinceStartChange: changeCalculationProps;
+  waterSinceStartChange: changeCalculationProps;
+  waistSinceStartChange: changeCalculationProps;
+  musclesSinceStartChange: changeCalculationProps;
+  musclesPercentageSinceStartChange: changeCalculationProps;
+  physiqueSinceStartChange: changeCalculationProps;
+  bonesSinceStartChange: changeCalculationProps;
 }
 
 export type fullWeightReadingProps = weightReadingProps & calculationsProps;
@@ -65,17 +73,28 @@ const WeightReadings = () => {
     if (first > second) {
       icon = faArrowCircleDown;
       color = flip ? "danger" : "success";
+    } else if (first == second) {
+      icon = faMinusCircle;
+      color = "secondary";
     }
 
     const changeAmount = parseFloat((second - first).toFixed(2));
     const changePercentage = ((changeAmount / first) * 100).toFixed(2);
 
-    return (
-      <span className={"text-" + color}>
-        {changeAmount} {unit} | {changePercentage}% |{" "}
-        <FontAwesomeIcon icon={icon} />
-      </span>
-    );
+    return {
+      color,
+      changeAmount,
+      unit,
+      changePercentage,
+      icon,
+    };
+  };
+
+  const emptyCalculations = {
+    color: "",
+    changeAmount: "",
+    changePercentage: "",
+    icon: "",
   };
 
   const getData = () =>
@@ -117,11 +136,11 @@ const WeightReadings = () => {
                         false,
                         " KG"
                       )
-                    : "-",
+                    : emptyCalculations,
                 fatWeeklyChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(previousRecord?.fat, fat, false, "%")
-                    : "-",
+                    : emptyCalculations,
                 fatWeightWeeklyChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(
@@ -136,15 +155,15 @@ const WeightReadings = () => {
                         false,
                         " KG"
                       )
-                    : "-",
+                    : emptyCalculations,
                 waterWeeklyChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(previousRecord?.water, water, true, "%")
-                    : "-",
+                    : emptyCalculations,
                 waistWeeklyChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(previousRecord?.waist, waist, false)
-                    : "-",
+                    : emptyCalculations,
                 musclesWeeklyChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(
@@ -153,7 +172,7 @@ const WeightReadings = () => {
                         true,
                         " KG"
                       )
-                    : "-",
+                    : emptyCalculations,
                 musclesPercentageWeeklyChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(
@@ -169,15 +188,15 @@ const WeightReadings = () => {
                         true,
                         "%"
                       )
-                    : "-",
+                    : emptyCalculations,
                 physiqueWeeklyChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(previousRecord?.physique, physique, true)
-                    : "-",
+                    : emptyCalculations,
                 bonesWeeklyChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(previousRecord?.bones, bones, true)
-                    : "-",
+                    : emptyCalculations,
                 weightSinceStartChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(
@@ -186,11 +205,11 @@ const WeightReadings = () => {
                         false,
                         " KG"
                       )
-                    : "-",
+                    : emptyCalculations,
                 fatSinceStartChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(firstRecord?.fat, fat, false, "%")
-                    : "-",
+                    : emptyCalculations,
                 fatWeightSinceStartChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(
@@ -204,15 +223,15 @@ const WeightReadings = () => {
                         false,
                         " KG"
                       )
-                    : "-",
+                    : emptyCalculations,
                 waterSinceStartChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(firstRecord?.water, water, true, "%")
-                    : "-",
+                    : emptyCalculations,
                 waistSinceStartChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(firstRecord?.waist, waist, false)
-                    : "-",
+                    : emptyCalculations,
                 musclesSinceStartChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(
@@ -221,7 +240,7 @@ const WeightReadings = () => {
                         true,
                         " KG"
                       )
-                    : "-",
+                    : emptyCalculations,
                 musclesPercentageSinceStartChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(
@@ -236,15 +255,15 @@ const WeightReadings = () => {
                         true,
                         "%"
                       )
-                    : "-",
+                    : emptyCalculations,
                 physiqueSinceStartChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(firstRecord?.physique, physique, true)
-                    : "-",
+                    : emptyCalculations,
                 bonesSinceStartChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(firstRecord?.bones, bones, true)
-                    : "-",
+                    : emptyCalculations,
               };
             }
           )

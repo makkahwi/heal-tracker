@@ -1,5 +1,5 @@
 import moment from "moment";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import {
   HorizontalGridLines,
   LineMarkSeries,
@@ -9,7 +9,8 @@ import {
   YAxis,
 } from "react-vis";
 
-import { fullWeightReadingProps } from ".";
+import { changeCalculationProps, fullWeightReadingProps } from ".";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface hoverProps {
   date?: string;
@@ -164,6 +165,20 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
     "#99d98c",
   ];
 
+  const changeUI = (data?: changeCalculationProps) => (
+    <Fragment>
+      <td className={"text-" + data?.color}>
+        {data?.changeAmount} {data?.unit}
+      </td>
+
+      <td className={"text-" + data?.color}>{data?.changePercentage}%</td>
+
+      <td className={"text-" + data?.color}>
+        <FontAwesomeIcon icon={data?.icon} />
+      </td>
+    </Fragment>
+  );
+
   return (
     <div className="row">
       {chart?.map(({ data, title, unit }, x) => {
@@ -182,7 +197,7 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
             >
               <thead>
                 <tr>
-                  <td colSpan={2} className="text-center py-3">
+                  <td colSpan={4} className="text-center py-3">
                     <XYPlot xType="time" width={300} height={300}>
                       <VerticalGridLines />
                       <HorizontalGridLines />
@@ -218,7 +233,7 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
                 </tr>
 
                 <tr>
-                  <th colSpan={2}>
+                  <th colSpan={4}>
                     {title} @{" "}
                     <span className="text-decoration-underline">
                       {rowData?.date}
@@ -227,7 +242,7 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
                 </tr>
 
                 <tr>
-                  <th colSpan={2}>
+                  <th colSpan={4}>
                     <h4>
                       {rowData?.value} {unit}
                     </h4>
@@ -238,12 +253,12 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
               <tbody>
                 <tr className="text-start">
                   <th>Weekly Change</th>
-                  <td className="px-1">{changes?.weekly}</td>
+                  {changeUI(changes?.weekly)}
                 </tr>
 
                 <tr className="text-start">
                   <th>Since Start Change</th>
-                  <td className="px-1">{changes?.sinceStart}</td>
+                  {changeUI(changes?.sinceStart)}
                 </tr>
               </tbody>
             </table>
