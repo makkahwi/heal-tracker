@@ -189,16 +189,25 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
             parseFloat(String(y)) === rowData?.value
         );
 
+        const values = data.map(({ y }) => y);
+        const min = Math.min.apply(Math, values);
+        const max = Math.max.apply(Math, values);
+
         return (
           <div className="col-md-6 col-lg-4 my-3 justify-center" key={x}>
             <table
               className="table table-responsive"
               style={{ color: colors[x % colors.length] }}
             >
-              <thead>
+              <tbody>
                 <tr>
                   <td colSpan={4} className="text-center py-3">
-                    <XYPlot xType="time" width={300} height={300}>
+                    <XYPlot
+                      xType="time"
+                      width={300}
+                      height={300}
+                      yDomain={[min - min * 0.025, max + max * 0.025]}
+                    >
                       <VerticalGridLines />
                       <HorizontalGridLines />
                       <XAxis title="Date" />
@@ -248,18 +257,20 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
                     </h4>
                   </th>
                 </tr>
-              </thead>
 
-              <tbody>
-                <tr className="text-start">
-                  <th>Weekly Change</th>
-                  {changeUI(changes?.weekly)}
-                </tr>
+                {changes?.weekly?.changeAmount && (
+                  <tr className="text-start">
+                    <th>Weekly Change</th>
+                    {changeUI(changes?.weekly)}
+                  </tr>
+                )}
 
-                <tr className="text-start">
-                  <th>Since Start Change</th>
-                  {changeUI(changes?.sinceStart)}
-                </tr>
+                {changes?.sinceStart?.changeAmount && (
+                  <tr className="text-start">
+                    <th>Since Start Change</th>
+                    {changeUI(changes?.sinceStart)}
+                  </tr>
+                )}
               </tbody>
             </table>
           </div>
