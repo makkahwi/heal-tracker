@@ -1,5 +1,6 @@
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
 
 import * as BeAPI from "../../../../API";
@@ -20,8 +21,14 @@ export interface walkExerciseProps {
 
 export const renderExerciseUI =
   (onDelete?: Function) =>
-  (event: walkExerciseProps, date: string, id: string) =>
-    (
+  (event: walkExerciseProps, date: string, id: string) => {
+    const duration = moment.duration(
+      moment("2024-08-06T" + event.endTime).diff(
+        moment("2024-08-06T" + event.startTime)
+      )
+    );
+
+    return (
       <div>
         {date ? (
           <span className="d-block bg-dark text-white p-2 my-2">
@@ -34,6 +41,10 @@ export const renderExerciseUI =
                 onClick={() => onDelete(id)}
               />
             )}
+            <br />
+            {Math.trunc(duration.asHours())}
+            {":"}
+            {duration.minutes()}
           </span>
         ) : (
           ""
@@ -42,6 +53,7 @@ export const renderExerciseUI =
         <small>{event.note}</small>
       </div>
     );
+  };
 
 const WalkExercises = () => {
   const [data, setData] = useState<walkExerciseProps[]>([]);
