@@ -1,4 +1,4 @@
-import { faDashboard, faHome, faSignOut } from "@fortawesome/free-solid-svg-icons";
+import { faDashboard, faSignOut } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -44,12 +44,11 @@ const Navbar = () => {
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
                         className={
-                          "text-decoration-none " +
-                          (list
+                          list
                             .map(({ path }) => "/" + path)
                             .includes(location.pathname)
                             ? "text-info"
-                            : "text-white")
+                            : "text-white"
                         }
                       >
                         <FontAwesomeIcon icon={icon} />
