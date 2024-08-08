@@ -1,7 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
-import { HorizontalGridLines, LineMarkSeries, VerticalGridLines, XAxis, XYPlot, YAxis } from "react-vis";
+import {
+  HorizontalGridLines,
+  LineMarkSeries,
+  VerticalGridLines,
+  XAxis,
+  XYPlot,
+  YAxis,
+} from "react-vis";
 
 import { changeCalculationProps } from "../../Views/Auth/WeightReadings";
 
