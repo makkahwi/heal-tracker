@@ -78,7 +78,7 @@ const Medicine = () => {
       name: "quantity",
       label: "Quantity",
       type: "number",
-      defaultValue: 2,
+      defaultValue: 1,
       required: true,
     },
     {
