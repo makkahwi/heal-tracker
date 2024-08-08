@@ -1,5 +1,6 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import {
   HorizontalGridLines,
   LineMarkSeries,
@@ -10,7 +11,6 @@ import {
 } from "react-vis";
 
 import { changeCalculationProps, fullWeightReadingProps } from ".";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 interface hoverProps {
   date?: string;
@@ -142,17 +142,22 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
     },
   ];
 
-  const initialHovered = chart?.map(({ data, title }) => {
-    const row = data[0];
+  const initialHovered = () =>
+    chart?.map(({ data, title }) => {
+      const row = data[0];
 
-    return {
-      date: String(moment(row?.x).format("DD MMM yyyy")),
-      value: parseFloat(String(row?.y)),
-      title,
-    };
-  });
+      return {
+        date: String(moment(row?.x).format("DD MMM yyyy")),
+        value: parseFloat(String(row?.y)),
+        title,
+      };
+    });
 
-  const [hovered, setHovered] = useState<hoverProps[]>(initialHovered);
+  const [hovered, setHovered] = useState<hoverProps[]>(initialHovered());
+
+  useEffect(() => {
+    setHovered(initialHovered());
+  }, [data]);
 
   const colors = [
     "#184e77",
@@ -235,7 +240,7 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
                             )
                           )
                         }
-                        onValueMouseOut={() => setHovered(initialHovered)}
+                        onValueMouseOut={() => setHovered(initialHovered())}
                       />
                     </XYPlot>
                   </td>
