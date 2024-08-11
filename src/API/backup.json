@@ -957,6 +957,12 @@
             "meal": "Light Meal 1"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "meal": "Light Meal 1"
@@ -1032,6 +1038,12 @@
         },
         "supposed": [
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "meal": "Light Meal 2"
@@ -1079,6 +1091,12 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QoQW6n9gd2RXkJQKc",
@@ -1205,6 +1223,12 @@
             "meal": "Light Meal 1"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0Qopkbit-Vs4gusMUG",
@@ -1278,6 +1302,12 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QoQW6n9gd2RXkJQKc",
@@ -1412,6 +1442,12 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QoQW6n9gd2RXkJQKc",
@@ -1549,6 +1585,12 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QoQW6n9gd2RXkJQKc",
@@ -1599,6 +1641,12 @@
             "meal": "Light Meal 1"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0Qopkbit-Vs4gusMUG",
@@ -1610,6 +1658,12 @@
       "-O0in9d5dClWTqSeDLG8": {
         "contents": [
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QpDSfQDUXzWsVShc_",
@@ -1623,6 +1677,12 @@
         },
         "supposed": [
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QpDSfQDUXzWsVShc_",
@@ -1773,6 +1833,12 @@
             "note": "Pepper"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QoQW6n9gd2RXkJQKc",
@@ -1828,6 +1894,12 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QoQW6n9gd2RXkJQKc",
@@ -1864,6 +1936,12 @@
             "note": "Strawberry"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0Qopkbit-Vs4gusMUG",
@@ -1901,6 +1979,12 @@
             "meal": "Light Meal 1"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0Qopkbit-Vs4gusMUG",
@@ -1912,6 +1996,12 @@
       "-O0rVgVq2unYfgA2HPP4": {
         "contents": [
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QpDSfQDUXzWsVShc_",
@@ -1925,6 +2015,12 @@
         },
         "supposed": [
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QpDSfQDUXzWsVShc_",
@@ -2074,6 +2170,12 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QoQW6n9gd2RXkJQKc",
@@ -2129,6 +2231,12 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QoQW6n9gd2RXkJQKc",
@@ -2164,6 +2272,12 @@
             "meal": "Light Meal 1"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0Qopkbit-Vs4gusMUG",
@@ -2201,6 +2315,12 @@
             "meal": "Light Meal 1"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0Qopkbit-Vs4gusMUG",
@@ -2212,6 +2332,12 @@
       "-O0scgJ-p35qeEmPy-1h": {
         "contents": [
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QpDSfQDUXzWsVShc_",
@@ -2225,6 +2351,12 @@
         },
         "supposed": [
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QpDSfQDUXzWsVShc_",
@@ -2376,6 +2508,12 @@
             "note": "Pepper"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QoQW6n9gd2RXkJQKc",
@@ -2431,6 +2569,12 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QoQW6n9gd2RXkJQKc",
@@ -2466,6 +2610,12 @@
             "meal": "Light Meal 1"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0Qopkbit-Vs4gusMUG",
@@ -2503,6 +2653,12 @@
             "meal": "Light Meal 1"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0Qopkbit-Vs4gusMUG",
@@ -2633,6 +2789,12 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QoQW6n9gd2RXkJQKc",
@@ -2688,6 +2850,12 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QoQW6n9gd2RXkJQKc",
@@ -2699,6 +2867,12 @@
       "-O1100ZB8nWoDrvrXPG3": {
         "contents": [
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QpDSfQDUXzWsVShc_",
@@ -2712,6 +2886,12 @@
         },
         "supposed": [
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QpDSfQDUXzWsVShc_",
@@ -2747,6 +2927,12 @@
             "meal": "Light Meal 1"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0Qopkbit-Vs4gusMUG",
@@ -2784,6 +2970,12 @@
             "meal": "Light Meal 1"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0Qopkbit-Vs4gusMUG",
@@ -2795,6 +2987,12 @@
       "-O12ARv_u2tRhOeGRK0w": {
         "contents": [
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QpDSfQDUXzWsVShc_",
@@ -2808,6 +3006,12 @@
         },
         "supposed": [
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QpDSfQDUXzWsVShc_",
@@ -2946,6 +3150,12 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QoQW6n9gd2RXkJQKc",
@@ -3001,6 +3211,12 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0QoQW6n9gd2RXkJQKc",
@@ -3074,6 +3290,12 @@
             "meal": "Light Meal 1"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O0Qopkbit-Vs4gusMUG",
@@ -4701,6 +4923,12 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O174lq2c7RMqTQ8nDLC",
@@ -4811,6 +5039,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1/2 Cup",
@@ -4862,6 +5094,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -4994,6 +5230,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -5046,6 +5286,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -5177,6 +5421,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1/2 Cup",
@@ -5228,6 +5476,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -5438,6 +5690,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -5489,6 +5745,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -5724,6 +5984,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1/2 Cup",
@@ -5775,6 +6039,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -5907,6 +6175,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1/2 Cup",
@@ -5958,6 +6230,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -6169,6 +6445,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1/2 Cup",
@@ -6221,6 +6501,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -6462,6 +6746,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1/2 Cup",
@@ -6513,6 +6801,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -6627,6 +6919,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1/2 Cup",
@@ -6682,6 +6978,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -6906,6 +7206,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1/2 Cup",
@@ -6957,6 +7261,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -7157,6 +7465,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1/2 Cup",
@@ -7208,6 +7520,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -7334,6 +7650,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -7518,6 +7838,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -7705,6 +8029,10 @@
               {
                 "count": "1/2 Cup",
                 "element": "Cooked Green beans"
+              },
+              {
+                "count": "1/2 Cup",
+                "element": "Cooked Vegetables"
               }
             ],
             "count": "1 Cup",
@@ -7747,6 +8075,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -7754,7 +8092,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -7799,6 +8137,14 @@
               {
                 "count": "120gm",
                 "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
               }
             ],
             "count": "120gm",
@@ -7813,6 +8159,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -7830,6 +8182,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -7855,6 +8217,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -7862,7 +8234,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -7907,6 +8279,14 @@
               {
                 "count": "120gm",
                 "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
               }
             ],
             "count": "120gm",
@@ -7921,6 +8301,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -7932,6 +8318,12 @@
       "-O2uiYlkOb0yzGodXDDc": {
         "contents": [
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3_dZRjCAk1cfUyR0",
@@ -7957,6 +8349,16 @@
             "meal": "Dinner"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Yogurt"
+              },
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1/2 Cup",
             "element": "Greek Yogurt",
             "id": "-O2o3_dZRjCAk1cfUyR0",
@@ -7991,7 +8393,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -8019,6 +8421,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -8026,7 +8438,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -8055,6 +8467,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -8072,6 +8490,14 @@
               {
                 "count": "120gm",
                 "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
               }
             ],
             "count": "120gm",
@@ -8086,6 +8512,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -8128,6 +8560,16 @@
             "meal": "Dinner"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Yogurt"
+              },
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1/2 Cup",
             "element": "Greek Yogurt",
             "id": "-O2o3_dZRjCAk1cfUyR0",
@@ -8180,6 +8622,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -8198,7 +8646,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -8226,6 +8674,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -8233,7 +8691,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -8255,6 +8713,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -8276,6 +8740,14 @@
               {
                 "count": "120gm",
                 "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
               }
             ],
             "count": "120gm",
@@ -8290,6 +8762,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -8307,6 +8785,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -8332,6 +8816,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -8362,6 +8852,16 @@
             "meal": "Dinner"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Yogurt"
+              },
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1/2 Cup",
             "element": "Greek Yogurt",
             "id": "-O2o3_dZRjCAk1cfUyR0",
@@ -8402,7 +8902,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -8426,6 +8926,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -8433,7 +8943,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -8478,6 +8988,14 @@
               {
                 "count": "120gm",
                 "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
               }
             ],
             "count": "120gm",
@@ -8492,6 +9010,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -8515,6 +9039,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -8540,6 +9070,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -8564,7 +9100,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -8588,6 +9124,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -8595,7 +9141,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -8640,6 +9186,14 @@
               {
                 "count": "120gm",
                 "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
               }
             ],
             "count": "120gm",
@@ -8654,6 +9208,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -8677,6 +9237,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -8702,6 +9268,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -8736,6 +9308,16 @@
             "meal": "Dinner"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Yogurt"
+              },
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1/2 Cup",
             "element": "Greek Yogurt",
             "id": "-O2o3_dZRjCAk1cfUyR0",
@@ -8776,7 +9358,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -8800,6 +9382,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -8807,7 +9399,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -8852,6 +9444,14 @@
               {
                 "count": "120gm",
                 "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
               }
             ],
             "count": "120gm",
@@ -8866,6 +9466,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -8889,6 +9495,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -8914,6 +9526,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -8946,6 +9564,16 @@
             "meal": "Dinner"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Yogurt"
+              },
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1/2 Cup",
             "element": "Greek Yogurt",
             "id": "-O2o3_dZRjCAk1cfUyR0",
@@ -8986,7 +9614,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -9010,6 +9638,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -9017,7 +9655,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -9062,6 +9700,14 @@
               {
                 "count": "120gm",
                 "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
               }
             ],
             "count": "120gm",
@@ -9076,6 +9722,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -9099,6 +9751,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -9124,6 +9782,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -9160,6 +9824,16 @@
             "meal": "Dinner"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Yogurt"
+              },
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1/2 Cup",
             "element": "Greek Yogurt",
             "id": "-O2o3_dZRjCAk1cfUyR0",
@@ -9194,7 +9868,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -9218,6 +9892,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -9225,7 +9909,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -9266,6 +9950,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -9306,6 +9996,14 @@
               {
                 "count": "120gm",
                 "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
               }
             ],
             "count": "120gm",
@@ -9320,6 +10018,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -9338,7 +10042,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -9362,6 +10066,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -9369,7 +10083,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -9424,6 +10138,14 @@
               {
                 "count": "120gm",
                 "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
               }
             ],
             "count": "120gm",
@@ -9438,6 +10160,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -9461,6 +10189,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -9486,6 +10220,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -9504,7 +10244,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -9528,6 +10268,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -9535,7 +10285,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -9570,6 +10320,16 @@
             "meal": "Dinner"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Yogurt"
+              },
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1/2 Cup",
             "element": "Greek Yogurt",
             "id": "-O2o3_dZRjCAk1cfUyR0",
@@ -9621,6 +10381,14 @@
               {
                 "count": "120gm",
                 "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
               }
             ],
             "count": "120gm",
@@ -9635,6 +10403,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -9658,6 +10432,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -9683,6 +10463,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -9719,6 +10505,16 @@
             "meal": "Dinner"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Yogurt"
+              },
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1/2 Cup",
             "element": "Greek Yogurt",
             "id": "-O2o3_dZRjCAk1cfUyR0",
@@ -9772,7 +10568,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -9796,6 +10592,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -9803,7 +10609,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -9849,6 +10655,14 @@
               {
                 "count": "120gm",
                 "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
               }
             ],
             "count": "120gm",
@@ -9863,6 +10677,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -9905,6 +10725,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -9941,6 +10767,16 @@
             "meal": "Dinner"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Yogurt"
+              },
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1/2 Cup",
             "element": "Greek Yogurt",
             "id": "-O2o3_dZRjCAk1cfUyR0",
@@ -9981,7 +10817,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -10005,6 +10841,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -10012,7 +10858,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -10062,6 +10908,14 @@
               {
                 "count": "120gm",
                 "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
               }
             ],
             "count": "120gm",
@@ -10076,6 +10930,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -10083,66 +10943,6 @@
           }
         ],
         "timestamp": "2024-08-08T12:15:00.000Z"
-      },
-      "-O3mxOYbT3VZO8sknefR": {
-        "contents": [
-          {
-            "count": "1 Slice",
-            "element": "Bread",
-            "id": "-O2o3_S454Uh9xS0ACZF",
-            "meal": "Dinner"
-          },
-          {
-            "count": "60gm",
-            "element": "White Cheese",
-            "id": "-O2o3_S-NyyU_Z18fKra",
-            "meal": "Dinner"
-          },
-          {
-            "count": "2 Cups",
-            "element": "Yogurt"
-          },
-          {
-            "count": "1 Cup",
-            "element": "Strawbeery"
-          }
-        ],
-        "meal": {
-          "id": "-O1gOkZDROV2ZPdfzpIF",
-          "meal": "Dinner",
-          "time": "20:00"
-        },
-        "supposed": [
-          {
-            "count": "1 Slice",
-            "element": "Bread",
-            "id": "-O2o3_S454Uh9xS0ACZF",
-            "meal": "Dinner"
-          },
-          {
-            "count": "1/2 Cup",
-            "element": "Greek Yogurt",
-            "id": "-O2o3_dZRjCAk1cfUyR0",
-            "meal": "Dinner"
-          },
-          {
-            "alternatives": [
-              {
-                "count": "30gm",
-                "element": "Tuna"
-              },
-              {
-                "count": "1 Piece",
-                "element": "Egg"
-              }
-            ],
-            "count": "30gm",
-            "element": "White Cheese",
-            "id": "-O2o3_S-NyyU_Z18fKra",
-            "meal": "Dinner"
-          }
-        ],
-        "timestamp": "2024-08-08T17:00:00.000Z"
       },
       "-O3nvtocG3TmFFF0JP8h": {
         "contents": [
@@ -10198,6 +10998,14 @@
               {
                 "count": "120gm",
                 "element": "Fish"
+              },
+              {
+                "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
               }
             ],
             "count": "120gm",
@@ -10212,6 +11020,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -10223,6 +11037,16 @@
       "-O3v3ZThHlSZ4WcocArF": {
         "contents": [
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -10230,7 +11054,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -10254,6 +11078,16 @@
             "meal": "Breakfast"
           },
           {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "White Cheese"
+              },
+              {
+                "count": "30gm",
+                "element": "Areesh Cheese"
+              }
+            ],
             "count": "1 Piece",
             "element": "Egg",
             "id": "-O2o39Yv415ka6KXl3wC",
@@ -10261,7 +11095,7 @@
           },
           {
             "count": "4 Pieces",
-            "element": "Olives",
+            "element": "Olive",
             "id": "-O2o35UV_A9o7f49tsom",
             "meal": "Breakfast"
           },
@@ -10313,6 +11147,14 @@
               },
               {
                 "count": "120gm",
+                "element": "Chicken Liver"
+              },
+              {
+                "count": "120gm",
+                "element": "Beef"
+              },
+              {
+                "count": "120gm",
                 "element": "Squid"
               }
             ],
@@ -10328,6 +11170,12 @@
             "meal": "Lunch"
           },
           {
+            "alternatives": [
+              {
+                "count": "50gm",
+                "element": "Pasta"
+              }
+            ],
             "count": "1/3 Cup",
             "element": "Rice",
             "id": "-O2o3M-3idzwlIJphP7p",
@@ -10370,6 +11218,12 @@
             "meal": "Snack"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1 Cup",
             "element": "Yogurt",
             "id": "-O2o3oJYEKdQv81IMo2Y",
@@ -10404,6 +11258,16 @@
             "meal": "Dinner"
           },
           {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Yogurt"
+              },
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
             "count": "1/2 Cup",
             "element": "Greek Yogurt",
             "id": "-O2o3_dZRjCAk1cfUyR0",
@@ -10427,6 +11291,114 @@
           }
         ],
         "timestamp": "2024-08-10T17:30:00.000Z"
+      },
+      "-O4-Xfku9KXl8hAJDKEK": {
+        "contents": [
+          {
+            "count": "1 Cup",
+            "element": "Strawbeery",
+            "id": "-O2o3oJUfIH1wPNKIoqQ",
+            "meal": "Snack"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Yogurt",
+            "id": "-O2o3oJYEKdQv81IMo2Y",
+            "meal": "Snack"
+          }
+        ],
+        "meal": {
+          "id": "-O2o3emUEngUr3zBzXfT",
+          "meal": "Snack",
+          "time": "17:00"
+        },
+        "supposed": [
+          {
+            "count": "6 Pieces",
+            "element": "Almond",
+            "id": "-O2o3oJbu4JWndhyr3bw",
+            "meal": "Snack"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Strawbeery",
+            "id": "-O2o3oJUfIH1wPNKIoqQ",
+            "meal": "Snack"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Yogurt",
+            "id": "-O2o3oJYEKdQv81IMo2Y",
+            "meal": "Snack"
+          }
+        ],
+        "timestamp": "2024-08-08T17:00:00.000Z"
+      },
+      "-O4-XnVCwDRI3ybzk-zs": {
+        "contents": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o3_S454Uh9xS0ACZF",
+            "meal": "Dinner"
+          },
+          {
+            "count": "60gm",
+            "element": "White Cheese",
+            "id": "-O2o3_S-NyyU_Z18fKra",
+            "meal": "Dinner"
+          },
+          {
+            "count": "1 Cup",
+            "element": "Yogurt"
+          }
+        ],
+        "meal": {
+          "id": "-O1gOkZDROV2ZPdfzpIF",
+          "meal": "Dinner",
+          "time": "20:00"
+        },
+        "supposed": [
+          {
+            "count": "1 Slice",
+            "element": "Bread",
+            "id": "-O2o3_S454Uh9xS0ACZF",
+            "meal": "Dinner"
+          },
+          {
+            "alternatives": [
+              {
+                "count": "1 Cup",
+                "element": "Yogurt"
+              },
+              {
+                "count": "1 Cup",
+                "element": "Shanina"
+              }
+            ],
+            "count": "1/2 Cup",
+            "element": "Greek Yogurt",
+            "id": "-O2o3_dZRjCAk1cfUyR0",
+            "meal": "Dinner"
+          },
+          {
+            "alternatives": [
+              {
+                "count": "30gm",
+                "element": "Tuna"
+              },
+              {
+                "count": "1 Piece",
+                "element": "Egg"
+              }
+            ],
+            "count": "30gm",
+            "element": "White Cheese",
+            "id": "-O2o3_S-NyyU_Z18fKra",
+            "meal": "Dinner"
+          }
+        ],
+        "timestamp": "2024-08-08T17:00:00.000Z"
       }
     }
   },
@@ -10739,7 +11711,7 @@
       },
       "-O2o35UV_A9o7f49tsom": {
         "count": "4 Pieces",
-        "element": "Olives",
+        "element": "Olive",
         "meal": "Breakfast"
       },
       "-O2o35UYF0jH0IESukbB": {
@@ -10753,6 +11725,12 @@
         "meal": "Breakfast"
       },
       "-O2o3M-3idzwlIJphP7p": {
+        "alternatives": [
+          {
+            "count": "50gm",
+            "element": "Pasta"
+          }
+        ],
         "count": "1/3 Cup",
         "element": "Rice",
         "meal": "Lunch"
@@ -10767,6 +11745,10 @@
           {
             "count": "120gm",
             "element": "Fish"
+          },
+          {
+            "count": "120gm",
+            "element": "Chicken Liver"
           },
           {
             "count": "120gm",
@@ -10798,6 +11780,12 @@
         "meal": "Dinner"
       },
       "-O2o3_dZRjCAk1cfUyR0": {
+        "alternatives": [
+          {
+            "count": "1 Cup",
+            "element": "Yogurt"
+          }
+        ],
         "count": "1/2 Cup",
         "element": "Greek Yogurt",
         "meal": "Dinner"
