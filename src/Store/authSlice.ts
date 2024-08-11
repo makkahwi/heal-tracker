@@ -10,6 +10,13 @@ const service = axios.create({
   },
 });
 
+const refreshService = axios.create({
+  baseURL: `https://securetoken.googleapis.com/v1`,
+  params: {
+    key: API_KEY,
+  },
+});
+
 interface AuthState {
   user: any;
   status: "idle" | "loading" | "succeeded" | "failed";
@@ -43,6 +50,17 @@ export const signIn = createAsyncThunk(
       returnSecureToken: true,
     });
     localStorage.setItem("user", JSON.stringify(response.data));
+    return response.data;
+  }
+);
+
+export const refreshToken = createAsyncThunk(
+  "auth/refreshToken",
+  async (refreshToken: string) => {
+    const response = await refreshService.post("/token", {
+      grant_type: "refresh_token",
+      refresh_token: refreshToken,
+    });
     return response.data;
   }
 );
@@ -81,6 +99,22 @@ const authSlice = createSlice({
         localStorage.setItem("user", JSON.stringify(action.payload));
       })
       .addCase(signIn.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message || null;
+      })
+      .addCase(refreshToken.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(refreshToken.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.user = {
+          ...state.user,
+          idToken: action.payload.id_token,
+          refreshToken: action.payload.refresh_token,
+        };
+        localStorage.setItem("user", JSON.stringify(state.user));
+      })
+      .addCase(refreshToken.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message || null;
       });

@@ -12,7 +12,6 @@ This is to setup the schedule of meals you are following (diet), and insert what
 - Fix dynamicList of dynamicList Rendering
 - Add alternatives To Schedule
 - Build LabTest analysis
-- Reflect units in WeightReadings table
 - Build update functionality
 - Move firebase API key to env vars
 - Localize app

@@ -1,8 +1,4 @@
-import {
-  faDashboard,
-  faHome,
-  faSignOut,
-} from "@fortawesome/free-solid-svg-icons";
+import { faDashboard, faSignOut } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -44,7 +40,17 @@ const Navbar = () => {
                 <li className="nav-item" role="button" key={x}>
                   {list ? (
                     <div className="text-white my-2 mx-2 dropdown">
-                      <span data-bs-toggle="dropdown" aria-expanded="false">
+                      <span
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                        className={
+                          list
+                            .map(({ path }) => "/" + path)
+                            .includes(location.pathname)
+                            ? "text-info"
+                            : "text-white"
+                        }
+                      >
                         <FontAwesomeIcon icon={icon} />
                         <span className="ms-2 d-none d-lg-inline">{name}</span>
                       </span>
