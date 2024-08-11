@@ -1,4 +1,4 @@
-import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faTimes, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react/jsx-runtime";
 
@@ -14,6 +14,8 @@ export interface MealViewProps {
 interface props {
   dark?: boolean;
   onDelete?: (id: string) => void;
+  supposed?: MealViewProps;
+  compare?: boolean;
 }
 
 const OrView = () => (
@@ -30,38 +32,92 @@ const MealView = ({
   alternatives,
   note,
   onDelete,
+  supposed,
+  compare,
   dark,
-}: MealViewProps & props) => (
-  <li
-    className={
-      "text-start " + (dark && onDelete ? "bg-light p-2" : " py-1 px-2")
+}: MealViewProps & props) => {
+  const Element = ({ children }: { children: any }) => {
+    let elementMatch = false;
+    let countMatch = false;
+
+    if (element === supposed?.element) {
+      elementMatch = element === supposed?.element;
+      countMatch = count === supposed?.count;
+    } else {
+      elementMatch = !!supposed?.alternatives?.find(
+        (a) => a.element === element
+      )?.element;
+      countMatch =
+        count ===
+        supposed?.alternatives?.find((a) => a.element === element)?.count;
     }
-  >
-    {count + " of " + element + (note ? " (" + note + ")" : "")}
 
-    {onDelete && (
-      <FontAwesomeIcon
-        icon={faTrash}
-        role="button"
-        className="mx-1 me-5 text-danger float-end"
-        onClick={() => onDelete(id || "")}
-      />
-    )}
+    const match = countMatch && elementMatch;
 
-    {alternatives ? (
-      <Fragment>
-        <OrView />
-        {alternatives.map((alternative, i) => (
-          <Fragment key={i}>
-            {alternative.count + " of " + alternative.element}
-            {i !== alternatives.length - 1 ? <OrView /> : ""}
-          </Fragment>
-        ))}
-      </Fragment>
+    return compare ? (
+      <div className={match ? "text-success" : "text-danger"}>
+        <FontAwesomeIcon icon={match ? faCheck : faTimes} className="me-1" />
+        <span
+          className={
+            countMatch ? "text-decoration-none" : "text-decoration-underline"
+          }
+        >
+          {count}
+        </span>
+
+        {" of "}
+
+        <span
+          className={
+            elementMatch ? "text-decoration-none" : "text-decoration-underline"
+          }
+        >
+          {element}
+        </span>
+
+        {note ? " (" + note + ")" : ""}
+
+        {children}
+      </div>
     ) : (
-      ""
-    )}
-  </li>
-);
+      <li
+        className={
+          "text-start " + (dark && onDelete ? "bg-light p-2" : " py-1 px-2")
+        }
+      >
+        {count + " of " + element + (note ? " (" + note + ")" : "")}
+
+        {children}
+      </li>
+    );
+  };
+
+  return (
+    <Element>
+      {onDelete && (
+        <FontAwesomeIcon
+          icon={faTrash}
+          role="button"
+          className="mx-1 me-5 text-danger"
+          onClick={() => onDelete(id || "")}
+        />
+      )}
+
+      {alternatives ? (
+        <Fragment>
+          <OrView />
+          {alternatives.map((alternative, i) => (
+            <Fragment key={i}>
+              {alternative.count + " of " + alternative.element}
+              {i !== alternatives.length - 1 ? <OrView /> : ""}
+            </Fragment>
+          ))}
+        </Fragment>
+      ) : (
+        ""
+      )}
+    </Element>
+  );
+};
 
 export default MealView;
