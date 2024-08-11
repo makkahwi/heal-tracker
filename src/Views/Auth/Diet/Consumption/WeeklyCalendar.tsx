@@ -143,36 +143,46 @@ const WeeklyCalendar = ({
 
                   return (
                     <td className="text-start align-top" key={x}>
-                      {theMeals?.map(({ timestamp, id, note, contents }) => (
-                        <Fragment>
-                          {timestamp ? (
-                            <span className="d-block bg-dark text-white px-2 py-1">
-                              {"@ " + moment(timestamp).format("h:mm a")}{" "}
-                              <FontAwesomeIcon
-                                icon={faTrashCan}
-                                className="mt-1 text-danger"
-                                role="button"
-                                onClick={() => onDelete(id)}
-                              />
-                              <br />
-                              {note ? "(" + note + ")" : ""}
-                            </span>
-                          ) : (
-                            ""
-                          )}
+                      {theMeals?.map(
+                        ({ timestamp, id, note, contents, supposed }) => (
+                          <Fragment>
+                            {timestamp ? (
+                              <span className="d-block bg-dark text-white px-2 py-1">
+                                {"@ " + moment(timestamp).format("h:mm a")}{" "}
+                                <FontAwesomeIcon
+                                  icon={faTrashCan}
+                                  className="mt-1 text-danger"
+                                  role="button"
+                                  onClick={() => onDelete(id)}
+                                />
+                                <br />
+                                {note ? "(" + note + ")" : ""}
+                              </span>
+                            ) : (
+                              ""
+                            )}
 
-                          {contents?.map(({ element, count, note }, y) => (
-                            <MealView
-                              dark={y % 2 === 1}
-                              meal={meal}
-                              count={count}
-                              element={element}
-                              note={note}
-                              key={y}
-                            />
-                          ))}
-                        </Fragment>
-                      ))}
+                            {contents?.map(({ element, count, note }, y) => (
+                              <MealView
+                                dark={y % 2 === 1}
+                                meal={meal}
+                                count={count}
+                                element={element}
+                                note={note}
+                                supposed={supposed?.find(
+                                  (s) =>
+                                    s.element === element ||
+                                    s.alternatives?.find(
+                                      (a) => a.element === element
+                                    )
+                                )}
+                                compare
+                                key={y}
+                              />
+                            ))}
+                          </Fragment>
+                        )
+                      )}
                     </td>
                   );
                 })}
