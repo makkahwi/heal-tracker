@@ -1,8 +1,4 @@
-import {
-  faCheckCircle,
-  faTrash,
-  faXmarkCircle,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faTimes, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react/jsx-runtime";
 
@@ -41,17 +37,26 @@ const MealView = ({
   dark,
 }: MealViewProps & props) => {
   const Element = ({ children }: { children: any }) => {
-    const countMatch = count === supposed?.count;
-    const elementMatch = element === supposed?.element;
+    let elementMatch = false;
+    let countMatch = false;
+
+    if (element === supposed?.element) {
+      elementMatch = element === supposed?.element;
+      countMatch = count === supposed?.count;
+    } else {
+      elementMatch = !!supposed?.alternatives?.find(
+        (a) => a.element === element
+      )?.element;
+      countMatch =
+        count ===
+        supposed?.alternatives?.find((a) => a.element === element)?.count;
+    }
 
     const match = countMatch && elementMatch;
 
     return compare ? (
       <div className={match ? "text-success" : "text-danger"}>
-        <FontAwesomeIcon
-          icon={match ? faCheckCircle : faXmarkCircle}
-          className="me-1"
-        />
+        <FontAwesomeIcon icon={match ? faCheck : faTimes} className="me-1" />
         <span
           className={
             countMatch ? "text-decoration-none" : "text-decoration-underline"
