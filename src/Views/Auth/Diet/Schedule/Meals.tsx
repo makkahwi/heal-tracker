@@ -1,9 +1,9 @@
+import { ScheduleProps } from "./Schedules";
 import { useEffect, useState } from "react";
 
 import * as BeAPI from "../../../../API";
 import PageView from "../../../../Components/PageView";
 import { timeFormat } from "../../../../Utils/consts";
-import { ScheduleProps } from "./Schedules";
 
 export interface SchedulesMealProps {
   id?: string;
@@ -17,7 +17,7 @@ const Meals = () => {
   const [schedules, setSchedules] = useState<ScheduleProps[]>([]);
 
   const getData = () => {
-    BeAPI.getAll("schedulesMeals")
+    BeAPI.getAll("scheduleMeals")
       .then((res: SchedulesMealProps[]) =>
         setData(
           res
@@ -76,7 +76,7 @@ const Meals = () => {
   ];
 
   const onSubmit = (values: SchedulesMealProps) => {
-    BeAPI.create("schedulesMeals", values)
+    BeAPI.create("scheduleMeals", values)
       .then(() => {
         getData();
       })
@@ -84,7 +84,7 @@ const Meals = () => {
   };
 
   const onDelete = (id: string) =>
-    BeAPI.remove("schedulesMeals", id)
+    BeAPI.remove("scheduleMeals", id)
       .then(() => {
         getData();
       })
