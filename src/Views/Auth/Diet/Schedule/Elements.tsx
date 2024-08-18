@@ -1,12 +1,22 @@
+import { useEffect, useState } from "react";
+
 import * as BeAPI from "../../../../API";
-import MealView, { MealViewProps } from "../../../../Components/MealView";
+import MealView from "../../../../Components/MealView";
 import PageView from "../../../../Components/PageView";
 import { SchedulesMealProps } from "./Meals";
 import { ScheduleProps } from "./Schedules";
-import { useEffect, useState } from "react";
+
+export interface SchedulesMealElementProps {
+  id?: string;
+  meal?: string;
+  element: string;
+  count: string;
+  note?: string;
+  alternatives?: SchedulesMealElementProps[];
+}
 
 const Elements = () => {
-  const [data, setData] = useState<MealViewProps[]>([]);
+  const [data, setData] = useState<SchedulesMealElementProps[]>([]);
   const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
   const [schedules, setSchedules] = useState<ScheduleProps[]>([]);
 
@@ -24,29 +34,39 @@ const Elements = () => {
         );
 
         BeAPI.getAll("scheduleMealElements")
-          .then((res: MealViewProps[]) =>
+          .then((res: SchedulesMealElementProps[]) =>
             setData(
               res
-                .sort((a: MealViewProps, b: MealViewProps) => {
-                  if (a?.meal && b?.meal) {
-                    return a?.meal < b?.meal ? -1 : 1;
+                .sort(
+                  (
+                    a: SchedulesMealElementProps,
+                    b: SchedulesMealElementProps
+                  ) => {
+                    if (a?.meal && b?.meal) {
+                      return a?.meal < b?.meal ? -1 : 1;
+                    }
+                    return 1;
                   }
-                  return 1;
-                })
-                .sort((a: MealViewProps, b: MealViewProps) => {
-                  const firstMealTime = meals.find(
-                    (meal) => meal.meal === a.meal
-                  )?.time;
-                  const secondMealTime = meals.find(
-                    (meal) => meal.meal === b.meal
-                  )?.time;
+                )
+                .sort(
+                  (
+                    a: SchedulesMealElementProps,
+                    b: SchedulesMealElementProps
+                  ) => {
+                    const firstMealTime = meals.find(
+                      (meal) => meal.meal === a.meal
+                    )?.time;
+                    const secondMealTime = meals.find(
+                      (meal) => meal.meal === b.meal
+                    )?.time;
 
-                  if (firstMealTime && secondMealTime) {
-                    return firstMealTime < secondMealTime ? -1 : 1;
+                    if (firstMealTime && secondMealTime) {
+                      return firstMealTime < secondMealTime ? -1 : 1;
+                    }
+
+                    return 1;
                   }
-
-                  return 1;
-                })
+                )
             )
           )
           .catch((err) => console.log({ err }));
@@ -65,7 +85,7 @@ const Elements = () => {
   };
 
   useEffect(() => {
-    // BeAPI.getAll().then((res: MealViewProps[][]) => setData(res));
+    // BeAPI.getAll().then((res: SchedulesMealElementProps[][]) => setData(res));
     getData();
   }, []);
 
@@ -81,7 +101,7 @@ const Elements = () => {
           " of Schedule " +
           schedules.find(({ id }) => id === String(schedule))?.order,
       })),
-      render: (row: MealViewProps, i: number) => {
+      render: (row: SchedulesMealElementProps, i: number) => {
         const meal = meals.find(({ id }) => id === String(row.meal));
         const schedule = schedules.find(
           ({ id }) => id === String(meal?.schedule)
@@ -98,7 +118,7 @@ const Elements = () => {
       label: "Meal Contents",
       type: "dynamicList",
       fullWidth: true,
-      render: (row: MealViewProps) => <MealView {...row} />,
+      render: (row: SchedulesMealElementProps) => <MealView {...row} />,
       inputs: [
         { name: "element", label: "Element", required: true },
         { name: "count", label: "Quantity", required: true },
@@ -119,7 +139,7 @@ const Elements = () => {
 
   interface submitProps {
     meal: string;
-    contents: MealViewProps[];
+    contents: SchedulesMealElementProps[];
   }
 
   const onSubmit = (values: submitProps) => {

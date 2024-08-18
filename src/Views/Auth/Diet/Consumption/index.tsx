@@ -3,33 +3,28 @@ import { Fragment, useEffect, useState } from "react";
 
 import * as BeAPI from "../../../../API";
 import Form from "../../../../Components/Form";
-import { MealViewProps } from "../../../../Components/MealView";
 import PageSection from "../../../../Components/PageView/PageSection";
+import { SchedulesMealElementProps } from "../Schedule/Elements";
+import { SchedulesMealProps } from "../Schedule/Meals";
 import WeeklyCalendar from "./WeeklyCalendar";
-
-interface MealProps {
-  id?: string;
-  meal: string;
-  time: string;
-}
 
 export interface consumptionProps {
   id?: string;
   timestamp: MomentInput;
-  meal: MealProps;
+  meal: SchedulesMealProps;
   note?: string;
-  contents: MealViewProps[];
-  supposed: MealViewProps[];
+  contents: SchedulesMealElementProps[];
+  supposed: SchedulesMealElementProps[];
 }
 
 const Consumption = () => {
   const [data, setData] = useState<consumptionProps[]>([]);
-  const [scheduled, setScheduled] = useState<MealViewProps[]>([]);
-  const [meals, setMeals] = useState<MealProps[]>([]);
+  const [scheduled, setScheduled] = useState<SchedulesMealElementProps[]>([]);
+  const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
 
   const getData = () => {
     BeAPI.getAll("scheduleMealElements")
-      .then((res: MealViewProps[]) =>
+      .then((res: SchedulesMealElementProps[]) =>
         setScheduled(res?.sort((a, b) => (a.element > b.element ? 1 : -1)))
       )
       .catch((err) => console.log({ err }));
@@ -51,12 +46,12 @@ const Consumption = () => {
       )
       .catch((err) => console.log({ err }));
     BeAPI.getAll("scheduleMeals")
-      .then((res: MealProps[]) =>
+      .then((res: SchedulesMealProps[]) =>
         setMeals([
-          ...res.sort((a: MealProps, b: MealProps) =>
+          ...res.sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
             a.time < b.time ? -1 : 1
           ),
-          { meal: "Other", time: "" },
+          { meal: "Other", time: "", schedule: 0 },
         ])
       )
       .catch((err) => console.log({ err }));
@@ -83,7 +78,7 @@ const Consumption = () => {
       name: "meal",
       label: "Meal of Day",
       type: "select",
-      options: meals?.map(({ meal }) => ({ value: meal })),
+      options: meals?.map(({ id, meal }) => ({ value: id || "", label: meal })),
       onChange: (e: any, setValues: any) => {
         setValues((current: any) => ({
           ...current,
@@ -91,9 +86,16 @@ const Consumption = () => {
           contents: scheduled
             ?.filter(({ meal }) => meal === e.target.value)
             .reduce(
-              (final: MealViewProps[], { alternatives, ...rest }) =>
+              (final: SchedulesMealElementProps[], { alternatives, ...rest }) =>
                 alternatives
-                  ? [...final, rest, ...alternatives]
+                  ? [
+                      ...final,
+                      rest,
+                      ...alternatives.map((x) => ({
+                        ...x,
+                        note: "Alternative",
+                      })),
+                    ]
                   : [...final, rest],
               []
             ),
@@ -125,8 +127,8 @@ const Consumption = () => {
     time: string;
     meal: string;
     note?: string;
-    contents: MealViewProps[];
-    supposed: MealViewProps[];
+    contents: SchedulesMealElementProps[];
+    supposed: SchedulesMealElementProps[];
   }
 
   const onSubmit = (values: submitProps) => {
@@ -134,9 +136,8 @@ const Consumption = () => {
     const time = values.time || moment().format("HH:mm");
 
     const finalValue = {
-      meal: meals.find((m) => m.meal === values.meal),
+      meal: values.meal,
       contents: values.contents,
-      supposed: scheduled?.filter(({ meal }) => meal === values.meal),
       timestamp: moment(date + "T" + time),
       note: values.note,
     };
