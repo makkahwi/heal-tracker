@@ -83,7 +83,7 @@ const Consumption = () => {
       name: "meal",
       label: "Meal of Day",
       type: "select",
-      options: meals?.map(({ meal }) => meal),
+      options: meals?.map(({ meal }) => ({ value: meal })),
       onChange: (e: any, setValues: any) => {
         setValues((current: any) => ({
           ...current,
