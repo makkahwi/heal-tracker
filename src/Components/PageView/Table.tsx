@@ -76,7 +76,7 @@ const PageTable = ({ data, inputs, onDelete }: props) => {
                         ? timeFormat((row as any)[name])
                         : type === "select"
                         ? options?.find(
-                            ({ value }) => value == (row as any)[name]
+                            ({ value }) => value === (row as any)[name]
                           )?.label || (row as any)[name]
                         : (row as any)[name] + (unit ? " " + unit : "")}
 
