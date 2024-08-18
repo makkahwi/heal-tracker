@@ -50,7 +50,7 @@ const Consumption = () => {
         )
       )
       .catch((err) => console.log({ err }));
-    BeAPI.getAll("schedulesMeals")
+    BeAPI.getAll("scheduleMeals")
       .then((res: MealProps[]) =>
         setMeals([
           ...res.sort((a: MealProps, b: MealProps) =>

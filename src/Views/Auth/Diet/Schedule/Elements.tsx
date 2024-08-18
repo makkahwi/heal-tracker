@@ -10,7 +10,7 @@ const Elements = () => {
   const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
 
   const getData = () => {
-    BeAPI.getAll("schedulesMeals")
+    BeAPI.getAll("scheduleMeals")
       .then((meals: SchedulesMealProps[]) => {
         setMeals(
           meals
