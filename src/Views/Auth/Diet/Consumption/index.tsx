@@ -5,8 +5,13 @@ import * as BeAPI from "../../../../API";
 import Form from "../../../../Components/Form";
 import { MealViewProps } from "../../../../Components/MealView";
 import PageSection from "../../../../Components/PageView/PageSection";
-import { MealProps } from "../Meals";
 import WeeklyCalendar from "./WeeklyCalendar";
+
+interface MealProps {
+  id?: string;
+  meal: string;
+  time: string;
+}
 
 export interface consumptionProps {
   id?: string;
@@ -23,12 +28,12 @@ const Consumption = () => {
   const [meals, setMeals] = useState<MealProps[]>([]);
 
   const getData = () => {
-    BeAPI.getAll("schedule")
+    BeAPI.getAll("scheduleMealElements")
       .then((res: MealViewProps[]) =>
         setScheduled(res?.sort((a, b) => (a.element > b.element ? 1 : -1)))
       )
       .catch((err) => console.log({ err }));
-    BeAPI.getAll("consumption")
+    BeAPI.getAll("consumed")
       .then((res: consumptionProps[]) =>
         setData(
           res
@@ -45,7 +50,7 @@ const Consumption = () => {
         )
       )
       .catch((err) => console.log({ err }));
-    BeAPI.getAll("meals")
+    BeAPI.getAll("schedulesMeals")
       .then((res: MealProps[]) =>
         setMeals([
           ...res.sort((a: MealProps, b: MealProps) =>
@@ -136,7 +141,7 @@ const Consumption = () => {
       note: values.note,
     };
 
-    BeAPI.create("consumption", finalValue)
+    BeAPI.create("consumed", finalValue)
       .then(() => {
         getData();
       })
@@ -144,7 +149,7 @@ const Consumption = () => {
   };
 
   const onDelete = (id: string) =>
-    BeAPI.remove("consumption", id)
+    BeAPI.remove("consumed", id)
       .then(() => {
         getData();
       })
