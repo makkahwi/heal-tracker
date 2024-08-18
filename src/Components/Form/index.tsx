@@ -18,7 +18,7 @@ export interface inputProps {
   onChange?: any;
   lowEnd?: number;
   highEnd?: number;
-  options?: string[];
+  options?: { value: string | number; label?: string | number }[];
   inputs?: inputProps[];
   render?: Function;
   total?: boolean;
@@ -99,9 +99,9 @@ const Form = ({ inputs, onSubmit }: props) => {
                 >
                   <option>Please Choose...</option>
 
-                  {options?.map((option, x) => (
-                    <option value={option} key={x}>
-                      {option}
+                  {options?.map(({ value, label }, x) => (
+                    <option value={value} key={x}>
+                      {label || value}
                     </option>
                   ))}
                 </select>

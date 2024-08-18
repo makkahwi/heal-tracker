@@ -56,9 +56,10 @@ const Elements = () => {
       name: "meal",
       label: "Meal of Day",
       type: "select",
-      options: meals?.map(
-        ({ id, meal, schedule }) => meal + " of Schedule " + schedule
-      ),
+      options: meals?.map(({ id, meal, schedule }) => ({
+        value: id || "",
+        label: meal + " of Schedule " + schedule,
+      })),
       render: (row: MealViewProps, i: number) =>
         i > 0 && row.meal === data[i - 1].meal ? "^^^^^" : row.meal,
       required: true,

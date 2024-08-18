@@ -1,9 +1,9 @@
-import { ScheduleProps } from "./Schedules";
 import { useEffect, useState } from "react";
 
 import * as BeAPI from "../../../../API";
 import PageView from "../../../../Components/PageView";
 import { timeFormat } from "../../../../Utils/consts";
+import { ScheduleProps } from "./Schedules";
 
 export interface SchedulesMealProps {
   id?: string;
@@ -52,7 +52,7 @@ const Meals = () => {
       label: "Schedule",
       type: "select",
       options: schedules?.map(
-        ({ id, order }) => String(order) || id || "undefined"
+        ({ id, order }) => ({value: id||"", label: String(order)})
       ),
       defaultValue: schedules?.reduce(
         (final, { order }) => (order > final ? order : final),
