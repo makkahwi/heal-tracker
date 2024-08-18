@@ -11,12 +11,13 @@ export interface ScheduleProps {
 const Schedules = () => {
   const [data, setData] = useState<ScheduleProps[]>([]);
 
-  const getData = () =>
+  const getData = () => {
     BeAPI.getAll("schedules")
       .then((res: ScheduleProps[]) =>
         setData(res.sort((a, b) => (a.order < b.order ? 1 : -1)))
       )
       .catch((err) => console.log({ err }));
+  };
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
