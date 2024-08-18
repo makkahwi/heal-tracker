@@ -1,10 +1,9 @@
-import { useEffect, useState } from "react";
-
 import * as BeAPI from "../../../../API";
 import MealView, { MealViewProps } from "../../../../Components/MealView";
 import PageView from "../../../../Components/PageView";
 import { SchedulesMealProps } from "./Meals";
 import { ScheduleProps } from "./Schedules";
+import { useEffect, useState } from "react";
 
 const Elements = () => {
   const [data, setData] = useState<MealViewProps[]>([]);
@@ -80,12 +79,12 @@ const Elements = () => {
         label:
           meal +
           " of Schedule " +
-          schedules.find(({ id }) => id == String(schedule))?.order,
+          schedules.find(({ id }) => id === String(schedule))?.order,
       })),
       render: (row: MealViewProps, i: number) => {
-        const meal = meals.find(({ id }) => id == String(row.meal));
+        const meal = meals.find(({ id }) => id === String(row.meal));
         const schedule = schedules.find(
-          ({ id }) => id == String(meal?.schedule)
+          ({ id }) => id === String(meal?.schedule)
         );
 
         return i > 0 && row.meal === data[i - 1].meal
