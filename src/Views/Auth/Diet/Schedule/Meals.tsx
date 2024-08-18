@@ -22,7 +22,7 @@ const Meals = () => {
         setData(
           res
             .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
-              a.time < b.time ? -1 : 1
+              a.time < b.time ? 1 : -1
             )
             .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
               a.schedule < b.schedule ? 1 : -1
@@ -51,9 +51,10 @@ const Meals = () => {
       name: "schedule",
       label: "Schedule",
       type: "select",
-      options: schedules?.map(
-        ({ id, order }) => ({value: id||"", label: String(order)})
-      ),
+      options: schedules?.map(({ id, order }) => ({
+        value: id || "",
+        label: String(order),
+      })),
       defaultValue: schedules?.reduce(
         (final, { order }) => (order > final ? order : final),
         0

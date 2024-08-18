@@ -45,7 +45,10 @@ const PageTable = ({ data, inputs, onDelete }: props) => {
             {data.map(({ id, ...row }, i) => (
               <tr className="align-middle" key={i}>
                 {inputs.map(
-                  ({ name, render, lowEnd, highEnd, type, unit }, x) => (
+                  (
+                    { name, render, lowEnd, highEnd, type, unit, options },
+                    x
+                  ) => (
                     <td
                       className={
                         lowEnd && highEnd
@@ -71,6 +74,10 @@ const PageTable = ({ data, inputs, onDelete }: props) => {
                         ? dayDateFormat((row as any)[name])
                         : type === "time"
                         ? timeFormat((row as any)[name])
+                        : type === "select"
+                        ? options?.find(
+                            ({ value }) => value == (row as any)[name]
+                          )?.label || (row as any)[name]
                         : (row as any)[name] + (unit ? " " + unit : "")}
 
                       {(lowEnd || highEnd) && (row as any)[name] ? (

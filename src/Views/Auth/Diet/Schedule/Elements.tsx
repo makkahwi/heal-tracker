@@ -4,10 +4,12 @@ import * as BeAPI from "../../../../API";
 import MealView, { MealViewProps } from "../../../../Components/MealView";
 import PageView from "../../../../Components/PageView";
 import { SchedulesMealProps } from "./Meals";
+import { ScheduleProps } from "./Schedules";
 
 const Elements = () => {
   const [data, setData] = useState<MealViewProps[]>([]);
   const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
+  const [schedules, setSchedules] = useState<ScheduleProps[]>([]);
 
   const getData = () => {
     BeAPI.getAll("scheduleMeals")
@@ -25,24 +27,41 @@ const Elements = () => {
         BeAPI.getAll("scheduleMealElements")
           .then((res: MealViewProps[]) =>
             setData(
-              res.sort((a: MealViewProps, b: MealViewProps) => {
-                const firstMealTime = meals.find(
-                  (meal) => meal.meal === a.meal
-                )?.time;
-                const secondMealTime = meals.find(
-                  (meal) => meal.meal === b.meal
-                )?.time;
+              res
+                .sort((a: MealViewProps, b: MealViewProps) => {
+                  if (a?.meal && b?.meal) {
+                    return a?.meal < b?.meal ? -1 : 1;
+                  }
+                  return 1;
+                })
+                .sort((a: MealViewProps, b: MealViewProps) => {
+                  const firstMealTime = meals.find(
+                    (meal) => meal.meal === a.meal
+                  )?.time;
+                  const secondMealTime = meals.find(
+                    (meal) => meal.meal === b.meal
+                  )?.time;
 
-                if (firstMealTime && secondMealTime) {
-                  return firstMealTime < secondMealTime ? -1 : 1;
-                }
+                  if (firstMealTime && secondMealTime) {
+                    return firstMealTime < secondMealTime ? -1 : 1;
+                  }
 
-                return 1;
-              })
+                  return 1;
+                })
             )
           )
           .catch((err) => console.log({ err }));
       })
+      .catch((err) => console.log({ err }));
+
+    BeAPI.getAll("schedules")
+      .then((res: ScheduleProps[]) =>
+        setSchedules(
+          res.sort((a: ScheduleProps, b: ScheduleProps) =>
+            a.order < b.order ? 1 : -1
+          )
+        )
+      )
       .catch((err) => console.log({ err }));
   };
 
@@ -58,10 +77,21 @@ const Elements = () => {
       type: "select",
       options: meals?.map(({ id, meal, schedule }) => ({
         value: id || "",
-        label: meal + " of Schedule " + schedule,
+        label:
+          meal +
+          " of Schedule " +
+          schedules.find(({ id }) => id == String(schedule))?.order,
       })),
-      render: (row: MealViewProps, i: number) =>
-        i > 0 && row.meal === data[i - 1].meal ? "^^^^^" : row.meal,
+      render: (row: MealViewProps, i: number) => {
+        const meal = meals.find(({ id }) => id == String(row.meal));
+        const schedule = schedules.find(
+          ({ id }) => id == String(meal?.schedule)
+        );
+
+        return i > 0 && row.meal === data[i - 1].meal
+          ? "^^^^^"
+          : meal?.meal + " of Schedule " + schedule?.order;
+      },
       required: true,
     },
     {
