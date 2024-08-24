@@ -6,6 +6,7 @@ import Form from "../../../../Components/Form";
 import PageSection from "../../../../Components/PageView/PageSection";
 import { SchedulesMealElementProps } from "../Schedule/Elements";
 import { SchedulesMealProps } from "../Schedule/Meals";
+import { ScheduleProps } from "../Schedule/Schedules";
 import WeeklyCalendar from "./WeeklyCalendar";
 
 export interface consumptionProps {
@@ -21,6 +22,7 @@ const Consumption = () => {
   const [data, setData] = useState<consumptionProps[]>([]);
   const [scheduled, setScheduled] = useState<SchedulesMealElementProps[]>([]);
   const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
+  const [schedules, setSchedules] = useState<ScheduleProps[]>([]);
 
   const getData = () => {
     BeAPI.getAll("scheduleMealElements")
@@ -47,12 +49,25 @@ const Consumption = () => {
       .catch((err) => console.log({ err }));
     BeAPI.getAll("scheduleMeals")
       .then((res: SchedulesMealProps[]) =>
-        setMeals([
-          ...res.sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
-            a.time < b.time ? -1 : 1
-          ),
-          { meal: "Other", time: "", schedule: 0 },
-        ])
+        setMeals(
+          meals
+            .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
+              a.time < b.time ? -1 : 1
+            )
+            .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
+              a.schedule < b.schedule ? 1 : -1
+            )
+        )
+      )
+      .catch((err) => console.log({ err }));
+
+    BeAPI.getAll("schedules")
+      .then((res: ScheduleProps[]) =>
+        setSchedules(
+          res.sort((a: ScheduleProps, b: ScheduleProps) =>
+            a.order < b.order ? 1 : -1
+          )
+        )
       )
       .catch((err) => console.log({ err }));
   };
@@ -78,7 +93,13 @@ const Consumption = () => {
       name: "meal",
       label: "Meal of Day",
       type: "select",
-      options: meals?.map(({ id, meal }) => ({ value: id || "", label: meal })),
+      options: meals?.map(({ id, meal, schedule }) => ({
+        value: id || "",
+        label:
+          meal +
+          " of Schedule " +
+          schedules.find(({ id }) => id === String(schedule))?.order,
+      })),
       onChange: (e: any, setValues: any) => {
         setValues((current: any) => ({
           ...current,
