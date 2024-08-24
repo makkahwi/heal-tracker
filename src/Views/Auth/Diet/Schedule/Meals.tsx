@@ -22,7 +22,7 @@ const Meals = () => {
         setData(
           res
             .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
-              a.time < b.time ? 1 : -1
+              a.time < b.time ? -1 : 1
             )
             .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
               a.schedule < b.schedule ? 1 : -1

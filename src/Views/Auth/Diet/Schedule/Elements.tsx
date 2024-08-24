@@ -43,7 +43,7 @@ const Elements = () => {
                     b: SchedulesMealElementProps
                   ) => {
                     if (a?.meal && b?.meal) {
-                      return a?.meal < b?.meal ? -1 : 1;
+                      return a?.meal < b?.meal ? 1 : -1;
                     }
                     return 1;
                   }
@@ -61,7 +61,7 @@ const Elements = () => {
                     )?.time;
 
                     if (firstMealTime && secondMealTime) {
-                      return firstMealTime < secondMealTime ? -1 : 1;
+                      return firstMealTime < secondMealTime ? 1 : -1;
                     }
 
                     return 1;
