@@ -30,27 +30,11 @@ const Consumption = () => {
         setScheduled(res?.sort((a, b) => (a.element > b.element ? 1 : -1)))
       )
       .catch((err) => console.log({ err }));
-    BeAPI.getAll("consumed")
-      .then((res: consumptionProps[]) =>
-        setData(
-          res
-            ?.sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
-            ?.map(({ contents, supposed, ...rest }) => ({
-              ...rest,
-              contents: contents?.sort((a, b) =>
-                a.element > b.element ? 1 : -1
-              ),
-              supposed: supposed?.sort((a, b) =>
-                a.element > b.element ? 1 : -1
-              ),
-            }))
-        )
-      )
-      .catch((err) => console.log({ err }));
+
     BeAPI.getAll("scheduleMeals")
       .then((res: SchedulesMealProps[]) =>
         setMeals(
-          meals
+          res
             .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
               a.time < b.time ? -1 : 1
             )
@@ -67,6 +51,25 @@ const Consumption = () => {
           res.sort((a: ScheduleProps, b: ScheduleProps) =>
             a.order < b.order ? 1 : -1
           )
+        )
+      )
+      .catch((err) => console.log({ err }));
+
+    BeAPI.getAll("consumed")
+      .then((res: consumptionProps[]) =>
+        setData(
+          res
+            ?.sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
+            ?.map(({ contents, supposed, meal, ...rest }) => ({
+              ...rest,
+              meal: meals.find(({ id }) => id === meal),
+              contents: contents?.sort((a, b) =>
+                a.element > b.element ? 1 : -1
+              ),
+              supposed: supposed?.sort((a, b) =>
+                a.element > b.element ? 1 : -1
+              ),
+            }))
         )
       )
       .catch((err) => console.log({ err }));
