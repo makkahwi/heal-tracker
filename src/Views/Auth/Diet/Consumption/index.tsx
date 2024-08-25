@@ -60,9 +60,8 @@ const Consumption = () => {
         setData(
           res
             ?.sort((a: any, b: any) => (a.timestamp > b.timestamp ? -1 : 1))
-            ?.map(({ contents, supposed, meal, ...rest }) => ({
+            ?.map(({ contents, supposed, ...rest }) => ({
               ...rest,
-              meal: meals.find(({ id }) => id === meal),
               contents: contents?.sort((a, b) =>
                 a.element > b.element ? 1 : -1
               ),
