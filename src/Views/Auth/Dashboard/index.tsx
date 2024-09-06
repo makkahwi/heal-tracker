@@ -1,23 +1,39 @@
+import { useEffect, useState } from "react";
 import { Fragment } from "react/jsx-runtime";
 
-import { useEffect, useState } from "react";
 import * as BeAPI from "../../../API";
 import PageSection from "../../../Components/PageView/PageSection";
-import { consumptionProps } from "../Diet/Consumption";
+import { consumptionFullProps, consumptionProps } from "../Diet/Consumption";
+import { SchedulesMealProps } from "../Diet/Schedule/Meals";
 import { medicineProps } from "../Medicine";
 import { walkExerciseProps } from "../Sports/WalkExercises";
 import WeeklyCalendar from "./WeeklyCalendar";
 
 const Dashboard = () => {
-  const [consumptionData, setConsumptionData] = useState<consumptionProps[]>(
-    []
-  );
+  const [consumptionData, setConsumptionData] = useState<
+    consumptionFullProps[]
+  >([]);
+  const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
   const [walkExercisesData, setWalkExercisesData] = useState<
     walkExerciseProps[]
   >([]);
   const [medicineData, setMedicineData] = useState<medicineProps[]>([]);
 
   const getData = () => {
+    BeAPI.getAll("scheduleMeals")
+      .then((res: SchedulesMealProps[]) =>
+        setMeals(
+          res
+            .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
+              a.time < b.time ? -1 : 1
+            )
+            .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
+              a.schedule < b.schedule ? 1 : -1
+            )
+        )
+      )
+      .catch((err) => console.log({ err }));
+
     BeAPI.getAll("consumption")
       .then((res: consumptionProps[]) =>
         setConsumptionData(
@@ -28,6 +44,12 @@ const Dashboard = () => {
               contents: contents?.sort((a, b) =>
                 a.element > b.element ? 1 : -1
               ),
+              meal: meals.find(({ id }) => id === rest.meal) || {
+                id: "string",
+                schedule: 0,
+                meal: "string",
+                time: "string",
+              },
               supposed: supposed?.sort((a, b) =>
                 a.element > b.element ? 1 : -1
               ),

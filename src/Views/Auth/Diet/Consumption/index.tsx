@@ -12,6 +12,15 @@ import WeeklyCalendar from "./WeeklyCalendar";
 export interface consumptionProps {
   id?: string;
   timestamp: MomentInput;
+  meal: string;
+  note?: string;
+  contents: SchedulesMealElementProps[];
+  supposed: SchedulesMealElementProps[];
+}
+
+export interface consumptionFullProps {
+  id?: string;
+  timestamp: MomentInput;
   meal: SchedulesMealProps;
   note?: string;
   contents: SchedulesMealElementProps[];
@@ -184,7 +193,23 @@ const Consumption = () => {
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
-        <WeeklyCalendar data={data} onDelete={onDelete} />
+        <WeeklyCalendar
+          data={data.map((row) => {
+            const mealId = meals.find(({ id }) => (id || "") === row.meal)?.id;
+
+            return {
+              ...row,
+              supposed: scheduled.filter(({ meal }) => (meal || "") === mealId),
+              meal: meals.find(({ id }) => row.meal === id) || {
+                id: "string",
+                schedule: 0,
+                meal: "string",
+                time: "string",
+              },
+            };
+          })}
+          onDelete={onDelete}
+        />
       </Fragment>
     </PageSection>
   );
