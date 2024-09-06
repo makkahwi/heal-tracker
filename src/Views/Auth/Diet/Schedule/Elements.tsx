@@ -113,9 +113,11 @@ const Elements = () => {
       },
       required: true,
     },
+    { name: "element", label: "Element", required: true },
+    { name: "count", label: "Quantity", required: true },
     {
-      name: "contents",
-      label: "Meal Contents",
+      name: "alternatives",
+      label: "Alternatives",
       type: "dynamicList",
       fullWidth: true,
       render: (row: SchedulesMealElementProps) => <MealView {...row} />,
@@ -143,16 +145,9 @@ const Elements = () => {
   }
 
   const onSubmit = (values: submitProps) => {
-    const finalValue = values?.contents?.map((content) => ({
-      ...content,
-      meal: values?.meal,
-    }));
-
-    finalValue.forEach((value) =>
-      BeAPI.create("scheduleMealElements", value).then(() => {
-        getData();
-      })
-    );
+    BeAPI.create("scheduleMealElements", values).then(() => {
+      getData();
+    });
   };
 
   const onDelete = (id: string) =>
