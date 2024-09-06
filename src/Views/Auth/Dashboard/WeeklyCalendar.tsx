@@ -2,12 +2,12 @@ import moment, { Moment } from "moment";
 import { Fragment, useEffect, useState } from "react";
 
 import MealView from "../../../Components/MealView";
-import { consumptionProps } from "../Diet/Consumption";
+import { renderEvents } from "../../../Components/PageView/MonthlyCalendar";
+import { consumptionFullProps } from "../Diet/Consumption";
 import { medicineProps, renderMedicineUI } from "../Medicine";
 import { renderExerciseUI, walkExerciseProps } from "../Sports/WalkExercises";
-import { renderEvents } from "../../../Components/PageView/MonthlyCalendar";
 
-type comprehensiveProps = consumptionProps & {
+type comprehensiveProps = consumptionFullProps & {
   sports: walkExerciseProps[];
   medicines: medicineProps[];
 };
@@ -17,7 +17,7 @@ const WeeklyCalendar = ({
   walkExercisesData,
   medicineData,
 }: {
-  consumptionData: consumptionProps[];
+  consumptionData: consumptionFullProps[];
   walkExercisesData: walkExerciseProps[];
   medicineData: medicineProps[];
 }) => {
@@ -167,7 +167,7 @@ const WeeklyCalendar = ({
                 </th>
 
                 {currentWeek?.map((day, x) => {
-                  const theMeals: consumptionProps[] | undefined =
+                  const theMeals: consumptionFullProps[] | undefined =
                     currentWeekData
                       ?.filter(
                         (dat) =>
