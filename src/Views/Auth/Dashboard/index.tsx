@@ -3,27 +3,24 @@ import { Fragment } from "react/jsx-runtime";
 
 import * as BeAPI from "../../../API";
 import PageSection from "../../../Components/PageView/PageSection";
-import { consumptionFullProps, consumptionProps } from "../Diet/Consumption";
+import { consumptionProps } from "../Diet/Consumption";
 import { SchedulesMealElementProps } from "../Diet/Schedule/Elements";
 import { SchedulesMealProps } from "../Diet/Schedule/Meals";
-import { ScheduleProps } from "../Diet/Schedule/Schedules";
 import { medicineProps } from "../Medicine";
 import { walkExerciseProps } from "../Sports/WalkExercises";
 import WeeklyCalendar from "./WeeklyCalendar";
 
 const Dashboard = () => {
-  const [consumptionData, setConsumptionData] = useState<
-    consumptionProps[]
-  >([]);
+  const [consumptionData, setConsumptionData] = useState<consumptionProps[]>(
+    []
+  );
   const [walkExercisesData, setWalkExercisesData] = useState<
     walkExerciseProps[]
   >([]);
   const [medicineData, setMedicineData] = useState<medicineProps[]>([]);
 
-  
   const [scheduled, setScheduled] = useState<SchedulesMealElementProps[]>([]);
   const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
-  const [schedules, setSchedules] = useState<ScheduleProps[]>([]);
 
   const getData = () => {
     BeAPI.getAll("scheduleMealElements")
@@ -42,16 +39,6 @@ const Dashboard = () => {
             .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
               a.schedule < b.schedule ? 1 : -1
             )
-        )
-      )
-      .catch((err) => console.log({ err }));
-
-    BeAPI.getAll("schedules")
-      .then((res: ScheduleProps[]) =>
-        setSchedules(
-          res.sort((a: ScheduleProps, b: ScheduleProps) =>
-            a.order < b.order ? 1 : -1
-          )
         )
       )
       .catch((err) => console.log({ err }));
