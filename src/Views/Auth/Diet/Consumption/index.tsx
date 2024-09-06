@@ -104,13 +104,15 @@ const Consumption = () => {
       name: "meal",
       label: "Meal of Day",
       type: "select",
-      options: meals?.map(({ id, meal, schedule }) => ({
-        value: id || "",
-        label:
-          meal +
-          " of Schedule " +
-          schedules.find(({ id }) => id === String(schedule))?.order,
-      })),
+      options: meals
+        ?.filter(({ schedule }) => String(schedule) === schedules[0]?.id)
+        ?.map(({ id, meal, schedule }) => ({
+          value: id || "",
+          label:
+            meal +
+            " of Schedule " +
+            schedules.find(({ id }) => id === String(schedule))?.order,
+        })),
       onChange: (e: any, setValues: any) => {
         setValues((current: any) => ({
           ...current,
