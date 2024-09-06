@@ -1,7 +1,6 @@
 import {
   faBed,
   faCalendar,
-  faClock,
   faFileMedical,
   faPills,
   faRunning,
@@ -15,7 +14,6 @@ import Navbar from "./Components/Layout/Navbar";
 import store from "./Store/store";
 import Dashboard from "./Views/Auth/Dashboard";
 import Consumption from "./Views/Auth/Diet/Consumption";
-import Meals from "./Views/Auth/Diet/Meals";
 import Schedule from "./Views/Auth/Diet/Schedule";
 import LabTests from "./Views/Auth/LabTests";
 import Medicine from "./Views/Auth/Medicine";
@@ -41,12 +39,6 @@ export const routes = [
         path: "schedule",
         icon: faCalendar,
         Comp: <Schedule />,
-      },
-      {
-        name: "Meals",
-        path: "meals",
-        icon: faClock,
-        Comp: <Meals />,
       },
     ],
   },

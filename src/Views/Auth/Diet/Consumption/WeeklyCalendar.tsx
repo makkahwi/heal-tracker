@@ -3,21 +3,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment, { Moment } from "moment";
 import { Fragment, useEffect, useState } from "react";
 
-import { consumptionProps } from ".";
+import { consumptionFullProps } from ".";
 import MealView from "../../../../Components/MealView";
 
 const WeeklyCalendar = ({
   data,
   onDelete,
 }: {
-  data: consumptionProps[];
+  data: consumptionFullProps[];
   onDelete: Function;
 }) => {
   const [currentWeek, setCurrentWeek] = useState<Moment[]>([]);
   const [currentDate, setCurrentDate] = useState<Moment>(moment());
-  const [currentWeekData, setCurrentWeekData] = useState<consumptionProps[]>(
-    []
-  );
+  const [currentWeekData, setCurrentWeekData] = useState<
+    consumptionFullProps[]
+  >([]);
 
   useEffect(() => {
     generateCurrentWeek(currentDate);
@@ -129,7 +129,7 @@ const WeeklyCalendar = ({
                 </th>
 
                 {currentWeek?.map((day, x) => {
-                  const theMeals: consumptionProps[] | undefined =
+                  const theMeals: consumptionFullProps[] | undefined =
                     currentWeekData
                       ?.filter(
                         (dat) =>

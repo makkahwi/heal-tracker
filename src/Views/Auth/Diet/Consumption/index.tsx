@@ -3,32 +3,68 @@ import { Fragment, useEffect, useState } from "react";
 
 import * as BeAPI from "../../../../API";
 import Form from "../../../../Components/Form";
-import { MealViewProps } from "../../../../Components/MealView";
 import PageSection from "../../../../Components/PageView/PageSection";
-import { MealProps } from "../Meals";
+import { SchedulesMealElementProps } from "../Schedule/Elements";
+import { SchedulesMealProps } from "../Schedule/Meals";
+import { ScheduleProps } from "../Schedule/Schedules";
 import WeeklyCalendar from "./WeeklyCalendar";
 
 export interface consumptionProps {
   id?: string;
   timestamp: MomentInput;
-  meal: MealProps;
+  meal: string;
   note?: string;
-  contents: MealViewProps[];
-  supposed: MealViewProps[];
+  contents: SchedulesMealElementProps[];
+  supposed: SchedulesMealElementProps[];
+}
+
+export interface consumptionFullProps {
+  id?: string;
+  timestamp: MomentInput;
+  meal: SchedulesMealProps;
+  note?: string;
+  contents: SchedulesMealElementProps[];
+  supposed: SchedulesMealElementProps[];
 }
 
 const Consumption = () => {
   const [data, setData] = useState<consumptionProps[]>([]);
-  const [scheduled, setScheduled] = useState<MealViewProps[]>([]);
-  const [meals, setMeals] = useState<MealProps[]>([]);
+  const [scheduled, setScheduled] = useState<SchedulesMealElementProps[]>([]);
+  const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
+  const [schedules, setSchedules] = useState<ScheduleProps[]>([]);
 
   const getData = () => {
-    BeAPI.getAll("schedule")
-      .then((res: MealViewProps[]) =>
+    BeAPI.getAll("scheduleMealElements")
+      .then((res: SchedulesMealElementProps[]) =>
         setScheduled(res?.sort((a, b) => (a.element > b.element ? 1 : -1)))
       )
       .catch((err) => console.log({ err }));
-    BeAPI.getAll("consumption")
+
+    BeAPI.getAll("scheduleMeals")
+      .then((res: SchedulesMealProps[]) =>
+        setMeals(
+          res
+            .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
+              a.time < b.time ? -1 : 1
+            )
+            .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
+              a.schedule < b.schedule ? 1 : -1
+            )
+        )
+      )
+      .catch((err) => console.log({ err }));
+
+    BeAPI.getAll("schedules")
+      .then((res: ScheduleProps[]) =>
+        setSchedules(
+          res.sort((a: ScheduleProps, b: ScheduleProps) =>
+            a.order < b.order ? 1 : -1
+          )
+        )
+      )
+      .catch((err) => console.log({ err }));
+
+    BeAPI.getAll("consumed")
       .then((res: consumptionProps[]) =>
         setData(
           res
@@ -43,16 +79,6 @@ const Consumption = () => {
               ),
             }))
         )
-      )
-      .catch((err) => console.log({ err }));
-    BeAPI.getAll("meals")
-      .then((res: MealProps[]) =>
-        setMeals([
-          ...res.sort((a: MealProps, b: MealProps) =>
-            a.time < b.time ? -1 : 1
-          ),
-          { meal: "Other", time: "" },
-        ])
       )
       .catch((err) => console.log({ err }));
   };
@@ -78,7 +104,15 @@ const Consumption = () => {
       name: "meal",
       label: "Meal of Day",
       type: "select",
-      options: meals?.map(({ meal }) => meal),
+      options: meals
+        ?.filter(({ schedule }) => String(schedule) === schedules[0]?.id)
+        ?.map(({ id, meal, schedule }) => ({
+          value: id || "",
+          label:
+            meal +
+            " of Schedule " +
+            schedules.find(({ id }) => id === String(schedule))?.order,
+        })),
       onChange: (e: any, setValues: any) => {
         setValues((current: any) => ({
           ...current,
@@ -86,9 +120,16 @@ const Consumption = () => {
           contents: scheduled
             ?.filter(({ meal }) => meal === e.target.value)
             .reduce(
-              (final: MealViewProps[], { alternatives, ...rest }) =>
+              (final: SchedulesMealElementProps[], { alternatives, ...rest }) =>
                 alternatives
-                  ? [...final, rest, ...alternatives]
+                  ? [
+                      ...final,
+                      rest,
+                      ...alternatives.map((x) => ({
+                        ...x,
+                        note: "Alternative",
+                      })),
+                    ]
                   : [...final, rest],
               []
             ),
@@ -120,8 +161,8 @@ const Consumption = () => {
     time: string;
     meal: string;
     note?: string;
-    contents: MealViewProps[];
-    supposed: MealViewProps[];
+    contents: SchedulesMealElementProps[];
+    supposed: SchedulesMealElementProps[];
   }
 
   const onSubmit = (values: submitProps) => {
@@ -129,14 +170,13 @@ const Consumption = () => {
     const time = values.time || moment().format("HH:mm");
 
     const finalValue = {
-      meal: meals.find((m) => m.meal === values.meal),
+      meal: values.meal,
       contents: values.contents,
-      supposed: scheduled?.filter(({ meal }) => meal === values.meal),
       timestamp: moment(date + "T" + time),
       note: values.note,
     };
 
-    BeAPI.create("consumption", finalValue)
+    BeAPI.create("consumed", finalValue)
       .then(() => {
         getData();
       })
@@ -144,7 +184,7 @@ const Consumption = () => {
   };
 
   const onDelete = (id: string) =>
-    BeAPI.remove("consumption", id)
+    BeAPI.remove("consumed", id)
       .then(() => {
         getData();
       })
@@ -155,7 +195,23 @@ const Consumption = () => {
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
-        <WeeklyCalendar data={data} onDelete={onDelete} />
+        <WeeklyCalendar
+          data={data.map((row) => {
+            const mealId = meals.find(({ id }) => (id || "") === row.meal)?.id;
+
+            return {
+              ...row,
+              supposed: scheduled.filter(({ meal }) => (meal || "") === mealId),
+              meal: meals.find(({ id }) => row.meal === id) || {
+                id: "string",
+                schedule: 0,
+                meal: "string",
+                time: "string",
+              },
+            };
+          })}
+          onDelete={onDelete}
+        />
       </Fragment>
     </PageSection>
   );
