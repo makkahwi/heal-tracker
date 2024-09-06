@@ -85,7 +85,7 @@ const Medicine = () => {
       name: "medicine",
       label: "Medicine",
       type: "select",
-      options: ["Vitamine D", "Sleeping Bills"],
+      options: [{ value: "Vitamine D" }, { value: "Sleeping Bills" }],
       defaultValue: "Vitamine D",
       required: true,
     },

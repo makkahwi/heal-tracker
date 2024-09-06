@@ -2,12 +2,12 @@ import moment, { Moment } from "moment";
 import { Fragment, useEffect, useState } from "react";
 
 import MealView from "../../../Components/MealView";
-import { consumptionProps } from "../Diet/Consumption";
+import { renderEvents } from "../../../Components/PageView/MonthlyCalendar";
+import { consumptionFullProps } from "../Diet/Consumption";
 import { medicineProps, renderMedicineUI } from "../Medicine";
 import { renderExerciseUI, walkExerciseProps } from "../Sports/WalkExercises";
-import { renderEvents } from "../../../Components/PageView/MonthlyCalendar";
 
-type comprehensiveProps = consumptionProps & {
+type comprehensiveProps = consumptionFullProps & {
   sports: walkExerciseProps[];
   medicines: medicineProps[];
 };
@@ -17,7 +17,7 @@ const WeeklyCalendar = ({
   walkExercisesData,
   medicineData,
 }: {
-  consumptionData: consumptionProps[];
+  consumptionData: consumptionFullProps[];
   walkExercisesData: walkExerciseProps[];
   medicineData: medicineProps[];
 }) => {
@@ -167,7 +167,7 @@ const WeeklyCalendar = ({
                 </th>
 
                 {currentWeek?.map((day, x) => {
-                  const theMeals: consumptionProps[] | undefined =
+                  const theMeals: consumptionFullProps[] | undefined =
                     currentWeekData
                       ?.filter(
                         (dat) =>
@@ -181,29 +181,40 @@ const WeeklyCalendar = ({
 
                   return (
                     <td className="text-start align-top" key={x}>
-                      {theMeals?.map(({ timestamp, id, note, contents }) => (
-                        <Fragment>
-                          {timestamp ? (
-                            <span className="d-block bg-dark text-white px-2 py-1">
-                              {"@ " + moment(timestamp).format("h:mm a")} <br />
-                              {note ? "(" + note + ")" : ""}
-                            </span>
-                          ) : (
-                            ""
-                          )}
+                      {theMeals?.map(
+                        ({ timestamp, id, note, contents, supposed }) => (
+                          <Fragment>
+                            {timestamp ? (
+                              <span className="d-block bg-dark text-white px-2 py-1">
+                                {"@ " + moment(timestamp).format("h:mm a")}{" "}
+                                <br />
+                                {note ? "(" + note + ")" : ""}
+                              </span>
+                            ) : (
+                              ""
+                            )}
 
-                          {contents?.map(({ element, count, note }, y) => (
-                            <MealView
-                              dark={y % 2 === 1}
-                              meal={meal}
-                              count={count}
-                              element={element}
-                              note={note}
-                              key={y}
-                            />
-                          ))}
-                        </Fragment>
-                      ))}
+                            {contents?.map(({ element, count, note }, y) => (
+                              <MealView
+                                dark={y % 2 === 1}
+                                meal={meal}
+                                count={count}
+                                element={element}
+                                note={note}
+                                key={y}
+                                supposed={supposed?.find(
+                                  (s) =>
+                                    s.element === element ||
+                                    s.alternatives?.find(
+                                      (a) => a.element === element
+                                    )
+                                )}
+                                compare
+                              />
+                            ))}
+                          </Fragment>
+                        )
+                      )}
                     </td>
                   );
                 })}
