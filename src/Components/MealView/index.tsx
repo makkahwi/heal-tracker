@@ -1,4 +1,11 @@
-import { faCheck, faTimes, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowDown,
+  faArrowUp,
+  faCheck,
+  faMinus,
+  faPlus,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react/jsx-runtime";
 
@@ -7,6 +14,7 @@ export interface MealViewProps {
   meal?: string;
   note?: string;
   count: string;
+  unit: string;
   element: string;
   alternatives?: MealViewProps[];
 }
@@ -28,6 +36,7 @@ const OrView = () => (
 const MealView = ({
   id,
   count,
+  unit,
   element,
   alternatives,
   note,
@@ -40,9 +49,12 @@ const MealView = ({
     let elementMatch = false;
     let countMatch = false;
 
+    let countIcon = faMinus;
+
     if (element === supposed?.element) {
       elementMatch = element === supposed?.element;
       countMatch = count === supposed?.count;
+      countIcon = count > supposed?.count ? faArrowUp : faArrowDown;
     } else {
       elementMatch = !!supposed?.alternatives?.find(
         (a) => a.element === element
@@ -50,22 +62,36 @@ const MealView = ({
       countMatch =
         count ===
         supposed?.alternatives?.find((a) => a.element === element)?.count;
+      countIcon =
+        count >
+        (supposed?.alternatives?.find((a) => a.element === element)?.count || 0)
+          ? faArrowUp
+          : faArrowDown;
     }
 
     const match = countMatch && elementMatch;
 
     return compare ? (
       <div className={match ? "text-success" : "text-danger"}>
-        <FontAwesomeIcon icon={match ? faCheck : faTimes} className="me-1" />
+        <FontAwesomeIcon
+          icon={match ? faCheck : elementMatch ? countIcon : faPlus}
+          className="me-1"
+        />
         <span
           className={
             countMatch ? "text-decoration-none" : "text-decoration-underline"
           }
         >
-          {count}
+          {count} {unit}
         </span>
 
-        {" of "}
+        <span
+          className={
+            elementMatch ? "text-decoration-none" : "text-decoration-underline"
+          }
+        >
+          {" of "}
+        </span>
 
         <span
           className={
@@ -85,7 +111,13 @@ const MealView = ({
           "text-start " + (dark && onDelete ? "bg-light p-2" : " py-1 px-2")
         }
       >
-        {count + " of " + element + (note ? " (" + note + ")" : "")}
+        {count +
+          " " +
+          unit +
+          " " +
+          " of " +
+          element +
+          (note ? " (" + note + ")" : "")}
 
         {children}
       </li>
@@ -108,7 +140,11 @@ const MealView = ({
           <OrView />
           {alternatives.map((alternative, i) => (
             <Fragment key={i}>
-              {alternative.count + " of " + alternative.element}
+              {alternative.count +
+                " " +
+                alternative.unit +
+                " of " +
+                alternative.element}
               {i !== alternatives.length - 1 ? <OrView /> : ""}
             </Fragment>
           ))}

@@ -118,22 +118,25 @@
       "-O4aJxsmx-9ubcKc69Ve": {
         "contents": [
           {
-            "count": "6 Pieces",
+            "count": 6,
             "element": "Almond",
             "id": "-O4aFHJRqFfhBAJwCY1b",
-            "meal": "-O4aCRU-6xQnprLfLu5k"
+            "meal": "-O4aCRU-6xQnprLfLu5k",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Strawbeery",
             "id": "-O4aFHJSR2hnUsaX2l_S",
-            "meal": "-O4aCRU-6xQnprLfLu5k"
+            "meal": "-O4aCRU-6xQnprLfLu5k",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Yogurt",
             "id": "-O4aFHJPZVUhFkHlTbvL",
-            "meal": "-O4aCRU-6xQnprLfLu5k"
+            "meal": "-O4aCRU-6xQnprLfLu5k",
+            "unit": "Cup"
           }
         ],
         "meal": "-O4aCRU-6xQnprLfLu5k",
@@ -142,16 +145,18 @@
       "-O55MuN5zS9bQCnAyiFd": {
         "contents": [
           {
-            "count": "120gm",
+            "count": 120,
             "element": "Beef",
             "id": "-O55LaDMWWg8cQlV2WOx",
-            "meal": "-O55KiaJbna_TfvJPuVg"
+            "meal": "-O55KiaJbna_TfvJPuVg",
+            "unit": "gm"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Rice",
             "id": "-O55LaDKCKzkpsIoopAa",
-            "meal": "-O55KiaJbna_TfvJPuVg"
+            "meal": "-O55KiaJbna_TfvJPuVg",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KiaJbna_TfvJPuVg",
@@ -160,16 +165,18 @@
       "-O58jbz06AoKA_a5iMfy": {
         "contents": [
           {
-            "count": "120gm",
+            "count": 120,
             "element": "Chicken Breast",
             "id": "-O55LaDMWWg8cQlV2WOx",
-            "meal": "-O55KiaJbna_TfvJPuVg"
+            "meal": "-O55KiaJbna_TfvJPuVg",
+            "unit": "gm"
           },
           {
-            "count": "1/3 Cup",
+            "count": 0.33,
             "element": "Rice",
             "id": "-O55LaDKCKzkpsIoopAa",
-            "meal": "-O55KiaJbna_TfvJPuVg"
+            "meal": "-O55KiaJbna_TfvJPuVg",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KiaJbna_TfvJPuVg",
@@ -178,23 +185,26 @@
       "-O58jhixivnu5sNiGNMQ": {
         "contents": [
           {
-            "count": "30gm",
+            "count": 30,
             "element": "White Cheese",
-            "note": ""
+            "note": "",
+            "unit": "gm"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Olive",
             "id": "-O55LDsKeevCCHH6BMHj",
             "meal": "-O55KXrB0Wa7urwzoaUh",
-            "note": ""
+            "note": "",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55LDsEq4zqG7rqsr02",
             "meal": "-O55KXrB0Wa7urwzoaUh",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KXrB0Wa7urwzoaUh",
@@ -203,23 +213,26 @@
       "-O59mItALsQAODZfXAlE": {
         "contents": [
           {
-            "count": "60gm",
+            "count": 60,
             "element": "White Cheese",
-            "note": ""
+            "note": "",
+            "unit": "gm"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Olive",
             "id": "-O55Ljr7Foz1zwx9EQ5P",
             "meal": "-O55KjbHC6Nw_Ao2PPPJ",
-            "note": ""
+            "note": "",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55Ljr9JWSeQBgoULGC",
             "meal": "-O55KjbHC6Nw_Ao2PPPJ",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KjbHC6Nw_Ao2PPPJ",
@@ -228,10 +241,11 @@
       "-O59ssZycQxC1sJ364MH": {
         "contents": [
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Walnut",
             "id": "-O55LT7c7yMbFTIA8NBM",
-            "meal": "-O55KhOl4ZiKtB_cIeuc"
+            "meal": "-O55KhOl4ZiKtB_cIeuc",
+            "unit": "Pieces"
           }
         ],
         "meal": "-O55KhOl4ZiKtB_cIeuc",
@@ -240,22 +254,25 @@
       "-O5DGjnt8f50JGD8Msb4": {
         "contents": [
           {
-            "count": "120gm",
+            "count": 120,
             "element": "Beef",
-            "note": ""
+            "note": "",
+            "unit": "gm"
           },
           {
-            "count": "1/2 Cup",
+            "count": 0.5,
             "element": "Rice",
             "id": "-O55LaDKCKzkpsIoopAa",
             "meal": "-O55KiaJbna_TfvJPuVg",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55LaDQDeJhOU9SGUY8",
-            "meal": "-O55KiaJbna_TfvJPuVg"
+            "meal": "-O55KiaJbna_TfvJPuVg",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KiaJbna_TfvJPuVg",
@@ -264,16 +281,18 @@
       "-O5DIC_XmC2ib_AvvoOI": {
         "contents": [
           {
-            "count": "1/2 Cup",
+            "count": 0.5,
             "element": "Strawberry",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Yogurt",
             "id": "-O55LJanjuujwbENOYnG",
             "meal": "-O55KfoHeRQNuoAg4OE3",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KfoHeRQNuoAg4OE3",
@@ -282,16 +301,18 @@
       "-O5Fpx2vVQ_SrJkofnFT": {
         "contents": [
           {
-            "count": "1/2 Cup",
+            "count": 0.5,
             "element": "Strawberry",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Yogurt",
             "id": "-O55LJanjuujwbENOYnG",
             "meal": "-O55KfoHeRQNuoAg4OE3",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KfoHeRQNuoAg4OE3",
@@ -300,10 +321,11 @@
       "-O5Fq-bHZvYuxZxIz7KT": {
         "contents": [
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Walnut",
             "id": "-O55LT7c7yMbFTIA8NBM",
-            "meal": "-O55KhOl4ZiKtB_cIeuc"
+            "meal": "-O55KhOl4ZiKtB_cIeuc",
+            "unit": "Pieces"
           }
         ],
         "meal": "-O55KhOl4ZiKtB_cIeuc",
@@ -312,23 +334,26 @@
       "-O5Fq6OdfO7s_rbFMZ86": {
         "contents": [
           {
-            "count": "30gm",
+            "count": 30,
             "element": "White Cheese",
-            "note": ""
+            "note": "",
+            "unit": "gm"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Olive",
             "id": "-O55Ljr7Foz1zwx9EQ5P",
             "meal": "-O55KjbHC6Nw_Ao2PPPJ",
-            "note": ""
+            "note": "",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55Ljr9JWSeQBgoULGC",
             "meal": "-O55KjbHC6Nw_Ao2PPPJ",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KjbHC6Nw_Ao2PPPJ",
@@ -337,24 +362,27 @@
       "-O5HtQKxxSEdks0vJOko": {
         "contents": [
           {
-            "count": "1 Piece",
+            "count": 1,
             "element": "Egg",
             "id": "-O55LDsSBUsiEVxJb44G",
-            "meal": "-O55KXrB0Wa7urwzoaUh"
+            "meal": "-O55KXrB0Wa7urwzoaUh",
+            "unit": "Piece"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Olive",
             "id": "-O55LDsKeevCCHH6BMHj",
             "meal": "-O55KXrB0Wa7urwzoaUh",
-            "note": ""
+            "note": "",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55LDsEq4zqG7rqsr02",
             "meal": "-O55KXrB0Wa7urwzoaUh",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KXrB0Wa7urwzoaUh",
@@ -363,15 +391,17 @@
       "-O5IXVQJvRbPJlT2wh1w": {
         "contents": [
           {
-            "count": "3 Pieces",
+            "count": 3,
             "element": "Dates",
             "id": "-O55LJq8TPzWKQM7qMQp",
-            "meal": "-O55KfoHeRQNuoAg4OE3"
+            "meal": "-O55KfoHeRQNuoAg4OE3",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Shanina",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KfoHeRQNuoAg4OE3",
@@ -380,23 +410,26 @@
       "-O5Kmf80P443tgeZeArU": {
         "contents": [
           {
-            "count": "120gm",
+            "count": 120,
             "element": "Beef",
-            "note": ""
+            "note": "",
+            "unit": "gm"
           },
           {
-            "count": "1/3 Cup",
+            "count": 0.33,
             "element": "Rice",
             "id": "-O55LaDKCKzkpsIoopAa",
             "meal": "-O55KiaJbna_TfvJPuVg",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55LaDQDeJhOU9SGUY8",
             "meal": "-O55KiaJbna_TfvJPuVg",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KiaJbna_TfvJPuVg",
@@ -406,23 +439,26 @@
       "-O5N89UDsWfbnxg0uawx": {
         "contents": [
           {
-            "count": "30gm",
+            "count": 30,
             "element": "White Cheese",
-            "note": ""
+            "note": "",
+            "unit": "gm"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Olive",
             "id": "-O55LDsKeevCCHH6BMHj",
             "meal": "-O55KXrB0Wa7urwzoaUh",
-            "note": ""
+            "note": "",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55LDsEq4zqG7rqsr02",
             "meal": "-O55KXrB0Wa7urwzoaUh",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KXrB0Wa7urwzoaUh",
@@ -431,18 +467,21 @@
       "-O5N8QAruNvuEQeLVe4M": {
         "contents": [
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Walnut",
             "id": "-O55LT7c7yMbFTIA8NBM",
-            "meal": "-O55KhOl4ZiKtB_cIeuc"
+            "meal": "-O55KhOl4ZiKtB_cIeuc",
+            "unit": "Pieces"
           },
           {
-            "count": "100gm",
-            "element": "Bread"
+            "count": 100,
+            "element": "Bread",
+            "unit": "gm"
           },
           {
-            "count": "1 Cup",
-            "element": "Various Vegetables"
+            "count": 1,
+            "element": "Various Vegetables",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KhOl4ZiKtB_cIeuc",
@@ -452,21 +491,24 @@
       "-O5O8l939Eq3gcjYBW_r": {
         "contents": [
           {
-            "count": "120gm",
+            "count": 120,
             "element": "Beef",
-            "note": "Alternative"
+            "note": "Alternative",
+            "unit": "gm"
           },
           {
-            "count": "1/3 Cup",
+            "count": 0.33,
             "element": "Rice",
             "id": "-O55LaDKCKzkpsIoopAa",
-            "meal": "-O55KiaJbna_TfvJPuVg"
+            "meal": "-O55KiaJbna_TfvJPuVg",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55LaDQDeJhOU9SGUY8",
-            "meal": "-O55KiaJbna_TfvJPuVg"
+            "meal": "-O55KiaJbna_TfvJPuVg",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KiaJbna_TfvJPuVg",
@@ -476,25 +518,28 @@
       "-O5OlK00rjLL5T9uILAG": {
         "contents": [
           {
-            "count": "120gm",
+            "count": 120,
             "element": "Chicken Breast",
             "id": "-O55LaDMWWg8cQlV2WOx",
             "meal": "-O55KiaJbna_TfvJPuVg",
-            "note": "Grilled"
+            "note": "Grilled",
+            "unit": "gm"
           },
           {
-            "count": "1 Piece",
+            "count": 1,
             "element": "Bread",
             "id": "-O55LaDKCKzkpsIoopAa",
             "meal": "-O55KiaJbna_TfvJPuVg",
-            "note": "Bakery"
+            "note": "Bakery",
+            "unit": "Piece"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55LaDQDeJhOU9SGUY8",
             "meal": "-O55KiaJbna_TfvJPuVg",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KiaJbna_TfvJPuVg",
@@ -503,23 +548,26 @@
       "-O5SJR_KJlw1C4qUtzMf": {
         "contents": [
           {
-            "count": "30gm",
+            "count": 30,
             "element": "Areesh Cheese",
-            "note": ""
+            "note": "",
+            "unit": "gm"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Olive",
             "id": "-O55Ljr7Foz1zwx9EQ5P",
             "meal": "-O55KjbHC6Nw_Ao2PPPJ",
-            "note": ""
+            "note": "",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55Ljr9JWSeQBgoULGC",
             "meal": "-O55KjbHC6Nw_Ao2PPPJ",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KjbHC6Nw_Ao2PPPJ",
@@ -529,10 +577,11 @@
       "-O5SJTLBicI80AEUmbqU": {
         "contents": [
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Walnut",
             "id": "-O55LT7c7yMbFTIA8NBM",
-            "meal": "-O55KhOl4ZiKtB_cIeuc"
+            "meal": "-O55KhOl4ZiKtB_cIeuc",
+            "unit": "Pieces"
           }
         ],
         "meal": "-O55KhOl4ZiKtB_cIeuc",
@@ -542,23 +591,26 @@
       "-O5T_ajBSPNTYytEb87C": {
         "contents": [
           {
-            "count": "60gm",
+            "count": 60,
             "element": "Tuna",
-            "note": ""
+            "note": "",
+            "unit": "gm"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Olive",
             "id": "-O55LDsKeevCCHH6BMHj",
             "meal": "-O55KXrB0Wa7urwzoaUh",
-            "note": ""
+            "note": "",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55LDsEq4zqG7rqsr02",
             "meal": "-O55KXrB0Wa7urwzoaUh",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KXrB0Wa7urwzoaUh",
@@ -567,18 +619,20 @@
       "-O5T_ih-9EwHNm9ysi9o": {
         "contents": [
           {
-            "count": "1/3 Cup",
+            "count": 0.33,
             "element": "Rice",
             "id": "-O55LaDKCKzkpsIoopAa",
             "meal": "-O55KiaJbna_TfvJPuVg",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55LaDQDeJhOU9SGUY8",
             "meal": "-O55KiaJbna_TfvJPuVg",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KiaJbna_TfvJPuVg",
@@ -588,16 +642,18 @@
       "-O5TaRcB9pNqxgsSCmYD": {
         "contents": [
           {
-            "count": "120gm",
+            "count": 120,
             "element": "Beef",
-            "note": ""
+            "note": "",
+            "unit": "gm"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55LaDQDeJhOU9SGUY8",
             "meal": "-O55KiaJbna_TfvJPuVg",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KiaJbna_TfvJPuVg",
@@ -607,16 +663,18 @@
       "-O5TaSkexZwV1QfAIc-Q": {
         "contents": [
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Yogurt",
             "id": "-O55LT7hfwAta-KXzoNo",
-            "meal": "-O55KhOl4ZiKtB_cIeuc"
+            "meal": "-O55KhOl4ZiKtB_cIeuc",
+            "unit": "Cup"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Walnut",
             "id": "-O55LT7c7yMbFTIA8NBM",
-            "meal": "-O55KhOl4ZiKtB_cIeuc"
+            "meal": "-O55KhOl4ZiKtB_cIeuc",
+            "unit": "Pieces"
           }
         ],
         "meal": "-O55KhOl4ZiKtB_cIeuc",
@@ -626,23 +684,26 @@
       "-O5UatLArHt09uipC_VO": {
         "contents": [
           {
-            "count": "30gm",
+            "count": 30,
             "element": "Areesh Cheese",
-            "note": ""
+            "note": "",
+            "unit": "gm"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Olive",
             "id": "-O55Ljr7Foz1zwx9EQ5P",
             "meal": "-O55KjbHC6Nw_Ao2PPPJ",
-            "note": ""
+            "note": "",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55Ljr9JWSeQBgoULGC",
             "meal": "-O55KjbHC6Nw_Ao2PPPJ",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KjbHC6Nw_Ao2PPPJ",
@@ -651,25 +712,28 @@
       "-O5XKEBu2Ksgnptfy-fn": {
         "contents": [
           {
-            "count": "1 Piece",
+            "count": 1,
             "element": "Egg",
             "id": "-O55LDsSBUsiEVxJb44G",
             "meal": "-O55KXrB0Wa7urwzoaUh",
-            "note": ""
+            "note": "",
+            "unit": "Piece"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Olive",
             "id": "-O55LDsKeevCCHH6BMHj",
             "meal": "-O55KXrB0Wa7urwzoaUh",
-            "note": ""
+            "note": "",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55LDsEq4zqG7rqsr02",
             "meal": "-O55KXrB0Wa7urwzoaUh",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KXrB0Wa7urwzoaUh",
@@ -678,23 +742,26 @@
       "-O5ZITPSAOvlxo8UKiRI": {
         "contents": [
           {
-            "count": "30gm",
+            "count": 30,
             "element": "Areesh Cheese",
-            "note": ""
+            "note": "",
+            "unit": "gm"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Olive",
             "id": "-O55Ljr7Foz1zwx9EQ5P",
             "meal": "-O55KjbHC6Nw_Ao2PPPJ",
-            "note": ""
+            "note": "",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O55Ljr9JWSeQBgoULGC",
             "meal": "-O55KjbHC6Nw_Ao2PPPJ",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KjbHC6Nw_Ao2PPPJ",
@@ -703,10 +770,11 @@
       "-O5ZIXU4lOj66WutdZtW": {
         "contents": [
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Walnut",
             "id": "-O55LT7c7yMbFTIA8NBM",
-            "meal": "-O55KhOl4ZiKtB_cIeuc"
+            "meal": "-O55KhOl4ZiKtB_cIeuc",
+            "unit": "Pieces"
           }
         ],
         "meal": "-O55KhOl4ZiKtB_cIeuc",
@@ -715,16 +783,18 @@
       "-O5ZIbQMOWzlQX73j9t4": {
         "contents": [
           {
-            "count": "2 Pieces",
+            "count": 2,
             "element": "Peach",
-            "note": ""
+            "note": "",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Yogurt",
             "id": "-O55LJanjuujwbENOYnG",
             "meal": "-O55KfoHeRQNuoAg4OE3",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O55KfoHeRQNuoAg4OE3",
@@ -733,22 +803,25 @@
       "-O5gTmxAafpLr90NuVr-": {
         "contents": [
           {
-            "count": "60gm",
+            "count": 60,
             "element": "Areesh Cheese",
             "id": "-O5gT9zJ7109eOSKoUfO",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "gm"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Olive",
             "id": "-O5gT9zOO4XMMnnXvq-C",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gT9zKasqPYW4jqtNk",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gStjssuxC9jSCkRc3",
@@ -757,16 +830,18 @@
       "-O5h5gT2kVDNBUWObkUa": {
         "contents": [
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gTGmv0c2QpKl_VdjA",
-            "meal": "-O5gSwKEatWBTUXJucL_"
+            "meal": "-O5gSwKEatWBTUXJucL_",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Yogurt",
             "id": "-O5gTGn-TwEQ3dSDobep",
-            "meal": "-O5gSwKEatWBTUXJucL_"
+            "meal": "-O5gSwKEatWBTUXJucL_",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSwKEatWBTUXJucL_",
@@ -775,22 +850,25 @@
       "-O5hgBCLQwJg8J7al3As": {
         "contents": [
           {
-            "count": "60gm",
+            "count": 60,
             "element": "Beef",
             "id": "-O5gTQVAwmViKoUcWuBH",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "gm"
           },
           {
-            "count": "1/2 Cup",
+            "count": 0.5,
             "element": "Cooked Vegetables",
             "id": "-O5gTQV9Wj15m5rmYV6m",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Pasta",
             "id": "-O5gTQVBq8GotAIa0Mms",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSxoz2JmJRPfyVbis",
@@ -800,22 +878,25 @@
       "-O5hgEcGwYNThCVkZwwR": {
         "contents": [
           {
-            "count": "60gm",
+            "count": 60,
             "element": "Beef",
             "id": "-O5gTQVAwmViKoUcWuBH",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "gm"
           },
           {
-            "count": "1/2 Cup",
+            "count": 0.5,
             "element": "Cooked Vegetables",
             "id": "-O5gTQV9Wj15m5rmYV6m",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "Cup"
           },
           {
-            "count": "2 Cups",
+            "count": 2,
             "element": "Pasta",
             "id": "-O5gTQVBq8GotAIa0Mms",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "Cups"
           }
         ],
         "meal": "-O5gSxoz2JmJRPfyVbis",
@@ -825,22 +906,25 @@
       "-O5leGPwDh4jZ0on0km_": {
         "contents": [
           {
-            "count": "60gm",
+            "count": 60,
             "element": "White Cheese",
             "id": "-O5gT9zJ7109eOSKoUfO",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "gm"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Olive",
             "id": "-O5gT9zOO4XMMnnXvq-C",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gT9zKasqPYW4jqtNk",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gStjssuxC9jSCkRc3",
@@ -849,16 +933,18 @@
       "-O5leYxP3XOyy46ezpkM": {
         "contents": [
           {
-            "count": "60gm",
+            "count": 60,
             "element": "White Cheese",
             "id": "-O5gTYpXal8DM9rQ9gIe",
-            "meal": "-O5gT06Gxm-eVodz9j0c"
+            "meal": "-O5gT06Gxm-eVodz9j0c",
+            "unit": "gm"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gTYpZ65lBtNEY95Oj",
-            "meal": "-O5gT06Gxm-eVodz9j0c"
+            "meal": "-O5gT06Gxm-eVodz9j0c",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gT06Gxm-eVodz9j0c",
@@ -867,22 +953,25 @@
       "-O5liZEozBZZ2TUfXx4A": {
         "contents": [
           {
-            "count": "2 Pieces",
+            "count": 2,
             "element": "Egg",
             "id": "-O5gT9zJ7109eOSKoUfO",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "Pieces"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Olive",
             "id": "-O5gT9zOO4XMMnnXvq-C",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gT9zKasqPYW4jqtNk",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gStjssuxC9jSCkRc3",
@@ -891,16 +980,18 @@
       "-O5mwYIAAHRmxk7w24C4": {
         "contents": [
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gTGmv0c2QpKl_VdjA",
-            "meal": "-O5gSwKEatWBTUXJucL_"
+            "meal": "-O5gSwKEatWBTUXJucL_",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Yogurt",
             "id": "-O5gTGn-TwEQ3dSDobep",
-            "meal": "-O5gSwKEatWBTUXJucL_"
+            "meal": "-O5gSwKEatWBTUXJucL_",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSwKEatWBTUXJucL_",
@@ -909,16 +1000,18 @@
       "-O5mweIEsIXfKF4oe2Nm": {
         "contents": [
           {
-            "count": "120gm",
+            "count": 120,
             "element": "Chicken Breast",
             "id": "-O5gTQVAwmViKoUcWuBH",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "gm"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gTQV9Wj15m5rmYV6m",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSxoz2JmJRPfyVbis",
@@ -927,10 +1020,11 @@
       "-O5srznQBIDfecxvp2El": {
         "contents": [
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Green Tea",
             "id": "-O5gTTgxcWf9EAqqHBB6",
-            "meal": "-O5gSzXrjM9Y3TzeySNE"
+            "meal": "-O5gSzXrjM9Y3TzeySNE",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSzXrjM9Y3TzeySNE",
@@ -939,16 +1033,18 @@
       "-O5ss2WPfu5KeZQm72wH": {
         "contents": [
           {
-            "count": "60gm",
+            "count": 60,
             "element": "White Cheese",
             "id": "-O5gTYpXal8DM9rQ9gIe",
-            "meal": "-O5gT06Gxm-eVodz9j0c"
+            "meal": "-O5gT06Gxm-eVodz9j0c",
+            "unit": "gm"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gTYpZ65lBtNEY95Oj",
-            "meal": "-O5gT06Gxm-eVodz9j0c"
+            "meal": "-O5gT06Gxm-eVodz9j0c",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gT06Gxm-eVodz9j0c",
@@ -957,22 +1053,25 @@
       "-O5ss9zFEzKybwxoExq1": {
         "contents": [
           {
-            "count": "60gm",
+            "count": 60,
             "element": "Labaneh",
             "id": "-O5gT9zJ7109eOSKoUfO",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "gm"
           },
           {
-            "count": "4 Pieces",
+            "count": 4,
             "element": "Olive",
             "id": "-O5gT9zOO4XMMnnXvq-C",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gT9zKasqPYW4jqtNk",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gStjssuxC9jSCkRc3",
@@ -981,16 +1080,18 @@
       "-O5ssCGZV_J-Rzc3AkeO": {
         "contents": [
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gTGmv0c2QpKl_VdjA",
-            "meal": "-O5gSwKEatWBTUXJucL_"
+            "meal": "-O5gSwKEatWBTUXJucL_",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Yogurt",
             "id": "-O5gTGn-TwEQ3dSDobep",
-            "meal": "-O5gSwKEatWBTUXJucL_"
+            "meal": "-O5gSwKEatWBTUXJucL_",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSwKEatWBTUXJucL_",
@@ -999,22 +1100,25 @@
       "-O5ssGJmBU-LzPHlBH21": {
         "contents": [
           {
-            "count": "120gm",
+            "count": 120,
             "element": "Chicken Breast",
             "id": "-O5gTQVAwmViKoUcWuBH",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "gm"
           },
           {
-            "count": "1/2 Cup",
+            "count": 0.5,
             "element": "Cooked Vegetables",
             "id": "-O5gTQV9Wj15m5rmYV6m",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Rice",
             "id": "-O5gTQVBq8GotAIa0Mms",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSxoz2JmJRPfyVbis",
@@ -1024,10 +1128,11 @@
       "-O5ssHFPXbEpKom4BO33": {
         "contents": [
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Green Tea",
             "id": "-O5gTTgxcWf9EAqqHBB6",
-            "meal": "-O5gSzXrjM9Y3TzeySNE"
+            "meal": "-O5gSzXrjM9Y3TzeySNE",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSzXrjM9Y3TzeySNE",
@@ -1036,16 +1141,18 @@
       "-O5ssL7sUePsQ-YDfVx_": {
         "contents": [
           {
-            "count": "60gm",
+            "count": 60,
             "element": "White Cheese",
             "id": "-O5gTYpXal8DM9rQ9gIe",
-            "meal": "-O5gT06Gxm-eVodz9j0c"
+            "meal": "-O5gT06Gxm-eVodz9j0c",
+            "unit": "gm"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gTYpZ65lBtNEY95Oj",
-            "meal": "-O5gT06Gxm-eVodz9j0c"
+            "meal": "-O5gT06Gxm-eVodz9j0c",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gT06Gxm-eVodz9j0c",
@@ -1054,16 +1161,18 @@
       "-O5z89oLGnI6BpvVkPQk": {
         "contents": [
           {
-            "count": "60gm",
+            "count": 60,
             "element": "Labaneh",
             "id": "-O5gT9zJ7109eOSKoUfO",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "gm"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gT9zKasqPYW4jqtNk",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gStjssuxC9jSCkRc3",
@@ -1072,16 +1181,18 @@
       "-O5z8D48HrwKrDVyJd0R": {
         "contents": [
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gTGmv0c2QpKl_VdjA",
-            "meal": "-O5gSwKEatWBTUXJucL_"
+            "meal": "-O5gSwKEatWBTUXJucL_",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Yogurt",
             "id": "-O5gTGn-TwEQ3dSDobep",
-            "meal": "-O5gSwKEatWBTUXJucL_"
+            "meal": "-O5gSwKEatWBTUXJucL_",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSwKEatWBTUXJucL_",
@@ -1090,22 +1201,25 @@
       "-O5z8JG18UMsK6ZfW3Ur": {
         "contents": [
           {
-            "count": "120gm",
+            "count": 120,
             "element": "Chicken Breast",
             "id": "-O5gTQVAwmViKoUcWuBH",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "gm"
           },
           {
-            "count": "1/2 Cup",
+            "count": 0.5,
             "element": "Cooked Vegetables",
             "id": "-O5gTQV9Wj15m5rmYV6m",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Rice",
             "id": "-O5gTQVBq8GotAIa0Mms",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSxoz2JmJRPfyVbis",
@@ -1115,16 +1229,18 @@
       "-O602EI-Sh2G8vLaphNn": {
         "contents": [
           {
-            "count": "60gm",
+            "count": 60,
             "element": "White Cheese",
             "id": "-O5gT9zJ7109eOSKoUfO",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "gm"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gT9zKasqPYW4jqtNk",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gStjssuxC9jSCkRc3",
@@ -1133,16 +1249,18 @@
       "-O629DxDZkXEfwAhlbtL": {
         "contents": [
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gTGmv0c2QpKl_VdjA",
-            "meal": "-O5gSwKEatWBTUXJucL_"
+            "meal": "-O5gSwKEatWBTUXJucL_",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Shanina",
             "id": "-O5gTGn-TwEQ3dSDobep",
-            "meal": "-O5gSwKEatWBTUXJucL_"
+            "meal": "-O5gSwKEatWBTUXJucL_",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSwKEatWBTUXJucL_",
@@ -1151,22 +1269,25 @@
       "-O629HH-Nf2qdlqehTeK": {
         "contents": [
           {
-            "count": "120gm",
+            "count": 120,
             "element": "Shrimp",
             "id": "-O5gTQVAwmViKoUcWuBH",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "gm"
           },
           {
-            "count": "1/2 Cup",
+            "count": 0.5,
             "element": "Cooked Vegetables",
             "id": "-O5gTQV9Wj15m5rmYV6m",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "Cup"
           },
           {
-            "count": "1/3 Cup",
+            "count": 0.33,
             "element": "Rice",
             "id": "-O5gTQVBq8GotAIa0Mms",
-            "meal": "-O5gSxoz2JmJRPfyVbis"
+            "meal": "-O5gSxoz2JmJRPfyVbis",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSxoz2JmJRPfyVbis",
@@ -1175,10 +1296,11 @@
       "-O629IllctCRXP4a_sz3": {
         "contents": [
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Green Tea",
             "id": "-O5gTTgxcWf9EAqqHBB6",
-            "meal": "-O5gSzXrjM9Y3TzeySNE"
+            "meal": "-O5gSzXrjM9Y3TzeySNE",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSzXrjM9Y3TzeySNE",
@@ -1187,16 +1309,18 @@
       "-O62ApgMBapIQizbUvbB": {
         "contents": [
           {
-            "count": "60gm",
+            "count": 60,
             "element": "White Cheese",
             "id": "-O5gTYpXal8DM9rQ9gIe",
-            "meal": "-O5gT06Gxm-eVodz9j0c"
+            "meal": "-O5gT06Gxm-eVodz9j0c",
+            "unit": "gm"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gTYpZ65lBtNEY95Oj",
-            "meal": "-O5gT06Gxm-eVodz9j0c"
+            "meal": "-O5gT06Gxm-eVodz9j0c",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gT06Gxm-eVodz9j0c",
@@ -1205,16 +1329,18 @@
       "-O632mC960UkbDBAsbsz": {
         "contents": [
           {
-            "count": "60gm",
+            "count": 60,
             "element": "White Cheese",
             "id": "-O5gTYpXal8DM9rQ9gIe",
-            "meal": "-O5gT06Gxm-eVodz9j0c"
+            "meal": "-O5gT06Gxm-eVodz9j0c",
+            "unit": "gm"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gTYpZ65lBtNEY95Oj",
-            "meal": "-O5gT06Gxm-eVodz9j0c"
+            "meal": "-O5gT06Gxm-eVodz9j0c",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gT06Gxm-eVodz9j0c",
@@ -1223,16 +1349,18 @@
       "-O6580qts6zLNIiF5FRy": {
         "contents": [
           {
-            "count": "2 Pieces",
+            "count": 2,
             "element": "Egg",
             "id": "-O5gT9zJ7109eOSKoUfO",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "Pieces"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gT9zKasqPYW4jqtNk",
-            "meal": "-O5gStjssuxC9jSCkRc3"
+            "meal": "-O5gStjssuxC9jSCkRc3",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gStjssuxC9jSCkRc3",
@@ -1241,16 +1369,18 @@
       "-O65zoV-9O_k3DSR3qCl": {
         "contents": [
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Various Vegetables",
             "id": "-O5gTGmv0c2QpKl_VdjA",
-            "meal": "-O5gSwKEatWBTUXJucL_"
+            "meal": "-O5gSwKEatWBTUXJucL_",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
+            "count": 1,
             "element": "Shanina",
             "id": "-O5gTGn-TwEQ3dSDobep",
-            "meal": "-O5gSwKEatWBTUXJucL_"
+            "meal": "-O5gSwKEatWBTUXJucL_",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSwKEatWBTUXJucL_",
@@ -1259,23 +1389,26 @@
       "-O66Fzh9W173SHmZBzzV": {
         "contents": [
           {
-            "count": "120gm",
+            "count": 120,
             "element": "Squid",
-            "note": ""
+            "note": "",
+            "unit": "gm"
           },
           {
-            "count": "1/2 Cup",
+            "count": 0.5,
             "element": "Cooked Vegetables",
             "id": "-O5gTQV9Wj15m5rmYV6m",
             "meal": "-O5gSxoz2JmJRPfyVbis",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           },
           {
-            "count": "1/3 Cup",
+            "count": 0.33,
             "element": "Rice",
             "id": "-O5gTQVBq8GotAIa0Mms",
             "meal": "-O5gSxoz2JmJRPfyVbis",
-            "note": ""
+            "note": "",
+            "unit": "Cup"
           }
         ],
         "meal": "-O5gSxoz2JmJRPfyVbis",
@@ -16077,26 +16210,6 @@
       }
     }
   },
-  "meals": {
-    "908r1hATCyZHv6iIZBnGkgDrL1J3": {
-      "-O0iEAfGgeq-_ckBCRMm": {
-        "meal": "Breakfast",
-        "time": "09:00"
-      },
-      "-O1gOiC3wQ1Sl_j5sCCl": {
-        "meal": "Lunch",
-        "time": "14:00"
-      },
-      "-O1gOkZDROV2ZPdfzpIF": {
-        "meal": "Dinner",
-        "time": "20:00"
-      },
-      "-O2o3emUEngUr3zBzXfT": {
-        "meal": "Snack",
-        "time": "17:00"
-      }
-    }
-  },
   "medicine": {
     "908r1hATCyZHv6iIZBnGkgDrL1J3": {
       "-O18U0st5vAjgxhB6U7k": {
@@ -16239,543 +16352,493 @@
       }
     }
   },
-  "schedule": {
-    "908r1hATCyZHv6iIZBnGkgDrL1J3": {
-      "-O2o35TU1r16gRMrsHMr": {
-        "count": "1 Slice",
-        "element": "Bread",
-        "meal": "Breakfast"
-      },
-      "-O2o35UV_A9o7f49tsom": {
-        "count": "4 Pieces",
-        "element": "Olive",
-        "meal": "Breakfast"
-      },
-      "-O2o35UYF0jH0IESukbB": {
-        "count": "1 Cup",
-        "element": "Various Vegetables",
-        "meal": "Breakfast"
-      },
-      "-O2o39Yv415ka6KXl3wC": {
-        "count": "1 Piece",
-        "element": "Egg",
-        "meal": "Breakfast"
-      },
-      "-O2o3M-3idzwlIJphP7p": {
-        "alternatives": [
-          {
-            "count": "50gm",
-            "element": "Pasta"
-          }
-        ],
-        "count": "1/3 Cup",
-        "element": "Rice",
-        "meal": "Lunch"
-      },
-      "-O2o3M-4DS04McQMb8nX": {
-        "count": "1/2 Cup",
-        "element": "Cooked Vegetables",
-        "meal": "Lunch"
-      },
-      "-O2o3M-6H2pFLGGXRrKu": {
-        "alternatives": [
-          {
-            "count": "120gm",
-            "element": "Shrimp"
-          },
-          {
-            "count": "120gm",
-            "element": "Fish"
-          },
-          {
-            "count": "120gm",
-            "element": "Chicken Liver"
-          },
-          {
-            "count": "120gm",
-            "element": "Squid"
-          }
-        ],
-        "count": "120gm",
-        "element": "Chicken Breast",
-        "meal": "Lunch"
-      },
-      "-O2o3_S-NyyU_Z18fKra": {
-        "alternatives": [
-          {
-            "count": "30gm",
-            "element": "Tuna"
-          },
-          {
-            "count": "1 Piece",
-            "element": "Egg"
-          }
-        ],
-        "count": "30gm",
-        "element": "White Cheese",
-        "meal": "Dinner"
-      },
-      "-O2o3_S454Uh9xS0ACZF": {
-        "count": "1 Slice",
-        "element": "Bread",
-        "meal": "Dinner"
-      },
-      "-O2o3_dZRjCAk1cfUyR0": {
-        "alternatives": [
-          {
-            "count": "1 Cup",
-            "element": "Yogurt"
-          },
-          {
-            "count": "1 Cup",
-            "element": "Shanina"
-          },
-          {
-            "count": "1 Cup",
-            "element": "Milk"
-          }
-        ],
-        "count": "1/2 Cup",
-        "element": "Greek Yogurt",
-        "meal": "Dinner"
-      },
-      "-O2o3oJUfIH1wPNKIoqQ": {
-        "count": "1 Cup",
-        "element": "Strawbeery",
-        "meal": "Snack"
-      },
-      "-O2o3oJYEKdQv81IMo2Y": {
-        "alternatives": [
-          {
-            "count": "1 Cup",
-            "element": "Shanina"
-          },
-          {
-            "count": "1 Cup",
-            "element": "Milk"
-          }
-        ],
-        "count": "1 Cup",
-        "element": "Yogurt",
-        "meal": "Snack"
-      },
-      "-O2o3oJbu4JWndhyr3bw": {
-        "count": "6 Pieces",
-        "element": "Almond",
-        "meal": "Snack"
-      }
-    }
-  },
   "scheduleMealElements": {
     "908r1hATCyZHv6iIZBnGkgDrL1J3": {
       "-O4aDfNgaJZC-WrJSEdL": {
         "alternatives": [
           {
-            "count": "30 gm",
-            "element": "White Cheese"
+            "count": 30,
+            "element": "White Cheese",
+            "unit": "gm"
           },
           {
-            "count": "30 gm",
-            "element": "Areesh Cheese"
+            "count": 30,
+            "element": "Areesh Cheese",
+            "unit": "gm"
           }
         ],
-        "count": "1 Piece",
+        "count": 1,
         "element": "Egg",
-        "meal": "-O4aBS00efQ5cErALLpW"
+        "meal": "-O4aBS00efQ5cErALLpW",
+        "unit": "Piece"
       },
       "-O4aDfNhiSEcrjNZdx1p": {
-        "count": "4 Pieces",
+        "count": 4,
         "element": "Olive",
-        "meal": "-O4aBS00efQ5cErALLpW"
+        "meal": "-O4aBS00efQ5cErALLpW",
+        "unit": "Pieces"
       },
       "-O4aDfNhiSEcrjNZdx1q": {
-        "count": "1 Cup",
+        "count": 1,
         "element": "Various Vegetables",
-        "meal": "-O4aBS00efQ5cErALLpW"
+        "meal": "-O4aBS00efQ5cErALLpW",
+        "unit": "Cup"
       },
       "-O4aDfNjp7bt3S-_UCYZ": {
-        "count": "1 Slice",
+        "count": 1,
         "element": "Bread",
-        "meal": "-O4aBS00efQ5cErALLpW"
+        "meal": "-O4aBS00efQ5cErALLpW",
+        "unit": "Slice"
       },
       "-O4aETRis_v0B7Wjpn23": {
         "alternatives": [
           {
-            "count": "50gm",
-            "element": "Pasta"
+            "count": 50,
+            "element": "Pasta",
+            "unit": "gm"
           }
         ],
-        "count": "1/3 Cup",
+        "count": 0.33,
         "element": "Rice",
-        "meal": "-O4aCQV9qF5o9-WvFxTo"
+        "meal": "-O4aCQV9qF5o9-WvFxTo",
+        "unit": "Cup"
       },
       "-O4aETRmdQYR9hLfcqko": {
         "alternatives": [
           {
-            "count": "120gm",
-            "element": "Fish"
+            "count": 120,
+            "element": "Fish",
+            "unit": "gm"
           },
           {
-            "count": "120gm",
-            "element": "Shrimp"
+            "count": 120,
+            "element": "Shrimp",
+            "unit": "gm"
           },
           {
-            "count": "120gm",
-            "element": "Squid"
+            "count": 120,
+            "element": "Squid",
+            "unit": "gm"
           },
           {
-            "count": "120gm",
-            "element": "Chicken Liver"
+            "count": 120,
+            "element": "Chicken Liver",
+            "unit": "gm"
           }
         ],
-        "count": "120gm",
+        "count": 120,
         "element": "Chicken Breast",
-        "meal": "-O4aCQV9qF5o9-WvFxTo"
+        "meal": "-O4aCQV9qF5o9-WvFxTo",
+        "unit": "gm"
       },
       "-O4aETS0Kb-8nA2QOiFa": {
         "alternatives": [
           {
-            "count": "1 Cup",
-            "element": "Various Vegetables"
+            "count": 1,
+            "element": "Various Vegetables",
+            "unit": "Cup"
           }
         ],
-        "count": "1/2 Cup",
+        "count": 0.5,
         "element": "Cooked Vegetables",
-        "meal": "-O4aCQV9qF5o9-WvFxTo"
+        "meal": "-O4aCQV9qF5o9-WvFxTo",
+        "unit": "Cup"
       },
       "-O4aFHJPZVUhFkHlTbvL": {
         "alternatives": [
           {
-            "count": "1 Cup",
-            "element": "Shanina"
+            "count": 1,
+            "element": "Shanina",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
-            "element": "Milk"
+            "count": 1,
+            "element": "Milk",
+            "unit": "Cup"
           }
         ],
-        "count": "1 Cup",
+        "count": 1,
         "element": "Yogurt",
-        "meal": "-O4aCRU-6xQnprLfLu5k"
+        "meal": "-O4aCRU-6xQnprLfLu5k",
+        "unit": "Cup"
       },
       "-O4aFHJRqFfhBAJwCY1b": {
-        "count": "6 Pieces",
+        "count": 6,
         "element": "Almond",
-        "meal": "-O4aCRU-6xQnprLfLu5k"
+        "meal": "-O4aCRU-6xQnprLfLu5k",
+        "unit": "Pieces"
       },
       "-O4aFHJSR2hnUsaX2l_S": {
-        "count": "1 Cup",
+        "count": 1,
         "element": "Strawbeery",
-        "meal": "-O4aCRU-6xQnprLfLu5k"
+        "meal": "-O4aCRU-6xQnprLfLu5k",
+        "unit": "Cup"
       },
       "-O4aFZibAitOF4Pj3-J6": {
         "alternatives": [
           {
-            "count": "30gm",
-            "element": "Tuna"
+            "count": 30,
+            "element": "Tuna",
+            "unit": "gm"
           },
           {
-            "count": "1 Piece",
-            "element": "Egg"
+            "count": 1,
+            "element": "Egg",
+            "unit": "Piece"
           },
           {
-            "count": "30gm",
-            "element": "Areesh Cheese"
+            "count": 30,
+            "element": "Areesh Cheese",
+            "unit": "gm"
           }
         ],
-        "count": "30gm",
+        "count": 30,
         "element": "White Cheese",
-        "meal": "-O4aCSWVYdlY9czydUUc"
+        "meal": "-O4aCSWVYdlY9czydUUc",
+        "unit": "gm"
       },
       "-O4aFZibAitOF4Pj3-J7": {
-        "count": "1 Slice",
+        "count": 1,
         "element": "Bread",
-        "meal": "-O4aCSWVYdlY9czydUUc"
+        "meal": "-O4aCSWVYdlY9czydUUc",
+        "unit": "Slice"
       },
       "-O4aFZijRwEQz4U5qEcs": {
         "alternatives": [
           {
-            "count": "1 Cup",
-            "element": "Shanina"
+            "count": 1,
+            "element": "Shanina",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
-            "element": "Yogurt"
+            "count": 1,
+            "element": "Yogurt",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
-            "element": "Milk"
+            "count": 1,
+            "element": "Milk",
+            "unit": "Cup"
           }
         ],
-        "count": "1/2 Cup",
+        "count": 0.5,
         "element": "Greek Yogurt",
-        "meal": "-O4aCSWVYdlY9czydUUc"
+        "meal": "-O4aCSWVYdlY9czydUUc",
+        "unit": "Cup"
       },
       "-O55LDsEq4zqG7rqsr02": {
-        "count": "1 Cup",
+        "count": 1,
         "element": "Various Vegetables",
-        "meal": "-O55KXrB0Wa7urwzoaUh"
+        "meal": "-O55KXrB0Wa7urwzoaUh",
+        "unit": "Cup"
       },
       "-O55LDsKeevCCHH6BMHj": {
-        "count": "4 Pieces",
+        "count": 4,
         "element": "Olive",
-        "meal": "-O55KXrB0Wa7urwzoaUh"
+        "meal": "-O55KXrB0Wa7urwzoaUh",
+        "unit": "Pieces"
       },
       "-O55LDsSBUsiEVxJb44G": {
         "alternatives": [
           {
-            "count": "30gm",
-            "element": "Labaneh"
+            "count": 30,
+            "element": "Labaneh",
+            "unit": "gm"
           },
           {
-            "count": "30gm",
-            "element": "White Cheese"
+            "count": 30,
+            "element": "White Cheese",
+            "unit": "gm"
           },
           {
-            "count": "30gm",
-            "element": "Areesh Cheese"
+            "count": 30,
+            "element": "Areesh Cheese",
+            "unit": "gm"
           },
           {
-            "count": "60gm",
-            "element": "Tuna"
+            "count": 60,
+            "element": "Tuna",
+            "unit": "gm"
           }
         ],
-        "count": "1 Piece",
+        "count": 1,
         "element": "Egg",
-        "meal": "-O55KXrB0Wa7urwzoaUh"
+        "meal": "-O55KXrB0Wa7urwzoaUh",
+        "unit": "Piece"
       },
       "-O55LJanjuujwbENOYnG": {
         "alternatives": [
           {
-            "count": "1 Cup",
-            "element": "Shanina"
+            "count": 1,
+            "element": "Shanina",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
-            "element": "Milk"
+            "count": 1,
+            "element": "Milk",
+            "unit": "Cup"
           }
         ],
-        "count": "1 Cup",
+        "count": 1,
         "element": "Yogurt",
-        "meal": "-O55KfoHeRQNuoAg4OE3"
+        "meal": "-O55KfoHeRQNuoAg4OE3",
+        "unit": "Cup"
       },
       "-O55LJq8TPzWKQM7qMQp": {
         "alternatives": [
           {
-            "count": "1/2 Cup",
-            "element": "Strawberry"
+            "count": 0.5,
+            "element": "Strawberry",
+            "unit": "Cup"
           },
           {
-            "count": "2 Pieces",
-            "element": "Peach"
+            "count": 2,
+            "element": "Peach",
+            "unit": "Pieces"
           }
         ],
-        "count": "1 Piece",
+        "count": 1,
         "element": "Fruit",
-        "meal": "-O55KfoHeRQNuoAg4OE3"
+        "meal": "-O55KfoHeRQNuoAg4OE3",
+        "unit": "Piece"
       },
       "-O55LT7c7yMbFTIA8NBM": {
-        "count": "4 Pieces",
+        "count": 4,
         "element": "Walnut",
-        "meal": "-O55KhOl4ZiKtB_cIeuc"
+        "meal": "-O55KhOl4ZiKtB_cIeuc",
+        "unit": "Pieces"
       },
       "-O55LT7hfwAta-KXzoNo": {
-        "count": "1 Cup",
+        "count": 1,
         "element": "Cinnamon",
-        "meal": "-O55KhOl4ZiKtB_cIeuc"
+        "meal": "-O55KhOl4ZiKtB_cIeuc",
+        "unit": "Cup"
       },
       "-O55LaDKCKzkpsIoopAa": {
-        "count": "1/3 Cup",
+        "count": 0.33,
         "element": "Rice",
-        "meal": "-O55KiaJbna_TfvJPuVg"
+        "meal": "-O55KiaJbna_TfvJPuVg",
+        "unit": "Cup"
       },
       "-O55LaDMWWg8cQlV2WOx": {
         "alternatives": [
           {
-            "count": "120gm",
-            "element": "Chicken Liver"
+            "count": 120,
+            "element": "Chicken Liver",
+            "unit": "gm"
           },
           {
-            "count": "120gm",
-            "element": "Beef"
+            "count": 120,
+            "element": "Beef",
+            "unit": "gm"
           },
           {
-            "count": "120gm",
-            "element": "Fish"
+            "count": 120,
+            "element": "Fish",
+            "unit": "gm"
           },
           {
-            "count": "120gm",
-            "element": "Shrimp"
+            "count": 120,
+            "element": "Shrimp",
+            "unit": "gm"
           },
           {
-            "count": "120gm",
-            "element": "Squid"
+            "count": 120,
+            "element": "Squid",
+            "unit": "gm"
           }
         ],
-        "count": "120gm",
+        "count": 120,
         "element": "Chicken Breast",
-        "meal": "-O55KiaJbna_TfvJPuVg"
+        "meal": "-O55KiaJbna_TfvJPuVg",
+        "unit": "gm"
       },
       "-O55LaDQDeJhOU9SGUY8": {
-        "count": "1 Cup",
+        "count": 1,
         "element": "Various Vegetables",
-        "meal": "-O55KiaJbna_TfvJPuVg"
+        "meal": "-O55KiaJbna_TfvJPuVg",
+        "unit": "Cup"
       },
       "-O55Ljr7Foz1zwx9EQ5O": {
         "alternatives": [
           {
-            "count": "30gm",
-            "element": "Labaneh"
+            "count": 30,
+            "element": "Labaneh",
+            "unit": "gm"
           },
           {
-            "count": "30gm",
-            "element": "White Cheese"
+            "count": 30,
+            "element": "White Cheese",
+            "unit": "gm"
           },
           {
-            "count": "30gm",
-            "element": "Areesh Cheese"
+            "count": 30,
+            "element": "Areesh Cheese",
+            "unit": "gm"
           },
           {
-            "count": "60gm",
-            "element": "Tuna"
+            "count": 60,
+            "element": "Tuna",
+            "unit": "gm"
           }
         ],
-        "count": "1 Piece",
+        "count": 1,
         "element": "Egg",
-        "meal": "-O55KjbHC6Nw_Ao2PPPJ"
+        "meal": "-O55KjbHC6Nw_Ao2PPPJ",
+        "unit": "Piece"
       },
       "-O55Ljr7Foz1zwx9EQ5P": {
-        "count": "4 Pieces",
+        "count": 4,
         "element": "Olive",
-        "meal": "-O55KjbHC6Nw_Ao2PPPJ"
+        "meal": "-O55KjbHC6Nw_Ao2PPPJ",
+        "unit": "Pieces"
       },
       "-O55Ljr9JWSeQBgoULGC": {
-        "count": "1 Cup",
+        "count": 1,
         "element": "Various Vegetables",
-        "meal": "-O55KjbHC6Nw_Ao2PPPJ"
+        "meal": "-O55KjbHC6Nw_Ao2PPPJ",
+        "unit": "Cup"
       },
       "-O5gT9zJ7109eOSKoUfO": {
         "alternatives": [
           {
-            "count": "60gm",
-            "element": "White Cheese"
+            "count": 60,
+            "element": "White Cheese",
+            "unit": "gm"
           },
           {
-            "count": "60gm",
-            "element": "Areesh Cheese"
+            "count": 60,
+            "element": "Areesh Cheese",
+            "unit": "gm"
           },
           {
-            "count": "60gm",
-            "element": "Labaneh"
+            "count": 60,
+            "element": "Labaneh",
+            "unit": "gm"
           }
         ],
-        "count": "2 Pieces",
+        "count": 2,
         "element": "Egg",
-        "meal": "-O5gStjssuxC9jSCkRc3"
+        "meal": "-O5gStjssuxC9jSCkRc3",
+        "unit": "Pieces"
       },
       "-O5gT9zKasqPYW4jqtNk": {
-        "count": "1 Cup",
+        "count": 1,
         "element": "Various Vegetables",
-        "meal": "-O5gStjssuxC9jSCkRc3"
+        "meal": "-O5gStjssuxC9jSCkRc3",
+        "unit": "Cup"
       },
       "-O5gT9zOO4XMMnnXvq-C": {
-        "count": "4 Pieces",
+        "count": 4,
         "element": "Olive",
-        "meal": "-O5gStjssuxC9jSCkRc3"
+        "meal": "-O5gStjssuxC9jSCkRc3",
+        "unit": "Pieces"
       },
       "-O5gTGmv0c2QpKl_VdjA": {
-        "alternatives": [
-          {
-            "count": "1 Cup",
-            "element": "Various Vegetables"
-          }
-        ],
-        "count": "1 Cup",
+        "count": 1,
         "element": "Various Vegetables",
-        "meal": "-O5gSwKEatWBTUXJucL_"
+        "meal": "-O5gSwKEatWBTUXJucL_",
+        "unit": "Cup"
       },
       "-O5gTGn-TwEQ3dSDobep": {
         "alternatives": [
           {
-            "count": "1 Cup",
-            "element": "Shanina"
+            "count": 1,
+            "element": "Shanina",
+            "unit": "Cup"
           },
           {
-            "count": "1 Cup",
-            "element": "Milk"
+            "count": 1,
+            "element": "Milk",
+            "unit": "Cup"
           }
         ],
-        "count": "1 Cup",
+        "count": 1,
         "element": "Yogurt",
-        "meal": "-O5gSwKEatWBTUXJucL_"
+        "meal": "-O5gSwKEatWBTUXJucL_",
+        "unit": "Cup"
       },
       "-O5gTQV9Wj15m5rmYV6m": {
         "alternatives": [
           {
-            "count": "1 Cup",
-            "element": "Various Vegetables"
+            "count": 1,
+            "element": "Various Vegetables",
+            "unit": "Cup"
           }
         ],
-        "count": "1/2 Cup",
+        "count": 0.5,
         "element": "Cooked Vegetables",
-        "meal": "-O5gSxoz2JmJRPfyVbis"
+        "meal": "-O5gSxoz2JmJRPfyVbis",
+        "unit": "Cup"
       },
       "-O5gTQVAwmViKoUcWuBH": {
         "alternatives": [
           {
-            "count": "120gm",
-            "element": "Chicken Liver"
+            "count": 120,
+            "element": "Chicken Liver",
+            "unit": "gm"
           },
           {
-            "count": "120gm",
-            "element": "Fish"
+            "count": 120,
+            "element": "Fish",
+            "unit": "gm"
           },
           {
-            "count": "120gm",
-            "element": "Shrimp"
+            "count": 120,
+            "element": "Shrimp",
+            "unit": "gm"
           },
           {
-            "count": "120gm",
-            "element": "Squid"
+            "count": 120,
+            "element": "Squid",
+            "unit": "gm"
           }
         ],
-        "count": "120gm",
+        "count": 120,
         "element": "Chicken Breast",
-        "meal": "-O5gSxoz2JmJRPfyVbis"
+        "meal": "-O5gSxoz2JmJRPfyVbis",
+        "unit": "gm"
       },
       "-O5gTQVBq8GotAIa0Mms": {
-        "count": "1/3 Cup",
+        "count": 0.33,
         "element": "Rice",
-        "meal": "-O5gSxoz2JmJRPfyVbis"
+        "meal": "-O5gSxoz2JmJRPfyVbis",
+        "unit": "Cup"
       },
       "-O5gTTgxcWf9EAqqHBB6": {
-        "count": "1 Cup",
+        "count": 1,
         "element": "Green Tea",
-        "meal": "-O5gSzXrjM9Y3TzeySNE"
+        "meal": "-O5gSzXrjM9Y3TzeySNE",
+        "unit": "Cup"
       },
       "-O5gTYpXal8DM9rQ9gIe": {
         "alternatives": [
           {
-            "count": "60gm",
-            "element": "White Cheese"
+            "count": 60,
+            "element": "White Cheese",
+            "unit": "gm"
           },
           {
-            "count": "60gm",
-            "element": "Areesh Cheese"
+            "count": 60,
+            "element": "Areesh Cheese",
+            "unit": "gm"
           },
           {
-            "count": "60gm",
-            "element": "Labaneh"
+            "count": 60,
+            "element": "Labaneh",
+            "unit": "gm"
           }
         ],
-        "count": "60gm",
+        "count": 60,
         "element": "Tuna",
-        "meal": "-O5gT06Gxm-eVodz9j0c"
+        "meal": "-O5gT06Gxm-eVodz9j0c",
+        "unit": "gm"
       },
       "-O5gTYpZ65lBtNEY95Oj": {
-        "count": "1 Cup",
+        "count": 1,
         "element": "Various Vegetables",
-        "meal": "-O5gT06Gxm-eVodz9j0c"
+        "meal": "-O5gT06Gxm-eVodz9j0c",
+        "unit": "Cup"
       }
     }
   },

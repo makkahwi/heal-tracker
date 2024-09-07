@@ -114,11 +114,12 @@ const WeeklyCalendar = ({
                   {currentWeekData
                     .find((dat) => meal === dat.meal.meal)
                     ?.supposed?.map(
-                      ({ element, count, note, alternatives }, y) => (
+                      ({ element, count, note, unit, alternatives }, y) => (
                         <MealView
                           dark={y % 2 === 1}
                           meal={meal}
                           count={count}
+                          unit={unit}
                           element={element}
                           note={note}
                           alternatives={alternatives}
@@ -162,24 +163,27 @@ const WeeklyCalendar = ({
                               ""
                             )}
 
-                            {contents?.map(({ element, count, note }, y) => (
-                              <MealView
-                                dark={y % 2 === 1}
-                                meal={meal}
-                                count={count}
-                                element={element}
-                                note={note}
-                                supposed={supposed?.find(
-                                  (s) =>
-                                    s.element === element ||
-                                    s.alternatives?.find(
-                                      (a) => a.element === element
-                                    )
-                                )}
-                                compare
-                                key={y}
-                              />
-                            ))}
+                            {contents?.map(
+                              ({ element, count, note, unit }, y) => (
+                                <MealView
+                                  dark={y % 2 === 1}
+                                  meal={meal}
+                                  count={count}
+                                  element={element}
+                                  unit={unit}
+                                  note={note}
+                                  supposed={supposed?.find(
+                                    (s) =>
+                                      s.element === element ||
+                                      s.alternatives?.find(
+                                        (a) => a.element === element
+                                      )
+                                  )}
+                                  compare
+                                  key={y}
+                                />
+                              )
+                            )}
                           </Fragment>
                         )
                       )}

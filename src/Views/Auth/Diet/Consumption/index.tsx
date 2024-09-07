@@ -150,6 +150,19 @@ const Consumption = () => {
       inputs: [
         { name: "element", label: "Element", required: true },
         { name: "count", label: "Quantity", required: true },
+        {
+          name: "unit",
+          label: "Unit",
+          required: true,
+          type: "select",
+          options: [
+            { value: "Cup" },
+            { value: "Cups" },
+            { value: "gm" },
+            { value: "Piece" },
+            { value: "Pieces" },
+          ],
+        },
         { name: "note", label: "Note", required: false },
       ],
       required: true,
