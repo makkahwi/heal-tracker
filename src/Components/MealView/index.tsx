@@ -7,6 +7,7 @@ export interface MealViewProps {
   meal?: string;
   note?: string;
   count: string;
+  unit: string;
   element: string;
   alternatives?: MealViewProps[];
 }
@@ -28,6 +29,7 @@ const OrView = () => (
 const MealView = ({
   id,
   count,
+  unit,
   element,
   alternatives,
   note,
@@ -62,7 +64,7 @@ const MealView = ({
             countMatch ? "text-decoration-none" : "text-decoration-underline"
           }
         >
-          {count}
+          {count} {unit}
         </span>
 
         {" of "}
@@ -85,7 +87,13 @@ const MealView = ({
           "text-start " + (dark && onDelete ? "bg-light p-2" : " py-1 px-2")
         }
       >
-        {count + " of " + element + (note ? " (" + note + ")" : "")}
+        {count +
+          " " +
+          unit +
+          " " +
+          " of " +
+          element +
+          (note ? " (" + note + ")" : "")}
 
         {children}
       </li>
@@ -108,7 +116,11 @@ const MealView = ({
           <OrView />
           {alternatives.map((alternative, i) => (
             <Fragment key={i}>
-              {alternative.count + " of " + alternative.element}
+              {alternative.count +
+                " " +
+                alternative.unit +
+                " of " +
+                alternative.element}
               {i !== alternatives.length - 1 ? <OrView /> : ""}
             </Fragment>
           ))}
