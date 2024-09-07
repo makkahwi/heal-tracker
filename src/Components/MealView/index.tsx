@@ -1,4 +1,11 @@
-import { faCheck, faTimes, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowDown,
+  faArrowUp,
+  faCheck,
+  faMinus,
+  faPlus,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react/jsx-runtime";
 
@@ -42,9 +49,12 @@ const MealView = ({
     let elementMatch = false;
     let countMatch = false;
 
+    let countIcon = faMinus;
+
     if (element === supposed?.element) {
       elementMatch = element === supposed?.element;
       countMatch = count === supposed?.count;
+      countIcon = count > supposed?.count ? faArrowUp : faArrowDown;
     } else {
       elementMatch = !!supposed?.alternatives?.find(
         (a) => a.element === element
@@ -52,13 +62,21 @@ const MealView = ({
       countMatch =
         count ===
         supposed?.alternatives?.find((a) => a.element === element)?.count;
+      countIcon =
+        count >
+        (supposed?.alternatives?.find((a) => a.element === element)?.count || 0)
+          ? faArrowUp
+          : faArrowDown;
     }
 
     const match = countMatch && elementMatch;
 
     return compare ? (
       <div className={match ? "text-success" : "text-danger"}>
-        <FontAwesomeIcon icon={match ? faCheck : faTimes} className="me-1" />
+        <FontAwesomeIcon
+          icon={match ? faCheck : elementMatch ? countIcon : faPlus}
+          className="me-1"
+        />
         <span
           className={
             countMatch ? "text-decoration-none" : "text-decoration-underline"
@@ -67,7 +85,13 @@ const MealView = ({
           {count} {unit}
         </span>
 
-        {" of "}
+        <span
+          className={
+            elementMatch ? "text-decoration-none" : "text-decoration-underline"
+          }
+        >
+          {" of "}
+        </span>
 
         <span
           className={
