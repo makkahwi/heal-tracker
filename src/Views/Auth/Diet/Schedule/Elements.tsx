@@ -117,6 +117,19 @@ const Elements = () => {
     { name: "element", label: "Element", required: true },
     { name: "count", label: "Quantity", required: true },
     {
+          name: "unit",
+          label: "Unit",
+          required: true,
+          type: "select",
+          options: [
+            { value: "Cup" },
+            { value: "Cups" },
+            { value: "gm" },
+            { value: "Piece" },
+            { value: "Pieces" },
+          ],
+        },
+    {
       name: "alternatives",
       label: "Alternatives",
       type: "dynamicList",
@@ -125,16 +138,19 @@ const Elements = () => {
       inputs: [
         { name: "element", label: "Element", required: true },
         { name: "count", label: "Quantity", required: true },
-        // {
-        //   name: "alternatives",
-        //   label: "Alternatives",
-        //   type: "dynamicList",
-        //   inputs: [
-        //     { name: "element", label: "Element", required: true },
-        //     { name: "count", label: "Quantity", required: true },
-        //   ],
-        //   required: false,
-        // },
+        {
+          name: "unit",
+          label: "Unit",
+          required: true,
+          type: "select",
+          options: [
+            { value: "Cup" },
+            { value: "Cups" },
+            { value: "gm" },
+            { value: "Piece" },
+            { value: "Pieces" },
+          ],
+        },
       ],
       required: true,
     },
