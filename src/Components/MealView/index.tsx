@@ -77,6 +77,7 @@ const MealView = ({
           icon={match ? faCheck : elementMatch ? countIcon : faPlus}
           className="me-1"
         />
+
         <span
           className={
             countMatch ? "text-decoration-none" : "text-decoration-underline"
@@ -84,7 +85,6 @@ const MealView = ({
         >
           {count} {unit}
         </span>
-
         <span
           className={
             elementMatch ? "text-decoration-none" : "text-decoration-underline"
@@ -92,7 +92,6 @@ const MealView = ({
         >
           {" of "}
         </span>
-
         <span
           className={
             elementMatch ? "text-decoration-none" : "text-decoration-underline"
@@ -100,9 +99,7 @@ const MealView = ({
         >
           {element}
         </span>
-
         {note ? " (" + note + ")" : ""}
-
         {children}
       </div>
     ) : (

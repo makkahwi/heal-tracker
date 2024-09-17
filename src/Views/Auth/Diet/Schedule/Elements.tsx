@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import * as BeAPI from "../../../../API";
 import MealView from "../../../../Components/MealView";
 import PageView from "../../../../Components/PageView";
+import { units } from "../../../../util/lists";
 import { SchedulesMealProps } from "./Meals";
 import { ScheduleProps } from "./Schedules";
 
@@ -117,18 +118,12 @@ const Elements = () => {
     { name: "element", label: "Element", required: true },
     { name: "count", label: "Quantity", required: true },
     {
-          name: "unit",
-          label: "Unit",
-          required: true,
-          type: "select",
-          options: [
-            { value: "Cup" },
-            { value: "Cups" },
-            { value: "gm" },
-            { value: "Piece" },
-            { value: "Pieces" },
-          ],
-        },
+      name: "unit",
+      label: "Unit",
+      required: true,
+      type: "select",
+      options: units,
+    },
     {
       name: "alternatives",
       label: "Alternatives",
@@ -143,13 +138,7 @@ const Elements = () => {
           label: "Unit",
           required: true,
           type: "select",
-          options: [
-            { value: "Cup" },
-            { value: "Cups" },
-            { value: "gm" },
-            { value: "Piece" },
-            { value: "Pieces" },
-          ],
+          options: units,
         },
       ],
       required: true,
