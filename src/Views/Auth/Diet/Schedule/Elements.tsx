@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import * as BeAPI from "../../../../API";
 import MealView from "../../../../Components/MealView";
 import PageView from "../../../../Components/PageView";
+import { units } from "../../../../util/lists";
 import { SchedulesMealProps } from "./Meals";
 import { ScheduleProps } from "./Schedules";
 
@@ -115,20 +116,20 @@ const Elements = () => {
       required: true,
     },
     { name: "element", label: "Element", required: true },
-    { name: "count", label: "Quantity", required: true },
     {
-          name: "unit",
-          label: "Unit",
-          required: true,
-          type: "select",
-          options: [
-            { value: "Cup" },
-            { value: "Cups" },
-            { value: "gm" },
-            { value: "Piece" },
-            { value: "Pieces" },
-          ],
-        },
+      name: "count",
+      label: "Quantity",
+      type: "number",
+      step: 0.1,
+      required: true,
+    },
+    {
+      name: "unit",
+      label: "Unit",
+      required: true,
+      type: "select",
+      options: units,
+    },
     {
       name: "alternatives",
       label: "Alternatives",
@@ -137,19 +138,19 @@ const Elements = () => {
       render: (row: SchedulesMealElementProps) => <MealView {...row} />,
       inputs: [
         { name: "element", label: "Element", required: true },
-        { name: "count", label: "Quantity", required: true },
+        {
+          name: "count",
+          label: "Quantity",
+          type: "number",
+          step: 0.1,
+          required: true,
+        },
         {
           name: "unit",
           label: "Unit",
           required: true,
           type: "select",
-          options: [
-            { value: "Cup" },
-            { value: "Cups" },
-            { value: "gm" },
-            { value: "Piece" },
-            { value: "Pieces" },
-          ],
+          options: units,
         },
       ],
       required: true,
