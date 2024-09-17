@@ -116,7 +116,13 @@ const Elements = () => {
       required: true,
     },
     { name: "element", label: "Element", required: true },
-    { name: "count", label: "Quantity", required: true },
+    {
+      name: "count",
+      label: "Quantity",
+      type: "number",
+      step: 0.1,
+      required: true,
+    },
     {
       name: "unit",
       label: "Unit",
@@ -132,7 +138,13 @@ const Elements = () => {
       render: (row: SchedulesMealElementProps) => <MealView {...row} />,
       inputs: [
         { name: "element", label: "Element", required: true },
-        { name: "count", label: "Quantity", required: true },
+        {
+          name: "count",
+          label: "Quantity",
+          type: "number",
+          step: 0.1,
+          required: true,
+        },
         {
           name: "unit",
           label: "Unit",
