@@ -18,7 +18,7 @@ import Schedule from "./Views/Auth/Diet/Schedule";
 import LabTests from "./Views/Auth/LabTests";
 import Medicine from "./Views/Auth/Medicine";
 import SleepCycles from "./Views/Auth/SleepCycles";
-import Sports from "./Views/Auth/Sports/WalkExercises";
+import Sports from "./Views/Auth/Sports";
 import WeightReadings from "./Views/Auth/WeightReadings";
 import Login from "./Views/Public/Login";
 
@@ -43,8 +43,8 @@ export const routes = [
     ],
   },
   {
-    name: "Walk Exercises",
-    path: "walk-exercises",
+    name: "Sport Sessions",
+    path: "sport-sessions",
     icon: faRunning,
     Comp: <Sports />,
   },

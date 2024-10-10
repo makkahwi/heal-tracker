@@ -3,19 +3,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
 
-import * as BeAPI from "../../../../API";
-import Form from "../../../../Components/Form";
-import { MealViewProps } from "../../../../Components/MealView";
-import MonthlyCalendar from "../../../../Components/PageView/MonthlyCalendar";
-import PageSection from "../../../../Components/PageView/PageSection";
-import { timeFormat } from "../../../../Utils/consts";
+import * as BeAPI from "../../../API";
+import Form from "../../../Components/Form";
+import { MealViewProps } from "../../../Components/MealView";
+import MonthlyCalendar from "../../../Components/PageView/MonthlyCalendar";
+import PageSection from "../../../Components/PageView/PageSection";
+import { timeFormat } from "../../../Utils/consts";
 
 export interface walkExerciseProps {
   id?: string;
   date: string;
   startTime: string;
   endTime: string;
-  distance: number;
+  type: string;
+  measure: string;
   note?: string;
 }
 
@@ -49,7 +50,9 @@ export const renderExerciseUI =
         ) : (
           ""
         )}
-        <div className="fw-bold">{event.distance} km</div>
+        <div className="fw-bold">
+          {event.measure} of {event.type}
+        </div>
         <small>{event.note}</small>
       </div>
     );
@@ -82,6 +85,24 @@ const WalkExercises = () => {
       required: true,
     },
     {
+      name: "type",
+      label: "Sport Type",
+      type: "select",
+      options: [
+        {
+          value: "Swimming",
+        },
+        {
+          value: "Jogging",
+        },
+        {
+          value: "Walking",
+        },
+      ],
+      required: true,
+      defaultValue: "Swimming",
+    },
+    {
       name: "startTime",
       label: "Start Time",
       type: "time",
@@ -94,14 +115,12 @@ const WalkExercises = () => {
       required: true,
     },
     {
-      name: "distance",
-      label: "Distance",
-      type: "number",
-      defaultValue: 6,
+      name: "measure",
+      label: "Measure (Walked Distance, Swimming Time, ...etc)",
+      type: "text",
+      defaultValue: "15 Pool Rounds",
       step: "0.1",
-      unit: "KM",
       required: true,
-      total: true,
     },
     {
       name: "note",
@@ -131,7 +150,7 @@ const WalkExercises = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title="Walk Exercises">
+    <PageSection title="Sport Sessions">
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 

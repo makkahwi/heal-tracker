@@ -5,7 +5,7 @@ import MealView from "../../../Components/MealView";
 import { renderEvents } from "../../../Components/PageView/MonthlyCalendar";
 import { consumptionFullProps } from "../Diet/Consumption";
 import { medicineProps, renderMedicineUI } from "../Medicine";
-import { renderExerciseUI, walkExerciseProps } from "../Sports/WalkExercises";
+import { renderExerciseUI, walkExerciseProps } from "../Sports";
 
 type comprehensiveProps = consumptionFullProps & {
   sports: walkExerciseProps[];
@@ -226,7 +226,7 @@ const WeeklyCalendar = ({
             ))}
 
           <tr>
-            <th colSpan={2}>Walk Exercises</th>
+            <th colSpan={2}>Sport Sessions</th>
 
             {currentWeek?.map((day, x) => {
               const theWalkExercises: comprehensiveProps | undefined =
