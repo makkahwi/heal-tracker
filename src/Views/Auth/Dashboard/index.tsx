@@ -7,7 +7,7 @@ import { consumptionProps } from "../Diet/Consumption";
 import { SchedulesMealElementProps } from "../Diet/Schedule/Elements";
 import { SchedulesMealProps } from "../Diet/Schedule/Meals";
 import { medicineProps } from "../Medicine";
-import { walkExerciseProps } from "../Sports/WalkExercises";
+import { walkExerciseProps } from "../Sports";
 import WeeklyCalendar from "./WeeklyCalendar";
 
 const Dashboard = () => {
