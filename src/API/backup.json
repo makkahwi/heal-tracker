@@ -20642,214 +20642,247 @@
     "908r1hATCyZHv6iIZBnGkgDrL1J3": {
       "-O18RnddJDibhYcNTT6N": {
         "date": "2024-07-06",
-        "distance": "6",
+        "measure": "6 KM",
         "endTime": "19:30",
+        "type": "Walking",
         "startTime": "18:25"
       },
       "-O1IB0AA-LJQckKROJAi": {
         "date": "2024-07-07",
-        "distance": 6,
+        "measure": "6 KM",
+        "type": "Walking",
         "endTime": "20:05",
         "startTime": "18:45"
       },
       "-O1IUjhbYY-wwyQfB4HT": {
         "date": "2024-07-08",
-        "distance": 6,
+        "measure": "6 KM",
+        "type": "Walking",
         "endTime": "20:40",
         "startTime": "19:30"
       },
       "-O1SweX3ykQIt3bD_ntp": {
         "date": "2024-07-10",
-        "distance": 6,
+        "measure": "6 KM",
+        "type": "Walking",
         "endTime": "19:43",
         "startTime": "18:35"
       },
       "-O1Xqt_nHEyvyZPZla0x": {
         "date": "2024-07-11",
-        "distance": "5",
+        "measure": "5 KM",
+        "type": "Walking",
         "endTime": "20:12",
         "startTime": "19:10"
       },
       "-O1cYvnprpJEFBYmhfJj": {
         "date": "2024-07-12",
-        "distance": "5",
+        "measure": "5 KM",
+        "type": "Walking",
         "endTime": "19:59",
         "startTime": "18:55"
       },
       "-O1wGsXU_MnrdgEhwR3O": {
         "date": "2024-07-14",
-        "distance": 6,
+        "measure": "6 KM",
+        "type": "Walking",
         "endTime": "20:05",
         "startTime": "18:55"
       },
       "-O1wGvL6z-1hfmHCDFku": {
         "date": "2024-07-13",
-        "distance": 6,
+        "measure": "6 KM",
+        "type": "Walking",
         "endTime": "19:35",
         "startTime": "18:30"
       },
       "-O23jnAnsCd8NN_v4z26": {
         "date": "2024-07-17",
-        "distance": 6,
+        "measure": "6 KM",
+        "type": "Walking",
         "endTime": "19:35",
         "startTime": "18:25"
       },
       "-O25_ysn82CFCnztPxXy": {
         "date": "2024-07-18",
-        "distance": "7",
+        "measure": "7 KM",
+        "type": "Walking",
         "endTime": "19:00",
         "startTime": "17:40"
       },
       "-O2Uoa7i2I7Ru6FpCdIA": {
         "date": "2024-07-22",
-        "distance": "4.3",
+        "measure": "4.3 KM",
+        "type": "Walking",
         "endTime": "19:21",
         "startTime": "18:20"
       },
       "-O2Vr88wc4_VHYxHisBq": {
         "date": "2024-07-23",
-        "distance": "8",
+        "measure": "8 KM",
+        "type": "Walking",
         "endTime": "21:00",
         "startTime": "19:16"
       },
       "-O2aMvIFRi_gZBIlmbEa": {
         "date": "2024-07-24",
-        "distance": "8",
+        "measure": "8 KM",
+        "type": "Walking",
         "endTime": "23:09",
         "startTime": "21:28"
       },
       "-O2kGE83W7AdH8A6RouB": {
         "date": "2024-07-26",
-        "distance": "8",
+        "measure": "8 KM",
+        "type": "Walking",
         "endTime": "20:45",
         "startTime": "19:05"
       },
       "-O3-0AHrgOqfyzTImtsj": {
         "date": "2024-07-29",
-        "distance": "7",
+        "measure": "7 KM",
+        "type": "Walking",
         "endTime": "19:40",
         "note": "3 KG for 3 KM",
         "startTime": "17:55"
       },
       "-O398793EC_2T1i399P9": {
         "date": "2024-07-31",
-        "distance": "7",
+        "measure": "7 KM",
+        "type": "Walking",
         "endTime": "21:38",
         "note": "3 KG for 3 KM",
         "startTime": "20:08"
       },
       "-O3DhGo-Htv0aoTQGDJg": {
         "date": "2024-08-01",
-        "distance": "7",
+        "measure": "7 KM",
+        "type": "Walking",
         "endTime": "19:10",
         "note": "4 KG weight",
         "startTime": "17:40"
       },
       "-O3O2kxji03pkIbO3pSV": {
         "date": "2024-08-03",
-        "distance": "7",
+        "measure": "7 KM",
+        "type": "Walking",
         "endTime": "19:20",
         "note": "3.5 KG",
         "startTime": "18:00"
       },
       "-O3YE93r-rhXnh82eaWf": {
         "date": "2024-08-04",
-        "distance": 6,
+        "measure": "6 KM",
+        "type": "Walking",
         "endTime": "18:40",
         "note": "3KG",
         "startTime": "17:15"
       },
       "-O3YUL34RbYbd8-uB7-E": {
         "date": "2024-08-05",
-        "distance": "8",
+        "measure": "8 KM",
+        "type": "Walking",
         "endTime": "19:50",
         "startTime": "18:15"
       },
       "-O3aWchReVvEXbL9_pDy": {
         "date": "2024-07-28",
-        "distance": "7",
+        "measure": "7 KM",
+        "type": "Walking",
         "endTime": "19:55",
         "note": "3 KG for 3 KM",
         "startTime": "18:08"
       },
       "-O3imwQgzW1jzZ4gQPDD": {
         "date": "2024-08-07",
-        "distance": "7",
+        "measure": "7 KM",
+        "type": "Walking",
         "endTime": "20:25",
         "note": "3KG",
         "startTime": "19:00"
       },
       "-O3msEfFUCiZHm0uNTlp": {
         "date": "2024-08-08",
-        "distance": "3.5",
+        "measure": "3.5 KM",
+        "type": "Walking",
         "endTime": "17:50",
         "note": "6KG",
         "startTime": "16:20"
       },
       "-O41QfUliXHoVzHsLGAe": {
         "date": "2024-08-11",
-        "distance": "8",
+        "measure": "8 KM",
+        "type": "Walking",
         "endTime": "20:05",
         "note": "3KG",
         "startTime": "18:30"
       },
       "-O47WSUsubkadcayYmy8": {
         "date": "2024-08-12",
-        "distance": 6,
+        "measure": "6 KM",
+        "type": "Walking",
         "endTime": "18:50",
         "startTime": "17:50"
       },
       "-O4JYpElXIjvJP-VVwmy": {
         "date": "2024-08-14",
-        "distance": "8",
+        "measure": "8 KM",
+        "type": "Walking",
         "endTime": "20:00",
         "startTime": "18:30"
       },
       "-O4Qwi8-8ROt1c3hitrz": {
         "date": "2024-08-15",
-        "distance": "8",
+        "measure": "8 KM",
+        "type": "Walking",
         "endTime": "19:50",
         "note": "4KG",
         "startTime": "18:05"
       },
       "-O4W_CzxR-G5H4TMi3eQ": {
         "date": "2024-08-17",
-        "distance": "8",
+        "measure": "8 KM",
+        "type": "Walking",
         "endTime": "20:55",
         "note": "4KG",
         "startTime": "18:35"
       },
       "-O4k_2iAM_dcfhgvniTH": {
         "date": "2024-08-20",
-        "distance": "6",
+        "measure": "6 KM",
+        "type": "Walking",
         "endTime": "19:05",
         "note": "4KG",
         "startTime": "17:35"
       },
       "-O4vn8GJOicLQ41XMj1a": {
         "date": "2024-08-22",
-        "distance": "8",
+        "measure": "8 KM",
+        "type": "Walking",
         "endTime": "20:40",
         "note": "4KG",
         "startTime": "18:45"
       },
       "-O5AGOuHNL-Q9pTzAjm_": {
         "date": "2024-08-25",
-        "distance": "7",
+        "measure": "7 KM",
+        "type": "Walking",
         "endTime": "23:35",
         "note": "4KG",
         "startTime": "22:10"
       },
       "-O5JZ2keg3U5uamBPxnT": {
         "date": "2024-08-27",
-        "distance": 6,
+        "measure": "6 KM",
+        "type": "Walking",
         "endTime": "18:45",
         "note": "5KG",
         "startTime": "17:15"
       },
       "-O5OiYQgBs9ujTVaScV9": {
         "date": "2024-08-28",
-        "distance": 6,
+        "measure": "6 KM",
+        "type": "Walking",
         "endTime": "19:00",
         "note": "4KG",
         "startTime": "17:15"
