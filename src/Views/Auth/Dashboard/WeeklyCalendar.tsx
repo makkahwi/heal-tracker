@@ -111,7 +111,7 @@ const WeeklyCalendar = ({
       >
         <thead>
           <tr>
-            <th rowSpan={2} colSpan={2} className="align-middle">
+            <th rowSpan={2} className="align-middle" style={{ width: "20%" }}>
               Data
             </th>
 
@@ -139,29 +139,7 @@ const WeeklyCalendar = ({
             )
             ?.map((meal, i) => (
               <tr key={i}>
-                {i === 0 && (
-                  <Fragment>
-                    <th
-                      rowSpan={
-                        currentWeekData
-                          ?.map(({ meal }) => meal)
-                          ?.sort((a: any, b: any) => (a.time < b.time ? -1 : 1))
-                          ?.map(({ meal }) => meal)
-                          .reduce<string[]>(
-                            (final, current) =>
-                              final.includes(current)
-                                ? final
-                                : [...final, current],
-                            []
-                          ).length
-                      }
-                    >
-                      Meals
-                    </th>
-                  </Fragment>
-                )}
-
-                <th className="text-start" style={{ width: "fit-content" }}>
+                <th className="text-start">
                   {meal}
 
                   {currentWeekData
@@ -241,7 +219,7 @@ const WeeklyCalendar = ({
             ))}
 
           <tr>
-            <th colSpan={2}>Sport Sessions</th>
+            <th>Sport Sessions</th>
 
             {currentWeek?.map((day, x) => {
               const theWalkExercises: comprehensiveProps | undefined =
@@ -264,7 +242,7 @@ const WeeklyCalendar = ({
           </tr>
 
           <tr>
-            <th colSpan={2}>Medicines</th>
+            <th>Medicines</th>
 
             {currentWeek?.map((day, x) => {
               const theWalkExercises: comprehensiveProps | undefined =
@@ -287,7 +265,7 @@ const WeeklyCalendar = ({
           </tr>
 
           <tr>
-            <th colSpan={2}>Sleep Cycles</th>
+            <th>Sleep Cycles</th>
 
             {currentWeek?.map((day, x) => {
               const theWalkExercises: comprehensiveProps | undefined =
