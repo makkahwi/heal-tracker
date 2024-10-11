@@ -7,6 +7,7 @@ import { consumptionProps } from "../Diet/Consumption";
 import { SchedulesMealElementProps } from "../Diet/Schedule/Elements";
 import { SchedulesMealProps } from "../Diet/Schedule/Meals";
 import { medicineProps } from "../Medicine";
+import { sleepCycleProps } from "../SleepCycles";
 import { walkExerciseProps } from "../Sports";
 import WeeklyCalendar from "./WeeklyCalendar";
 
@@ -20,6 +21,7 @@ const Dashboard = () => {
   const [medicineData, setMedicineData] = useState<medicineProps[]>([]);
 
   const [scheduled, setScheduled] = useState<SchedulesMealElementProps[]>([]);
+  const [sleepCyclesData, setSleepCyclesData] = useState<sleepCycleProps[]>([]);
   const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
 
   const getData = () => {
@@ -71,6 +73,16 @@ const Dashboard = () => {
       )
       .catch((err) => console.log({ err }));
 
+    BeAPI.getAll("sleepCycles")
+      .then((res: any) =>
+        setSleepCyclesData(
+          res?.sort((a: sleepCycleProps, b: sleepCycleProps) =>
+            a.startTime > b.startTime ? -1 : 1
+          )
+        )
+      )
+      .catch((err) => console.log({ err }));
+
     BeAPI.getAll("medicine")
       .then((res: any) =>
         setMedicineData(
@@ -106,6 +118,7 @@ const Dashboard = () => {
           })}
           walkExercisesData={walkExercisesData}
           medicineData={medicineData}
+          sleepCyclesData={sleepCyclesData}
         />
       </Fragment>
     </PageSection>
