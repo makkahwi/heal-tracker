@@ -1270,8 +1270,8 @@
           {
             "count": 1.5,
             "element": "Cooked Vegetables",
-            "note": "Potato",
             "id": "-O0ZuA6RzMt_Fn4wE_lU",
+            "note": "Potato",
             "unit": "Pieces(s)"
           }
         ],
@@ -1357,8 +1357,8 @@
           {
             "count": 1.5,
             "element": "Cooked Vegetables",
-            "note": "Potato",
             "id": "-O0ZuA6RzMt_Fn4wE_lU",
+            "note": "Potato",
             "unit": "Pieces(s)"
           },
           {
@@ -1623,8 +1623,8 @@
           {
             "count": 1.5,
             "element": "Cooked Vegetables",
-            "note": "Potato",
             "id": "-O0Qp5vu7hxTYQIA5e3W",
+            "note": "Potato",
             "unit": "Pieces(s)"
           },
           {
@@ -9012,6 +9012,39 @@
         ],
         "meal": "-O8R22sNgcykmrANJNtB",
         "timestamp": "2024-10-11T13:00:00.000Z"
+      },
+      "-O8wkpsb3ZNEc1AQwZQT": {
+        "contents": [
+          {
+            "count": 60,
+            "element": "Feta Cheese",
+            "note": "",
+            "unit": "gm"
+          },
+          {
+            "count": 4,
+            "element": "Olive",
+            "id": "-O8R35SNHwi_75bDdMi6",
+            "meal": "-O8R2492WgnX3ITXFK7p",
+            "unit": "Pieces(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-O8R32WlkTPaWPLzRGoY",
+            "meal": "-O8R2492WgnX3ITXFK7p",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "id": "-O8R39hzT72OhbIp6I7G",
+            "meal": "-O8R2492WgnX3ITXFK7p",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-O8R2492WgnX3ITXFK7p",
+        "timestamp": "2024-10-11T18:00:00.000Z"
       }
     }
   },
@@ -9396,11 +9429,6 @@
           },
           {
             "count": 120,
-            "element": "Beef",
-            "unit": "gm"
-          },
-          {
-            "count": 120,
             "element": "Shrimp",
             "unit": "gm"
           },
@@ -9412,6 +9440,11 @@
           {
             "count": 120,
             "element": "Chicken Liver",
+            "unit": "gm"
+          },
+          {
+            "count": 120,
+            "element": "Beef",
             "unit": "gm"
           }
         ],
@@ -9467,13 +9500,8 @@
         "alternatives": [
           {
             "count": 30,
-            "element": "Tuna",
+            "element": "White Cheese",
             "unit": "gm"
-          },
-          {
-            "count": 1,
-            "element": "Egg",
-            "unit": "Pieces(s)"
           },
           {
             "count": 30,
@@ -9484,12 +9512,17 @@
             "count": 30,
             "element": "Labaneh",
             "unit": "gm"
+          },
+          {
+            "count": 30,
+            "element": "Tuna",
+            "unit": "gm"
           }
         ],
-        "count": 30,
-        "element": "White Cheese",
+        "count": 1,
+        "element": "Egg",
         "meal": "-O4aCSWVYdlY9czydUUc",
-        "unit": "gm"
+        "unit": "Pieces(s)"
       },
       "-O4aFZibAitOF4Pj3-J7": {
         "count": 1,
@@ -9531,17 +9564,17 @@
         "alternatives": [
           {
             "count": 30,
-            "element": "Labaneh",
-            "unit": "gm"
-          },
-          {
-            "count": 30,
             "element": "White Cheese",
             "unit": "gm"
           },
           {
             "count": 30,
             "element": "Areesh Cheese",
+            "unit": "gm"
+          },
+          {
+            "count": 30,
+            "element": "Labaneh",
             "unit": "gm"
           },
           {
@@ -9613,16 +9646,6 @@
         "alternatives": [
           {
             "count": 120,
-            "element": "Chicken Liver",
-            "unit": "gm"
-          },
-          {
-            "count": 120,
-            "element": "Beef",
-            "unit": "gm"
-          },
-          {
-            "count": 120,
             "element": "Fish",
             "unit": "gm"
           },
@@ -9634,6 +9657,16 @@
           {
             "count": 120,
             "element": "Squid",
+            "unit": "gm"
+          },
+          {
+            "count": 120,
+            "element": "Chicken Liver",
+            "unit": "gm"
+          },
+          {
+            "count": 120,
+            "element": "Beef",
             "unit": "gm"
           }
         ],
@@ -9652,17 +9685,17 @@
         "alternatives": [
           {
             "count": 30,
-            "element": "Labaneh",
-            "unit": "gm"
-          },
-          {
-            "count": 30,
             "element": "White Cheese",
             "unit": "gm"
           },
           {
             "count": 30,
             "element": "Areesh Cheese",
+            "unit": "gm"
+          },
+          {
+            "count": 30,
+            "element": "Labaneh",
             "unit": "gm"
           },
           {
@@ -9764,11 +9797,6 @@
         "alternatives": [
           {
             "count": 120,
-            "element": "Chicken Liver",
-            "unit": "gm"
-          },
-          {
-            "count": 120,
             "element": "Fish",
             "unit": "gm"
           },
@@ -9780,6 +9808,11 @@
           {
             "count": 120,
             "element": "Squid",
+            "unit": "gm"
+          },
+          {
+            "count": 120,
+            "element": "Chicken Liver",
             "unit": "gm"
           }
         ],
@@ -9983,6 +10016,11 @@
       "-O7xbKQUkogJHFfHUJKw": {
         "alternatives": [
           {
+            "count": 120,
+            "element": "White Cheese",
+            "unit": "gm"
+          },
+          {
             "count": 2,
             "element": "Labaneh",
             "unit": "Spoon(s)"
@@ -9996,11 +10034,6 @@
             "count": 4,
             "element": "Chickpeas",
             "unit": "Spoon(s)"
-          },
-          {
-            "count": 120,
-            "element": "White Cheese",
-            "unit": "gm"
           }
         ],
         "count": 2,
@@ -10126,6 +10159,16 @@
             "count": 120,
             "element": "Fish",
             "unit": "gm"
+          },
+          {
+            "count": 120,
+            "element": "Shrimp",
+            "unit": "gm"
+          },
+          {
+            "count": 120,
+            "element": "Squid",
+            "unit": "gm"
           }
         ],
         "count": 120,
@@ -10248,6 +10291,16 @@
             "count": 90,
             "element": "Fish",
             "unit": "gm"
+          },
+          {
+            "count": 90,
+            "element": "Shrimp",
+            "unit": "gm"
+          },
+          {
+            "count": 90,
+            "element": "Squid",
+            "unit": "gm"
           }
         ],
         "count": 90,
@@ -10306,11 +10359,6 @@
       "-O8VUeWEP33-5csID6pU": {
         "alternatives": [
           {
-            "count": 2,
-            "element": "Labaneh",
-            "unit": "Spoon(s)"
-          },
-          {
             "count": 60,
             "element": "White Cheese",
             "unit": "gm"
@@ -10319,6 +10367,11 @@
             "count": 60,
             "element": "Areesh Cheese",
             "unit": "gm"
+          },
+          {
+            "count": 2,
+            "element": "Labaneh",
+            "unit": "Spoon(s)"
           },
           {
             "count": 60,
@@ -10334,11 +10387,6 @@
       "-O8VUnSDrPENAcBl6GDK": {
         "alternatives": [
           {
-            "count": 2,
-            "element": "Labaneh",
-            "unit": "Spoon(s)"
-          },
-          {
             "count": 60,
             "element": "White Cheese",
             "unit": "gm"
@@ -10347,6 +10395,11 @@
             "count": 60,
             "element": "Areesh Cheese",
             "unit": "gm"
+          },
+          {
+            "count": 2,
+            "element": "Labaneh",
+            "unit": "Spoon(s)"
           },
           {
             "count": 60,
@@ -10412,7 +10465,7 @@
         "alternatives": [
           {
             "count": 90,
-            "element": "Labaneh",
+            "element": "White Cheese",
             "unit": "gm"
           },
           {
@@ -10422,7 +10475,7 @@
           },
           {
             "count": 90,
-            "element": "White Cheese",
+            "element": "Labaneh",
             "unit": "gm"
           },
           {
@@ -10521,6 +10574,16 @@
           },
           {
             "count": 120,
+            "element": "Shrimp",
+            "unit": "gm"
+          },
+          {
+            "count": 120,
+            "element": "Squid",
+            "unit": "gm"
+          },
+          {
+            "count": 120,
             "element": "Beef",
             "unit": "gm"
           }
@@ -10588,11 +10651,6 @@
         "alternatives": [
           {
             "count": 60,
-            "element": "Labaneh",
-            "unit": "gm"
-          },
-          {
-            "count": 60,
             "element": "White Cheese",
             "unit": "gm"
           },
@@ -10602,13 +10660,18 @@
             "unit": "gm"
           },
           {
-            "count": 50,
-            "element": "Chickpeas",
+            "count": 60,
+            "element": "Labaneh",
             "unit": "gm"
           },
           {
             "count": 60,
             "element": "Tuna",
+            "unit": "gm"
+          },
+          {
+            "count": 50,
+            "element": "Chickpeas",
             "unit": "gm"
           }
         ],
@@ -10719,12 +10782,22 @@
           },
           {
             "count": 120,
-            "element": "Beef",
+            "element": "Shrimp",
+            "unit": "gm"
+          },
+          {
+            "count": 120,
+            "element": "Squid",
             "unit": "gm"
           },
           {
             "count": 120,
             "element": "Chicken Liver",
+            "unit": "gm"
+          },
+          {
+            "count": 120,
+            "element": "Beef",
             "unit": "gm"
           }
         ],
@@ -10773,11 +10846,6 @@
         "alternatives": [
           {
             "count": 60,
-            "element": "Labaneh",
-            "unit": "gm"
-          },
-          {
-            "count": 60,
             "element": "White Cheese",
             "unit": "gm"
           },
@@ -10787,13 +10855,18 @@
             "unit": "gm"
           },
           {
-            "count": 50,
-            "element": "Chickpeas",
+            "count": 60,
+            "element": "Labaneh",
             "unit": "gm"
           },
           {
             "count": 60,
             "element": "Tuna",
+            "unit": "gm"
+          },
+          {
+            "count": 50,
+            "element": "Chickpeas",
             "unit": "gm"
           }
         ],
@@ -10811,12 +10884,22 @@
           },
           {
             "count": 120,
-            "element": "Beef",
+            "element": "Shrimp",
+            "unit": "gm"
+          },
+          {
+            "count": 120,
+            "element": "Squid",
             "unit": "gm"
           },
           {
             "count": 120,
             "element": "Chicken Liver",
+            "unit": "gm"
+          },
+          {
+            "count": 120,
+            "element": "Beef",
             "unit": "gm"
           }
         ],
@@ -10865,11 +10948,6 @@
         "alternatives": [
           {
             "count": 120,
-            "element": "Labaneh",
-            "unit": "gm"
-          },
-          {
-            "count": 120,
             "element": "White Cheese",
             "unit": "gm"
           },
@@ -10880,12 +10958,17 @@
           },
           {
             "count": 120,
-            "element": "Chickpeas",
+            "element": "Labaneh",
             "unit": "gm"
           },
           {
             "count": 120,
             "element": "Tuna",
+            "unit": "gm"
+          },
+          {
+            "count": 120,
+            "element": "Chickpeas",
             "unit": "gm"
           }
         ],
