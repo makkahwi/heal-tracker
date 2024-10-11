@@ -5,21 +5,25 @@ import MealView from "../../../Components/MealView";
 import { renderEvents } from "../../../Components/PageView/MonthlyCalendar";
 import { consumptionFullProps } from "../Diet/Consumption";
 import { medicineProps, renderMedicineUI } from "../Medicine";
+import { renderSleepCycleUI, sleepCycleProps } from "../SleepCycles";
 import { renderExerciseUI, walkExerciseProps } from "../Sports";
 
 type comprehensiveProps = consumptionFullProps & {
   sports: walkExerciseProps[];
   medicines: medicineProps[];
+  sleeps: sleepCycleProps[];
 };
 
 const WeeklyCalendar = ({
   consumptionData,
   walkExercisesData,
   medicineData,
+  sleepCyclesData,
 }: {
   consumptionData: consumptionFullProps[];
   walkExercisesData: walkExerciseProps[];
   medicineData: medicineProps[];
+  sleepCyclesData: sleepCycleProps[];
 }) => {
   const [currentWeek, setCurrentWeek] = useState<Moment[]>([]);
   const [currentDate, setCurrentDate] = useState<Moment>(moment());
@@ -50,9 +54,20 @@ const WeeklyCalendar = ({
           medicines: medicineData.filter(
             ({ date }) => moment(data.timestamp).format("yyyy-MM-DD") === date
           ),
+          sleeps: sleepCyclesData.filter(
+            ({ startTime }) =>
+              moment(data.timestamp).format("yyyy-MM-DD") ===
+              moment(startTime).format("yyyy-MM-DD")
+          ),
         }))
     );
-  }, [currentWeek, consumptionData, walkExercisesData, medicineData]);
+  }, [
+    currentWeek,
+    consumptionData,
+    walkExercisesData,
+    medicineData,
+    sleepCyclesData,
+  ]);
 
   const generateCurrentWeek = (date: Moment) => {
     // Adjust to get the previous or current Saturday
@@ -265,6 +280,33 @@ const WeeklyCalendar = ({
                     day.format("YYYY-MM-DD"),
                     renderMedicineUI(),
                     theWalkExercises?.medicines
+                  )}
+                </td>
+              );
+            })}
+          </tr>
+
+          <tr>
+            <th colSpan={2}>Sleep Cycles</th>
+
+            {currentWeek?.map((day, x) => {
+              const theWalkExercises: comprehensiveProps | undefined =
+                currentWeekData?.find(
+                  (dat) =>
+                    moment(dat.timestamp).format("yyyy-MM-DD") ===
+                    day.format("yyyy-MM-DD")
+                );
+
+              return (
+                <td className="text-start align-top" key={x}>
+                  {renderEvents(
+                    day.format("YYYY-MM-DD"),
+                    renderSleepCycleUI(),
+                    theWalkExercises?.sleeps.map(({ startTime, ...rest }) => ({
+                      ...rest,
+                      date: moment(startTime).format("yyyy-MM-DD"),
+                      startTime,
+                    }))
                   )}
                 </td>
               );
