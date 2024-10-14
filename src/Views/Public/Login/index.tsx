@@ -59,13 +59,13 @@ const Login = () => {
 
   const onSignInSubmit = ({ email, password }: props) => {
     dispatch(signIn({ email, password }))
-      .then(() => navigate(0))
+      .then(() => window.location.reload())
       .catch((err) => console.log(err));
   };
 
   const onSignUpSubmit = ({ email, password }: props) => {
     dispatch(signUp({ email, password }))
-      .then(() => navigate(0))
+      .then(() => window.location.reload())
       .catch((err) => console.log(err));
   };
 
