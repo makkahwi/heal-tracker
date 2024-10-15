@@ -58,10 +58,10 @@ const SleepCycles = () => {
       .then((res: sleepCycleProps[]) =>
         setData(
           res
-            .map(({ startTime, ...rest }) => ({
+            .map(({ endTime, ...rest }) => ({
               ...rest,
-              startTime,
-              date: moment(startTime).format("yyyy-MM-DD"),
+              endTime,
+              date: moment(endTime).format("yyyy-MM-DD"),
             }))
             ?.sort((a: sleepCycleProps, b: sleepCycleProps) =>
               a.startTime > b.startTime ? -1 : 1
