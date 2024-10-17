@@ -128,7 +128,7 @@ const Consumption = () => {
                       rest,
                       ...alternatives.map((x) => ({
                         ...x,
-                        note: "Alternative",
+                        note: "A",
                       })),
                     ]
                   : [...final, rest],
