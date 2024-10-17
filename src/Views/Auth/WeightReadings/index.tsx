@@ -358,6 +358,10 @@ const WeightReadings = () => {
   return (
     <PageSection title="Weight Readings">
       <Fragment>
+        <h4 className="my-3">
+          Total Number of Weight Readings (Visits): {data.length}
+        </h4>
+
         <div className="btn-group my-3 w-100">
           <button
             className="btn btn-secondary"
@@ -381,15 +385,12 @@ const WeightReadings = () => {
             Input
           </button>
         </div>
-
         <div className="collapse multi-collapse" id="analysis">
           <WeightReadingCharts data={data} />
         </div>
-
         <div className="collapse multi-collapse" id="input">
           <Form inputs={formInputs} onSubmit={onSubmit} />
         </div>
-
         <WeightReadingsTable data={data} onDelete={onDelete} />
       </Fragment>
     </PageSection>
