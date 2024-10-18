@@ -1,6 +1,7 @@
 import moment, { Moment } from "moment";
 import { Fragment, useEffect, useState } from "react";
 
+import { getSummary } from "../../../API/ChatGPT";
 import MealView from "../../../Components/MealView";
 import { renderEvents } from "../../../Components/PageView/MonthlyCalendar";
 import { consumptionFullProps } from "../Diet/Consumption";
@@ -8,7 +9,12 @@ import { medicineProps, renderMedicineUI } from "../Medicine";
 import { renderSleepCycleUI, sleepCycleProps } from "../SleepCycles";
 import { renderExerciseUI, walkExerciseProps } from "../Sports";
 
-type comprehensiveProps = consumptionFullProps & {
+export interface SummaryProps {
+  week: string;
+  daily: { date: string; content: string }[];
+}
+
+export type comprehensiveProps = consumptionFullProps & {
   sports: walkExerciseProps[];
   medicines: medicineProps[];
   sleeps: sleepCycleProps[];
@@ -19,17 +25,31 @@ const WeeklyCalendar = ({
   walkExercisesData,
   medicineData,
   sleepCyclesData,
+  summaries,
 }: {
   consumptionData: consumptionFullProps[];
   walkExercisesData: walkExerciseProps[];
   medicineData: medicineProps[];
   sleepCyclesData: sleepCycleProps[];
+  summaries: SummaryProps[];
 }) => {
   const [currentWeek, setCurrentWeek] = useState<Moment[]>([]);
   const [currentDate, setCurrentDate] = useState<Moment>(moment());
   const [currentWeekData, setCurrentWeekData] = useState<comprehensiveProps[]>(
     []
   );
+  const [currentWeekSummary, setCurrentWeekSummary] = useState<SummaryProps>({
+    week: "",
+    daily: [
+      { date: "", content: "" },
+      { date: "", content: "" },
+      { date: "", content: "" },
+      { date: "", content: "" },
+      { date: "", content: "" },
+      { date: "", content: "" },
+      { date: "", content: "" },
+    ],
+  });
 
   useEffect(() => {
     generateCurrentWeek(currentDate);
@@ -55,9 +75,9 @@ const WeeklyCalendar = ({
             ({ date }) => moment(data.timestamp).format("yyyy-MM-DD") === date
           ),
           sleeps: sleepCyclesData.filter(
-            ({ startTime }) =>
+            ({ endTime }) =>
               moment(data.timestamp).format("yyyy-MM-DD") ===
-              moment(startTime).format("yyyy-MM-DD")
+              moment(endTime).format("yyyy-MM-DD")
           ),
         }))
     );
@@ -68,6 +88,9 @@ const WeeklyCalendar = ({
     medicineData,
     sleepCyclesData,
   ]);
+
+  const generateSummary = () =>
+    getSummary(currentWeekData).then((res) => setCurrentWeekSummary(res.data));
 
   const generateCurrentWeek = (date: Moment) => {
     // Adjust to get the previous or current Saturday
@@ -280,10 +303,10 @@ const WeeklyCalendar = ({
                   {renderEvents(
                     day.format("YYYY-MM-DD"),
                     renderSleepCycleUI(),
-                    theWalkExercises?.sleeps.map(({ startTime, ...rest }) => ({
+                    theWalkExercises?.sleeps.map(({ endTime, ...rest }) => ({
                       ...rest,
-                      date: moment(startTime).format("yyyy-MM-DD"),
-                      startTime,
+                      date: moment(endTime).format("yyyy-MM-DD"),
+                      endTime,
                     }))
                   )}
                 </td>
@@ -291,6 +314,28 @@ const WeeklyCalendar = ({
             })}
           </tr>
         </tbody>
+
+        <tfoot>
+          <tr>
+            <th rowSpan={2}>
+              <button
+                className="btn btn-primary"
+                disabled={summaries.length > 0}
+                onClick={() => generateSummary()}
+              >
+                Generate Summary
+              </button>
+            </th>
+
+            {currentWeekSummary.daily.map(({ date, content }, x) => (
+              <th key={x}>{content}</th>
+            ))}
+          </tr>
+
+          <tr>
+            <th colSpan={7}>{currentWeekSummary.week}</th>
+          </tr>
+        </tfoot>
       </table>
     </div>
   );
