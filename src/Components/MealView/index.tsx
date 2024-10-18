@@ -13,7 +13,7 @@ export interface MealViewProps {
   id?: string;
   meal?: string;
   note?: string;
-  count: string;
+  count: number;
   unit: string;
   element: string;
   alternatives?: MealViewProps[];
