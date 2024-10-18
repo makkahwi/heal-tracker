@@ -1,7 +1,7 @@
 import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface dynamicObject {
   [key: string]: any;
@@ -31,7 +31,7 @@ interface props {
 }
 
 const Form = ({ inputs, onSubmit }: props) => {
-  const [formValues, setFormValues] = useState<dynamicObject>(
+  const formValuesSet = () =>
     inputs.reduce(
       (final, { defaultValue, type, name }) => ({
         ...final,
@@ -46,8 +46,11 @@ const Form = ({ inputs, onSubmit }: props) => {
           : undefined,
       }),
       {}
-    )
-  );
+    );
+
+  const [formValues, setFormValues] = useState<dynamicObject>(formValuesSet());
+
+  useEffect(() => setFormValues(formValuesSet()), [inputs]);
 
   return (
     <form

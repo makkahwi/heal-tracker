@@ -95,16 +95,33 @@ const getAll = async (table = "") => {
   });
 };
 
+const get = async (table = "") => {
+  const user = store.getState().auth.user;
+
+  return await service.get(`${table}/${user.localId}.json`).then((res) => {
+    const data = res
+      ? Object.entries(res).map(([id, value]) => ({ id, value }))
+      : [];
+    return data[0];
+  });
+};
+
 const create = async (table = "", data = {}) => {
   const user = store.getState().auth.user;
 
   return await service.post(`${table}/${user.localId}.json`, data);
 };
 
-const update = async (table = "", data = { id: "" }) => {
+interface updateProps {
+  table: string;
+  id: string;
+  data: string | object;
+}
+
+const update = async ({ table = "", id, data }: updateProps) => {
   const user = store.getState().auth.user;
 
-  return await service.patch(`${table}/${user.localId}/${data.id}.json`, data);
+  return await service.patch(`${table}/${user.localId}.json`, { [id]: data });
 };
 
 const remove = async (table = "", id = "") => {
@@ -113,4 +130,4 @@ const remove = async (table = "", id = "") => {
   return await service.delete(`${table}/${user.localId}/${id}.json`);
 };
 
-export { create, getAll, remove, update };
+export { create, getAll, get, remove, update };

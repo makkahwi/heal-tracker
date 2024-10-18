@@ -7,7 +7,7 @@ import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
 import MonthlyCalendar from "../../../Components/PageView/MonthlyCalendar";
 import PageSection from "../../../Components/PageView/PageSection";
-import { dateTotTimeFormat, timeFormat } from "../../../Utils/consts";
+import { dateTotTimeFormat } from "../../../Utils/consts";
 
 export interface sleepCycleProps {
   id?: string;
