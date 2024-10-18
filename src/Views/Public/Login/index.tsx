@@ -1,5 +1,4 @@
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 import Form from "../../../Components/Form";
 import PageSection from "../../../Components/PageView/PageSection";
@@ -14,7 +13,6 @@ interface props {
 
 const Login = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const navigate = useNavigate();
 
   const signInInputs = [
     {
