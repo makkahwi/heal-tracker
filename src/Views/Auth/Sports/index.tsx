@@ -20,6 +20,11 @@ export interface walkExerciseProps {
   note?: string;
 }
 
+interface sportNoteProps {
+  id: string;
+  value: string;
+}
+
 export const renderExerciseUI =
   (onDelete?: Function) =>
   (event: walkExerciseProps, date: string, id: string) => {
@@ -60,8 +65,12 @@ export const renderExerciseUI =
 
 const WalkExercises = () => {
   const [data, setData] = useState<walkExerciseProps[]>([]);
+  const [sportNote, setSportNote] = useState<sportNoteProps>({
+    id: "",
+    value: "",
+  });
 
-  const getData = () =>
+  const getData = () => {
     BeAPI.getAll("sportSessions")
       .then((res: any) =>
         setData(
@@ -71,6 +80,11 @@ const WalkExercises = () => {
         )
       )
       .catch((err) => console.log({ err }));
+
+    BeAPI.get("sportNote")
+      .then((res: any) => setSportNote(res))
+      .catch((err) => console.log({ err }));
+  };
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
@@ -118,7 +132,7 @@ const WalkExercises = () => {
       name: "measure",
       label: "Measure (Walked Distance, Swimming Time, ...etc)",
       type: "text",
-      defaultValue: "15 Pool Rounds",
+      defaultValue: sportNote.value,
       step: "0.1",
       required: true,
     },
@@ -134,8 +148,20 @@ const WalkExercises = () => {
     contents: MealViewProps[];
   }
 
+  interface submitSportNoteProps {
+    note: string;
+  }
+
   const onSubmit = (values: submitProps) => {
     BeAPI.create("sportSessions", values)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
+  };
+
+  const onSportNoteSubmit = (values: submitSportNoteProps) => {
+    BeAPI.update({ table: "sportNote", id: sportNote.id, data: values.note })
       .then(() => {
         getData();
       })
@@ -152,6 +178,19 @@ const WalkExercises = () => {
   return (
     <PageSection title="Sport Sessions">
       <Fragment>
+        <Form
+          inputs={[
+            {
+              name: "note",
+              label: "Sport Note",
+              defaultValue: sportNote.value,
+              fullWidth: true,
+              required: true,
+            },
+          ]}
+          onSubmit={onSportNoteSubmit}
+        />
+
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
         <MonthlyCalendar data={data} renderEvent={renderExerciseUI(onDelete)} />

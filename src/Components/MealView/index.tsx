@@ -38,6 +38,7 @@ const MealView = ({
   count,
   unit,
   element,
+  meal,
   alternatives,
   note,
   onDelete,
@@ -72,7 +73,15 @@ const MealView = ({
     const match = countMatch && elementMatch;
 
     return compare ? (
-      <div className={match ? "text-success" : "text-danger"}>
+      <div
+        className={
+          match
+            ? "text-success"
+            : meal === "Other"
+            ? "text-danger"
+            : "text-white bg-danger py-2 px-1"
+        }
+      >
         <FontAwesomeIcon
           icon={match ? faCheck : elementMatch ? countIcon : faPlus}
           className="me-1"
