@@ -11,7 +11,7 @@ export interface SchedulesMealElementProps {
   id?: string;
   meal?: string;
   element: string;
-  count: string;
+  count: number;
   unit: string;
   note?: string;
   alternatives?: SchedulesMealElementProps[];
