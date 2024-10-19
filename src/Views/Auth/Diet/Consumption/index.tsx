@@ -185,7 +185,10 @@ const Consumption = () => {
 
     const finalValue = {
       meal: values.meal,
-      contents: values.contents,
+      contents: values.contents.map(({ count, ...rest }) => ({
+        ...rest,
+        count: parseFloat(String(count)),
+      })),
       timestamp: moment(date + "T" + time),
       note: values.note,
     };
