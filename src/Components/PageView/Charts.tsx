@@ -50,6 +50,11 @@ const AnalysisCharts = ({
 
   useEffect(() => {
     setHovered(initialHovered());
+    setShow({
+      data: data.map(() => true),
+      average: data.map(() => false),
+      changeAverage: data.map(() => false),
+    });
   }, [data]);
 
   const colors = [
