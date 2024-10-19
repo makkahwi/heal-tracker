@@ -4,6 +4,7 @@ import "../node_modules/react-vis/dist/style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.min.js";
+import "./Style/custom.scss";
 
 const Layout = ({ children = <></> }) => {
   return (

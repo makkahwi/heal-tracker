@@ -16,8 +16,20 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-primary bg-primary position-fixed fixed-top w-100 m-0">
       <div className="container-fluid px-5 py-1">
-        <span className="d-none d-lg-inline">
-          <span className="navbar-brand text-white fw-bold">PDT</span>
+        <span>
+          {user ? (
+            <span>
+              <img src={"/Logo-Only-White.png"} height={40} />
+              <span className="d-none d-lg-inline">
+                <span className="navbar-brand text-white fw-bold">HDL</span>
+              </span>
+            </span>
+          ) : (
+            <span>
+              <img src={"/Logo-Only-White.png"} height={40} />
+              <span className="navbar-brand text-white fw-bold">HDL</span>
+            </span>
+          )}
         </span>
 
         <div>
@@ -27,7 +39,7 @@ const Navbar = () => {
                 <span
                   className={
                     "nav-link mx-2 px-0 text-decoration-none " +
-                    (location.pathname === "/" ? "text-info" : "text-white")
+                    (location.pathname === "/" ? "text-dark" : "text-white")
                   }
                   onClick={() => navigate("/")}
                 >
@@ -47,7 +59,7 @@ const Navbar = () => {
                           list
                             .map(({ path }) => "/" + path)
                             .includes(location.pathname)
-                            ? "text-info"
+                            ? "text-dark"
                             : "text-white"
                         }
                       >
@@ -79,7 +91,7 @@ const Navbar = () => {
                       className={
                         "nav-link mx-2 px-0 text-decoration-none " +
                         (location.pathname === "/" + path
-                          ? "text-info"
+                          ? "text-dark"
                           : "text-white")
                       }
                       onClick={() => navigate(path)}
