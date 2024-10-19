@@ -5,6 +5,7 @@ import {
   faPills,
   faRunning,
   faUtensils,
+  faWater,
   faWeight,
 } from "@fortawesome/free-solid-svg-icons";
 import { Provider } from "react-redux";
@@ -15,6 +16,7 @@ import store from "./Store/store";
 import Dashboard from "./Views/Auth/Dashboard";
 import Consumption from "./Views/Auth/Diet/Consumption";
 import Schedule from "./Views/Auth/Diet/Schedule";
+import Watering from "./Views/Auth/Diet/Watering";
 import LabTests from "./Views/Auth/LabTests";
 import Medicine from "./Views/Auth/Medicine";
 import SleepCycles from "./Views/Auth/SleepCycles";
@@ -39,6 +41,12 @@ export const routes = [
         path: "schedule",
         icon: faCalendar,
         Comp: <Schedule />,
+      },
+      {
+        name: "Watering",
+        path: "watering",
+        icon: faWater,
+        Comp: <Watering />,
       },
     ],
   },

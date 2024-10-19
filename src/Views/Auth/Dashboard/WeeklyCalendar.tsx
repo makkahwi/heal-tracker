@@ -5,6 +5,7 @@ import { getSummary } from "../../../API/ChatGPT";
 import MealView from "../../../Components/MealView";
 import { renderEvents } from "../../../Components/PageView/MonthlyCalendar";
 import { consumptionFullProps } from "../Diet/Consumption";
+import { renderWateringUI, wateringProps } from "../Diet/Watering";
 import { medicineProps, renderMedicineUI } from "../Medicine";
 import { renderSleepCycleUI, sleepCycleProps } from "../SleepCycles";
 import { renderExerciseUI, walkExerciseProps } from "../Sports";
@@ -18,6 +19,7 @@ export type comprehensiveProps = consumptionFullProps & {
   sports: walkExerciseProps[];
   medicines: medicineProps[];
   sleeps: sleepCycleProps[];
+  watering: wateringProps[];
 };
 
 const WeeklyCalendar = ({
@@ -26,12 +28,14 @@ const WeeklyCalendar = ({
   medicineData,
   sleepCyclesData,
   summaries,
+  watering,
 }: {
   consumptionData: consumptionFullProps[];
   walkExercisesData: walkExerciseProps[];
   medicineData: medicineProps[];
   sleepCyclesData: sleepCycleProps[];
   summaries: SummaryProps[];
+  watering: wateringProps[];
 }) => {
   const [currentWeek, setCurrentWeek] = useState<Moment[]>([]);
   const [currentDate, setCurrentDate] = useState<Moment>(moment());
@@ -74,6 +78,29 @@ const WeeklyCalendar = ({
           medicines: medicineData.filter(
             ({ date }) => moment(data.timestamp).format("yyyy-MM-DD") === date
           ),
+          watering: [
+            {
+              date: moment(data.timestamp).format("yyyy-MM-DD"),
+              timestamp: moment(data.timestamp).format("yyyy-MM-DD"),
+              quantity: watering
+                .filter(
+                  ({ timestamp }) =>
+                    moment(data.timestamp).format("yyyy-MM-DD") ===
+                    moment(timestamp).format("yyyy-MM-DD")
+                )
+                .map(({ timestamp, ...rest }) => ({
+                  ...rest,
+                  timestamp,
+                  date: moment(timestamp).format("yyyy-MM-DD"),
+                }))
+                .reduce(
+                  (final, { quantity }) =>
+                    (final += parseFloat(String(quantity))),
+                  0
+                ),
+            },
+          ],
+          // .reduce((final, { quantity }) => (final += quantity), 0)
           sleeps: sleepCyclesData.filter(
             ({ endTime }) =>
               moment(data.timestamp).format("yyyy-MM-DD") ===
@@ -240,6 +267,29 @@ const WeeklyCalendar = ({
                 })}
               </tr>
             ))}
+
+          <tr>
+            <th>Watering</th>
+
+            {currentWeek?.map((day, x) => {
+              const theWalkExercises: comprehensiveProps | undefined =
+                currentWeekData?.find(
+                  (dat) =>
+                    moment(dat.timestamp).format("yyyy-MM-DD") ===
+                    day.format("yyyy-MM-DD")
+                );
+
+              return (
+                <td className="text-start align-top" key={x}>
+                  {renderEvents(
+                    day.format("YYYY-MM-DD"),
+                    renderWateringUI(),
+                    theWalkExercises?.watering
+                  )}
+                </td>
+              );
+            })}
+          </tr>
 
           <tr>
             <th>Sport Sessions</th>

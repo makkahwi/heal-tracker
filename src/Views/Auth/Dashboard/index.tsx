@@ -1,3 +1,4 @@
+import moment from "moment";
 import { useEffect, useState } from "react";
 import { Fragment } from "react/jsx-runtime";
 
@@ -6,6 +7,7 @@ import PageSection from "../../../Components/PageView/PageSection";
 import { consumptionProps } from "../Diet/Consumption";
 import { SchedulesMealElementProps } from "../Diet/Schedule/Elements";
 import { SchedulesMealProps } from "../Diet/Schedule/Meals";
+import { wateringProps } from "../Diet/Watering";
 import { medicineProps } from "../Medicine";
 import { sleepCycleProps } from "../SleepCycles";
 import { walkExerciseProps } from "../Sports";
@@ -24,11 +26,22 @@ const Dashboard = () => {
   const [summaries, setSummaries] = useState<SummaryProps[]>([]);
   const [sleepCyclesData, setSleepCyclesData] = useState<sleepCycleProps[]>([]);
   const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
+  const [watering, setWatering] = useState<wateringProps[]>([]);
 
   const getData = () => {
     BeAPI.getAll("scheduleMealElements")
       .then((res: SchedulesMealElementProps[]) =>
         setScheduled(res?.sort((a, b) => (a.element > b.element ? 1 : -1)))
+      )
+      .catch((err) => console.log({ err }));
+
+    BeAPI.getAll("watering")
+      .then((res: wateringProps[]) =>
+        setWatering(
+          res?.sort((a: wateringProps, b: wateringProps) =>
+            a.timestamp > b.timestamp ? -1 : 1
+          )
+        )
       )
       .catch((err) => console.log({ err }));
 
@@ -126,6 +139,7 @@ const Dashboard = () => {
               },
             };
           })}
+          watering={watering}
           walkExercisesData={walkExercisesData}
           medicineData={medicineData}
           sleepCyclesData={sleepCyclesData}
