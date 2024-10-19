@@ -163,7 +163,7 @@ const Elements = () => {
       count: parseFloat(String(values.count)),
       alternatives: values?.alternatives?.map(({ count, ...rest }) => ({
         ...rest,
-        count: parseFloat(String(values.count)),
+        count: parseFloat(String(count)),
       })),
     }).then(() => {
       getData();
