@@ -10,6 +10,7 @@ import Form from "../../../Components/Form";
 import PageSection from "../../../Components/PageView/PageSection";
 import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
+import { getHighest, getLowest } from "../../../Utils/functions";
 
 export interface weightReadingProps {
   id?: string;
@@ -44,6 +45,26 @@ export interface calculationsProps {
   musclesPercentageWeeklyChange: changeCalculationProps;
   physiqueWeeklyChange: changeCalculationProps;
   bonesWeeklyChange: changeCalculationProps;
+
+  weightSinceWorstChange: changeCalculationProps;
+  fatSinceWorstChange: changeCalculationProps;
+  fatWeightSinceWorstChange: changeCalculationProps;
+  waterSinceWorstChange: changeCalculationProps;
+  waistSinceWorstChange: changeCalculationProps;
+  musclesSinceWorstChange: changeCalculationProps;
+  musclesPercentageSinceWorstChange: changeCalculationProps;
+  physiqueSinceWorstChange: changeCalculationProps;
+  bonesSinceWorstChange: changeCalculationProps;
+
+  weightSinceBestChange: changeCalculationProps;
+  fatSinceBestChange: changeCalculationProps;
+  fatWeightSinceBestChange: changeCalculationProps;
+  waterSinceBestChange: changeCalculationProps;
+  waistSinceBestChange: changeCalculationProps;
+  musclesSinceBestChange: changeCalculationProps;
+  musclesPercentageSinceBestChange: changeCalculationProps;
+  physiqueSinceBestChange: changeCalculationProps;
+  bonesSinceBestChange: changeCalculationProps;
 
   weightSinceStartChange: changeCalculationProps;
   fatSinceStartChange: changeCalculationProps;
@@ -115,6 +136,73 @@ const WeightReadings = () => {
             ) => {
               const previousRecord = sortedRes[i + 1];
               const firstRecord = sortedRes[sortedRes.length - 1];
+
+              const worstWeight = getHighest(
+                sortedRes.filter((_, y) => y > i).map(({ weight }) => weight)
+              );
+              const bestWeight = getLowest(
+                sortedRes.filter((_, y) => y > i).map(({ weight }) => weight)
+              );
+              const worstFat = getHighest(
+                sortedRes.filter((_, y) => y > i).map(({ fat }) => fat)
+              );
+              const bestFat = getLowest(
+                sortedRes.filter((_, y) => y > i).map(({ fat }) => fat)
+              );
+              const worstFatWeight = getHighest(
+                sortedRes
+                  .filter((_, y) => y > i)
+                  .map(({ fat, weight }) => fat * weight)
+              );
+              const bestFatWeight = getLowest(
+                sortedRes
+                  .filter((_, y) => y > i)
+                  .map(({ fat, weight }) => fat * weight)
+              );
+              const worstWater = getLowest(
+                sortedRes.filter((_, y) => y > i).map(({ water }) => water)
+              );
+              const bestWater = getHighest(
+                sortedRes.filter((_, y) => y > i).map(({ water }) => water)
+              );
+              const worstWaist = getHighest(
+                sortedRes.filter((_, y) => y > i).map(({ waist }) => waist)
+              );
+              const bestWaist = getLowest(
+                sortedRes.filter((_, y) => y > i).map(({ waist }) => waist)
+              );
+              const worstMuscles = getLowest(
+                sortedRes.filter((_, y) => y > i).map(({ muscles }) => muscles)
+              );
+              const bestMuscles = getHighest(
+                sortedRes.filter((_, y) => y > i).map(({ muscles }) => muscles)
+              );
+              const worstMusclesPercentage = getLowest(
+                sortedRes
+                  .filter((_, y) => y > i)
+                  .map(({ muscles, weight }) => muscles / weight)
+              );
+              const bestMusclesPercentage = getHighest(
+                sortedRes
+                  .filter((_, y) => y > i)
+                  .map(({ muscles, weight }) => muscles / weight)
+              );
+              const worstPhysique = getLowest(
+                sortedRes
+                  .filter((_, y) => y > i)
+                  .map(({ physique }) => physique)
+              );
+              const bestPhysique = getHighest(
+                sortedRes
+                  .filter((_, y) => y > i)
+                  .map(({ physique }) => physique)
+              );
+              const worstBones = getLowest(
+                sortedRes.filter((_, y) => y > i).map(({ bones }) => bones)
+              );
+              const bestBones = getHighest(
+                sortedRes.filter((_, y) => y > i).map(({ bones }) => bones)
+              );
 
               return {
                 id,
@@ -198,6 +286,110 @@ const WeightReadings = () => {
                 bonesWeeklyChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(previousRecord?.bones, bones, true)
+                    : emptyCalculations,
+                weightSinceWorstChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(worstWeight, weight, false, " KG")
+                    : emptyCalculations,
+                fatSinceWorstChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(worstFat, fat, false, "%")
+                    : emptyCalculations,
+                fatWeightSinceWorstChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(
+                        parseFloat(
+                          (Math.round(worstFatWeight) / 100).toFixed(2)
+                        ),
+                        parseFloat((Math.round(fat * weight) / 100).toFixed(2)),
+                        false,
+                        " KG"
+                      )
+                    : emptyCalculations,
+                waterSinceWorstChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(worstWater, water, true, "%")
+                    : emptyCalculations,
+                waistSinceWorstChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(worstWaist, waist, false)
+                    : emptyCalculations,
+                musclesSinceWorstChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(worstMuscles, muscles, true, " KG")
+                    : emptyCalculations,
+                musclesPercentageSinceWorstChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(
+                        parseFloat(
+                          Math.round(worstMusclesPercentage * 100).toFixed(2)
+                        ),
+                        parseFloat(
+                          Math.round((muscles / weight) * 100).toFixed(2)
+                        ),
+                        true,
+                        "%"
+                      )
+                    : emptyCalculations,
+                physiqueSinceWorstChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(worstPhysique, physique, true)
+                    : emptyCalculations,
+                bonesSinceWorstChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(worstBones, bones, true)
+                    : emptyCalculations,
+                weightSinceBestChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(bestWeight, weight, false, " KG")
+                    : emptyCalculations,
+                fatSinceBestChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(bestFat, fat, false, "%")
+                    : emptyCalculations,
+                fatWeightSinceBestChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(
+                        parseFloat(
+                          (Math.round(bestFatWeight) / 100).toFixed(2)
+                        ),
+                        parseFloat((Math.round(fat * weight) / 100).toFixed(2)),
+                        false,
+                        " KG"
+                      )
+                    : emptyCalculations,
+                waterSinceBestChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(bestWater, water, true, "%")
+                    : emptyCalculations,
+                waistSinceBestChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(bestWaist, waist, false)
+                    : emptyCalculations,
+                musclesSinceBestChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(bestMuscles, muscles, true, " KG")
+                    : emptyCalculations,
+                musclesPercentageSinceBestChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(
+                        parseFloat(
+                          Math.round(bestMusclesPercentage * 100).toFixed(2)
+                        ),
+                        parseFloat(
+                          Math.round((muscles / weight) * 100).toFixed(2)
+                        ),
+                        true,
+                        "%"
+                      )
+                    : emptyCalculations,
+                physiqueSinceBestChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(bestPhysique, physique, true)
+                    : emptyCalculations,
+                bonesSinceBestChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(bestBones, bones, true)
                     : emptyCalculations,
                 weightSinceStartChange:
                   i < sortedRes.length - 2

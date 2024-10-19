@@ -143,16 +143,11 @@ const WalkExercises = () => {
     },
   ];
 
-  interface submitProps {
-    date: string;
-    contents: MealViewProps[];
-  }
-
   interface submitSportNoteProps {
     note: string;
   }
 
-  const onSubmit = (values: submitProps) => {
+  const onSubmit = (values: walkExerciseProps) => {
     BeAPI.create("sportSessions", values)
       .then(() => {
         getData();

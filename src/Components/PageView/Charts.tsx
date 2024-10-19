@@ -1,7 +1,9 @@
+import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
 import {
+  Hint,
   HorizontalGridLines,
   LineMarkSeries,
   VerticalGridLines,
@@ -10,6 +12,7 @@ import {
   YAxis,
 } from "react-vis";
 
+import { getAverage } from "../../Utils/functions";
 import { changeCalculationProps } from "../../Views/Auth/WeightReadings";
 
 interface hoverProps {
@@ -29,6 +32,8 @@ const AnalysisCharts = ({
       y: number;
       weekly: changeCalculationProps;
       sinceStart: changeCalculationProps;
+      sinceWorst: changeCalculationProps;
+      sinceBest: changeCalculationProps;
     }[];
     title: string;
     unit?: string;
@@ -37,6 +42,11 @@ const AnalysisCharts = ({
   data: any[];
 }) => {
   const [hovered, setHovered] = useState<hoverProps[]>(initialHovered());
+  const [show, setShow] = useState({
+    data: data.map(() => true),
+    average: data.map(() => false),
+    changeAverage: data.map(() => false),
+  });
 
   useEffect(() => {
     setHovered(initialHovered());
@@ -80,6 +90,7 @@ const AnalysisCharts = ({
         const values = data.map(({ y }) => y);
         const min = Math.min.apply(Math, values);
         const max = Math.max.apply(Math, values);
+        const average = getAverage(data?.map(({ y }) => parseFloat(String(y))));
 
         return (
           <div className="col-md-6 col-lg-4 my-3 justify-center" key={x}>
@@ -102,31 +113,178 @@ const AnalysisCharts = ({
                       <YAxis
                         title={"Reading" + (unit ? " ( " + unit + " )" : "")}
                       />
-                      <LineMarkSeries
-                        data={data?.map(({ x, y }) => ({
-                          x: moment(x).valueOf(),
-                          y,
-                        }))}
-                        color={colors[x % colors.length]}
-                        onValueMouseOver={(v) =>
-                          setHovered((current) =>
-                            current.map((c) =>
-                              c.title === title
-                                ? {
-                                    date: String(
-                                      moment(v.x).format("DD MMM yyyy")
-                                    ),
-                                    value: parseFloat(String(v.y)),
-                                    title,
-                                  }
-                                : c
+
+                      {show.data[x] && (
+                        <LineMarkSeries
+                          data={data?.map(({ x, y }) => ({
+                            x: moment(x).valueOf(),
+                            y,
+                          }))}
+                          color={colors[x % colors.length]}
+                          onValueMouseOver={(v) =>
+                            setHovered((current) =>
+                              current.map((c) =>
+                                c.title === title
+                                  ? {
+                                      date: String(
+                                        moment(v.x).format("DD MMM yyyy")
+                                      ),
+                                      value: parseFloat(String(v.y)),
+                                      title,
+                                    }
+                                  : c
+                              )
                             )
-                          )
-                        }
-                        onValueMouseOut={() => setHovered(initialHovered())}
-                      />
+                          }
+                          onValueMouseOut={() => setHovered(initialHovered())}
+                        />
+                      )}
+
+                      {/* Values Average */}
+                      {show.average[x] && (
+                        <LineMarkSeries
+                          data={[
+                            {
+                              x: moment(data[0]?.x).valueOf(),
+                              y: average,
+                            },
+                            {
+                              x: moment(data[data?.length - 1]?.x).valueOf(),
+                              y: average,
+                            },
+                          ]}
+                          // opacity={0.5}
+                          color="red"
+                        />
+                      )}
+
+                      {show.average[x] && (
+                        <Hint
+                          value={{
+                            x: moment(data[data?.length - 1]?.x).valueOf(),
+                            y: average,
+                          }}
+                          style={{
+                            fontSize: 12,
+                            value: {
+                              color: "red",
+                            },
+                            // opacity={0.5}
+                          }}
+                        >
+                          <div className="card bg-danger text-white p-1">
+                            Average ({average.toFixed(2)})
+                          </div>
+                        </Hint>
+                      )}
+
+                      {/* Change Average */}
+                      {show.changeAverage[x] && (
+                        <LineMarkSeries
+                          data={[
+                            {
+                              x: moment(data[0]?.x).valueOf(),
+                              y: data[0]?.y,
+                            },
+                            {
+                              x: moment(data[data.length - 1]?.x).valueOf(),
+                              y: data[data.length - 1]?.y,
+                            },
+                          ]}
+                          color="skyblue"
+                          // opacity={0.5}
+                        />
+                      )}
+                      {show.changeAverage[x] && (
+                        <Hint
+                          value={{
+                            x: moment(data[0]?.x).valueOf(),
+                            y: data[0]?.y,
+                          }}
+                          style={{
+                            fontSize: 12,
+                            value: {
+                              color: "skyblue",
+                            },
+                            // opacity: 0.5,
+                          }}
+                        >
+                          <div className="card bg-info text-white p-1">
+                            Change Average
+                            <span>
+                              <FontAwesomeIcon
+                                icon={
+                                  data[0]?.y < data[data.length - 1]?.y
+                                    ? faArrowDown
+                                    : faArrowUp
+                                }
+                                className="me-1"
+                              />
+                              {(
+                                (data[0]?.y - data[data.length - 1]?.y) /
+                                data.length
+                              ).toFixed(2)}
+                            </span>
+                          </div>
+                        </Hint>
+                      )}
                     </XYPlot>
                   </td>
+                </tr>
+
+                <tr>
+                  <th colSpan={4}>
+                    <div className="btn-group">
+                      <button
+                        className={
+                          "btn btn-sm btn-primary " +
+                          (show.data[x] ? "opacity-100" : "opacity-50")
+                        }
+                        onClick={() =>
+                          setShow((current) => ({
+                            ...current,
+                            data: current.data.map((v, y) => (y == x ? !v : v)),
+                          }))
+                        }
+                      >
+                        Data
+                      </button>
+
+                      <button
+                        className={
+                          "btn btn-sm btn-danger " +
+                          (show.average[x] ? "opacity-100" : "opacity-50")
+                        }
+                        onClick={() =>
+                          setShow((current) => ({
+                            ...current,
+                            average: current.average.map((v, y) =>
+                              y == x ? !v : v
+                            ),
+                          }))
+                        }
+                      >
+                        Average
+                      </button>
+
+                      <button
+                        className={
+                          "btn btn-sm btn-info " +
+                          (show.changeAverage[x] ? "opacity-100" : "opacity-50")
+                        }
+                        onClick={() =>
+                          setShow((current) => ({
+                            ...current,
+                            changeAverage: current.changeAverage.map((v, y) =>
+                              y == x ? !v : v
+                            ),
+                          }))
+                        }
+                      >
+                        Change Average
+                      </button>
+                    </div>
+                  </th>
                 </tr>
 
                 <tr>
@@ -148,7 +306,7 @@ const AnalysisCharts = ({
 
                 {changes?.weekly?.icon && (
                   <tr className="text-start">
-                    <th>Weekly Change</th>
+                    <th>Week Change</th>
                     {changeUI(changes?.weekly)}
                   </tr>
                 )}
@@ -157,6 +315,20 @@ const AnalysisCharts = ({
                   <tr className="text-start">
                     <th>Since Start Change</th>
                     {changeUI(changes?.sinceStart)}
+                  </tr>
+                )}
+
+                {changes?.sinceWorst?.icon && (
+                  <tr className="text-start">
+                    <th>Since Worst Point Change</th>
+                    {changeUI(changes?.sinceWorst)}
+                  </tr>
+                )}
+
+                {changes?.sinceBest?.icon && (
+                  <tr className="text-start">
+                    <th>Since Best Point Change</th>
+                    {changeUI(changes?.sinceBest)}
                   </tr>
                 )}
               </tbody>

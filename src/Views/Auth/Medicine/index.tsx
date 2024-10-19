@@ -91,12 +91,7 @@ const Medicine = () => {
     },
   ];
 
-  interface submitProps {
-    date: string;
-    contents: MealViewProps[];
-  }
-
-  const onSubmit = (values: submitProps) => {
+  const onSubmit = (values: medicineProps) => {
     BeAPI.create("medicine", values)
       .then(() => {
         getData();
