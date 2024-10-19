@@ -29,6 +29,8 @@ const AnalysisCharts = ({
       y: number;
       weekly: changeCalculationProps;
       sinceStart: changeCalculationProps;
+      sinceWorst: changeCalculationProps;
+      sinceBest: changeCalculationProps;
     }[];
     title: string;
     unit?: string;
@@ -148,7 +150,7 @@ const AnalysisCharts = ({
 
                 {changes?.weekly?.icon && (
                   <tr className="text-start">
-                    <th>Weekly Change</th>
+                    <th>Week Change</th>
                     {changeUI(changes?.weekly)}
                   </tr>
                 )}
@@ -157,6 +159,20 @@ const AnalysisCharts = ({
                   <tr className="text-start">
                     <th>Since Start Change</th>
                     {changeUI(changes?.sinceStart)}
+                  </tr>
+                )}
+
+                {changes?.sinceWorst?.icon && (
+                  <tr className="text-start">
+                    <th>Since Worst Point Change</th>
+                    {changeUI(changes?.sinceWorst)}
+                  </tr>
+                )}
+
+                {changes?.sinceBest?.icon && (
+                  <tr className="text-start">
+                    <th>Since Best Point Change</th>
+                    {changeUI(changes?.sinceBest)}
                   </tr>
                 )}
               </tbody>
