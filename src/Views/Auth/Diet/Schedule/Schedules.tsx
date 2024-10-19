@@ -40,7 +40,10 @@ const Schedules = () => {
   ];
 
   const onSubmit = (values: ScheduleProps) => {
-    BeAPI.create("schedules", values)
+    BeAPI.create("schedules", {
+      ...values,
+      order: parseFloat(String(values.order)),
+    })
       .then(() => {
         getData();
       })

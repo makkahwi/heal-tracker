@@ -157,13 +157,15 @@ const Elements = () => {
     },
   ];
 
-  interface submitProps {
-    meal: string;
-    contents: SchedulesMealElementProps[];
-  }
-
-  const onSubmit = (values: submitProps) => {
-    BeAPI.create("scheduleMealElements", values).then(() => {
+  const onSubmit = (values: SchedulesMealElementProps) => {
+    BeAPI.create("scheduleMealElements", {
+      ...values,
+      count: parseFloat(String(values.count)),
+      alternatives: values?.alternatives?.map(({ count, ...rest }) => ({
+        ...rest,
+        count: parseFloat(String(values.count)),
+      })),
+    }).then(() => {
       getData();
     });
   };
