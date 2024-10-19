@@ -1,4 +1,4 @@
-# Personal Diet Tracker
+# Health Daily Link
 
 This is to setup the schedule of meals you are following (diet), and insert what was actually consumed.
 

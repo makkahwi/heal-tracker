@@ -218,7 +218,7 @@ const Form = ({ inputs, onSubmit }: props) => {
       )}
 
       <div className="col-xs-12">
-        <button className="btn btn-secondary my-4 p-3 w-100" type="submit">
+        <button className="btn btn-primary my-4 p-3 w-100" type="submit">
           Submit
         </button>
       </div>

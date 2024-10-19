@@ -1,8 +1,8 @@
 {
-  "name": "personal-diet-tracker",
+  "name": "health-daily-link",
   "version": "0.1.0",
   "private": true,
-  "description": "A React.js-Based Personal Diet Tracker",
+  "description": "A React.js-Based Health Daily Link",
   "author": {
     "name": "Suhaib Ahmad",
     "url": "https://www.Suhaib.dev/",
@@ -27,6 +27,7 @@
     "react-scripts": "5.0.1",
     "react-vis": "^1.12.1",
     "redux": "^5.0.1",
+    "sass": "^1.80.3",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
