@@ -10,3 +10,6 @@ export const getHighest = (list = [0]) => {
     list[0]
   );
 };
+export const getAverage = (list = [0]) => {
+  return list.reduce((final, current) => (current += final), 0) / list.length;
+};
