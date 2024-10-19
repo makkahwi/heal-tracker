@@ -2,7 +2,15 @@ import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
-import { Hint, HorizontalGridLines, LineMarkSeries, VerticalGridLines, XAxis, XYPlot, YAxis } from "react-vis";
+import {
+  Hint,
+  HorizontalGridLines,
+  LineMarkSeries,
+  VerticalGridLines,
+  XAxis,
+  XYPlot,
+  YAxis,
+} from "react-vis";
 
 import { getAverage } from "../../Utils/functions";
 import { changeCalculationProps } from "../../Views/Auth/WeightReadings";
@@ -35,9 +43,9 @@ const AnalysisCharts = ({
 }) => {
   const [hovered, setHovered] = useState<hoverProps[]>(initialHovered());
   const [show, setShow] = useState({
-    data: true,
-    average: false,
-    changeAverage: false,
+    data: data.map(() => true),
+    average: data.map(() => false),
+    changeAverage: data.map(() => false),
   });
 
   useEffect(() => {
@@ -106,7 +114,7 @@ const AnalysisCharts = ({
                         title={"Reading" + (unit ? " ( " + unit + " )" : "")}
                       />
 
-                      {show.data && (
+                      {show.data[x] && (
                         <LineMarkSeries
                           data={data?.map(({ x, y }) => ({
                             x: moment(x).valueOf(),
@@ -133,7 +141,7 @@ const AnalysisCharts = ({
                       )}
 
                       {/* Values Average */}
-                      {show.average && (
+                      {show.average[x] && (
                         <LineMarkSeries
                           data={[
                             {
@@ -150,7 +158,7 @@ const AnalysisCharts = ({
                         />
                       )}
 
-                      {show.average && (
+                      {show.average[x] && (
                         <Hint
                           value={{
                             x: moment(data[data?.length - 1]?.x).valueOf(),
@@ -171,7 +179,7 @@ const AnalysisCharts = ({
                       )}
 
                       {/* Change Average */}
-                      {show.changeAverage && (
+                      {show.changeAverage[x] && (
                         <LineMarkSeries
                           data={[
                             {
@@ -187,7 +195,7 @@ const AnalysisCharts = ({
                           // opacity={0.5}
                         />
                       )}
-                      {show.changeAverage && (
+                      {show.changeAverage[x] && (
                         <Hint
                           value={{
                             x: moment(data[0]?.x).valueOf(),
@@ -230,12 +238,12 @@ const AnalysisCharts = ({
                       <button
                         className={
                           "btn btn-sm btn-primary " +
-                          (show.data ? "opacity-100" : "opacity-50")
+                          (show.data[x] ? "opacity-100" : "opacity-50")
                         }
                         onClick={() =>
                           setShow((current) => ({
                             ...current,
-                            data: !show.data,
+                            data: current.data.map((v, y) => (y == x ? !v : v)),
                           }))
                         }
                       >
@@ -245,12 +253,14 @@ const AnalysisCharts = ({
                       <button
                         className={
                           "btn btn-sm btn-danger " +
-                          (show.average ? "opacity-100" : "opacity-50")
+                          (show.average[x] ? "opacity-100" : "opacity-50")
                         }
                         onClick={() =>
                           setShow((current) => ({
                             ...current,
-                            average: !show.average,
+                            average: current.average.map((v, y) =>
+                              y == x ? !v : v
+                            ),
                           }))
                         }
                       >
@@ -260,12 +270,14 @@ const AnalysisCharts = ({
                       <button
                         className={
                           "btn btn-sm btn-info " +
-                          (show.changeAverage ? "opacity-100" : "opacity-50")
+                          (show.changeAverage[x] ? "opacity-100" : "opacity-50")
                         }
                         onClick={() =>
                           setShow((current) => ({
                             ...current,
-                            changeAverage: !show.changeAverage,
+                            changeAverage: current.changeAverage.map((v, y) =>
+                              y == x ? !v : v
+                            ),
                           }))
                         }
                       >
