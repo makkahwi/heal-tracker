@@ -20,12 +20,12 @@ const WeightReadingsTable = ({
             <tr className="align-middle">
               <th>Date</th>
               <th>Weight</th>
-              <th>Fat Reading</th>
-              <th>Fat Weight</th>
-              <th>Water Reading</th>
-              <th>Waist Fat</th>
-              <th>Muscles Reading</th>
               <th>Muscles Percentage</th>
+              {/* <th>Muscles Weight</th> */}
+              <th>Water Percentage</th>
+              <th>Fat Percentage</th>
+              <th>Fat Weight</th>
+              <th>Waist Fat</th>
               <th>Physique Rating</th>
               <th>Bones Mass</th>
               <th>Actions</th>
@@ -54,12 +54,12 @@ const WeightReadingsTable = ({
                   <tr className="align-middle">
                     <td>{dayDateFormat(date)}</td>
                     <td>{weight}KG</td>
+                    <td>{musclesPercentage}%</td>
+                    {/* <td>{muscles}KG</td> */}
+                    <td>{water}%</td>
                     <td>{fat}%</td>
                     <td>{fatWeight}KG</td>
-                    <td>{water}%</td>
                     <td>{waist}</td>
-                    <td>{muscles}KG</td>
-                    <td>{musclesPercentage}%</td>
                     <td>{physique}</td>
                     <td>{bones}</td>
                     <td>
@@ -112,7 +112,22 @@ const WeightReadingsTable = ({
                   </tr>
 
                   <tr className="align-middle">
-                    <th>Fat Reading</th>
+                    <th>Muscles Percentage</th>
+                    <td>{musclesPercentage}</td>
+                  </tr>
+
+                  {/* <tr className="align-middle">
+                    <th>Muscles Weight</th>
+                    <td>{muscles}</td>
+                  </tr> */}
+
+                  <tr className="align-middle">
+                    <th>Water Percentage</th>
+                    <td>{water}</td>
+                  </tr>
+
+                  <tr className="align-middle">
+                    <th>Fat Percentage</th>
                     <td>{fat}</td>
                   </tr>
 
@@ -122,23 +137,8 @@ const WeightReadingsTable = ({
                   </tr>
 
                   <tr className="align-middle">
-                    <th>Water Reading</th>
-                    <td>{water}</td>
-                  </tr>
-
-                  <tr className="align-middle">
                     <th>Waist Fat</th>
                     <td>{waist}</td>
-                  </tr>
-
-                  <tr className="align-middle">
-                    <th>Muscles Reading</th>
-                    <td>{muscles}</td>
-                  </tr>
-
-                  <tr className="align-middle">
-                    <th>Muscles Percentage</th>
-                    <td>{musclesPercentage}</td>
                   </tr>
 
                   <tr className="align-middle">

@@ -29,6 +29,69 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
     {
       data: data?.map(
         ({
+          musclesPercentage,
+          date,
+          musclesPercentageWeeklyChange,
+          musclesPercentageSinceStartChange,
+          musclesPercentageSinceWorstChange,
+          musclesPercentageSinceBestChange,
+        }) => ({
+          x: date,
+          y: parseFloat(musclesPercentage),
+          weekly: musclesPercentageWeeklyChange,
+          sinceStart: musclesPercentageSinceStartChange,
+          sinceWorst: musclesPercentageSinceWorstChange,
+          sinceBest: musclesPercentageSinceBestChange,
+        })
+      ),
+      title: "Muscles Percentage",
+      unit: "%",
+    },
+    // {
+    //   data: data?.map(
+    //     ({
+    //       muscles,
+    //       date,
+    //       musclesWeeklyChange,
+    //       musclesSinceStartChange,
+    //       musclesSinceWorstChange,
+    //       musclesSinceBestChange,
+    //     }) => ({
+    //       x: date,
+    //       y: muscles,
+    //       weekly: musclesWeeklyChange,
+    //       sinceStart: musclesSinceStartChange,
+    //       sinceWorst: musclesSinceWorstChange,
+    //       sinceBest: musclesSinceBestChange,
+    //     })
+    //   ),
+    //   title: "Muscles Weight",
+    //   unit: "KG",
+    // },
+    {
+      data: data?.map(
+        ({
+          water,
+          date,
+          waterWeeklyChange,
+          waterSinceStartChange,
+          waterSinceWorstChange,
+          waterSinceBestChange,
+        }) => ({
+          x: date,
+          y: water,
+          weekly: waterWeeklyChange,
+          sinceStart: waterSinceStartChange,
+          sinceWorst: waterSinceWorstChange,
+          sinceBest: waterSinceBestChange,
+        })
+      ),
+      title: "Water Percentage",
+      unit: "%",
+    },
+    {
+      data: data?.map(
+        ({
           fat,
           date,
           fatWeeklyChange,
@@ -71,27 +134,6 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
     {
       data: data?.map(
         ({
-          water,
-          date,
-          waterWeeklyChange,
-          waterSinceStartChange,
-          waterSinceWorstChange,
-          waterSinceBestChange,
-        }) => ({
-          x: date,
-          y: water,
-          weekly: waterWeeklyChange,
-          sinceStart: waterSinceStartChange,
-          sinceWorst: waterSinceWorstChange,
-          sinceBest: waterSinceBestChange,
-        })
-      ),
-      title: "Water Percentage",
-      unit: "%",
-    },
-    {
-      data: data?.map(
-        ({
           waist,
           date,
           waistWeeklyChange,
@@ -108,48 +150,6 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
         })
       ),
       title: "Waist",
-    },
-    {
-      data: data?.map(
-        ({
-          muscles,
-          date,
-          musclesWeeklyChange,
-          musclesSinceStartChange,
-          musclesSinceWorstChange,
-          musclesSinceBestChange,
-        }) => ({
-          x: date,
-          y: muscles,
-          weekly: musclesWeeklyChange,
-          sinceStart: musclesSinceStartChange,
-          sinceWorst: musclesSinceWorstChange,
-          sinceBest: musclesSinceBestChange,
-        })
-      ),
-      title: "Muscles Weight",
-      unit: "KG",
-    },
-    {
-      data: data?.map(
-        ({
-          musclesPercentage,
-          date,
-          musclesPercentageWeeklyChange,
-          musclesPercentageSinceStartChange,
-          musclesPercentageSinceWorstChange,
-          musclesPercentageSinceBestChange,
-        }) => ({
-          x: date,
-          y: parseFloat(musclesPercentage),
-          weekly: musclesPercentageWeeklyChange,
-          sinceStart: musclesPercentageSinceStartChange,
-          sinceWorst: musclesPercentageSinceWorstChange,
-          sinceBest: musclesPercentageSinceBestChange,
-        })
-      ),
-      title: "Muscles Percentage",
-      unit: "%",
     },
     {
       data: data?.map(
