@@ -8,7 +8,7 @@ import { consumptionProps } from "../Diet/Consumption";
 import { SchedulesMealElementProps } from "../Diet/Schedule/Elements";
 import { SchedulesMealProps } from "../Diet/Schedule/Meals";
 import { wateringProps } from "../Diet/Watering";
-import { medicineProps } from "../Medicine";
+import { medicineProps } from "../Medicine/Consumption";
 import { sleepCycleProps } from "../SleepCycles";
 import { walkExerciseProps } from "../Sports";
 import WeeklyCalendar, { SummaryProps } from "./WeeklyCalendar";
