@@ -11,7 +11,7 @@ import { medicineProps } from "../Medicine/Consumption";
 import { medicineScheduleProps } from "../Medicine/Schedule";
 import { sleepCycleProps } from "../SleepCycles";
 import { walkExerciseProps } from "../Sports";
-import WeeklyCalendar, { SummaryProps } from "./WeeklyCalendar";
+import WeeklyCalendar from "./WeeklyCalendar";
 
 const Dashboard = () => {
   const [consumptionData, setConsumptionData] = useState<consumptionProps[]>(

@@ -248,7 +248,9 @@ const AnalysisCharts = ({
                         onClick={() =>
                           setShow((current) => ({
                             ...current,
-                            data: current.data.map((v, y) => (y == x ? !v : v)),
+                            data: current.data.map((v, y) =>
+                              y === x ? !v : v
+                            ),
                           }))
                         }
                       >
@@ -264,7 +266,7 @@ const AnalysisCharts = ({
                           setShow((current) => ({
                             ...current,
                             average: current.average.map((v, y) =>
-                              y == x ? !v : v
+                              y === x ? !v : v
                             ),
                           }))
                         }
@@ -281,7 +283,7 @@ const AnalysisCharts = ({
                           setShow((current) => ({
                             ...current,
                             changeAverage: current.changeAverage.map((v, y) =>
-                              y == x ? !v : v
+                              y === x ? !v : v
                             ),
                           }))
                         }
