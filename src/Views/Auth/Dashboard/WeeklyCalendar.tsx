@@ -9,8 +9,10 @@ import { renderWateringUI, wateringProps } from "../Diet/Watering";
 import { medicineProps, renderMedicineUI } from "../Medicine/Consumption";
 import { renderSleepCycleUI, sleepCycleProps } from "../SleepCycles";
 import { renderExerciseUI, walkExerciseProps } from "../Sports";
+import * as BeAPI from "../../../API";
 
 export interface SummaryProps {
+  date: string;
   week: string;
   daily: { date: string; content: string }[];
 }
@@ -27,14 +29,12 @@ const WeeklyCalendar = ({
   walkExercisesData,
   medicineData,
   sleepCyclesData,
-  summaries,
   watering,
 }: {
   consumptionData: consumptionFullProps[];
   walkExercisesData: walkExerciseProps[];
   medicineData: medicineProps[];
   sleepCyclesData: sleepCycleProps[];
-  summaries: SummaryProps[];
   watering: wateringProps[];
 }) => {
   const [currentWeek, setCurrentWeek] = useState<Moment[]>([]);
@@ -44,6 +44,7 @@ const WeeklyCalendar = ({
   );
   const [currentWeekSummary, setCurrentWeekSummary] = useState<SummaryProps>({
     week: "",
+    date: "",
     daily: [
       { date: "", content: "" },
       { date: "", content: "" },
@@ -117,7 +118,11 @@ const WeeklyCalendar = ({
   ]);
 
   const generateSummary = () =>
-    getSummary(currentWeekData).then((res) => setCurrentWeekSummary(res.data));
+    getSummary(currentWeekData).then((res) => {
+      const data = JSON.parse(res);
+      setCurrentWeekSummary(data);
+      BeAPI.create("summaries", data).catch((err) => console.log({ err }));
+    });
 
   const generateCurrentWeek = (date: Moment) => {
     // Adjust to get the previous or current Saturday
@@ -127,6 +132,14 @@ const WeeklyCalendar = ({
     for (let i = 0; i < 7; i++) {
       days.push(startOfWeek.clone().add(i, "days"));
     }
+
+    const firstDay = days[0].format("YYYY-MM-DD");
+
+    BeAPI.getAll("summaries")
+      .then((res) =>
+        setCurrentWeekSummary(res.find(({ date }) => date == firstDay))
+      )
+      .catch((err) => console.log({ err }));
 
     setCurrentWeek(days);
   };
@@ -370,20 +383,25 @@ const WeeklyCalendar = ({
             <th rowSpan={2}>
               <button
                 className="btn btn-primary"
-                disabled={summaries.length > 0}
+                disabled={currentWeekSummary?.week.length > 0}
                 onClick={() => generateSummary()}
               >
                 Generate Summary
               </button>
             </th>
 
-            {currentWeekSummary.daily.map(({ date, content }, x) => (
-              <th key={x}>{content}</th>
-            ))}
+            {currentWeek?.map((day, x) => {
+              const data = currentWeekSummary?.daily.find(
+                ({ date }) =>
+                  moment(date).format("yyyy-MM-DD") === day.format("yyyy-MM-DD")
+              );
+
+              return <th key={x}>{data?.content}</th>;
+            })}
           </tr>
 
           <tr>
-            <th colSpan={7}>{currentWeekSummary.week}</th>
+            <th colSpan={7}>{currentWeekSummary?.week}</th>
           </tr>
         </tfoot>
       </table>
