@@ -8,6 +8,7 @@ import Form from "../../../Components/Form";
 import MonthlyCalendar from "../../../Components/PageView/MonthlyCalendar";
 import PageSection from "../../../Components/PageView/PageSection";
 import { dateTotTimeFormat } from "../../../Utils/consts";
+import { timeDifference } from "../../../Utils/functions";
 
 export interface sleepCycleProps {
   id?: string;
@@ -17,13 +18,8 @@ export interface sleepCycleProps {
 }
 
 export const renderSleepCycleUI =
-  (onDelete?: Function) =>
-  (event: sleepCycleProps, date: string, id: string) => {
-    const duration = moment.duration(
-      moment(event.endTime).diff(moment(event.startTime))
-    );
-
-    return (
+  (onDelete?: Function) => (event: sleepCycleProps, date: string, id: string) =>
+    (
       <div>
         {date ? (
           <span className="d-block bg-dark text-white p-2 my-2">
@@ -38,9 +34,7 @@ export const renderSleepCycleUI =
               />
             )}
             <br />
-            {Math.trunc(duration.asHours())}
-            {":"}
-            {duration.minutes()}
+            {timeDifference(moment(event.startTime), moment(event.endTime))}
           </span>
         ) : (
           ""
@@ -48,7 +42,6 @@ export const renderSleepCycleUI =
         <small>{event.note}</small>
       </div>
     );
-  };
 
 const SleepCycles = () => {
   const [data, setData] = useState<sleepCycleProps[]>([]);

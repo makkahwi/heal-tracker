@@ -9,6 +9,7 @@ import { MealViewProps } from "../../../Components/MealView";
 import MonthlyCalendar from "../../../Components/PageView/MonthlyCalendar";
 import PageSection from "../../../Components/PageView/PageSection";
 import { timeFormat } from "../../../Utils/consts";
+import { timeDifference as timeDifference } from "../../../Utils/functions";
 
 export interface walkExerciseProps {
   id?: string;
@@ -27,14 +28,8 @@ interface sportNoteProps {
 
 export const renderExerciseUI =
   (onDelete?: Function) =>
-  (event: walkExerciseProps, date: string, id: string) => {
-    const duration = moment.duration(
-      moment("2024-08-06T" + event.endTime).diff(
-        moment("2024-08-06T" + event.startTime)
-      )
-    );
-
-    return (
+  (event: walkExerciseProps, date: string, id: string) =>
+    (
       <div>
         {date ? (
           <span className="d-block bg-dark text-white p-2 my-2">
@@ -48,9 +43,10 @@ export const renderExerciseUI =
               />
             )}
             <br />
-            {Math.trunc(duration.asHours())}
-            {":"}
-            {duration.minutes()}
+            {timeDifference(
+              moment("2024-08-06T" + event.startTime),
+              moment("2024-08-06T" + event.endTime)
+            )}
           </span>
         ) : (
           ""
@@ -61,7 +57,6 @@ export const renderExerciseUI =
         <small>{event.note}</small>
       </div>
     );
-  };
 
 const WalkExercises = () => {
   const [data, setData] = useState<walkExerciseProps[]>([]);
