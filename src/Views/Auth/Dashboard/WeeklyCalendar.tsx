@@ -137,7 +137,7 @@ const WeeklyCalendar = ({
 
     BeAPI.getAll("summaries")
       .then((res) =>
-        setCurrentWeekSummary(res.find(({ date }) => date == firstDay))
+        setCurrentWeekSummary(res.find(({ date }) => date === firstDay))
       )
       .catch((err) => console.log({ err }));
 

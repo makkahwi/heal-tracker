@@ -57,7 +57,7 @@ const Footer = () => {
           <div className="row gy-4 gy-md-0 align-items-md-center">
             <div className="col-xs-12 col-md-7 order-1 order-md-0">
               <h6 className="copyright text-center text-md-start">
-                <img src="/Logo-Only.png" height={100} />
+                <img src="/Logo-Only.png" alt="logo" height={100} />
                 HDL | Health Daily Link
               </h6>
             </div>
