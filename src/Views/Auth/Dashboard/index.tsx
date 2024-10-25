@@ -1,4 +1,3 @@
-import moment from "moment";
 import { useEffect, useState } from "react";
 import { Fragment } from "react/jsx-runtime";
 
@@ -9,10 +8,10 @@ import { SchedulesMealElementProps } from "../Diet/Schedule/Elements";
 import { SchedulesMealProps } from "../Diet/Schedule/Meals";
 import { wateringProps } from "../Diet/Watering";
 import { medicineProps } from "../Medicine/Consumption";
+import { medicineScheduleProps } from "../Medicine/Schedule";
 import { sleepCycleProps } from "../SleepCycles";
 import { walkExerciseProps } from "../Sports";
 import WeeklyCalendar, { SummaryProps } from "./WeeklyCalendar";
-import { medicineScheduleProps } from "../Medicine/Schedule";
 
 const Dashboard = () => {
   const [consumptionData, setConsumptionData] = useState<consumptionProps[]>(
