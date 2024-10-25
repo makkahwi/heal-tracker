@@ -12,6 +12,7 @@ import { medicineProps } from "../Medicine/Consumption";
 import { sleepCycleProps } from "../SleepCycles";
 import { walkExerciseProps } from "../Sports";
 import WeeklyCalendar, { SummaryProps } from "./WeeklyCalendar";
+import { medicineScheduleProps } from "../Medicine/Schedule";
 
 const Dashboard = () => {
   const [consumptionData, setConsumptionData] = useState<consumptionProps[]>(
@@ -97,14 +98,27 @@ const Dashboard = () => {
       )
       .catch((err) => console.log({ err }));
 
-    BeAPI.getAll("medicine")
-      .then((res: any) =>
-        setMedicineData(
-          res?.sort((a: medicineProps, b: medicineProps) =>
-            a.date > b.date ? -1 : 1
+    BeAPI.getAll("medicine-schedule")
+      .then((res: medicineScheduleProps[]) => {
+        BeAPI.getAll("medicine")
+          .then((resp: medicineProps[]) =>
+            setMedicineData(
+              resp
+                ?.sort((a: medicineProps, b: medicineProps) =>
+                  a.date > b.date ? -1 : 1
+                )
+                .map(({ medicine, ...rest }) => {
+                  const med = res.find(({ id }) => id === medicine);
+
+                  return {
+                    ...rest,
+                    medicine: med?.medicine + " (" + med?.specs + ")" || "",
+                  };
+                })
+            )
           )
-        )
-      )
+          .catch((err) => console.log({ err }));
+      })
       .catch((err) => console.log({ err }));
 
     BeAPI.getAll("summaries")
