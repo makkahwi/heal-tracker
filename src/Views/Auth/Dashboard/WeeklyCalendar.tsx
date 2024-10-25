@@ -6,7 +6,7 @@ import MealView from "../../../Components/MealView";
 import { renderEvents } from "../../../Components/PageView/MonthlyCalendar";
 import { consumptionFullProps } from "../Diet/Consumption";
 import { renderWateringUI, wateringProps } from "../Diet/Watering";
-import { medicineProps, renderMedicineUI } from "../Medicine";
+import { medicineProps, renderMedicineUI } from "../Medicine/Consumption";
 import { renderSleepCycleUI, sleepCycleProps } from "../SleepCycles";
 import { renderExerciseUI, walkExerciseProps } from "../Sports";
 
