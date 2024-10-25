@@ -1,15 +1,9 @@
-import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import * as BeAPI from "../../../API";
-import Form from "../../../Components/Form";
-import { MealViewProps } from "../../../Components/MealView";
-import MonthlyCalendar from "../../../Components/PageView/MonthlyCalendar";
-import PageSection from "../../../Components/PageView/PageSection";
-import { timeFormat } from "../../../Utils/consts";
+import PageView from "../../../Components/PageView";
 
-export interface medicineProps {
+export interface medicineScheduleProps {
   id?: string;
   medicine: string;
   perDayQuantity: number;
@@ -17,11 +11,11 @@ export interface medicineProps {
 }
 
 const MedicineSchedule = () => {
-  const [data, setData] = useState<medicineProps[]>([]);
+  const [data, setData] = useState<medicineScheduleProps[]>([]);
 
   const getData = () =>
     BeAPI.getAll("medicine-schedule")
-      .then((res: any) => setData(res))
+      .then((res: medicineScheduleProps[]) => setData(res))
       .catch((err) => console.log({ err }));
 
   useEffect(() => {
@@ -37,20 +31,33 @@ const MedicineSchedule = () => {
       required: true,
     },
     {
-      name: "perDayQuantity",
-      label: "Per Day Quantity",
+      name: "frequency",
+      label: "Consumption Frequency",
+      type: "select",
+      options: [
+        { value: "Daily" },
+        { value: "Bi-Daily" },
+        { value: "Weekly" },
+        { value: "Bi-Weekly" },
+        { value: "Monthly" },
+      ],
+      required: true,
+    },
+    {
+      name: "duration",
+      label: "Duration (Frequency Total Occurrences)",
       type: "number",
       required: true,
     },
     {
-      name: "totalQuantity",
-      label: "Total Quantity",
+      name: "frequencyQuantity",
+      label: "Per Frequency Occurrence Quantity",
       type: "number",
       required: true,
     },
   ];
 
-  const onSubmit = (values: medicineProps) => {
+  const onSubmit = (values: medicineScheduleProps) => {
     BeAPI.create("medicine-schedule", {
       ...values,
       totalQuantity: parseInt(String(values.totalQuantity)),
@@ -70,13 +77,13 @@ const MedicineSchedule = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title="Medicine Schedule">
-      <Fragment>
-        <Form inputs={formInputs} onSubmit={onSubmit} />
-
-        {JSON.stringify(data)}
-      </Fragment>
-    </PageSection>
+    <PageView
+      title="Medicine Schedule"
+      data={data}
+      inputs={formInputs}
+      onSubmit={onSubmit}
+      onDelete={onDelete}
+    />
   );
 };
 
