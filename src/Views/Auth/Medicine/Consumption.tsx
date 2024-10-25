@@ -4,10 +4,10 @@ import { Fragment, useEffect, useState } from "react";
 
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
-import { MealViewProps } from "../../../Components/MealView";
 import MonthlyCalendar from "../../../Components/PageView/MonthlyCalendar";
 import PageSection from "../../../Components/PageView/PageSection";
 import { timeFormat } from "../../../Utils/consts";
+import { medicineScheduleProps } from "./Schedule";
 
 export interface medicineProps {
   id?: string;
@@ -44,17 +44,31 @@ export const renderMedicineUI =
 
 const MedicineConsumption = () => {
   const [data, setData] = useState<medicineProps[]>([]);
+  const [schedule, setSchedule] = useState<medicineScheduleProps[]>([]);
 
-  const getData = () =>
-    BeAPI.getAll("medicine")
-      .then((res: any) =>
-        setData(
-          res?.sort((a: medicineProps, b: medicineProps) =>
-            a.date > b.date ? -1 : 1
+  const getData = () => {
+    BeAPI.getAll("medicine-schedule")
+      .then((res: medicineScheduleProps[]) => {
+        setSchedule(res);
+
+        BeAPI.getAll("medicine")
+          .then((resp: medicineProps[]) =>
+            setData(
+              resp
+                ?.sort((a: medicineProps, b: medicineProps) =>
+                  a.date > b.date ? -1 : 1
+                )
+                .map(({ medicine, ...rest }) => ({
+                  ...rest,
+                  medicine:
+                    res.find(({ id }) => id === medicine)?.medicine || "",
+                }))
+            )
           )
-        )
-      )
+          .catch((err) => console.log({ err }));
+      })
       .catch((err) => console.log({ err }));
+  };
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
@@ -85,7 +99,10 @@ const MedicineConsumption = () => {
       name: "medicine",
       label: "Medicine",
       type: "select",
-      options: [{ value: "Vitamine D" }, { value: "Sleeping Bills" }],
+      options: schedule.map(({ id, medicine }) => ({
+        value: id || "",
+        label: medicine,
+      })),
       defaultValue: "Vitamine D",
       required: true,
     },
