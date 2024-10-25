@@ -58,11 +58,14 @@ const MedicineConsumption = () => {
                 ?.sort((a: medicineProps, b: medicineProps) =>
                   a.date > b.date ? -1 : 1
                 )
-                .map(({ medicine, ...rest }) => ({
-                  ...rest,
-                  medicine:
-                    res.find(({ id }) => id === medicine)?.medicine || "",
-                }))
+                .map(({ medicine, ...rest }) => {
+                  const med = res.find(({ id }) => id === medicine);
+
+                  return {
+                    ...rest,
+                    medicine: med?.medicine + " (" + med?.specs + ")" || "",
+                  };
+                })
             )
           )
           .catch((err) => console.log({ err }));
