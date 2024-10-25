@@ -5,11 +5,10 @@ import { Fragment, useEffect, useState } from "react";
 
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
-import { MealViewProps } from "../../../Components/MealView";
 import MonthlyCalendar from "../../../Components/PageView/MonthlyCalendar";
 import PageSection from "../../../Components/PageView/PageSection";
 import { timeFormat } from "../../../Utils/consts";
-import { timeDifference as timeDifference } from "../../../Utils/functions";
+import { timeDifference } from "../../../Utils/functions";
 
 export interface walkExerciseProps {
   id?: string;
