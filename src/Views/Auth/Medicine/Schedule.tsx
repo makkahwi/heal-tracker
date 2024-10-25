@@ -6,8 +6,10 @@ import PageView from "../../../Components/PageView";
 export interface medicineScheduleProps {
   id?: string;
   medicine: string;
-  perDayQuantity: number;
-  totalQuantity: number;
+  specs: string;
+  frequency: string;
+  duration: number;
+  frequencyQuantity: number;
 }
 
 const MedicineSchedule = () => {
@@ -27,6 +29,12 @@ const MedicineSchedule = () => {
     {
       name: "medicine",
       label: "Medicine",
+      type: "text",
+      required: true,
+    },
+    {
+      name: "specs",
+      label: "Specifics (Dose)",
       type: "text",
       required: true,
     },
@@ -60,8 +68,8 @@ const MedicineSchedule = () => {
   const onSubmit = (values: medicineScheduleProps) => {
     BeAPI.create("medicine-schedule", {
       ...values,
-      totalQuantity: parseInt(String(values.totalQuantity)),
-      perDayQuantity: parseInt(String(values.perDayQuantity)),
+      frequencyQuantity: parseInt(String(values.frequencyQuantity)),
+      duration: parseInt(String(values.duration)),
     })
       .then(() => {
         getData();
