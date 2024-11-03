@@ -32,29 +32,35 @@ export interface changeCalculationProps {
 }
 
 export interface calculationsProps {
+  musclesPercentage: number;
+
   weightWeeklyChange: changeCalculationProps;
   fatWeeklyChange: changeCalculationProps;
   waterWeeklyChange: changeCalculationProps;
   waistWeeklyChange: changeCalculationProps;
   musclesWeeklyChange: changeCalculationProps;
+  musclesPercentageWeeklyChange: changeCalculationProps;
 
   weightSinceWorstChange: changeCalculationProps;
   fatSinceWorstChange: changeCalculationProps;
   waterSinceWorstChange: changeCalculationProps;
   waistSinceWorstChange: changeCalculationProps;
   musclesSinceWorstChange: changeCalculationProps;
+  musclesPercentageSinceWorstChange: changeCalculationProps;
 
   weightSinceBestChange: changeCalculationProps;
   fatSinceBestChange: changeCalculationProps;
   waterSinceBestChange: changeCalculationProps;
   waistSinceBestChange: changeCalculationProps;
   musclesSinceBestChange: changeCalculationProps;
+  musclesPercentageSinceBestChange: changeCalculationProps;
 
   weightSinceStartChange: changeCalculationProps;
   fatSinceStartChange: changeCalculationProps;
   waterSinceStartChange: changeCalculationProps;
   waistSinceStartChange: changeCalculationProps;
   musclesSinceStartChange: changeCalculationProps;
+  musclesPercentageSinceStartChange: changeCalculationProps;
 }
 
 export type fullWeightReadingProps = weightReadingProps & calculationsProps;
@@ -144,6 +150,25 @@ const WeightReadings = () => {
               const bestMuscles = getHighest(
                 sortedRes.filter((_, y) => y > i).map(({ muscles }) => muscles)
               );
+              const worstMusclesPercentage = getLowest(
+                sortedRes
+                  .filter((_, y) => y > i)
+                  .map(({ muscles, weight }) =>
+                    parseFloat(((muscles / weight) * 100).toFixed(2))
+                  )
+              );
+              const bestMusclesPercentage = getHighest(
+                sortedRes
+                  .filter((_, y) => y > i)
+                  .map(({ muscles, weight }) =>
+                    parseFloat(((muscles / weight) * 100).toFixed(2))
+                  )
+              );
+
+              const musclesPercentage = parseFloat(
+                ((muscles / weight) * 100).toFixed(2)
+              );
+
               return {
                 id,
                 date,
@@ -152,6 +177,7 @@ const WeightReadings = () => {
                 water,
                 waist,
                 muscles,
+                musclesPercentage,
                 weightWeeklyChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(
@@ -182,6 +208,20 @@ const WeightReadings = () => {
                         " KG"
                       )
                     : emptyCalculations,
+                musclesPercentageWeeklyChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(
+                        parseFloat(
+                          (
+                            (previousRecord?.muscles / previousRecord?.weight) *
+                            100
+                          ).toFixed(2)
+                        ),
+                        parseFloat(((muscles / weight) * 100).toFixed(2)),
+                        true,
+                        " %"
+                      )
+                    : emptyCalculations,
                 weightSinceWorstChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(worstWeight, weight, false, " KG")
@@ -202,6 +242,15 @@ const WeightReadings = () => {
                   i < sortedRes.length - 1
                     ? changeCalculator(worstMuscles, muscles, true, " KG")
                     : emptyCalculations,
+                musclesPercentageSinceWorstChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(
+                        worstMusclesPercentage,
+                        musclesPercentage,
+                        true,
+                        " %"
+                      )
+                    : emptyCalculations,
                 weightSinceBestChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(bestWeight, weight, false, " KG")
@@ -221,6 +270,15 @@ const WeightReadings = () => {
                 musclesSinceBestChange:
                   i < sortedRes.length - 1
                     ? changeCalculator(bestMuscles, muscles, true, " KG")
+                    : emptyCalculations,
+                musclesPercentageSinceBestChange:
+                  i < sortedRes.length - 1
+                    ? changeCalculator(
+                        bestMusclesPercentage,
+                        musclesPercentage,
+                        true,
+                        " %"
+                      )
                     : emptyCalculations,
                 weightSinceStartChange:
                   i < sortedRes.length - 2
@@ -250,6 +308,15 @@ const WeightReadings = () => {
                         muscles,
                         true,
                         " KG"
+                      )
+                    : emptyCalculations,
+                musclesPercentageSinceStartChange:
+                  i < sortedRes.length - 2
+                    ? changeCalculator(
+                        (firstRecord?.muscles / firstRecord?.weight) * 100,
+                        musclesPercentage,
+                        true,
+                        " %"
                       )
                     : emptyCalculations,
               };
