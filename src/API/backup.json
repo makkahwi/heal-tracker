@@ -180,6 +180,26 @@
         "waist": "7.5",
         "water": "54.7",
         "weight": "78.1"
+      },
+      "-OA7dCvDQ2QtD4LolHi6": {
+        "bones": "3",
+        "date": "2024-10-26",
+        "fat": "32.8",
+        "muscles": "29.5",
+        "physique": "2",
+        "waist": "11",
+        "water": "54",
+        "weight": "78.3"
+      },
+      "-OAgg9Md70QDjuxwPb_a": {
+        "bones": "2",
+        "date": "2024-11-02",
+        "fat": "32.4",
+        "muscles": "29.4",
+        "physique": "3",
+        "waist": "11",
+        "water": "54",
+        "weight": "77.9"
       }
     }
   },
@@ -10793,6 +10813,1195 @@
         "meal": "-O9ZbhoGTe8AxWZo0qwS",
         "note": "Restaurant Fried Chicken",
         "timestamp": "2024-10-19T13:30:00.000Z"
+      },
+      "-OA1dQnd8_99U5uW2H-F": {
+        "contents": [
+          {
+            "count": 2,
+            "element": "Egg",
+            "id": "-O9Zc7YafpRfh7k7ozQi",
+            "meal": "-O9Zbcsq0ukb_o2QyDbp",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 4,
+            "element": "Olive",
+            "id": "-O9Zcmx_vmuHjgQnqHXl",
+            "meal": "-O9Zbcsq0ukb_o2QyDbp",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-O9Zd7_QID0dnoh4riXQ",
+            "meal": "-O9Zbcsq0ukb_o2QyDbp",
+            "note": "",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "id": "-O9ZcVC_8meo7e2RoWP0",
+            "meal": "-O9Zbcsq0ukb_o2QyDbp",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-O9Zbcsq0ukb_o2QyDbp",
+        "timestamp": "2024-10-25T06:15:00.000Z"
+      },
+      "-OA2ZiBjgFzbVfLSrYPn": {
+        "contents": [
+          {
+            "count": 120,
+            "element": "Chicken Breast",
+            "id": "-O9ZibM_II1tj9I--n0x",
+            "meal": "-O9ZbhoGTe8AxWZo0qwS",
+            "unit": "gm"
+          },
+          {
+            "count": 10,
+            "element": "Rice",
+            "id": "-O9aFyrbbNL9-HJvpT53",
+            "meal": "-O9ZbhoGTe8AxWZo0qwS",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-O9Zj89fe2xyTK7n3BYd",
+            "meal": "-O9ZbhoGTe8AxWZo0qwS",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-O9ZbhoGTe8AxWZo0qwS",
+        "timestamp": "2024-10-25T12:00:00.000Z"
+      },
+      "-OA2Zk-ecUeRnP9B_D9u": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "id": "-O9ZdwPrH18BL3tAK_DL",
+            "meal": "-O9ZbgA9pZ1qJLdgsUqZ",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-O9ZbgA9pZ1qJLdgsUqZ",
+        "timestamp": "2024-10-25T12:00:00.000Z"
+      },
+      "-OA2ZqRRybJe-EXeiABU": {
+        "contents": [
+          {
+            "count": 10,
+            "element": "Peanut",
+            "note": "",
+            "unit": "Piece(s)"
+          }
+        ],
+        "meal": "-O9ZbjiXN43zir_56ZLV",
+        "timestamp": "2024-10-25T12:00:00.000Z"
+      },
+      "-OA3ngXvJayVf8qSpVUO": {
+        "contents": [
+          {
+            "count": 4,
+            "element": "Labaneh",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 4,
+            "element": "Olive",
+            "id": "-O9Zd3ESIOa9FdFZHQ7q",
+            "meal": "-O9Zbl-5nXkvzmG9K9AB",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Toast",
+            "id": "-O9Zdadn6hOe1VGnfNaR",
+            "meal": "-O9Zbl-5nXkvzmG9K9AB",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-O9ZdMd4dl8s8vrpDVBn",
+            "meal": "-O9Zbl-5nXkvzmG9K9AB",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-O9Zbl-5nXkvzmG9K9AB",
+        "timestamp": "2024-10-25T17:45:00.000Z"
+      },
+      "-OA7XuxkMLkg0MmcPUxp": {
+        "contents": [
+          {
+            "count": 2,
+            "element": "Egg",
+            "id": "-OA7T6z2lauI751H7_z9",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 4,
+            "element": "Olive",
+            "id": "-OA7TDD4W62BXRzLIr8c",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OA7TAXz6MUhFTsFmOPa",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "note": "",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "id": "-OA7XqhnvSNBtny1cGqe",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SnaQifPoNXVptX_7",
+        "timestamp": "2024-10-26T10:30:00.000Z"
+      },
+      "-OA7e3f8zOX80pW4moX_": {
+        "contents": [
+          {
+            "count": 150,
+            "element": "Chicken Breast",
+            "id": "-OA7TjsVjOiswP2AU-Wa",
+            "meal": "-OA7SpMAfDQqH0ZC7SLv",
+            "unit": "gm"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OA7U1RReR7cDKWqRH7b",
+            "meal": "-OA7SpMAfDQqH0ZC7SLv",
+            "note": "",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 5,
+            "element": "Rice",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 10,
+            "element": "Peanut",
+            "unit": "Piece(s)"
+          }
+        ],
+        "meal": "-OA7SpMAfDQqH0ZC7SLv",
+        "timestamp": "2024-10-26T12:00:00.000Z"
+      },
+      "-OA907fWZ35OppFmak9r": {
+        "contents": [
+          {
+            "count": 4,
+            "element": "Labaneh",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 4,
+            "element": "Olive",
+            "id": "-OA7UE6vSzAt22mfT9MB",
+            "meal": "-OA7SublZ_MsV9zyV7Cl",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Peach",
+            "id": "-OA7UekkFFfy-urw0zd0",
+            "meal": "-OA7SublZ_MsV9zyV7Cl",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Toast",
+            "id": "-OA7UPSIgI2RTDyQkWy3",
+            "meal": "-OA7SublZ_MsV9zyV7Cl",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "id": "-OA7Ub8G1z7_KrU9U7wC",
+            "meal": "-OA7SublZ_MsV9zyV7Cl",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SublZ_MsV9zyV7Cl",
+        "timestamp": "2024-10-26T18:00:00.000Z"
+      },
+      "-OABfZChuW84lKZZsuI7": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Egg",
+            "id": "-OA7T6z2lauI751H7_z9",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 4,
+            "element": "Olive",
+            "id": "-OA7TDD4W62BXRzLIr8c",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OA7TAXz6MUhFTsFmOPa",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "note": "",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "id": "-OA7XqhnvSNBtny1cGqe",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "note": "",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 4,
+            "element": "Oat",
+            "note": "",
+            "unit": "Spoon(s)"
+          }
+        ],
+        "meal": "-OA7SnaQifPoNXVptX_7",
+        "timestamp": "2024-10-27T06:30:00.000Z"
+      },
+      "-OADL6oAJgz0yj7dEbR3": {
+        "contents": [
+          {
+            "count": 150,
+            "element": "Squid",
+            "note": "",
+            "unit": "gm"
+          },
+          {
+            "count": 1,
+            "element": "Potato",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 0.5,
+            "element": "Cooked Vegetables",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SpMAfDQqH0ZC7SLv",
+        "timestamp": "2024-10-27T14:15:00.000Z"
+      },
+      "-OADLBEEjEaPg3y-55ai": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Peach",
+            "id": "-OAC9pfbuGEYiUGLnE6g",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 4,
+            "element": "Walnut",
+            "id": "-OAC9v320PXcmqvyBSmi",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "id": "-OAC9mnAIfWyzJef0WsD",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SsDWDxp0_R_mPIK9",
+        "timestamp": "2024-10-27T10:15:00.000Z"
+      },
+      "-OAEaWZMrTUlaCSu6c6B": {
+        "contents": [
+          {
+            "count": 4,
+            "element": "Labaneh",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "note": "",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 120,
+            "element": "Pretzels",
+            "unit": "gm"
+          }
+        ],
+        "meal": "-OA7SublZ_MsV9zyV7Cl",
+        "timestamp": "2024-10-27T20:00:00.000Z"
+      },
+      "-OAGtWzrKeiNYKd8wwma": {
+        "contents": [
+          {
+            "count": 4,
+            "element": "Oat",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Egg",
+            "id": "-OAC9OhpOqesMxCEtQRY",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 4,
+            "element": "Olive",
+            "id": "-OAC9eTD_XOr2gbwdd5T",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OAC9a5nX1AyrAw2LSDu",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SnaQifPoNXVptX_7",
+        "timestamp": "2024-10-28T06:30:00.000Z"
+      },
+      "-OAHg5cH_u3RXRhOtt_F": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Peach",
+            "id": "-OAC9pfbuGEYiUGLnE6g",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 4,
+            "element": "Walnut",
+            "id": "-OAC9v320PXcmqvyBSmi",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "id": "-OAC9mnAIfWyzJef0WsD",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SsDWDxp0_R_mPIK9",
+        "timestamp": "2024-10-28T10:00:00.000Z"
+      },
+      "-OAIX536RrNWaw4bELc8": {
+        "contents": [
+          {
+            "count": 150,
+            "element": "Fish",
+            "note": "",
+            "unit": "gm"
+          },
+          {
+            "count": 10,
+            "element": "Rice",
+            "id": "-OADO6yH3p1Na0-BGodV",
+            "meal": "-OA7SpMAfDQqH0ZC7SLv",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OA7U1RReR7cDKWqRH7b",
+            "meal": "-OA7SpMAfDQqH0ZC7SLv",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SpMAfDQqH0ZC7SLv",
+        "timestamp": "2024-10-28T14:15:00.000Z"
+      },
+      "-OAJ0RCHsgDaKn9_qaF5": {
+        "contents": [
+          {
+            "count": 120,
+            "element": "Pretzels",
+            "unit": "gm"
+          }
+        ],
+        "meal": "-OAIZSPBuFVMZu6_x_Q5",
+        "timestamp": "2024-10-28T16:30:00.000Z"
+      },
+      "-OAM3bwTfhCUz61-WEca": {
+        "contents": [
+          {
+            "count": 4,
+            "element": "Oat",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Egg",
+            "id": "-OAC9OhpOqesMxCEtQRY",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 4,
+            "element": "Olive",
+            "id": "-OAC9eTD_XOr2gbwdd5T",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OAC9a5nX1AyrAw2LSDu",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SnaQifPoNXVptX_7",
+        "timestamp": "2024-10-29T07:00:00.000Z"
+      },
+      "-OAMjsiVMiSY9ClAyX6k": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Peach",
+            "id": "-OAC9pfbuGEYiUGLnE6g",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 4,
+            "element": "Walnut",
+            "id": "-OAC9v320PXcmqvyBSmi",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "id": "-OAC9mnAIfWyzJef0WsD",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SsDWDxp0_R_mPIK9",
+        "timestamp": "2024-10-29T10:00:00.000Z"
+      },
+      "-OAOQCHNrIusJkjYBeg3": {
+        "contents": [
+          {
+            "count": 100,
+            "element": "Fish",
+            "note": "",
+            "unit": "gm"
+          },
+          {
+            "count": 10,
+            "element": "Rice",
+            "id": "-OADO6yH3p1Na0-BGodV",
+            "meal": "-OA7SpMAfDQqH0ZC7SLv",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OA7U1RReR7cDKWqRH7b",
+            "meal": "-OA7SpMAfDQqH0ZC7SLv",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SpMAfDQqH0ZC7SLv",
+        "timestamp": "2024-10-29T14:15:00.000Z"
+      },
+      "-OAOQGX2dXr3fbz8Fj6Q": {
+        "contents": [
+          {
+            "count": 4,
+            "element": "Labaneh",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SublZ_MsV9zyV7Cl",
+        "timestamp": "2024-10-29T18:00:00.000Z"
+      },
+      "-OAOa80tYEwvZxwCAyBs": {
+        "contents": [
+          {
+            "count": 90,
+            "element": "Tuna",
+            "id": "-OAIZVkZbZjVuqIwa-d1",
+            "meal": "-OAIZSPBuFVMZu6_x_Q5",
+            "unit": "gm"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OAIZZQgESOyYbVFEYgA",
+            "meal": "-OAIZSPBuFVMZu6_x_Q5",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OAIZSPBuFVMZu6_x_Q5",
+        "timestamp": "2024-10-29T18:45:00.000Z"
+      },
+      "-OAOaFOtJVDJsz5wEHi0": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Grean Tea",
+            "id": "-OAIZbrkfrNpkztk_TEJ",
+            "meal": "-OAIZSPBuFVMZu6_x_Q5",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 120,
+            "element": "Pretzels",
+            "id": "-OAIZZQgESOyYbVFEYgA",
+            "meal": "-OAIZSPBuFVMZu6_x_Q5",
+            "unit": "gm"
+          }
+        ],
+        "meal": "-OAIZSPBuFVMZu6_x_Q5",
+        "timestamp": "2024-10-29T15:45:00.000Z"
+      },
+      "-OAOaKLaBC9FUqK_Iy-t": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Grean Tea",
+            "id": "-OAIZbrkfrNpkztk_TEJ",
+            "meal": "-OAIZSPBuFVMZu6_x_Q5",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OAIZSPBuFVMZu6_x_Q5",
+        "timestamp": "2024-10-28T18:45:00.000Z"
+      },
+      "-OAQxv17yafSUL6v1_dw": {
+        "contents": [
+          {
+            "count": 4,
+            "element": "Oat",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Egg",
+            "id": "-OAC9OhpOqesMxCEtQRY",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 4,
+            "element": "Olive",
+            "id": "-OAC9eTD_XOr2gbwdd5T",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OAC9a5nX1AyrAw2LSDu",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SnaQifPoNXVptX_7",
+        "timestamp": "2024-10-30T05:45:00.000Z"
+      },
+      "-OAT9RTm-W8xnwjW_Lqr": {
+        "contents": [
+          {
+            "count": 150,
+            "element": "Fish",
+            "note": "",
+            "unit": "gm"
+          },
+          {
+            "count": 10,
+            "element": "Rice",
+            "id": "-OADO6yH3p1Na0-BGodV",
+            "meal": "-OA7SpMAfDQqH0ZC7SLv",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OA7U1RReR7cDKWqRH7b",
+            "meal": "-OA7SpMAfDQqH0ZC7SLv",
+            "note": "",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SpMAfDQqH0ZC7SLv",
+        "timestamp": "2024-10-30T15:45:00.000Z"
+      },
+      "-OATOW5y9M51JwFP-jfB": {
+        "contents": [
+          {
+            "count": 5,
+            "element": "Popcorn",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OAIZSPBuFVMZu6_x_Q5",
+        "timestamp": "2024-10-30T17:00:00.000Z"
+      },
+      "-OAW4HJ3m3cs1yywB4cs": {
+        "contents": [
+          {
+            "count": 4,
+            "element": "Oat",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Egg",
+            "id": "-OAC9OhpOqesMxCEtQRY",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 4,
+            "element": "Olive",
+            "id": "-OAC9eTD_XOr2gbwdd5T",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OAC9a5nX1AyrAw2LSDu",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SnaQifPoNXVptX_7",
+        "timestamp": "2024-10-31T05:45:00.000Z"
+      },
+      "-OAWXA7rGvID2ln7XB-_": {
+        "contents": [
+          {
+            "count": 90,
+            "element": "Tuna",
+            "id": "-OAIZVkZbZjVuqIwa-d1",
+            "meal": "-OAIZSPBuFVMZu6_x_Q5",
+            "unit": "gm"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OAIZZQgESOyYbVFEYgA",
+            "meal": "-OAIZSPBuFVMZu6_x_Q5",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OAIZSPBuFVMZu6_x_Q5",
+        "timestamp": "2024-10-31T07:45:00.000Z"
+      },
+      "-OAXwTbsLHzDAiCLy7a-": {
+        "contents": [
+          {
+            "count": 150,
+            "element": "Chicken Breast",
+            "id": "-OA7TjsVjOiswP2AU-Wa",
+            "meal": "-OA7SpMAfDQqH0ZC7SLv",
+            "unit": "gm"
+          },
+          {
+            "count": 10,
+            "element": "Pasta",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 0.5,
+            "element": "Cooked Vegetables",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SpMAfDQqH0ZC7SLv",
+        "timestamp": "2024-10-31T14:00:00.000Z"
+      },
+      "-OAYzNFQRy7Tjca5Uo3u": {
+        "contents": [
+          {
+            "count": 4,
+            "element": "Labaneh",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SublZ_MsV9zyV7Cl",
+        "timestamp": "2024-10-31T18:30:00.000Z"
+      },
+      "-OAaReWka529BtMFM_54": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Peach",
+            "id": "-OAC9pfbuGEYiUGLnE6g",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 10,
+            "element": "Peanut",
+            "id": "-OAC9v320PXcmqvyBSmi",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "id": "-OAC9mnAIfWyzJef0WsD",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SsDWDxp0_R_mPIK9",
+        "timestamp": "2024-10-31T10:15:00.000Z"
+      },
+      "-OAaRkxqHAObYm-CPcZj": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Peach",
+            "id": "-OAC9pfbuGEYiUGLnE6g",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 4,
+            "element": "Walnut",
+            "id": "-OAC9v320PXcmqvyBSmi",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "id": "-OAC9mnAIfWyzJef0WsD",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SsDWDxp0_R_mPIK9",
+        "timestamp": "2024-10-30T11:00:00.000Z"
+      },
+      "-OAaSYufmoKLVmZ8z47I": {
+        "contents": [
+          {
+            "count": 4,
+            "element": "Oat",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Egg",
+            "id": "-OAC9OhpOqesMxCEtQRY",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 4,
+            "element": "Olive",
+            "id": "-OAC9eTD_XOr2gbwdd5T",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OAC9a5nX1AyrAw2LSDu",
+            "meal": "-OA7SnaQifPoNXVptX_7",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SnaQifPoNXVptX_7",
+        "timestamp": "2024-11-01T06:30:00.000Z"
+      },
+      "-OAbDNZ-MuCnDi1JZrkE": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Peach",
+            "id": "-OAC9pfbuGEYiUGLnE6g",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 10,
+            "element": "Peanut",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "id": "-OAC9mnAIfWyzJef0WsD",
+            "meal": "-OA7SsDWDxp0_R_mPIK9",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SsDWDxp0_R_mPIK9",
+        "timestamp": "2024-11-01T10:15:00.000Z"
+      },
+      "-OAbzHn5aSIyeOUwovC0": {
+        "contents": [
+          {
+            "count": 150,
+            "element": "Chicken Breast",
+            "id": "-OA7TjsVjOiswP2AU-Wa",
+            "meal": "-OA7SpMAfDQqH0ZC7SLv",
+            "unit": "gm"
+          },
+          {
+            "count": 10,
+            "element": "Pasta",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 0.5,
+            "element": "Cooked Vegetables",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SpMAfDQqH0ZC7SLv",
+        "timestamp": "2024-11-01T13:45:00.000Z"
+      },
+      "-OAch5o6NV1Sx7KQ0Voe": {
+        "contents": [
+          {
+            "count": 3,
+            "element": "Barazeq",
+            "unit": "Piece(s)"
+          }
+        ],
+        "meal": "-OAIZSPBuFVMZu6_x_Q5",
+        "timestamp": "2024-11-01T17:00:00.000Z"
+      },
+      "-OAdKX8O80Svyb4dBERi": {
+        "contents": [
+          {
+            "count": 4,
+            "element": "Labaneh",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OA7SublZ_MsV9zyV7Cl",
+        "timestamp": "2024-11-01T18:45:00.000Z"
+      },
+      "-OAgUCCPWbu9I9MZU9ZI": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Fruit",
+            "id": "-OAgS8VUSrdCDonPBMC6",
+            "meal": "-OAgQHV_BKy6SYJLwLja",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 2,
+            "element": "Oat",
+            "id": "-OAgRhm0rhq9nWCoS2BV",
+            "meal": "-OAgQHV_BKy6SYJLwLja",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "id": "-OAgRlvdsnEoJaqSZTX2",
+            "meal": "-OAgQHV_BKy6SYJLwLja",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OAgQHV_BKy6SYJLwLja",
+        "timestamp": "2024-11-02T11:00:00.000Z"
+      },
+      "-OAgmcCMyhLKSmKKzp1u": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Toast",
+            "id": "-OAgmQRAiQpoxVbaF92j",
+            "meal": "-OAgQLpIkggsTBUAcbJQ",
+            "note": "",
+            "unit": "Piece(s)"
+          }
+        ],
+        "meal": "-OAgQLpIkggsTBUAcbJQ",
+        "timestamp": "2024-11-02T10:15:00.000Z"
+      },
+      "-OAgvnGus0RENUHZAPiI": {
+        "contents": [
+          {
+            "count": 90,
+            "element": "Fish",
+            "id": "-OAgSQOymDfmieVcP4i2",
+            "meal": "-OAgQJTprwbeedu1A53D",
+            "note": "Fish + Chicken Breast Leftovers",
+            "unit": "gm"
+          },
+          {
+            "count": 5,
+            "element": "Pasta",
+            "id": "-OAgv_ISIEbfA0suWRZO",
+            "meal": "-OAgQJTprwbeedu1A53D",
+            "note": "",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 0.5,
+            "element": "Cooked Vegetables",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OAgQJTprwbeedu1A53D",
+        "timestamp": "2024-11-02T12:30:00.000Z"
+      },
+      "-OAiARY37kEtt7KzV4eD": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OAgTI2omcXAYqJqwe-B",
+            "meal": "-OAgQOcPtxDF_VQkyxYd",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 90,
+            "element": "White Cheese",
+            "id": "-OAgT5hHPExzjpfWha83",
+            "meal": "-OAgQOcPtxDF_VQkyxYd",
+            "note": "",
+            "unit": "gm"
+          }
+        ],
+        "meal": "-OAgQOcPtxDF_VQkyxYd",
+        "timestamp": "2024-11-02T18:30:00.000Z"
+      },
+      "-OAkQEJvr64QxCWewm0c": {
+        "contents": [
+          {
+            "count": 90,
+            "element": "Labaneh",
+            "note": "",
+            "unit": "gm"
+          },
+          {
+            "count": 4,
+            "element": "Olive",
+            "id": "-OAgQkm1u6nscJGjY3op",
+            "meal": "-OAgQEfiFluygEm2dtz-",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OAgQpI9Y2aAjqEySSdF",
+            "meal": "-OAgQEfiFluygEm2dtz-",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OAgQEfiFluygEm2dtz-",
+        "timestamp": "2024-11-03T05:00:00.000Z"
+      },
+      "-OAkorgFNCwp5BkD7AHF": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Fruit",
+            "id": "-OAgS8VUSrdCDonPBMC6",
+            "meal": "-OAgQHV_BKy6SYJLwLja",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 2,
+            "element": "Oat",
+            "id": "-OAgRhm0rhq9nWCoS2BV",
+            "meal": "-OAgQHV_BKy6SYJLwLja",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "id": "-OAgnQJJgRaQV-Ty0Bfa",
+            "meal": "-OAgQHV_BKy6SYJLwLja",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OAgQHV_BKy6SYJLwLja",
+        "timestamp": "2024-11-03T07:00:00.000Z"
+      },
+      "-OAkrdwGx4jEW0kVx9JC": {
+        "contents": [
+          {
+            "count": 90,
+            "element": "White Cheese",
+            "note": "",
+            "unit": "gm"
+          },
+          {
+            "count": 4,
+            "element": "Olive",
+            "id": "-OAgQkm1u6nscJGjY3op",
+            "meal": "-OAgQEfiFluygEm2dtz-",
+            "note": "",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "id": "-OAgQpI9Y2aAjqEySSdF",
+            "meal": "-OAgQEfiFluygEm2dtz-",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OAgQEfiFluygEm2dtz-",
+        "timestamp": "2024-11-02T10:15:00.000Z"
+      },
+      "-OAlk949Ao2Mf343D0Pk": {
+        "contents": [
+          {
+            "count": 90,
+            "element": "Chicken Breast",
+            "id": "-OAgSQOymDfmieVcP4i2",
+            "meal": "-OAgQJTprwbeedu1A53D",
+            "unit": "gm"
+          },
+          {
+            "count": 1,
+            "element": "Potato",
+            "note": "",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 0.5,
+            "element": "Cooked Vegetables",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OAgQJTprwbeedu1A53D",
+        "timestamp": "2024-11-03T11:00:00.000Z"
+      },
+      "-OAmJ7nqqqTi1zOMnMzY": {
+        "contents": [
+          {
+            "count": 5,
+            "element": "Popcorn",
+            "note": "",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OAgQLpIkggsTBUAcbJQ",
+        "timestamp": "2024-11-03T13:15:00.000Z"
+      },
+      "-OAmPgChBetEzSDYhTNh": {
+        "contents": [
+          {
+            "count": 1,
+            "element": "Green Tea",
+            "id": "-OAgTMQjFeN4iZqldl04",
+            "meal": "-OAgQfN77v_N0zLPI4xp",
+            "note": "Red Tea",
+            "unit": "Cup(s)"
+          }
+        ],
+        "meal": "-OAgQfN77v_N0zLPI4xp",
+        "timestamp": "2024-11-03T10:00:00.000Z"
       }
     }
   },
@@ -11168,6 +12377,66 @@
         "medicine": "-OA1abpxZWHSgh8I8Drh",
         "quantity": 1,
         "time": "15:30"
+      },
+      "-OA6ScQ2nxr7mqIG6H8C": {
+        "date": "2024-10-25",
+        "medicine": "-OA1_7A03L5_qZKoTHxF",
+        "quantity": 1,
+        "time": "23:15"
+      },
+      "-OA9Lh7wouuoABfN-YRt": {
+        "date": "2024-10-26",
+        "medicine": "-OA1_7A03L5_qZKoTHxF",
+        "quantity": 1,
+        "time": "22:43"
+      },
+      "-OAEtC8_8N6MOh8HNHW0": {
+        "date": "2024-10-27",
+        "medicine": "-OA1_7A03L5_qZKoTHxF",
+        "quantity": 1,
+        "time": "23:30"
+      },
+      "-OAK84RD7Ga5odUvUA0b": {
+        "date": "2024-10-28",
+        "medicine": "-OA1_7A03L5_qZKoTHxF",
+        "quantity": 1,
+        "time": "23:55"
+      },
+      "-OAOQf_Yuy3td2oiMmIW": {
+        "date": "2024-10-29",
+        "medicine": "-OA1_7A03L5_qZKoTHxF",
+        "quantity": 1,
+        "time": "21:00"
+      },
+      "-OAT9xhQrBGdgYnq-XXP": {
+        "date": "2024-10-30",
+        "medicine": "-OA1abpxZWHSgh8I8Drh",
+        "quantity": "1",
+        "time": "19:05"
+      },
+      "-OATSX6NBjG0xLswRyuU": {
+        "date": "2024-10-30",
+        "medicine": "-OA1_7A03L5_qZKoTHxF",
+        "quantity": 1,
+        "time": "20:25"
+      },
+      "-OAaHcfA1hL4fL-su8tS": {
+        "date": "2024-10-31",
+        "medicine": "-OA1_7A03L5_qZKoTHxF",
+        "quantity": 1,
+        "time": "23:55"
+      },
+      "-OAdKmOjZqXqF1yzo6if": {
+        "date": "2024-11-01",
+        "medicine": "-OA1_7A03L5_qZKoTHxF",
+        "quantity": 1,
+        "time": "23:10"
+      },
+      "-OAigTeFHDxU09IRmjeW": {
+        "date": "2024-11-02",
+        "medicine": "-OA1_7A03L5_qZKoTHxF",
+        "quantity": 1,
+        "time": "23:55"
       }
     }
   },
@@ -11176,30 +12445,30 @@
       "-OA1_7A03L5_qZKoTHxF": {
         "duration": 30,
         "frequency": "Daily",
-        "specs": "400 mg",
         "frequencyQuantity": 1,
-        "medicine": "Magnesium"
-      },
-      "-OA1abpxZWHSgh8I8Drh": {
-        "duration": 12,
-        "frequency": "Weekly",
-        "specs": "50k IU",
-        "frequencyQuantity": 1,
-        "medicine": "Vitamin D"
+        "medicine": "Magnesium",
+        "specs": "400 mg"
       },
       "-OA1aSgh8I8Drh": {
         "duration": 30,
         "frequency": "Daily",
-        "specs": "2k IU",
         "frequencyQuantity": 2,
-        "medicine": "Vitamin D"
+        "medicine": "Vitamin D",
+        "specs": "2k IU"
+      },
+      "-OA1abpxZWHSgh8I8Drh": {
+        "duration": 12,
+        "frequency": "Weekly",
+        "frequencyQuantity": 1,
+        "medicine": "Vitamin D",
+        "specs": "50k IU"
       },
       "-OA1aoSJEcK09A1DFLjw": {
         "duration": 7,
         "frequency": "Daily",
-        "specs": "5 mg",
         "frequencyQuantity": 1,
-        "medicine": "Melatonin"
+        "medicine": "Melatonin",
+        "specs": "5 mg"
       }
     }
   },
@@ -12375,20 +13644,10 @@
         "meal": "-O9Zbl-5nXkvzmG9K9AB",
         "unit": "Cup(s)"
       },
-      "-O9Zcgr-Pyf16CfsfRZZ": {
-        "count": 4,
-        "element": "Olive",
-        "unit": "Piece(s)"
-      },
       "-O9Zcmx_vmuHjgQnqHXl": {
         "count": 4,
         "element": "Olive",
         "meal": "-O9Zbcsq0ukb_o2QyDbp",
-        "unit": "Piece(s)"
-      },
-      "-O9ZcqfLhfwsUfv9rjOA": {
-        "count": 4,
-        "element": "Olive",
         "unit": "Piece(s)"
       },
       "-O9Zd3ESIOa9FdFZHQ7q": {
@@ -12491,18 +13750,6 @@
         "meal": "-O9ZbhoGTe8AxWZo0qwS",
         "unit": "gm"
       },
-      "-O9Zj-ZwAWJgVR5ukuE_": {
-        "alternatives": [
-          {
-            "count": 0.5,
-            "element": "Cooked Vegetables",
-            "unit": "Cup(s)"
-          }
-        ],
-        "count": 1,
-        "element": "Various Vegetables",
-        "unit": "Cup(s)"
-      },
       "-O9Zj89fe2xyTK7n3BYd": {
         "alternatives": [
           {
@@ -12551,6 +13798,445 @@
         "element": "Walnut",
         "meal": "-O9ZbjiXN43zir_56ZLV",
         "unit": "Piece(s)"
+      },
+      "-OA7TjsVjOiswP2AU-Wa": {
+        "alternatives": [
+          {
+            "count": 150,
+            "element": "Chicken Liver",
+            "unit": "gm"
+          },
+          {
+            "count": 150,
+            "element": "Fish",
+            "unit": "gm"
+          },
+          {
+            "count": 150,
+            "element": "Squid",
+            "unit": "gm"
+          },
+          {
+            "count": 150,
+            "element": "Shrimp",
+            "unit": "gm"
+          }
+        ],
+        "count": 150,
+        "element": "Chicken Breast",
+        "meal": "-OA7SpMAfDQqH0ZC7SLv",
+        "unit": "gm"
+      },
+      "-OA7U1RReR7cDKWqRH7b": {
+        "alternatives": [
+          {
+            "count": 0.5,
+            "element": "Cooked Vegetables",
+            "unit": "Cup(s)"
+          }
+        ],
+        "count": 1,
+        "element": "Various Vegetables",
+        "meal": "-OA7SpMAfDQqH0ZC7SLv",
+        "unit": "Cup(s)"
+      },
+      "-OAC9KAW-tCiTqWPdoNR": {
+        "alternatives": [
+          {
+            "count": 4,
+            "element": "Oat",
+            "unit": "Spoon(s)"
+          }
+        ],
+        "count": 8,
+        "element": "Chickpeas",
+        "meal": "-OA7SnaQifPoNXVptX_7",
+        "unit": "Spoon(s)"
+      },
+      "-OAC9OhpOqesMxCEtQRY": {
+        "count": 1,
+        "element": "Egg",
+        "meal": "-OA7SnaQifPoNXVptX_7",
+        "unit": "Piece(s)"
+      },
+      "-OAC9a5nX1AyrAw2LSDu": {
+        "alternatives": [
+          {
+            "count": 1,
+            "element": "Peanut Butter",
+            "unit": "Spoon(s)"
+          }
+        ],
+        "count": 1,
+        "element": "Various Vegetables",
+        "meal": "-OA7SnaQifPoNXVptX_7",
+        "unit": "Cup(s)"
+      },
+      "-OAC9eTD_XOr2gbwdd5T": {
+        "alternatives": [
+          {
+            "count": 1,
+            "element": "Yogurt",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 1,
+            "element": "Milk",
+            "unit": "Cup(s)"
+          }
+        ],
+        "count": 4,
+        "element": "Olive",
+        "meal": "-OA7SnaQifPoNXVptX_7",
+        "unit": "Piece(s)"
+      },
+      "-OAC9mnAIfWyzJef0WsD": {
+        "alternatives": [
+          {
+            "count": 1,
+            "element": "Milk",
+            "unit": "Cup(s)"
+          }
+        ],
+        "count": 1,
+        "element": "Yogurt",
+        "meal": "-OA7SsDWDxp0_R_mPIK9",
+        "unit": "Cup(s)"
+      },
+      "-OAC9pfbuGEYiUGLnE6g": {
+        "count": 1,
+        "element": "Peach",
+        "meal": "-OA7SsDWDxp0_R_mPIK9",
+        "unit": "Piece(s)"
+      },
+      "-OACAVx2JvWjc0mX99KR": {
+        "alternatives": [
+          {
+            "count": 90,
+            "element": "Tuna",
+            "unit": "gm"
+          },
+          {
+            "count": 90,
+            "element": "White Cheese",
+            "unit": "gm"
+          },
+          {
+            "count": 90,
+            "element": "Areesh Cheese",
+            "unit": "gm"
+          },
+          {
+            "count": 4,
+            "element": "Labaneh",
+            "unit": "Spoon(s)"
+          }
+        ],
+        "count": 2,
+        "element": "Egg",
+        "meal": "-OA7SublZ_MsV9zyV7Cl",
+        "unit": "Piece(s)"
+      },
+      "-OACAbXimeodxee6gLcR": {
+        "alternatives": [
+          {
+            "count": 1,
+            "element": "Various Vegetables",
+            "unit": "Cup(s)"
+          }
+        ],
+        "count": 1,
+        "element": "Mushroom",
+        "meal": "-OA7SublZ_MsV9zyV7Cl",
+        "unit": "Cup(s)"
+      },
+      "-OADO6yH3p1Na0-BGodV": {
+        "alternatives": [
+          {
+            "count": 10,
+            "element": "Pasta",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 20,
+            "element": "Bulgur",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 2,
+            "element": "Toast",
+            "unit": "Piece(s)"
+          },
+          {
+            "count": 1,
+            "element": "Potato",
+            "unit": "Piece(s)"
+          }
+        ],
+        "count": 10,
+        "element": "Rice",
+        "meal": "-OA7SpMAfDQqH0ZC7SLv",
+        "unit": "Spoon(s)"
+      },
+      "-OAIZVkZbZjVuqIwa-d1": {
+        "count": 90,
+        "element": "Tuna",
+        "meal": "-OAIZSPBuFVMZu6_x_Q5",
+        "unit": "gm"
+      },
+      "-OAIZZQgESOyYbVFEYgA": {
+        "count": 1,
+        "element": "Various Vegetables",
+        "meal": "-OAIZSPBuFVMZu6_x_Q5",
+        "unit": "Cup(s)"
+      },
+      "-OAIZbrkfrNpkztk_TEJ": {
+        "count": 1,
+        "element": "Grean Tea",
+        "meal": "-OAIZSPBuFVMZu6_x_Q5",
+        "unit": "Cup(s)"
+      },
+      "-OAaTJeh6ymIy3_QMqo6": {
+        "alternatives": [
+          {
+            "count": 10,
+            "element": "Peanut",
+            "unit": "Piece(s)"
+          }
+        ],
+        "count": 4,
+        "element": "Walnut",
+        "meal": "-OA7SsDWDxp0_R_mPIK9",
+        "unit": "Piece(s)"
+      },
+      "-OAgQZhEv09Qnqlf_ZpO": {
+        "alternatives": [
+          {
+            "count": 90,
+            "element": "Labaneh",
+            "unit": "gm"
+          },
+          {
+            "count": 90,
+            "element": "White Cheese",
+            "unit": "gm"
+          }
+        ],
+        "count": 2,
+        "element": "Egg",
+        "meal": "-OAgQEfiFluygEm2dtz-",
+        "unit": "Piece(s)"
+      },
+      "-OAgQkm1u6nscJGjY3op": {
+        "count": 4,
+        "element": "Olive",
+        "meal": "-OAgQEfiFluygEm2dtz-",
+        "unit": "Piece(s)"
+      },
+      "-OAgQpI9Y2aAjqEySSdF": {
+        "count": 1,
+        "element": "Various Vegetables",
+        "meal": "-OAgQEfiFluygEm2dtz-",
+        "unit": "Cup(s)"
+      },
+      "-OAgRhm0rhq9nWCoS2BV": {
+        "count": 2,
+        "element": "Oat",
+        "meal": "-OAgQHV_BKy6SYJLwLja",
+        "unit": "Spoon(s)"
+      },
+      "-OAgS8VUSrdCDonPBMC6": {
+        "count": 1,
+        "element": "Fruit",
+        "meal": "-OAgQHV_BKy6SYJLwLja",
+        "unit": "Piece(s)"
+      },
+      "-OAgSQOymDfmieVcP4i2": {
+        "alternatives": [
+          {
+            "count": 90,
+            "element": "Chicken Liver",
+            "unit": "gm"
+          },
+          {
+            "count": 90,
+            "element": "Fish",
+            "unit": "gm"
+          },
+          {
+            "count": 90,
+            "element": "Shrimp",
+            "unit": "gm"
+          },
+          {
+            "count": 90,
+            "element": "Squid",
+            "unit": "gm"
+          },
+          {
+            "count": 90,
+            "element": "Tuna",
+            "unit": "gm"
+          },
+          {
+            "count": 90,
+            "element": "Beef",
+            "unit": "gm"
+          }
+        ],
+        "count": 90,
+        "element": "Chicken Breast",
+        "meal": "-OAgQJTprwbeedu1A53D",
+        "unit": "gm"
+      },
+      "-OAgSWe56xM6j9tUrzNJ": {
+        "alternatives": [
+          {
+            "count": 0.5,
+            "element": "Cooked Vegetables",
+            "unit": "Cup(s)"
+          }
+        ],
+        "count": 1,
+        "element": "Various Vegetables",
+        "meal": "-OAgQJTprwbeedu1A53D",
+        "unit": "Cup(s)"
+      },
+      "-OAgT5hHPExzjpfWha83": {
+        "alternatives": [
+          {
+            "count": 90,
+            "element": "Chicken Breast",
+            "unit": "gm"
+          },
+          {
+            "count": 90,
+            "element": "Tuna",
+            "unit": "gm"
+          },
+          {
+            "count": 60,
+            "element": "Beef",
+            "unit": "gm"
+          }
+        ],
+        "count": 90,
+        "element": "White Cheese",
+        "meal": "-OAgQOcPtxDF_VQkyxYd",
+        "unit": "gm"
+      },
+      "-OAgTI2omcXAYqJqwe-B": {
+        "alternatives": [
+          {
+            "count": 0.25,
+            "element": "Chickpea",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 0.5,
+            "element": "Mushroom",
+            "unit": "Cup(s)"
+          }
+        ],
+        "count": 1,
+        "element": "Various Vegetables",
+        "meal": "-OAgQOcPtxDF_VQkyxYd",
+        "unit": "Cup(s)"
+      },
+      "-OAgTMQjFeN4iZqldl04": {
+        "count": 1,
+        "element": "Green Tea",
+        "meal": "-OAgQfN77v_N0zLPI4xp",
+        "unit": "Cup(s)"
+      },
+      "-OAgTOnjBD-m83UxhQZi": {
+        "count": 90,
+        "element": "Tuna",
+        "meal": "-OAgQfN77v_N0zLPI4xp",
+        "unit": "gm"
+      },
+      "-OAgTRH5_5nJmT1SEgGR": {
+        "count": 1,
+        "element": "Various Vegetables",
+        "meal": "-OAgQfN77v_N0zLPI4xp",
+        "unit": "Cup(s)"
+      },
+      "-OAgmwgAb1bzAufE_9eL": {
+        "alternatives": [
+          {
+            "count": 0.5,
+            "element": "Sweet Potato",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 0.5,
+            "element": "Lupin",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 3,
+            "element": "Popcorn",
+            "unit": "Cup(s)"
+          }
+        ],
+        "count": 1,
+        "element": "Toast",
+        "meal": "-OAgQLpIkggsTBUAcbJQ",
+        "unit": "Piece(s)"
+      },
+      "-OAgnKz4OrzHneq9HLvC": {
+        "alternatives": [
+          {
+            "count": 1,
+            "element": "Milk",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 1,
+            "element": "Shanina",
+            "unit": "Cup(s)"
+          }
+        ],
+        "count": 1,
+        "element": "Yogurt",
+        "meal": "-OAgQEfiFluygEm2dtz-",
+        "unit": "Cup(s)"
+      },
+      "-OAgnQJJgRaQV-Ty0Bfa": {
+        "alternatives": [
+          {
+            "count": 1,
+            "element": "Milk",
+            "unit": "Cup(s)"
+          },
+          {
+            "count": 1,
+            "element": "Shanina",
+            "unit": "Cup(s)"
+          }
+        ],
+        "count": 1,
+        "element": "Yogurt",
+        "meal": "-OAgQHV_BKy6SYJLwLja",
+        "unit": "Cup(s)"
+      },
+      "-OAlkRkBAgJq5ebC8eZH": {
+        "alternatives": [
+          {
+            "count": 20,
+            "element": "Bulgur",
+            "unit": "Spoon(s)"
+          },
+          {
+            "count": 1,
+            "element": "Potato",
+            "unit": "Cup(s)"
+          }
+        ],
+        "count": 10,
+        "element": "Rice",
+        "meal": "-OAgQJTprwbeedu1A53D",
+        "unit": "Spoon(s)"
       },
       "element111": {
         "count": 1,
@@ -13383,6 +15069,61 @@
         "meal": "Dinner",
         "schedule": "-O9ZbZqICGKEnnbqFh-4",
         "time": "21:00"
+      },
+      "-OA7SnaQifPoNXVptX_7": {
+        "meal": "Breakfast",
+        "schedule": "-OA7Sk9JwNlxXn_0x_qB",
+        "time": "09:00"
+      },
+      "-OA7SpMAfDQqH0ZC7SLv": {
+        "meal": "Lunch",
+        "schedule": "-OA7Sk9JwNlxXn_0x_qB",
+        "time": "17:00"
+      },
+      "-OA7SsDWDxp0_R_mPIK9": {
+        "meal": "Snack Meal",
+        "schedule": "-OA7Sk9JwNlxXn_0x_qB",
+        "time": "13:00"
+      },
+      "-OA7SublZ_MsV9zyV7Cl": {
+        "meal": "Dinner",
+        "schedule": "-OA7Sk9JwNlxXn_0x_qB",
+        "time": "21:00"
+      },
+      "-OAIZSPBuFVMZu6_x_Q5": {
+        "meal": "Other",
+        "schedule": "-OA7Sk9JwNlxXn_0x_qB",
+        "time": "23:30"
+      },
+      "-OAgQEfiFluygEm2dtz-": {
+        "meal": "Breakfast",
+        "schedule": "-OAgPse1fczIcCLgNyKb",
+        "time": "07:00"
+      },
+      "-OAgQHV_BKy6SYJLwLja": {
+        "meal": "Snack Meal 1",
+        "schedule": "-OAgPse1fczIcCLgNyKb",
+        "time": "10:00"
+      },
+      "-OAgQJTprwbeedu1A53D": {
+        "meal": "Lunch",
+        "schedule": "-OAgPse1fczIcCLgNyKb",
+        "time": "14:00"
+      },
+      "-OAgQLpIkggsTBUAcbJQ": {
+        "meal": "Snack Meal 2",
+        "schedule": "-OAgPse1fczIcCLgNyKb",
+        "time": "17:00"
+      },
+      "-OAgQOcPtxDF_VQkyxYd": {
+        "meal": "Dinner",
+        "schedule": "-OAgPse1fczIcCLgNyKb",
+        "time": "21:00"
+      },
+      "-OAgQfN77v_N0zLPI4xp": {
+        "meal": "Other",
+        "schedule": "-OAgPse1fczIcCLgNyKb",
+        "time": "23:00"
       }
     }
   },
@@ -13427,6 +15168,14 @@
       "-O9ZbZqICGKEnnbqFh-4": {
         "date": "2024-10-19",
         "order": 10
+      },
+      "-OA7Sk9JwNlxXn_0x_qB": {
+        "date": "2024-10-26",
+        "order": 11
+      },
+      "-OAgPse1fczIcCLgNyKb": {
+        "date": "2024-11-02",
+        "order": 12
       }
     }
   },
@@ -13559,12 +15308,48 @@
       "-OA13tmE4vQonxVkc6He": {
         "endTime": "2024-10-25T08:00",
         "startTime": "2024-10-24T23:30"
+      },
+      "-OA7W9z8vVCRqrUZsPy4": {
+        "endTime": "2024-10-26T08:30",
+        "startTime": "2024-10-26T00:30"
+      },
+      "-OAB_V_U0Wk6VXZub8WE": {
+        "endTime": "2024-10-27T09:00",
+        "startTime": "2024-10-27T00:30"
+      },
+      "-OAGrGEokSf-FhQovDFc": {
+        "endTime": "2024-10-28T09:00",
+        "startTime": "2024-10-28T02:30"
+      },
+      "-OALqcG7S1tKS6bC3VEx": {
+        "endTime": "2024-10-29T09:00",
+        "startTime": "2024-10-29T02:00"
+      },
+      "-OAQy64No2VQJGpcraR-": {
+        "endTime": "2024-10-30T07:45",
+        "startTime": "2024-10-29T23:30"
+      },
+      "-OAVpx8DwVp24viTU0EJ": {
+        "endTime": "2024-10-31T07:30",
+        "startTime": "2024-10-30T22:00"
+      },
+      "-OAaH75ijqCwb385xmw1": {
+        "endTime": "2024-11-01T08:30",
+        "startTime": "2024-11-01T01:00"
+      },
+      "-OAihRpQe0hJWC2vfsb7": {
+        "endTime": "2024-11-02T08:00",
+        "startTime": "2024-11-01T23:30"
+      },
+      "-OAkQOntaylQ5M-nU4MT": {
+        "endTime": "2024-11-03T08:00",
+        "startTime": "2024-11-03T01:30"
       }
     }
   },
   "sportNote": {
     "908r1hATCyZHv6iIZBnGkgDrL1J3": {
-      "x": "30 Diving, 10 Slow & 10 Slow Back Rounds"
+      "x": "20 Diving, 15 Slow & 15 Slow Back Rounds"
     }
   },
   "sportSessions": {
@@ -13892,6 +15677,27 @@
         "measure": "30 Diving, 10 Slow & 10 Slow Back Rounds",
         "startTime": "19:15",
         "type": "Swimming"
+      },
+      "-OAGgxtHpMhwd9EaX-2_": {
+        "date": "2024-10-27",
+        "endTime": "21:25",
+        "measure": "20 Diving, 15 Slow & 15 Slow Back Rounds",
+        "startTime": "20:30",
+        "type": "Swimming"
+      },
+      "-OAOQ_fBS6QBape1wnQd": {
+        "date": "2024-10-29",
+        "endTime": "20:05",
+        "measure": "20 Diving, 15 Slow & 15 Slow Back Rounds",
+        "startTime": "19:15",
+        "type": "Swimming"
+      },
+      "-OAT9qOVNrfF_qKyuvTC": {
+        "date": "2024-10-30",
+        "endTime": "18:00",
+        "measure": "20 Diving, 15 Slow & 15 Slow Back Rounds",
+        "startTime": "17:15",
+        "type": "Swimming"
       }
     }
   },
@@ -13944,6 +15750,206 @@
       "-O9zybW8LErNsPfZBi2b": {
         "quantity": "1",
         "timestamp": "2024-10-24T22:21"
+      },
+      "-OA2OHyIc6uB1uRJTbNq": {
+        "quantity": "3",
+        "timestamp": "2024-10-25T14:17"
+      },
+      "-OA2qeOCql5W19qKAeDq": {
+        "quantity": "1",
+        "timestamp": "2024-10-25T16:25"
+      },
+      "-OA3CgDam9ohgP6h4oV2": {
+        "quantity": "1",
+        "timestamp": "2024-10-25T18:06"
+      },
+      "-OA3RfkGr0VFfTZk8CFE": {
+        "quantity": "1",
+        "timestamp": "2024-10-25T19:11"
+      },
+      "-OA3oiyQ8G4FvzuE_4W2": {
+        "quantity": "2",
+        "timestamp": "2024-10-25T20:56"
+      },
+      "-OA4Rcy4gH4ygE_yAiMr": {
+        "quantity": "1",
+        "timestamp": "2024-10-25T23:51"
+      },
+      "-OA7nymBjVKpuptB1LUA": {
+        "quantity": "1",
+        "timestamp": "2024-10-26T15:31"
+      },
+      "-OA8YL0dqlHhlRzWCl_1": {
+        "quantity": "1",
+        "timestamp": "2024-10-26T18:58"
+      },
+      "-OA8iJ0C6nR4X3kYlqwx": {
+        "quantity": "1",
+        "timestamp": "2024-10-26T19:46"
+      },
+      "-OA99NVq8sNi8Jxi4lbz": {
+        "quantity": "1",
+        "timestamp": "2024-10-26T21:49"
+      },
+      "-OA9LrMWYOFrQvSmpgDj": {
+        "quantity": "1",
+        "timestamp": "2024-10-26T22:44"
+      },
+      "-OACAoiwiTMam_9FZDdM": {
+        "quantity": "1",
+        "timestamp": "2024-10-27T11:54"
+      },
+      "-OACR6jkb4hqLCGJPC8e": {
+        "quantity": "1",
+        "timestamp": "2024-10-27T13:02"
+      },
+      "-OADLyh5ZFkXq2nxEg6J": {
+        "quantity": "2",
+        "timestamp": "2024-10-27T17:23"
+      },
+      "-OADQEEbntkGzGTJr9VX": {
+        "quantity": "1",
+        "timestamp": "2024-10-27T15:41"
+      },
+      "-OAEuROi8rf31_TdhM5-": {
+        "quantity": "3",
+        "timestamp": "2024-10-27T23:30"
+      },
+      "-OAGwZmqbMy60t5oEMD2": {
+        "quantity": "1",
+        "timestamp": "2024-10-28T10:06"
+      },
+      "-OAHg685WGtrS004g3tE": {
+        "quantity": "1",
+        "timestamp": "2024-10-28T13:33"
+      },
+      "-OAIX67qShmxBSj1BRv-": {
+        "quantity": "1",
+        "timestamp": "2024-10-28T17:29"
+      },
+      "-OAK8LNWkNVRm8FphLUG": {
+        "quantity": "2",
+        "timestamp": "2024-10-28T23:55"
+      },
+      "-OAK8ZEwBjbOEPpxdueN": {
+        "quantity": "2",
+        "timestamp": "2024-10-28T21:00"
+      },
+      "-OAM4Uj_o1RznuFy8qlF": {
+        "quantity": "1",
+        "timestamp": "2024-10-29T10:03"
+      },
+      "-OAOQNY58qCKbgFynC5T": {
+        "quantity": "2",
+        "timestamp": "2024-10-29T17:00"
+      },
+      "-OAOQUdrGOULcp6-zhFl": {
+        "quantity": "1",
+        "timestamp": "2024-10-29T21:00"
+      },
+      "-OAOd4nCvGkQOSImPciJ": {
+        "quantity": "1",
+        "timestamp": "2024-10-29T21:57"
+      },
+      "-OAOqxD00kElpMEJ9xre": {
+        "quantity": "1",
+        "timestamp": "2024-10-29T22:58"
+      },
+      "-OAQyBcWVdF9HVF_hQvi": {
+        "quantity": "1",
+        "timestamp": "2024-10-30T08:49"
+      },
+      "-OASQKy5fYlqml8NA7rx": {
+        "quantity": "2",
+        "timestamp": "2024-10-30T15:36"
+      },
+      "-OATSTrQVfSTXRi8eiPq": {
+        "quantity": "2",
+        "timestamp": "2024-10-30T20:25"
+      },
+      "-OAW7-wJB_poTBN6-tRf": {
+        "quantity": "2",
+        "timestamp": "2024-10-31T08:50"
+      },
+      "-OAXm--1KqGRGwDnR1Ew": {
+        "quantity": "2",
+        "timestamp": "2024-10-31T16:33"
+      },
+      "-OAXwVAcM6i93hAeq2ZP": {
+        "quantity": "1",
+        "timestamp": "2024-10-31T17:19"
+      },
+      "-OAY4yRb_o-yFEUGJH9z": {
+        "quantity": "1",
+        "timestamp": "2024-10-31T18:00"
+      },
+      "-OAZDxWJ7zljmL2IxLog": {
+        "quantity": "1",
+        "timestamp": "2024-10-31T23:19"
+      },
+      "-OAaW5eZX_o8AyRMqESi": {
+        "quantity": "1",
+        "timestamp": "2024-11-01T09:58"
+      },
+      "-OAbfmHIO1tQmMzePD7M": {
+        "quantity": "1",
+        "timestamp": "2024-11-01T15:24"
+      },
+      "-OAbrVO5PE4Fa1TRwrGR": {
+        "quantity": "1",
+        "timestamp": "2024-11-01T16:15"
+      },
+      "-OAcAZrtOvXR0tmNcCS8": {
+        "quantity": "1",
+        "timestamp": "2024-11-01T17:43"
+      },
+      "-OAchPDIni_sENdt641n": {
+        "quantity": "1",
+        "timestamp": "2024-11-01T20:11"
+      },
+      "-OAdPxXDuuP2R9aEzAI3": {
+        "quantity": "1",
+        "timestamp": "2024-11-01T23:30"
+      },
+      "-OAdXsWP7i42nR-v4zvc": {
+        "quantity": "1",
+        "timestamp": "2024-11-02T00:04"
+      },
+      "-OAgj20fjS_2rv0aWXKk": {
+        "quantity": "1",
+        "timestamp": "2024-11-02T14:56"
+      },
+      "-OAgvPJSdK8clNtlMv-x": {
+        "quantity": "1",
+        "timestamp": "2024-11-02T15:50"
+      },
+      "-OAiAUDDEw2sCUfkjgVH": {
+        "quantity": "1",
+        "timestamp": "2024-11-02T21:40"
+      },
+      "-OAiMdkp49TKKaqj4MCo": {
+        "quantity": "1",
+        "timestamp": "2024-11-02T22:33"
+      },
+      "-OAigQgyPApHp4-I60ik": {
+        "quantity": "1",
+        "timestamp": "2024-11-03T00:04"
+      },
+      "-OAiqjhSc-5L6maGYFFs": {
+        "quantity": "1",
+        "timestamp": "2024-11-03T00:49"
+      },
+      "-OAkktxkQCFqRMeuOJl-": {
+        "quantity": "1",
+        "timestamp": "2024-11-03T09:43"
+      },
+      "-OAlkpCcvh90VILoSRQc": {
+        "quantity": "1",
+        "timestamp": "2024-11-03T12:22"
+      },
+      "-OAlkqBE6_WDevtvrKKK": {
+        "quantity": "1",
+        "timestamp": "2024-11-03T14:22"
       }
     }
   }
