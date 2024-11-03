@@ -23,6 +23,8 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
           sinceBest: weightSinceBestChange,
         })
       ),
+      minTarget: data[0]?.weightMin,
+      maxTarget: data[0]?.weightMax,
       title: "Weight",
       unit: "KG",
     },
@@ -45,6 +47,8 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
         })
       ),
       title: "Muscles Weight",
+      minTarget: data[0]?.musclesMin,
+      maxTarget: data[0]?.musclesMax,
       unit: "KG",
     },
     {
@@ -65,6 +69,8 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
           sinceBest: musclesPercentageSinceBestChange,
         })
       ),
+      minTarget: data[0]?.musclesPercentageMin,
+      maxTarget: data[0]?.musclesPercentageMax,
       title: "Muscles Percentage",
       unit: "%",
     },
@@ -107,6 +113,8 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
           sinceBest: waterSinceBestChange,
         })
       ),
+      minTarget: data[0]?.waterMin,
+      maxTarget: data[0]?.waterMax,
       title: "Water Volume",
       unit: "L",
     },
@@ -128,6 +136,8 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
           sinceBest: fatSinceBestChange,
         })
       ),
+      minTarget: data[0]?.fatMin,
+      maxTarget: data[0]?.fatMax,
       title: "Fat Weight",
       unit: "KG",
     },
@@ -149,6 +159,8 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
           sinceBest: waistSinceBestChange,
         })
       ),
+      minTarget: data[0]?.waistMin,
+      maxTarget: data[0]?.waistMax,
       title: "Waist",
     },
   ];
