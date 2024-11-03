@@ -69,8 +69,6 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
           sinceBest: musclesPercentageSinceBestChange,
         })
       ),
-      minTarget: data[0]?.musclesPercentageMin,
-      maxTarget: data[0]?.musclesPercentageMax,
       title: "Muscles Percentage",
       unit: "%",
     },
