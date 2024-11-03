@@ -68,15 +68,15 @@ const WeightReadings = () => {
     flip: boolean,
     unit?: string
   ) => {
-    let icon = faArrowCircleUp;
-    let color = flip ? "success" : "danger";
+    let icon = faMinusCircle;
+    let color = "secondary";
 
     if (parseFloat(String(first)) > parseFloat(String(second))) {
       icon = faArrowCircleDown;
       color = flip ? "danger" : "success";
-    } else if (first === second) {
-      icon = faMinusCircle;
-      color = "secondary";
+    } else if (parseFloat(String(first)) < parseFloat(String(second))) {
+      icon = faArrowCircleUp;
+      color = flip ? "success" : "danger";
     }
 
     const changeAmount = parseFloat(
@@ -163,11 +163,11 @@ const WeightReadings = () => {
                     : emptyCalculations,
                 fatWeeklyChange:
                   i < sortedRes.length - 1
-                    ? changeCalculator(previousRecord?.fat, fat, false, "%")
+                    ? changeCalculator(previousRecord?.fat, fat, false, "KG")
                     : emptyCalculations,
                 waterWeeklyChange:
                   i < sortedRes.length - 1
-                    ? changeCalculator(previousRecord?.water, water, true, "%")
+                    ? changeCalculator(previousRecord?.water, water, true, "L")
                     : emptyCalculations,
                 waistWeeklyChange:
                   i < sortedRes.length - 1
@@ -188,11 +188,11 @@ const WeightReadings = () => {
                     : emptyCalculations,
                 fatSinceWorstChange:
                   i < sortedRes.length - 1
-                    ? changeCalculator(worstFat, fat, false, "%")
+                    ? changeCalculator(worstFat, fat, false, "KG")
                     : emptyCalculations,
                 waterSinceWorstChange:
                   i < sortedRes.length - 1
-                    ? changeCalculator(worstWater, water, true, "%")
+                    ? changeCalculator(worstWater, water, true, "L")
                     : emptyCalculations,
                 waistSinceWorstChange:
                   i < sortedRes.length - 1
@@ -208,11 +208,11 @@ const WeightReadings = () => {
                     : emptyCalculations,
                 fatSinceBestChange:
                   i < sortedRes.length - 1
-                    ? changeCalculator(bestFat, fat, false, "%")
+                    ? changeCalculator(bestFat, fat, false, "KG")
                     : emptyCalculations,
                 waterSinceBestChange:
                   i < sortedRes.length - 1
-                    ? changeCalculator(bestWater, water, true, "%")
+                    ? changeCalculator(bestWater, water, true, "L")
                     : emptyCalculations,
                 waistSinceBestChange:
                   i < sortedRes.length - 1
@@ -233,11 +233,11 @@ const WeightReadings = () => {
                     : emptyCalculations,
                 fatSinceStartChange:
                   i < sortedRes.length - 2
-                    ? changeCalculator(firstRecord?.fat, fat, false, "%")
+                    ? changeCalculator(firstRecord?.fat, fat, false, "KG")
                     : emptyCalculations,
                 waterSinceStartChange:
                   i < sortedRes.length - 2
-                    ? changeCalculator(firstRecord?.water, water, true, "%")
+                    ? changeCalculator(firstRecord?.water, water, true, "L")
                     : emptyCalculations,
                 waistSinceStartChange:
                   i < sortedRes.length - 2
