@@ -23,21 +23,46 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
           sinceBest: weightSinceBestChange,
         })
       ),
+      minTarget: data[0]?.weightMin,
+      maxTarget: data[0]?.weightMax,
       title: "Weight",
       unit: "KG",
     },
     {
       data: data?.map(
         ({
-          musclesPercentage,
           date,
+          muscles,
+          musclesWeeklyChange,
+          musclesSinceStartChange,
+          musclesSinceWorstChange,
+          musclesSinceBestChange,
+        }) => ({
+          x: date,
+          y: parseFloat(String(muscles)),
+          weekly: musclesWeeklyChange,
+          sinceStart: musclesSinceStartChange,
+          sinceWorst: musclesSinceWorstChange,
+          sinceBest: musclesSinceBestChange,
+        })
+      ),
+      title: "Muscles Weight",
+      minTarget: data[0]?.musclesMin,
+      maxTarget: data[0]?.musclesMax,
+      unit: "KG",
+    },
+    {
+      data: data?.map(
+        ({
+          date,
+          musclesPercentage,
           musclesPercentageWeeklyChange,
           musclesPercentageSinceStartChange,
           musclesPercentageSinceWorstChange,
           musclesPercentageSinceBestChange,
         }) => ({
           x: date,
-          y: parseFloat(musclesPercentage),
+          y: parseFloat(String(musclesPercentage)),
           weekly: musclesPercentageWeeklyChange,
           sinceStart: musclesPercentageSinceStartChange,
           sinceWorst: musclesPercentageSinceWorstChange,
@@ -86,8 +111,10 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
           sinceBest: waterSinceBestChange,
         })
       ),
-      title: "Water Percentage",
-      unit: "%",
+      minTarget: data[0]?.waterMin,
+      maxTarget: data[0]?.waterMax,
+      title: "Water Volume",
+      unit: "L",
     },
     {
       data: data?.map(
@@ -107,27 +134,8 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
           sinceBest: fatSinceBestChange,
         })
       ),
-      title: "Fat Percentage",
-      unit: "%",
-    },
-    {
-      data: data?.map(
-        ({
-          fatWeight,
-          date,
-          fatWeightWeeklyChange,
-          fatWeightSinceStartChange,
-          fatWeightSinceWorstChange,
-          fatWeightSinceBestChange,
-        }) => ({
-          x: date,
-          y: parseFloat(fatWeight),
-          weekly: fatWeightWeeklyChange,
-          sinceStart: fatWeightSinceStartChange,
-          sinceWorst: fatWeightSinceWorstChange,
-          sinceBest: fatWeightSinceBestChange,
-        })
-      ),
+      minTarget: data[0]?.fatMin,
+      maxTarget: data[0]?.fatMax,
       title: "Fat Weight",
       unit: "KG",
     },
@@ -149,47 +157,9 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
           sinceBest: waistSinceBestChange,
         })
       ),
+      minTarget: data[0]?.waistMin,
+      maxTarget: data[0]?.waistMax,
       title: "Waist",
-    },
-    {
-      data: data?.map(
-        ({
-          physique,
-          date,
-          physiqueWeeklyChange,
-          physiqueSinceStartChange,
-          physiqueSinceWorstChange,
-          physiqueSinceBestChange,
-        }) => ({
-          x: date,
-          y: physique,
-          weekly: physiqueWeeklyChange,
-          sinceStart: physiqueSinceStartChange,
-          sinceWorst: physiqueSinceWorstChange,
-          sinceBest: physiqueSinceBestChange,
-        })
-      ),
-      title: "Physique Rating",
-    },
-    {
-      data: data?.map(
-        ({
-          bones,
-          date,
-          bonesWeeklyChange,
-          bonesSinceStartChange,
-          bonesSinceWorstChange,
-          bonesSinceBestChange,
-        }) => ({
-          x: date,
-          y: bones,
-          weekly: bonesWeeklyChange,
-          sinceStart: bonesSinceStartChange,
-          sinceWorst: bonesSinceWorstChange,
-          sinceBest: bonesSinceBestChange,
-        })
-      ),
-      title: "Bones Mass",
     },
   ];
 

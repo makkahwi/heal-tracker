@@ -19,14 +19,14 @@ const Navbar = () => {
         <span>
           {user ? (
             <span>
-              <img src={"/Logo-Only-White.png"} height={40} />
+              <img src={"/Logo-Only-White.png"} alt="logo" height={40} />
               <span className="d-none d-lg-inline">
                 <span className="navbar-brand text-white fw-bold">HDL</span>
               </span>
             </span>
           ) : (
             <span>
-              <img src={"/Logo-Only-White.png"} height={40} />
+              <img src={"/Logo-Only-White.png"} alt="logo" height={40} />
               <span className="navbar-brand text-white fw-bold">HDL</span>
             </span>
           )}

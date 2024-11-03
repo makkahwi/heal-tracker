@@ -1,8 +1,9 @@
 import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import moment from "moment";
+import moment, { max } from "moment";
 import { Fragment, useEffect, useState } from "react";
 import {
+  AreaSeries,
   Hint,
   HorizontalGridLines,
   LineMarkSeries,
@@ -21,11 +22,7 @@ interface hoverProps {
   value?: number;
 }
 
-const AnalysisCharts = ({
-  charts,
-  initialHovered,
-  data,
-}: {
+interface props {
   charts: {
     data: {
       x: string;
@@ -35,12 +32,16 @@ const AnalysisCharts = ({
       sinceWorst: changeCalculationProps;
       sinceBest: changeCalculationProps;
     }[];
+    minTarget?: number;
+    maxTarget?: number;
     title: string;
     unit?: string;
   }[];
   initialHovered: Function;
   data: any[];
-}) => {
+}
+
+const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
   const [hovered, setHovered] = useState<hoverProps[]>(initialHovered());
   const [show, setShow] = useState({
     data: data.map(() => true),
@@ -84,7 +85,7 @@ const AnalysisCharts = ({
 
   return (
     <div className="row">
-      {charts?.map(({ data, title, unit }, x) => {
+      {charts?.map(({ data, title, unit, minTarget, maxTarget }, x) => {
         const rowData = hovered?.find((h) => h.title === title);
         const changes = data?.find(
           ({ x, y }) =>
@@ -92,9 +93,13 @@ const AnalysisCharts = ({
             parseFloat(String(y)) === rowData?.value
         );
 
-        const values = data.map(({ y }) => y);
-        const min = Math.min.apply(Math, values);
-        const max = Math.max.apply(Math, values);
+        const values =
+          minTarget && maxTarget
+            ? [...data.map(({ y }) => y), minTarget, maxTarget]
+            : data.map(({ y }) => y);
+
+        const chartMin = Math.min.apply(Math, values);
+        const chartMax = Math.max.apply(Math, values);
         const average = getAverage(data?.map(({ y }) => parseFloat(String(y))));
 
         return (
@@ -110,7 +115,10 @@ const AnalysisCharts = ({
                       xType="time"
                       width={300}
                       height={300}
-                      yDomain={[min - min * 0.025, max + max * 0.025]}
+                      yDomain={[
+                        chartMin - chartMin * 0.025,
+                        chartMax + chartMax * 0.025,
+                      ]}
                     >
                       <VerticalGridLines />
                       <HorizontalGridLines />
@@ -233,6 +241,76 @@ const AnalysisCharts = ({
                           </div>
                         </Hint>
                       )}
+
+                      {minTarget && (
+                        <Hint
+                          value={{
+                            x:
+                              moment(data[data.length - 1]?.x).valueOf() + 2000,
+                            y: minTarget,
+                          }}
+                        >
+                          <small
+                            className="bg-success text-white p-2"
+                            style={{ fontSize: 10 }}
+                          >
+                            {minTarget === maxTarget
+                              ? "Targeted Value"
+                              : "Targeted Min Value"}
+                          </small>
+                        </Hint>
+                      )}
+
+                      {maxTarget && (
+                        <Hint
+                          value={{
+                            x:
+                              moment(data[data.length - 1]?.x).valueOf() + 2000,
+                            y: maxTarget,
+                          }}
+                        >
+                          <small
+                            className="bg-success text-white p-2"
+                            style={{ fontSize: 10 }}
+                          >
+                            {minTarget === maxTarget
+                              ? "Targeted Value"
+                              : "Targeted Max Value"}
+                          </small>
+                        </Hint>
+                      )}
+
+                      {minTarget && (
+                        <LineMarkSeries
+                          color="green"
+                          data={[
+                            {
+                              x: moment(data[0]?.x).valueOf(),
+                              y: minTarget,
+                            },
+                            {
+                              x: moment(data[data.length - 1]?.x).valueOf(),
+                              y: minTarget,
+                            },
+                          ]}
+                        />
+                      )}
+
+                      {maxTarget && (
+                        <LineMarkSeries
+                          color="green"
+                          data={[
+                            {
+                              x: moment(data[0]?.x).valueOf(),
+                              y: maxTarget,
+                            },
+                            {
+                              x: moment(data[data.length - 1]?.x).valueOf(),
+                              y: maxTarget,
+                            },
+                          ]}
+                        />
+                      )}
                     </XYPlot>
                   </td>
                 </tr>
@@ -248,7 +326,9 @@ const AnalysisCharts = ({
                         onClick={() =>
                           setShow((current) => ({
                             ...current,
-                            data: current.data.map((v, y) => (y == x ? !v : v)),
+                            data: current.data.map((v, y) =>
+                              y === x ? !v : v
+                            ),
                           }))
                         }
                       >
@@ -264,7 +344,7 @@ const AnalysisCharts = ({
                           setShow((current) => ({
                             ...current,
                             average: current.average.map((v, y) =>
-                              y == x ? !v : v
+                              y === x ? !v : v
                             ),
                           }))
                         }
@@ -281,7 +361,7 @@ const AnalysisCharts = ({
                           setShow((current) => ({
                             ...current,
                             changeAverage: current.changeAverage.map((v, y) =>
-                              y == x ? !v : v
+                              y === x ? !v : v
                             ),
                           }))
                         }

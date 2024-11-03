@@ -1,4 +1,3 @@
-import moment from "moment";
 import { useEffect, useState } from "react";
 import { Fragment } from "react/jsx-runtime";
 
@@ -9,10 +8,10 @@ import { SchedulesMealElementProps } from "../Diet/Schedule/Elements";
 import { SchedulesMealProps } from "../Diet/Schedule/Meals";
 import { wateringProps } from "../Diet/Watering";
 import { medicineProps } from "../Medicine/Consumption";
+import { medicineScheduleProps } from "../Medicine/Schedule";
 import { sleepCycleProps } from "../SleepCycles";
 import { walkExerciseProps } from "../Sports";
-import WeeklyCalendar, { SummaryProps } from "./WeeklyCalendar";
-import { medicineScheduleProps } from "../Medicine/Schedule";
+import WeeklyCalendar from "./WeeklyCalendar";
 
 const Dashboard = () => {
   const [consumptionData, setConsumptionData] = useState<consumptionProps[]>(
@@ -24,7 +23,6 @@ const Dashboard = () => {
   const [medicineData, setMedicineData] = useState<medicineProps[]>([]);
 
   const [scheduled, setScheduled] = useState<SchedulesMealElementProps[]>([]);
-  const [summaries, setSummaries] = useState<SummaryProps[]>([]);
   const [sleepCyclesData, setSleepCyclesData] = useState<sleepCycleProps[]>([]);
   const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
   const [watering, setWatering] = useState<wateringProps[]>([]);
@@ -120,15 +118,6 @@ const Dashboard = () => {
           .catch((err) => console.log({ err }));
       })
       .catch((err) => console.log({ err }));
-
-    BeAPI.getAll("summaries")
-      .then((res: SummaryProps[]) =>
-        setSummaries(
-          res
-          // ?.sort((a, b) => (a.element > b.element ? 1 : -1))
-        )
-      )
-      .catch((err) => console.log({ err }));
   };
 
   useEffect(() => {
@@ -157,7 +146,6 @@ const Dashboard = () => {
           walkExercisesData={walkExercisesData}
           medicineData={medicineData}
           sleepCyclesData={sleepCyclesData}
-          summaries={summaries}
         />
       </Fragment>
     </PageSection>
