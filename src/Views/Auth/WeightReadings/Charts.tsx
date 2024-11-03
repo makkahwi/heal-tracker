@@ -47,6 +47,27 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
       title: "Muscles Weight",
       unit: "KG",
     },
+    {
+      data: data?.map(
+        ({
+          date,
+          musclesPercentage,
+          musclesPercentageWeeklyChange,
+          musclesPercentageSinceStartChange,
+          musclesPercentageSinceWorstChange,
+          musclesPercentageSinceBestChange,
+        }) => ({
+          x: date,
+          y: parseFloat(String(musclesPercentage)),
+          weekly: musclesPercentageWeeklyChange,
+          sinceStart: musclesPercentageSinceStartChange,
+          sinceWorst: musclesPercentageSinceWorstChange,
+          sinceBest: musclesPercentageSinceBestChange,
+        })
+      ),
+      title: "Muscles Percentage",
+      unit: "%",
+    },
     // {
     //   data: data?.map(
     //     ({
