@@ -8,7 +8,6 @@ import { Fragment, useEffect, useState } from "react";
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
 import PageSection from "../../../Components/PageView/PageSection";
-import { getHighest, getLowest } from "../../../Utils/functions";
 import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
 
@@ -156,51 +155,63 @@ const WeightReadings = () => {
                   const firstRecord = sortedRes[sortedRes.length - 1];
 
                   const worstWeight = Math.max.apply(
+                    Math,
                     sortedRes
                       .filter((_, y) => y > i)
                       .map(({ weight }) => weight)
                   );
-                  const bestWeight = getLowest(
+                  const bestWeight = Math.min.apply(
+                    Math,
                     sortedRes
                       .filter((_, y) => y > i)
                       .map(({ weight }) => weight)
                   );
-                  const worstFat = getHighest(
+                  const worstFat = Math.max.apply(
+                    Math,
                     sortedRes.filter((_, y) => y > i).map(({ fat }) => fat)
                   );
-                  const bestFat = getLowest(
+                  const bestFat = Math.min.apply(
+                    Math,
                     sortedRes.filter((_, y) => y > i).map(({ fat }) => fat)
                   );
-                  const worstWater = getLowest(
+                  const worstWater = Math.min.apply(
+                    Math,
                     sortedRes.filter((_, y) => y > i).map(({ water }) => water)
                   );
-                  const bestWater = getHighest(
+                  const bestWater = Math.max.apply(
+                    Math,
                     sortedRes.filter((_, y) => y > i).map(({ water }) => water)
                   );
-                  const worstWaist = getHighest(
+                  const worstWaist = Math.max.apply(
+                    Math,
                     sortedRes.filter((_, y) => y > i).map(({ waist }) => waist)
                   );
-                  const bestWaist = getLowest(
+                  const bestWaist = Math.min.apply(
+                    Math,
                     sortedRes.filter((_, y) => y > i).map(({ waist }) => waist)
                   );
-                  const worstMuscles = getLowest(
+                  const worstMuscles = Math.min.apply(
+                    Math,
                     sortedRes
                       .filter((_, y) => y > i)
                       .map(({ muscles }) => muscles)
                   );
-                  const bestMuscles = getHighest(
+                  const bestMuscles = Math.max.apply(
+                    Math,
                     sortedRes
                       .filter((_, y) => y > i)
                       .map(({ muscles }) => muscles)
                   );
-                  const worstMusclesPercentage = getLowest(
+                  const worstMusclesPercentage = Math.min.apply(
+                    Math,
                     sortedRes
                       .filter((_, y) => y > i)
                       .map(({ muscles, weight }) =>
                         parseFloat(((muscles / weight) * 100).toFixed(2))
                       )
                   );
-                  const bestMusclesPercentage = getHighest(
+                  const bestMusclesPercentage = Math.max.apply(
+                    Math,
                     sortedRes
                       .filter((_, y) => y > i)
                       .map(({ muscles, weight }) =>
