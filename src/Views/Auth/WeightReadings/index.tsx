@@ -11,7 +11,20 @@ import PageSection from "../../../Components/PageView/PageSection";
 import { getHighest, getLowest } from "../../../Utils/functions";
 import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
-import WeightReadingTargets from "./Targets";
+
+interface weightReadingTargetProps {
+  id?: string;
+  weightMin: number;
+  fatMin: number;
+  waterMin: number;
+  waistMin: number;
+  musclesMin: number;
+  weightMax: number;
+  fatMax: number;
+  waterMax: number;
+  waistMax: number;
+  musclesMax: number;
+}
 
 export interface weightReadingProps {
   id?: string;
@@ -67,6 +80,7 @@ export type fullWeightReadingProps = weightReadingProps & calculationsProps;
 
 const WeightReadings = () => {
   const [data, setData] = useState<fullWeightReadingProps[]>([]);
+  const [targetsData, setTargetsData] = useState<weightReadingTargetProps>();
 
   const changeCalculator = (
     first: number,
@@ -106,7 +120,13 @@ const WeightReadings = () => {
     icon: "",
   };
 
-  const getData = () =>
+  const getData = () => {
+    BeAPI.get("WeightReadingTargets")
+      .then((res: any) => {
+        setTargetsData(res.value);
+      })
+      .catch((err) => console.log({ err }));
+
     BeAPI.getAll("WeightReadings")
       .then((res: weightReadingProps[]) => {
         const sortedRes = res?.sort(
@@ -325,6 +345,7 @@ const WeightReadings = () => {
         );
       })
       .catch((err) => console.log({ err }));
+  };
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
@@ -379,12 +400,111 @@ const WeightReadings = () => {
     },
   ];
 
+  const targetsFormInputs = [
+    {
+      name: "waterMin",
+      label: "Water Min Target",
+      type: "number",
+      step: "0.1",
+      unit: "L",
+      defaultValue: targetsData?.waterMin,
+      required: true,
+    },
+    {
+      name: "waterMax",
+      label: "Water Max Target",
+      type: "number",
+      step: "0.1",
+      unit: "L",
+      defaultValue: targetsData?.waterMax,
+      required: true,
+    },
+    {
+      name: "fatMin",
+      label: "Fat Weight Min Target",
+      type: "number",
+      step: "0.1",
+      unit: "KG",
+      defaultValue: targetsData?.fatMin,
+      required: true,
+    },
+    {
+      name: "fatMax",
+      label: "Fat Weight Max Target",
+      type: "number",
+      step: "0.1",
+      unit: "KG",
+      defaultValue: targetsData?.fatMax,
+      required: true,
+    },
+    {
+      name: "weightMin",
+      label: "Weight Min Target",
+      type: "number",
+      step: "0.1",
+      unit: "KG",
+      defaultValue: targetsData?.weightMin,
+      required: true,
+    },
+    {
+      name: "weightMax",
+      label: "Weight Max Target",
+      type: "number",
+      step: "0.1",
+      unit: "KG",
+      defaultValue: targetsData?.weightMax,
+      required: true,
+    },
+    {
+      name: "musclesMin",
+      label: "Muscles Min Target",
+      type: "number",
+      step: "0.1",
+      unit: "KG",
+      defaultValue: targetsData?.musclesMin,
+      required: true,
+    },
+    {
+      name: "musclesMax",
+      label: "Muscles Max Target",
+      type: "number",
+      step: "0.1",
+      unit: "KG",
+      defaultValue: targetsData?.musclesMax,
+      required: true,
+    },
+    {
+      name: "waistMin",
+      label: "Waist Fat Min Target",
+      type: "number",
+      step: "0.1",
+      defaultValue: targetsData?.waistMin,
+      required: true,
+    },
+    {
+      name: "waistMax",
+      label: "Waist Fat Max Target",
+      type: "number",
+      step: "0.1",
+      defaultValue: targetsData?.waistMax,
+      required: true,
+    },
+  ];
+
   const onSubmit = (values: weightReadingProps) => {
     BeAPI.create("WeightReadings", values)
       .then(() => {
         getData();
       })
       .catch((err) => console.log({ err }));
+  };
+
+  const onTargetsSubmit = (values: weightReadingTargetProps) => {
+    BeAPI.update({
+      table: "WeightReadingTargets",
+      id: "x",
+      data: values,
+    }).catch((err) => console.log({ err }));
   };
 
   const onDelete = (id: string) =>
@@ -395,47 +515,61 @@ const WeightReadings = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <Fragment>
-      <WeightReadingTargets />
-      <PageSection title="Weight Readings">
-        <Fragment>
-          <h4 className="my-3">
-            Total Number of Weight Readings (Visits): {data.length}
-          </h4>
+    <PageSection title="Weight Readings">
+      <Fragment>
+        <h4 className="my-3">
+          Total Number of Weight Readings (Visits): {data.length}
+        </h4>
 
-          <div className="btn-group my-3 w-100">
-            <button
-              className="btn btn-secondary"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#analysis"
-              aria-expanded="false"
-              aria-controls="analysis"
-            >
-              Analysis
-            </button>
+        <div className="btn-group my-3 w-100">
+          <button
+            className="btn btn-secondary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#analysis"
+            aria-expanded="false"
+            aria-controls="analysis"
+          >
+            Analysis
+          </button>
 
-            <button
-              className="btn btn-primary"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#input"
-              aria-expanded="false"
-              aria-controls="input"
-            >
-              Input
-            </button>
-          </div>
-          <div className="collapse multi-collapse" id="analysis">
-            <WeightReadingCharts data={data} />
-          </div>
-          <div className="collapse multi-collapse" id="input">
-            <Form inputs={formInputs} onSubmit={onSubmit} />
-          </div>
-          <WeightReadingsTable data={data} onDelete={onDelete} />
-        </Fragment>
-      </PageSection>
-    </Fragment>
+          <button
+            className="btn btn-primary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#input"
+            aria-expanded="false"
+            aria-controls="input"
+          >
+            Input
+          </button>
+
+          <button
+            className="btn btn-secondary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#targets"
+            aria-expanded="false"
+            aria-controls="targets"
+          >
+            Targets
+          </button>
+        </div>
+
+        <div className="collapse multi-collapse" id="analysis">
+          <WeightReadingCharts data={data} />
+        </div>
+
+        <div className="collapse multi-collapse" id="input">
+          <Form inputs={formInputs} onSubmit={onSubmit} />
+        </div>
+
+        <div className="collapse multi-collapse" id="targets">
+          <Form inputs={targetsFormInputs} onSubmit={onTargetsSubmit} />
+        </div>
+        <WeightReadingsTable data={data} onDelete={onDelete} />
+      </Fragment>
+    </PageSection>
   );
 };
 
