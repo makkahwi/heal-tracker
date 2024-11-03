@@ -32,8 +32,8 @@ interface props {
       sinceWorst: changeCalculationProps;
       sinceBest: changeCalculationProps;
     }[];
-    minTarget: number;
-    maxTarget: number;
+    minTarget?: number;
+    maxTarget?: number;
     title: string;
     unit?: string;
   }[];
@@ -93,7 +93,10 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
             parseFloat(String(y)) === rowData?.value
         );
 
-        const values = [...data.map(({ y }) => y), minTarget, maxTarget];
+        const values =
+          minTarget && maxTarget
+            ? [...data.map(({ y }) => y), minTarget, maxTarget]
+            : data.map(({ y }) => y);
 
         const chartMin = Math.min.apply(Math, values);
         const chartMax = Math.max.apply(Math, values);
@@ -239,47 +242,54 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         </Hint>
                       )}
 
-                      <Hint
-                        value={{
-                          x: moment(data[data.length - 1]?.x).valueOf() + 2000,
-                          y: maxTarget,
-                        }}
-                      >
-                        <small
-                          className="bg-success text-white p-2"
-                          style={{ fontSize: 10 }}
+                      {(maxTarget || minTarget) && (
+                        <Hint
+                          value={{
+                            x:
+                              moment(data[data.length - 1]?.x).valueOf() + 2000,
+                            y: maxTarget || minTarget,
+                          }}
                         >
-                          Targeted Range / Value
-                        </small>
-                      </Hint>
+                          <small
+                            className="bg-success text-white p-2"
+                            style={{ fontSize: 10 }}
+                          >
+                            Targeted Range / Value
+                          </small>
+                        </Hint>
+                      )}
 
-                      <LineMarkSeries
-                        color="green"
-                        data={[
-                          {
-                            x: moment(data[0]?.x).valueOf(),
-                            y: minTarget,
-                          },
-                          {
-                            x: moment(data[data.length - 1]?.x).valueOf(),
-                            y: minTarget,
-                          },
-                        ]}
-                      />
+                      {minTarget && (
+                        <LineMarkSeries
+                          color="green"
+                          data={[
+                            {
+                              x: moment(data[0]?.x).valueOf(),
+                              y: minTarget,
+                            },
+                            {
+                              x: moment(data[data.length - 1]?.x).valueOf(),
+                              y: minTarget,
+                            },
+                          ]}
+                        />
+                      )}
 
-                      <LineMarkSeries
-                        color="green"
-                        data={[
-                          {
-                            x: moment(data[0]?.x).valueOf(),
-                            y: maxTarget,
-                          },
-                          {
-                            x: moment(data[data.length - 1]?.x).valueOf(),
-                            y: maxTarget,
-                          },
-                        ]}
-                      />
+                      {maxTarget && (
+                        <LineMarkSeries
+                          color="green"
+                          data={[
+                            {
+                              x: moment(data[0]?.x).valueOf(),
+                              y: maxTarget,
+                            },
+                            {
+                              x: moment(data[data.length - 1]?.x).valueOf(),
+                              y: maxTarget,
+                            },
+                          ]}
+                        />
+                      )}
                     </XYPlot>
                   </td>
                 </tr>

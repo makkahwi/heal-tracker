@@ -23,8 +23,6 @@ interface weightReadingTargetProps {
   waistMax: number;
   musclesMin: number;
   musclesMax: number;
-  musclesPercentageMin: number;
-  musclesPercentageMax: number;
 }
 
 export interface weightReadingProps {
@@ -94,8 +92,6 @@ const WeightReadings = () => {
     waterMax: 0,
     waistMax: 0,
     musclesMax: 0,
-    musclesPercentageMin: 0,
-    musclesPercentageMax: 0,
   });
 
   const changeCalculator = (
@@ -233,14 +229,6 @@ const WeightReadings = () => {
                     muscles,
                     musclesPercentage,
                     ...resp.value,
-                    musclesPercentageMin: (
-                      (resp.value.musclesMin / resp.value.weightMin) *
-                      100
-                    ).toFixed(2),
-                    musclesPercentageMax: (
-                      (resp.value.musclesMax / resp.value.weightMax) *
-                      100
-                    ).toFixed(2),
                     weightWeeklyChange:
                       i < sortedRes.length - 1
                         ? changeCalculator(
