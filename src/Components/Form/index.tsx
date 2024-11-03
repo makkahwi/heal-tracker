@@ -77,7 +77,7 @@ const Form = ({ inputs, onSubmit }: props) => {
           },
           i
         ) => (
-          <div className={fullWidth ? "col-12" : "col-md-6 col-lg-4"} key={i}>
+          <div className={fullWidth ? "col-12" : "col-md-6 col-lg-3"} key={i}>
             <label className="form-label text-start w-100 mt-4">
               {label}
               {required ? <span className="ms-1 text-danger"> *</span> : ""}

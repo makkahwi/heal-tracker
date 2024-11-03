@@ -102,9 +102,9 @@ const MedicineConsumption = () => {
       name: "medicine",
       label: "Medicine",
       type: "select",
-      options: schedule.map(({ id, medicine }) => ({
+      options: schedule.map(({ id, medicine, specs }) => ({
         value: id || "",
-        label: medicine,
+        label: medicine + " (" + specs + ")",
       })),
       defaultValue: "Vitamine D",
       required: true,

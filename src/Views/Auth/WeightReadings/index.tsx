@@ -10,7 +10,20 @@ import Form from "../../../Components/Form";
 import PageSection from "../../../Components/PageView/PageSection";
 import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
-import { getHighest, getLowest } from "../../../Utils/functions";
+
+interface weightReadingTargetProps {
+  id?: string;
+  weightMin: number;
+  weightMax: number;
+  fatMin: number;
+  fatMax: number;
+  waterMin: number;
+  waterMax: number;
+  waistMin: number;
+  waistMax: number;
+  musclesMin: number;
+  musclesMax: number;
+}
 
 export interface weightReadingProps {
   id?: string;
@@ -20,8 +33,6 @@ export interface weightReadingProps {
   water: number;
   waist: number;
   muscles: number;
-  physique: number;
-  bones: number;
 }
 
 export interface changeCalculationProps {
@@ -33,54 +44,55 @@ export interface changeCalculationProps {
 }
 
 export interface calculationsProps {
-  fatWeight: string;
-  musclesPercentage: string;
+  musclesPercentage: number;
 
   weightWeeklyChange: changeCalculationProps;
   fatWeeklyChange: changeCalculationProps;
-  fatWeightWeeklyChange: changeCalculationProps;
   waterWeeklyChange: changeCalculationProps;
   waistWeeklyChange: changeCalculationProps;
   musclesWeeklyChange: changeCalculationProps;
   musclesPercentageWeeklyChange: changeCalculationProps;
-  physiqueWeeklyChange: changeCalculationProps;
-  bonesWeeklyChange: changeCalculationProps;
 
   weightSinceWorstChange: changeCalculationProps;
   fatSinceWorstChange: changeCalculationProps;
-  fatWeightSinceWorstChange: changeCalculationProps;
   waterSinceWorstChange: changeCalculationProps;
   waistSinceWorstChange: changeCalculationProps;
   musclesSinceWorstChange: changeCalculationProps;
   musclesPercentageSinceWorstChange: changeCalculationProps;
-  physiqueSinceWorstChange: changeCalculationProps;
-  bonesSinceWorstChange: changeCalculationProps;
 
   weightSinceBestChange: changeCalculationProps;
   fatSinceBestChange: changeCalculationProps;
-  fatWeightSinceBestChange: changeCalculationProps;
   waterSinceBestChange: changeCalculationProps;
   waistSinceBestChange: changeCalculationProps;
   musclesSinceBestChange: changeCalculationProps;
   musclesPercentageSinceBestChange: changeCalculationProps;
-  physiqueSinceBestChange: changeCalculationProps;
-  bonesSinceBestChange: changeCalculationProps;
 
   weightSinceStartChange: changeCalculationProps;
   fatSinceStartChange: changeCalculationProps;
-  fatWeightSinceStartChange: changeCalculationProps;
   waterSinceStartChange: changeCalculationProps;
   waistSinceStartChange: changeCalculationProps;
   musclesSinceStartChange: changeCalculationProps;
   musclesPercentageSinceStartChange: changeCalculationProps;
-  physiqueSinceStartChange: changeCalculationProps;
-  bonesSinceStartChange: changeCalculationProps;
 }
 
-export type fullWeightReadingProps = weightReadingProps & calculationsProps;
+export type fullWeightReadingProps = weightReadingProps &
+  calculationsProps &
+  weightReadingTargetProps;
 
 const WeightReadings = () => {
   const [data, setData] = useState<fullWeightReadingProps[]>([]);
+  const [targetsData, setTargetsData] = useState<weightReadingTargetProps>({
+    weightMin: 0,
+    fatMin: 0,
+    waterMin: 0,
+    waistMin: 0,
+    musclesMin: 0,
+    weightMax: 0,
+    fatMax: 0,
+    waterMax: 0,
+    waistMax: 0,
+    musclesMax: 0,
+  });
 
   const changeCalculator = (
     first: number,
@@ -88,15 +100,15 @@ const WeightReadings = () => {
     flip: boolean,
     unit?: string
   ) => {
-    let icon = faArrowCircleUp;
-    let color = flip ? "success" : "danger";
+    let icon = faMinusCircle;
+    let color = "secondary";
 
     if (parseFloat(String(first)) > parseFloat(String(second))) {
       icon = faArrowCircleDown;
       color = flip ? "danger" : "success";
-    } else if (first === second) {
-      icon = faMinusCircle;
-      color = "secondary";
+    } else if (parseFloat(String(first)) < parseFloat(String(second))) {
+      icon = faArrowCircleUp;
+      color = flip ? "success" : "danger";
     }
 
     const changeAmount = parseFloat(
@@ -120,350 +132,264 @@ const WeightReadings = () => {
     icon: "",
   };
 
-  const getData = () =>
-    BeAPI.getAll("WeightReadings")
-      .then((res: weightReadingProps[]) => {
-        const sortedRes = res?.sort(
-          (a: weightReadingProps, b: weightReadingProps) =>
-            a.date < b.date ? 1 : -1
-        );
+  const getData = () => {
+    BeAPI.get("WeightReadingTargets")
+      .then((resp: any) => {
+        setTargetsData(resp.value);
 
-        setData(
-          sortedRes?.map(
-            (
-              { id, date, weight, fat, water, waist, muscles, physique, bones },
-              i
-            ) => {
-              const previousRecord = sortedRes[i + 1];
-              const firstRecord = sortedRes[sortedRes.length - 1];
+        BeAPI.getAll("WeightReadings")
+          .then((res: weightReadingProps[]) => {
+            const sortedRes = res?.sort(
+              (a: weightReadingProps, b: weightReadingProps) =>
+                a.date < b.date ? 1 : -1
+            );
 
-              const worstWeight = getHighest(
-                sortedRes.filter((_, y) => y > i).map(({ weight }) => weight)
-              );
-              const bestWeight = getLowest(
-                sortedRes.filter((_, y) => y > i).map(({ weight }) => weight)
-              );
-              const worstFat = getHighest(
-                sortedRes.filter((_, y) => y > i).map(({ fat }) => fat)
-              );
-              const bestFat = getLowest(
-                sortedRes.filter((_, y) => y > i).map(({ fat }) => fat)
-              );
-              const worstFatWeight = getHighest(
-                sortedRes
-                  .filter((_, y) => y > i)
-                  .map(({ fat, weight }) => fat * weight)
-              );
-              const bestFatWeight = getLowest(
-                sortedRes
-                  .filter((_, y) => y > i)
-                  .map(({ fat, weight }) => fat * weight)
-              );
-              const worstWater = getLowest(
-                sortedRes.filter((_, y) => y > i).map(({ water }) => water)
-              );
-              const bestWater = getHighest(
-                sortedRes.filter((_, y) => y > i).map(({ water }) => water)
-              );
-              const worstWaist = getHighest(
-                sortedRes.filter((_, y) => y > i).map(({ waist }) => waist)
-              );
-              const bestWaist = getLowest(
-                sortedRes.filter((_, y) => y > i).map(({ waist }) => waist)
-              );
-              const worstMuscles = getLowest(
-                sortedRes.filter((_, y) => y > i).map(({ muscles }) => muscles)
-              );
-              const bestMuscles = getHighest(
-                sortedRes.filter((_, y) => y > i).map(({ muscles }) => muscles)
-              );
-              const worstMusclesPercentage = getLowest(
-                sortedRes
-                  .filter((_, y) => y > i)
-                  .map(({ muscles, weight }) => muscles / weight)
-              );
-              const bestMusclesPercentage = getHighest(
-                sortedRes
-                  .filter((_, y) => y > i)
-                  .map(({ muscles, weight }) => muscles / weight)
-              );
-              const worstPhysique = getLowest(
-                sortedRes
-                  .filter((_, y) => y > i)
-                  .map(({ physique }) => physique)
-              );
-              const bestPhysique = getHighest(
-                sortedRes
-                  .filter((_, y) => y > i)
-                  .map(({ physique }) => physique)
-              );
-              const worstBones = getLowest(
-                sortedRes.filter((_, y) => y > i).map(({ bones }) => bones)
-              );
-              const bestBones = getHighest(
-                sortedRes.filter((_, y) => y > i).map(({ bones }) => bones)
-              );
+            setData(
+              sortedRes?.map(
+                ({ id, date, weight, fat, water, waist, muscles }, i) => {
+                  const previousRecord = sortedRes[i + 1];
+                  const firstRecord = sortedRes[sortedRes.length - 1];
 
-              return {
-                id,
-                date,
-                weight,
-                fat,
-                water,
-                waist,
-                muscles,
-                physique,
-                bones,
-                fatWeight: (Math.round(fat * weight) / 100).toFixed(2),
-                musclesPercentage: Math.round((muscles / weight) * 100).toFixed(
-                  2
-                ),
-                weightWeeklyChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(
-                        previousRecord?.weight,
-                        weight,
-                        false,
-                        " KG"
+                  const worstWeight = Math.max.apply(
+                    Math,
+                    sortedRes
+                      .filter((_, y) => y > i)
+                      .map(({ weight }) => weight)
+                  );
+                  const bestWeight = Math.min.apply(
+                    Math,
+                    sortedRes
+                      .filter((_, y) => y > i)
+                      .map(({ weight }) => weight)
+                  );
+                  const worstFat = Math.max.apply(
+                    Math,
+                    sortedRes.filter((_, y) => y > i).map(({ fat }) => fat)
+                  );
+                  const bestFat = Math.min.apply(
+                    Math,
+                    sortedRes.filter((_, y) => y > i).map(({ fat }) => fat)
+                  );
+                  const worstWater = Math.min.apply(
+                    Math,
+                    sortedRes.filter((_, y) => y > i).map(({ water }) => water)
+                  );
+                  const bestWater = Math.max.apply(
+                    Math,
+                    sortedRes.filter((_, y) => y > i).map(({ water }) => water)
+                  );
+                  const worstWaist = Math.max.apply(
+                    Math,
+                    sortedRes.filter((_, y) => y > i).map(({ waist }) => waist)
+                  );
+                  const bestWaist = Math.min.apply(
+                    Math,
+                    sortedRes.filter((_, y) => y > i).map(({ waist }) => waist)
+                  );
+                  const worstMuscles = Math.min.apply(
+                    Math,
+                    sortedRes
+                      .filter((_, y) => y > i)
+                      .map(({ muscles }) => muscles)
+                  );
+                  const bestMuscles = Math.max.apply(
+                    Math,
+                    sortedRes
+                      .filter((_, y) => y > i)
+                      .map(({ muscles }) => muscles)
+                  );
+                  const worstMusclesPercentage = Math.min.apply(
+                    Math,
+                    sortedRes
+                      .filter((_, y) => y > i)
+                      .map(({ muscles, weight }) =>
+                        parseFloat(((muscles / weight) * 100).toFixed(2))
                       )
-                    : emptyCalculations,
-                fatWeeklyChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(previousRecord?.fat, fat, false, "%")
-                    : emptyCalculations,
-                fatWeightWeeklyChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(
-                        parseFloat(
-                          (
-                            Math.round(
-                              previousRecord?.fat * previousRecord?.weight
-                            ) / 100
-                          ).toFixed(2)
-                        ),
-                        parseFloat((Math.round(fat * weight) / 100).toFixed(2)),
-                        false,
-                        " KG"
+                  );
+                  const bestMusclesPercentage = Math.max.apply(
+                    Math,
+                    sortedRes
+                      .filter((_, y) => y > i)
+                      .map(({ muscles, weight }) =>
+                        parseFloat(((muscles / weight) * 100).toFixed(2))
                       )
-                    : emptyCalculations,
-                waterWeeklyChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(previousRecord?.water, water, true, "%")
-                    : emptyCalculations,
-                waistWeeklyChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(previousRecord?.waist, waist, false)
-                    : emptyCalculations,
-                musclesWeeklyChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(
-                        previousRecord?.muscles,
-                        muscles,
-                        true,
-                        " KG"
-                      )
-                    : emptyCalculations,
-                musclesPercentageWeeklyChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(
-                        parseFloat(
-                          Math.round(
-                            (previousRecord?.muscles / previousRecord?.weight) *
-                              100
-                          ).toFixed(2)
-                        ),
-                        parseFloat(
-                          Math.round((muscles / weight) * 100).toFixed(2)
-                        ),
-                        true,
-                        "%"
-                      )
-                    : emptyCalculations,
-                physiqueWeeklyChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(previousRecord?.physique, physique, true)
-                    : emptyCalculations,
-                bonesWeeklyChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(previousRecord?.bones, bones, true)
-                    : emptyCalculations,
-                weightSinceWorstChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(worstWeight, weight, false, " KG")
-                    : emptyCalculations,
-                fatSinceWorstChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(worstFat, fat, false, "%")
-                    : emptyCalculations,
-                fatWeightSinceWorstChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(
-                        parseFloat(
-                          (Math.round(worstFatWeight) / 100).toFixed(2)
-                        ),
-                        parseFloat((Math.round(fat * weight) / 100).toFixed(2)),
-                        false,
-                        " KG"
-                      )
-                    : emptyCalculations,
-                waterSinceWorstChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(worstWater, water, true, "%")
-                    : emptyCalculations,
-                waistSinceWorstChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(worstWaist, waist, false)
-                    : emptyCalculations,
-                musclesSinceWorstChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(worstMuscles, muscles, true, " KG")
-                    : emptyCalculations,
-                musclesPercentageSinceWorstChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(
-                        parseFloat(
-                          Math.round(worstMusclesPercentage * 100).toFixed(2)
-                        ),
-                        parseFloat(
-                          Math.round((muscles / weight) * 100).toFixed(2)
-                        ),
-                        true,
-                        "%"
-                      )
-                    : emptyCalculations,
-                physiqueSinceWorstChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(worstPhysique, physique, true)
-                    : emptyCalculations,
-                bonesSinceWorstChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(worstBones, bones, true)
-                    : emptyCalculations,
-                weightSinceBestChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(bestWeight, weight, false, " KG")
-                    : emptyCalculations,
-                fatSinceBestChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(bestFat, fat, false, "%")
-                    : emptyCalculations,
-                fatWeightSinceBestChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(
-                        parseFloat(
-                          (Math.round(bestFatWeight) / 100).toFixed(2)
-                        ),
-                        parseFloat((Math.round(fat * weight) / 100).toFixed(2)),
-                        false,
-                        " KG"
-                      )
-                    : emptyCalculations,
-                waterSinceBestChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(bestWater, water, true, "%")
-                    : emptyCalculations,
-                waistSinceBestChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(bestWaist, waist, false)
-                    : emptyCalculations,
-                musclesSinceBestChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(bestMuscles, muscles, true, " KG")
-                    : emptyCalculations,
-                musclesPercentageSinceBestChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(
-                        parseFloat(
-                          Math.round(bestMusclesPercentage * 100).toFixed(2)
-                        ),
-                        parseFloat(
-                          Math.round((muscles / weight) * 100).toFixed(2)
-                        ),
-                        true,
-                        "%"
-                      )
-                    : emptyCalculations,
-                physiqueSinceBestChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(bestPhysique, physique, true)
-                    : emptyCalculations,
-                bonesSinceBestChange:
-                  i < sortedRes.length - 1
-                    ? changeCalculator(bestBones, bones, true)
-                    : emptyCalculations,
-                weightSinceStartChange:
-                  i < sortedRes.length - 2
-                    ? changeCalculator(
-                        firstRecord?.weight,
-                        weight,
-                        false,
-                        " KG"
-                      )
-                    : emptyCalculations,
-                fatSinceStartChange:
-                  i < sortedRes.length - 2
-                    ? changeCalculator(firstRecord?.fat, fat, false, "%")
-                    : emptyCalculations,
-                fatWeightSinceStartChange:
-                  i < sortedRes.length - 2
-                    ? changeCalculator(
-                        parseFloat(
-                          (
-                            Math.round(firstRecord?.fat * firstRecord?.weight) /
-                            100
-                          ).toFixed(2)
-                        ),
-                        parseFloat((Math.round(fat * weight) / 100).toFixed(2)),
-                        false,
-                        " KG"
-                      )
-                    : emptyCalculations,
-                waterSinceStartChange:
-                  i < sortedRes.length - 2
-                    ? changeCalculator(firstRecord?.water, water, true, "%")
-                    : emptyCalculations,
-                waistSinceStartChange:
-                  i < sortedRes.length - 2
-                    ? changeCalculator(firstRecord?.waist, waist, false)
-                    : emptyCalculations,
-                musclesSinceStartChange:
-                  i < sortedRes.length - 2
-                    ? changeCalculator(
-                        firstRecord?.muscles,
-                        muscles,
-                        true,
-                        " KG"
-                      )
-                    : emptyCalculations,
-                musclesPercentageSinceStartChange:
-                  i < sortedRes.length - 2
-                    ? changeCalculator(
-                        parseFloat(
-                          Math.round(
-                            (firstRecord?.muscles / firstRecord?.weight) * 100
-                          ).toFixed(2)
-                        ),
-                        parseFloat(
-                          Math.round((muscles / weight) * 100).toFixed(2)
-                        ),
-                        true,
-                        "%"
-                      )
-                    : emptyCalculations,
-                physiqueSinceStartChange:
-                  i < sortedRes.length - 2
-                    ? changeCalculator(firstRecord?.physique, physique, true)
-                    : emptyCalculations,
-                bonesSinceStartChange:
-                  i < sortedRes.length - 2
-                    ? changeCalculator(firstRecord?.bones, bones, true)
-                    : emptyCalculations,
-              };
-            }
-          )
-        );
+                  );
+
+                  const musclesPercentage = parseFloat(
+                    ((muscles / weight) * 100).toFixed(2)
+                  );
+
+                  return {
+                    id,
+                    date,
+                    weight,
+                    fat,
+                    water,
+                    waist,
+                    muscles,
+                    musclesPercentage,
+                    ...resp.value,
+                    weightWeeklyChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(
+                            previousRecord?.weight,
+                            weight,
+                            false,
+                            " KG"
+                          )
+                        : emptyCalculations,
+                    fatWeeklyChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(
+                            previousRecord?.fat,
+                            fat,
+                            false,
+                            "KG"
+                          )
+                        : emptyCalculations,
+                    waterWeeklyChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(
+                            previousRecord?.water,
+                            water,
+                            true,
+                            "L"
+                          )
+                        : emptyCalculations,
+                    waistWeeklyChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(previousRecord?.waist, waist, false)
+                        : emptyCalculations,
+                    musclesWeeklyChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(
+                            previousRecord?.muscles,
+                            muscles,
+                            true,
+                            " KG"
+                          )
+                        : emptyCalculations,
+                    musclesPercentageWeeklyChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(
+                            parseFloat(
+                              (
+                                (previousRecord?.muscles /
+                                  previousRecord?.weight) *
+                                100
+                              ).toFixed(2)
+                            ),
+                            parseFloat(((muscles / weight) * 100).toFixed(2)),
+                            true,
+                            " %"
+                          )
+                        : emptyCalculations,
+                    weightSinceWorstChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(worstWeight, weight, false, " KG")
+                        : emptyCalculations,
+                    fatSinceWorstChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(worstFat, fat, false, "KG")
+                        : emptyCalculations,
+                    waterSinceWorstChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(worstWater, water, true, "L")
+                        : emptyCalculations,
+                    waistSinceWorstChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(worstWaist, waist, false)
+                        : emptyCalculations,
+                    musclesSinceWorstChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(worstMuscles, muscles, true, " KG")
+                        : emptyCalculations,
+                    musclesPercentageSinceWorstChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(
+                            worstMusclesPercentage,
+                            musclesPercentage,
+                            true,
+                            " %"
+                          )
+                        : emptyCalculations,
+                    weightSinceBestChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(bestWeight, weight, false, " KG")
+                        : emptyCalculations,
+                    fatSinceBestChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(bestFat, fat, false, "KG")
+                        : emptyCalculations,
+                    waterSinceBestChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(bestWater, water, true, "L")
+                        : emptyCalculations,
+                    waistSinceBestChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(bestWaist, waist, false)
+                        : emptyCalculations,
+                    musclesSinceBestChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(bestMuscles, muscles, true, " KG")
+                        : emptyCalculations,
+                    musclesPercentageSinceBestChange:
+                      i < sortedRes.length - 1
+                        ? changeCalculator(
+                            bestMusclesPercentage,
+                            musclesPercentage,
+                            true,
+                            " %"
+                          )
+                        : emptyCalculations,
+                    weightSinceStartChange:
+                      i < sortedRes.length - 2
+                        ? changeCalculator(
+                            firstRecord?.weight,
+                            weight,
+                            false,
+                            " KG"
+                          )
+                        : emptyCalculations,
+                    fatSinceStartChange:
+                      i < sortedRes.length - 2
+                        ? changeCalculator(firstRecord?.fat, fat, false, "KG")
+                        : emptyCalculations,
+                    waterSinceStartChange:
+                      i < sortedRes.length - 2
+                        ? changeCalculator(firstRecord?.water, water, true, "L")
+                        : emptyCalculations,
+                    waistSinceStartChange:
+                      i < sortedRes.length - 2
+                        ? changeCalculator(firstRecord?.waist, waist, false)
+                        : emptyCalculations,
+                    musclesSinceStartChange:
+                      i < sortedRes.length - 2
+                        ? changeCalculator(
+                            firstRecord?.muscles,
+                            muscles,
+                            true,
+                            " KG"
+                          )
+                        : emptyCalculations,
+                    musclesPercentageSinceStartChange:
+                      i < sortedRes.length - 2
+                        ? changeCalculator(
+                            (firstRecord?.muscles / firstRecord?.weight) * 100,
+                            musclesPercentage,
+                            true,
+                            " %"
+                          )
+                        : emptyCalculations,
+                  };
+                }
+              )
+            );
+          })
+          .catch((err) => console.log({ err }));
       })
       .catch((err) => console.log({ err }));
+  };
 
   useEffect(() => {
     // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
@@ -478,11 +404,19 @@ const WeightReadings = () => {
       required: true,
     },
     {
-      name: "fat",
-      label: "Fat Reading",
+      name: "water",
+      label: "Water Reading",
       type: "number",
       step: "0.1",
-      unit: "%",
+      unit: "L",
+      required: true,
+    },
+    {
+      name: "fat",
+      label: "Fat Weight",
+      type: "number",
+      step: "0.1",
+      unit: "KG",
       required: true,
     },
     {
@@ -494,11 +428,11 @@ const WeightReadings = () => {
       required: true,
     },
     {
-      name: "water",
-      label: "Water Reading",
+      name: "muscles",
+      label: "Muscles Reading",
       type: "number",
       step: "0.1",
-      unit: "%",
+      unit: "KG",
       required: true,
     },
     {
@@ -508,26 +442,95 @@ const WeightReadings = () => {
       step: "0.1",
       required: true,
     },
+  ];
+
+  const targetsFormInputs = [
     {
-      name: "muscles",
-      label: "Muscles Reading",
+      name: "waterMin",
+      label: "Water Min Target",
+      type: "number",
+      step: "0.1",
+      unit: "L",
+      defaultValue: targetsData?.waterMin,
+      required: true,
+    },
+    {
+      name: "waterMax",
+      label: "Water Max Target",
+      type: "number",
+      step: "0.1",
+      unit: "L",
+      defaultValue: targetsData?.waterMax,
+      required: true,
+    },
+    {
+      name: "fatMin",
+      label: "Fat Weight Min Target",
       type: "number",
       step: "0.1",
       unit: "KG",
+      defaultValue: targetsData?.fatMin,
       required: true,
     },
     {
-      name: "physique",
-      label: "Physique Rating",
+      name: "fatMax",
+      label: "Fat Weight Max Target",
       type: "number",
       step: "0.1",
+      unit: "KG",
+      defaultValue: targetsData?.fatMax,
       required: true,
     },
     {
-      name: "bones",
-      label: "Bones Mass",
+      name: "weightMin",
+      label: "Weight Min Target",
       type: "number",
       step: "0.1",
+      unit: "KG",
+      defaultValue: targetsData?.weightMin,
+      required: true,
+    },
+    {
+      name: "weightMax",
+      label: "Weight Max Target",
+      type: "number",
+      step: "0.1",
+      unit: "KG",
+      defaultValue: targetsData?.weightMax,
+      required: true,
+    },
+    {
+      name: "musclesMin",
+      label: "Muscles Min Target",
+      type: "number",
+      step: "0.1",
+      unit: "KG",
+      defaultValue: targetsData?.musclesMin,
+      required: true,
+    },
+    {
+      name: "musclesMax",
+      label: "Muscles Max Target",
+      type: "number",
+      step: "0.1",
+      unit: "KG",
+      defaultValue: targetsData?.musclesMax,
+      required: true,
+    },
+    {
+      name: "waistMin",
+      label: "Waist Fat Min Target",
+      type: "number",
+      step: "0.1",
+      defaultValue: targetsData?.waistMin,
+      required: true,
+    },
+    {
+      name: "waistMax",
+      label: "Waist Fat Max Target",
+      type: "number",
+      step: "0.1",
+      defaultValue: targetsData?.waistMax,
       required: true,
     },
   ];
@@ -538,6 +541,14 @@ const WeightReadings = () => {
         getData();
       })
       .catch((err) => console.log({ err }));
+  };
+
+  const onTargetsSubmit = (values: weightReadingTargetProps) => {
+    BeAPI.update({
+      table: "WeightReadingTargets",
+      id: "x",
+      data: values,
+    }).catch((err) => console.log({ err }));
   };
 
   const onDelete = (id: string) =>
@@ -576,12 +587,29 @@ const WeightReadings = () => {
           >
             Input
           </button>
+
+          <button
+            className="btn btn-secondary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#targets"
+            aria-expanded="false"
+            aria-controls="targets"
+          >
+            Targets
+          </button>
         </div>
+
         <div className="collapse multi-collapse" id="analysis">
           <WeightReadingCharts data={data} />
         </div>
+
         <div className="collapse multi-collapse" id="input">
           <Form inputs={formInputs} onSubmit={onSubmit} />
+        </div>
+
+        <div className="collapse multi-collapse" id="targets">
+          <Form inputs={targetsFormInputs} onSubmit={onTargetsSubmit} />
         </div>
         <WeightReadingsTable data={data} onDelete={onDelete} />
       </Fragment>
