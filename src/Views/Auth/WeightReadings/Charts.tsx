@@ -29,23 +29,23 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
     {
       data: data?.map(
         ({
-          musclesPercentage,
           date,
-          musclesPercentageWeeklyChange,
-          musclesPercentageSinceStartChange,
-          musclesPercentageSinceWorstChange,
-          musclesPercentageSinceBestChange,
+          muscles,
+          musclesWeeklyChange,
+          musclesSinceStartChange,
+          musclesSinceWorstChange,
+          musclesSinceBestChange,
         }) => ({
           x: date,
-          y: parseFloat(musclesPercentage),
-          weekly: musclesPercentageWeeklyChange,
-          sinceStart: musclesPercentageSinceStartChange,
-          sinceWorst: musclesPercentageSinceWorstChange,
-          sinceBest: musclesPercentageSinceBestChange,
+          y: parseFloat(String(muscles)),
+          weekly: musclesWeeklyChange,
+          sinceStart: musclesSinceStartChange,
+          sinceWorst: musclesSinceWorstChange,
+          sinceBest: musclesSinceBestChange,
         })
       ),
-      title: "Muscles Percentage",
-      unit: "%",
+      title: "Muscles Weight",
+      unit: "KG",
     },
     // {
     //   data: data?.map(
@@ -86,8 +86,8 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
           sinceBest: waterSinceBestChange,
         })
       ),
-      title: "Water Percentage",
-      unit: "%",
+      title: "Water Volume",
+      unit: "L",
     },
     {
       data: data?.map(
@@ -105,27 +105,6 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
           sinceStart: fatSinceStartChange,
           sinceWorst: fatSinceWorstChange,
           sinceBest: fatSinceBestChange,
-        })
-      ),
-      title: "Fat Percentage",
-      unit: "%",
-    },
-    {
-      data: data?.map(
-        ({
-          fatWeight,
-          date,
-          fatWeightWeeklyChange,
-          fatWeightSinceStartChange,
-          fatWeightSinceWorstChange,
-          fatWeightSinceBestChange,
-        }) => ({
-          x: date,
-          y: parseFloat(fatWeight),
-          weekly: fatWeightWeeklyChange,
-          sinceStart: fatWeightSinceStartChange,
-          sinceWorst: fatWeightSinceWorstChange,
-          sinceBest: fatWeightSinceBestChange,
         })
       ),
       title: "Fat Weight",
@@ -150,46 +129,6 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
         })
       ),
       title: "Waist",
-    },
-    {
-      data: data?.map(
-        ({
-          physique,
-          date,
-          physiqueWeeklyChange,
-          physiqueSinceStartChange,
-          physiqueSinceWorstChange,
-          physiqueSinceBestChange,
-        }) => ({
-          x: date,
-          y: physique,
-          weekly: physiqueWeeklyChange,
-          sinceStart: physiqueSinceStartChange,
-          sinceWorst: physiqueSinceWorstChange,
-          sinceBest: physiqueSinceBestChange,
-        })
-      ),
-      title: "Physique Rating",
-    },
-    {
-      data: data?.map(
-        ({
-          bones,
-          date,
-          bonesWeeklyChange,
-          bonesSinceStartChange,
-          bonesSinceWorstChange,
-          bonesSinceBestChange,
-        }) => ({
-          x: date,
-          y: bones,
-          weekly: bonesWeeklyChange,
-          sinceStart: bonesSinceStartChange,
-          sinceWorst: bonesSinceWorstChange,
-          sinceBest: bonesSinceBestChange,
-        })
-      ),
-      title: "Bones Mass",
     },
   ];
 

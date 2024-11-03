@@ -2,204 +2,148 @@
   "WeightReadings": {
     "908r1hATCyZHv6iIZBnGkgDrL1J3": {
       "-O1LkTJDO-v7F_LPtL3A": {
-        "bones": 3.2,
         "date": "2024-06-11",
-        "fat": "30.9",
-        "muscles": "60.8",
-        "physique": 3,
-        "waist": "12.5",
-        "water": "50.8",
-        "weight": "92.5"
+        "fat": 39.90,
+        "muscles": 30.40,
+        "waist": 17.19,
+        "water": 46.99,
+        "weight": 92.5
       },
       "-O1LkYNWBzJMV85GK6b3": {
-        "bones": 3,
         "date": "2024-06-29",
-        "fat": "33.3",
-        "muscles": "57.5",
-        "physique": 2,
-        "waist": "13",
-        "water": "50",
-        "weight": "90.7"
+        "fat": 42.16,
+        "muscles": 28.75,
+        "waist": 17.88,
+        "water": 45.35,
+        "weight": 90.7
       },
       "-O1Lkb2ZnM2oohJSl00U": {
-        "bones": 3.1,
         "date": "2024-07-06",
-        "fat": "30.7",
-        "muscles": "59",
-        "physique": 2,
-        "waist": "12",
-        "water": "51",
-        "weight": "89.6"
+        "fat": 38.40,
+        "muscles": 29.50,
+        "waist": 16.50,
+        "water": 45.70,
+        "weight": 89.6
       },
       "-O1f-bhTL0BuxbEcGSJb": {
-        "bones": 3,
         "date": "2024-07-13",
-        "fat": "31.5",
-        "muscles": "57.3",
-        "physique": 2,
-        "waist": "12",
-        "water": "50.7",
-        "weight": "87.9"
+        "fat": 38.65,
+        "muscles": 28.65,
+        "waist": 16.50,
+        "water": 44.57,
+        "weight": 87.9
       },
       "-O2EjdPoq7xFOhGwAkqz": {
-        "bones": "3.1",
         "date": "2024-07-20",
-        "fat": "27.5",
-        "muscles": "59.6",
-        "physique": 2,
-        "waist": "10",
-        "water": "52.5",
-        "weight": "86.4"
+        "fat": 33.17,
+        "muscles": 29.80,
+        "waist": 13.75,
+        "water": 45.36,
+        "weight": 86.4
       },
       "-O2nLcGObZbaMKhEcz6v": {
-        "bones": "3.1",
         "date": "2024-07-27",
-        "fat": "28.4",
-        "muscles": "57.7",
-        "physique": 2,
-        "waist": "10.5",
-        "water": "52.1",
-        "weight": "84.8"
+        "fat": 33.62,
+        "muscles": 28.85,
+        "waist": 14.44,
+        "water": 44.18,
+        "weight": 84.8
       },
       "-O3Mr7afnS4p_iafHFm3": {
-        "bones": 3,
         "date": "2024-08-03",
-        "fat": "27",
-        "muscles": "57.9",
-        "physique": 2,
-        "waist": "9.5",
-        "water": "52.8",
-        "weight": "83.4"
+        "fat": 31.44,
+        "muscles": 28.95,
+        "waist": 13.06,
+        "water": 44.04,
+        "weight": 83.4
       },
       "-O3vbsf8vC_uqpMPOWQ-": {
-        "bones": "3.1",
         "date": "2024-08-10",
-        "fat": "25.1",
-        "muscles": "58.2",
-        "physique": 2,
-        "waist": "8.5",
-        "water": "53.8",
-        "weight": "81.8"
+        "fat": 28.66,
+        "muscles": 29.10,
+        "waist": 11.69,
+        "water": 44.01,
+        "weight": 81.8
       },
       "-O4UWQk28oABqPKsOSof": {
-        "bones": 3,
         "date": "2024-08-17",
-        "fat": "24.7",
-        "muscles": "58",
-        "physique": 2,
-        "waist": "8.5",
-        "water": "54",
-        "weight": "81.1"
+        "fat": 27.96,
+        "muscles": 29.00,
+        "waist": 11.69,
+        "water": 43.79,
+        "weight": 81.1
       },
       "-O52RAh7xagjRulAeMcV": {
-        "bones": "3.1",
         "date": "2024-08-24",
-        "fat": "24.8",
-        "muscles": "58.1",
-        "physique": 2,
-        "waist": "8.5",
-        "water": "54",
-        "weight": "81.2"
+        "fat": 28.11,
+        "muscles": 29.05,
+        "waist": 11.69,
+        "water": 43.85,
+        "weight": 81.2
       },
       "-O5ao_h7yFc5G0Hvvcy2": {
-        "bones": 3,
         "date": "2024-08-31",
-        "fat": "25.6",
-        "muscles": "57",
-        "physique": 2,
-        "waist": "8.5",
-        "water": "53.5",
-        "weight": "80.7"
+        "fat": 28.84,
+        "muscles": 28.50,
+        "waist": 11.69,
+        "water": 43.17,
+        "weight": 80.7
       },
       "-O6HAJiY6Nxkdzrp52u-": {
-        "bones": 3,
         "date": "2024-09-07",
-        "fat": "23.9",
-        "muscles": "57.7",
-        "physique": 2,
-        "waist": "8",
-        "water": "54.6",
-        "weight": "79.7"
+        "fat": 26.59,
+        "muscles": 28.85,
+        "waist": 11.00,
+        "water": 43.52,
+        "weight": 79.7
       },
       "-O6js6xsu8Ei9h-ewkaA": {
-        "bones": 3,
         "date": "2024-09-14",
-        "fat": "26.2",
-        "muscles": "56.4",
-        "physique": 2,
-        "waist": "9",
-        "water": "53.2",
-        "weight": "80.4"
+        "fat": 29.41,
+        "muscles": 28.20,
+        "waist": 12.38,
+        "water": 42.77,
+        "weight": 80.4
       },
       "-O7nC6Gd0cicK6D6oSlg": {
-        "bones": "3.1",
         "date": "2024-09-21",
-        "fat": "24.5",
-        "muscles": "58.3",
-        "physique": 2,
-        "waist": "8.5",
-        "water": "54.2",
-        "weight": "81.2"
+        "fat": 27.77,
+        "muscles": 29.15,
+        "waist": 11.69,
+        "water": 44.01,
+        "weight": 81.2
       },
       "-O8QVxlKNG8kKBnLnRAB": {
-        "bones": "3.1",
         "date": "2024-09-28",
-        "fat": "25.1",
-        "muscles": "58.7",
-        "physique": 2,
-        "waist": "8.5",
-        "water": "53.8",
-        "weight": "82.6"
+        "fat": 28.94,
+        "muscles": 29.35,
+        "waist": 11.69,
+        "water": 44.44,
+        "weight": 82.6
       },
       "-O8QW1k5sn-1Zpd_o2hJ": {
-        "bones": 3,
         "date": "2024-10-05",
-        "fat": "26.7",
-        "muscles": "56.4",
-        "physique": 2,
-        "waist": "9",
-        "water": "53",
-        "weight": "81"
+        "fat": 30.19,
+        "muscles": 28.20,
+        "waist": 12.38,
+        "water": 42.93,
+        "weight": 81
       },
       "-O9Z9K55UdBLjPGbQYkg": {
-        "bones": "3",
         "date": "2024-10-12",
-        "fat": "24.3",
-        "muscles": "57.4",
-        "physique": "2",
-        "waist": "8",
-        "water": "54.3",
-        "weight": "79.7"
+        "fat": 27.04,
+        "muscles": 28.70,
+        "waist": 11.00,
+        "water": 43.28,
+        "weight": 79.7
       },
       "-O9Z9U7GEnto-492dFb6": {
-        "bones": "3",
         "date": "2024-10-19",
-        "fat": "23.5",
-        "muscles": "56.7",
-        "physique": "2",
-        "waist": "7.5",
-        "water": "54.7",
-        "weight": "78.1"
-      },
-      "-OA7dCvDQ2QtD4LolHi6": {
-        "bones": "3",
-        "date": "2024-10-26",
-        "fat": "32.8",
-        "muscles": "29.5",
-        "physique": "2",
-        "waist": "11",
-        "water": "54",
-        "weight": "78.3"
-      },
-      "-OAgg9Md70QDjuxwPb_a": {
-        "bones": "2",
-        "date": "2024-11-02",
-        "fat": "32.4",
-        "muscles": "29.4",
-        "physique": "3",
-        "waist": "11",
-        "water": "54",
-        "weight": "77.9"
+        "fat": 25.62,
+        "muscles": 28.35,
+        "waist": 10.31,
+        "water": 42.72,
+        "weight": 78.1
       }
     }
   },
