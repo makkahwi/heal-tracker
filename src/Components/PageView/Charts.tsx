@@ -242,19 +242,40 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         </Hint>
                       )}
 
-                      {(maxTarget || minTarget) && (
+                      {minTarget && (
                         <Hint
                           value={{
                             x:
                               moment(data[data.length - 1]?.x).valueOf() + 2000,
-                            y: maxTarget || minTarget,
+                            y: minTarget,
                           }}
                         >
                           <small
                             className="bg-success text-white p-2"
                             style={{ fontSize: 10 }}
                           >
-                            Targeted Range / Value
+                            {minTarget === maxTarget
+                              ? "Targeted Value"
+                              : "Targeted Min Value"}
+                          </small>
+                        </Hint>
+                      )}
+
+                      {maxTarget && (
+                        <Hint
+                          value={{
+                            x:
+                              moment(data[data.length - 1]?.x).valueOf() + 2000,
+                            y: maxTarget,
+                          }}
+                        >
+                          <small
+                            className="bg-success text-white p-2"
+                            style={{ fontSize: 10 }}
+                          >
+                            {minTarget === maxTarget
+                              ? "Targeted Value"
+                              : "Targeted Max Value"}
                           </small>
                         </Hint>
                       )}
