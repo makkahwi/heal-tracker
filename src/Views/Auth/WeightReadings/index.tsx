@@ -6,12 +6,12 @@ import {
 import { Fragment, useEffect, useState } from "react";
 
 import * as BeAPI from "../../../API";
-import dbData from "../../../API/backup.json";
 import Form from "../../../Components/Form";
 import PageSection from "../../../Components/PageView/PageSection";
 import { getHighest, getLowest } from "../../../Utils/functions";
 import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
+import WeightReadingTargets from "./Targets";
 
 export interface weightReadingProps {
   id?: string;
@@ -395,90 +395,47 @@ const WeightReadings = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title="Weight Readings">
-      <Fragment>
-        {/* {JSON.stringify(
-          Object.keys(
-            dbData.WeightReadings["908r1hATCyZHv6iIZBnGkgDrL1J3"]
-          ).reduce(
-            (final, key) => ({
-              ...final,
-              [key]: {
-                ...(dbData.WeightReadings as any)[
-                  "908r1hATCyZHv6iIZBnGkgDrL1J3"
-                ][key],
-                water: (
-                  ((dbData.WeightReadings as any)[
-                    "908r1hATCyZHv6iIZBnGkgDrL1J3"
-                  ][key].water /
-                    100) *
-                  (dbData.WeightReadings as any)[
-                    "908r1hATCyZHv6iIZBnGkgDrL1J3"
-                  ][key].weight
-                ).toFixed(2),
-                muscles: (
-                  (dbData.WeightReadings as any)[
-                    "908r1hATCyZHv6iIZBnGkgDrL1J3"
-                  ][key].muscles * 0.5
-                ).toFixed(2),
-                waist: (
-                  ((dbData.WeightReadings as any)[
-                    "908r1hATCyZHv6iIZBnGkgDrL1J3"
-                  ][key].waist *
-                    11) /
-                  8
-                ).toFixed(2),
-                fat: (
-                  (((dbData.WeightReadings as any)[
-                    "908r1hATCyZHv6iIZBnGkgDrL1J3"
-                  ][key].fat *
-                    1.396) /
-                    100) *
-                  (dbData.WeightReadings as any)[
-                    "908r1hATCyZHv6iIZBnGkgDrL1J3"
-                  ][key].weight
-                ).toFixed(2),
-              },
-            }),
-            {}
-          )
-        )} */}
-        <h4 className="my-3">
-          Total Number of Weight Readings (Visits): {data.length}
-        </h4>
+    <Fragment>
+      <WeightReadingTargets />
+      <PageSection title="Weight Readings">
+        <Fragment>
+          <h4 className="my-3">
+            Total Number of Weight Readings (Visits): {data.length}
+          </h4>
 
-        <div className="btn-group my-3 w-100">
-          <button
-            className="btn btn-secondary"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#analysis"
-            aria-expanded="false"
-            aria-controls="analysis"
-          >
-            Analysis
-          </button>
+          <div className="btn-group my-3 w-100">
+            <button
+              className="btn btn-secondary"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#analysis"
+              aria-expanded="false"
+              aria-controls="analysis"
+            >
+              Analysis
+            </button>
 
-          <button
-            className="btn btn-primary"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#input"
-            aria-expanded="false"
-            aria-controls="input"
-          >
-            Input
-          </button>
-        </div>
-        <div className="collapse multi-collapse" id="analysis">
-          <WeightReadingCharts data={data} />
-        </div>
-        <div className="collapse multi-collapse" id="input">
-          <Form inputs={formInputs} onSubmit={onSubmit} />
-        </div>
-        <WeightReadingsTable data={data} onDelete={onDelete} />
-      </Fragment>
-    </PageSection>
+            <button
+              className="btn btn-primary"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#input"
+              aria-expanded="false"
+              aria-controls="input"
+            >
+              Input
+            </button>
+          </div>
+          <div className="collapse multi-collapse" id="analysis">
+            <WeightReadingCharts data={data} />
+          </div>
+          <div className="collapse multi-collapse" id="input">
+            <Form inputs={formInputs} onSubmit={onSubmit} />
+          </div>
+          <WeightReadingsTable data={data} onDelete={onDelete} />
+        </Fragment>
+      </PageSection>
+    </Fragment>
   );
 };
 
