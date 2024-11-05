@@ -1,11 +1,4 @@
-import {
-  faArrowDown,
-  faArrowUp,
-  faCheck,
-  faMinus,
-  faPlus,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown, faArrowUp, faCheck, faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react/jsx-runtime";
 
@@ -74,13 +67,7 @@ const MealView = ({
 
     return compare ? (
       <div
-        className={
-          match
-            ? "text-success"
-            : meal === "Other"
-            ? "text-danger"
-            : "text-white bg-danger py-2 px-1"
-        }
+        className={match ? "text-success" : "text-white bg-danger py-2 px-1"}
       >
         <FontAwesomeIcon
           icon={match ? faCheck : elementMatch ? countIcon : faPlus}
