@@ -1,9 +1,8 @@
 import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import moment, { max } from "moment";
+import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
 import {
-  AreaSeries,
   Hint,
   HorizontalGridLines,
   LineMarkSeries,
@@ -47,6 +46,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
     data: data.map(() => true),
     average: data.map(() => false),
     changeAverage: data.map(() => false),
+    targeted: data.map(() => false),
   });
 
   useEffect(() => {
@@ -55,6 +55,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
       data: data.map(() => true),
       average: data.map(() => false),
       changeAverage: data.map(() => false),
+      targeted: data.map(() => false),
     });
   }, [data]);
 
@@ -94,7 +95,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
         );
 
         const values =
-          minTarget && maxTarget
+          show.targeted[x] && minTarget && maxTarget
             ? [...data.map(({ y }) => y), minTarget, maxTarget]
             : data.map(({ y }) => y);
 
@@ -127,31 +128,29 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         title={"Reading" + (unit ? " ( " + unit + " )" : "")}
                       />
 
-                      {show.data[x] && (
-                        <LineMarkSeries
-                          data={data?.map(({ x, y }) => ({
-                            x: moment(x).valueOf(),
-                            y,
-                          }))}
-                          color={colors[x % colors.length]}
-                          onValueMouseOver={(v) =>
-                            setHovered((current) =>
-                              current.map((c) =>
-                                c.title === title
-                                  ? {
-                                      date: String(
-                                        moment(v.x).format("DD MMM yyyy")
-                                      ),
-                                      value: parseFloat(String(v.y)),
-                                      title,
-                                    }
-                                  : c
-                              )
+                      <LineMarkSeries
+                        data={data?.map(({ x, y }) => ({
+                          x: moment(x).valueOf(),
+                          y,
+                        }))}
+                        color={colors[x % colors.length]}
+                        onValueMouseOver={(v) =>
+                          setHovered((current) =>
+                            current.map((c) =>
+                              c.title === title
+                                ? {
+                                    date: String(
+                                      moment(v.x).format("DD MMM yyyy")
+                                    ),
+                                    value: parseFloat(String(v.y)),
+                                    title,
+                                  }
+                                : c
                             )
-                          }
-                          onValueMouseOut={() => setHovered(initialHovered())}
-                        />
-                      )}
+                          )
+                        }
+                        onValueMouseOut={() => setHovered(initialHovered())}
+                      />
 
                       {/* Values Average */}
                       {show.average[x] && (
@@ -242,7 +241,8 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         </Hint>
                       )}
 
-                      {minTarget && (
+                      {/* Targeted */}
+                      {show.targeted[x] && minTarget && (
                         <Hint
                           value={{
                             x:
@@ -257,11 +257,13 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                             {minTarget === maxTarget
                               ? "Targeted Value"
                               : "Targeted Min Value"}
+                            {": "}
+                            {minTarget} {unit}
                           </small>
                         </Hint>
                       )}
 
-                      {maxTarget && (
+                      {show.targeted[x] && maxTarget && (
                         <Hint
                           value={{
                             x:
@@ -276,11 +278,13 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                             {minTarget === maxTarget
                               ? "Targeted Value"
                               : "Targeted Max Value"}
+                            {": "}
+                            {maxTarget} {unit}
                           </small>
                         </Hint>
                       )}
 
-                      {minTarget && (
+                      {show.targeted[x] && minTarget && (
                         <LineMarkSeries
                           color="green"
                           data={[
@@ -296,7 +300,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         />
                       )}
 
-                      {maxTarget && (
+                      {show.targeted[x] && maxTarget && (
                         <LineMarkSeries
                           color="green"
                           data={[
@@ -320,25 +324,8 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                     <div className="btn-group">
                       <button
                         className={
-                          "btn btn-sm btn-primary " +
-                          (show.data[x] ? "opacity-100" : "opacity-50")
-                        }
-                        onClick={() =>
-                          setShow((current) => ({
-                            ...current,
-                            data: current.data.map((v, y) =>
-                              y === x ? !v : v
-                            ),
-                          }))
-                        }
-                      >
-                        Data
-                      </button>
-
-                      <button
-                        className={
-                          "btn btn-sm btn-danger " +
-                          (show.average[x] ? "opacity-100" : "opacity-50")
+                          "btn btn-sm border border-warning btn-danger " +
+                          (show.average[x] ? "active" : "")
                         }
                         onClick={() =>
                           setShow((current) => ({
@@ -354,8 +341,8 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
 
                       <button
                         className={
-                          "btn btn-sm btn-info " +
-                          (show.changeAverage[x] ? "opacity-100" : "opacity-50")
+                          "btn btn-sm border border-warning btn-info " +
+                          (show.changeAverage[x] ? "active" : "")
                         }
                         onClick={() =>
                           setShow((current) => ({
@@ -368,6 +355,25 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                       >
                         Change Average
                       </button>
+
+                      {minTarget && maxTarget && (
+                        <button
+                          className={
+                            "btn btn-sm border border-warning btn-success " +
+                            (show.targeted[x] ? "active" : "")
+                          }
+                          onClick={() =>
+                            setShow((current) => ({
+                              ...current,
+                              targeted: current.targeted.map((v, y) =>
+                                y === x ? !v : v
+                              ),
+                            }))
+                          }
+                        >
+                          Targeted Value(s)
+                        </button>
+                      )}
                     </div>
                   </th>
                 </tr>
