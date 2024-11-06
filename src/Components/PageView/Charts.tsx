@@ -129,31 +129,29 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         title={"Reading" + (unit ? " ( " + unit + " )" : "")}
                       />
 
-                      {show.data[x] && (
-                        <LineMarkSeries
-                          data={data?.map(({ x, y }) => ({
-                            x: moment(x).valueOf(),
-                            y,
-                          }))}
-                          color={colors[x % colors.length]}
-                          onValueMouseOver={(v) =>
-                            setHovered((current) =>
-                              current.map((c) =>
-                                c.title === title
-                                  ? {
-                                      date: String(
-                                        moment(v.x).format("DD MMM yyyy")
-                                      ),
-                                      value: parseFloat(String(v.y)),
-                                      title,
-                                    }
-                                  : c
-                              )
+                      <LineMarkSeries
+                        data={data?.map(({ x, y }) => ({
+                          x: moment(x).valueOf(),
+                          y,
+                        }))}
+                        color={colors[x % colors.length]}
+                        onValueMouseOver={(v) =>
+                          setHovered((current) =>
+                            current.map((c) =>
+                              c.title === title
+                                ? {
+                                    date: String(
+                                      moment(v.x).format("DD MMM yyyy")
+                                    ),
+                                    value: parseFloat(String(v.y)),
+                                    title,
+                                  }
+                                : c
                             )
-                          }
-                          onValueMouseOut={() => setHovered(initialHovered())}
-                        />
-                      )}
+                          )
+                        }
+                        onValueMouseOut={() => setHovered(initialHovered())}
+                      />
 
                       {/* Values Average */}
                       {show.average[x] && (
@@ -327,25 +325,8 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                     <div className="btn-group">
                       <button
                         className={
-                          "btn btn-sm btn-primary " +
-                          (show.data[x] ? "opacity-100" : "opacity-50")
-                        }
-                        onClick={() =>
-                          setShow((current) => ({
-                            ...current,
-                            data: current.data.map((v, y) =>
-                              y === x ? !v : v
-                            ),
-                          }))
-                        }
-                      >
-                        Data
-                      </button>
-
-                      <button
-                        className={
-                          "btn btn-sm btn-danger " +
-                          (show.average[x] ? "opacity-100" : "opacity-50")
+                          "btn btn-sm border border-warning btn-danger " +
+                          (show.average[x] ? "active" : "")
                         }
                         onClick={() =>
                           setShow((current) => ({
@@ -361,8 +342,8 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
 
                       <button
                         className={
-                          "btn btn-sm btn-info " +
-                          (show.changeAverage[x] ? "opacity-100" : "opacity-50")
+                          "btn btn-sm border border-warning btn-info " +
+                          (show.changeAverage[x] ? "active" : "")
                         }
                         onClick={() =>
                           setShow((current) => ({
@@ -379,8 +360,8 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                       {minTarget && maxTarget && (
                         <button
                           className={
-                            "btn btn-sm btn-success " +
-                            (show.targeted[x] ? "opacity-100" : "opacity-50")
+                            "btn btn-sm border border-warning btn-success " +
+                            (show.targeted[x] ? "active" : "")
                           }
                           onClick={() =>
                             setShow((current) => ({
