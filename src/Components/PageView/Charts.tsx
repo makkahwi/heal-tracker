@@ -1,9 +1,8 @@
 import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import moment, { max } from "moment";
+import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
 import {
-  AreaSeries,
   Hint,
   HorizontalGridLines,
   LineMarkSeries,
