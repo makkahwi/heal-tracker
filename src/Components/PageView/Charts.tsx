@@ -47,6 +47,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
     data: data.map(() => true),
     average: data.map(() => false),
     changeAverage: data.map(() => false),
+    targeted: data.map(() => false),
   });
 
   useEffect(() => {
@@ -55,6 +56,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
       data: data.map(() => true),
       average: data.map(() => false),
       changeAverage: data.map(() => false),
+      targeted: data.map(() => false),
     });
   }, [data]);
 
@@ -94,7 +96,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
         );
 
         const values =
-          minTarget && maxTarget
+          show.targeted[x] && minTarget && maxTarget
             ? [...data.map(({ y }) => y), minTarget, maxTarget]
             : data.map(({ y }) => y);
 
@@ -242,7 +244,8 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         </Hint>
                       )}
 
-                      {minTarget && (
+                      {/* Targeted */}
+                      {show.targeted[x] && minTarget && (
                         <Hint
                           value={{
                             x:
@@ -261,7 +264,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         </Hint>
                       )}
 
-                      {maxTarget && (
+                      {show.targeted[x] && maxTarget && (
                         <Hint
                           value={{
                             x:
@@ -280,7 +283,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         </Hint>
                       )}
 
-                      {minTarget && (
+                      {show.targeted[x] && minTarget && (
                         <LineMarkSeries
                           color="green"
                           data={[
@@ -296,7 +299,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         />
                       )}
 
-                      {maxTarget && (
+                      {show.targeted[x] && maxTarget && (
                         <LineMarkSeries
                           color="green"
                           data={[
@@ -368,6 +371,25 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                       >
                         Change Average
                       </button>
+
+                      {minTarget && maxTarget && (
+                        <button
+                          className={
+                            "btn btn-sm btn-success " +
+                            (show.targeted[x] ? "opacity-100" : "opacity-50")
+                          }
+                          onClick={() =>
+                            setShow((current) => ({
+                              ...current,
+                              targeted: current.targeted.map((v, y) =>
+                                y === x ? !v : v
+                              ),
+                            }))
+                          }
+                        >
+                          Targeted Value(s)
+                        </button>
+                      )}
                     </div>
                   </th>
                 </tr>
