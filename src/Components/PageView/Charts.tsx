@@ -260,6 +260,8 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                             {minTarget === maxTarget
                               ? "Targeted Value"
                               : "Targeted Min Value"}
+                            {": "}
+                            {minTarget} {unit}
                           </small>
                         </Hint>
                       )}
@@ -279,6 +281,8 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                             {minTarget === maxTarget
                               ? "Targeted Value"
                               : "Targeted Max Value"}
+                            {": "}
+                            {maxTarget} {unit}
                           </small>
                         </Hint>
                       )}
