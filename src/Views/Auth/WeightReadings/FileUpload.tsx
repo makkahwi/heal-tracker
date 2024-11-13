@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+
 import {
   analyzeDocumentWithTextract,
-  extractDataFromTextract,
+  extractKeyValuePairs,
   uploadFileToS3,
 } from "../../../Utils/aswsTextract";
+
+// Assuming extractKeyValuePairs is in this utility file
 
 const FileUploadComponent: React.FC = () => {
   const [file, setFile] = useState<File | null>(null);
@@ -29,8 +32,11 @@ const FileUploadComponent: React.FC = () => {
       if (!fileKey) throw new Error("File upload failed.");
 
       // Analyze the file with Textract
-      const result = await analyzeDocumentWithTextract(fileKey);
-      setAnalysisResult(result);
+      const blocks = await analyzeDocumentWithTextract(fileKey);
+
+      // Extract key-value pairs from blocks
+      const keyValuePairs = extractKeyValuePairs(blocks);
+      setAnalysisResult(keyValuePairs);
     } catch (error) {
       console.error("Error during upload and analyze:", error);
     } finally {
@@ -63,7 +69,7 @@ const FileUploadComponent: React.FC = () => {
       {analysisResult && (
         <div>
           <h3>Analysis Result:</h3>
-          <pre>{JSON.stringify(analysisResult)}</pre>
+          <pre>{JSON.stringify(analysisResult, null, 2)}</pre>
         </div>
       )}
     </div>

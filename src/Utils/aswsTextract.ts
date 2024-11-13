@@ -1,8 +1,7 @@
-import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
+import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
 import {
+  AnalyzeDocumentCommand,
   TextractClient,
-  StartDocumentTextDetectionCommand,
-  GetDocumentTextDetectionCommand,
 } from "@aws-sdk/client-textract";
 import { v4 as uuidv4 } from "uuid";
 
@@ -43,162 +42,65 @@ export const analyzeDocumentWithTextract = async (
   fileKey: string
 ): Promise<any> => {
   try {
-    // Start text detection
-    const startCommand = new StartDocumentTextDetectionCommand({
-      DocumentLocation: {
+    const command = new AnalyzeDocumentCommand({
+      Document: {
         S3Object: {
           Bucket: process.env.REACT_APP_S3_BUCKET_NAME!,
           Name: fileKey,
         },
       },
+      FeatureTypes: ["FORMS"], // Specifies that we want to extract key-value pairs
     });
 
-    const startResponse = await textractClient.send(startCommand);
-    const jobId = startResponse.JobId;
-    if (!jobId) throw new Error("Textract job did not start.");
-
-    // Poll for job status and retrieve results
-    let jobStatus = "IN_PROGRESS";
-    while (jobStatus === "IN_PROGRESS") {
-      await new Promise((resolve) => setTimeout(resolve, 5000)); // Wait 5 seconds
-
-      const getCommand = new GetDocumentTextDetectionCommand({ JobId: jobId });
-      const getResponse = await textractClient.send(getCommand);
-
-      if (getResponse.JobStatus) {
-        jobStatus = getResponse.JobStatus;
-      }
-
-      if (jobStatus === "SUCCEEDED") {
-        return getResponse.Blocks;
-      } else if (jobStatus === "FAILED") {
-        throw new Error("Textract job failed.");
-      }
-    }
+    const response = await textractClient.send(command);
+    return response.Blocks; // Return the blocks containing key-value pairs and other elements
   } catch (error) {
     console.error("Error analyzing document with Textract:", error);
     throw error;
   }
 };
 
-interface ExtractedData {
-  segmentalFatAnalysis: {
-    leftTop: string;
-    leftBottom: string;
-    rightTop: string;
-    rightBottom: string;
-  };
-  segmentalLeanAnalysis: {
-    leftTop: string;
-    leftBottom: string;
-    rightTop: string;
-    rightBottom: string;
-  };
-  testDate: string;
-  inBodyScore: string;
-  totalBodyWater: string;
-  protein: string;
-  minerals: string;
-  bodyFatMass: string;
-  weight: string;
-  visceralFatLevel: string;
-  skeletalMuscleMass: string;
-}
+export const extractKeyValuePairs = (blocks: any[]): Record<string, string> => {
+  const keyMap: Record<string, string> = {};
+  const valueMap: Record<string, string> = {};
+  const keyValuePairs: Record<string, string> = {};
 
-export function extractDataFromTextract(textractData: any[]): ExtractedData {
-  const result: ExtractedData = {
-    segmentalFatAnalysis: {
-      leftTop: "",
-      leftBottom: "",
-      rightTop: "",
-      rightBottom: "",
-    },
-    segmentalLeanAnalysis: {
-      leftTop: "",
-      leftBottom: "",
-      rightTop: "",
-      rightBottom: "",
-    },
-    testDate: "",
-    inBodyScore: "",
-    totalBodyWater: "",
-    protein: "",
-    minerals: "",
-    bodyFatMass: "",
-    weight: "",
-    visceralFatLevel: "",
-    skeletalMuscleMass: "",
-  };
-
-  // Helper function to find the value based on keyword with additional context checks
-  const findValueWithContext = (keyword: string, units?: string): string => {
-    for (let i = 0; i < textractData.length; i++) {
-      if (textractData[i].Text === keyword) {
-        // Check the block following the keyword for the value, verifying unit if provided
-        const nextBlock = textractData[i + 1];
-        if (nextBlock && nextBlock.BlockType === "WORD") {
-          if (units) {
-            // Check if the unit follows immediately after the value
-            const possibleUnitBlock = textractData[i + 2];
-            if (possibleUnitBlock && possibleUnitBlock.Text === units) {
-              return `${nextBlock.Text}${units}`;
-            }
-          } else {
-            return nextBlock.Text;
-          }
-        }
+  // Map the keys and values by their IDs
+  blocks.forEach((block) => {
+    if (block.BlockType === "KEY_VALUE_SET") {
+      if (block.EntityTypes && block.EntityTypes.includes("KEY")) {
+        keyMap[block.Id] = block;
+      } else if (block.EntityTypes && block.EntityTypes.includes("VALUE")) {
+        valueMap[block.Id] = block;
       }
     }
-    return "";
-  };
+  });
 
-  // Map the data with exact keyword matches and specific context for accuracy
-  result.segmentalFatAnalysis.leftTop = findValueWithContext(
-    "leftTopFat",
-    "kg"
-  );
-  result.segmentalFatAnalysis.leftBottom = findValueWithContext(
-    "leftBottomFat",
-    "kg"
-  );
-  result.segmentalFatAnalysis.rightTop = findValueWithContext(
-    "rightTopFat",
-    "kg"
-  );
-  result.segmentalFatAnalysis.rightBottom = findValueWithContext(
-    "rightBottomFat",
-    "kg"
-  );
+  // Pair the keys with the corresponding values
+  Object.values(keyMap).forEach((keyBlock: any) => {
+    const valueBlockId = keyBlock.Relationships?.find(
+      (rel: any) => rel.Type === "VALUE"
+    )?.Ids?.[0];
+    const valueBlock: any = valueMap[valueBlockId];
 
-  result.segmentalLeanAnalysis.leftTop = findValueWithContext(
-    "leftTopLean",
-    "kg"
-  );
-  result.segmentalLeanAnalysis.leftBottom = findValueWithContext(
-    "leftBottomLean",
-    "kg"
-  );
-  result.segmentalLeanAnalysis.rightTop = findValueWithContext(
-    "rightTopLean",
-    "kg"
-  );
-  result.segmentalLeanAnalysis.rightBottom = findValueWithContext(
-    "rightBottomLean",
-    "kg"
-  );
+    if (valueBlock) {
+      const keyText = keyBlock.Text || getTextFromBlock(keyBlock, blocks);
+      const valueText = valueBlock.Text || getTextFromBlock(valueBlock, blocks);
+      if (keyText && valueText) {
+        keyValuePairs[keyText] = valueText;
+      }
+    }
+  });
 
-  result.testDate = findValueWithContext("24.11.09");
-  result.inBodyScore = findValueWithContext("InBody Score");
-  result.totalBodyWater = findValueWithContext("Total Body Water", "kg");
-  result.protein = findValueWithContext("Protein", "kg");
-  result.minerals = findValueWithContext("Minerals", "kg");
-  result.bodyFatMass = findValueWithContext("Body Fat Mass", "kg");
-  result.weight = findValueWithContext("Weight", "kg");
-  result.visceralFatLevel = findValueWithContext("Visceral Fat Level");
-  result.skeletalMuscleMass = findValueWithContext(
-    "Skeletal Muscle Mass",
-    "kg"
-  );
+  return keyValuePairs;
+};
 
-  return result;
-}
+// Helper function to get text from a block with relationships
+const getTextFromBlock = (block: any, blocks: any[]): string => {
+  return block.Relationships?.map((relationship: any) =>
+    relationship.Ids?.map((id: string) => blocks.find((b) => b.Id === id)?.Text)
+  )
+    .flat()
+    .filter(Boolean)
+    .join(" ");
+};
