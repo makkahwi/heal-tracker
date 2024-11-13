@@ -10,6 +10,7 @@ import Form from "../../../Components/Form";
 import PageSection from "../../../Components/PageView/PageSection";
 import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
+import FileUploadComponent from "./FileUpload";
 
 interface weightReadingTargetProps {
   id?: string;
@@ -605,6 +606,8 @@ const WeightReadings = () => {
         </div>
 
         <div className="collapse multi-collapse" id="input">
+          <FileUploadComponent />
+
           <Form inputs={formInputs} onSubmit={onSubmit} />
         </div>
 
