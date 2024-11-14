@@ -43,7 +43,7 @@ Health Daily Link is built with a modern technology stack, designed to provide a
 
 ## Meet the Developer
 
-Health Daily Link is developed by **AlembicSoft**, a team passionate about improving health through technology. This project is open-source, and we’re excited to welcome contributions from developers, designers, and wellness enthusiasts around the world.
+Health Daily Link is developed by me **Suhaib Ahmad**, a passionate about improving health through technology. This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world. Check out my works @  [My Website](https://www.suhaib.dev/) & [Github](https://github.com/makkahwi/)
 
 ## Our Vision for the Future
 

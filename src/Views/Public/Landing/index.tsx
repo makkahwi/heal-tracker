@@ -173,10 +173,8 @@ const LandingPage = () => {
 
       <PageSection
         title="Meet the Developer"
-        desc="This is being developed by the great team of AlembicSoft! As the creator of Health Daily Link, we are
-          passionate about helping people improve their health through
-          technology. This project is open-source, and we welcome contributors
-          from around the world to help make it even better!"
+        desc="Health Daily Link is developed by me **Suhaib Ahmad**, a passionate about improving health through technology. This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world.
+"
       />
 
       <FeaturesView
