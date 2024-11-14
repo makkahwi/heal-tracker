@@ -4,6 +4,7 @@ import Form from "../../../Components/Form";
 import PageSection from "../../../Components/PageView/PageSection";
 import { signIn, signUp } from "../../../Store/authSlice";
 import { AppDispatch } from "../../../Store/store";
+import { useNavigate } from "react-router-dom";
 
 interface props {
   email: string;
@@ -13,6 +14,7 @@ interface props {
 
 const Login = () => {
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
 
   const signInInputs = [
     {
@@ -57,13 +59,19 @@ const Login = () => {
 
   const onSignInSubmit = ({ email, password }: props) => {
     dispatch(signIn({ email, password }))
-      .then(() => window.location.reload())
+      .then(() => {
+        navigate("/");
+        window.location.reload();
+      })
       .catch((err) => console.log(err));
   };
 
   const onSignUpSubmit = ({ email, password }: props) => {
     dispatch(signUp({ email, password }))
-      .then(() => window.location.reload())
+      .then(() => {
+        navigate("/");
+        window.location.reload();
+      })
       .catch((err) => console.log(err));
   };
 

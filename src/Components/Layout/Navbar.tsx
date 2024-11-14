@@ -1,4 +1,8 @@
-import { faDashboard, faSignOut } from "@fortawesome/free-solid-svg-icons";
+import {
+  faDashboard,
+  faSignIn,
+  faSignOut,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -16,7 +20,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-primary bg-primary position-fixed fixed-top w-100 m-0">
       <div className="container-fluid px-5 py-1">
-        <span>
+        <span role="button" onClick={() => navigate("/")}>
           {user ? (
             <span>
               <img src={"/Logo-Only-White.png"} alt="logo" height={40} />
@@ -116,7 +120,20 @@ const Navbar = () => {
               </li>
             </ul>
           ) : (
-            ""
+            <ul className="nav me-auto mb-2 mb-lg-0">
+              <li
+                className="nav-item"
+                role="button"
+                onClick={() => navigate("/login")}
+              >
+                <span className="nav-link text-decoration-none text-white">
+                  <FontAwesomeIcon icon={faSignIn} />
+                  <span className="ms-2 d-none d-lg-inline">
+                    Sign In / Register
+                  </span>
+                </span>
+              </li>
+            </ul>
           )}
         </div>
       </div>

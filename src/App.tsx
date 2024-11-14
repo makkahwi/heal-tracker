@@ -22,6 +22,7 @@ import Medicine from "./Views/Auth/Medicine";
 import SleepCycles from "./Views/Auth/SleepCycles";
 import Sports from "./Views/Auth/Sports";
 import WeightReadings from "./Views/Auth/WeightReadings";
+import Landing from "./Views/Public/Landing";
 import Login from "./Views/Public/Login";
 
 export const routes = [
@@ -104,7 +105,8 @@ const App = () => {
           </Routes>
         ) : (
           <Routes>
-            <Route path="*" element={<Login />} />
+            <Route path="login" element={<Login />} />
+            <Route path="*" element={<Landing />} />
           </Routes>
         )}
       </BrowserRouter>
