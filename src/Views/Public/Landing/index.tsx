@@ -185,7 +185,7 @@ const LandingPage = () => {
       >
         <a
           className="btn btn-primary btn-lg shadow-sm text-white"
-          href="https://github.com/your-repo-link"
+          href="https://github.com/makkahwi/health-daily-link"
           target="_blank"
           rel="noopener noreferrer"
         >
