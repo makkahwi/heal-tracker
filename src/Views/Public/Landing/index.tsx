@@ -6,6 +6,7 @@ import {
   faChartLine,
   faChartPie,
   faClipboardList,
+  faClock,
   faDatabase,
   faDumbbell,
   faLanguage,
@@ -45,9 +46,9 @@ const currentFeatures = [
     desc: "Keep a record of your sports and exercise routines to track physical activity levels.",
   },
   {
-    title: "Medication Reminders",
+    title: "Medication FollowUp",
     icon: faPills,
-    desc: "Set reminders for taking medications and supplements, ensuring you never miss a dose.",
+    desc: "Record your taking of medications and supplements, ensuring you never miss a dose.",
   },
   {
     title: "Sleep Cycle Monitoring",
@@ -66,6 +67,11 @@ const futurePlans = [
     icon: faMobileAlt,
     title: "Mobile App",
     desc: "Develop a mobile version for on-the-go accessibility.",
+  },
+  {
+    icon: faClock,
+    title: "Set Reminders",
+    desc: "Enable users to receive reminders of scheduled activities like meals, sleep times, sport sessions & medications.",
   },
   {
     icon: faUserMd,
@@ -94,8 +100,8 @@ const futurePlans = [
   },
   {
     icon: faBullseye,
-    title: "Goal Setting & Reminders",
-    desc: "Enable users to set personalized health goals and receive reminders.",
+    title: "Goal Setting",
+    desc: "Enable users to set personalized health goals.",
   },
   {
     icon: faUsers,
@@ -167,15 +173,15 @@ const LandingPage = () => {
 
       <PageSection
         title="Meet the Developer"
-        desc="Hi, I'm [Your Name]! As the creator of Health Daily Link, I’m
+        desc="This is being developed by the great team of AlembicSoft! As the creator of Health Daily Link, we are
           passionate about helping people improve their health through
-          technology. This project is open-source, and I welcome contributors
+          technology. This project is open-source, and we welcome contributors
           from around the world to help make it even better!"
       />
 
       <FeaturesView
         title="Our Vision for the Future"
-        desc="Health Daily Link is growing, and we have big plans to make it even more powerful and user-friendly. With your support, we aim to add new features, improve accessibility, and build a community around wellness."
+        desc="Health Daily Link is growing, and we have big plans to make it even more powerful and user-friendly. With your support, we aim to add new features, improve accessibility, and build a community around wellness. This is part of what we have in mind to develop for future expansions."
         features={futurePlans}
       />
 

@@ -18,7 +18,7 @@ const FeaturesView = ({
       <div className="row justify-content-center align-items-stretch">
         {features.map(({ icon, title, desc }, i) => (
           <div key={i} className="col-md-6 col-lg-4 my-3 px-4 d-flex">
-            <div className="card h-100 shadow-sm border-0">
+            <div className="card h-100 shadow-sm border-0 w-100">
               <div className="card-body text-center d-flex flex-column">
                 <FontAwesomeIcon
                   icon={icon}
