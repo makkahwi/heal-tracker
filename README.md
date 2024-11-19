@@ -164,6 +164,23 @@ Your support can help us enhance Health Daily Link faster!
 Your sponsorship helps cover development costs like hosting, integrations, and enhancements.
 - Spread the Word: Share the project with your network to help it reach more users.
 
+### ⭐ Show Your Support
+
+If you find this project helpful or interesting, please **star this repository**!  
+
+It helps others discover this project, and it shows your support for open-source development.  
+
+👉 **[Click here to star the repo](https://github.com/makkahwi/health-daily-link/stargazers)** 👈  
+[![GitHub stars](https://img.shields.io/github/stars/makkahwi/health-daily-link?style=social)](https://github.com/makkahwi/health-daily-link/stargazers)
+
+#### Why Star This Repo?
+
+- 🔍 Increase the visibility of this project in the GitHub community.
+- 💬 Encourage more developers to contribute and collaborate.
+- 💡 Help us continue improving and expanding the app with your support!
+
+Thank you for your interest in **Health Daily Link**! 😊
+
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
