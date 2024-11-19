@@ -10,7 +10,6 @@
 /build
 
 #configs
-/.github
 .env
 .env.local
 .env.development.local
