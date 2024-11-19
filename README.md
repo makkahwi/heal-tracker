@@ -76,6 +76,8 @@ Welcome to [**Health Daily Link (HDL)**](https://health-daily-link.vercel.app/),
 Health Daily Link is already deployed, so you can simply sign up and start using it today!  
 [Visit Health Daily Link](https://health-daily-link.vercel.app/)  
 
+## Developer Notes
+
 ## Support
 
 If you encounter any issues, have questions, or want to suggest improvements, feel free to:
@@ -85,6 +87,20 @@ If you encounter any issues, have questions, or want to suggest improvements, fe
 3. Join the discussions on the repository to collaborate with other contributors.
 
 We appreciate your feedback and contributions to make the "Health Daily Link" better for everyone!
+
+### How to Report an Issue
+
+We welcome contributions and feedback! To report a bug, suggest a feature, or request support:
+
+1. Go to the [Issues](https://github.com/makkahwi/health-daily-link/issues) tab of this repository.
+2. Click on **New Issue**.
+3. Select the appropriate issue template:
+   - **Bug Report**: If you found a bug or error in the app.
+   - **Feature Request**: If you have an idea for a new feature or improvement.
+4. Fill out the form with as much detail as possible.
+5. Submit the issue, and we’ll review it as soon as possible.
+
+Thank you for helping improve the app!
 
 ## Meet the Developer
 
