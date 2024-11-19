@@ -72,7 +72,7 @@ const authSlice = createSlice({
     signOut: (state) => {
       state.user = null;
       localStorage.removeItem("user");
-      window.location.replace("/");
+      window.location.replace("/login");
     },
   },
   extraReducers: (builder) => {
