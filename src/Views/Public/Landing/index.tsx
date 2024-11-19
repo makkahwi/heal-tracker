@@ -184,7 +184,7 @@ const LandingPage = () => {
 
       <PageSection
         title="Meet the Developer"
-        desc="Health Daily Link is developed by me **Suhaib Ahmad**, a passionate about improving health through technology. This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world.
+        desc="Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology. This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world.
 "
       />
 
