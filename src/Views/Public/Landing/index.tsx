@@ -5,13 +5,14 @@ import {
   faCalculator,
   faChartLine,
   faChartPie,
-  faClipboardList,
   faClock,
   faDatabase,
   faDumbbell,
   faLanguage,
+  faLaptopCode,
   faMobileAlt,
   faPills,
+  faShield,
   faSpaceShuttle,
   faTint,
   faUserMd,
@@ -26,39 +27,49 @@ import PageSection from "./PageSection";
 
 const currentFeatures = [
   {
-    title: "Activity Tracking",
-    icon: faClipboardList,
-    desc: "Track both daily and non-daily health activities, helping you stay consistent with your wellness goals.",
-  },
-  {
     title: "Meal Scheduling",
     icon: faUtensils,
-    desc: "Follow a scheduled meal plan, typically provided by your nutritionist, to keep your diet on track.",
+    desc: "Stay on track with your nutrition plan by logging and following scheduled meals.",
   },
   {
     title: "Hydration Logging",
     icon: faTint,
-    desc: "Monitor your water intake and stay hydrated throughout the day.",
+    desc: "Record your water intake to maintain optimal hydration levels.",
   },
   {
     title: "Exercise Tracking",
     icon: faDumbbell,
-    desc: "Keep a record of your sports and exercise routines to track physical activity levels.",
+    desc: "Log your physical activities, including sports, workouts, and walks.",
   },
   {
-    title: "Medication FollowUp",
+    title: "Medication Follow-Up",
     icon: faPills,
-    desc: "Record your taking of medications and supplements, ensuring you never miss a dose.",
+    desc: "Never miss a dose by keeping track of your medications and supplements.",
   },
   {
     title: "Sleep Cycle Monitoring",
     icon: faBed,
-    desc: "Record and monitor your sleep cycles to improve sleep quality and maintain a healthy routine.",
+    desc: "Monitor and improve your sleep patterns for better rest and recovery.",
   },
   {
     title: "Weight Tracking",
     icon: faWeight,
-    desc: "Log weight readings, including data from inBody scale integrations, to monitor progress over time.",
+    desc: "Log and monitor your weight, with support for inBody scale or any detailed-reading providers.",
+  },
+  {
+    icon: faShield,
+    title: "Secured Access",
+    desc: "User-only access for own data view & manipulation with Firebase authentication.",
+  },
+  {
+    icon: faUsers,
+    title: "Open-Source",
+    desc: "Totally transparency and ability for any web developer to contribute and enhance.",
+  },
+  {
+    icon: faLaptopCode,
+    title: "Modern Tech Stack",
+    desc: "Built with React.Js and Firebase for an optimized, scalable, and responsive web experience.",
   },
 ];
 
@@ -66,52 +77,52 @@ const futurePlans = [
   {
     icon: faMobileAlt,
     title: "Mobile App",
-    desc: "Develop a mobile version for on-the-go accessibility.",
+    desc: "A dedicated app for tracking health on the go.",
   },
   {
     icon: faClock,
     title: "Set Reminders",
-    desc: "Enable users to receive reminders of scheduled activities like meals, sleep times, sport sessions & medications.",
+    desc: "Notifications for meals, workouts, medications, and more.",
   },
   {
     icon: faUserMd,
     title: "Nutritionist Access",
-    desc: "Allow nutritionists to monitor and provide feedback on users' dietary progress.",
+    desc: "Allow experts to review and provide feedback on dietary progress.",
   },
   {
     icon: faBrain,
-    title: "AI Data Input",
-    desc: "Integrate AI to streamline data entry, such as automatic readings from scales.",
+    title: "AI-Powered Input",
+    desc: "Automatic data entry and meaningful health recommendations.",
   },
   {
     icon: faChartLine,
-    title: "Summaries and Analytics",
-    desc: "Generate daily, weekly, and monthly summaries for a clearer health overview.",
+    title: "Advanced Analytics",
+    desc: "Generate summaries and visualizations for deeper insights into your habits.",
   },
   {
     icon: faCalculator,
-    title: "Calorie Calculation",
-    desc: "Automatically calculate calories for meal plans and track actual consumption.",
+    title: "Calorie Tracking",
+    desc: "Automatic calorie calculations for scheduled and consumed meals.",
   },
   {
     icon: faLanguage,
     title: "Localization",
-    desc: "Translate the app to support Arabic and other languages.",
+    desc: "Support for multiple languages, including Arabic.",
   },
   {
     icon: faBullseye,
     title: "Goal Setting",
-    desc: "Enable users to set personalized health goals.",
+    desc: "Personalized health targets and progress tracking.",
   },
   {
     icon: faUsers,
     title: "Multi-User Support",
-    desc: "Add multi-user functionality for families or teams to track health together.",
+    desc: "Perfect for families or teams to collaborate on health goals.",
   },
   {
     icon: faChartPie,
     title: "Advanced Data Visualization",
-    desc: "Provide insights and trends with engaging data visualizations.",
+    desc: "Build a platform for shared wellness experiences and tips.",
   },
 ];
 
