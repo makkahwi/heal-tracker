@@ -10,6 +10,13 @@ Welcome to [**Health Daily Link (HDL)**](https://health-daily-link.vercel.app/),
 
 **The best part?** HDL is completely open-source, making it customizable and community-driven.
 
+## Screenshots
+
+<p align="center">
+  <img src="public/screenshot1.png" alt="Screenshot 1" width="45%" />
+  <img src="public/screenshot2.png" alt="Screenshot 2" width="45%" />
+</p>
+
 ## Features
 
 - **Meal Scheduling**  
