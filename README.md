@@ -70,15 +70,75 @@ Welcome to [**Health Daily Link (HDL)**](https://health-daily-link.vercel.app/),
 
 - **Community Integration**  
   Build a platform for shared wellness experiences and tips.
+  
+## How to Start Using
 
-## How to Get Started
-
-Health Daily Link is already deployed, so you can simply sign up and start using it today!  
-[Visit Health Daily Link](https://health-daily-link.vercel.app/)  
+Health Daily Link is already deployed, so you can simply sign up and start using it today! [Visit Health Daily Link](https://health-daily-link.vercel.app/)  
 
 ## Developer Notes
 
-## Support
+### Technology Stack
+
+- Frontend: React.Js
+- Backend: Firebase Realtime Database, Firebase Authentication
+- UI Framework: Bootstrap 5
+- Charts and Visualization: React-Vis
+- Development Tools: Yarn, ESLint, Prettier
+
+### Contribution Guidelines
+
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+To contribute:
+
+1. Fork the project.
+2. Create your feature branch: `git checkout -b feature/YourFeatureName`.
+3. Commit your changes: `git commit -m 'Add some YourFeatureName'`.
+4. Push to the branch: `git push origin feature/YourFeatureName`.
+5. Open a pull request.
+
+Please ensure your code adheres to the project's guidelines and is well-documented.
+
+### How to Start Development
+
+1. **Fork the repository** to your GitHub account.
+2. **Clone the forked repository** to your local machine.
+3. Navigate to the project root directory:
+
+  ```bash
+    cd health-daily-link
+  ```
+
+4. Install dependencies:
+
+  ```bash
+    npm i
+  ```
+
+5. Start the development server:  
+
+  ```bash
+    npm run dev
+  ```
+
+6. Open your browser and navigate to the development server URL (usually `http://localhost:3000`) to view the application.
+7. Make changes to the code as needed, and watch for live updates.
+
+### How to Report an Issue
+
+We welcome contributions and feedback! To report a bug, suggest a feature, or request support:
+
+1. Go to the [Issues](https://github.com/health-daily-link/issues) tab of this repository.
+2. Click on **New Issue**.
+3. Select the appropriate issue template:
+
+   - **Bug Report**: If you found a bug or error in the app.
+   - **Feature Request**: If you have an idea for a new feature or improvement.
+
+4. Fill out the form with as much detail as possible.
+5. Submit the issue, and we’ll review it as soon as possible.
+
+## Technical Support
 
 If you encounter any issues, have questions, or want to suggest improvements, feel free to:
 
@@ -88,85 +148,42 @@ If you encounter any issues, have questions, or want to suggest improvements, fe
 
 We appreciate your feedback and contributions to make the "Health Daily Link" better for everyone!
 
-### How to Report an Issue
+## ⭐ Support the Project ⭐
 
-We welcome contributions and feedback! To report a bug, suggest a feature, or request support:
+Your support is vital to making **Health Daily Link** even better! Here’s how you can contribute and help spread the word:
 
-1. Go to the [Issues](https://github.com/makkahwi/health-daily-link/issues) tab of this repository.
-2. Click on **New Issue**.
-3. Select the appropriate issue template:
-   - **Bug Report**: If you found a bug or error in the app.
-   - **Feature Request**: If you have an idea for a new feature or improvement.
-4. Fill out the form with as much detail as possible.
-5. Submit the issue, and we’ll review it as soon as possible.
+### 🌟 As a Developer  
 
-Thank you for helping improve the app!
+Dive into the codebase, identify bugs, or build new features. Check out our [Developer Notes](https://github.com/makkahwi/health-daily-link/#developer-notes) for more details on how to get started.
 
-## Meet the Developer
+### ⭐ As a GitHub User  
 
-Hi, I'm **Suhaib Ahmad**, a software developer passionate about leveraging technology to improve health and wellness.  
-Check out my work:  
+Starring our repository is a quick and easy way to show your support and help others discover this project.  
 
-- **Website:** [Suhaib.dev](https://www.suhaib.dev/)  
-- **GitHub:** [Makkahwi](https://github.com/makkahwi/)  
+👉 **[Click here to star the repo](https://github.com/makkahwi/health-daily-link/stargazers)** 👈  
 
-## Technology Stack
+[![GitHub stars](https://img.shields.io/github/stars/makkahwi/health-daily-link?style=social)](https://github.com/makkahwi/health-daily-link/stargazers)
 
-Health Daily Link is built with a modern, reliable, and scalable technology stack:
+### ❤️ GitHub Sponsors  
 
-- **Frontend:** React.js  
-  A powerful framework for building interactive, responsive, and user-friendly interfaces.
+Your financial support can accelerate the development of **Health Daily Link** by covering costs like hosting, integrations, and feature enhancements.
 
-- **Backend:** Firebase  
-  Secure and scalable for data storage, real-time syncing, and user authentication.
+👉 **[Become a Sponsor](https://github.com/sponsors/makkahwi)** 👈
 
-- **Hosting:** Vercel  
-  Seamless deployment and performance-optimized hosting for the app.
+### 📣 Spread the Word  
 
-This project is a testament to my commitment to open-source development and community-driven growth. I invite everyone to contribute, whether you're a developer, designer, or health enthusiast.
+Help us reach more users and contributors by sharing the **Health Daily Link** app with your network!  
 
-## Contributing to Health Daily Link
+Click below to share on your favorite platform:
 
-Health Daily Link thrives on the contributions of passionate individuals like you. Here's how you can contribute:
-
-- Developers: Add features, fix bugs, and improve performance.
-- Designers: Enhance the UI and user experience.
-- Health Enthusiasts: Share ideas for features that would make HDL more impactful.
-
-### Developers Contribution Guidelines
-
-1. Fork the repository.
-2. Create a new branch:
-
-  ```bash
-  git checkout -b feature-name
-  ```
-
-3. Commit your changes:
-
-  ```bash
-  git commit -m "Add: feature description"
-  ```
-
-4. Push the changes:
-
-  ```bash
-  git push origin feature-name
-  ```
-
-5. Submit a pull request for review.
-
-## Support the Project
-
-Your support can help us enhance Health Daily Link faster!
-
-- GitHub Sponsors: [![Sponsor the Project](https://img.shields.io/badge/Sponsor%20Me-%E2%9D%A4-red)](https://github.com/sponsors/makkahwi)
-Your sponsorship helps cover development costs like hosting, integrations, and enhancements.
-- Spread the Word: Share the project with your network to help it reach more users.
+- **[Share on Twitter (X)](https://twitter.com/intent/tweet?text=Check+out+this+open-source+project+to+track+your+health+journey!+Health+Daily+Link+is+a+React.js+and+Firebase-based+app+that+lets+you+monitor+diet%2C+hydration%2C+exercise%2C+sleep%2C+and+more.+%23OpenSource+%23HealthTracking&url=https://github.com/makkahwi/health-daily-link/)**  
+- **[Share on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://github.com/makkahwi/health-daily-link/&title=Check+out+Health+Daily+Link!&summary=An+open-source+project+to+track+and+improve+your+health+journey.+Monitor+diet%2C+hydration%2C+exercise%2C+sleep%2C+and+more+with+this+React.js+and+Firebase-based+app.&source=)**  
+- **[Share on Facebook](https://www.facebook.com/sharer/sharer.php?u=https://github.com/makkahwi/health-daily-link/)**  
+- **[Share on Reddit](https://www.reddit.com/submit?url=https://github.com/makkahwi/health-daily-link/&title=Check+out+Health+Daily+Link%21)**  
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
 ## Acknowledgements
 
@@ -175,12 +192,16 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 - [Bootstrap](https://getbootstrap.com/) - The CSS framework for responsive design.
 - All contributors who have helped build and improve this project.
 
+## Meet the Developer
+
+This is **Suhaib Ahmad**, a software developer passionate about leveraging technology to improve health and wellness.
+
+- **Website:** [Suhaib.dev](https://www.suhaib.dev/)  
+- **GitHub:** [Makkahwi](https://github.com/makkahwi/)  
+- **Email**: [SuhaibAhmadAi@hotmail.com](mailto:SuhaibAhmadAi@hotmail.com)
+
 ## Contact
 
-If you have any questions about the project, feel free to reach out:
+If you have any questions about the project, feel free to reach out the developer.
 
-- **Email**: [SuhaibAhmadAi@hotmail.com](mailto:SuhaibAhmadAi@hotmail.com)
-- **Personal Website**: [Suhaib.dev](https://www.Suhaib.dev/)
-- **GitHub Repository**: [Health Daily Link](https://github.com/makkahwi/health-daily-link/)
-
-Thank you for your interest in "Health Daily Link"! Together, we can make it the go-to solution for currency collectors worldwide.
+Thank you for your interest in "Health Daily Link"! Together, we can make it the go-to solution for healthy-lifestyle enthusiasts worldwide.
