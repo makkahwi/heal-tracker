@@ -127,7 +127,7 @@ const MedicineConsumption = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title="Medicine List">
+    <PageSection title="Consumed Medicines">
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 

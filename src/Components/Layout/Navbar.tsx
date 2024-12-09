@@ -69,8 +69,12 @@ const Navbar = () => {
                       <span
                         className={`nav-link dropdown-toggle ${
                           list
-                            .map(({ path }) => "/" + path)
-                            .includes(location.pathname)
+                            .map(({ path }) => path)
+                            .find((childPath) =>
+                              location.pathname.includes(
+                                "/" + path + "/" + childPath
+                              )
+                            )
                             ? "text-dark"
                             : "text-white"
                         }`}
