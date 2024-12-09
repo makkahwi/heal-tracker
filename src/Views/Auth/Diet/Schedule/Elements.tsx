@@ -17,70 +17,43 @@ export interface SchedulesMealElementProps {
   alternatives?: SchedulesMealElementProps[];
 }
 
-const Elements = () => {
+interface props {
+  meals: SchedulesMealProps[];
+  schedules: ScheduleProps[];
+}
+
+const Elements = ({ meals, schedules }: props) => {
   const [data, setData] = useState<SchedulesMealElementProps[]>([]);
-  const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
-  const [schedules, setSchedules] = useState<ScheduleProps[]>([]);
 
   const getData = () => {
-    BeAPI.getAll("scheduleMeals")
-      .then((meals: SchedulesMealProps[]) => {
-        setMeals(
-          meals
-            .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
-              a.time < b.time ? -1 : 1
+    BeAPI.getAll("scheduleMealElements")
+      .then((res: SchedulesMealElementProps[]) =>
+        setData(
+          res
+            .sort(
+              (a: SchedulesMealElementProps, b: SchedulesMealElementProps) => {
+                if (a?.meal && b?.meal) {
+                  return a?.meal < b?.meal ? 1 : -1;
+                }
+                return 1;
+              }
             )
-            .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
-              a.schedule < b.schedule ? 1 : -1
+            .sort(
+              (a: SchedulesMealElementProps, b: SchedulesMealElementProps) => {
+                const firstMealTime = meals.find(
+                  (meal) => meal.meal === a.meal
+                )?.time;
+                const secondMealTime = meals.find(
+                  (meal) => meal.meal === b.meal
+                )?.time;
+
+                if (firstMealTime && secondMealTime) {
+                  return firstMealTime < secondMealTime ? 1 : -1;
+                }
+
+                return 1;
+              }
             )
-        );
-
-        BeAPI.getAll("scheduleMealElements")
-          .then((res: SchedulesMealElementProps[]) =>
-            setData(
-              res
-                .sort(
-                  (
-                    a: SchedulesMealElementProps,
-                    b: SchedulesMealElementProps
-                  ) => {
-                    if (a?.meal && b?.meal) {
-                      return a?.meal < b?.meal ? 1 : -1;
-                    }
-                    return 1;
-                  }
-                )
-                .sort(
-                  (
-                    a: SchedulesMealElementProps,
-                    b: SchedulesMealElementProps
-                  ) => {
-                    const firstMealTime = meals.find(
-                      (meal) => meal.meal === a.meal
-                    )?.time;
-                    const secondMealTime = meals.find(
-                      (meal) => meal.meal === b.meal
-                    )?.time;
-
-                    if (firstMealTime && secondMealTime) {
-                      return firstMealTime < secondMealTime ? 1 : -1;
-                    }
-
-                    return 1;
-                  }
-                )
-            )
-          )
-          .catch((err) => console.log({ err }));
-      })
-      .catch((err) => console.log({ err }));
-
-    BeAPI.getAll("schedules")
-      .then((res: ScheduleProps[]) =>
-        setSchedules(
-          res.sort((a: ScheduleProps, b: ScheduleProps) =>
-            a.order < b.order ? 1 : -1
-          )
         )
       )
       .catch((err) => console.log({ err }));
