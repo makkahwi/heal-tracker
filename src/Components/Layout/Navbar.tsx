@@ -102,26 +102,31 @@ const Navbar = () => {
                         className="dropdown-menu"
                         aria-labelledby={`navbarDropdown-${index}`}
                       >
-                        {list.map(({ name, path, icon }, subIndex) => (
-                          <li key={subIndex}>
-                            <span
-                              className={`dropdown-item ${
-                                location.pathname === "/" + path ? "active" : ""
-                              }`}
-                              role="button"
-                              onClick={() => {
-                                navigate(path);
+                        {list.map(
+                          ({ name, path: childPath, icon }, subIndex) => (
+                            <li key={subIndex}>
+                              <span
+                                className={`dropdown-item ${
+                                  location.pathname ===
+                                  "/" + path + "/" + childPath
+                                    ? "active"
+                                    : ""
+                                }`}
+                                role="button"
+                                onClick={() => {
+                                  navigate(path + "/" + childPath);
 
-                                document
-                                  .querySelector(".dropdown-menu")
-                                  ?.classList.remove("show");
-                              }}
-                            >
-                              <FontAwesomeIcon icon={icon} />
-                              <span className="ms-2">{name}</span>
-                            </span>
-                          </li>
-                        ))}
+                                  document
+                                    .querySelector(".dropdown-menu")
+                                    ?.classList.remove("show");
+                                }}
+                              >
+                                <FontAwesomeIcon icon={icon} />
+                                <span className="ms-2">{name}</span>
+                              </span>
+                            </li>
+                          )
+                        )}
                       </ul>
                     )}
                   </li>
