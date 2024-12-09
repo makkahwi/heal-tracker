@@ -18,7 +18,8 @@ import Consumption from "./Views/Auth/Diet/Consumption";
 import Schedule from "./Views/Auth/Diet/Schedule";
 import Watering from "./Views/Auth/Diet/Watering";
 import LabTests from "./Views/Auth/LabTests";
-import Medicine from "./Views/Auth/Medicine";
+import MedicineConsumption from "./Views/Auth/Medicine/Consumption";
+import MedicineSchedule from "./Views/Auth/Medicine/Schedule";
 import SleepCycles from "./Views/Auth/SleepCycles";
 import Sports from "./Views/Auth/Sports";
 import WeightReadings from "./Views/Auth/WeightReadings";
@@ -67,7 +68,20 @@ export const routes = [
     name: "Medicine",
     path: "medicine",
     icon: faPills,
-    Comp: <Medicine />,
+    list: [
+      {
+        name: "Consumption",
+        path: "consumption",
+        icon: faPills,
+        Comp: <MedicineConsumption />,
+      },
+      {
+        name: "Schedule",
+        path: "schedule",
+        icon: faCalendar,
+        Comp: <MedicineSchedule />,
+      },
+    ],
   },
   {
     name: "Weight Readings",
@@ -93,8 +107,8 @@ const App = () => {
           <Routes>
             {routes.map(({ name, path, Comp, list }, i) =>
               list ? (
-                list.map(({ name, path, Comp }, x) => (
-                  <Route path={path} element={Comp} key={x} />
+                list.map(({ name, path: childPath, Comp }, x) => (
+                  <Route path={path + "/" + childPath} element={Comp} key={x} />
                 ))
               ) : (
                 <Route path={path} element={Comp} key={i} />

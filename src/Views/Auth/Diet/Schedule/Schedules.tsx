@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import * as BeAPI from "../../../../API";
 import PageView from "../../../../Components/PageView";
 
@@ -8,22 +6,12 @@ export interface ScheduleProps {
   order: number;
 }
 
-const Schedules = () => {
-  const [data, setData] = useState<ScheduleProps[]>([]);
+interface props {
+  data: ScheduleProps[];
+  getData: () => any;
+}
 
-  const getData = () => {
-    BeAPI.getAll("schedules")
-      .then((res: ScheduleProps[]) =>
-        setData(res.sort((a, b) => (a.order < b.order ? 1 : -1)))
-      )
-      .catch((err) => console.log({ err }));
-  };
-
-  useEffect(() => {
-    // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
-    getData();
-  }, []);
-
+const Schedules = ({ data, getData }: props) => {
   const formInputs = [
     {
       name: "order",
