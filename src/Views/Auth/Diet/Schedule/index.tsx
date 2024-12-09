@@ -1,11 +1,10 @@
-import { Fragment, useEffect, useState } from "react";
-
 import * as BeAPI from "../../../../API";
+import TabsView from "../../../../Components/Layout/TabsView";
 import PageSection from "../../../../Components/PageView/PageSection";
 import Elements from "./Elements";
 import Meals, { SchedulesMealProps } from "./Meals";
-import Schedules from "./Schedules";
-import { ScheduleProps } from "./Schedules";
+import Schedules, { ScheduleProps } from "./Schedules";
+import { useEffect, useState } from "react";
 
 const Schedule = () => {
   const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
@@ -36,56 +35,24 @@ const Schedule = () => {
     getMealsData();
   }, []);
 
+  const views = [
+    {
+      title: "Meal Elements",
+      view: <Elements meals={meals} schedules={schedules} />,
+    },
+    {
+      title: "Schedule Meals",
+      view: <Meals data={meals} schedules={schedules} getData={getMealsData} />,
+    },
+    {
+      title: "Schedules",
+      view: <Schedules data={schedules} getData={getSchedulesData} />,
+    },
+  ];
+
   return (
     <PageSection title="Diet Schedules">
-      <Fragment>
-        <div className="btn-group my-3 w-100">
-          <button
-            className="btn btn-secondary"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#elements"
-            aria-expanded="false"
-            aria-controls="elements"
-          >
-            Meal Elements
-          </button>
-
-          <button
-            className="btn btn-primary"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#meals"
-            aria-expanded="false"
-            aria-controls="meals"
-          >
-            Schedule Meals
-          </button>
-
-          <button
-            className="btn btn-secondary"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#schedules"
-            aria-expanded="false"
-            aria-controls="schedules"
-          >
-            Schedules
-          </button>
-        </div>
-
-        <div className="collapse multi-collapse" id="elements">
-          <Elements meals={meals} schedules={schedules} />
-        </div>
-
-        <div className="collapse multi-collapse" id="meals">
-          <Meals data={meals} schedules={schedules} getData={getMealsData} />
-        </div>
-
-        <div className="collapse multi-collapse" id="schedules">
-          <Schedules data={schedules} getData={getSchedulesData} />
-        </div>
-      </Fragment>
+      <TabsView views={views} />
     </PageSection>
   );
 };
