@@ -20,6 +20,23 @@ service.interceptors.request.use(
   async (config) => {
     let user = store.getState().auth?.user;
 
+    const now = new Date();
+
+    if (["post"].includes(config.method || "")) {
+      config.data = {
+        ...config.data,
+        created_at: now,
+        updated_at: now,
+      };
+    }
+
+    if (["post", "put", "patch"].includes(config.method || "")) {
+      config.data = {
+        ...config.data,
+        updated_at: now,
+      };
+    }
+
     if (user?.idToken) {
       // Check if the token is expired
       if (isTokenExpired(user.expiresAt)) {
