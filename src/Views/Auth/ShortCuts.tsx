@@ -2,6 +2,7 @@ import moment from "moment";
 import { useEffect, useState } from "react";
 
 import * as BeAPI from "../../API";
+import { wateringProps } from "./Diet/Watering";
 import { medicineProps } from "./Medicine/Consumption";
 import { medicineScheduleProps } from "./Medicine/Schedule";
 
@@ -41,15 +42,19 @@ const ShortCuts = () => {
     BeAPI.create("medicine", values).catch((err) => console.log({ err }));
   };
 
+  const submitWatering = (values: wateringProps) => {
+    BeAPI.create("watering", values)
+      .then(() => {
+        getData();
+      })
+      .catch((err: any) => console.log({ err }));
+  };
+
   useEffect(() => {
     getData();
   }, []);
 
   const shortcuts = [
-    // {
-    //   label: "Just Consumed 1 Cup of Water",
-    //   data: "",
-    // },
     ...schedule.map(({ id, medicine, specs, frequencyQuantity }) => ({
       type: "medicine",
       data: { value: id || "", quantity: frequencyQuantity },
@@ -58,11 +63,27 @@ const ShortCuts = () => {
   ];
 
   return (
-    <div className="row py-4 align-items-center justify-content-center">
-      <div className={`col-md-${2}`}>Shortcuts</div>
+    <div className="row align-items-center justify-content-center">
+      <div className={`col-lg-${1} my-2`}>Shortcuts</div>
 
-      {/* Medicine Actions */}
-      <div className={`col-md-${2}`}>
+      {/* Water Consumption Actions */}
+      <div className={`col-lg-${3} my-4`}>
+        <button
+          className="btn btn-primary text-white"
+          type="button"
+          onClick={() =>
+            submitWatering({
+              timestamp: moment().format("yyyy-MM-DDTHH:mm"),
+              quantity: 1,
+            })
+          }
+        >
+          Just Consumed 1 Cup of Water
+        </button>
+      </div>
+
+      {/* Medicine Consumption Actions */}
+      <div className={`col-lg-${3} my-4`}>
         <div className="dropdown">
           <button
             className="btn btn-primary dropdown-toggle text-white"
