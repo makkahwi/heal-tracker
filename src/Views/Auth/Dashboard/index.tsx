@@ -9,6 +9,7 @@ import { SchedulesMealProps } from "../Diet/Schedule/Meals";
 import { wateringProps } from "../Diet/Watering";
 import { medicineProps } from "../Medicine/Consumption";
 import { medicineScheduleProps } from "../Medicine/Schedule";
+import ShortCuts from "../ShortCuts";
 import { sleepCycleProps } from "../SleepCycles";
 import { walkExerciseProps } from "../Sports";
 import WeeklyCalendar from "./WeeklyCalendar";
@@ -125,8 +126,10 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <PageSection title="Dashboard">
-      <Fragment>
+    <Fragment>
+      <ShortCuts />
+
+      <PageSection title="Dashboard">
         <WeeklyCalendar
           consumptionData={consumptionData.map((row) => {
             const mealId = meals.find(({ id }) => (id || "") === row.meal)?.id;
@@ -147,8 +150,8 @@ const Dashboard = () => {
           medicineData={medicineData}
           sleepCyclesData={sleepCyclesData}
         />
-      </Fragment>
-    </PageSection>
+      </PageSection>
+    </Fragment>
   );
 };
 
