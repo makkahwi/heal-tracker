@@ -8,33 +8,12 @@ import { medicineProps } from "./Medicine/Consumption";
 import { medicineScheduleProps } from "./Medicine/Schedule";
 
 const ShortCuts = () => {
-  const [data, setData] = useState<medicineProps[]>([]);
   const [schedule, setSchedule] = useState<medicineScheduleProps[]>([]);
 
   const getData = () => {
     BeAPI.getAll("medicine-schedule")
       .then((res: medicineScheduleProps[]) => {
         setSchedule(res);
-
-        BeAPI.getAll("medicine")
-          .then((resp: medicineProps[]) =>
-            setData(
-              resp
-                ?.sort((a: medicineProps, b: medicineProps) =>
-                  a.date > b.date ? -1 : 1
-                )
-                .map(({ medicine, ...rest }) => {
-                  const med = res.find(({ id }) => id === medicine);
-
-                  return {
-                    ...rest,
-                    ...med,
-                    medicine: med?.medicine + " (" + med?.specs + ")" || "",
-                  };
-                })
-            )
-          )
-          .catch((err) => console.log({ err }));
       })
       .catch((err) => console.log({ err }));
   };
@@ -108,7 +87,7 @@ const ShortCuts = () => {
           </div>
 
           {shortcuts
-            .filter(({ type }) => type == "medicine")
+            .filter(({ type }) => type === "medicine")
             .map(({ label, data }, i) => (
               <div className={`col-lg-${2} my-4`} key={i}>
                 <button
