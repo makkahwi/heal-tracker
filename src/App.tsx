@@ -24,6 +24,7 @@ import Sports from "./Views/Auth/Sports";
 import WeightReadings from "./Views/Auth/WeightReadings";
 import Landing from "./Views/Public/Landing";
 import Login from "./Views/Public/Login";
+import ShortCuts from "./Views/Auth/ShortCuts";
 
 export const routes = [
   {
@@ -88,6 +89,8 @@ const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Navbar />
+
+        {store.getState().auth.user && <ShortCuts />}
 
         {store.getState().auth.user ? (
           <Routes>
