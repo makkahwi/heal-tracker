@@ -1,7 +1,8 @@
 import moment from "moment";
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 
 import * as BeAPI from "../../API";
+import PageSection from "../../Components/PageView/PageSection";
 import { wateringProps } from "./Diet/Watering";
 import { medicineProps } from "./Medicine/Consumption";
 import { medicineScheduleProps } from "./Medicine/Schedule";
@@ -63,42 +64,56 @@ const ShortCuts = () => {
   ];
 
   return (
-    <div className="row align-items-center justify-content-center">
-      <div className={`col-lg-${1} my-2`}>Shortcuts</div>
+    <PageSection title="Just-Consumed Shortcuts">
+      <Fragment>
+        <div className="row align-items-center">
+          {/* Water Consumption Actions */}
+          <div className={`col-lg-${2} my-4 text-start`}>Water Consumption</div>
 
-      {/* Water Consumption Actions */}
-      <div className={`col-lg-${3} my-4`}>
-        <button
-          className="btn btn-primary text-white"
-          type="button"
-          onClick={() =>
-            submitWatering({
-              timestamp: moment().format("yyyy-MM-DDTHH:mm"),
-              quantity: 1,
-            })
-          }
-        >
-          Just Consumed 1 Cup of Water
-        </button>
-      </div>
+          <div className={`col-lg-${2} my-4`}>
+            <button
+              className="btn btn-primary text-white w-100"
+              type="button"
+              onClick={() =>
+                submitWatering({
+                  timestamp: moment().format("yyyy-MM-DDTHH:mm"),
+                  quantity: 0.5,
+                })
+              }
+            >
+              1/2 Cup
+            </button>
+          </div>
 
-      {/* Medicine Consumption Actions */}
-      <div className={`col-lg-${3} my-4`}>
-        <div className="dropdown">
-          <button
-            className="btn btn-primary dropdown-toggle text-white"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Just Consumed Medicine
-          </button>
+          <div className={`col-lg-${2} my-4`}>
+            <button
+              className="btn btn-primary text-white w-100"
+              type="button"
+              onClick={() =>
+                submitWatering({
+                  timestamp: moment().format("yyyy-MM-DDTHH:mm"),
+                  quantity: 1,
+                })
+              }
+            >
+              1 Cup
+            </button>
+          </div>
+        </div>
 
-          <ul className="dropdown-menu">
-            {shortcuts
-              .filter(({ type }) => type == "medicine")
-              .map(({ label, data }, i) => (
-                <li
+        {/* Medicine Consumption Actions */}
+        <div className="row align-items-center">
+          <div className={`col-lg-${2} my-4 text-start`}>
+            Medicine Consumption
+          </div>
+
+          {shortcuts
+            .filter(({ type }) => type == "medicine")
+            .map(({ label, data }, i) => (
+              <div className={`col-lg-${2} my-4`} key={i}>
+                <button
+                  className="btn btn-primary text-white w-100"
+                  type="button"
                   onClick={() =>
                     submitMedicine({
                       date: moment().format("yyyy-MM-DD"),
@@ -107,17 +122,14 @@ const ShortCuts = () => {
                       medicine: data.value,
                     })
                   }
-                  key={i}
                 >
-                  <div className="dropdown-item" role="button">
-                    {label}
-                  </div>
-                </li>
-              ))}
-          </ul>
+                  {label}
+                </button>
+              </div>
+            ))}
         </div>
-      </div>
-    </div>
+      </Fragment>
+    </PageSection>
   );
 };
 
