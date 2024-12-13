@@ -3,12 +3,12 @@ import { useState } from "react";
 
 interface props {
   data: object[];
-  renderEvent: (event: any, date: string, id: string) => JSX.Element;
+  renderEvent: (event: any, date: string, id: string) => React.ReactNode;
 }
 
 export const renderEvents = (
   date: string,
-  renderFunc: (event: any, date: string, id: string) => JSX.Element,
+  renderFunc: (event: any, date: string, id: string) => React.ReactNode,
   events?: any[]
 ) => {
   return events
