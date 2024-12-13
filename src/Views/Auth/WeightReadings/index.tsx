@@ -566,7 +566,7 @@ const WeightReadings = () => {
         </h4>
 
         <div className="btn-group my-3 w-100">
-          <button
+          {/* <button
             className="btn btn-secondary"
             type="button"
             data-bs-toggle="collapse"
@@ -575,7 +575,7 @@ const WeightReadings = () => {
             aria-controls="analysis"
           >
             Analysis
-          </button>
+          </button> */}
 
           <button
             className="btn btn-primary"
@@ -600,9 +600,9 @@ const WeightReadings = () => {
           </button>
         </div>
 
-        <div className="collapse multi-collapse" id="analysis">
+        {/* <div className="collapse multi-collapse" id="analysis">
           <WeightReadingCharts data={data} />
-        </div>
+        </div> */}
 
         <div className="collapse multi-collapse" id="input">
           <Form inputs={formInputs} onSubmit={onSubmit} />
