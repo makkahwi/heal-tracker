@@ -7,6 +7,7 @@ import { Fragment, useEffect, useState } from "react";
 
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
+import TabsView from "../../../Components/Layout/TabsView";
 import PageSection from "../../../Components/PageView/PageSection";
 import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
@@ -558,6 +559,15 @@ const WeightReadings = () => {
       })
       .catch((err) => console.log({ err }));
 
+  const views = [
+    { title: "Analysis", view: <WeightReadingCharts data={data} /> },
+    { title: "Input", view: <Form inputs={formInputs} onSubmit={onSubmit} /> },
+    {
+      title: "Targets",
+      view: <Form inputs={targetsFormInputs} onSubmit={onTargetsSubmit} />,
+    },
+  ];
+
   return (
     <PageSection title="Weight Readings">
       <Fragment>
@@ -565,52 +575,8 @@ const WeightReadings = () => {
           Total Number of Weight Readings (Visits): {data.length}
         </h4>
 
-        <div className="btn-group my-3 w-100">
-          <button
-            className="btn btn-secondary"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#analysis"
-            aria-expanded="false"
-            aria-controls="analysis"
-          >
-            Analysis
-          </button>
+        <TabsView views={views} />
 
-          <button
-            className="btn btn-primary"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#input"
-            aria-expanded="false"
-            aria-controls="input"
-          >
-            Input
-          </button>
-
-          <button
-            className="btn btn-secondary"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#targets"
-            aria-expanded="false"
-            aria-controls="targets"
-          >
-            Targets
-          </button>
-        </div>
-
-        <div className="collapse multi-collapse" id="analysis">
-          <WeightReadingCharts data={data} />
-        </div>
-
-        <div className="collapse multi-collapse" id="input">
-          <Form inputs={formInputs} onSubmit={onSubmit} />
-        </div>
-
-        <div className="collapse multi-collapse" id="targets">
-          <Form inputs={targetsFormInputs} onSubmit={onTargetsSubmit} />
-        </div>
         <WeightReadingsTable data={data} onDelete={onDelete} />
       </Fragment>
     </PageSection>

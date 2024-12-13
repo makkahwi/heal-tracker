@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import * as BeAPI from "../../../../API";
 import PageView from "../../../../Components/PageView";
@@ -12,40 +12,13 @@ export interface SchedulesMealProps {
   time: string;
 }
 
-const Meals = () => {
-  const [data, setData] = useState<SchedulesMealProps[]>([]);
-  const [schedules, setSchedules] = useState<ScheduleProps[]>([]);
+interface props {
+  data: SchedulesMealProps[];
+  schedules: ScheduleProps[];
+  getData: () => any;
+}
 
-  const getData = () => {
-    BeAPI.getAll("scheduleMeals")
-      .then((res: SchedulesMealProps[]) =>
-        setData(
-          res
-            .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
-              a.time < b.time ? -1 : 1
-            )
-            .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
-              a.schedule < b.schedule ? 1 : -1
-            )
-        )
-      )
-      .catch((err) => console.log({ err }));
-
-    BeAPI.getAll("schedules")
-      .then((res: ScheduleProps[]) =>
-        setSchedules(
-          res.sort((a: ScheduleProps, b: ScheduleProps) =>
-            a.order < b.order ? 1 : -1
-          )
-        )
-      )
-      .catch((err) => console.log({ err }));
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
+const Meals = ({ data, schedules, getData }: props) => {
   const formInputs = [
     {
       name: "schedule",
