@@ -52,16 +52,6 @@ const Form = ({ inputs, onSubmit }: props) => {
 
   useEffect(() => setFormValues(formValuesSet()), [inputs]);
 
-  useEffect(() => {
-    const bootstrap = require("bootstrap");
-    const tooltipTriggerList = document.querySelectorAll(
-      '[data-bs-toggle="tooltip"]'
-    );
-    tooltipTriggerList.forEach((tooltipTriggerEl) => {
-      new bootstrap.Tooltip(tooltipTriggerEl);
-    });
-  }, []);
-
   return (
     <form
       className="my-4 row"
@@ -127,18 +117,6 @@ const Form = ({ inputs, onSubmit }: props) => {
                           {input.label}
                           {input.required ? (
                             <span className="ms-1 text-danger"> *</span>
-                          ) : (
-                            ""
-                          )}
-
-                          {input.helpTip ? (
-                            <FontAwesomeIcon
-                              icon={faInfoCircle}
-                              className="ms-2 text-info"
-                              data-bs-toggle="tooltip"
-                              data-bs-placement="top"
-                              data-bs-title={input.helpTip}
-                            />
                           ) : (
                             ""
                           )}

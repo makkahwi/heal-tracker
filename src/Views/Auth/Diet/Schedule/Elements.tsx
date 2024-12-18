@@ -126,7 +126,7 @@ const Elements = ({ meals, schedules }: props) => {
           options: units,
         },
       ],
-      required: false,
+      required: true,
     },
   ];
 
