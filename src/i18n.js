@@ -15,8 +15,13 @@ i18n
     interpolation: {
       escapeValue: false,
     },
-    backend: {
-      loadPath: "src/assets/locales/{{lng}}/{{ns}}.json",
+    resources: {
+      en: {
+        translations: require("./assets/locales/en/translation.json"),
+      },
+      ar: {
+        translations: require("./assets/locales/ar/translation.json"),
+      },
     },
   });
 

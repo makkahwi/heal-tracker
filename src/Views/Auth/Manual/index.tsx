@@ -8,27 +8,27 @@ const ManualView = () => {
     {
       title: t("Manual.Dashboard"),
       description: t(
-        "Manual.The weekly summary of your tracked data, including diet consumption, diet schedule, water schedule, sport sessions, sleep cycles, and medicine consumption."
+        "Manual.The weekly summary of your tracked data, including diet consumption, diet schedule, water schedule, sport sessions, sleep cycles, and medicine consumption"
       ),
       details: [],
     },
     {
       title: t("Manual.Diet Consumption"),
       description: t(
-        "Manual.Record actual consumption of foods and beverages, compare it with scheduled meals, and view previous inputs in a weekly calendar."
+        "Manual.Record actual consumption of foods and beverages, compare it with scheduled meals, and view previous inputs in a weekly calendar"
       ),
       details: [
         {
           subtitle: t("Manual.How It Works"),
           content: [
             t(
-              "Manual.Pick a scheduled meal to auto-fill the supposed elements."
+              "Manual.Pick a scheduled meal to auto-fill the supposed elements"
             ),
             t(
-              "Manual.Add optional notes for the entire meal or individual elements."
+              "Manual.Add optional notes for the entire meal or individual elements"
             ),
             t(
-              "Manual.Ensure exact spelling and formatting for accurate comparison."
+              "Manual.Ensure exact spelling and formatting for accurate comparison"
             ),
             t("Manual.Scheduled data must be filled beforehand"),
           ],
@@ -47,7 +47,7 @@ const ManualView = () => {
     {
       title: t("Manual.Diet Schedule"),
       description: t(
-        "Manual.Define your diet plan with schedules, meals, and detailed elements for each meal."
+        "Manual.Define your diet plan with schedules, meals, and detailed elements for each meal"
       ),
       details: [
         {
@@ -64,7 +64,7 @@ const ManualView = () => {
           subtitle: t("Manual.Meal Elements"),
           content: [
             t(
-              "Manual.Define elements for each meal, including name, quantity, and measurement unit."
+              "Manual.Define elements for each meal, including name, quantity, and measurement unit"
             ),
             t("Manual.Specify allowed alternatives with matching specs"),
           ],
@@ -74,7 +74,7 @@ const ManualView = () => {
     {
       title: t("Manual.Watering"),
       description: t(
-        "Manual.Track your water intake to ensure you meet the minimum consumption level."
+        "Manual.Track your water intake to ensure you meet the minimum consumption level"
       ),
       details: [
         {
@@ -89,7 +89,7 @@ const ManualView = () => {
     {
       title: t("Manual.Sport Sessions"),
       description: t(
-        "Manual.Monitor your physical activities and view previous inputs in a monthly calendar."
+        "Manual.Monitor your physical activities and view previous inputs in a monthly calendar"
       ),
       details: [
         {
@@ -107,7 +107,7 @@ const ManualView = () => {
     {
       title: t("Manual.Sleep Cycles"),
       description: t(
-        "Manual.Track your daily sleep patterns and view previous inputs in a monthly calendar."
+        "Manual.Track your daily sleep patterns and view previous inputs in a monthly calendar"
       ),
       details: [
         {
@@ -122,7 +122,7 @@ const ManualView = () => {
     {
       title: t("Manual.Medicine Consumption"),
       description: t(
-        "Manual.Track medication intake based on predefined schedules and view data in a monthly calendar."
+        "Manual.Track medication intake based on predefined schedules and view data in a monthly calendar"
       ),
       details: [
         {
@@ -138,7 +138,7 @@ const ManualView = () => {
     {
       title: t("Manual.Medicine Schedule"),
       description: t(
-        "Manual.Define medication schedules with detailed consumption instructions."
+        "Manual.Define medication schedules with detailed consumption instructions"
       ),
       details: [
         {
@@ -156,7 +156,7 @@ const ManualView = () => {
     {
       title: t("Manual.Weight Readings"),
       description: t(
-        "Manual.Record weekly weight readings, including detailed measurements specific to the InBody 120 scale."
+        "Manual.Record weekly weight readings, including detailed measurements specific to the InBody 120 scale"
       ),
       details: [
         {
@@ -175,7 +175,7 @@ const ManualView = () => {
     {
       title: t("Manual.Lab Tests"),
       description: t(
-        "Manual.Store results of blood tests with optional inputs based on the tests conducted."
+        "Manual.Store results of blood tests with optional inputs based on the tests conducted"
       ),
       details: [
         {

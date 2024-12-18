@@ -2,7 +2,29 @@
   "Auth": {
     "Email": "Email",
     "Password": "Password",
-    "Password Confirmation": "Password Confirmation"
+    "Password Confirmation": "Password Confirmation",
+    "Sign In": "Sign In",
+    "Sign Up": "Sign Up"
+  },
+  "Common": {
+    "Labels": {
+      "KG": "KG",
+      "Litre": "L"
+    }
+  },
+  "Comp": {
+    "Calendar": {
+      "Next Month": "Next Month",
+      "Previous Month": "Previous Month",
+      "Week": "Week"
+    },
+    "Form": {
+      "Please Choose": "Please Choose",
+      "Submit": "Submit"
+    },
+    "Table": {
+      "Actions": "Actions"
+    }
   },
   "Dashboard": {
     "Dashboard": "Dashboard",
@@ -12,7 +34,7 @@
     "Next Week": "Next Week",
     "Previous Week": "Previous Week",
     "ShortCuts": {
-      "Cup": "Cup",
+      "Cup": "{{quantity}} Cup",
       "Just-Consumed Shortcuts": "Just-Consumed Shortcuts",
       "Medicine Consumption": "Medicine Consumption",
       "Water Consumption": "Water Consumption"
@@ -42,7 +64,7 @@
     "Goal Setting": "Goal Setting",
     "Health Daily Link is a comprehensive, open-source web app dedicated to helping you track and manage various health-related activities to stay on top of your wellness goals": "Health Daily Link is a comprehensive, open-source web app dedicated to helping you track and manage various health-related activities to stay on top of your wellness goals",
     "Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience": "Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience",
-    "Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology. This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world": "Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology. This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world.",
+    "Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world": "Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world",
     "Health Daily Link is growing, and we have big plans to make it even more powerful and user-friendly With your support, we aim to add new features, improve accessibility, and build a community around wellness This is part of what we have in mind to develop for future expansions": "Health Daily Link is growing, and we have big plans to make it even more powerful and user-friendly. With your support, we aim to add new features, improve accessibility, and build a community around wellness. This is part of what we have in mind to develop for future expansions.",
     "Health Daily Link is open-source, and we’re thrilled to welcome developers, designers, and wellness enthusiasts to contribute Join us on GitHub and be part of our journey to make health tracking accessible to all": "Health Daily Link is open-source, and we’re thrilled to welcome developers, designers, and wellness enthusiasts to contribute. Join us on GitHub and be part of our journey to make health tracking accessible to all.",
     "Hydration Logging": "Hydration Logging",
@@ -79,6 +101,24 @@
     "What is Health Daily Link": "What is Health Daily Link",
     "Your personal companion for tracking and improving your health journey": "Your personal companion for tracking and improving your health journey"
   },
+  "Layout": {
+    "All Rights Reserved for": "All Rights Reserved for",
+    "App Manual": "App Manual",
+    "Consumption": "Consumption",
+    "Dashboard": "Dashboard",
+    "Diet": "Diet",
+    "HDL | Health Daily Link": "HDL | Health Daily Link",
+    "Lab Tests": "Lab Tests",
+    "Medicine": "Medicine",
+    "Schedule": "Schedule",
+    "Sign In / Register": "Sign In / Register",
+    "Sign Out": "Sign Out",
+    "Sleep Cycles": "Sleep Cycles",
+    "Sport Sessions": "Sport Sessions",
+    "Suhaib Ahmad": "Suhaib Ahmad",
+    "Watering": "Watering",
+    "Weight Readings": "Weight Readings"
+  },
   "Manual": {
     "Add optional notes for the entire meal or individual elements": "Add optional notes for the entire meal or individual elements",
     "Adopt a new schedule with order and start date": "Adopt a new schedule with order and start date",
@@ -113,7 +153,7 @@
     "Per-Time Dose": "Per-Time Dose",
     "Pick a scheduled meal to auto-fill the supposed elements": "Pick a scheduled meal to auto-fill the supposed elements",
     "Quantity & Measurement Unit": "Quantity & Measurement Unit",
-    "Quantity in cups": "Timestamp (date & time)",
+    "Quantity in cups": "Quantity in cups",
     "Record actual consumption of foods and beverages, compare it with scheduled meals, and view previous inputs in a weekly calendar": "Record actual consumption of foods and beverages, compare it with scheduled meals, and view previous inputs in a weekly calendar",
     "Record weekly weight readings, including detailed measurements specific to the InBody 120 scale": "Record weekly weight readings, including detailed measurements specific to the InBody 120 scale",
     "Schedule Meals": "Schedule Meals",
@@ -129,6 +169,7 @@
     "Store results of blood tests with optional inputs based on the tests conducted": "Store results of blood tests with optional inputs based on the tests conducted",
     "Test Indicators (eg, HDL, LDL, etc)": "Test Indicators (e.g., HDL, LDL, etc...)",
     "The weekly summary of your tracked data, including diet consumption, diet schedule, water schedule, sport sessions, sleep cycles, and medicine consumption": "The weekly summary of your tracked data, including diet consumption, diet schedule, water schedule, sport sessions, sleep cycles, and medicine consumption",
+    "Timestamp (date & time)": "Timestamp (date & time)",
     "Total Weight (kg)": "Total Weight (kg)",
     "Track medication intake based on predefined schedules and view data in a monthly calendar": "Track medication intake based on predefined schedules and view data in a monthly calendar",
     "Track your daily sleep patterns and view previous inputs in a monthly calendar": "Track your daily sleep patterns and view previous inputs in a monthly calendar",

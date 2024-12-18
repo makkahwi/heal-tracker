@@ -36,10 +36,19 @@ const WeightReadingsTable = ({
                 <Fragment key={i}>
                   <tr className="align-middle">
                     <td>{dayDateFormat(date)}</td>
-                    <td>{weight}KG</td>
-                    <td>{muscles}KG</td>
+                    <td>
+                      {weight}
+                      {t("Common.Labels.KG")}
+                    </td>
+                    <td>
+                      {muscles}
+                      {t("Common.Labels.KG")}
+                    </td>
                     <td>{water}L</td>
-                    <td>{fat}KG</td>
+                    <td>
+                      {fat}
+                      {t("Common.Labels.KG")}
+                    </td>
                     <td>{waist}</td>
                     <td>
                       {id && (
