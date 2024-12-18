@@ -106,7 +106,7 @@ const Elements = ({ meals, schedules }: props) => {
     {
       name: "alternatives",
       label: "Alternatives",
-      helpTip: "List any allowed substitutes with the same quantity and unit.",
+      helpTip: "List any allowed substitutes with their quantities and units.",
       type: "dynamicList",
       fullWidth: true,
       render: (row: SchedulesMealElementProps) => <MealView {...row} />,
@@ -127,7 +127,7 @@ const Elements = ({ meals, schedules }: props) => {
           options: units,
         },
       ],
-      required: true,
+      required: false,
     },
   ];
 

@@ -147,12 +147,16 @@ const Consumption = () => {
     {
       name: "contents",
       label: "Meal Contents",
-      helpTip:
-        "Ensure the name matches the scheduled element exactly for accurate comparisons.",
       type: "dynamicList",
       fullWidth: true,
       inputs: [
-        { name: "element", label: "Element", required: true },
+        {
+          name: "element",
+          label: "Element",
+          helpTip:
+            "Ensure the name matches the scheduled element exactly for accurate comparisons.",
+          required: true,
+        },
         {
           name: "count",
           label: "Quantity",

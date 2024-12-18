@@ -1,10 +1,11 @@
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.min.js";
+import Footer from "./Components/Layout/Footer";
+
 import "../node_modules/react-vis/dist/style.css";
 import "./App.css";
-import Footer from "./Components/Layout/Footer";
-import "./Style/custom.scss";
 import "./index.css";
+import "./Style/custom.scss";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.min.js";
 
 const Layout = ({ children = <></> }) => {
   return (
