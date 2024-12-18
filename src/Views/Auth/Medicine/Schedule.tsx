@@ -41,6 +41,8 @@ const MedicineSchedule = () => {
     {
       name: "frequency",
       label: "Consumption Frequency",
+      helpTip:
+        "Specify how often the medicine should be taken (e.g., daily, weekly).",
       type: "select",
       options: [
         { value: "Daily" },

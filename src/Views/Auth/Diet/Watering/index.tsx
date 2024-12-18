@@ -74,6 +74,7 @@ const Watering = () => {
     {
       name: "quantity",
       label: "Quantity 'In Cup(s)'",
+      helpTip: "Enter the amount in cups (e.g., 1 cup = 250 ml).",
       type: "number",
       step: 0.1,
     },

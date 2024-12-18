@@ -101,6 +101,7 @@ const MedicineConsumption = () => {
     {
       name: "medicine",
       label: "Medicine",
+      helpTip: "Select the medicine from the predefined list.",
       type: "select",
       options: schedule.map(({ id, medicine, specs }) => ({
         value: id || "",

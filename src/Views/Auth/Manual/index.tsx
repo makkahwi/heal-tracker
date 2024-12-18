@@ -159,7 +159,7 @@ const ManualView = () => {
 
   return (
     <PageSection title="User Manual">
-      <div className="container my-5">
+      <div className="container mt-5">
         <div className="accordion" id="manualAccordion">
           {manualData.map((section, index) => (
             <div className="accordion-item" key={index}>
