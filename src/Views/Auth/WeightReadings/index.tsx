@@ -4,12 +4,11 @@ import {
   faMinusCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { Fragment, useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
 import TabsView from "../../../Components/Layout/TabsView";
 import PageSection from "../../../Components/PageView/PageSection";
-import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
 
 interface weightReadingTargetProps {
@@ -81,6 +80,8 @@ export type fullWeightReadingProps = weightReadingProps &
   weightReadingTargetProps;
 
 const WeightReadings = () => {
+  const { t } = useTranslation();
+
   const [data, setData] = useState<fullWeightReadingProps[]>([]);
   const [targetsData, setTargetsData] = useState<weightReadingTargetProps>({
     weightMin: 0,
@@ -400,13 +401,13 @@ const WeightReadings = () => {
   const formInputs = [
     {
       name: "date",
-      label: "Date",
+      label: t("Services.WeightReadings.Date"),
       type: "date",
       required: true,
     },
     {
       name: "water",
-      label: "Water Reading",
+      label: t("Services.WeightReadings.Water Reading"),
       type: "number",
       step: "0.1",
       unit: "L",
@@ -414,7 +415,7 @@ const WeightReadings = () => {
     },
     {
       name: "fat",
-      label: "Fat Weight",
+      label: t("Services.WeightReadings.Fat Weight"),
       type: "number",
       step: "0.1",
       unit: "KG",
@@ -422,7 +423,7 @@ const WeightReadings = () => {
     },
     {
       name: "weight",
-      label: "Weight",
+      label: t("Services.WeightReadings.Weight"),
       type: "number",
       step: "0.1",
       unit: "KG",
@@ -430,7 +431,7 @@ const WeightReadings = () => {
     },
     {
       name: "muscles",
-      label: "Muscles Reading",
+      label: t("Services.WeightReadings.Muscles Reading"),
       type: "number",
       step: "0.1",
       unit: "KG",
@@ -438,7 +439,7 @@ const WeightReadings = () => {
     },
     {
       name: "waist",
-      label: "Waist Fat Reading",
+      label: t("Services.WeightReadings.Waist Fat Reading"),
       type: "number",
       step: "0.1",
       required: true,
@@ -448,7 +449,7 @@ const WeightReadings = () => {
   const targetsFormInputs = [
     {
       name: "waterMin",
-      label: "Water Min Target",
+      label: t("Services.WeightReadings.Water Min Target"),
       type: "number",
       step: "0.1",
       unit: "L",
@@ -457,7 +458,7 @@ const WeightReadings = () => {
     },
     {
       name: "waterMax",
-      label: "Water Max Target",
+      label: t("Services.WeightReadings.Water Max Target"),
       type: "number",
       step: "0.1",
       unit: "L",
@@ -466,7 +467,7 @@ const WeightReadings = () => {
     },
     {
       name: "fatMin",
-      label: "Fat Weight Min Target",
+      label: t("Services.WeightReadings.Fat Weight Min Target"),
       type: "number",
       step: "0.1",
       unit: "KG",
@@ -475,7 +476,7 @@ const WeightReadings = () => {
     },
     {
       name: "fatMax",
-      label: "Fat Weight Max Target",
+      label: t("Services.WeightReadings.Fat Weight Max Target"),
       type: "number",
       step: "0.1",
       unit: "KG",
@@ -484,7 +485,7 @@ const WeightReadings = () => {
     },
     {
       name: "weightMin",
-      label: "Weight Min Target",
+      label: t("Services.WeightReadings.Weight Min Target"),
       type: "number",
       step: "0.1",
       unit: "KG",
@@ -493,7 +494,7 @@ const WeightReadings = () => {
     },
     {
       name: "weightMax",
-      label: "Weight Max Target",
+      label: t("Services.WeightReadings.Weight Max Target"),
       type: "number",
       step: "0.1",
       unit: "KG",
@@ -502,7 +503,7 @@ const WeightReadings = () => {
     },
     {
       name: "musclesMin",
-      label: "Muscles Min Target",
+      label: t("Services.WeightReadings.Muscles Min Target"),
       type: "number",
       step: "0.1",
       unit: "KG",
@@ -511,7 +512,7 @@ const WeightReadings = () => {
     },
     {
       name: "musclesMax",
-      label: "Muscles Max Target",
+      label: t("Services.WeightReadings.Muscles Max Target"),
       type: "number",
       step: "0.1",
       unit: "KG",
@@ -520,7 +521,7 @@ const WeightReadings = () => {
     },
     {
       name: "waistMin",
-      label: "Waist Fat Min Target",
+      label: t("Services.WeightReadings.Waist Fat Min Target"),
       type: "number",
       step: "0.1",
       defaultValue: targetsData?.waistMin,
@@ -528,7 +529,7 @@ const WeightReadings = () => {
     },
     {
       name: "waistMax",
-      label: "Waist Fat Max Target",
+      label: t("Services.WeightReadings.Waist Fat Max Target"),
       type: "number",
       step: "0.1",
       defaultValue: targetsData?.waistMax,
@@ -561,18 +562,24 @@ const WeightReadings = () => {
 
   const views = [
     // { title: "Analysis", view: <WeightReadingCharts data={data} /> },
-    { title: "Input", view: <Form inputs={formInputs} onSubmit={onSubmit} /> },
     {
-      title: "Targets",
+      title: t("Services.WeightReadings.Input"),
+      view: <Form inputs={formInputs} onSubmit={onSubmit} />,
+    },
+    {
+      title: t("Services.WeightReadings.Targets"),
       view: <Form inputs={targetsFormInputs} onSubmit={onTargetsSubmit} />,
     },
   ];
 
   return (
-    <PageSection title="Weight Readings">
+    <PageSection title={t("Services.WeightReadings.Weight Readings")}>
       <Fragment>
         <h4 className="my-3">
-          Total Number of Weight Readings (Visits): {data.length}
+          {t(
+            "Services.WeightReadings.Total Number of Weight Readings (Nutritionist Weekly Visits)"
+          )}
+          : {data.length}
         </h4>
 
         <TabsView views={views} />

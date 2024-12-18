@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-
+import { useTranslation } from "react-i18next";
 import * as BeAPI from "../../../../API";
 import PageView from "../../../../Components/PageView";
 import { timeFormat } from "../../../../Utils/consts";
@@ -19,10 +18,12 @@ interface props {
 }
 
 const Meals = ({ data, schedules, getData }: props) => {
+  const { t } = useTranslation();
+
   const formInputs = [
     {
       name: "schedule",
-      label: "Schedule",
+      label: t("Services.Diet.Schedule.Schedule"),
       type: "select",
       options: schedules?.map(({ id, order }) => ({
         value: id || "",
@@ -36,13 +37,13 @@ const Meals = ({ data, schedules, getData }: props) => {
     },
     {
       name: "meal",
-      label: "Meal Name",
+      label: t("Services.Diet.Schedule.Meal Name"),
       type: "text",
       required: true,
     },
     {
       name: "time",
-      label: "Time of Meal",
+      label: t("Services.Diet.Schedule.Time of Meal"),
       type: "time",
       render: (row: any) => timeFormat(row.time),
       required: true,
@@ -66,7 +67,7 @@ const Meals = ({ data, schedules, getData }: props) => {
 
   return (
     <PageView
-      title="Meals List"
+      title={t("Services.Diet.Schedule.Meals List")}
       data={data}
       inputs={formInputs}
       onSubmit={onSubmit}

@@ -5,10 +5,10 @@ import {
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
-
 import { routes } from "../../App";
 import { signOut } from "../../Store/authSlice";
 import { AppDispatch, RootState } from "../../Store/store";
@@ -17,6 +17,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const location = useLocation();
+  const { t } = useTranslation();
   const user = useSelector((state: RootState) => state.auth.user);
 
   return (
@@ -61,7 +62,7 @@ const Navbar = () => {
                     onClick={() => navigate("/")}
                   >
                     <FontAwesomeIcon icon={faDashboard} />
-                    <span className="ms-2">Dashboard</span>
+                    <span className="ms-2">{t("Layout.Dashboard")}</span>
                   </span>
                 </li>
 
@@ -155,7 +156,7 @@ const Navbar = () => {
                     onClick={() => navigate("manual")}
                   >
                     <FontAwesomeIcon icon={faInfoCircle} />
-                    <span className="ms-2">App Manual</span>
+                    <span className="ms-2">{t("Layout.App Manual")}</span>
                   </span>
                 </li>
 
@@ -168,7 +169,7 @@ const Navbar = () => {
                     }}
                   >
                     <FontAwesomeIcon icon={faSignOut} />
-                    <span className="ms-2">Sign Out</span>
+                    <span className="ms-2">{t("Layout.Sign Out")}</span>
                   </span>
                 </li>
               </Fragment>
@@ -180,7 +181,7 @@ const Navbar = () => {
                   onClick={() => navigate("/login")}
                 >
                   <FontAwesomeIcon icon={faSignIn} />
-                  <span className="ms-2">Sign In / Register</span>
+                  <span className="ms-2">{t("Layout.Sign In / Register")}</span>
                 </span>
               </li>
             )}

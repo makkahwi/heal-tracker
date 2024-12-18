@@ -2,7 +2,7 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
 import MonthlyCalendar from "../../../Components/PageView/MonthlyCalendar";
@@ -58,6 +58,8 @@ export const renderExerciseUI =
     );
 
 const WalkExercises = () => {
+  const { t } = useTranslation();
+
   const [data, setData] = useState<walkExerciseProps[]>([]);
   const [sportNote, setSportNote] = useState<sportNoteProps>({
     id: "",
@@ -88,23 +90,26 @@ const WalkExercises = () => {
   const formInputs = [
     {
       name: "date",
-      label: "Date",
+      label: t("Services.Sports.Date"),
       type: "date",
       required: true,
     },
     {
       name: "type",
-      label: "Sport Type",
+      label: t("Services.Sports.Sport Type"),
       type: "select",
       options: [
         {
           value: "Swimming",
+          label: t("Services.Sports.Swimming"),
         },
         {
           value: "Jogging",
+          label: t("Services.Sports.Jogging"),
         },
         {
           value: "Walking",
+          label: t("Services.Sports.Walking"),
         },
       ],
       required: true,
@@ -112,19 +117,19 @@ const WalkExercises = () => {
     },
     {
       name: "startTime",
-      label: "Start Time",
+      label: t("Services.Sports.Start Time"),
       type: "time",
       required: true,
     },
     {
       name: "endTime",
-      label: "End Time",
+      label: t("Services.Sports.End Time"),
       type: "time",
       required: true,
     },
     {
       name: "measure",
-      label: "Measure (Walked Distance, Swimming Time, ...etc)",
+      label: t("Services.Sports.Measure (Walked Distance, Swimming Time, etc)"),
       type: "text",
       defaultValue: sportNote.value,
       step: "0.1",
@@ -132,7 +137,7 @@ const WalkExercises = () => {
     },
     {
       name: "note",
-      label: "Notes",
+      label: t("Services.Sports.Notes"),
       fullWidth: true,
     },
   ];
@@ -165,13 +170,13 @@ const WalkExercises = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title="Sport Sessions">
+    <PageSection title={t("Services.Sports.Sport Sessions")}>
       <Fragment>
         <Form
           inputs={[
             {
               name: "note",
-              label: "Sport Note",
+              label: t("Services.Sports.Sport Note"),
               defaultValue: sportNote.value,
               fullWidth: true,
               required: true,

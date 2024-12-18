@@ -1,6 +1,6 @@
 import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 import * as BeAPI from "../../API";
 import PageSection from "../../Components/PageView/PageSection";
 import { wateringProps } from "./Diet/Watering";
@@ -8,6 +8,8 @@ import { medicineProps } from "./Medicine/Consumption";
 import { medicineScheduleProps } from "./Medicine/Schedule";
 
 const ShortCuts = () => {
+  const { t } = useTranslation();
+
   const [schedule, setSchedule] = useState<medicineScheduleProps[]>([]);
 
   const getData = () => {
@@ -43,11 +45,13 @@ const ShortCuts = () => {
   ];
 
   return (
-    <PageSection title="Just-Consumed Shortcuts">
+    <PageSection title={t("Dashboard.ShortCuts.Just-Consumed Shortcuts")}>
       <Fragment>
         <div className="row align-items-center">
           {/* Water Consumption Actions */}
-          <div className={`col-lg-${2} my-4 text-start`}>Water Consumption</div>
+          <div className={`col-lg-${2} my-4 text-start`}>
+            {t("Dashboard.ShortCuts.Water Consumption")}
+          </div>
 
           <div className={`col-lg-${2} my-4`}>
             <button
@@ -60,7 +64,7 @@ const ShortCuts = () => {
                 })
               }
             >
-              1/2 Cup
+              {t("Dashboard.ShortCuts.Cup", { quantity: 1 / 2 })}
             </button>
           </div>
 
@@ -75,7 +79,7 @@ const ShortCuts = () => {
                 })
               }
             >
-              1 Cup
+              {t("Dashboard.ShortCuts.Cup", { quantity: 1 })}
             </button>
           </div>
         </div>
@@ -83,7 +87,7 @@ const ShortCuts = () => {
         {/* Medicine Consumption Actions */}
         <div className="row align-items-center">
           <div className={`col-lg-${2} my-4 text-start`}>
-            Medicine Consumption
+            {t("Dashboard.ShortCuts.Medicine Consumption")}
           </div>
 
           {shortcuts

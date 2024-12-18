@@ -1,4 +1,8 @@
+import { useTranslation } from "react-i18next";
+
 const Footer = () => {
+  const { t } = useTranslation();
+
   const contacts = [
     {
       icon: "fas fa-globe",
@@ -58,20 +62,20 @@ const Footer = () => {
             <div className="col-xs-12 col-md-7 order-1 order-md-0">
               <h6 className="copyright text-center text-md-start">
                 <img src="/Logo-Only.png" alt="logo" height={100} />
-                HDL | Health Daily Link
+                {t("Layout.HDL | Health Daily Link")}
               </h6>
             </div>
 
             <div className="col-xs-12 col-md-7 order-1 order-md-0">
               <div className="copyright text-center text-md-start">
-                All Rights Reserved for{" "}
+                {t("Layout.All Rights Reserved for")}{" "}
                 <a
                   href="https://suhaib.dev"
                   target="_blank"
                   rel="noreferrer"
                   className="text-decoration-none text-dark"
                 >
-                  Suhaib Ahmad
+                  {t("Layout.Suhaib Ahmad")}
                 </a>{" "}
                 &copy; {new Date().getFullYear()}
               </div>

@@ -9,6 +9,7 @@ import { Fragment } from "react";
 
 import { dayDateFormat, timeFormat } from "../../Utils/consts";
 import { inputProps } from "../Form";
+import { useTranslation } from "react-i18next";
 
 interface props {
   data: { id?: string }[];
@@ -17,6 +18,7 @@ interface props {
 }
 
 const PageTable = ({ data, inputs, onDelete }: props) => {
+  const { t } = useTranslation();
   const symbol = String.fromCodePoint(8734);
 
   return (
@@ -37,7 +39,7 @@ const PageTable = ({ data, inputs, onDelete }: props) => {
                 </th>
               ))}
 
-              <th>Actions</th>
+              <th>{t("Comp.Table.Actions")}</th>
             </tr>
           </thead>
 
@@ -214,7 +216,7 @@ const PageTable = ({ data, inputs, onDelete }: props) => {
                   )}
 
                 <tr className="align-middle">
-                  <th>Actions</th>
+                  <th>{t("Comp.Table.Actions")}</th>
 
                   <td>
                     {id && (

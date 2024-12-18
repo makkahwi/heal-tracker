@@ -26,27 +26,28 @@ import Sports from "./Views/Auth/Sports";
 import WeightReadings from "./Views/Auth/WeightReadings";
 import Landing from "./Views/Public/Landing";
 import Login from "./Views/Public/Login";
+import i18n from "./i18n";
 
 export const routes = [
   {
-    name: "Diet",
+    name: i18n.t("Layout.Diet"),
     path: "diet",
     icon: faUtensils,
     list: [
       {
-        name: "Consumption",
+        name: i18n.t("Layout.Consumption"),
         path: "consumption",
         icon: faUtensils,
         Comp: <Consumption />,
       },
       {
-        name: "Schedule",
+        name: i18n.t("Layout.Schedule"),
         path: "schedule",
         icon: faCalendar,
         Comp: <Schedule />,
       },
       {
-        name: "Watering",
+        name: i18n.t("Layout.Watering"),
         path: "watering",
         icon: faWater,
         Comp: <Watering />,
@@ -54,30 +55,30 @@ export const routes = [
     ],
   },
   {
-    name: "Sport Sessions",
+    name: i18n.t("Layout.Sport Sessions"),
     path: "sport-sessions",
     icon: faRunning,
     Comp: <Sports />,
   },
   {
-    name: "Sleep Cycles",
+    name: i18n.t("Layout.Sleep Cycles"),
     path: "sleep-cycles",
     icon: faBed,
     Comp: <SleepCycles />,
   },
   {
-    name: "Medicine",
+    name: i18n.t("Layout.Medicine"),
     path: "medicine",
     icon: faPills,
     list: [
       {
-        name: "Consumption",
+        name: i18n.t("Layout.Consumption"),
         path: "consumption",
         icon: faPills,
         Comp: <MedicineConsumption />,
       },
       {
-        name: "Schedule",
+        name: i18n.t("Layout.Schedule"),
         path: "schedule",
         icon: faCalendar,
         Comp: <MedicineSchedule />,
@@ -85,13 +86,13 @@ export const routes = [
     ],
   },
   {
-    name: "Weight Readings",
+    name: i18n.t("Layout.Weight Readings"),
     path: "weight-readings",
     icon: faWeight,
     Comp: <WeightReadings />,
   },
   {
-    name: "Lab Tests",
+    name: i18n.t("Layout.Lab Tests"),
     path: "lab-tests",
     icon: faFileMedical,
     Comp: <LabTests />,

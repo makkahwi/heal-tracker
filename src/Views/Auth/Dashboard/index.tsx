@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Fragment } from "react/jsx-runtime";
-
 import * as BeAPI from "../../../API";
 import PageSection from "../../../Components/PageView/PageSection";
 import { consumptionProps } from "../Diet/Consumption";
@@ -15,6 +15,8 @@ import { walkExerciseProps } from "../Sports";
 import WeeklyCalendar from "./WeeklyCalendar";
 
 const Dashboard = () => {
+  const { t } = useTranslation();
+
   const [consumptionData, setConsumptionData] = useState<consumptionProps[]>(
     []
   );
@@ -129,7 +131,7 @@ const Dashboard = () => {
     <Fragment>
       <ShortCuts />
 
-      <PageSection title="Dashboard">
+      <PageSection title={t("Dashboard.Dashboard")}>
         <WeeklyCalendar
           consumptionData={consumptionData.map((row) => {
             const mealId = meals.find(({ id }) => (id || "") === row.meal)?.id;

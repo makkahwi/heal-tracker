@@ -2,7 +2,7 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 import * as BeAPI from "../../../../API";
 import Form from "../../../../Components/Form";
 import MonthlyCalendar from "../../../../Components/PageView/MonthlyCalendar";
@@ -40,6 +40,8 @@ export const renderWateringUI =
   };
 
 const Watering = () => {
+  const { t } = useTranslation();
+
   const [data, setData] = useState<wateringProps[]>([]);
 
   const getData = () =>
@@ -67,13 +69,13 @@ const Watering = () => {
   const formInputs = [
     {
       name: "timestamp",
-      label: "Time",
+      label: t("Services.Diet.Watering.Time"),
       type: "datetime-local",
       required: true,
     },
     {
       name: "quantity",
-      label: "Quantity 'In Cup(s)'",
+      label: t("Services.Diet.Watering.Quantity 'In Cup(s)'"),
       type: "number",
       step: 0.1,
     },
@@ -95,7 +97,7 @@ const Watering = () => {
       .catch((err: any) => console.log({ err }));
 
   return (
-    <PageSection title="Watering">
+    <PageSection title={t("Services.Diet.Watering.Watering")}>
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 

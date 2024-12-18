@@ -1,7 +1,7 @@
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react";
-
+import { useTranslation } from "react-i18next";
 import { fullWeightReadingProps } from ".";
 import { dayDateFormat } from "../../../Utils/consts";
 
@@ -12,19 +12,21 @@ const WeightReadingsTable = ({
   data: fullWeightReadingProps[];
   onDelete: Function;
 }) => {
+  const { t } = useTranslation();
+
   return (
     <Fragment>
       <div className="d-none d-xl-block">
         <table className="table table-bordered table-responsive table-striped">
           <thead>
             <tr className="align-middle">
-              <th>Date</th>
-              <th>Weight</th>
-              <th>Muscles</th>
-              <th>Water</th>
-              <th>Fat Weight</th>
-              <th>Waist Fat</th>
-              <th>Actions</th>
+              <th>{t("Services.WeightReadings.Date")}</th>
+              <th>{t("Services.WeightReadings.Weight")}</th>
+              <th>{t("Services.WeightReadings.Muscles")}</th>
+              <th>{t("Services.WeightReadings.Water")}</th>
+              <th>{t("Services.WeightReadings.Fat Weight")}</th>
+              <th>{t("Services.WeightReadings.Waist Fat")}</th>
+              <th>{t("Services.WeightReadings.Actions")}</th>
             </tr>
           </thead>
 
@@ -63,17 +65,17 @@ const WeightReadingsTable = ({
             <table className="table table-bordered table-responsive table-striped">
               <tbody>
                 <tr className="align-middle">
-                  <th>Date</th>
+                  <th>{t("Services.WeightReadings.Date")}</th>
                   <td>{dayDateFormat(date)}</td>
                 </tr>
 
                 <tr className="align-middle">
-                  <th>Weight</th>
+                  <th>{t("Services.WeightReadings.Weight")}</th>
                   <td>{weight}</td>
                 </tr>
 
                 <tr className="align-middle">
-                  <th>Muscles</th>
+                  <th>{t("Services.WeightReadings.Muscles")}</th>
                   <td>{muscles}</td>
                 </tr>
 
@@ -83,22 +85,22 @@ const WeightReadingsTable = ({
                   </tr> */}
 
                 <tr className="align-middle">
-                  <th>Water Volume</th>
+                  <th>{t("Services.WeightReadings.Water Volume")}</th>
                   <td>{water}</td>
                 </tr>
 
                 <tr className="align-middle">
-                  <th>Fat Weight</th>
+                  <th>{t("Services.WeightReadings.Fat Weight")}</th>
                   <td>{fat}</td>
                 </tr>
 
                 <tr className="align-middle">
-                  <th>Waist Fat</th>
+                  <th>{t("Services.WeightReadings.Waist Fat")}</th>
                   <td>{waist}</td>
                 </tr>
 
                 <tr className="align-middle">
-                  <th>Actions</th>
+                  <th>{t("Services.WeightReadings.Actions")}</th>
                   <td>
                     {id && (
                       <FontAwesomeIcon

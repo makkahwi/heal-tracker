@@ -1,164 +1,196 @@
+import { useTranslation } from "react-i18next";
 import PageSection from "../../../Components/PageView/PageSection";
 
 const ManualView = () => {
+  const { t } = useTranslation();
+
   const manualData = [
     {
-      title: "Dashboard",
-      description:
-        "The weekly summary of your tracked data, including diet consumption, diet schedule, water schedule, sport sessions, sleep cycles, and medicine consumption.",
+      title: t("Manual.Dashboard"),
+      description: t(
+        "Manual.The weekly summary of your tracked data, including diet consumption, diet schedule, water schedule, sport sessions, sleep cycles, and medicine consumption."
+      ),
       details: [],
     },
     {
-      title: "Diet Consumption",
-      description:
-        "Record actual consumption of foods and beverages, compare it with scheduled meals, and view previous inputs in a weekly calendar.",
+      title: t("Manual.Diet Consumption"),
+      description: t(
+        "Manual.Record actual consumption of foods and beverages, compare it with scheduled meals, and view previous inputs in a weekly calendar."
+      ),
       details: [
         {
-          subtitle: "How It Works",
+          subtitle: t("Manual.How It Works"),
           content: [
-            "Pick a scheduled meal to auto-fill the supposed elements.",
-            "Add optional notes for the entire meal or individual elements.",
-            "Ensure exact spelling and formatting for accurate comparison.",
-            "Scheduled data must be filled beforehand.",
+            t(
+              "Manual.Pick a scheduled meal to auto-fill the supposed elements."
+            ),
+            t(
+              "Manual.Add optional notes for the entire meal or individual elements."
+            ),
+            t(
+              "Manual.Ensure exact spelling and formatting for accurate comparison."
+            ),
+            t("Manual.Scheduled data must be filled beforehand"),
           ],
         },
         {
-          subtitle: "Inputs",
+          subtitle: t("Manual.Inputs"),
           content: [
-            "Date & Time",
-            "Scheduled Meal",
-            "Consumed Elements (name, quantity, measurement unit)",
-            "Optional Notes (meal or element-specific)",
-          ],
-        },
-      ],
-    },
-    {
-      title: "Diet Schedule",
-      description:
-        "Define your diet plan with schedules, meals, and detailed elements for each meal.",
-      details: [
-        {
-          subtitle: "Schedules",
-          content: ["Adopt a new schedule with order and start date."],
-        },
-        {
-          subtitle: "Schedule Meals",
-          content: ["List meals with names and scheduled consumption times."],
-        },
-        {
-          subtitle: "Meal Elements",
-          content: [
-            "Define elements for each meal, including name, quantity, and measurement unit.",
-            "Specify allowed alternatives with matching specs.",
+            t("Manual.Date & Time"),
+            t("Manual.Scheduled Meal"),
+            t("Manual.Consumed Elements (name, quantity, measurement unit)"),
+            t("Manual.Optional Notes (meal or element-specific)"),
           ],
         },
       ],
     },
     {
-      title: "Watering",
-      description:
-        "Track your water intake to ensure you meet the minimum consumption level.",
+      title: t("Manual.Diet Schedule"),
+      description: t(
+        "Manual.Define your diet plan with schedules, meals, and detailed elements for each meal."
+      ),
       details: [
         {
-          subtitle: "Inputs",
-          content: ["Quantity in cups", "Timestamp (date & time)"],
+          subtitle: t("Manual.Schedules"),
+          content: [t("Manual.Adopt a new schedule with order and start date")],
         },
-      ],
-    },
-    {
-      title: "Sport Sessions",
-      description:
-        "Monitor your physical activities and view previous inputs in a monthly calendar.",
-      details: [
         {
-          subtitle: "Inputs",
+          subtitle: t("Manual.Schedule Meals"),
           content: [
-            "Date",
-            "Sport Type",
-            "Start & End Time",
-            "Measurements (e.g., walked distances, swimming time)",
-            "Optional Notes",
+            t("Manual.List meals with names and scheduled consumption times"),
+          ],
+        },
+        {
+          subtitle: t("Manual.Meal Elements"),
+          content: [
+            t(
+              "Manual.Define elements for each meal, including name, quantity, and measurement unit."
+            ),
+            t("Manual.Specify allowed alternatives with matching specs"),
           ],
         },
       ],
     },
     {
-      title: "Sleep Cycles",
-      description:
-        "Track your daily sleep patterns and view previous inputs in a monthly calendar.",
+      title: t("Manual.Watering"),
+      description: t(
+        "Manual.Track your water intake to ensure you meet the minimum consumption level."
+      ),
       details: [
         {
-          subtitle: "Inputs",
-          content: ["Sleep Start & End Time", "Optional Notes"],
-        },
-      ],
-    },
-    {
-      title: "Medicine Consumption",
-      description:
-        "Track medication intake based on predefined schedules and view data in a monthly calendar.",
-      details: [
-        {
-          subtitle: "Inputs",
+          subtitle: t("Manual.Inputs"),
           content: [
-            "Date & Time",
-            "Quantity & Measurement Unit",
-            "Medicine Selection (from predefined list)",
+            t("Manual.Quantity in cups"),
+            t("Manual.Timestamp (date & time)"),
           ],
         },
       ],
     },
     {
-      title: "Medicine Schedule",
-      description:
-        "Define medication schedules with detailed consumption instructions.",
+      title: t("Manual.Sport Sessions"),
+      description: t(
+        "Manual.Monitor your physical activities and view previous inputs in a monthly calendar."
+      ),
       details: [
         {
-          subtitle: "Inputs",
+          subtitle: t("Manual.Inputs"),
           content: [
-            "Medicine Name",
-            "Per-Time Dose",
-            "Consumption Frequency (daily, weekly, monthly, etc.)",
-            "Duration (e.g., number of weeks)",
-            "Doses Per Frequency",
+            t("Manual.Date"),
+            t("Manual.Sport Type"),
+            t("Manual.Start & End Time"),
+            t("Manual.Measurements (eg, walked distances, swimming time)"),
+            t("Manual.Optional Notes"),
           ],
         },
       ],
     },
     {
-      title: "Weight Readings",
-      description:
-        "Record weekly weight readings, including detailed measurements specific to the InBody 120 scale.",
+      title: t("Manual.Sleep Cycles"),
+      description: t(
+        "Manual.Track your daily sleep patterns and view previous inputs in a monthly calendar."
+      ),
       details: [
         {
-          subtitle: "Inputs",
+          subtitle: t("Manual.Inputs"),
           content: [
-            "Date",
-            "Water Reading (liters)",
-            "Fat Weight (kg)",
-            "Total Weight (kg)",
-            "Muscle Weight (kg)",
-            "Waist Fat Rating (integer scale)",
+            t("Manual.Sleep Start & End Time"),
+            t("Manual.Optional Notes"),
           ],
         },
       ],
     },
     {
-      title: "Lab Tests",
-      description:
-        "Store results of blood tests with optional inputs based on the tests conducted.",
+      title: t("Manual.Medicine Consumption"),
+      description: t(
+        "Manual.Track medication intake based on predefined schedules and view data in a monthly calendar."
+      ),
       details: [
         {
-          subtitle: "Inputs",
-          content: ["Date", "Test Indicators (e.g., HDL, LDL, etc.)"],
+          subtitle: t("Manual.Inputs"),
+          content: [
+            t("Manual.Date & Time"),
+            t("Manual.Quantity & Measurement Unit"),
+            t("Manual.Medicine Selection (from predefined list)"),
+          ],
+        },
+      ],
+    },
+    {
+      title: t("Manual.Medicine Schedule"),
+      description: t(
+        "Manual.Define medication schedules with detailed consumption instructions."
+      ),
+      details: [
+        {
+          subtitle: t("Manual.Inputs"),
+          content: [
+            t("Manual.Medicine Name"),
+            t("Manual.Per-Time Dose"),
+            t("Manual.Consumption Frequency (daily, weekly, monthly, etc)"),
+            t("Manual.Duration (eg, number of weeks)"),
+            t("Manual.Doses Per Frequency"),
+          ],
+        },
+      ],
+    },
+    {
+      title: t("Manual.Weight Readings"),
+      description: t(
+        "Manual.Record weekly weight readings, including detailed measurements specific to the InBody 120 scale."
+      ),
+      details: [
+        {
+          subtitle: t("Manual.Inputs"),
+          content: [
+            t("Manual.Date"),
+            t("Manual.Water Reading (liters)"),
+            t("Manual.Fat Weight (kg)"),
+            t("Manual.Total Weight (kg)"),
+            t("Manual.Muscle Weight (kg)"),
+            t("Manual.Waist Fat Rating (integer scale)"),
+          ],
+        },
+      ],
+    },
+    {
+      title: t("Manual.Lab Tests"),
+      description: t(
+        "Manual.Store results of blood tests with optional inputs based on the tests conducted."
+      ),
+      details: [
+        {
+          subtitle: t("Manual.Inputs"),
+          content: [
+            t("Manual.Date"),
+            t("Manual.Test Indicators (eg, HDL, LDL, etc)"),
+          ],
         },
       ],
     },
   ];
 
   return (
-    <PageSection title="User Manual">
+    <PageSection title={t("Manual.User Manual")}>
       <div className="container my-5">
         <div className="accordion" id="manualAccordion">
           {manualData.map((section, index) => (

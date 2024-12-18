@@ -2,7 +2,7 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment, { Moment } from "moment";
 import { Fragment, useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 import { consumptionFullProps } from ".";
 import MealView from "../../../../Components/MealView";
 
@@ -13,6 +13,8 @@ const WeeklyCalendar = ({
   data: consumptionFullProps[];
   onDelete: Function;
 }) => {
+  const { t } = useTranslation();
+
   const [currentWeek, setCurrentWeek] = useState<Moment[]>([]);
   const [currentDate, setCurrentDate] = useState<Moment>(moment());
   const [currentWeekData, setCurrentWeekData] = useState<
@@ -60,13 +62,13 @@ const WeeklyCalendar = ({
     <div className="overflow-auto">
       <div className="d-flex justify-content-between mb-2">
         <button className="btn btn-primary" onClick={handlePreviousWeek}>
-          Previous Week
+          {t("Services.Diet.Consumption.Previous Week")}
         </button>
 
-        <h2 className="text-center">{"Weekly Calendar"}</h2>
+        <h2 className="text-center">{t("Dashboard.Weekly Calendar")}</h2>
 
         <button className="btn btn-primary" onClick={handleNextWeek}>
-          Next Week
+          {t("Services.Diet.Consumption.Next Week")}
         </button>
       </div>
 
@@ -79,7 +81,7 @@ const WeeklyCalendar = ({
         <thead>
           <tr>
             <th rowSpan={2} className="align-middle">
-              Meal
+              {t("Services.Diet.Consumption.Meal")}
             </th>
 
             {currentWeek?.map((day, i) => (

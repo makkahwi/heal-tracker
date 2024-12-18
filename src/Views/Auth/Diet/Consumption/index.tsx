@@ -1,6 +1,6 @@
 import moment, { MomentInput } from "moment";
 import { Fragment, useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 import * as BeAPI from "../../../../API";
 import Form from "../../../../Components/Form";
 import PageSection from "../../../../Components/PageView/PageSection";
@@ -29,6 +29,8 @@ export interface consumptionFullProps {
 }
 
 const Consumption = () => {
+  const { t } = useTranslation();
+
   const [data, setData] = useState<consumptionProps[]>([]);
   const [scheduled, setScheduled] = useState<SchedulesMealElementProps[]>([]);
   const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
@@ -91,19 +93,19 @@ const Consumption = () => {
   const formInputs = [
     {
       name: "date",
-      label: "Date",
+      label: t("Services.Diet.Consumption.Date"),
       type: "date",
       required: true,
     },
     {
       name: "time",
-      label: "Time",
+      label: t("Services.Diet.Consumption.Time"),
       type: "time",
       required: true,
     },
     {
       name: "meal",
-      label: "Meal of Day",
+      label: t("Services.Diet.Consumption.Meal of Day"),
       type: "select",
       options: meals
         ?.filter(({ schedule }) => String(schedule) === schedules[0]?.id)
@@ -140,33 +142,41 @@ const Consumption = () => {
     },
     {
       name: "note",
-      label: "Note",
+      label: t("Services.Diet.Consumption.Note"),
       fullWidth: true,
     },
     {
       name: "contents",
-      label: "Meal Contents",
+      label: t("Services.Diet.Consumption.Meal Contents"),
       helpTip:
         "Ensure the name matches the scheduled element exactly for accurate comparisons.",
       type: "dynamicList",
       fullWidth: true,
       inputs: [
-        { name: "element", label: "Element", required: true },
+        {
+          name: "element",
+          label: t("Services.Diet.Consumption.Element"),
+          required: true,
+        },
         {
           name: "count",
-          label: "Quantity",
+          label: t("Services.Diet.Consumption.Quantity"),
           type: "number",
           step: 0.1,
           required: true,
         },
         {
           name: "unit",
-          label: "Unit",
+          label: t("Services.Diet.Consumption.Unit"),
           required: true,
           type: "select",
           options: units,
         },
-        { name: "note", label: "Note", required: false },
+        {
+          name: "note",
+          label: t("Services.Diet.Consumption.Note"),
+          required: false,
+        },
       ],
       required: true,
     },
@@ -210,7 +220,7 @@ const Consumption = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title="Consumed Meals">
+    <PageSection title={t("Services.Diet.Consumption.Consumed Meals")}>
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 

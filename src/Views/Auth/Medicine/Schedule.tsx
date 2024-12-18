@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 import * as BeAPI from "../../../API";
 import PageView from "../../../Components/PageView";
 
@@ -13,6 +13,8 @@ export interface medicineScheduleProps {
 }
 
 const MedicineSchedule = () => {
+  const { t } = useTranslation();
+
   const [data, setData] = useState<medicineScheduleProps[]>([]);
 
   const getData = () =>
@@ -28,38 +30,38 @@ const MedicineSchedule = () => {
   const formInputs = [
     {
       name: "medicine",
-      label: "Medicine",
+      label: t("Services.Medicine.Medicine"),
       type: "text",
       required: true,
     },
     {
       name: "specs",
-      label: "Specifics (Dose)",
+      label: t("Services.Medicine.Specifics (Dose)"),
       type: "text",
       required: true,
     },
     {
       name: "frequency",
-      label: "Consumption Frequency",
+      label: t("Services.Medicine.Consumption Frequency"),
       type: "select",
       options: [
-        { value: "Daily" },
-        { value: "Bi-Daily" },
-        { value: "Weekly" },
-        { value: "Bi-Weekly" },
-        { value: "Monthly" },
+        { value: "Daily", label: t("Services.Medicine.Daily") },
+        { value: "Bi-Daily", label: t("Services.Medicine.Bi-Daily") },
+        { value: "Weekly", label: t("Services.Medicine.Weekly") },
+        { value: "Bi-Weekly", label: t("Services.Medicine.Bi-Weekly") },
+        { value: "Monthly", label: t("Services.Medicine.Monthly") },
       ],
       required: true,
     },
     {
       name: "duration",
-      label: "Duration (Frequency Total Occurrences)",
+      label: t("Services.Medicine.Duration (Frequency Total Occurrences)"),
       type: "number",
       required: true,
     },
     {
       name: "frequencyQuantity",
-      label: "Per Frequency Occurrence Quantity",
+      label: t("Services.Medicine.Per Frequency Occurrence Quantity"),
       type: "number",
       required: true,
     },
@@ -86,7 +88,7 @@ const MedicineSchedule = () => {
 
   return (
     <PageView
-      title="Medicine Schedule"
+      title={t("Services.Medicine.Medicine Schedule")}
       data={data}
       inputs={formInputs}
       onSubmit={onSubmit}
