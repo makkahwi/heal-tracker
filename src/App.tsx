@@ -27,6 +27,7 @@ import WeightReadings from "./Views/Auth/WeightReadings";
 import Landing from "./Views/Public/Landing";
 import Login from "./Views/Public/Login";
 import i18n from "./i18n";
+import ScrollToTop from "./Components/Layout/ScrollToTop";
 
 export const routes = [
   {
@@ -103,6 +104,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
+        <ScrollToTop />
+
         <Navbar />
 
         {store.getState().auth.user ? (
