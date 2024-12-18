@@ -1,6 +1,9 @@
 import {
   faDashboard,
+  faGlobeAmericas,
+  faGlobeAsia,
   faInfoCircle,
+  faLanguage,
   faSignIn,
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
@@ -17,7 +20,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const location = useLocation();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const user = useSelector((state: RootState) => state.auth.user);
 
   return (
@@ -185,6 +188,22 @@ const Navbar = () => {
                 </span>
               </li>
             )}
+
+            <li className="nav-item">
+              <span
+                className="nav-link text-white"
+                role="button"
+                onClick={() => {
+                  const lang = i18n.language === "ar" ? "en" : "ar";
+
+                  localStorage.setItem("lang", lang);
+                  i18n.changeLanguage(lang);
+                }}
+              >
+                <FontAwesomeIcon icon={faLanguage} />
+                <span className="ms-2">{t("OtherLang")}</span>
+              </span>
+            </li>
           </ul>
         </div>
       </div>
