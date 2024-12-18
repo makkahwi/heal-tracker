@@ -189,7 +189,7 @@ const Navbar = () => {
               </li>
             )}
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <span
                 className="nav-link text-white"
                 role="button"
@@ -203,7 +203,7 @@ const Navbar = () => {
                 <FontAwesomeIcon icon={faLanguage} />
                 <span className="ms-2">{t("OtherLang")}</span>
               </span>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
