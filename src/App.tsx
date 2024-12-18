@@ -18,6 +18,7 @@ import Consumption from "./Views/Auth/Diet/Consumption";
 import Schedule from "./Views/Auth/Diet/Schedule";
 import Watering from "./Views/Auth/Diet/Watering";
 import LabTests from "./Views/Auth/LabTests";
+import Manual from "./Views/Auth/Manual";
 import MedicineConsumption from "./Views/Auth/Medicine/Consumption";
 import MedicineSchedule from "./Views/Auth/Medicine/Schedule";
 import SleepCycles from "./Views/Auth/SleepCycles";
@@ -115,6 +116,7 @@ const App = () => {
               )
             )}
 
+            <Route path="manual" element={<Manual />} />
             <Route path="*" element={<Dashboard />} />
           </Routes>
         ) : (

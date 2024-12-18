@@ -1,11 +1,13 @@
 import {
   faDashboard,
+  faInfoCircle,
   faSignIn,
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Fragment } from "react/jsx-runtime";
 
 import { routes } from "../../App";
 import { signOut } from "../../Store/authSlice";
@@ -140,19 +142,38 @@ const Navbar = () => {
           </ul>
 
           <ul className="navbar-nav">
-            <li className="nav-item">
-              {user ? (
-                <span
-                  className="nav-link text-white"
-                  role="button"
-                  onClick={() => {
-                    dispatch(signOut());
-                  }}
-                >
-                  <FontAwesomeIcon icon={faSignOut} />
-                  <span className="ms-2">Sign Out</span>
-                </span>
-              ) : (
+            {user ? (
+              <Fragment>
+                <li className="nav-item">
+                  <span
+                    className={`nav-link ${
+                      location.pathname === "/manual"
+                        ? "text-dark"
+                        : "text-white"
+                    }`}
+                    role="button"
+                    onClick={() => navigate("manual")}
+                  >
+                    <FontAwesomeIcon icon={faInfoCircle} />
+                    <span className="ms-2">App Manual</span>
+                  </span>
+                </li>
+
+                <li className="nav-item">
+                  <span
+                    className="nav-link text-white"
+                    role="button"
+                    onClick={() => {
+                      dispatch(signOut());
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faSignOut} />
+                    <span className="ms-2">Sign Out</span>
+                  </span>
+                </li>
+              </Fragment>
+            ) : (
+              <li className="nav-item">
                 <span
                   className="nav-link text-white"
                   role="button"
@@ -161,8 +182,8 @@ const Navbar = () => {
                   <FontAwesomeIcon icon={faSignIn} />
                   <span className="ms-2">Sign In / Register</span>
                 </span>
-              )}
-            </li>
+              </li>
+            )}
           </ul>
         </div>
       </div>
