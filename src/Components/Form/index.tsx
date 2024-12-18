@@ -1,8 +1,4 @@
-import {
-  faInfoCircle,
-  faPlus,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { useEffect, useState } from "react";
@@ -15,7 +11,6 @@ interface dynamicObject {
 export interface inputProps {
   name: string;
   label: string;
-  helpTip?: string;
   required?: boolean;
   fullWidth?: boolean;
   type?: string;
@@ -88,7 +83,6 @@ const Form = ({ inputs, onSubmit }: props) => {
             onChange,
             fullWidth,
             unit,
-            helpTip,
             ...rest
           },
           i
@@ -97,18 +91,6 @@ const Form = ({ inputs, onSubmit }: props) => {
             <label className="form-label text-start w-100 mt-4">
               {label}
               {required ? <span className="ms-1 text-danger"> *</span> : ""}
-
-              {helpTip ? (
-                <FontAwesomeIcon
-                  icon={faInfoCircle}
-                  className="ms-2 text-info"
-                  data-bs-toggle="tooltip"
-                  data-bs-placement="top"
-                  data-bs-title={helpTip}
-                />
-              ) : (
-                ""
-              )}
             </label>
 
             <div className="input-group mb-3">

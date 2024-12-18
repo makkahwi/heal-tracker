@@ -104,7 +104,6 @@ const Consumption = () => {
     {
       name: "meal",
       label: "Meal of Day",
-      helpTip: "Select the meal to auto-fill expected elements.",
       type: "select",
       options: meals
         ?.filter(({ schedule }) => String(schedule) === schedules[0]?.id)

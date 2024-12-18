@@ -125,7 +125,6 @@ const WalkExercises = () => {
     {
       name: "measure",
       label: "Measure (Walked Distance, Swimming Time, ...etc)",
-      helpTip: "Provide specific details like distance walked or time swum.",
       type: "text",
       defaultValue: sportNote.value,
       step: "0.1",
