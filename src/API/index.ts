@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 
 import { refreshToken, signOut } from "../Store/authSlice";
 import store from "../Store/store";
@@ -115,11 +115,8 @@ const getAll = async (table = "") => {
 const get = async (table = "") => {
   const user = store.getState().auth.user;
 
-  return await service.get(`${table}/${user.localId}.json`).then((res) => {
-    const data = res
-      ? Object.entries(res).map(([id, value]) => ({ id, value }))
-      : [];
-    return data[0];
+  return await service.get(`${table}/${user.localId}.json`).then((res: any) => {
+    return { value: res.x };
   });
 };
 
