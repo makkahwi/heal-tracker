@@ -6,8 +6,8 @@ const ManualView = () => {
 
   const manualData = [
     {
-      title: t("Manual.Dashboard"),
-      description: t("Manual.DashboardDesc"),
+      title: t("Manual.Dashboard.Title"),
+      description: t("Manual.Dashboard.Desc"),
       details: [],
     },
     {
@@ -17,17 +17,17 @@ const ManualView = () => {
         {
           subtitle: t("Manual.HowItWorks"),
           content: [
+            t("Manual.DietConsumptionHowItWorks4"),
             t("Manual.DietConsumptionHowItWorks1"),
             t("Manual.DietConsumptionHowItWorks2"),
             t("Manual.DietConsumptionHowItWorks3"),
-            t("Manual.DietConsumptionHowItWorks4"),
           ],
         },
         {
           subtitle: t("Manual.Inputs"),
           content: [
-            t("Manual.DietConsumptionInputs1"),
             t("Manual.DietConsumptionInputs2"),
+            t("Manual.DietConsumptionInputs1"),
             t("Manual.DietConsumptionInputs3"),
             t("Manual.DietConsumptionInputs4"),
           ],
@@ -39,18 +39,12 @@ const ManualView = () => {
       description: t("Manual.DietScheduleDesc"),
       details: [
         {
-          subtitle: t("Manual.Schedules"),
-          content: [t("Manual.DietScheduleSchedulesDesc")],
-        },
-        {
-          subtitle: t("Manual.ScheduleMeals"),
-          content: [t("Manual.DietScheduleScheduleMealsDesc")],
-        },
-        {
-          subtitle: t("Manual.MealElements"),
+          subtitle: t("Manual.HowItWorks"),
           content: [
-            t("Manual.DietScheduleMealElementsDesc1"),
-            t("Manual.DietScheduleMealElementsDesc2"),
+            t("Manual.DietScheduleHowItWorks1"),
+            t("Manual.DietScheduleHowItWorks2"),
+            t("Manual.DietScheduleHowItWorks3"),
+            t("Manual.DietScheduleHowItWorks4"),
           ],
         },
       ],
@@ -101,9 +95,9 @@ const ManualView = () => {
         {
           subtitle: t("Manual.Inputs"),
           content: [
-            t("Manual.Date & Time"),
-            t("Manual.MedicineConsumptionInputs2"),
             t("Manual.MedicineConsumptionInputs3"),
+            t("Manual.MedicineConsumptionInputs1"),
+            t("Manual.MedicineConsumptionInputs2"),
           ],
         },
       ],
@@ -155,7 +149,7 @@ const ManualView = () => {
 
   return (
     <PageSection title={t("Manual.UserManual")}>
-      <div className="container my-5">
+      <div className="my-5">
         <div className="accordion" id="manualAccordion">
           {manualData.map((section, index) => (
             <div className="accordion-item" key={index}>
@@ -184,7 +178,7 @@ const ManualView = () => {
                   {section.details.length > 0 && (
                     <ul className="list-group">
                       {section.details.map((detail, detailIndex) => (
-                        <li className="list-group-item" key={detailIndex}>
+                        <li className="list-group-item lh-lg" key={detailIndex}>
                           <h5>{detail.subtitle}</h5>
 
                           <ul>
