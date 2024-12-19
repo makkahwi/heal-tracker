@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+.text-justify-indent {
+  text-align: justify;
+  text-indent: 2em;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

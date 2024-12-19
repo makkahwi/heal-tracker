@@ -1,6 +1,7 @@
 import moment, { Moment } from "moment";
 import { Fragment, useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
+import * as BeAPI from "../../../API";
 import { getSummary } from "../../../API/ChatGPT";
 import MealView from "../../../Components/MealView";
 import { renderEvents } from "../../../Components/PageView/MonthlyCalendar";
@@ -9,7 +10,6 @@ import { renderWateringUI, wateringProps } from "../Diet/Watering";
 import { medicineProps, renderMedicineUI } from "../Medicine/Consumption";
 import { renderSleepCycleUI, sleepCycleProps } from "../SleepCycles";
 import { renderExerciseUI, walkExerciseProps } from "../Sports";
-import * as BeAPI from "../../../API";
 
 export interface SummaryProps {
   date: string;
@@ -37,6 +37,8 @@ const WeeklyCalendar = ({
   sleepCyclesData: sleepCycleProps[];
   watering: wateringProps[];
 }) => {
+  const { t } = useTranslation();
+
   const [currentWeek, setCurrentWeek] = useState<Moment[]>([]);
   const [currentDate, setCurrentDate] = useState<Moment>(moment());
   const [currentWeekData, setCurrentWeekData] = useState<comprehensiveProps[]>(
@@ -156,13 +158,13 @@ const WeeklyCalendar = ({
     <div className="overflow-auto">
       <div className="d-flex justify-content-between mb-2">
         <button className="btn btn-primary" onClick={handlePreviousWeek}>
-          Previous Week
+          {t("Dashboard.PreviousWeek")}
         </button>
 
-        <h2 className="text-center">{"Weekly Calendar"}</h2>
+        <h2 className="text-center">{t("Dashboard.Weekly Calendar")}</h2>
 
         <button className="btn btn-primary" onClick={handleNextWeek}>
-          Next Week
+          {t("Dashboard.NextWeek")}
         </button>
       </div>
 
@@ -175,7 +177,7 @@ const WeeklyCalendar = ({
         <thead>
           <tr>
             <th rowSpan={2} className="align-middle" style={{ width: "20%" }}>
-              Data
+              {t("Dashboard.Data")}
             </th>
 
             {currentWeek?.map((day, i) => (
@@ -282,7 +284,7 @@ const WeeklyCalendar = ({
             ))}
 
           <tr>
-            <th>Watering</th>
+            <th>{t("Dashboard.Watering")}</th>
 
             {currentWeek?.map((day, x) => {
               const theWalkExercises: comprehensiveProps | undefined =
@@ -305,7 +307,7 @@ const WeeklyCalendar = ({
           </tr>
 
           <tr>
-            <th>Sport Sessions</th>
+            <th>{t("Dashboard.SportSessions")}</th>
 
             {currentWeek?.map((day, x) => {
               const theWalkExercises: comprehensiveProps | undefined =
@@ -328,7 +330,7 @@ const WeeklyCalendar = ({
           </tr>
 
           <tr>
-            <th>Medicines</th>
+            <th>{t("Dashboard.Medicines")}</th>
 
             {currentWeek?.map((day, x) => {
               const theWalkExercises: comprehensiveProps | undefined =
@@ -351,7 +353,7 @@ const WeeklyCalendar = ({
           </tr>
 
           <tr>
-            <th>Sleep Cycles</th>
+            <th>{t("Dashboard.SleepCycles")}</th>
 
             {currentWeek?.map((day, x) => {
               const theWalkExercises: comprehensiveProps | undefined =
@@ -382,11 +384,11 @@ const WeeklyCalendar = ({
           <tr>
             <th rowSpan={2}>
               <button
-                className="btn btn-primary"
+                className="btn btn-primary text-white"
                 disabled={currentWeekSummary?.week.length > 0}
                 onClick={() => generateSummary()}
               >
-                Generate Summary
+                {t("Dashboard.GenerateSummary")}
               </button>
             </th>
 

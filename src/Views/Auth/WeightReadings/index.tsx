@@ -4,12 +4,11 @@ import {
   faMinusCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { Fragment, useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
 import TabsView from "../../../Components/Layout/TabsView";
 import PageSection from "../../../Components/PageView/PageSection";
-import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
 
 interface weightReadingTargetProps {
@@ -81,6 +80,8 @@ export type fullWeightReadingProps = weightReadingProps &
   weightReadingTargetProps;
 
 const WeightReadings = () => {
+  const { t } = useTranslation();
+
   const [data, setData] = useState<fullWeightReadingProps[]>([]);
   const [targetsData, setTargetsData] = useState<weightReadingTargetProps>({
     weightMin: 0,
@@ -236,7 +237,7 @@ const WeightReadings = () => {
                             previousRecord?.weight,
                             weight,
                             false,
-                            " KG"
+                            " " + t("Common.Labels.KG")
                           )
                         : emptyCalculations,
                     fatWeeklyChange:
@@ -245,7 +246,7 @@ const WeightReadings = () => {
                             previousRecord?.fat,
                             fat,
                             false,
-                            "KG"
+                            t("Common.Labels.KG")
                           )
                         : emptyCalculations,
                     waterWeeklyChange:
@@ -254,7 +255,7 @@ const WeightReadings = () => {
                             previousRecord?.water,
                             water,
                             true,
-                            "L"
+                            t("Common.Labels.Litre")
                           )
                         : emptyCalculations,
                     waistWeeklyChange:
@@ -267,7 +268,7 @@ const WeightReadings = () => {
                             previousRecord?.muscles,
                             muscles,
                             true,
-                            " KG"
+                            " " + t("Common.Labels.KG")
                           )
                         : emptyCalculations,
                     musclesPercentageWeeklyChange:
@@ -287,15 +288,30 @@ const WeightReadings = () => {
                         : emptyCalculations,
                     weightSinceWorstChange:
                       i < sortedRes.length - 1
-                        ? changeCalculator(worstWeight, weight, false, " KG")
+                        ? changeCalculator(
+                            worstWeight,
+                            weight,
+                            false,
+                            " " + t("Common.Labels.KG")
+                          )
                         : emptyCalculations,
                     fatSinceWorstChange:
                       i < sortedRes.length - 1
-                        ? changeCalculator(worstFat, fat, false, "KG")
+                        ? changeCalculator(
+                            worstFat,
+                            fat,
+                            false,
+                            t("Common.Labels.KG")
+                          )
                         : emptyCalculations,
                     waterSinceWorstChange:
                       i < sortedRes.length - 1
-                        ? changeCalculator(worstWater, water, true, "L")
+                        ? changeCalculator(
+                            worstWater,
+                            water,
+                            true,
+                            t("Common.Labels.Litre")
+                          )
                         : emptyCalculations,
                     waistSinceWorstChange:
                       i < sortedRes.length - 1
@@ -303,7 +319,12 @@ const WeightReadings = () => {
                         : emptyCalculations,
                     musclesSinceWorstChange:
                       i < sortedRes.length - 1
-                        ? changeCalculator(worstMuscles, muscles, true, " KG")
+                        ? changeCalculator(
+                            worstMuscles,
+                            muscles,
+                            true,
+                            " " + t("Common.Labels.KG")
+                          )
                         : emptyCalculations,
                     musclesPercentageSinceWorstChange:
                       i < sortedRes.length - 1
@@ -316,15 +337,30 @@ const WeightReadings = () => {
                         : emptyCalculations,
                     weightSinceBestChange:
                       i < sortedRes.length - 1
-                        ? changeCalculator(bestWeight, weight, false, " KG")
+                        ? changeCalculator(
+                            bestWeight,
+                            weight,
+                            false,
+                            " " + t("Common.Labels.KG")
+                          )
                         : emptyCalculations,
                     fatSinceBestChange:
                       i < sortedRes.length - 1
-                        ? changeCalculator(bestFat, fat, false, "KG")
+                        ? changeCalculator(
+                            bestFat,
+                            fat,
+                            false,
+                            t("Common.Labels.KG")
+                          )
                         : emptyCalculations,
                     waterSinceBestChange:
                       i < sortedRes.length - 1
-                        ? changeCalculator(bestWater, water, true, "L")
+                        ? changeCalculator(
+                            bestWater,
+                            water,
+                            true,
+                            t("Common.Labels.Litre")
+                          )
                         : emptyCalculations,
                     waistSinceBestChange:
                       i < sortedRes.length - 1
@@ -332,7 +368,12 @@ const WeightReadings = () => {
                         : emptyCalculations,
                     musclesSinceBestChange:
                       i < sortedRes.length - 1
-                        ? changeCalculator(bestMuscles, muscles, true, " KG")
+                        ? changeCalculator(
+                            bestMuscles,
+                            muscles,
+                            true,
+                            " " + t("Common.Labels.KG")
+                          )
                         : emptyCalculations,
                     musclesPercentageSinceBestChange:
                       i < sortedRes.length - 1
@@ -349,16 +390,26 @@ const WeightReadings = () => {
                             firstRecord?.weight,
                             weight,
                             false,
-                            " KG"
+                            " " + t("Common.Labels.KG")
                           )
                         : emptyCalculations,
                     fatSinceStartChange:
                       i < sortedRes.length - 2
-                        ? changeCalculator(firstRecord?.fat, fat, false, "KG")
+                        ? changeCalculator(
+                            firstRecord?.fat,
+                            fat,
+                            false,
+                            t("Common.Labels.KG")
+                          )
                         : emptyCalculations,
                     waterSinceStartChange:
                       i < sortedRes.length - 2
-                        ? changeCalculator(firstRecord?.water, water, true, "L")
+                        ? changeCalculator(
+                            firstRecord?.water,
+                            water,
+                            true,
+                            t("Common.Labels.Litre")
+                          )
                         : emptyCalculations,
                     waistSinceStartChange:
                       i < sortedRes.length - 2
@@ -370,7 +421,7 @@ const WeightReadings = () => {
                             firstRecord?.muscles,
                             muscles,
                             true,
-                            " KG"
+                            " " + t("Common.Labels.KG")
                           )
                         : emptyCalculations,
                     musclesPercentageSinceStartChange:
@@ -400,45 +451,45 @@ const WeightReadings = () => {
   const formInputs = [
     {
       name: "date",
-      label: "Date",
+      label: t("Services.WeightReadings.Date"),
       type: "date",
       required: true,
     },
     {
       name: "water",
-      label: "Water Reading",
+      label: t("Services.WeightReadings.WaterReading"),
       type: "number",
       step: "0.1",
-      unit: "L",
+      unit: t("Common.Labels.Litre"),
       required: true,
     },
     {
       name: "fat",
-      label: "Fat Weight",
+      label: t("Services.WeightReadings.FatWeight"),
       type: "number",
       step: "0.1",
-      unit: "KG",
+      unit: t("Common.Labels.KG"),
       required: true,
     },
     {
       name: "weight",
-      label: "Weight",
+      label: t("Services.WeightReadings.Weight"),
       type: "number",
       step: "0.1",
-      unit: "KG",
+      unit: t("Common.Labels.KG"),
       required: true,
     },
     {
       name: "muscles",
-      label: "Muscles Reading",
+      label: t("Services.WeightReadings.MusclesReading"),
       type: "number",
       step: "0.1",
-      unit: "KG",
+      unit: t("Common.Labels.KG"),
       required: true,
     },
     {
       name: "waist",
-      label: "Waist Fat Reading",
+      label: t("Services.WeightReadings.WaistFat Reading"),
       type: "number",
       step: "0.1",
       required: true,
@@ -448,79 +499,79 @@ const WeightReadings = () => {
   const targetsFormInputs = [
     {
       name: "waterMin",
-      label: "Water Min Target",
+      label: t("Services.WeightReadings.WaterMinTarget"),
       type: "number",
       step: "0.1",
-      unit: "L",
+      unit: t("Common.Labels.Litre"),
       defaultValue: targetsData?.waterMin,
       required: true,
     },
     {
       name: "waterMax",
-      label: "Water Max Target",
+      label: t("Services.WeightReadings.WaterMaxTarget"),
       type: "number",
       step: "0.1",
-      unit: "L",
+      unit: t("Common.Labels.Litre"),
       defaultValue: targetsData?.waterMax,
       required: true,
     },
     {
       name: "fatMin",
-      label: "Fat Weight Min Target",
+      label: t("Services.WeightReadings.FatWeightMinTarget"),
       type: "number",
       step: "0.1",
-      unit: "KG",
+      unit: t("Common.Labels.KG"),
       defaultValue: targetsData?.fatMin,
       required: true,
     },
     {
       name: "fatMax",
-      label: "Fat Weight Max Target",
+      label: t("Services.WeightReadings.FatWeightMaxTarget"),
       type: "number",
       step: "0.1",
-      unit: "KG",
+      unit: t("Common.Labels.KG"),
       defaultValue: targetsData?.fatMax,
       required: true,
     },
     {
       name: "weightMin",
-      label: "Weight Min Target",
+      label: t("Services.WeightReadings.WeightMinTarget"),
       type: "number",
       step: "0.1",
-      unit: "KG",
+      unit: t("Common.Labels.KG"),
       defaultValue: targetsData?.weightMin,
       required: true,
     },
     {
       name: "weightMax",
-      label: "Weight Max Target",
+      label: t("Services.WeightReadings.WeightMaxTarget"),
       type: "number",
       step: "0.1",
-      unit: "KG",
+      unit: t("Common.Labels.KG"),
       defaultValue: targetsData?.weightMax,
       required: true,
     },
     {
       name: "musclesMin",
-      label: "Muscles Min Target",
+      label: t("Services.WeightReadings.MusclesMinTarget"),
       type: "number",
       step: "0.1",
-      unit: "KG",
+      unit: t("Common.Labels.KG"),
       defaultValue: targetsData?.musclesMin,
       required: true,
     },
     {
       name: "musclesMax",
-      label: "Muscles Max Target",
+      label: t("Services.WeightReadings.MusclesMaxTarget"),
       type: "number",
       step: "0.1",
-      unit: "KG",
+      unit: t("Common.Labels.KG"),
       defaultValue: targetsData?.musclesMax,
       required: true,
     },
     {
       name: "waistMin",
-      label: "Waist Fat Min Target",
+      label: t("Services.WeightReadings.WaistFatMinTarget"),
       type: "number",
       step: "0.1",
       defaultValue: targetsData?.waistMin,
@@ -528,7 +579,7 @@ const WeightReadings = () => {
     },
     {
       name: "waistMax",
-      label: "Waist Fat Max Target",
+      label: t("Services.WeightReadings.WaistFatMaxTarget"),
       type: "number",
       step: "0.1",
       defaultValue: targetsData?.waistMax,
@@ -561,18 +612,21 @@ const WeightReadings = () => {
 
   const views = [
     // { title: "Analysis", view: <WeightReadingCharts data={data} /> },
-    { title: "Input", view: <Form inputs={formInputs} onSubmit={onSubmit} /> },
     {
-      title: "Targets",
+      title: t("Services.WeightReadings.Input"),
+      view: <Form inputs={formInputs} onSubmit={onSubmit} />,
+    },
+    {
+      title: t("Services.WeightReadings.Targets"),
       view: <Form inputs={targetsFormInputs} onSubmit={onTargetsSubmit} />,
     },
   ];
 
   return (
-    <PageSection title="Weight Readings">
+    <PageSection title={t("Services.WeightReadings.WeightReadings")}>
       <Fragment>
         <h4 className="my-3">
-          Total Number of Weight Readings (Visits): {data.length}
+          {t("Services.WeightReadings.NumberOfWeightReading")}: {data.length}
         </h4>
 
         <TabsView views={views} />

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 import * as BeAPI from "../../../../API";
 import MealView from "../../../../Components/MealView";
 import PageView from "../../../../Components/PageView";
@@ -23,6 +23,8 @@ interface props {
 }
 
 const Elements = ({ meals, schedules }: props) => {
+  const { t } = useTranslation();
+
   const [data, setData] = useState<SchedulesMealElementProps[]>([]);
 
   const getData = () => {
@@ -67,7 +69,7 @@ const Elements = ({ meals, schedules }: props) => {
   const formInputs = [
     {
       name: "meal",
-      label: "Meal of Day",
+      label: t("Services.Diet.Schedule.MealOfDay"),
       type: "select",
       options: meals?.map(({ id, meal, schedule }) => ({
         value: id || "",
@@ -88,39 +90,47 @@ const Elements = ({ meals, schedules }: props) => {
       },
       required: true,
     },
-    { name: "element", label: "Element", required: true },
+    {
+      name: "element",
+      label: t("Services.Diet.Schedule.Element"),
+      required: true,
+    },
     {
       name: "count",
-      label: "Quantity",
+      label: t("Services.Diet.Schedule.Quantity"),
       type: "number",
       step: 0.1,
       required: true,
     },
     {
       name: "unit",
-      label: "Unit",
+      label: t("Services.Diet.Schedule.Unit"),
       required: true,
       type: "select",
       options: units,
     },
     {
       name: "alternatives",
-      label: "Alternatives",
+      label: t("Services.Diet.Schedule.Alternatives"),
       type: "dynamicList",
       fullWidth: true,
       render: (row: SchedulesMealElementProps) => <MealView {...row} />,
       inputs: [
-        { name: "element", label: "Element", required: true },
+        {
+          name: "element",
+          label: t("Services.Diet.Schedule.Element"),
+          required: true,
+        },
         {
           name: "count",
-          label: "Quantity",
+          label: t("Services.Diet.Schedule.Quantity"),
           type: "number",
           step: 0.1,
           required: true,
         },
         {
           name: "unit",
-          label: "Unit",
+          label: t("Services.Diet.Schedule.Unit"),
           required: true,
           type: "select",
           options: units,
@@ -152,7 +162,7 @@ const Elements = ({ meals, schedules }: props) => {
 
   return (
     <PageView
-      title="Meal Elements List"
+      title={t("Services.Diet.Schedule.MealElementsList")}
       data={data}
       inputs={formInputs}
       onSubmit={onSubmit}

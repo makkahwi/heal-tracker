@@ -2,7 +2,7 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
 import MonthlyCalendar from "../../../Components/PageView/MonthlyCalendar";
@@ -44,6 +44,8 @@ export const renderSleepCycleUI =
     );
 
 const SleepCycles = () => {
+  const { t } = useTranslation();
+
   const [data, setData] = useState<sleepCycleProps[]>([]);
 
   const getData = () =>
@@ -71,19 +73,19 @@ const SleepCycles = () => {
   const formInputs = [
     {
       name: "startTime",
-      label: "Start Time",
+      label: t("Services.SleepCycles.StartTime"),
       type: "datetime-local",
       required: true,
     },
     {
       name: "endTime",
-      label: "End Time",
+      label: t("Services.SleepCycles.EndTime"),
       type: "datetime-local",
       required: true,
     },
     {
       name: "note",
-      label: "Notes",
+      label: t("Services.SleepCycles.Notes"),
     },
   ];
 
@@ -103,7 +105,7 @@ const SleepCycles = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title="Sleep Cycles">
+    <PageSection title={t("Services.SleepCycles.SleepCycles")}>
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 

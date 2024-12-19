@@ -1,0 +1,414 @@
+{
+  "Auth": {
+    "Email": "Email",
+    "Password": "Password",
+    "PasswordConfirmation": "Password Confirmation",
+    "SignIn": "Sign In",
+    "SignUp": "Sign Up"
+  },
+  "Common": {
+    "Labels": {
+      "KG": "KG",
+      "Litre": "L"
+    }
+  },
+  "Comp": {
+    "Calendar": {
+      "NextMonth": "Next Month",
+      "PreviousMonth": "Previous Month",
+      "Week": "Week"
+    },
+    "Form": {
+      "PleaseChoose": "Please Choose",
+      "Submit": "Submit"
+    },
+    "Table": {
+      "Actions": "Actions"
+    }
+  },
+  "Dashboard": {
+    "Dashboard": "Dashboard",
+    "Data": "Data",
+    "GenerateSummary": "Generate Summary",
+    "Medicines": "Medicines",
+    "NextWeek": "Next Week",
+    "PreviousWeek": "Previous Week",
+    "ShortCuts": {
+      "Cup": "{{quantity}} Cup",
+      "Just-Consumed Shortcuts": "Just-Consumed Shortcuts",
+      "MedicineConsumption": "Medicine Consumption",
+      "Water Consumption": "Water Consumption"
+    },
+    "SleepCycles": "Sleep Cycles",
+    "SportSessions": "Sport Sessions",
+    "Watering": "Watering",
+    "Weekly Calendar": "Weekly Calendar"
+  },
+  "Landing": {
+    "A reliable backend solution for data storage, real-time syncing, and user authentication, ensuring security and scalability": "A reliable backend solution for data storage, real-time syncing, and user authentication, ensuring security and scalability",
+    "AdvancedAnalytics": {
+      "Desc": "Generate summaries and visualizations for deeper insights into your habits",
+      "Title": "Advanced Analytics"
+    },
+    "AdvancedDataVisualization": {
+      "Desc": "Build a platform for shared wellness experiences and tips",
+      "Title": "Advanced Data Visualization"
+    },
+    "AiPoweredInput": {
+      "Desc": "Automatic data entry and meaningful health recommendations",
+      "Title": "AI-Powered Input"
+    },
+    "CalorieTracking": {
+      "Desc": "Automatic calorie calculations for scheduled and consumed meals",
+      "Title": "Calorie Tracking"
+    },
+    "Contribute": "Contribute on GitHub",
+    "Contribution": {
+      "Content": "Health Daily Link is open-source, and we’re thrilled to welcome developers, designers, and wellness enthusiasts to contribute. Join us on GitHub and be part of our journey to make health tracking accessible to all.",
+      "Title": "Contribute to Health Daily Link"
+    },
+    "Desc": "Your personal companion for tracking and improving your health journey",
+    "Developer": {
+      "Content": "Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world",
+      "Title": "Meet the Developer"
+    },
+    "ExerciseTracking": {
+      "Desc": "Log your physical activities, including sports, workouts, and walks",
+      "Title": "Exercise Tracking"
+    },
+    "Firebase": "Firebase",
+    "Future": {
+      "Content": "Health Daily Link is growing, and we have big plans to make it even more powerful and user-friendly. With your support, we aim to add new features, improve accessibility, and build a community around wellness. This is part of what we have in mind to develop for future expansions.",
+      "Title": "Our Vision for the Future"
+    },
+    "GoalSetting": {
+      "Desc": "Personalized health targets and progress tracking",
+      "Title": "Goal Setting"
+    },
+    "Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience": "Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience",
+    "HydrationLogging": {
+      "Desc": "Record your water intake to maintain optimal hydration levels",
+      "Title": "Hydration Logging"
+    },
+    "Localization": {
+      "Desc": "Support for multiple languages, including Arabic",
+      "Title": "Localization"
+    },
+    "MealScheduling": {
+      "Desc": "Stay on track with your nutrition plan by logging and following scheduled meals",
+      "Title": "Meal Scheduling"
+    },
+    "MedicationFollowUp": {
+      "Desc": "Never miss a dose by keeping track of your medications and supplements",
+      "Title": "Medication Follow-Up"
+    },
+    "MobileApp": {
+      "Desc": "A dedicated app for tracking health on the go",
+      "Title": "Mobile App"
+    },
+    "ModernTechStack": {
+      "Desc": "Built with React.Js and Firebase for an optimized, scalable, and responsive web experience.",
+      "Title": "Modern Tech Stack"
+    },
+    "MultiUserSupport": {
+      "Desc": "Perfect for families or teams to collaborate on health goals",
+      "Title": "Multi-User Support"
+    },
+    "NutritionistAccess": {
+      "Desc": "Allow experts to review and provide feedback on dietary progress",
+      "Title": "Nutritionist Access"
+    },
+    "OpenSource": {
+      "Desc": "Totally transparency and ability for any web developer to contribute and enhance",
+      "Title": "Open-Source"
+    },
+    "Our front-end framework for building interactive and responsive user interfaces, delivering a seamless user experience": "Our front-end framework for building interactive and responsive user interfaces, delivering a seamless user experience",
+    "ReactJs": "React.Js",
+    "SecuredAccess": {
+      "Desc": "User-only access for own data view & manipulation with Firebase authentication",
+      "Title": "Secured Access"
+    },
+    "SetReminders": {
+      "Desc": "Notifications for meals, workouts, medications, and more",
+      "Title": "Set Reminders"
+    },
+    "SleepCycleMonitoring": {
+      "Desc": "Monitor and improve your sleep patterns for better rest and recovery",
+      "Title": "Sleep Cycle Monitoring"
+    },
+    "StartUsing": {
+      "Content": "Health Daily Link is already deployed and ready to use, so you can simply sign up through the link above and start using it today!",
+      "Title": "Start Using HDL"
+    },
+    "TechnicalSupport": {
+      "Approach1": "Open an issue on the GitHub repository through link below.",
+      "Approach2": "Reach out to the project developer  via the contact information below.",
+      "Approach3": "Join the discussions on the repository to collaborate with other contributors.",
+      "Conclusion": "We appreciate your feedback and contributions to make the 'Health Daily Link' better for everyone!",
+      "Content": "If you encounter any issues, have questions, or want to suggest improvements, feel free to...",
+      "Title": "Technical Support"
+    },
+    "Technology Stack": "Technology Stack",
+    "WeightTracking": {
+      "Desc": "Log and monitor your weight, with support for inBody scale or any detailed-reading providers",
+      "Title": "Weight Tracking"
+    },
+    "Welcome": "Welcome to Health Daily Link (HDL)",
+    "WhatIs": {
+      "Content": "Health Daily Link (HDL) is a comprehensive web app designed to help individuals track their health-related activities and stay consistent with their wellness goals. From daily routines like diet and hydration to broader metrics like sleep and weight tracking, HDL makes it simple to log, monitor, and analyze your progress.",
+      "Title": "What is Health Daily Link"
+    }
+  },
+  "Layout": {
+    "All Rights Reserved for": "All Rights Reserved for",
+    "App Manual": "App Manual",
+    "Called": "Call",
+    "Consumption": "Consumption",
+    "Created": "Creation",
+    "Dashboard": "Dashboard",
+    "Deleted": "Deletion",
+    "Diet": "Diet",
+    "HDL | Health Daily Link": "HDL | Health Daily Link",
+    "LabTests": "Lab Tests",
+    "Medicine": "Medicine",
+    "Schedule": "Schedule",
+    "Sign Out": "Sign Out",
+    "SignIn/Register": "Sign In / Register",
+    "SleepCycles": "Sleep Cycles",
+    "SportSessions": "Sport Sessions",
+    "Successful": "Data {{method}} has been successful.",
+    "Suhaib Ahmad": "Suhaib Ahmad",
+    "Unsuccessful": "Data {{method}} has not been successful.",
+    "Updated": "Update",
+    "Watering": "Watering",
+    "WeightReadings": "Weight Readings"
+  },
+  "Manual": {
+    "Dashboard": {
+      "Desc": "The weekly summary of your tracked data, including diet consumption VS schedule, water consumption, sport sessions, sleep cycles, and medicine consumption.",
+      "Title": "Dashboard"
+    },
+    "Date": "Date",
+    "DietConsumption": "Diet Consumption",
+    "DietConsumptionDesc": "Record actual consumption of foods and beverages, compare it with scheduled meal contents. Records are shown in a weekly-based view calendar.",
+    "DietConsumptionHowItWorks1": "Pick a scheduled meal to auto-fill the supposed-to-consume elements.",
+    "DietConsumptionHowItWorks2": "Add optional notes for the entire meal or individual elements.",
+    "DietConsumptionHowItWorks3": "Ensure exact spelling and formatting of element names for accurate comparison.",
+    "DietConsumptionHowItWorks4": "Scheduled meals data must be filled beforehand.",
+    "DietConsumptionInputs1": "Date & Time",
+    "DietConsumptionInputs2": "Scheduled Meal",
+    "DietConsumptionInputs3": "Consumed Elements (name, quantity, measurement unit, element optional note)",
+    "DietConsumptionInputs4": "Meal Optional Notes",
+    "DietSchedule": "Diet Schedule",
+    "DietScheduleDesc": "To define your diet plan with all details, including meals time and meal elements by quantity.",
+    "DietScheduleHowItWorks1": "Upon adopting a new schedule, create a new schedule record with inputs of schedule order (1st, 2nd, ...etc) and schedule start date @ 'Schedule' service.",
+    "DietScheduleHowItWorks2": "Then in 'Schedule Meals' service, define the meals scheduled within the new schedule record you just created, specifying their names and supposed-to-consume times of the day.",
+    "DietScheduleHowItWorks3": "Last step is in 'Meal Elements' service, where you need to insert the elements to consume within the meal, listing their names, quantities, quantity measurement units, and element alternatives -if any is allowed-.",
+    "DietScheduleHowItWorks4": "Those records are the ones to be used for easy input process @ 'Diet Consumption' service, and they are to be engaged in commitment analysis & comparison between what's supposed to consume VS actually consumed. So for comparison sake, upon any modifications for the schedule, it's recommended to build a new schedule from bottom up, instead of updating existing one.",
+    "HowItWorks": "How It Works",
+    "Inputs": "Inputs",
+    "LabTests": "Lab Tests",
+    "LabTestsDesc": "Store results of blood tests with optional inputs based on the tests conducted.",
+    "LabTestsInputs2": "Test Indicators (e.g., HDL fats, LDL fats, etc...)",
+    "MedicineConsumption": "Medicine Consumption",
+    "MedicineConsumptionDesc": "Track medication intakes based on predefined schedules and view data in a monthly calendar.",
+    "MedicineConsumptionInputs1": "Date & Time",
+    "MedicineConsumptionInputs2": "Quantity",
+    "MedicineConsumptionInputs3": "Medicine Selection (from predefined list)",
+    "MedicineSchedule": "Medicine Schedule",
+    "MedicineScheduleDesc": "Define medication schedule with detailed consumption instructions.",
+    "MedicineScheduleInputs1": "Medicine Name",
+    "MedicineScheduleInputs2": "Per-Time Dose",
+    "MedicineScheduleInputs3": "Consumption Frequency (daily, weekly, monthly, ...etc)",
+    "MedicineScheduleInputs4": "Duration (e.g., number of weeks)",
+    "MedicineScheduleInputs5": "Doses Per Frequency",
+    "MedicineScheduleTargets": "Targets",
+    "MedicineScheduleTargetsDesc": "To input the targeted values of weight readings, but in a range of minimum & maximum.",
+    "Schedules": "Schedules",
+    "SleepCycles": "Sleep Cycles",
+    "SleepCyclesDesc": "Track your daily sleep patterns and view records in a monthly calendar.",
+    "SleepCyclesInputs1": "Sleep Start & End Time",
+    "SleepCyclesInputs2": "Optional Note",
+    "SportSessions": "Sport Sessions",
+    "SportSessionsDesc": "Monitor your physical sport activities and view the records in a monthly calendar.",
+    "SportSessionsInputs2": "Sport Type",
+    "SportSessionsInputs3": "Start & End Time",
+    "SportSessionsInputs4": "Measurements (e.g., walked distances, swimming time, ...etc)",
+    "SportSessionsInputs5": "Optional Notes",
+    "UserManual": "User Manual",
+    "Watering": "Watering",
+    "WateringDesc": "Track your water consumption to ensure you meet the minimum consumption level required.",
+    "WateringInputs1": "Quantity in cups",
+    "WateringInputs2": "Date & time of consumption",
+    "WeightReadings": "Weight Readings",
+    "WeightReadingsDesc": "Record weekly weight readings, including detailed measurements specific to the InBody 120 scale.",
+    "WeightReadingsInputs2": "Water Reading (liters)",
+    "WeightReadingsInputs3": "Fat Weight (kg)",
+    "WeightReadingsInputs4": "Total Weight (kg)",
+    "WeightReadingsInputs5": "Muscle Weight (kg)",
+    "WeightReadingsInputs6": "Waist Fat Rating (numeric scale)"
+  },
+  "OtherLang": "ع",
+  "Services": {
+    "Diet": {
+      "Consumption": {
+        "Consumed Meals": "Consumed Meals",
+        "Date": "Date",
+        "Element": "Element",
+        "Meal": "Meal",
+        "Meal Contents": "Meal Contents",
+        "MealOfDay": "Meal of Day",
+        "NextWeek": "Next Week",
+        "Note": "Note",
+        "PreviousWeek": "Previous Week",
+        "Quantity": "Quantity",
+        "Time": "Time",
+        "Unit": "Unit"
+      },
+      "Schedule": {
+        "Alternatives": "Alternatives",
+        "DietSchedules": "Diet Schedules",
+        "Element": "Element",
+        "GivingDate": "Giving Date",
+        "MealElements": "Meal Elements",
+        "MealElementsList": "Meal Elements List",
+        "MealName": "Meal Name",
+        "MealOfDay": "Meal of Day",
+        "MealsList": "Meals List",
+        "Quantity": "Quantity",
+        "Schedule": "Schedule",
+        "ScheduleMeals": "Schedule Meals",
+        "ScheduleOrder": "Schedule Order",
+        "Schedules": "Schedules",
+        "SchedulesList": "Schedules List",
+        "TimeOfMeal": "Time of Meal",
+        "Unit": "Unit"
+      },
+      "Watering": {
+        "Quantity": "Quantity 'In Cup(s)'",
+        "Time": "Time",
+        "Watering": "Watering"
+      }
+    },
+    "LabTests": {
+      "A/gRatio": "A/G Ratio",
+      "Albumin": "Albumin",
+      "Basophils": "Basophils",
+      "Bilirubin": "Bilirubin",
+      "Calcium": "Calcium",
+      "Chloride": "Chloride",
+      "CholesterolHdl": "Cholesterol HDL",
+      "CholesterolLdl": "Cholesterol LDL",
+      "CholesterolTotal": "Cholesterol Total",
+      "CorrectedCalcium": "Corrected Calcium",
+      "Creatinine": "Creatinine",
+      "Date": "Date",
+      "Eosinophils": "Eosinophils",
+      "FastingBloodSugar": "Fasting Blood Sugar",
+      "FastingInsulin": "Fasting Insulin",
+      "Ferritin": "Ferritin",
+      "GGT": "GGT",
+      "Globulin": "Globulin",
+      "Glucose": "Glucose",
+      "Hematocrit": "Hematocrit",
+      "HemoglobinLevel": "Hemoglobin Level",
+      "InsulinResistance": "Insulin Resistance",
+      "LabTestsList": "Lab Tests List",
+      "LdlRiskRatioI": "LDL Risk Ratio I",
+      "LdlRiskRatioII": "LDL Risk Ratio II",
+      "Lymphocytes": "Lymphocytes",
+      "MCH": "MCH",
+      "MCHC": "MCHC",
+      "MCV": "MCV",
+      "MPV": "MPV",
+      "Magnesium": "Magnesium",
+      "Monocytes": "Monocytes",
+      "NeutrophilsSegmented": "Neutrophils Segmented",
+      "Phosphatase": "Phosphatase",
+      "Phosphorus": "Phosphorus",
+      "PlateletsCount": "Platelets Count",
+      "Potassium": "Potassium",
+      "Protein": "Protein",
+      "RDW-CV": "RDW-CV",
+      "RDW-SD": "RDW-SD",
+      "RedCellCount": "Red Cell Count",
+      "SGOT (AST)": "SGOT (AST)",
+      "SGPT (ALT)": "SGPT (ALT)",
+      "Serum": "Serum",
+      "Sodium": "Sodium",
+      "TIBC": "TIBC",
+      "TSH": "TSH",
+      "Transferrin": "Transferrin",
+      "Triglycerides": "Triglycerides",
+      "Urea": "Urea",
+      "UricAcid": "Uric Acid",
+      "VLDL": "VLDL",
+      "VitamineB12": "Vitamine B12",
+      "VitamineD": "Vitamine D",
+      "WhiteCellCount": "White Cell Count"
+    },
+    "Medicine": {
+      "Bi-Daily": "Bi-Daily",
+      "Bi-Weekly": "Bi-Weekly",
+      "ConsumedMedicines": "Consumed Medicines",
+      "ConsumptionFrequency": "Consumption Frequency",
+      "Daily": "Daily",
+      "Date": "Date",
+      "Dose": "Specifics (Dose)",
+      "Duration": "Duration (Frequency Total Occurrences)",
+      "Medicine": "Medicine",
+      "MedicineSchedule": "Medicine Schedule",
+      "Monthly": "Monthly",
+      "OccurrenceQuantity": "Per Frequency Occurrence Quantity",
+      "Quantity": "Quantity",
+      "Time": "Time",
+      "Weekly": "Weekly"
+    },
+    "SleepCycles": {
+      "EndTime": "End Time",
+      "Notes": "Notes",
+      "SleepCycles": "Sleep Cycles",
+      "StartTime": "Start Time"
+    },
+    "Sports": {
+      "Date": "Date",
+      "EndTime": "End Time",
+      "Jogging": "Jogging",
+      "Measure (Walked Distance, Swimming Time, etc)": "Measure (Walked Distance, Swimming Time, ...etc)",
+      "Notes": "Notes",
+      "Sport Note": "Sport Note",
+      "Sport Type": "Sport Type",
+      "SportSessions": "Sport Sessions",
+      "StartTime": "Start Time",
+      "Swimming": "Swimming",
+      "Walking": "Walking"
+    },
+    "WeightReadings": {
+      "Actions": "Actions",
+      "Date": "Date",
+      "FatWeight": "Fat Weight",
+      "FatWeightMaxTarget": "Fat Weight Max Target",
+      "FatWeightMinTarget": "Fat Weight Min Target",
+      "Input": "Input",
+      "Muscles": "Muscles",
+      "MusclesMaxTarget": "Muscles Max Target",
+      "MusclesMinTarget": "Muscles Min Target",
+      "MusclesReading": "Muscles Reading",
+      "NumberOfWeightReading": "Total Number of Weight Readings (Nutritionist Weekly Visits)",
+      "Targets": "Targets",
+      "WaistFat": "Waist Fat",
+      "WaistFat Reading": "Waist Fat Reading",
+      "WaistFatMaxTarget": "Waist Fat Max Target",
+      "WaistFatMinTarget": "Waist Fat Min Target",
+      "Water": "Water",
+      "Water Volume": "Water Volume",
+      "WaterMaxTarget": "Water Max Target",
+      "WaterMinTarget": "Water Min Target",
+      "WaterReading": "Water Reading",
+      "Weight": "Weight",
+      "WeightMaxTarget": "Weight Max Target",
+      "WeightMinTarget": "Weight Min Target",
+      "WeightReadings": "Weight Readings"
+    }
+  }
+}

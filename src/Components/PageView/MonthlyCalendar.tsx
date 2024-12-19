@@ -1,5 +1,6 @@
 import moment, { Moment } from "moment";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface props {
   data: object[];
@@ -17,6 +18,8 @@ export const renderEvents = (
 };
 
 const MonthlyCalendar = ({ data, renderEvent }: props) => {
+  const { t } = useTranslation();
+
   const [currentMonth, setCurrentMonth] = useState<Moment>(moment());
 
   const daysOfWeek = [
@@ -61,13 +64,13 @@ const MonthlyCalendar = ({ data, renderEvent }: props) => {
     <div className="overflow-auto">
       <div className="d-flex justify-content-between mb-2">
         <button className="btn btn-primary" onClick={handlePreviousMonth}>
-          Previous Month
+          {t("Comp.Calendar.PreviousMonth")}
         </button>
 
         <h2 className="text-center">{currentMonth.format("MMMM YYYY")}</h2>
 
         <button className="btn btn-primary" onClick={handleNextMonth}>
-          Next Month
+          {t("Comp.Calendar.NextMonth")}
         </button>
       </div>
 
@@ -79,10 +82,10 @@ const MonthlyCalendar = ({ data, renderEvent }: props) => {
       >
         <thead>
           <tr>
-            <th>Week</th>
+            <th>{t("Comp.Calendar.Week")}</th>
 
-            {daysOfWeek.map((dayName, index) => (
-              <th key={index} className="text-center">
+            {daysOfWeek.map((dayName, i) => (
+              <th key={i} className="text-center">
                 {dayName}
               </th>
             ))}

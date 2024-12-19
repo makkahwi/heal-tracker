@@ -1,7 +1,9 @@
 import axios from "axios";
-
 import { refreshToken, signOut } from "../Store/authSlice";
+import { addLoading, removeLoading } from "../Store/loading";
+import { addNotifications } from "../Store/notifications";
 import store from "../Store/store";
+import i18n from "../i18n";
 
 const service = axios.create({
   baseURL:
@@ -19,6 +21,8 @@ const isTokenExpired = (expiresAt: number): boolean => {
 service.interceptors.request.use(
   async (config) => {
     let user = store.getState().auth?.user;
+
+    store.dispatch(addLoading());
 
     const now = new Date();
 
@@ -82,7 +86,28 @@ const expiredTokenHandler = () => {
 
 service.interceptors.response.use(
   (res) => {
+    store.dispatch(removeLoading());
+
     if ([200, 201, 204].includes(res.status)) {
+      const created = res.config.method?.toUpperCase() === "POST";
+      const updated = res.config.method?.toUpperCase() === "PUT";
+      const deleted = res.config.method?.toUpperCase() === "DELETE";
+
+      if (created || updated || deleted) {
+        store.dispatch(
+          addNotifications({
+            msg: i18n.t("Layout.Successful", {
+              method: created
+                ? i18n.t("Layout.Created")
+                : updated
+                ? i18n.t("Layout.Updated")
+                : deleted
+                ? i18n.t("Layout.Deleted")
+                : i18n.t("Layout.Called"),
+            }),
+          })
+        );
+      }
       return res.data;
     }
 
@@ -93,6 +118,28 @@ service.interceptors.response.use(
     return Promise.reject(res);
   },
   (err) => {
+    store.dispatch(removeLoading());
+    const created = err.config.method?.toUpperCase() === "POST";
+    const updated = err.config.method?.toUpperCase() === "PUT";
+    const deleted = err.config.method?.toUpperCase() === "DELETE";
+
+    if (created || updated || deleted) {
+      store.dispatch(
+        addNotifications({
+          msg: i18n.t("Layout.Unsuccessful", {
+            method: created
+              ? i18n.t("Layout.Created")
+              : updated
+              ? i18n.t("Layout.Updated")
+              : deleted
+              ? i18n.t("Layout.Deleted")
+              : i18n.t("Layout.Called"),
+          }),
+          err: true,
+        })
+      );
+    }
+
     if ([401, 403].includes(err?.response?.status)) {
       expiredTokenHandler();
     }
@@ -115,11 +162,8 @@ const getAll = async (table = "") => {
 const get = async (table = "") => {
   const user = store.getState().auth.user;
 
-  return await service.get(`${table}/${user.localId}.json`).then((res) => {
-    const data = res
-      ? Object.entries(res).map(([id, value]) => ({ id, value }))
-      : [];
-    return data[0];
+  return await service.get(`${table}/${user.localId}.json`).then((res: any) => {
+    return { value: res.x };
   });
 };
 
@@ -147,4 +191,4 @@ const remove = async (table = "", id = "") => {
   return await service.delete(`${table}/${user.localId}/${id}.json`);
 };
 
-export { create, getAll, get, remove, update };
+export { create, get, getAll, remove, update };

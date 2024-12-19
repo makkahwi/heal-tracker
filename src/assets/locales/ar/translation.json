@@ -1,0 +1,414 @@
+{
+  "Auth": {
+    "Email": "البريد الإلكتروني",
+    "Password": "كلمة المرور",
+    "PasswordConfirmation": "تأكيد كلمة المرور",
+    "SignIn": "تسجيل الدخول",
+    "SignUp": "إنشاء حساب"
+  },
+  "Common": {
+    "Labels": {
+      "KG": "كجم",
+      "Litre": "لتر"
+    }
+  },
+  "Comp": {
+    "Calendar": {
+      "NextMonth": "الشهر القادم",
+      "PreviousMonth": "الشهر السابق",
+      "Week": "أسبوع"
+    },
+    "Form": {
+      "PleaseChoose": "الرجاء الاختيار",
+      "Submit": "إرسال"
+    },
+    "Table": {
+      "Actions": "الإجراءات"
+    }
+  },
+  "Dashboard": {
+    "Dashboard": "لوحة التحكم",
+    "Data": "البيانات",
+    "GenerateSummary": "إنشاء ملخص",
+    "Medicines": "الأدوية",
+    "NextWeek": "الأسبوع القادم",
+    "PreviousWeek": "الأسبوع السابق",
+    "ShortCuts": {
+      "Cup": "{{quantity}} كوب",
+      "Just-Consumed Shortcuts": "الاختصارات للاستهلاك الحالي",
+      "MedicineConsumption": "استهلاك الأدوية",
+      "Water Consumption": "استهلاك المياه"
+    },
+    "SleepCycles": "دورات النوم",
+    "SportSessions": "جلسات الرياضة",
+    "Watering": "الري",
+    "Weekly Calendar": "التقويم الأسبوعي"
+  },
+  "Landing": {
+    "A reliable backend solution for data storage, real-time syncing, and user authentication, ensuring security and scalability": "حل موثوق للواجهة الخلفية لتخزين البيانات والمزامنة الفورية والمصادقة، لضمان الأمان وقابلية التوسع",
+    "AdvancedAnalytics": {
+      "Desc": "إنشاء ملخصات وتصويرات للحصول على رؤى أعمق حول عاداتك",
+      "Title": "تحليلات متقدمة"
+    },
+    "AdvancedDataVisualization": {
+      "Desc": "إنشاء منصة لتبادل تجارب الصحة والنصائح",
+      "Title": "تصور بيانات متقدم"
+    },
+    "AiPoweredInput": {
+      "Desc": "إدخال البيانات تلقائيًا وتقديم توصيات صحية مفيدة",
+      "Title": "إدخال مدعوم بالذكاء الاصطناعي"
+    },
+    "CalorieTracking": {
+      "Desc": "حساب السعرات الحرارية تلقائيًا للوجبات المجدولة والمستهلكة",
+      "Title": "تتبع السعرات الحرارية"
+    },
+    "Contribute": "المساهمة على GitHub",
+    "Contribution": {
+      "Content": "Health Daily Link مفتوح المصدر، ونحن متحمسون للترحيب بالمطورين والمصممين وعشاق الصحة للمساهمة. انضم إلينا على GitHub وكن جزءًا من رحلتنا لجعل تتبع الصحة متاحًا للجميع",
+      "Title": "المساهمة في Health Daily Link"
+    },
+    "Desc": "رفيقك الشخصي لتتبع وتحسين رحلتك الصحية",
+    "Developer": {
+      "Content": "تم تطوير Health Daily Link بواسطتي، صهيب أحمد، بشغف لتحسين الصحة عبر التكنولوجيا. هذا المشروع مفتوح المصدر، وأنا متحمس للترحيب بمساهمات المطورين والمصممين وعشاق الصحة من جميع أنحاء العالم",
+      "Title": "قابل المطور"
+    },
+    "ExerciseTracking": {
+      "Desc": "سجل أنشطتك البدنية، بما في ذلك الرياضة والتمارين والمشي",
+      "Title": "تتبع التمارين"
+    },
+    "Firebase": "فايربيس",
+    "Future": {
+      "Content": "Health Daily Link ينمو ولدينا خطط كبيرة لجعله أكثر قوة وسهولة في الاستخدام. بدعمك، نهدف إلى إضافة ميزات جديدة، تحسين الوصول، وبناء مجتمع حول الصحة. هذا جزء مما نخطط لتطويره في التوسعات المستقبلية",
+      "Title": "رؤيتنا للمستقبل"
+    },
+    "GoalSetting": {
+      "Desc": "أهداف صحية مخصصة وتتبع التقدم",
+      "Title": "تحديد الأهداف"
+    },
+    "Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience": "تم بناء Health Daily Link باستخدام تقنيات حديثة، مصممة لتقديم تجربة سلسة وآمنة",
+    "HydrationLogging": {
+      "Desc": "سجل استهلاكك للمياه للحفاظ على مستويات الترطيب المثلى",
+      "Title": "تسجيل الترطيب"
+    },
+    "Localization": {
+      "Desc": "دعم لعدة لغات، بما في ذلك العربية",
+      "Title": "التوطين"
+    },
+    "MealScheduling": {
+      "Desc": "ابق على المسار مع خطتك الغذائية عن طريق تسجيل ومتابعة الوجبات المجدولة",
+      "Title": "جدولة الوجبات"
+    },
+    "MedicationFollowUp": {
+      "Desc": "لا تفوت أي جرعة من خلال تتبع أدويتك والمكملات الغذائية",
+      "Title": "متابعة الأدوية"
+    },
+    "MobileApp": {
+      "Desc": "تطبيق مخصص لتتبع الصحة أثناء التنقل",
+      "Title": "تطبيق الجوال"
+    },
+    "ModernTechStack": {
+      "Desc": "تم بناءه باستخدام ReactJs وFirebase لتجربة ويب محسّنة وقابلة للتوسع ومتجاوبة",
+      "Title": "تقنيات حديثة"
+    },
+    "MultiUserSupport": {
+      "Desc": "مثالي للعائلات أو الفرق للتعاون في تحقيق الأهداف الصحية",
+      "Title": "دعم متعدد المستخدمين"
+    },
+    "NutritionistAccess": {
+      "Desc": "السماح للخبراء بمراجعة التقدم الغذائي وتقديم الملاحظات",
+      "Title": "وصول إلى أخصائي التغذية"
+    },
+    "OpenSource": {
+      "Desc": "الشفافية الكاملة والقدرة لأي مطور ويب على المساهمة والتحسين",
+      "Title": "مفتوح المصدر"
+    },
+    "Our front-end framework for building interactive and responsive user interfaces, delivering a seamless user experience": "إطار العمل الأمامي الخاص بنا لبناء واجهات مستخدم تفاعلية ومتجاوبة، مما يوفر تجربة مستخدم سلسة",
+    "ReactJs": "React.Js",
+    "SecuredAccess": {
+      "Desc": "وصول خاص بالمستخدم فقط لعرض البيانات الخاصة به والتلاعب بها باستخدام مصادقة Firebase",
+      "Title": "وصول آمن"
+    },
+    "SetReminders": {
+      "Desc": "إشعارات للوجبات، التمارين، الأدوية، والمزيد",
+      "Title": "تعيين تذكيرات"
+    },
+    "SleepCycleMonitoring": {
+      "Desc": "راقب وحسن أنماط نومك للحصول على راحة وتعافٍ أفضل",
+      "Title": "مراقبة دورة النوم"
+    },
+    "StartUsing": {
+      "Content": "Health Daily Link جاهز للاستخدام، يمكنك ببساطة التسجيل من خلال الرابط أعلاه والبدء في استخدامه الآن!",
+      "Title": "ابدأ باستخدام HDL"
+    },
+    "TechnicalSupport": {
+      "Approach1": "أنشىء تذكرة على موقع GitHub من خلال الرابط أدناه.",
+      "Approach2": "تواصل مع مسؤول المشروع عبر معلومات الاتصال أدناه.",
+      "Approach3": "انضم إلى النقاشات على GitHub للتواصل مع المبرمجين.",
+      "Conclusion": "نحن نقدر ملاحظاتك ومساهماتك لجعل 'رابط الصحة اليومي' أفضل للجميع!",
+      "Content": "إذا واجهت أي مشاكل، أو كانت لديك أسئلة، أو كنت تريد اقتراح تحسينات، فلا تتردد في...",
+      "Title": "الدعم الفني"
+    },
+    "Technology Stack": "التقنيات المستخدمة",
+    "WeightTracking": {
+      "Desc": "سجل وتابع وزنك، بدعم من ميزان inBody أو أي مقدم لقراءات مفصلة",
+      "Title": "تتبع الوزن"
+    },
+    "Welcome": "مرحبًا بك في Health Daily Link (HDL)",
+    "WhatIs": {
+      "Content": "Health Daily Link (HDL) هو تطبيق ويب شامل مصمم لمساعدة الأفراد على تتبع أنشطتهم المتعلقة بالصحة والالتزام بأهدافهم الصحية. من الروتين اليومي مثل الوجبات الغذائية وتتبع ساعات النوم، يجعل HDL من السهل تسجيل ومراقبة وتحليل تقدمك في تحقيق أهدافك الصحية.",
+      "Title": "ما هو Health Daily Link"
+    }
+  },
+  "Layout": {
+    "All Rights Reserved for": "جميع الحقوق محفوظة لـ",
+    "App Manual": "دليل التطبيق",
+    "Called": "استدعاء",
+    "Consumption": "الاستهلاك",
+    "Created": "إضافة",
+    "Dashboard": "لوحة التحكم",
+    "Deleted": "حذف",
+    "Diet": "النظام الغذائي",
+    "HDL | Health Daily Link": "HDL | رابط الصحة اليومية",
+    "LabTests": "الفحوصات المخبرية",
+    "Medicine": "الأدوية",
+    "Schedule": "الجدول الزمني",
+    "Sign Out": "تسجيل الخروج",
+    "SignIn/Register": "تسجيل الدخول / إنشاء حساب",
+    "SleepCycles": "دورات النوم",
+    "SportSessions": "جلسات الرياضة",
+    "Successful": "{{method}} البيانات تم بنجاح.",
+    "Suhaib Ahmad": "صهيب أحمد",
+    "Unsuccessful": "{{method}} البيانات لم ينجح.",
+    "Updated": "تعديل",
+    "Watering": "الري",
+    "WeightReadings": "قراءات الوزن"
+  },
+  "Manual": {
+    "Dashboard": {
+      "Desc": "الملخص الأسبوعي لبياناتك, بما في ذلك استهلاك الأطعمة مقارنة بالجدول الغذائي، استهلاك المياه، ممارسة الرياضة، أوقات النوم، واستهلاك الأدوية.",
+      "Title": "لوحة التحكم"
+    },
+    "Date": "التاريخ",
+    "DietConsumption": "استهلاك النظام الغذائي",
+    "DietConsumptionDesc": "سجل الاستهلاك الفعلي للأطعمة والمشروبات ومقارنته بالوجبات المفترض تناولها. البيانات المحفوظة تعرض داخل تقويم على أساس أسبوعي.",
+    "DietConsumptionHowItWorks1": "اختر وجبة مجدولة لملء العناصر المفترض استهلاكها تلقائيًا.",
+    "DietConsumptionHowItWorks2": "إضافة ملاحظات اختيارية للوجبة بأكملها أو للعناصر المستهلكة.",
+    "DietConsumptionHowItWorks3": "تأكد من التهجئة والتنسيق الدقيقين لاسماء العناصر الغذائية المستهلكة للحصول على مقارنة دقيقة بالجدول.",
+    "DietConsumptionHowItWorks4": "يجب تعبئة بيانات الجدول / النظام الغذائي مسبقًا.",
+    "DietConsumptionInputs1": "التاريخ والوقت",
+    "DietConsumptionInputs2": "الوجبة المجدولة",
+    "DietConsumptionInputs3": "العناصر المستهلكة (الاسم، الكمية، وحدة القياس, الملاحظة الاختيارية)",
+    "DietConsumptionInputs4": "ملاحظات اختيارية على الوجبة",
+    "DietSchedule": "جدول النظام الغذائي",
+    "DietScheduleDesc": "تحديد برنامج الغذائي بكل تفاصيله, شاملاً الوجبات ومواعيدها والعناصر الغذائية لاستهلاكها بكمية محددة في كل وجبة..",
+    "DietScheduleHowItWorks1": "عند تبني جدول جديد، قم بإنشاء سجل جديد للجدول مع إدخالات ترتيب الجدول (الأول أو الثاني، ... إلخ) وتاريخ بدء العمل بالجدول في خدمة 'الجدول'.",
+    "DietScheduleHowItWorks2": "ثم في خدمة 'الوجبات'، قم بتحديد الوجبات المجدولة ضمن سجل الجدول الجديد الذي أنشأته للتو، مع تحديد اسم الوجبة والوقت المجدول للاستهلاك خلال اليوم.",
+    "DietScheduleHowItWorks3": "الخطوة الأخيرة هي الانتقال إلى خدمة 'عناصر الوجبات'، حيث تحتاج إلى إدخال العناصر التي سيتم استهلاكها خلال كل وجبة، بإدراج اسم العنصر وكميته ووحدة قياس الكمية وبدائل العنصر -إذا كان مسموحًا بأي بدايل-.",
+    "DietScheduleHowItWorks4": "هذه السجلات هي التي سيتم استخدامها لعملية الإدخال السهلة في خدمة 'الوجبات المستهلكة'، ويتم استخدامها في تحليل مدة الالتزام والمقارنة بين ما يُفترض استهلاكه مقابل ما تم استهلاكه بالفعل. لذا لأغراض المقارنة، عند إجراء أي تعديلات على الجدول، يستحسن إعادة بناء جدول جديد من الصفر، بدلاً من تعديل الجدول الحالي.",
+    "HowItWorks": "كيف يعمل",
+    "Inputs": "المدخلات",
+    "LabTests": "الفحوصات المخبرية",
+    "LabTestsDesc": "تخزين نتائج الفحوصات المخبرية مع مدخلات اختيارية بناءً على الفحوصات التي أجريت.",
+    "LabTestsInputs2": "مؤشرات الفحص (مثل الدهون الثلاثية, مستوى السكر في الدم, ...إلخ)",
+    "MedicineConsumption": "استهلاك الأدوية",
+    "MedicineConsumptionDesc": "تتبع استهلاك الأدوية بناءً على الجداول المحددة مسبقًا واستعراض البيانات في تقويم شهري.",
+    "MedicineConsumptionInputs1": "التاريخ والوقت",
+    "MedicineConsumptionInputs2": "الكمية",
+    "MedicineConsumptionInputs3": "اختيار الدواء (من قائمة محددة مسبقًا)",
+    "MedicineSchedule": "جدول الأدوية",
+    "MedicineScheduleDesc": "تحديد جداول الأدوية المفصلة.",
+    "MedicineScheduleInputs1": "اسم الدواء",
+    "MedicineScheduleInputs2": "الجرعة لكل مرة",
+    "MedicineScheduleInputs3": "تكرار الاستهلاك (يومي، أسبوعي، شهري، إلخ)",
+    "MedicineScheduleInputs4": "المدة (مثل عدد الأسابيع)",
+    "MedicineScheduleInputs5": "الجرعات لكل تكرار",
+    "MedicineScheduleTargets": "المستهدفات",
+    "MedicineScheduleTargetsDesc": "لإدخال القيم المستهدفة لقراءة الوزن، على شكل نطاق من حد أدنى وحد أقصى.",
+    "Schedules": "الجداول الزمنية",
+    "SleepCycles": "دورات النوم",
+    "SleepCyclesDesc": "تتبع أنماط نومك اليومية واستعرض المدخلات السابقة في تقويم شهري.",
+    "SleepCyclesInputs1": "وقت بدء وانتهاء النوم",
+    "SleepCyclesInputs2": "ملاحظة اختيارية",
+    "SportSessions": "جلسات الرياضة",
+    "SportSessionsDesc": "تسجيل ومراقبة أنشطتك الرياضية البدنية واستعراض المدخلات السابقة في تقويم شهري.",
+    "SportSessionsInputs2": "نوع الرياضة",
+    "SportSessionsInputs3": "وقت البدء والانتهاء",
+    "SportSessionsInputs4": "القياسات (مثل المسافات المقطوعة، وقت السباحة)",
+    "SportSessionsInputs5": "ملاحظات اختيارية",
+    "UserManual": "دليل المستخدم",
+    "Watering": "الري",
+    "WateringDesc": "تتبع استهلاكك للمياه لضمان تحقيق الحد الأدنى  المطلوب من الاستهلاك.",
+    "WateringInputs1": "الكمية بالأكواب",
+    "WateringInputs2": "تاريخ ووقت الاستهلاك",
+    "WeightReadings": "قراءات الوزن",
+    "WeightReadingsDesc": "سجل قراءات الوزن الأسبوعية، بما في ذلك القياسات التفصيلية الخاصة بجهاز InBody 120.",
+    "WeightReadingsInputs2": "قراءة المياه (باللترات)",
+    "WeightReadingsInputs3": "وزن الدهون (كجم)",
+    "WeightReadingsInputs4": "الوزن الإجمالي (كجم)",
+    "WeightReadingsInputs5": "وزن العضلات (كجم)",
+    "WeightReadingsInputs6": "تقييم دهون الخصر (مقياس عددي)"
+  },
+  "OtherLang": "En",
+  "Services": {
+    "Diet": {
+      "Consumption": {
+        "Consumed Meals": "الوجبات المستهلكة",
+        "Date": "التاريخ",
+        "Element": "العنصر",
+        "Meal": "الوجبة",
+        "Meal Contents": "محتويات الوجبة",
+        "MealOfDay": "وجبة اليوم",
+        "NextWeek": "الأسبوع القادم",
+        "Note": "ملاحظة",
+        "PreviousWeek": "الأسبوع السابق",
+        "Quantity": "الكمية",
+        "Time": "الوقت",
+        "Unit": "الوحدة"
+      },
+      "Schedule": {
+        "Alternatives": "البدائل",
+        "DietSchedules": "جداول النظام الغذائي",
+        "Element": "العنصر",
+        "GivingDate": "تاريخ التقديم",
+        "MealElements": "عناصر الوجبة",
+        "MealElementsList": "قائمة عناصر الوجبة",
+        "MealName": "اسم الوجبة",
+        "MealOfDay": "وجبة اليوم",
+        "MealsList": "قائمة الوجبات",
+        "Quantity": "الكمية",
+        "Schedule": "الجدول",
+        "ScheduleMeals": "جدولة الوجبات",
+        "ScheduleOrder": "ترتيب الجدول",
+        "Schedules": "الجداول",
+        "SchedulesList": "قائمة الجداول",
+        "TimeOfMeal": "وقت الوجبة",
+        "Unit": "الوحدة"
+      },
+      "Watering": {
+        "Quantity": "الكمية بالأكواب",
+        "Time": "الوقت",
+        "Watering": "الري"
+      }
+    },
+    "LabTests": {
+      "A/gRatio": "نسبة A/G",
+      "Albumin": "الألبومين",
+      "Basophils": "الحمضات",
+      "Bilirubin": "البيليروبين",
+      "Calcium": "الكالسيوم",
+      "Chloride": "الكلوريد",
+      "CholesterolHdl": "الكوليسترول الجيد (HDL)",
+      "CholesterolLdl": "الكوليسترول السيئ (LDL)",
+      "CholesterolTotal": "الكوليسترول الكلي",
+      "CorrectedCalcium": "الكالسيوم المصحح",
+      "Creatinine": "الكرياتينين",
+      "Date": "التاريخ",
+      "Eosinophils": "الخلايا الحمضية",
+      "FastingBloodSugar": "سكر الدم الصائم",
+      "FastingInsulin": "الأنسولين الصائم",
+      "Ferritin": "الفيريتين",
+      "GGT": "GGT",
+      "Globulin": "الغلوبولين",
+      "Glucose": "الجلوكوز",
+      "Hematocrit": "الهيماتوكريت",
+      "HemoglobinLevel": "مستوى الهيموجلوبين",
+      "InsulinResistance": "مقاومة الأنسولين",
+      "LabTestsList": "قائمة الفحوصات المخبرية",
+      "LdlRiskRatioI": "نسبة مخاطر LDL I",
+      "LdlRiskRatioII": "نسبة مخاطر LDL II",
+      "Lymphocytes": "الخلايا الليمفاوية",
+      "MCH": "MCH",
+      "MCHC": "MCHC",
+      "MCV": "MCV",
+      "MPV": "MPV",
+      "Magnesium": "المغنيسيوم",
+      "Monocytes": "الخلايا الوحيدة",
+      "NeutrophilsSegmented": "الخلايا المتعادلة المجزأة",
+      "Phosphatase": "الفوسفاتاز",
+      "Phosphorus": "الفوسفور",
+      "PlateletsCount": "عدد الصفائح الدموية",
+      "Potassium": "البوتاسيوم",
+      "Protein": "البروتين",
+      "RDW-CV": "RDW-CV",
+      "RDW-SD": "RDW-SD",
+      "RedCellCount": "عدد خلايا الدم الحمراء",
+      "SGOT (AST)": "SGOT (AST)",
+      "SGPT (ALT)": "SGPT (ALT)",
+      "Serum": "المصل",
+      "Sodium": "الصوديوم",
+      "TIBC": "TIBC",
+      "TSH": "TSH",
+      "Transferrin": "الترانسفيرين",
+      "Triglycerides": "الدهون الثلاثية",
+      "Urea": "اليوريا",
+      "UricAcid": "حمض اليوريك",
+      "VLDL": "VLDL",
+      "VitamineB12": "فيتامين B12",
+      "VitamineD": "فيتامين D",
+      "WhiteCellCount": "عدد خلايا الدم البيضاء"
+    },
+    "Medicine": {
+      "Bi-Daily": "مرتين يوميًا",
+      "Bi-Weekly": "مرتين أسبوعيًا",
+      "ConsumedMedicines": "الأدوية المستهلكة",
+      "ConsumptionFrequency": "تكرار الاستهلاك",
+      "Daily": "يومي",
+      "Date": "التاريخ",
+      "Dose": "التفاصيل (الجرعة)",
+      "Duration": "المدة (إجمالي مرات التكرار)",
+      "Medicine": "الدواء",
+      "MedicineSchedule": "جدول الأدوية",
+      "Monthly": "شهري",
+      "OccurrenceQuantity": "الكمية لكل تكرار",
+      "Quantity": "الكمية",
+      "Time": "الوقت",
+      "Weekly": "أسبوعي"
+    },
+    "SleepCycles": {
+      "EndTime": "وقت الانتهاء",
+      "Notes": "الملاحظات",
+      "SleepCycles": "دورات النوم",
+      "StartTime": "وقت البدء"
+    },
+    "Sports": {
+      "Date": "التاريخ",
+      "EndTime": "وقت الانتهاء",
+      "Jogging": "الركض",
+      "Measure (Walked Distance, Swimming Time, etc)": "القياس (المسافات المقطوعة، وقت السباحة، إلخ)",
+      "Notes": "الملاحظات",
+      "Sport Note": "ملاحظات الرياضة",
+      "Sport Type": "نوع الرياضة",
+      "SportSessions": "جلسات الرياضة",
+      "StartTime": "وقت البدء",
+      "Swimming": "السباحة",
+      "Walking": "المشي"
+    },
+    "WeightReadings": {
+      "Actions": "الإجراءات",
+      "Date": "التاريخ",
+      "FatWeight": "وزن الدهون",
+      "FatWeightMaxTarget": "هدف أقصى لوزن الدهون",
+      "FatWeightMinTarget": "هدف أدنى لوزن الدهون",
+      "Input": "الإدخال",
+      "Muscles": "العضلات",
+      "MusclesMaxTarget": "هدف أقصى للعضلات",
+      "MusclesMinTarget": "هدف أدنى للعضلات",
+      "MusclesReading": "قراءة العضلات",
+      "NumberOfWeightReading": "إجمالي عدد قراءات الوزن (زيارات أسبوعية للتغذية)",
+      "Targets": "الأهداف",
+      "WaistFat": "دهون الخصر",
+      "WaistFat Reading": "قراءة دهون الخصر",
+      "WaistFatMaxTarget": "هدف أقصى لدهون الخصر",
+      "WaistFatMinTarget": "هدف أدنى لدهون الخصر",
+      "Water": "الماء",
+      "Water Volume": "حجم الماء",
+      "WaterMaxTarget": "هدف أقصى للماء",
+      "WaterMinTarget": "هدف أدنى للماء",
+      "WaterReading": "قراءة الماء",
+      "Weight": "الوزن",
+      "WeightMaxTarget": "هدف أقصى للوزن",
+      "WeightMinTarget": "هدف أدنى للوزن",
+      "WeightReadings": "قراءات الوزن"
+    }
+  }
+}

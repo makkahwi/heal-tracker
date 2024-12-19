@@ -1,9 +1,11 @@
 import moment from "moment";
-
+import { useTranslation } from "react-i18next";
 import { fullWeightReadingProps } from ".";
 import AnalysisCharts from "../../../Components/PageView/Charts";
 
 const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
+  const { t } = useTranslation();
+
   const charts = [
     {
       data: data?.map(
@@ -26,7 +28,7 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
       minTarget: data[0]?.weightMin,
       maxTarget: data[0]?.weightMax,
       title: "Weight",
-      unit: "KG",
+      unit: t("Common.Labels.KG"),
     },
     {
       data: data?.map(
@@ -49,7 +51,7 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
       title: "Muscles Weight",
       minTarget: data[0]?.musclesMin,
       maxTarget: data[0]?.musclesMax,
-      unit: "KG",
+      unit: t("Common.Labels.KG"),
     },
     {
       data: data?.map(
@@ -91,7 +93,7 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
     //     })
     //   ),
     //   title: "Muscles Weight",
-    //   unit: "KG",
+    //   unit: t("Common.Labels.KG"),
     // },
     {
       data: data?.map(
@@ -114,7 +116,7 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
       minTarget: data[0]?.waterMin,
       maxTarget: data[0]?.waterMax,
       title: "Water Volume",
-      unit: "L",
+      unit: t("Common.Labels.Litre"),
     },
     {
       data: data?.map(
@@ -137,7 +139,7 @@ const WeightReadingCharts = ({ data }: { data: fullWeightReadingProps[] }) => {
       minTarget: data[0]?.fatMin,
       maxTarget: data[0]?.fatMax,
       title: "Fat Weight",
-      unit: "KG",
+      unit: t("Common.Labels.KG"),
     },
     {
       data: data?.map(

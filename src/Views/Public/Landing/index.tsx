@@ -21,125 +21,122 @@ import {
   faWeight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslation } from "react-i18next";
 
 import FeaturesView from "./FeaturesView";
 import PageSection from "./PageSection";
-
-const currentFeatures = [
-  {
-    title: "Meal Scheduling",
-    icon: faUtensils,
-    desc: "Stay on track with your nutrition plan by logging and following scheduled meals.",
-  },
-  {
-    title: "Hydration Logging",
-    icon: faTint,
-    desc: "Record your water intake to maintain optimal hydration levels.",
-  },
-  {
-    title: "Exercise Tracking",
-    icon: faDumbbell,
-    desc: "Log your physical activities, including sports, workouts, and walks.",
-  },
-  {
-    title: "Medication Follow-Up",
-    icon: faPills,
-    desc: "Never miss a dose by keeping track of your medications and supplements.",
-  },
-  {
-    title: "Sleep Cycle Monitoring",
-    icon: faBed,
-    desc: "Monitor and improve your sleep patterns for better rest and recovery.",
-  },
-  {
-    title: "Weight Tracking",
-    icon: faWeight,
-    desc: "Log and monitor your weight, with support for inBody scale or any detailed-reading providers.",
-  },
-  {
-    icon: faShield,
-    title: "Secured Access",
-    desc: "User-only access for own data view & manipulation with Firebase authentication.",
-  },
-  {
-    icon: faUsers,
-    title: "Open-Source",
-    desc: "Totally transparency and ability for any web developer to contribute and enhance.",
-  },
-  {
-    icon: faLaptopCode,
-    title: "Modern Tech Stack",
-    desc: "Built with React.Js and Firebase for an optimized, scalable, and responsive web experience.",
-  },
-];
-
-const futurePlans = [
-  {
-    icon: faMobileAlt,
-    title: "Mobile App",
-    desc: "A dedicated app for tracking health on the go.",
-  },
-  {
-    icon: faClock,
-    title: "Set Reminders",
-    desc: "Notifications for meals, workouts, medications, and more.",
-  },
-  {
-    icon: faUserMd,
-    title: "Nutritionist Access",
-    desc: "Allow experts to review and provide feedback on dietary progress.",
-  },
-  {
-    icon: faBrain,
-    title: "AI-Powered Input",
-    desc: "Automatic data entry and meaningful health recommendations.",
-  },
-  {
-    icon: faChartLine,
-    title: "Advanced Analytics",
-    desc: "Generate summaries and visualizations for deeper insights into your habits.",
-  },
-  {
-    icon: faCalculator,
-    title: "Calorie Tracking",
-    desc: "Automatic calorie calculations for scheduled and consumed meals.",
-  },
-  {
-    icon: faLanguage,
-    title: "Localization",
-    desc: "Support for multiple languages, including Arabic.",
-  },
-  {
-    icon: faBullseye,
-    title: "Goal Setting",
-    desc: "Personalized health targets and progress tracking.",
-  },
-  {
-    icon: faUsers,
-    title: "Multi-User Support",
-    desc: "Perfect for families or teams to collaborate on health goals.",
-  },
-  {
-    icon: faChartPie,
-    title: "Advanced Data Visualization",
-    desc: "Build a platform for shared wellness experiences and tips.",
-  },
-];
-
-const techs = [
-  {
-    icon: faSpaceShuttle,
-    title: "React.js",
-    desc: "Our front-end framework for building interactive and responsive user interfaces, delivering a seamless user experience.",
-  },
-  {
-    icon: faDatabase,
-    title: "Firebase",
-    desc: "A reliable backend solution for data storage, real-time syncing, and user authentication, ensuring security and scalability.",
-  },
-];
+import { Fragment } from "react/jsx-runtime";
 
 const LandingPage = () => {
+  const { t } = useTranslation();
+
+  const currentFeatures = [
+    {
+      title: t("Landing.MealScheduling.Title"),
+      icon: faUtensils,
+      desc: t("Landing.MealScheduling.Desc"),
+    },
+    {
+      title: t("Landing.HydrationLogging.Title"),
+      icon: faTint,
+      desc: t("Landing.HydrationLogging.Desc"),
+    },
+    {
+      title: t("Landing.ExerciseTracking.Title"),
+      icon: faDumbbell,
+      desc: t("Landing.ExerciseTracking.Desc"),
+    },
+    {
+      title: t("Landing.MedicationFollowUp.Title"),
+      icon: faPills,
+      desc: t("Landing.MedicationFollowUp.Desc"),
+    },
+    {
+      title: t("Landing.SleepCycleMonitoring.Title"),
+      icon: faBed,
+      desc: t("Landing.SleepCycleMonitoring.Desc"),
+    },
+    {
+      title: t("Landing.WeightTracking.Title"),
+      icon: faWeight,
+      desc: t("Landing.WeightTracking.Desc"),
+    },
+    {
+      icon: faShield,
+      title: t("Landing.SecuredAccess.Title"),
+      desc: t("Landing.SecuredAccess.Desc"),
+    },
+    {
+      icon: faUsers,
+      title: t("Landing.OpenSource.Title"),
+      desc: t("Landing.OpenSource.Desc"),
+    },
+    {
+      icon: faLaptopCode,
+      title: t("Landing.ModernTechStack.Title"),
+      desc: t("Landing.ModernTechStack.Desc"),
+    },
+  ];
+
+  const futurePlans = [
+    {
+      icon: faMobileAlt,
+      title: t("Landing.MobileApp.Title"),
+      desc: t("Landing.MobileApp.Desc"),
+    },
+    {
+      icon: faClock,
+      title: t("Landing.SetReminders.Title"),
+      desc: t("Landing.SetReminders.Desc"),
+    },
+    {
+      icon: faUserMd,
+      title: t("Landing.NutritionistAccess.Title"),
+      desc: t("Landing.NutritionistAccess.Desc"),
+    },
+    {
+      icon: faBrain,
+      title: t("Landing.AiPoweredInput.Title"),
+      desc: t("Landing.AiPoweredInput.Desc"),
+    },
+    {
+      icon: faChartLine,
+      title: t("Landing.AdvancedAnalytics.Title"),
+      desc: t("Landing.AdvancedAnalytics.Desc"),
+    },
+    {
+      icon: faCalculator,
+      title: t("Landing.CalorieTracking.Title"),
+      desc: t("Landing.CalorieTracking.Desc"),
+    },
+    {
+      icon: faLanguage,
+      title: t("Landing.Localization.Title"),
+      desc: t("Landing.Localization.Desc"),
+    },
+    {
+      icon: faBullseye,
+      title: t("Landing.GoalSetting.Title"),
+      desc: t("Landing.GoalSetting.Desc"),
+    },
+    {
+      icon: faUsers,
+      title: t("Landing.MultiUserSupport.Title"),
+      desc: t("Landing.MultiUserSupport.Desc"),
+    },
+    {
+      icon: faChartPie,
+      title: t("Landing.AdvancedDataVisualization.Title"),
+      desc: t("Landing.AdvancedDataVisualization.Desc"),
+    },
+  ];
+
+  const support = [
+    t("Landing.TechnicalSupport.Approach1"),
+    t("Landing.TechnicalSupport.Approach2"),
+    t("Landing.TechnicalSupport.Approach3"),
+  ];
+
   return (
     <div className="container mt-5">
       <header className="text-center py-5 mb-5 row align-items-center">
@@ -148,66 +145,68 @@ const LandingPage = () => {
         </div>
 
         <div className="col-md-9 d-flex flex-column align-items-center justify-content-center">
-          <h1 className="display-4">Welcome to Health Daily Link (HDL)</h1>
-          <p className="lead">
-            Your personal companion for tracking and improving your health
-            journey.
-          </p>
+          <h1 className="display-4">{t("Landing.Welcome")}</h1>
+          <p className="lead">{t("Landing.Desc")}</p>
         </div>
       </header>
 
       <FeaturesView
-        title="What is Health Daily Link"
-        desc="Health Daily Link is a comprehensive, open-source web app dedicated to helping you track and manage various health-related activities to stay on top of your wellness goals."
+        title={t("Landing.WhatIs.Title")}
+        desc={t("Landing.WhatIs.Content")}
         features={currentFeatures}
       />
 
-      <PageSection
-        title="Technology Stack"
-        desc="Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience."
-      >
-        <div className="mx-auto">
-          {techs.map(({ icon, title, desc }, i) => (
-            <div className="d-flex align-items-center mb-4" key={i}>
-              <div className="text-primary rounded-circle">
-                <FontAwesomeIcon icon={icon} size="2x" />
-              </div>
-
-              <div className="ms-4 text-start">
-                <h5 className="fw-bold">{title}</h5>
-                <p className="mb-0">{desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </PageSection>
-
-      <PageSection
-        title="Meet the Developer"
-        desc="Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology. This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world.
-"
-      />
-
       <FeaturesView
-        title="Our Vision for the Future"
-        desc="Health Daily Link is growing, and we have big plans to make it even more powerful and user-friendly. With your support, we aim to add new features, improve accessibility, and build a community around wellness. This is part of what we have in mind to develop for future expansions."
+        title={t("Landing.Future.Title")}
+        desc={t("Landing.Future.Content")}
         features={futurePlans}
       />
 
       <PageSection
-        title="Contribute to Health Daily Link"
-        desc=" Health Daily Link is open-source, and we’re thrilled to welcome developers, designers, and wellness enthusiasts to contribute. Join us on GitHub and be part of our journey to make health tracking accessible to all."
+        title={t("Landing.StartUsing.Title")}
+        desc={t("Landing.StartUsing.Content")}
+      />
+
+      <PageSection
+        title={t("Landing.TechnicalSupport.Title")}
+        desc={t("Landing.TechnicalSupport.Content")}
       >
-        <a
-          className="btn btn-primary btn-lg shadow-sm text-white"
-          href="https://github.com/makkahwi/health-daily-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faUsers} className="me-2" />
-          Contribute on GitHub
-        </a>
+        <Fragment>
+          <ul className="list-group mb-5 text-justify">
+            {support.map((point, i) => (
+              <li className="list-group-item lh-lg fw-bold" key={i}>
+                {point}
+              </li>
+            ))}
+          </ul>
+
+          <h5 className="text-justify">
+            {t("Landing.TechnicalSupport.Conclusion")}
+          </h5>
+        </Fragment>
       </PageSection>
+
+      <PageSection
+        title={t("Landing.Contribution.Title")}
+        desc={t("Landing.Contribution.Content")}
+      >
+        <div className="text-center mt-5">
+          <a
+            className="btn btn-primary btn-lg shadow-sm text-white"
+            href="https://github.com/makkahwi/health-daily-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faUsers} className="me-2" />
+            {t("Landing.Contribute")}
+          </a>
+        </div>
+      </PageSection>
+
+      <PageSection
+        title={t("Landing.Developer.Title")}
+        desc={t("Landing.Developer.Content")}
+      />
     </div>
   );
 };

@@ -112,7 +112,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
               <tbody>
                 <tr>
                   <td colSpan={4} className="text-center py-3">
-                    <XYPlot
+                    {/* <XYPlot
                       xType="time"
                       width={300}
                       height={300}
@@ -152,7 +152,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         onValueMouseOut={() => setHovered(initialHovered())}
                       />
 
-                      {/* Values Average */}
+                      {/* Values Average
                       {show.average[x] && (
                         <LineMarkSeries
                           data={[
@@ -190,7 +190,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         </Hint>
                       )}
 
-                      {/* Change Average */}
+                      {/* Change Average
                       {show.changeAverage[x] && (
                         <LineMarkSeries
                           data={[
@@ -241,7 +241,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         </Hint>
                       )}
 
-                      {/* Targeted */}
+                      {/* Targeted
                       {show.targeted[x] && minTarget && (
                         <Hint
                           value={{
@@ -315,7 +315,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                           ]}
                         />
                       )}
-                    </XYPlot>
+                    </XYPlot> */}
                   </td>
                 </tr>
 

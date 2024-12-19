@@ -1,7 +1,7 @@
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, useEffect, useState } from "react";
-
+import { useTranslation } from "react-i18next";
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
 import MonthlyCalendar from "../../../Components/PageView/MonthlyCalendar";
@@ -43,6 +43,8 @@ export const renderMedicineUI =
     );
 
 const MedicineConsumption = () => {
+  const { t } = useTranslation();
+
   const [data, setData] = useState<medicineProps[]>([]);
   const [schedule, setSchedule] = useState<medicineScheduleProps[]>([]);
 
@@ -81,26 +83,26 @@ const MedicineConsumption = () => {
   const formInputs = [
     {
       name: "date",
-      label: "Date",
+      label: t("Services.Medicine.Date"),
       type: "date",
       required: true,
     },
     {
       name: "time",
-      label: "Time",
+      label: t("Services.Medicine.Time"),
       type: "time",
       required: true,
     },
     {
       name: "quantity",
-      label: "Quantity",
+      label: t("Services.Medicine.Quantity"),
       type: "number",
       defaultValue: 1,
       required: true,
     },
     {
       name: "medicine",
-      label: "Medicine",
+      label: t("Services.Medicine.Medicine"),
       type: "select",
       options: schedule.map(({ id, medicine, specs }) => ({
         value: id || "",
@@ -127,7 +129,7 @@ const MedicineConsumption = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title="Consumed Medicines">
+    <PageSection title={t("Services.Medicine.ConsumedMedicines")}>
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 

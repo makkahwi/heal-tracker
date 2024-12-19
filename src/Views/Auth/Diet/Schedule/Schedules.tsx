@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import * as BeAPI from "../../../../API";
 import PageView from "../../../../Components/PageView";
 
@@ -12,16 +13,18 @@ interface props {
 }
 
 const Schedules = ({ data, getData }: props) => {
+  const { t } = useTranslation();
+
   const formInputs = [
     {
       name: "order",
-      label: "Schedule Order",
+      label: t("Services.Diet.Schedule.ScheduleOrder"),
       type: "number",
       required: true,
     },
     {
       name: "date",
-      label: "Giving Date",
+      label: t("Services.Diet.Schedule.GivingDate"),
       type: "date",
       required: true,
     },
@@ -47,7 +50,7 @@ const Schedules = ({ data, getData }: props) => {
 
   return (
     <PageView
-      title="Schedules List"
+      title={t("Services.Diet.Schedule.SchedulesList")}
       data={data}
       inputs={formInputs}
       onSubmit={onSubmit}

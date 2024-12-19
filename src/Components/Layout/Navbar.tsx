@@ -1,12 +1,14 @@
 import {
   faDashboard,
+  faInfoCircle,
   faSignIn,
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-
+import { Fragment } from "react/jsx-runtime";
 import { routes } from "../../App";
 import { signOut } from "../../Store/authSlice";
 import { AppDispatch, RootState } from "../../Store/store";
@@ -15,7 +17,17 @@ const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const location = useLocation();
+  const { t } = useTranslation();
   const user = useSelector((state: RootState) => state.auth.user);
+  const { loading } = useSelector((state: RootState) => state.loading);
+
+  const closeDropdowns = () => {
+    const dropdowns = document.querySelectorAll(".dropdown-menu.show");
+    dropdowns.forEach((dropdown) => dropdown.classList.remove("show"));
+
+    const toggler = document.querySelector(".navbar-collapse");
+    if (toggler) toggler.classList.remove("show");
+  };
 
   return (
     <nav className="navbar navbar-expand-xl navbar-primary bg-primary shadow-sm position-fixed fixed-top w-100">
@@ -32,6 +44,15 @@ const Navbar = () => {
             className="me-2"
           />
           <span className="text-white fw-bold">HDL</span>
+
+          {!!loading.length ? (
+            <span
+              className="spinner-grow text-light spinner-border-sm ms-3"
+              aria-hidden="true"
+            />
+          ) : (
+            ""
+          )}
         </span>
 
         <button
@@ -56,15 +77,18 @@ const Navbar = () => {
                       location.pathname === "/" ? "text-dark" : "text-white"
                     }`}
                     role="button"
-                    onClick={() => navigate("/")}
+                    onClick={() => {
+                      navigate("/");
+                      closeDropdowns();
+                    }}
                   >
                     <FontAwesomeIcon icon={faDashboard} />
-                    <span className="ms-2">Dashboard</span>
+                    <span className="ms-2">{t("Layout.Dashboard")}</span>
                   </span>
                 </li>
 
-                {routes.map(({ name, path, icon, list }, index) => (
-                  <li className="nav-item dropdown" key={index}>
+                {routes.map(({ name, path, icon, list }, i) => (
+                  <li className="nav-item dropdown" key={i}>
                     {list ? (
                       <span
                         className={`nav-link dropdown-toggle ${
@@ -78,7 +102,7 @@ const Navbar = () => {
                             ? "text-dark"
                             : "text-white"
                         }`}
-                        id={`navbarDropdown-${index}`}
+                        id={`navbarDropdown-${i}`}
                         role="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
@@ -94,7 +118,10 @@ const Navbar = () => {
                             : "text-white"
                         }`}
                         role="button"
-                        onClick={() => navigate(path)}
+                        onClick={() => {
+                          navigate(path);
+                          closeDropdowns();
+                        }}
                       >
                         <FontAwesomeIcon icon={icon} />
                         <span className="ms-2">{name}</span>
@@ -104,7 +131,7 @@ const Navbar = () => {
                     {list && (
                       <ul
                         className="dropdown-menu"
-                        aria-labelledby={`navbarDropdown-${index}`}
+                        aria-labelledby={`navbarDropdown-${i}`}
                       >
                         {list.map(
                           ({ name, path: childPath, icon }, subIndex) => (
@@ -119,10 +146,7 @@ const Navbar = () => {
                                 role="button"
                                 onClick={() => {
                                   navigate(path + "/" + childPath);
-
-                                  document
-                                    .querySelector(".dropdown-menu")
-                                    ?.classList.remove("show");
+                                  closeDropdowns();
                                 }}
                               >
                                 <FontAwesomeIcon icon={icon} />
@@ -140,29 +164,77 @@ const Navbar = () => {
           </ul>
 
           <ul className="navbar-nav">
-            <li className="nav-item">
-              {user ? (
+            {user ? (
+              <Fragment>
+                <li className="nav-item">
+                  <span
+                    className={`nav-link ${
+                      location.pathname === "/manual"
+                        ? "text-dark"
+                        : "text-white"
+                    }`}
+                    role="button"
+                    onClick={() => {
+                      navigate("manual");
+                      closeDropdowns();
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faInfoCircle} />
+                    <span className="ms-2 d-inline d-xl-none">
+                      {t("Layout.App Manual")}
+                    </span>
+                  </span>
+                </li>
+
+                <li className="nav-item">
+                  <span
+                    className="nav-link text-white"
+                    role="button"
+                    onClick={() => {
+                      dispatch(signOut());
+                      closeDropdowns();
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faSignOut} />
+                    <span className="ms-2 d-inline d-xl-none">
+                      {t("Layout.Sign Out")}
+                    </span>
+                  </span>
+                </li>
+              </Fragment>
+            ) : (
+              <li className="nav-item">
                 <span
                   className="nav-link text-white"
                   role="button"
                   onClick={() => {
-                    dispatch(signOut());
+                    navigate("/login");
+                    closeDropdowns();
                   }}
                 >
-                  <FontAwesomeIcon icon={faSignOut} />
-                  <span className="ms-2">Sign Out</span>
-                </span>
-              ) : (
-                <span
-                  className="nav-link text-white"
-                  role="button"
-                  onClick={() => navigate("/login")}
-                >
                   <FontAwesomeIcon icon={faSignIn} />
-                  <span className="ms-2">Sign In / Register</span>
+                  <span className="ms-2">{t("Layout.SignIn/Register")}</span>
                 </span>
-              )}
-            </li>
+              </li>
+            )}
+
+            {/* <li className="nav-item">
+              <span
+                className="nav-link text-white"
+                role="button"
+                onClick={() => {
+                  const lang = i18n.language === "ar" ? "en" : "ar";
+
+                  localStorage.setItem("lang", lang);
+                  i18n.changeLanguage(lang);
+                  
+                  closeDropdowns();
+                }}
+              >
+                <FontAwesomeIcon icon={faLanguage} />
+                <span className="ms-2">{t("OtherLang")}</span>
+              </span>
+            </li> */}
           </ul>
         </div>
       </div>
