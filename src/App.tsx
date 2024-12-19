@@ -11,7 +11,7 @@ import {
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Navbar from "./Components/Layout/Navbar";
+import Layout from "./Layout";
 import store from "./Store/store";
 import Dashboard from "./Views/Auth/Dashboard";
 import Consumption from "./Views/Auth/Diet/Consumption";
@@ -27,7 +27,6 @@ import WeightReadings from "./Views/Auth/WeightReadings";
 import Landing from "./Views/Public/Landing";
 import Login from "./Views/Public/Login";
 import i18n from "./i18n";
-import ScrollToTop from "./Components/Layout/ScrollToTop";
 
 export const routes = [
   {
@@ -104,31 +103,33 @@ const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <ScrollToTop />
+        <Layout>
+          {store.getState().auth.user ? (
+            <Routes>
+              {routes.map(({ name, path, Comp, list }, i) =>
+                list ? (
+                  list.map(({ name, path: childPath, Comp }, x) => (
+                    <Route
+                      path={path + "/" + childPath}
+                      element={Comp}
+                      key={x}
+                    />
+                  ))
+                ) : (
+                  <Route path={path} element={Comp} key={i} />
+                )
+              )}
 
-        <Navbar />
-
-        {store.getState().auth.user ? (
-          <Routes>
-            {routes.map(({ name, path, Comp, list }, i) =>
-              list ? (
-                list.map(({ name, path: childPath, Comp }, x) => (
-                  <Route path={path + "/" + childPath} element={Comp} key={x} />
-                ))
-              ) : (
-                <Route path={path} element={Comp} key={i} />
-              )
-            )}
-
-            <Route path="manual" element={<Manual />} />
-            <Route path="*" element={<Dashboard />} />
-          </Routes>
-        ) : (
-          <Routes>
-            <Route path="login" element={<Login />} />
-            <Route path="*" element={<Landing />} />
-          </Routes>
-        )}
+              <Route path="manual" element={<Manual />} />
+              <Route path="*" element={<Dashboard />} />
+            </Routes>
+          ) : (
+            <Routes>
+              <Route path="login" element={<Login />} />
+              <Route path="*" element={<Landing />} />
+            </Routes>
+          )}
+        </Layout>
       </BrowserRouter>
     </Provider>
   );
