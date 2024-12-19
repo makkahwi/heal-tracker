@@ -172,7 +172,7 @@ const LandingPage = () => {
         desc={t("Landing.TechnicalSupport.Content")}
       >
         <Fragment>
-          <ul className="list-group mb-5">
+          <ul className="list-group mb-5 text-justify">
             {support.map((point, i) => (
               <li className="list-group-item lh-lg fw-bold" key={i}>
                 {point}
@@ -180,7 +180,9 @@ const LandingPage = () => {
             ))}
           </ul>
 
-          <h5>{t("Landing.TechnicalSupport.Conclusion")}</h5>
+          <h5 className="text-justify">
+            {t("Landing.TechnicalSupport.Conclusion")}
+          </h5>
         </Fragment>
       </PageSection>
 

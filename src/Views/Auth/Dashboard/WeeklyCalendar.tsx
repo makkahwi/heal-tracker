@@ -384,7 +384,7 @@ const WeeklyCalendar = ({
           <tr>
             <th rowSpan={2}>
               <button
-                className="btn btn-primary"
+                className="btn btn-primary text-white"
                 disabled={currentWeekSummary?.week.length > 0}
                 onClick={() => generateSummary()}
               >
