@@ -22,6 +22,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslation } from "react-i18next";
+
 import FeaturesView from "./FeaturesView";
 import PageSection from "./PageSection";
 
@@ -33,63 +34,63 @@ const LandingPage = () => {
       title: t("Landing.Meal Scheduling"),
       icon: faUtensils,
       desc: t(
-        "Landing.Stay on track with your nutrition plan by logging and following scheduled meals."
+        "Landing.Stay on track with your nutrition plan by logging and following scheduled meals"
       ),
     },
     {
       title: t("Landing.Hydration Logging"),
       icon: faTint,
       desc: t(
-        "Landing.Record your water intake to maintain optimal hydration levels."
+        "Landing.Record your water intake to maintain optimal hydration levels"
       ),
     },
     {
       title: t("Landing.Exercise Tracking"),
       icon: faDumbbell,
       desc: t(
-        "Landing.Log your physical activities, including sports, workouts, and walks."
+        "Landing.Log your physical activities, including sports, workouts, and walks"
       ),
     },
     {
       title: t("Landing.Medication Follow-Up"),
       icon: faPills,
       desc: t(
-        "Landing.Never miss a dose by keeping track of your medications and supplements."
+        "Landing.Never miss a dose by keeping track of your medications and supplements"
       ),
     },
     {
       title: t("Landing.Sleep Cycle Monitoring"),
       icon: faBed,
       desc: t(
-        "Landing.Monitor and improve your sleep patterns for better rest and recovery."
+        "Landing.Monitor and improve your sleep patterns for better rest and recovery"
       ),
     },
     {
       title: t("Landing.Weight Tracking"),
       icon: faWeight,
       desc: t(
-        "Landing.Log and monitor your weight, with support for inBody scale or any detailed-reading providers."
+        "Landing.Log and monitor your weight, with support for inBody scale or any detailed-reading providers"
       ),
     },
     {
       icon: faShield,
       title: t("Landing.Secured Access"),
       desc: t(
-        "Landing.User-only access for own data view & manipulation with Firebase authentication."
+        "Landing.User-only access for own data view & manipulation with Firebase authentication"
       ),
     },
     {
       icon: faUsers,
       title: t("Landing.Open-Source"),
       desc: t(
-        "Landing.Totally transparency and ability for any web developer to contribute and enhance."
+        "Landing.Totally transparency and ability for any web developer to contribute and enhance"
       ),
     },
     {
       icon: faLaptopCode,
       title: t("Landing.Modern Tech Stack"),
       desc: t(
-        "Landing.Built with ReactJs and Firebase for an optimized, scalable, and responsive web experience."
+        "Landing.Built with ReactJs and Firebase for an optimized, scalable, and responsive web experience"
       ),
     },
   ];
@@ -104,35 +105,35 @@ const LandingPage = () => {
       icon: faClock,
       title: t("Landing.Set Reminders"),
       desc: t(
-        "Landing.Notifications for meals, workouts, medications, and more."
+        "Landing.Notifications for meals, workouts, medications, and more"
       ),
     },
     {
       icon: faUserMd,
       title: t("Landing.Nutritionist Access"),
       desc: t(
-        "Landing.Allow experts to review and provide feedback on dietary progress."
+        "Landing.Allow experts to review and provide feedback on dietary progress"
       ),
     },
     {
       icon: faBrain,
       title: t("Landing.AI-Powered Input"),
       desc: t(
-        "Landing.Automatic data entry and meaningful health recommendations."
+        "Landing.Automatic data entry and meaningful health recommendations"
       ),
     },
     {
       icon: faChartLine,
       title: t("Landing.Advanced Analytics"),
       desc: t(
-        "Landing.Generate summaries and visualizations for deeper insights into your habits."
+        "Landing.Generate summaries and visualizations for deeper insights into your habits"
       ),
     },
     {
       icon: faCalculator,
       title: t("Landing.Calorie Tracking"),
       desc: t(
-        "Landing.Automatic calorie calculations for scheduled and consumed meals."
+        "Landing.Automatic calorie calculations for scheduled and consumed meals"
       ),
     },
     {
@@ -149,14 +150,14 @@ const LandingPage = () => {
       icon: faUsers,
       title: t("Landing.Multi-User Support"),
       desc: t(
-        "Landing.Perfect for families or teams to collaborate on health goals."
+        "Landing.Perfect for families or teams to collaborate on health goals"
       ),
     },
     {
       icon: faChartPie,
       title: t("Landing.Advanced Data Visualization"),
       desc: t(
-        "Landing.Build a platform for shared wellness experiences and tips."
+        "Landing.Build a platform for shared wellness experiences and tips"
       ),
     },
   ];
@@ -166,14 +167,14 @@ const LandingPage = () => {
       icon: faSpaceShuttle,
       title: t("Landing.ReactJs"),
       desc: t(
-        "Landing.Our front-end framework for building interactive and responsive user interfaces, delivering a seamless user experience."
+        "Landing.Our front-end framework for building interactive and responsive user interfaces, delivering a seamless user experience"
       ),
     },
     {
       icon: faDatabase,
       title: t("Landing.Firebase"),
       desc: t(
-        "Landing.A reliable backend solution for data storage, real-time syncing, and user authentication, ensuring security and scalability."
+        "Landing.A reliable backend solution for data storage, real-time syncing, and user authentication, ensuring security and scalability"
       ),
     },
   ];
@@ -191,7 +192,7 @@ const LandingPage = () => {
           </h1>
           <p className="lead">
             {t(
-              "Landing.Your personal companion for tracking and improving your health journey."
+              "Landing.Your personal companion for tracking and improving your health journey"
             )}
           </p>
         </div>
@@ -200,7 +201,7 @@ const LandingPage = () => {
       <FeaturesView
         title={t("Landing.What is Health Daily Link")}
         desc={t(
-          "Landing.Health Daily Link is a comprehensive, open-source web app dedicated to helping you track and manage various health-related activities to stay on top of your wellness goals."
+          "Landing.Health Daily Link is a comprehensive, open-source web app dedicated to helping you track and manage various health-related activities to stay on top of your wellness goals"
         )}
         features={currentFeatures}
       />
@@ -208,7 +209,7 @@ const LandingPage = () => {
       <PageSection
         title={t("Landing.Technology Stack")}
         desc={t(
-          "Landing.Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience."
+          "Landing.Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience"
         )}
       >
         <div className="mx-auto">
@@ -230,14 +231,14 @@ const LandingPage = () => {
       <PageSection
         title={t("Landing.Meet the Developer")}
         desc={t(
-          "Landing.Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world."
+          "Landing.Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world"
         )}
       />
 
       <FeaturesView
         title={t("Landing.Our Vision for the Future")}
         desc={t(
-          "Landing.Health Daily Link is growing, and we have big plans to make it even more powerful and user-friendly With your support, we aim to add new features, improve accessibility, and build a community around wellness This is part of what we have in mind to develop for future expansions."
+          "Landing.Health Daily Link is growing, and we have big plans to make it even more powerful and user-friendly With your support, we aim to add new features, improve accessibility, and build a community around wellness This is part of what we have in mind to develop for future expansions"
         )}
         features={futurePlans}
       />
