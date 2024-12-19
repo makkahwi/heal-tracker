@@ -87,7 +87,7 @@ const ShortCuts = () => {
         {/* Medicine Consumption Actions */}
         <div className="row align-items-center">
           <div className={`col-lg-${2} my-4 text-start`}>
-            {t("Dashboard.ShortCuts.Medicine Consumption")}
+            {t("Dashboard.ShortCuts.MedicineConsumption")}
           </div>
 
           {shortcuts

@@ -56,13 +56,13 @@ export const routes = [
     ],
   },
   {
-    name: i18n.t("Layout.Sport Sessions"),
+    name: i18n.t("Layout.SportSessions"),
     path: "sport-sessions",
     icon: faRunning,
     Comp: <Sports />,
   },
   {
-    name: i18n.t("Layout.Sleep Cycles"),
+    name: i18n.t("Layout.SleepCycles"),
     path: "sleep-cycles",
     icon: faBed,
     Comp: <SleepCycles />,
@@ -87,13 +87,13 @@ export const routes = [
     ],
   },
   {
-    name: i18n.t("Layout.Weight Readings"),
+    name: i18n.t("Layout.WeightReadings"),
     path: "weight-readings",
     icon: faWeight,
     Comp: <WeightReadings />,
   },
   {
-    name: i18n.t("Layout.Lab Tests"),
+    name: i18n.t("Layout.LabTests"),
     path: "lab-tests",
     icon: faFileMedical,
     Comp: <LabTests />,

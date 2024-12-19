@@ -307,7 +307,7 @@ const WeeklyCalendar = ({
           </tr>
 
           <tr>
-            <th>{t("Dashboard.Sport Sessions")}</th>
+            <th>{t("Dashboard.SportSessions")}</th>
 
             {currentWeek?.map((day, x) => {
               const theWalkExercises: comprehensiveProps | undefined =
@@ -353,7 +353,7 @@ const WeeklyCalendar = ({
           </tr>
 
           <tr>
-            <th>{t("Dashboard.Sleep Cycles")}</th>
+            <th>{t("Dashboard.SleepCycles")}</th>
 
             {currentWeek?.map((day, x) => {
               const theWalkExercises: comprehensiveProps | undefined =
