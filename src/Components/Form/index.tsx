@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { RootState } from "../../Store/store";
 
 interface dynamicObject {
   [key: string]: any;
@@ -33,6 +35,8 @@ interface props {
 
 const Form = ({ inputs, onSubmit }: props) => {
   const { t } = useTranslation();
+
+  const { loading } = useSelector((state: RootState) => state.loading);
 
   const formValuesSet = () =>
     inputs.reduce(
@@ -221,8 +225,19 @@ const Form = ({ inputs, onSubmit }: props) => {
       )}
 
       <div className="col-xs-12">
-        <button className="btn btn-primary my-4 p-3 w-100" type="submit">
-          {t("Comp.Form.Submit")}
+        <button
+          className="btn btn-primary my-4 p-3 w-100 text-white"
+          type="submit"
+          disabled={!!loading.length}
+        >
+          {!!loading.length ? (
+            <span
+              className="spinner-grow text-light spinner-border-sm"
+              aria-hidden="true"
+            />
+          ) : (
+            t("Comp.Form.Submit")
+          )}
         </button>
       </div>
     </form>

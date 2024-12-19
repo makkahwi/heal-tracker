@@ -19,6 +19,7 @@ const Navbar = () => {
   const location = useLocation();
   const { t } = useTranslation();
   const user = useSelector((state: RootState) => state.auth.user);
+  const { loading } = useSelector((state: RootState) => state.loading);
 
   const closeDropdowns = () => {
     const dropdowns = document.querySelectorAll(".dropdown-menu.show");
@@ -43,6 +44,15 @@ const Navbar = () => {
             className="me-2"
           />
           <span className="text-white fw-bold">HDL</span>
+
+          {!!loading.length ? (
+            <span
+              className="spinner-grow text-light spinner-border-sm ms-3"
+              aria-hidden="true"
+            />
+          ) : (
+            ""
+          )}
         </span>
 
         <button
