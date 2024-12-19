@@ -136,6 +136,18 @@
       "Desc": "Monitor and improve your sleep patterns for better rest and recovery",
       "Title": "Sleep Cycle Monitoring"
     },
+    "StartUsing": {
+      "Content": "Health Daily Link is already deployed and ready to use, so you can simply sign up through the link above and start using it today!",
+      "Title": "Start Using HDL"
+    },
+    "TechnicalSupport": {
+      "Approach1": "Open an issue on the GitHub repository through link below.",
+      "Approach2": "Reach out to the project developer  via the contact information below.",
+      "Approach3": "Join the discussions on the repository to collaborate with other contributors.",
+      "Conclusion": "We appreciate your feedback and contributions to make the 'Health Daily Link' better for everyone!",
+      "Content": "If you encounter any issues, have questions, or want to suggest improvements, feel free to...",
+      "Title": "Technical Support"
+    },
     "Technology Stack": "Technology Stack",
     "WeightTracking": {
       "Desc": "Log and monitor your weight, with support for inBody scale or any detailed-reading providers",
@@ -143,7 +155,7 @@
     },
     "Welcome": "Welcome to Health Daily Link (HDL)",
     "WhatIs": {
-      "Content": "Health Daily Link is a comprehensive, open-source web app dedicated to helping you track and manage various health-related activities to stay on top of your wellness goals",
+      "Content": "Health Daily Link (HDL) is a comprehensive web app designed to help individuals track their health-related activities and stay consistent with their wellness goals. From daily routines like diet and hydration to broader metrics like sleep and weight tracking, HDL makes it simple to log, monitor, and analyze your progress.",
       "Title": "What is Health Daily Link"
     }
   },

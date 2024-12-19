@@ -25,6 +25,7 @@ import { useTranslation } from "react-i18next";
 
 import FeaturesView from "./FeaturesView";
 import PageSection from "./PageSection";
+import { Fragment } from "react/jsx-runtime";
 
 const LandingPage = () => {
   const { t } = useTranslation();
@@ -130,6 +131,12 @@ const LandingPage = () => {
     },
   ];
 
+  const support = [
+    t("Landing.TechnicalSupport.Approach1"),
+    t("Landing.TechnicalSupport.Approach2"),
+    t("Landing.TechnicalSupport.Approach3"),
+  ];
+
   return (
     <div className="container mt-5">
       <header className="text-center py-5 mb-5 row align-items-center">
@@ -149,16 +156,33 @@ const LandingPage = () => {
         features={currentFeatures}
       />
 
-      <PageSection
-        title={t("Landing.Developer.Title")}
-        desc={t("Landing.Developer.Content")}
-      />
-
       <FeaturesView
         title={t("Landing.Future.Title")}
         desc={t("Landing.Future.Content")}
         features={futurePlans}
       />
+
+      <PageSection
+        title={t("Landing.StartUsing.Title")}
+        desc={t("Landing.StartUsing.Content")}
+      />
+
+      <PageSection
+        title={t("Landing.TechnicalSupport.Title")}
+        desc={t("Landing.TechnicalSupport.Content")}
+      >
+        <Fragment>
+          <ul className="list-group mb-5">
+            {support.map((point, i) => (
+              <li className="list-group-item lh-lg fw-bold" key={i}>
+                {point}
+              </li>
+            ))}
+          </ul>
+
+          <h5>{t("Landing.TechnicalSupport.Conclusion")}</h5>
+        </Fragment>
+      </PageSection>
 
       <PageSection
         title={t("Landing.Contribution.Title")}
@@ -176,6 +200,11 @@ const LandingPage = () => {
           </a>
         </div>
       </PageSection>
+
+      <PageSection
+        title={t("Landing.Developer.Title")}
+        desc={t("Landing.Developer.Content")}
+      />
     </div>
   );
 };
