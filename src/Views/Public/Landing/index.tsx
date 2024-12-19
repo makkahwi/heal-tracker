@@ -249,15 +249,17 @@ const LandingPage = () => {
           "Landing.Health Daily Link is open-source, and we’re thrilled to welcome developers, designers, and wellness enthusiasts to contribute Join us on GitHub and be part of our journey to make health tracking accessible to all"
         )}
       >
-        <a
-          className="btn btn-primary btn-lg shadow-sm text-white"
-          href="https://github.com/makkahwi/health-daily-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faUsers} className="me-2" />
-          {t("Landing.Contribute on GitHub")}
-        </a>
+        <div className="text-center mt-5">
+          <a
+            className="btn btn-primary btn-lg shadow-sm text-white"
+            href="https://github.com/makkahwi/health-daily-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faUsers} className="me-2" />
+            {t("Landing.Contribute on GitHub")}
+          </a>
+        </div>
       </PageSection>
     </div>
   );
