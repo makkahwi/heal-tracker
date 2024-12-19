@@ -151,25 +151,25 @@ const ManualView = () => {
     <PageSection title={t("Manual.UserManual")}>
       <div className="my-5">
         <div className="accordion" id="manualAccordion">
-          {manualData.map((section, index) => (
-            <div className="accordion-item" key={index}>
-              <h2 className="accordion-header" id={`heading-${index}`}>
+          {manualData.map((section, i) => (
+            <div className="accordion-item" key={i}>
+              <h2 className="accordion-header" id={`heading-${i}`}>
                 <button
                   className="accordion-button"
                   type="button"
                   data-bs-toggle="collapse"
-                  data-bs-target={`#collapse-${index}`}
+                  data-bs-target={`#collapse-${i}`}
                   aria-expanded="true"
-                  aria-controls={`collapse-${index}`}
+                  aria-controls={`collapse-${i}`}
                 >
                   {section.title}
                 </button>
               </h2>
 
               <div
-                id={`collapse-${index}`}
+                id={`collapse-${i}`}
                 className="accordion-collapse collapse"
-                aria-labelledby={`heading-${index}`}
+                aria-labelledby={`heading-${i}`}
                 data-bs-parent="#manualAccordion"
               >
                 <div className="accordion-body text-justify">
