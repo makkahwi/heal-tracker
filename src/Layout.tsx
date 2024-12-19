@@ -1,14 +1,68 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.min.js";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Toast } from "bootstrap";
 import "../node_modules/react-vis/dist/style.css";
 import "./App.css";
 import Footer from "./Components/Layout/Footer";
+import Navbar from "./Components/Layout/Navbar";
+import ScrollToTop from "./Components/Layout/ScrollToTop";
+import { RootState } from "./Store/store";
 import "./Style/custom.scss";
 import "./index.css";
+import { removeNotifications } from "./Store/notifications";
 
 const Layout = ({ children = <></> }) => {
+  const dispatch = useDispatch();
+
+  const { notifications } = useSelector(
+    (state: RootState) => state.notifications
+  );
+
+  useEffect(() => {
+    const toastElements = document.querySelectorAll(".toast");
+    toastElements.forEach((toastEl) => {
+      const toast = new Toast(toastEl); // Use the imported Toast class
+      toast.show();
+    });
+  }, [notifications]);
+
   return (
     <main className="bg-light min-vh-100 text-dark text-center p-md-5 p-2">
+      <ScrollToTop />
+
+      <Navbar />
+
+      <div
+        className="toast-container position-fixed bottom-0 end-0 p-3"
+        style={{ zIndex: 1055 }}
+      >
+        {notifications.map(({ msg, err }, i) => (
+          <div
+            key={i}
+            className={`toast align-items-center text-white bg-${
+              err ? "danger" : "success"
+            } border-0`}
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+          >
+            <div className="d-flex">
+              <div className="toast-body">{msg}</div>
+
+              <button
+                type="button"
+                className="btn-close btn-close-white me-2 m-auto"
+                data-bs-dismiss="toast"
+                aria-label="Close"
+                onClick={() => dispatch(removeNotifications({ msg }))}
+              />
+            </div>
+          </div>
+        ))}
+      </div>
+
       <div className="p-md-5 p-2 pt-5">{children}</div>
 
       <Footer />
