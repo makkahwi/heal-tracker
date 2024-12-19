@@ -26,8 +26,10 @@ const FeaturesView = ({
                   className="text-primary mb-3"
                   size="2x"
                 />
-                <h5 className="card-title">{title}</h5>
-                <p className="card-text">{desc}</p>
+                <h5 className="card-title text-primary mb-3 fw-bold">
+                  {title}
+                </h5>
+                <p className="card-text lh-lg">{desc}</p>
                 <div className="mt-auto"></div>
               </div>
             </div>
