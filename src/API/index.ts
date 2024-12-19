@@ -1,7 +1,8 @@
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 
 import { refreshToken, signOut } from "../Store/authSlice";
 import store from "../Store/store";
+import { addLoading, removeLoading } from "../Store/loading";
 
 const service = axios.create({
   baseURL:
@@ -19,6 +20,8 @@ const isTokenExpired = (expiresAt: number): boolean => {
 service.interceptors.request.use(
   async (config) => {
     let user = store.getState().auth?.user;
+
+    store.dispatch(addLoading());
 
     const now = new Date();
 
@@ -82,6 +85,8 @@ const expiredTokenHandler = () => {
 
 service.interceptors.response.use(
   (res) => {
+    store.dispatch(removeLoading());
+
     if ([200, 201, 204].includes(res.status)) {
       return res.data;
     }
@@ -93,6 +98,8 @@ service.interceptors.response.use(
     return Promise.reject(res);
   },
   (err) => {
+    store.dispatch(removeLoading());
+
     if ([401, 403].includes(err?.response?.status)) {
       expiredTokenHandler();
     }
@@ -144,4 +151,4 @@ const remove = async (table = "", id = "") => {
   return await service.delete(`${table}/${user.localId}/${id}.json`);
 };
 
-export { create, getAll, get, remove, update };
+export { create, get, getAll, remove, update };
