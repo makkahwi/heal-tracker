@@ -170,7 +170,9 @@ const Navbar = () => {
                     }}
                   >
                     <FontAwesomeIcon icon={faInfoCircle} />
-                    <span className="ms-2">{t("Layout.App Manual")}</span>
+                    <span className="ms-2 d-inline d-xl-none">
+                      {t("Layout.App Manual")}
+                    </span>
                   </span>
                 </li>
 
@@ -184,7 +186,9 @@ const Navbar = () => {
                     }}
                   >
                     <FontAwesomeIcon icon={faSignOut} />
-                    <span className="ms-2">{t("Layout.Sign Out")}</span>
+                    <span className="ms-2 d-inline d-xl-none">
+                      {t("Layout.Sign Out")}
+                    </span>
                   </span>
                 </li>
               </Fragment>
