@@ -73,13 +73,13 @@ const SleepCycles = () => {
   const formInputs = [
     {
       name: "startTime",
-      label: t("Services.SleepCycles.Start Time"),
+      label: t("Services.SleepCycles.StartTime"),
       type: "datetime-local",
       required: true,
     },
     {
       name: "endTime",
-      label: t("Services.SleepCycles.End Time"),
+      label: t("Services.SleepCycles.EndTime"),
       type: "datetime-local",
       required: true,
     },

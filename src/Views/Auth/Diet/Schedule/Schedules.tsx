@@ -18,13 +18,13 @@ const Schedules = ({ data, getData }: props) => {
   const formInputs = [
     {
       name: "order",
-      label: t("Services.Diet.Schedule.Schedule Order"),
+      label: t("Services.Diet.Schedule.ScheduleOrder"),
       type: "number",
       required: true,
     },
     {
       name: "date",
-      label: t("Services.Diet.Schedule.Giving Date"),
+      label: t("Services.Diet.Schedule.GivingDate"),
       type: "date",
       required: true,
     },
@@ -50,7 +50,7 @@ const Schedules = ({ data, getData }: props) => {
 
   return (
     <PageView
-      title={t("Services.Diet.Schedule.Schedules List")}
+      title={t("Services.Diet.Schedule.SchedulesList")}
       data={data}
       inputs={formInputs}
       onSubmit={onSubmit}

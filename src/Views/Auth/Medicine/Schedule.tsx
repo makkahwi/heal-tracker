@@ -36,13 +36,13 @@ const MedicineSchedule = () => {
     },
     {
       name: "specs",
-      label: t("Services.Medicine.Specifics (Dose)"),
+      label: t("Services.Medicine.Dose"),
       type: "text",
       required: true,
     },
     {
       name: "frequency",
-      label: t("Services.Medicine.Consumption Frequency"),
+      label: t("Services.Medicine.ConsumptionFrequency"),
       type: "select",
       options: [
         { value: "Daily", label: t("Services.Medicine.Daily") },
@@ -55,13 +55,13 @@ const MedicineSchedule = () => {
     },
     {
       name: "duration",
-      label: t("Services.Medicine.Duration (Frequency Total Occurrences)"),
+      label: t("Services.Medicine.Duration"),
       type: "number",
       required: true,
     },
     {
       name: "frequencyQuantity",
-      label: t("Services.Medicine.Per Frequency Occurrence Quantity"),
+      label: t("Services.Medicine.Quantity"),
       type: "number",
       required: true,
     },

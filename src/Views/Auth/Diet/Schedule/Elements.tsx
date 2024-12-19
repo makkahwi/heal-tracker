@@ -69,7 +69,7 @@ const Elements = ({ meals, schedules }: props) => {
   const formInputs = [
     {
       name: "meal",
-      label: t("Services.Diet.Schedule.Meal of Day"),
+      label: t("Services.Diet.Schedule.MealOfDay"),
       type: "select",
       options: meals?.map(({ id, meal, schedule }) => ({
         value: id || "",
@@ -162,7 +162,7 @@ const Elements = ({ meals, schedules }: props) => {
 
   return (
     <PageView
-      title={t("Services.Diet.Schedule.Meal Elements List")}
+      title={t("Services.Diet.Schedule.MealElementsList")}
       data={data}
       inputs={formInputs}
       onSubmit={onSubmit}

@@ -158,13 +158,13 @@ const WeeklyCalendar = ({
     <div className="overflow-auto">
       <div className="d-flex justify-content-between mb-2">
         <button className="btn btn-primary" onClick={handlePreviousWeek}>
-          {t("Dashboard.Previous Week")}
+          {t("Dashboard.PreviousWeek")}
         </button>
 
         <h2 className="text-center">{t("Dashboard.Weekly Calendar")}</h2>
 
         <button className="btn btn-primary" onClick={handleNextWeek}>
-          {t("Dashboard.Next Week")}
+          {t("Dashboard.NextWeek")}
         </button>
       </div>
 
@@ -384,11 +384,11 @@ const WeeklyCalendar = ({
           <tr>
             <th rowSpan={2}>
               <button
-                className="btn btn-primary"
+                className="btn btn-primary text-white"
                 disabled={currentWeekSummary?.week.length > 0}
                 onClick={() => generateSummary()}
               >
-                {t("Dashboard.Generate Summary")}
+                {t("Dashboard.GenerateSummary")}
               </button>
             </th>
 

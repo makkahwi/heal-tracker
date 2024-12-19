@@ -63,7 +63,7 @@ const LabTests = () => {
     },
     {
       name: "sugar",
-      label: t("Services.LabTests.Fasting Blood Sugar"),
+      label: t("Services.LabTests.FastingBloodSugar"),
       type: "number",
       step: "0.01",
       lowEnd: 70,
@@ -78,7 +78,7 @@ const LabTests = () => {
     },
     {
       name: "insulin",
-      label: t("Services.LabTests.Fasting Insulin"),
+      label: t("Services.LabTests.FastingInsulin"),
       type: "number",
       step: "0.01",
       lowEnd: 1.1,
@@ -86,14 +86,14 @@ const LabTests = () => {
     },
     {
       name: "insulinResistance",
-      label: t("Services.LabTests.Insulin Resistance"),
+      label: t("Services.LabTests.InsulinResistance"),
       type: "number",
       step: "0.01",
       highEnd: 2.8,
     },
     {
       name: "cholesterolTotal",
-      label: t("Services.LabTests.Cholesterol Total"),
+      label: t("Services.LabTests.CholesterolTotal"),
       type: "number",
       step: "0.01",
       highEnd: 190,
@@ -107,7 +107,7 @@ const LabTests = () => {
     },
     {
       name: "cholesterolHdl",
-      label: t("Services.LabTests.Cholesterol HDL"),
+      label: t("Services.LabTests.CholesterolHdl"),
       type: "number",
       step: "0.01",
       lowEnd: 35,
@@ -115,21 +115,21 @@ const LabTests = () => {
     },
     {
       name: "cholesterolLdl",
-      label: t("Services.LabTests.Cholesterol LDL"),
+      label: t("Services.LabTests.CholesterolLdl"),
       type: "number",
       step: "0.01",
       highEnd: 130,
     },
     {
       name: "ldl",
-      label: t("Services.LabTests.LDL Risk Ratio I"),
+      label: t("Services.LabTests.LdlRiskRatioI"),
       type: "number",
       step: "0.01",
       highEnd: 3.22,
     },
     {
       name: "cholesterolT",
-      label: t("Services.LabTests.LDL Risk Ratio II"),
+      label: t("Services.LabTests.LdlRiskRatioII"),
       type: "number",
       step: "0.01",
       highEnd: 4.44,
@@ -144,7 +144,7 @@ const LabTests = () => {
     },
     {
       name: "hemoglobin",
-      label: t("Services.LabTests.Hemoglobin Level"),
+      label: t("Services.LabTests.HemoglobinLevel"),
       type: "number",
       step: "0.01",
       lowEnd: 13.2,
@@ -152,7 +152,7 @@ const LabTests = () => {
     },
     {
       name: "redCellCount",
-      label: t("Services.LabTests.Red Cell Count"),
+      label: t("Services.LabTests.RedCellCount"),
       type: "number",
       step: "0.01",
       lowEnd: 4.3,
@@ -208,7 +208,7 @@ const LabTests = () => {
     },
     {
       name: "whiteCellCount",
-      label: t("Services.LabTests.White Cell Count"),
+      label: t("Services.LabTests.WhiteCellCount"),
       type: "number",
       step: "0.01",
       lowEnd: 5,
@@ -216,7 +216,7 @@ const LabTests = () => {
     },
     {
       name: "neutrophils",
-      label: t("Services.LabTests.Neutrophils Segmented"),
+      label: t("Services.LabTests.NeutrophilsSegmented"),
       type: "number",
       step: "0.01",
       lowEnd: 2,
@@ -256,7 +256,7 @@ const LabTests = () => {
     },
     {
       name: "plateletsCount",
-      label: t("Services.LabTests.Platelets Count"),
+      label: t("Services.LabTests.PlateletsCount"),
       type: "number",
       step: "0.01",
       lowEnd: 150,
@@ -312,7 +312,7 @@ const LabTests = () => {
     },
     {
       name: "uricAcid",
-      label: t("Services.LabTests.Uric Acid"),
+      label: t("Services.LabTests.UricAcid"),
       type: "number",
       step: "0.01",
       lowEnd: 208,
@@ -352,7 +352,7 @@ const LabTests = () => {
     },
     {
       name: "correctedCalcium",
-      label: t("Services.LabTests.Corrected Calcium"),
+      label: t("Services.LabTests.CorrectedCalcium"),
       type: "number",
       step: "0.01",
       lowEnd: 2.1,
@@ -408,7 +408,7 @@ const LabTests = () => {
     },
     {
       name: "agRatio",
-      label: t("Services.LabTests.A/G Ratio"),
+      label: t("Services.LabTests.A/gRatio"),
       type: "number",
       step: "0.01",
       lowEnd: 1.0,
@@ -431,7 +431,7 @@ const LabTests = () => {
     },
     {
       name: "vitamineB12",
-      label: t("Services.LabTests.Vitamine B12"),
+      label: t("Services.LabTests.VitamineB12"),
       type: "number",
       step: "0.01",
       lowEnd: 180,
@@ -439,7 +439,7 @@ const LabTests = () => {
     },
     {
       name: "vitamineD",
-      label: t("Services.LabTests.Vitamine D"),
+      label: t("Services.LabTests.VitamineD"),
       type: "number",
       step: "0.01",
       lowEnd: 30,
@@ -467,7 +467,7 @@ const LabTests = () => {
 
   return (
     <PageView
-      title={t("Services.LabTests.LabTests List")}
+      title={t("Services.LabTests.LabTestsList")}
       data={data}
       inputs={formInputs}
       onSubmit={onSubmit}

@@ -37,13 +37,13 @@ const Meals = ({ data, schedules, getData }: props) => {
     },
     {
       name: "meal",
-      label: t("Services.Diet.Schedule.Meal Name"),
+      label: t("Services.Diet.Schedule.MealName"),
       type: "text",
       required: true,
     },
     {
       name: "time",
-      label: t("Services.Diet.Schedule.Time of Meal"),
+      label: t("Services.Diet.Schedule.TimeOfMeal"),
       type: "time",
       render: (row: any) => timeFormat(row.time),
       required: true,
@@ -67,7 +67,7 @@ const Meals = ({ data, schedules, getData }: props) => {
 
   return (
     <PageView
-      title={t("Services.Diet.Schedule.Meals List")}
+      title={t("Services.Diet.Schedule.MealsList")}
       data={data}
       inputs={formInputs}
       onSubmit={onSubmit}

@@ -1,9 +1,6 @@
 import {
   faDashboard,
-  faGlobeAmericas,
-  faGlobeAsia,
   faInfoCircle,
-  faLanguage,
   faSignIn,
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
@@ -20,8 +17,16 @@ const Navbar = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const location = useLocation();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const user = useSelector((state: RootState) => state.auth.user);
+
+  const closeDropdowns = () => {
+    const dropdowns = document.querySelectorAll(".dropdown-menu.show");
+    dropdowns.forEach((dropdown) => dropdown.classList.remove("show"));
+
+    const toggler = document.querySelector(".navbar-collapse");
+    if (toggler) toggler.classList.remove("show");
+  };
 
   return (
     <nav className="navbar navbar-expand-xl navbar-primary bg-primary shadow-sm position-fixed fixed-top w-100">
@@ -62,7 +67,10 @@ const Navbar = () => {
                       location.pathname === "/" ? "text-dark" : "text-white"
                     }`}
                     role="button"
-                    onClick={() => navigate("/")}
+                    onClick={() => {
+                      navigate("/");
+                      closeDropdowns();
+                    }}
                   >
                     <FontAwesomeIcon icon={faDashboard} />
                     <span className="ms-2">{t("Layout.Dashboard")}</span>
@@ -100,7 +108,10 @@ const Navbar = () => {
                             : "text-white"
                         }`}
                         role="button"
-                        onClick={() => navigate(path)}
+                        onClick={() => {
+                          navigate(path);
+                          closeDropdowns();
+                        }}
                       >
                         <FontAwesomeIcon icon={icon} />
                         <span className="ms-2">{name}</span>
@@ -125,10 +136,7 @@ const Navbar = () => {
                                 role="button"
                                 onClick={() => {
                                   navigate(path + "/" + childPath);
-
-                                  document
-                                    .querySelector(".dropdown-menu")
-                                    ?.classList.remove("show");
+                                  closeDropdowns();
                                 }}
                               >
                                 <FontAwesomeIcon icon={icon} />
@@ -156,10 +164,15 @@ const Navbar = () => {
                         : "text-white"
                     }`}
                     role="button"
-                    onClick={() => navigate("manual")}
+                    onClick={() => {
+                      navigate("manual");
+                      closeDropdowns();
+                    }}
                   >
                     <FontAwesomeIcon icon={faInfoCircle} />
-                    <span className="ms-2">{t("Layout.App Manual")}</span>
+                    <span className="ms-2 d-inline d-xl-none">
+                      {t("Layout.App Manual")}
+                    </span>
                   </span>
                 </li>
 
@@ -169,10 +182,13 @@ const Navbar = () => {
                     role="button"
                     onClick={() => {
                       dispatch(signOut());
+                      closeDropdowns();
                     }}
                   >
                     <FontAwesomeIcon icon={faSignOut} />
-                    <span className="ms-2">{t("Layout.Sign Out")}</span>
+                    <span className="ms-2 d-inline d-xl-none">
+                      {t("Layout.Sign Out")}
+                    </span>
                   </span>
                 </li>
               </Fragment>
@@ -181,10 +197,13 @@ const Navbar = () => {
                 <span
                   className="nav-link text-white"
                   role="button"
-                  onClick={() => navigate("/login")}
+                  onClick={() => {
+                    navigate("/login");
+                    closeDropdowns();
+                  }}
                 >
                   <FontAwesomeIcon icon={faSignIn} />
-                  <span className="ms-2">{t("Layout.Sign In / Register")}</span>
+                  <span className="ms-2">{t("Layout.SignIn/Register")}</span>
                 </span>
               </li>
             )}
@@ -198,6 +217,8 @@ const Navbar = () => {
 
                   localStorage.setItem("lang", lang);
                   i18n.changeLanguage(lang);
+                  
+                  closeDropdowns();
                 }}
               >
                 <FontAwesomeIcon icon={faLanguage} />

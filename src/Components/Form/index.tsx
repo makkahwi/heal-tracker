@@ -103,7 +103,7 @@ const Form = ({ inputs, onSubmit }: props) => {
                   required={required}
                   {...rest}
                 >
-                  <option>{t("Comp.Form.Please Choose")}</option>
+                  <option>{t("Comp.Form.PleaseChoose")}</option>
 
                   {options?.map(({ value, label }, x) => (
                     <option value={value} key={x}>
