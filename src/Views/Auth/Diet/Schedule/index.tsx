@@ -40,11 +40,11 @@ const Schedule = () => {
 
   const views = [
     {
-      title: t("Services.Diet.Schedule.Meal Elements"),
+      title: t("Services.Diet.Schedule.MealElements"),
       view: <Elements meals={meals} schedules={schedules} />,
     },
     {
-      title: t("Services.Diet.Schedule.Schedule Meals"),
+      title: t("Services.Diet.Schedule.ScheduleMeals"),
       view: <Meals data={meals} schedules={schedules} getData={getMealsData} />,
     },
     {
@@ -54,7 +54,7 @@ const Schedule = () => {
   ];
 
   return (
-    <PageSection title={t("Services.Diet.Schedule.Diet Schedules")}>
+    <PageSection title={t("Services.Diet.Schedule.DietSchedules")}>
       <TabsView views={views} />
     </PageSection>
   );

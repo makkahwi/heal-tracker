@@ -117,13 +117,13 @@ const WalkExercises = () => {
     },
     {
       name: "startTime",
-      label: t("Services.Sports.Start Time"),
+      label: t("Services.Sports.StartTime"),
       type: "time",
       required: true,
     },
     {
       name: "endTime",
-      label: t("Services.Sports.End Time"),
+      label: t("Services.Sports.EndTime"),
       type: "time",
       required: true,
     },

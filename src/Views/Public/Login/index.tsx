@@ -51,7 +51,7 @@ const Login = () => {
     },
     {
       name: "passwordConfirmation",
-      label: t("Auth.Password Confirmation"),
+      label: t("Auth.PasswordConfirmation"),
       type: "password",
       required: true,
       fullWidth: true,
@@ -79,13 +79,13 @@ const Login = () => {
   return (
     <div className="row">
       <div className="col-md-6">
-        <PageSection title={t("Auth.Sign In")}>
+        <PageSection title={t("Auth.SignIn")}>
           <Form inputs={signInInputs} onSubmit={onSignInSubmit} />
         </PageSection>
       </div>
 
       <div className="col-md-6">
-        <PageSection title={t("Auth.Sign Up")}>
+        <PageSection title={t("Auth.SignUp")}>
           <Form inputs={signUpInputs} onSubmit={onSignUpSubmit} />
         </PageSection>
       </div>

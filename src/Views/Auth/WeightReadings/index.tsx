@@ -457,7 +457,7 @@ const WeightReadings = () => {
     },
     {
       name: "water",
-      label: t("Services.WeightReadings.Water Reading"),
+      label: t("Services.WeightReadings.WaterReading"),
       type: "number",
       step: "0.1",
       unit: t("Common.Labels.Litre"),
@@ -465,7 +465,7 @@ const WeightReadings = () => {
     },
     {
       name: "fat",
-      label: t("Services.WeightReadings.Fat Weight"),
+      label: t("Services.WeightReadings.FatWeight"),
       type: "number",
       step: "0.1",
       unit: t("Common.Labels.KG"),
@@ -481,7 +481,7 @@ const WeightReadings = () => {
     },
     {
       name: "muscles",
-      label: t("Services.WeightReadings.Muscles Reading"),
+      label: t("Services.WeightReadings.MusclesReading"),
       type: "number",
       step: "0.1",
       unit: t("Common.Labels.KG"),
@@ -489,7 +489,7 @@ const WeightReadings = () => {
     },
     {
       name: "waist",
-      label: t("Services.WeightReadings.Waist Fat Reading"),
+      label: t("Services.WeightReadings.WaistFat Reading"),
       type: "number",
       step: "0.1",
       required: true,
@@ -499,7 +499,7 @@ const WeightReadings = () => {
   const targetsFormInputs = [
     {
       name: "waterMin",
-      label: t("Services.WeightReadings.Water Min Target"),
+      label: t("Services.WeightReadings.WaterMinTarget"),
       type: "number",
       step: "0.1",
       unit: t("Common.Labels.Litre"),
@@ -508,7 +508,7 @@ const WeightReadings = () => {
     },
     {
       name: "waterMax",
-      label: t("Services.WeightReadings.Water Max Target"),
+      label: t("Services.WeightReadings.WaterMaxTarget"),
       type: "number",
       step: "0.1",
       unit: t("Common.Labels.Litre"),
@@ -517,7 +517,7 @@ const WeightReadings = () => {
     },
     {
       name: "fatMin",
-      label: t("Services.WeightReadings.Fat Weight Min Target"),
+      label: t("Services.WeightReadings.FatWeightMinTarget"),
       type: "number",
       step: "0.1",
       unit: t("Common.Labels.KG"),
@@ -526,7 +526,7 @@ const WeightReadings = () => {
     },
     {
       name: "fatMax",
-      label: t("Services.WeightReadings.Fat Weight Max Target"),
+      label: t("Services.WeightReadings.FatWeightMaxTarget"),
       type: "number",
       step: "0.1",
       unit: t("Common.Labels.KG"),
@@ -535,7 +535,7 @@ const WeightReadings = () => {
     },
     {
       name: "weightMin",
-      label: t("Services.WeightReadings.Weight Min Target"),
+      label: t("Services.WeightReadings.WeightMinTarget"),
       type: "number",
       step: "0.1",
       unit: t("Common.Labels.KG"),
@@ -544,7 +544,7 @@ const WeightReadings = () => {
     },
     {
       name: "weightMax",
-      label: t("Services.WeightReadings.Weight Max Target"),
+      label: t("Services.WeightReadings.WeightMaxTarget"),
       type: "number",
       step: "0.1",
       unit: t("Common.Labels.KG"),
@@ -553,7 +553,7 @@ const WeightReadings = () => {
     },
     {
       name: "musclesMin",
-      label: t("Services.WeightReadings.Muscles Min Target"),
+      label: t("Services.WeightReadings.MusclesMinTarget"),
       type: "number",
       step: "0.1",
       unit: t("Common.Labels.KG"),
@@ -562,7 +562,7 @@ const WeightReadings = () => {
     },
     {
       name: "musclesMax",
-      label: t("Services.WeightReadings.Muscles Max Target"),
+      label: t("Services.WeightReadings.MusclesMaxTarget"),
       type: "number",
       step: "0.1",
       unit: t("Common.Labels.KG"),
@@ -571,7 +571,7 @@ const WeightReadings = () => {
     },
     {
       name: "waistMin",
-      label: t("Services.WeightReadings.Waist Fat Min Target"),
+      label: t("Services.WeightReadings.WaistFatMinTarget"),
       type: "number",
       step: "0.1",
       defaultValue: targetsData?.waistMin,
@@ -579,7 +579,7 @@ const WeightReadings = () => {
     },
     {
       name: "waistMax",
-      label: t("Services.WeightReadings.Waist Fat Max Target"),
+      label: t("Services.WeightReadings.WaistFatMaxTarget"),
       type: "number",
       step: "0.1",
       defaultValue: targetsData?.waistMax,

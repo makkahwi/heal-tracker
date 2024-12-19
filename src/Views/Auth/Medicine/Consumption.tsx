@@ -129,7 +129,7 @@ const MedicineConsumption = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title={t("Services.Medicine.Consumed Medicines")}>
+    <PageSection title={t("Services.Medicine.ConsumedMedicines")}>
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 

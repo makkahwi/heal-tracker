@@ -105,7 +105,7 @@ const Consumption = () => {
     },
     {
       name: "meal",
-      label: t("Services.Diet.Consumption.Meal of Day"),
+      label: t("Services.Diet.Consumption.MealOfDay"),
       type: "select",
       options: meals
         ?.filter(({ schedule }) => String(schedule) === schedules[0]?.id)

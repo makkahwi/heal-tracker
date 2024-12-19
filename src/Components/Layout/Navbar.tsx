@@ -203,7 +203,7 @@ const Navbar = () => {
                   }}
                 >
                   <FontAwesomeIcon icon={faSignIn} />
-                  <span className="ms-2">{t("Layout.Sign In / Register")}</span>
+                  <span className="ms-2">{t("Layout.SignIn/Register")}</span>
                 </span>
               </li>
             )}

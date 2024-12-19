@@ -24,8 +24,8 @@ const WeightReadingsTable = ({
               <th>{t("Services.WeightReadings.Weight")}</th>
               <th>{t("Services.WeightReadings.Muscles")}</th>
               <th>{t("Services.WeightReadings.Water")}</th>
-              <th>{t("Services.WeightReadings.Fat Weight")}</th>
-              <th>{t("Services.WeightReadings.Waist Fat")}</th>
+              <th>{t("Services.WeightReadings.FatWeight")}</th>
+              <th>{t("Services.WeightReadings.WaistFat")}</th>
               <th>{t("Services.WeightReadings.Actions")}</th>
             </tr>
           </thead>
@@ -99,12 +99,12 @@ const WeightReadingsTable = ({
                 </tr>
 
                 <tr className="align-middle">
-                  <th>{t("Services.WeightReadings.Fat Weight")}</th>
+                  <th>{t("Services.WeightReadings.FatWeight")}</th>
                   <td>{fat}</td>
                 </tr>
 
                 <tr className="align-middle">
-                  <th>{t("Services.WeightReadings.Waist Fat")}</th>
+                  <th>{t("Services.WeightReadings.WaistFat")}</th>
                   <td>{waist}</td>
                 </tr>
 
