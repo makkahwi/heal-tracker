@@ -22,160 +22,119 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslation } from "react-i18next";
+
 import FeaturesView from "./FeaturesView";
 import PageSection from "./PageSection";
+import { Fragment } from "react/jsx-runtime";
 
 const LandingPage = () => {
   const { t } = useTranslation();
 
   const currentFeatures = [
     {
-      title: t("Landing.Meal Scheduling"),
+      title: t("Landing.MealScheduling.Title"),
       icon: faUtensils,
-      desc: t(
-        "Landing.Stay on track with your nutrition plan by logging and following scheduled meals."
-      ),
+      desc: t("Landing.MealScheduling.Desc"),
     },
     {
-      title: t("Landing.Hydration Logging"),
+      title: t("Landing.HydrationLogging.Title"),
       icon: faTint,
-      desc: t(
-        "Landing.Record your water intake to maintain optimal hydration levels."
-      ),
+      desc: t("Landing.HydrationLogging.Desc"),
     },
     {
-      title: t("Landing.Exercise Tracking"),
+      title: t("Landing.ExerciseTracking.Title"),
       icon: faDumbbell,
-      desc: t(
-        "Landing.Log your physical activities, including sports, workouts, and walks."
-      ),
+      desc: t("Landing.ExerciseTracking.Desc"),
     },
     {
-      title: t("Landing.Medication Follow-Up"),
+      title: t("Landing.MedicationFollowUp.Title"),
       icon: faPills,
-      desc: t(
-        "Landing.Never miss a dose by keeping track of your medications and supplements."
-      ),
+      desc: t("Landing.MedicationFollowUp.Desc"),
     },
     {
-      title: t("Landing.Sleep Cycle Monitoring"),
+      title: t("Landing.SleepCycleMonitoring.Title"),
       icon: faBed,
-      desc: t(
-        "Landing.Monitor and improve your sleep patterns for better rest and recovery."
-      ),
+      desc: t("Landing.SleepCycleMonitoring.Desc"),
     },
     {
-      title: t("Landing.Weight Tracking"),
+      title: t("Landing.WeightTracking.Title"),
       icon: faWeight,
-      desc: t(
-        "Landing.Log and monitor your weight, with support for inBody scale or any detailed-reading providers."
-      ),
+      desc: t("Landing.WeightTracking.Desc"),
     },
     {
       icon: faShield,
-      title: t("Landing.Secured Access"),
-      desc: t(
-        "Landing.User-only access for own data view & manipulation with Firebase authentication."
-      ),
+      title: t("Landing.SecuredAccess.Title"),
+      desc: t("Landing.SecuredAccess.Desc"),
     },
     {
       icon: faUsers,
-      title: t("Landing.Open-Source"),
-      desc: t(
-        "Landing.Totally transparency and ability for any web developer to contribute and enhance."
-      ),
+      title: t("Landing.OpenSource.Title"),
+      desc: t("Landing.OpenSource.Desc"),
     },
     {
       icon: faLaptopCode,
-      title: t("Landing.Modern Tech Stack"),
-      desc: t(
-        "Landing.Built with ReactJs and Firebase for an optimized, scalable, and responsive web experience."
-      ),
+      title: t("Landing.ModernTechStack.Title"),
+      desc: t("Landing.ModernTechStack.Desc"),
     },
   ];
 
   const futurePlans = [
     {
       icon: faMobileAlt,
-      title: t("Landing.Mobile App"),
-      desc: t("Landing.A dedicated app for tracking health on the go"),
+      title: t("Landing.MobileApp.Title"),
+      desc: t("Landing.MobileApp.Desc"),
     },
     {
       icon: faClock,
-      title: t("Landing.Set Reminders"),
-      desc: t(
-        "Landing.Notifications for meals, workouts, medications, and more."
-      ),
+      title: t("Landing.SetReminders.Title"),
+      desc: t("Landing.SetReminders.Desc"),
     },
     {
       icon: faUserMd,
-      title: t("Landing.Nutritionist Access"),
-      desc: t(
-        "Landing.Allow experts to review and provide feedback on dietary progress."
-      ),
+      title: t("Landing.NutritionistAccess.Title"),
+      desc: t("Landing.NutritionistAccess.Desc"),
     },
     {
       icon: faBrain,
-      title: t("Landing.AI-Powered Input"),
-      desc: t(
-        "Landing.Automatic data entry and meaningful health recommendations."
-      ),
+      title: t("Landing.AiPoweredInput.Title"),
+      desc: t("Landing.AiPoweredInput.Desc"),
     },
     {
       icon: faChartLine,
-      title: t("Landing.Advanced Analytics"),
-      desc: t(
-        "Landing.Generate summaries and visualizations for deeper insights into your habits."
-      ),
+      title: t("Landing.AdvancedAnalytics.Title"),
+      desc: t("Landing.AdvancedAnalytics.Desc"),
     },
     {
       icon: faCalculator,
-      title: t("Landing.Calorie Tracking"),
-      desc: t(
-        "Landing.Automatic calorie calculations for scheduled and consumed meals."
-      ),
+      title: t("Landing.CalorieTracking.Title"),
+      desc: t("Landing.CalorieTracking.Desc"),
     },
     {
       icon: faLanguage,
-      title: t("Landing.Localization"),
-      desc: t("Landing.Support for multiple languages, including Arabic"),
+      title: t("Landing.Localization.Title"),
+      desc: t("Landing.Localization.Desc"),
     },
     {
       icon: faBullseye,
-      title: t("Landing.Goal Setting"),
-      desc: t("Landing.Personalized health targets and progress tracking"),
+      title: t("Landing.GoalSetting.Title"),
+      desc: t("Landing.GoalSetting.Desc"),
     },
     {
       icon: faUsers,
-      title: t("Landing.Multi-User Support"),
-      desc: t(
-        "Landing.Perfect for families or teams to collaborate on health goals."
-      ),
+      title: t("Landing.MultiUserSupport.Title"),
+      desc: t("Landing.MultiUserSupport.Desc"),
     },
     {
       icon: faChartPie,
-      title: t("Landing.Advanced Data Visualization"),
-      desc: t(
-        "Landing.Build a platform for shared wellness experiences and tips."
-      ),
+      title: t("Landing.AdvancedDataVisualization.Title"),
+      desc: t("Landing.AdvancedDataVisualization.Desc"),
     },
   ];
 
-  const techs = [
-    {
-      icon: faSpaceShuttle,
-      title: t("Landing.ReactJs"),
-      desc: t(
-        "Landing.Our front-end framework for building interactive and responsive user interfaces, delivering a seamless user experience."
-      ),
-    },
-    {
-      icon: faDatabase,
-      title: t("Landing.Firebase"),
-      desc: t(
-        "Landing.A reliable backend solution for data storage, real-time syncing, and user authentication, ensuring security and scalability."
-      ),
-    },
+  const support = [
+    t("Landing.TechnicalSupport.Approach1"),
+    t("Landing.TechnicalSupport.Approach2"),
+    t("Landing.TechnicalSupport.Approach3"),
   ];
 
   return (
@@ -186,78 +145,66 @@ const LandingPage = () => {
         </div>
 
         <div className="col-md-9 d-flex flex-column align-items-center justify-content-center">
-          <h1 className="display-4">
-            {t("Landing.Welcome to Health Daily Link (HDL)")}
-          </h1>
-          <p className="lead">
-            {t(
-              "Landing.Your personal companion for tracking and improving your health journey."
-            )}
-          </p>
+          <h1 className="display-4">{t("Landing.Welcome")}</h1>
+          <p className="lead">{t("Landing.Desc")}</p>
         </div>
       </header>
 
       <FeaturesView
-        title={t("Landing.What is Health Daily Link")}
-        desc={t(
-          "Landing.Health Daily Link is a comprehensive, open-source web app dedicated to helping you track and manage various health-related activities to stay on top of your wellness goals."
-        )}
+        title={t("Landing.WhatIs.Title")}
+        desc={t("Landing.WhatIs.Content")}
         features={currentFeatures}
       />
 
-      <PageSection
-        title={t("Landing.Technology Stack")}
-        desc={t(
-          "Landing.Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience."
-        )}
-      >
-        <div className="mx-auto">
-          {techs.map(({ icon, title, desc }, i) => (
-            <div className="d-flex align-items-center mb-4" key={i}>
-              <div className="text-primary rounded-circle">
-                <FontAwesomeIcon icon={icon} size="2x" />
-              </div>
-
-              <div className="ms-4 text-start">
-                <h5 className="fw-bold">{title}</h5>
-                <p className="mb-0">{desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </PageSection>
-
-      <PageSection
-        title={t("Landing.Meet the Developer")}
-        desc={t(
-          "Landing.Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world."
-        )}
-      />
-
       <FeaturesView
-        title={t("Landing.Our Vision for the Future")}
-        desc={t(
-          "Landing.Health Daily Link is growing, and we have big plans to make it even more powerful and user-friendly With your support, we aim to add new features, improve accessibility, and build a community around wellness This is part of what we have in mind to develop for future expansions."
-        )}
+        title={t("Landing.Future.Title")}
+        desc={t("Landing.Future.Content")}
         features={futurePlans}
       />
 
       <PageSection
-        title={t("Landing.Contribute to Health Daily Link")}
-        desc={t(
-          "Landing.Health Daily Link is open-source, and we’re thrilled to welcome developers, designers, and wellness enthusiasts to contribute Join us on GitHub and be part of our journey to make health tracking accessible to all"
-        )}
+        title={t("Landing.StartUsing.Title")}
+        desc={t("Landing.StartUsing.Content")}
+      />
+
+      <PageSection
+        title={t("Landing.TechnicalSupport.Title")}
+        desc={t("Landing.TechnicalSupport.Content")}
       >
-        <a
-          className="btn btn-primary btn-lg shadow-sm text-white"
-          href="https://github.com/makkahwi/health-daily-link"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <FontAwesomeIcon icon={faUsers} className="me-2" />
-          {t("Landing.Contribute on GitHub")}
-        </a>
+        <Fragment>
+          <ul className="list-group mb-5">
+            {support.map((point, i) => (
+              <li className="list-group-item lh-lg fw-bold" key={i}>
+                {point}
+              </li>
+            ))}
+          </ul>
+
+          <h5>{t("Landing.TechnicalSupport.Conclusion")}</h5>
+        </Fragment>
       </PageSection>
+
+      <PageSection
+        title={t("Landing.Contribution.Title")}
+        desc={t("Landing.Contribution.Content")}
+      >
+        <div className="text-center mt-5">
+          <a
+            className="btn btn-primary btn-lg shadow-sm text-white"
+            href="https://github.com/makkahwi/health-daily-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faUsers} className="me-2" />
+            {t("Landing.Contribute")}
+          </a>
+        </div>
+      </PageSection>
+
+      <PageSection
+        title={t("Landing.Developer.Title")}
+        desc={t("Landing.Developer.Content")}
+      />
     </div>
   );
 };

@@ -623,11 +623,11 @@ const WeightReadings = () => {
   ];
 
   return (
-    <PageSection title={t("Services.WeightReadings.Weight Readings")}>
+    <PageSection title={t("Services.WeightReadings.WeightReadings")}>
       <Fragment>
         <h4 className="my-3">
           {t(
-            "Services.WeightReadings.Total Number of Weight Readings (Nutritionist Weekly Visits)"
+            "Services.WeightReadings.Total Number of WeightReadings (Nutritionist Weekly Visits)"
           )}
           : {data.length}
         </h4>

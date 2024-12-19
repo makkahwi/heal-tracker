@@ -147,7 +147,7 @@ const WalkExercises = () => {
   }
 
   const onSubmit = (values: walkExerciseProps) => {
-    BeAPI.create("sportSessions", values)
+    BeAPI.create("Sport Sessions", values)
       .then(() => {
         getData();
       })
@@ -163,14 +163,14 @@ const WalkExercises = () => {
   };
 
   const onDelete = (id: string) =>
-    BeAPI.remove("sportSessions", id)
+    BeAPI.remove("Sport Sessions", id)
       .then(() => {
         getData();
       })
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title={t("Services.Sports.Sport Sessions")}>
+    <PageSection title={t("Services.Sports.SportSessions")}>
       <Fragment>
         <Form
           inputs={[

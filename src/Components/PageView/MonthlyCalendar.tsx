@@ -84,8 +84,8 @@ const MonthlyCalendar = ({ data, renderEvent }: props) => {
           <tr>
             <th>{t("Comp.Calendar.Week")}</th>
 
-            {daysOfWeek.map((dayName, index) => (
-              <th key={index} className="text-center">
+            {daysOfWeek.map((dayName, i) => (
+              <th key={i} className="text-center">
                 {dayName}
               </th>
             ))}

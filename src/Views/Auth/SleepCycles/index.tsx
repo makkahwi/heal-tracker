@@ -105,7 +105,7 @@ const SleepCycles = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title={t("Services.SleepCycles.Sleep Cycles")}>
+    <PageSection title={t("Services.SleepCycles.SleepCycles")}>
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 

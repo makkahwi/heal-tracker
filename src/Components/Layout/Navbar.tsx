@@ -69,8 +69,8 @@ const Navbar = () => {
                   </span>
                 </li>
 
-                {routes.map(({ name, path, icon, list }, index) => (
-                  <li className="nav-item dropdown" key={index}>
+                {routes.map(({ name, path, icon, list }, i) => (
+                  <li className="nav-item dropdown" key={i}>
                     {list ? (
                       <span
                         className={`nav-link dropdown-toggle ${
@@ -84,7 +84,7 @@ const Navbar = () => {
                             ? "text-dark"
                             : "text-white"
                         }`}
-                        id={`navbarDropdown-${index}`}
+                        id={`navbarDropdown-${i}`}
                         role="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
@@ -110,7 +110,7 @@ const Navbar = () => {
                     {list && (
                       <ul
                         className="dropdown-menu"
-                        aria-labelledby={`navbarDropdown-${index}`}
+                        aria-labelledby={`navbarDropdown-${i}`}
                       >
                         {list.map(
                           ({ name, path: childPath, icon }, subIndex) => (
