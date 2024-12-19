@@ -626,10 +626,7 @@ const WeightReadings = () => {
     <PageSection title={t("Services.WeightReadings.WeightReadings")}>
       <Fragment>
         <h4 className="my-3">
-          {t(
-            "Services.WeightReadings.Total Number of WeightReadings (Nutritionist Weekly Visits)"
-          )}
-          : {data.length}
+          {t("Services.WeightReadings.NumberOfWeightReading")}: {data.length}
         </h4>
 
         <TabsView views={views} />

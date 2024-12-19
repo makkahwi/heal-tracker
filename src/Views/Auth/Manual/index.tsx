@@ -123,6 +123,10 @@ const ManualView = () => {
       description: t("Manual.WeightReadingsDesc"),
       details: [
         {
+          subtitle: t("Manual.MedicineScheduleTargets"),
+          content: [t("Manual.MedicineScheduleTargetsDesc")],
+        },
+        {
           subtitle: t("Manual.Inputs"),
           content: [
             t("Manual.Date"),
