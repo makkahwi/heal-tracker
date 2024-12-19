@@ -162,23 +162,6 @@ const LandingPage = () => {
     },
   ];
 
-  const techs = [
-    {
-      icon: faSpaceShuttle,
-      title: t("Landing.ReactJs"),
-      desc: t(
-        "Landing.Our front-end framework for building interactive and responsive user interfaces, delivering a seamless user experience"
-      ),
-    },
-    {
-      icon: faDatabase,
-      title: t("Landing.Firebase"),
-      desc: t(
-        "Landing.A reliable backend solution for data storage, real-time syncing, and user authentication, ensuring security and scalability"
-      ),
-    },
-  ];
-
   return (
     <div className="container mt-5">
       <header className="text-center py-5 mb-5 row align-items-center">
@@ -205,28 +188,6 @@ const LandingPage = () => {
         )}
         features={currentFeatures}
       />
-
-      <PageSection
-        title={t("Landing.Technology Stack")}
-        desc={t(
-          "Landing.Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience"
-        )}
-      >
-        <div className="mx-auto">
-          {techs.map(({ icon, title, desc }, i) => (
-            <div className="d-flex align-items-center mb-4" key={i}>
-              <div className="text-primary rounded-circle">
-                <FontAwesomeIcon icon={icon} size="2x" />
-              </div>
-
-              <div className="ms-4 text-start">
-                <h5 className="fw-bold">{title}</h5>
-                <p className="mb-0">{desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </PageSection>
 
       <PageSection
         title={t("Landing.Meet the Developer")}
