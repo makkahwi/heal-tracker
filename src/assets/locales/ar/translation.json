@@ -45,61 +45,107 @@
     "Weekly Calendar": "التقويم الأسبوعي"
   },
   "Landing": {
-    "A dedicated app for tracking health on the go": "تطبيق مخصص لتتبع الصحة أثناء التنقل",
     "A reliable backend solution for data storage, real-time syncing, and user authentication, ensuring security and scalability": "حل موثوق للواجهة الخلفية لتخزين البيانات والمزامنة الفورية والمصادقة، لضمان الأمان وقابلية التوسع",
-    "AI-Powered Input": "إدخال مدعوم بالذكاء الاصطناعي",
-    "Advanced Analytics": "تحليلات متقدمة",
-    "Advanced Data Visualization": "تصور بيانات متقدم",
-    "Allow experts to review and provide feedback on dietary progress": "السماح للخبراء بمراجعة التقدم الغذائي وتقديم الملاحظات",
-    "Automatic calorie calculations for scheduled and consumed meals": "حساب السعرات الحرارية تلقائيًا للوجبات المجدولة والمستهلكة",
-    "Automatic data entry and meaningful health recommendations": "إدخال البيانات تلقائيًا وتقديم توصيات صحية مفيدة",
-    "Build a platform for shared wellness experiences and tips": "إنشاء منصة لتبادل تجارب الصحة والنصائح",
-    "Built with ReactJs and Firebase for an optimized, scalable, and responsive web experience": "تم بناءه باستخدام ReactJs وFirebase لتجربة ويب محسّنة وقابلة للتوسع ومتجاوبة",
-    "Calorie Tracking": "تتبع السعرات الحرارية",
-    "Contribute on GitHub": "المساهمة على GitHub",
-    "Contribute to Health Daily Link": "المساهمة في Health Daily Link",
-    "Exercise Tracking": "تتبع التمارين",
+    "AdvancedAnalytics": {
+      "Desc": "إنشاء ملخصات وتصويرات للحصول على رؤى أعمق حول عاداتك",
+      "Title": "تحليلات متقدمة"
+    },
+    "AdvancedDataVisualization": {
+      "Desc": "إنشاء منصة لتبادل تجارب الصحة والنصائح",
+      "Title": "تصور بيانات متقدم"
+    },
+    "AiPoweredInput": {
+      "Desc": "إدخال البيانات تلقائيًا وتقديم توصيات صحية مفيدة",
+      "Title": "إدخال مدعوم بالذكاء الاصطناعي"
+    },
+    "CalorieTracking": {
+      "Desc": "حساب السعرات الحرارية تلقائيًا للوجبات المجدولة والمستهلكة",
+      "Title": "تتبع السعرات الحرارية"
+    },
+    "Contribute": "المساهمة على GitHub",
+    "Contribution": {
+      "Content": "Health Daily Link مفتوح المصدر، ونحن متحمسون للترحيب بالمطورين والمصممين وعشاق الصحة للمساهمة. انضم إلينا على GitHub وكن جزءًا من رحلتنا لجعل تتبع الصحة متاحًا للجميع",
+      "Title": "المساهمة في Health Daily Link"
+    },
+    "Desc": "رفيقك الشخصي لتتبع وتحسين رحلتك الصحية",
+    "Developer": {
+      "Content": "تم تطوير Health Daily Link بواسطتي، صهيب أحمد، بشغف لتحسين الصحة عبر التكنولوجيا. هذا المشروع مفتوح المصدر، وأنا متحمس للترحيب بمساهمات المطورين والمصممين وعشاق الصحة من جميع أنحاء العالم",
+      "Title": "قابل المطور"
+    },
+    "ExerciseTracking": {
+      "Desc": "سجل أنشطتك البدنية، بما في ذلك الرياضة والتمارين والمشي",
+      "Title": "تتبع التمارين"
+    },
     "Firebase": "فايربيس",
-    "Generate summaries and visualizations for deeper insights into your habits": "إنشاء ملخصات وتصويرات للحصول على رؤى أعمق حول عاداتك",
-    "Goal Setting": "تحديد الأهداف",
-    "Health Daily Link is a comprehensive, open-source web app dedicated to helping you track and manage various health-related activities to stay on top of your wellness goals": "Health Daily Link هو تطبيق ويب مفتوح المصدر وشامل يهدف لمساعدتك على تتبع وإدارة مختلف الأنشطة الصحية لتحقيق أهدافك الصحية",
+    "Future": {
+      "Content": "Health Daily Link ينمو ولدينا خطط كبيرة لجعله أكثر قوة وسهولة في الاستخدام. بدعمك، نهدف إلى إضافة ميزات جديدة، تحسين الوصول، وبناء مجتمع حول الصحة. هذا جزء مما نخطط لتطويره في التوسعات المستقبلية",
+      "Title": "رؤيتنا للمستقبل"
+    },
+    "GoalSetting": {
+      "Desc": "أهداف صحية مخصصة وتتبع التقدم",
+      "Title": "تحديد الأهداف"
+    },
     "Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience": "تم بناء Health Daily Link باستخدام تقنيات حديثة، مصممة لتقديم تجربة سلسة وآمنة",
-    "Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world": "تم تطوير Health Daily Link بواسطتي، صهيب أحمد، بشغف لتحسين الصحة عبر التكنولوجيا. هذا المشروع مفتوح المصدر، وأنا متحمس للترحيب بمساهمات المطورين والمصممين وعشاق الصحة من جميع أنحاء العالم",
-    "Health Daily Link is growing, and we have big plans to make it even more powerful and user-friendly With your support, we aim to add new features, improve accessibility, and build a community around wellness This is part of what we have in mind to develop for future expansions": "Health Daily Link ينمو ولدينا خطط كبيرة لجعله أكثر قوة وسهولة في الاستخدام. بدعمك، نهدف إلى إضافة ميزات جديدة، تحسين الوصول، وبناء مجتمع حول الصحة. هذا جزء مما نخطط لتطويره في التوسعات المستقبلية",
-    "Health Daily Link is open-source, and we’re thrilled to welcome developers, designers, and wellness enthusiasts to contribute Join us on GitHub and be part of our journey to make health tracking accessible to all": "Health Daily Link مفتوح المصدر، ونحن متحمسون للترحيب بالمطورين والمصممين وعشاق الصحة للمساهمة. انضم إلينا على GitHub وكن جزءًا من رحلتنا لجعل تتبع الصحة متاحًا للجميع",
-    "Hydration Logging": "تسجيل الترطيب",
-    "Localization": "التوطين",
-    "Log and monitor your weight, with support for inBody scale or any detailed-reading providers": "سجل وتابع وزنك، بدعم من ميزان inBody أو أي مقدم لقراءات مفصلة",
-    "Log your physical activities, including sports, workouts, and walks": "سجل أنشطتك البدنية، بما في ذلك الرياضة والتمارين والمشي",
-    "Meal Scheduling": "جدولة الوجبات",
-    "Medication Follow-Up": "متابعة الأدوية",
-    "Meet the Developer": "قابل المطور",
-    "Mobile App": "تطبيق الجوال",
-    "Modern Tech Stack": "تقنيات حديثة",
-    "Monitor and improve your sleep patterns for better rest and recovery": "راقب وحسن أنماط نومك للحصول على راحة وتعافٍ أفضل",
-    "Multi-User Support": "دعم متعدد المستخدمين",
-    "Never miss a dose by keeping track of your medications and supplements": "لا تفوت أي جرعة من خلال تتبع أدويتك والمكملات الغذائية",
-    "Notifications for meals, workouts, medications, and more": "إشعارات للوجبات، التمارين، الأدوية، والمزيد",
-    "Nutritionist Access": "وصول إلى أخصائي التغذية",
-    "Open-Source": "مفتوح المصدر",
-    "Our Vision for the Future": "رؤيتنا للمستقبل",
+    "HydrationLogging": {
+      "Desc": "سجل استهلاكك للمياه للحفاظ على مستويات الترطيب المثلى",
+      "Title": "تسجيل الترطيب"
+    },
+    "Localization": {
+      "Desc": "دعم لعدة لغات، بما في ذلك العربية",
+      "Title": "التوطين"
+    },
+    "MealScheduling": {
+      "Desc": "ابق على المسار مع خطتك الغذائية عن طريق تسجيل ومتابعة الوجبات المجدولة",
+      "Title": "جدولة الوجبات"
+    },
+    "MedicationFollowUp": {
+      "Desc": "لا تفوت أي جرعة من خلال تتبع أدويتك والمكملات الغذائية",
+      "Title": "متابعة الأدوية"
+    },
+    "MobileApp": {
+      "Desc": "تطبيق مخصص لتتبع الصحة أثناء التنقل",
+      "Title": "تطبيق الجوال"
+    },
+    "ModernTechStack": {
+      "Desc": "تم بناءه باستخدام ReactJs وFirebase لتجربة ويب محسّنة وقابلة للتوسع ومتجاوبة",
+      "Title": "تقنيات حديثة"
+    },
+    "MultiUserSupport": {
+      "Desc": "مثالي للعائلات أو الفرق للتعاون في تحقيق الأهداف الصحية",
+      "Title": "دعم متعدد المستخدمين"
+    },
+    "NutritionistAccess": {
+      "Desc": "السماح للخبراء بمراجعة التقدم الغذائي وتقديم الملاحظات",
+      "Title": "وصول إلى أخصائي التغذية"
+    },
+    "OpenSource": {
+      "Desc": "الشفافية الكاملة والقدرة لأي مطور ويب على المساهمة والتحسين",
+      "Title": "مفتوح المصدر"
+    },
     "Our front-end framework for building interactive and responsive user interfaces, delivering a seamless user experience": "إطار العمل الأمامي الخاص بنا لبناء واجهات مستخدم تفاعلية ومتجاوبة، مما يوفر تجربة مستخدم سلسة",
-    "Perfect for families or teams to collaborate on health goals": "مثالي للعائلات أو الفرق للتعاون في تحقيق الأهداف الصحية",
-    "Personalized health targets and progress tracking": "أهداف صحية مخصصة وتتبع التقدم",
     "ReactJs": "React.Js",
-    "Record your water intake to maintain optimal hydration levels": "سجل استهلاكك للمياه للحفاظ على مستويات الترطيب المثلى",
-    "Secured Access": "وصول آمن",
-    "Set Reminders": "تعيين تذكيرات",
-    "Sleep Cycle Monitoring": "مراقبة دورة النوم",
-    "Stay on track with your nutrition plan by logging and following scheduled meals": "ابق على المسار مع خطتك الغذائية عن طريق تسجيل ومتابعة الوجبات المجدولة",
-    "Support for multiple languages, including Arabic": "دعم لعدة لغات، بما في ذلك العربية",
+    "SecuredAccess": {
+      "Desc": "وصول خاص بالمستخدم فقط لعرض البيانات الخاصة به والتلاعب بها باستخدام مصادقة Firebase",
+      "Title": "وصول آمن"
+    },
+    "SetReminders": {
+      "Desc": "إشعارات للوجبات، التمارين، الأدوية، والمزيد",
+      "Title": "تعيين تذكيرات"
+    },
+    "SleepCycleMonitoring": {
+      "Desc": "راقب وحسن أنماط نومك للحصول على راحة وتعافٍ أفضل",
+      "Title": "مراقبة دورة النوم"
+    },
     "Technology Stack": "التقنيات المستخدمة",
-    "Totally transparency and ability for any web developer to contribute and enhance": "الشفافية الكاملة والقدرة لأي مطور ويب على المساهمة والتحسين",
-    "User-only access for own data view & manipulation with Firebase authentication": "وصول خاص بالمستخدم فقط لعرض البيانات الخاصة به والتلاعب بها باستخدام مصادقة Firebase",
-    "Weight Tracking": "تتبع الوزن",
-    "Welcome to Health Daily Link (HDL)": "مرحبًا بك في Health Daily Link (HDL)",
-    "What is Health Daily Link": "ما هو Health Daily Link",
-    "Your personal companion for tracking and improving your health journey": "رفيقك الشخصي لتتبع وتحسين رحلتك الصحية"
+    "WeightTracking": {
+      "Desc": "سجل وتابع وزنك، بدعم من ميزان inBody أو أي مقدم لقراءات مفصلة",
+      "Title": "تتبع الوزن"
+    },
+    "Welcome": "مرحبًا بك في Health Daily Link (HDL)",
+    "WhatIs": {
+      "Content": "Health Daily Link هو تطبيق ويب مفتوح المصدر وشامل يهدف لمساعدتك على تتبع وإدارة مختلف الأنشطة الصحية لتحقيق أهدافك الصحية",
+      "Title": "ما هو Health Daily Link"
+    }
   },
   "Layout": {
     "All Rights Reserved for": "جميع الحقوق محفوظة لـ",

@@ -45,61 +45,107 @@
     "Weekly Calendar": "Weekly Calendar"
   },
   "Landing": {
-    "A dedicated app for tracking health on the go": "A dedicated app for tracking health on the go",
     "A reliable backend solution for data storage, real-time syncing, and user authentication, ensuring security and scalability": "A reliable backend solution for data storage, real-time syncing, and user authentication, ensuring security and scalability",
-    "AI-Powered Input": "AI-Powered Input",
-    "Advanced Analytics": "Advanced Analytics",
-    "Advanced Data Visualization": "Advanced Data Visualization",
-    "Allow experts to review and provide feedback on dietary progress": "Allow experts to review and provide feedback on dietary progress",
-    "Automatic calorie calculations for scheduled and consumed meals": "Automatic calorie calculations for scheduled and consumed meals",
-    "Automatic data entry and meaningful health recommendations": "Automatic data entry and meaningful health recommendations",
-    "Build a platform for shared wellness experiences and tips": "Build a platform for shared wellness experiences and tips",
-    "Built with ReactJs and Firebase for an optimized, scalable, and responsive web experience": "Built with ReactJs and Firebase for an optimized, scalable, and responsive web experience",
-    "Calorie Tracking": "Calorie Tracking",
-    "Contribute on GitHub": "Contribute on GitHub",
-    "Contribute to Health Daily Link": "Contribute to Health Daily Link",
-    "Exercise Tracking": "Exercise Tracking",
+    "AdvancedAnalytics": {
+      "Desc": "Generate summaries and visualizations for deeper insights into your habits",
+      "Title": "Advanced Analytics"
+    },
+    "AdvancedDataVisualization": {
+      "Desc": "Build a platform for shared wellness experiences and tips",
+      "Title": "Advanced Data Visualization"
+    },
+    "AiPoweredInput": {
+      "Desc": "Automatic data entry and meaningful health recommendations",
+      "Title": "AI-Powered Input"
+    },
+    "CalorieTracking": {
+      "Desc": "Automatic calorie calculations for scheduled and consumed meals",
+      "Title": "Calorie Tracking"
+    },
+    "Contribute": "Contribute on GitHub",
+    "Contribution": {
+      "Content": "Health Daily Link is open-source, and we’re thrilled to welcome developers, designers, and wellness enthusiasts to contribute. Join us on GitHub and be part of our journey to make health tracking accessible to all.",
+      "Title": "Contribute to Health Daily Link"
+    },
+    "Desc": "Your personal companion for tracking and improving your health journey",
+    "Developer": {
+      "Content": "Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world",
+      "Title": "Meet the Developer"
+    },
+    "ExerciseTracking": {
+      "Desc": "Log your physical activities, including sports, workouts, and walks",
+      "Title": "Exercise Tracking"
+    },
     "Firebase": "Firebase",
-    "Generate summaries and visualizations for deeper insights into your habits": "Generate summaries and visualizations for deeper insights into your habits",
-    "Goal Setting": "Goal Setting",
-    "Health Daily Link is a comprehensive, open-source web app dedicated to helping you track and manage various health-related activities to stay on top of your wellness goals": "Health Daily Link is a comprehensive, open-source web app dedicated to helping you track and manage various health-related activities to stay on top of your wellness goals",
+    "Future": {
+      "Content": "Health Daily Link is growing, and we have big plans to make it even more powerful and user-friendly. With your support, we aim to add new features, improve accessibility, and build a community around wellness. This is part of what we have in mind to develop for future expansions.",
+      "Title": "Our Vision for the Future"
+    },
+    "GoalSetting": {
+      "Desc": "Personalized health targets and progress tracking",
+      "Title": "Goal Setting"
+    },
     "Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience": "Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience",
-    "Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world": "Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world",
-    "Health Daily Link is growing, and we have big plans to make it even more powerful and user-friendly With your support, we aim to add new features, improve accessibility, and build a community around wellness This is part of what we have in mind to develop for future expansions": "Health Daily Link is growing, and we have big plans to make it even more powerful and user-friendly. With your support, we aim to add new features, improve accessibility, and build a community around wellness. This is part of what we have in mind to develop for future expansions.",
-    "Health Daily Link is open-source, and we’re thrilled to welcome developers, designers, and wellness enthusiasts to contribute Join us on GitHub and be part of our journey to make health tracking accessible to all": "Health Daily Link is open-source, and we’re thrilled to welcome developers, designers, and wellness enthusiasts to contribute. Join us on GitHub and be part of our journey to make health tracking accessible to all.",
-    "Hydration Logging": "Hydration Logging",
-    "Localization": "Localization",
-    "Log and monitor your weight, with support for inBody scale or any detailed-reading providers": "Log and monitor your weight, with support for inBody scale or any detailed-reading providers",
-    "Log your physical activities, including sports, workouts, and walks": "Log your physical activities, including sports, workouts, and walks",
-    "Meal Scheduling": "Meal Scheduling",
-    "Medication Follow-Up": "Medication Follow-Up",
-    "Meet the Developer": "Meet the Developer",
-    "Mobile App": "Mobile App",
-    "Modern Tech Stack": "Modern Tech Stack",
-    "Monitor and improve your sleep patterns for better rest and recovery": "Monitor and improve your sleep patterns for better rest and recovery",
-    "Multi-User Support": "Multi-User Support",
-    "Never miss a dose by keeping track of your medications and supplements": "Never miss a dose by keeping track of your medications and supplements",
-    "Notifications for meals, workouts, medications, and more": "Notifications for meals, workouts, medications, and more",
-    "Nutritionist Access": "Nutritionist Access",
-    "Open-Source": "Open-Source",
-    "Our Vision for the Future": "Our Vision for the Future",
+    "HydrationLogging": {
+      "Desc": "Record your water intake to maintain optimal hydration levels",
+      "Title": "Hydration Logging"
+    },
+    "Localization": {
+      "Desc": "Support for multiple languages, including Arabic",
+      "Title": "Localization"
+    },
+    "MealScheduling": {
+      "Desc": "Stay on track with your nutrition plan by logging and following scheduled meals",
+      "Title": "Meal Scheduling"
+    },
+    "MedicationFollowUp": {
+      "Desc": "Never miss a dose by keeping track of your medications and supplements",
+      "Title": "Medication Follow-Up"
+    },
+    "MobileApp": {
+      "Desc": "A dedicated app for tracking health on the go",
+      "Title": "Mobile App"
+    },
+    "ModernTechStack": {
+      "Desc": "Built with React.Js and Firebase for an optimized, scalable, and responsive web experience.",
+      "Title": "Modern Tech Stack"
+    },
+    "MultiUserSupport": {
+      "Desc": "Perfect for families or teams to collaborate on health goals",
+      "Title": "Multi-User Support"
+    },
+    "NutritionistAccess": {
+      "Desc": "Allow experts to review and provide feedback on dietary progress",
+      "Title": "Nutritionist Access"
+    },
+    "OpenSource": {
+      "Desc": "Totally transparency and ability for any web developer to contribute and enhance",
+      "Title": "Open-Source"
+    },
     "Our front-end framework for building interactive and responsive user interfaces, delivering a seamless user experience": "Our front-end framework for building interactive and responsive user interfaces, delivering a seamless user experience",
-    "Perfect for families or teams to collaborate on health goals": "Perfect for families or teams to collaborate on health goals",
-    "Personalized health targets and progress tracking": "Personalized health targets and progress tracking",
     "ReactJs": "React.Js",
-    "Record your water intake to maintain optimal hydration levels": "Record your water intake to maintain optimal hydration levels",
-    "Secured Access": "Secured Access",
-    "Set Reminders": "Set Reminders",
-    "Sleep Cycle Monitoring": "Sleep Cycle Monitoring",
-    "Stay on track with your nutrition plan by logging and following scheduled meals": "Stay on track with your nutrition plan by logging and following scheduled meals",
-    "Support for multiple languages, including Arabic": "Support for multiple languages, including Arabic",
+    "SecuredAccess": {
+      "Desc": "User-only access for own data view & manipulation with Firebase authentication",
+      "Title": "Secured Access"
+    },
+    "SetReminders": {
+      "Desc": "Notifications for meals, workouts, medications, and more",
+      "Title": "Set Reminders"
+    },
+    "SleepCycleMonitoring": {
+      "Desc": "Monitor and improve your sleep patterns for better rest and recovery",
+      "Title": "Sleep Cycle Monitoring"
+    },
     "Technology Stack": "Technology Stack",
-    "Totally transparency and ability for any web developer to contribute and enhance": "Totally transparency and ability for any web developer to contribute and enhance",
-    "User-only access for own data view & manipulation with Firebase authentication": "User-only access for own data view & manipulation with Firebase authentication",
-    "Weight Tracking": "Weight Tracking",
-    "Welcome to Health Daily Link (HDL)": "Welcome to Health Daily Link (HDL)",
-    "What is Health Daily Link": "What is Health Daily Link",
-    "Your personal companion for tracking and improving your health journey": "Your personal companion for tracking and improving your health journey"
+    "WeightTracking": {
+      "Desc": "Log and monitor your weight, with support for inBody scale or any detailed-reading providers",
+      "Title": "Weight Tracking"
+    },
+    "Welcome": "Welcome to Health Daily Link (HDL)",
+    "WhatIs": {
+      "Content": "Health Daily Link is a comprehensive, open-source web app dedicated to helping you track and manage various health-related activities to stay on top of your wellness goals",
+      "Title": "What is Health Daily Link"
+    }
   },
   "Layout": {
     "All Rights Reserved for": "All Rights Reserved for",
