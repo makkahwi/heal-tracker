@@ -1,17 +1,17 @@
-import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.min.js";
+import { Toast } from "bootstrap";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Toast } from "bootstrap";
-import "../node_modules/react-vis/dist/style.css";
-import "./App.css";
+
 import Footer from "./Components/Layout/Footer";
 import Navbar from "./Components/Layout/Navbar";
 import ScrollToTop from "./Components/Layout/ScrollToTop";
-import { RootState } from "./Store/store";
-import "./Style/custom.scss";
-import "./index.css";
 import { removeNotifications } from "./Store/notifications";
+import { RootState } from "./Store/store";
+
+import "../node_modules/react-vis/dist/style.css";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "bootstrap/dist/js/bootstrap.min.js";
 
 const Layout = ({ children = <></> }) => {
   const dispatch = useDispatch();

@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
+
 import { routes } from "../../App";
 import { signOut } from "../../Store/authSlice";
 import { AppDispatch, RootState } from "../../Store/store";
@@ -21,12 +22,11 @@ const Navbar = () => {
   const user = useSelector((state: RootState) => state.auth.user);
   const { loading } = useSelector((state: RootState) => state.loading);
 
-  const closeDropdowns = () => {
-    const dropdowns = document.querySelectorAll(".dropdown-menu.show");
-    dropdowns.forEach((dropdown) => dropdown.classList.remove("show"));
-
-    const toggler = document.querySelector(".navbar-collapse");
-    if (toggler) toggler.classList.remove("show");
+  const closeNavbar = () => {
+    const navbar = document.querySelector(".navbar-collapse");
+    if (navbar && navbar.classList.contains("show")) {
+      navbar.classList.remove("show");
+    }
   };
 
   return (
@@ -45,13 +45,11 @@ const Navbar = () => {
           />
           <span className="text-white fw-bold">HDL</span>
 
-          {!!loading.length ? (
+          {!!loading.length && (
             <span
               className="spinner-grow text-light spinner-border-sm ms-3"
               aria-hidden="true"
             />
-          ) : (
-            ""
           )}
         </span>
 
@@ -79,7 +77,7 @@ const Navbar = () => {
                     role="button"
                     onClick={() => {
                       navigate("/");
-                      closeDropdowns();
+                      closeNavbar();
                     }}
                   >
                     <FontAwesomeIcon icon={faDashboard} />
@@ -120,7 +118,7 @@ const Navbar = () => {
                         role="button"
                         onClick={() => {
                           navigate(path);
-                          closeDropdowns();
+                          closeNavbar();
                         }}
                       >
                         <FontAwesomeIcon icon={icon} />
@@ -146,7 +144,7 @@ const Navbar = () => {
                                 role="button"
                                 onClick={() => {
                                   navigate(path + "/" + childPath);
-                                  closeDropdowns();
+                                  closeNavbar();
                                 }}
                               >
                                 <FontAwesomeIcon icon={icon} />
@@ -176,7 +174,7 @@ const Navbar = () => {
                     role="button"
                     onClick={() => {
                       navigate("manual");
-                      closeDropdowns();
+                      closeNavbar();
                     }}
                   >
                     <FontAwesomeIcon icon={faInfoCircle} />
@@ -192,7 +190,7 @@ const Navbar = () => {
                     role="button"
                     onClick={() => {
                       dispatch(signOut());
-                      closeDropdowns();
+                      closeNavbar();
                     }}
                   >
                     <FontAwesomeIcon icon={faSignOut} />
@@ -209,7 +207,7 @@ const Navbar = () => {
                   role="button"
                   onClick={() => {
                     navigate("/login");
-                    closeDropdowns();
+                    closeNavbar();
                   }}
                 >
                   <FontAwesomeIcon icon={faSignIn} />
