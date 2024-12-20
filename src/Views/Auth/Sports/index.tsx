@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
 import MonthlyCalendar from "../../../Components/PageView/MonthlyCalendar";
@@ -147,7 +148,7 @@ const WalkExercises = () => {
   }
 
   const onSubmit = (values: walkExerciseProps) => {
-    BeAPI.create("Sport Sessions", values)
+    BeAPI.create("sportSessions", values)
       .then(() => {
         getData();
       })
@@ -163,7 +164,7 @@ const WalkExercises = () => {
   };
 
   const onDelete = (id: string) =>
-    BeAPI.remove("Sport Sessions", id)
+    BeAPI.remove("sportSessions", id)
       .then(() => {
         getData();
       })
