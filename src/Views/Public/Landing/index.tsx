@@ -6,14 +6,12 @@ import {
   faChartLine,
   faChartPie,
   faClock,
-  faDatabase,
   faDumbbell,
   faLanguage,
   faLaptopCode,
   faMobileAlt,
   faPills,
   faShield,
-  faSpaceShuttle,
   faTint,
   faUserMd,
   faUsers,
@@ -22,10 +20,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTranslation } from "react-i18next";
+import { Fragment } from "react/jsx-runtime";
 
 import FeaturesView from "./FeaturesView";
 import PageSection from "./PageSection";
-import { Fragment } from "react/jsx-runtime";
 
 const LandingPage = () => {
   const { t } = useTranslation();
