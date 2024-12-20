@@ -9,9 +9,6 @@ import { removeNotifications } from "./Store/notifications";
 import { RootState } from "./Store/store";
 
 import "../node_modules/react-vis/dist/style.css";
-import "./App.css";
-import "./index.css";
-import "./Style/custom.scss";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";

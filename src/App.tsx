@@ -11,6 +11,7 @@ import {
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import i18n from "./i18n";
 import Layout from "./Layout";
 import store from "./Store/store";
 import Dashboard from "./Views/Auth/Dashboard";
@@ -26,7 +27,10 @@ import Sports from "./Views/Auth/Sports";
 import WeightReadings from "./Views/Auth/WeightReadings";
 import Landing from "./Views/Public/Landing";
 import Login from "./Views/Public/Login";
-import i18n from "./i18n";
+
+import "./App.css";
+import "./index.css";
+import "./Style/custom.scss";
 
 export const routes = [
   {
