@@ -49,11 +49,11 @@ const ShortCuts = () => {
       <Fragment>
         <div className="row align-items-center">
           {/* Water Consumption Actions */}
-          <div className={`col-lg-${2} my-4 text-start`}>
+          <div className={`col-xs-12 col-lg-${2} my-4 text-start`}>
             {t("Dashboard.ShortCuts.Water Consumption")}
           </div>
 
-          <div className={`col-lg-${2} my-4`}>
+          <div className={`col-xs-6 col-lg-${2} my-4`}>
             <button
               className="btn btn-primary text-white w-100"
               type="button"
@@ -68,7 +68,7 @@ const ShortCuts = () => {
             </button>
           </div>
 
-          <div className={`col-lg-${2} my-4`}>
+          <div className={`col-xs-6 col-lg-${2} my-4`}>
             <button
               className="btn btn-primary text-white w-100"
               type="button"
@@ -86,14 +86,14 @@ const ShortCuts = () => {
 
         {/* Medicine Consumption Actions */}
         <div className="row align-items-center">
-          <div className={`col-lg-${2} my-4 text-start`}>
+          <div className={`col-xs-12 col-lg-${2} my-4 text-start`}>
             {t("Dashboard.ShortCuts.MedicineConsumption")}
           </div>
 
           {shortcuts
             .filter(({ type }) => type === "medicine")
             .map(({ label, data }, i) => (
-              <div className={`col-lg-${2} my-4`} key={i}>
+              <div className={`col-xs-6 col-lg-${2} my-4`} key={i}>
                 <button
                   className="btn btn-primary text-white w-100"
                   type="button"
