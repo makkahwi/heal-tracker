@@ -25,8 +25,21 @@ const Layout = ({ children = <></> }) => {
     toastElements.forEach((toastEl) => {
       const toast = new Toast(toastEl); // Use the imported Toast class
       toast.show();
+
+      toastEl.addEventListener("hidden.bs.toast", () => {
+        const message = toastEl.querySelector(".toast-body")?.textContent;
+        if (message) {
+          dispatch(removeNotifications({ msg: message }));
+        }
+      });
     });
-  }, [notifications]);
+
+    return () => {
+      toastElements.forEach((toastEl) => {
+        toastEl.removeEventListener("hidden.bs.toast", () => {});
+      });
+    };
+  }, [notifications, dispatch]);
 
   return (
     <main className="bg-light min-vh-100 text-dark text-center p-md-5 p-2">
@@ -56,7 +69,6 @@ const Layout = ({ children = <></> }) => {
                 className="btn-close btn-close-white me-2 m-auto"
                 data-bs-dismiss="toast"
                 aria-label="Close"
-                onClick={() => dispatch(removeNotifications({ msg }))}
               />
             </div>
           </div>
