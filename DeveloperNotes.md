@@ -1,86 +1,86 @@
 # Developer Notes
 
-## Project Overview
+## Technology Stack
 
-**Health Daily Link** is a React-based open-source web application designed for users who want to track their daily health-related activities, including food consumption, hydration, exercise, medications, sleep, and weight monitoring. The application leverages Firebase for backend data management, providing real-time syncing and secure authentication. The primary goal is to offer a feature-rich health-tracking app that is expandable with community support.
-
----
-
-## Project Structure
-
-The project is structured around React with Firebase integration. Key parts of the app include:
-
-- **Frontend**: Built with React and TypeScript, using Redux for state management and React Router for navigation.
-- **Styling**: Bootstrap and SASS for responsive and customizable UI.
-- **Icons**: Font Awesome for icons, enhancing visual appeal.
-- **Testing**: Testing is facilitated using the React Testing Library and Jest.
-
----
-
-## Installation and Setup
-
-To set up the project locally:
-
-1. Clone the repository:
-
-   `git clone <https://github.com/makkahwi/health-daily-link.git>`
-
-2. Install dependencies:
-
-   `cd health-daily-link`
-   `npm install`
-
-3. Run the application:
-
-   `npm start`
-
-## Key Technologies
-
-- React: Core front-end framework for building user interfaces.
-- Redux Toolkit: Used for global state management, helping manage app-wide states effectively.
-- React Router DOM: Handles routing for a smooth single-page application experience.
-- Firebase: Backend-as-a-Service (BaaS) for data storage, real-time syncing, and user authentication.
-- SASS: For advanced CSS styling with nesting and variables.
-- Font Awesome: For a wide range of icons to visually enhance the UI.
-- Bootstrap: Provides a responsive grid and components, making the app adaptable to various screen sizes.
-
-## Technical Features To Build / Fix
-
-- Fix dynamicList of dynamicList Rendering
-- Build LabTest analysis
-- Build data update functionality
-- Build Loading indicator(s)
-- Build main dashboard
-  - Build health indicators progress analysis
-    - Weight
-    - Lab tests
-- Build user profile service
-  - Name
-  - Photo
-  - Bio & geo data
-- Build admin panel
-  - List of users
-    - Create
-    - Delete
-    - Password reset
-  - Across-user analysis
-
-## Suggested Contribution Areas
-
-Here are some suggested areas where contributors can add value:
-
-- Performance Improvements: Optimize React components and Firebase interactions to enhance speed and reduce latency.
-- UI Enhancements: Improve the user interface for a more appealing experience.
-- Internationalization: Add support for additional languages.
-- Accessibility: Implement accessibility features to ensure inclusivity for users with disabilities.
-- Mobile Responsiveness: Further optimize the UI for mobile and tablet users.
-- Advanced Data Analysis: Develop advanced analytics features for users to view health trends over time.
-- AI Integrations: Add features such as AI-based activity suggestions or calorie estimations.
+- Frontend: React.Js
+- Backend: Firebase Realtime Database, Firebase Authentication
+- UI Framework: Bootstrap 5
+- Charts and Visualization: React-Vis
+- Development Tools: Yarn, ESLint, Prettier
 
 ## Contribution Guidelines
 
-Contributions to Health Daily Link are welcome! Please follow these guidelines:
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-- Fork the repository and create a new branch for your feature.
-- Ensure all code is tested and passes linting.
-- Submit a pull request with a clear description of your feature or fix.
+To contribute:
+
+1. Fork the project.
+2. Create your feature branch: `git checkout -b feature/YourFeatureName`.
+3. Commit your changes: `git commit -m 'Add some YourFeatureName'`.
+4. Push to the branch: `git push origin feature/YourFeatureName`.
+5. Open a pull request.
+
+Please ensure your code adheres to the project's guidelines and is well-documented.
+
+## How to Start Development
+
+1. **Fork the repository** to your GitHub account.
+2. **Clone the forked repository** to your local machine.
+3. Navigate to the project root directory:
+
+  ```bash
+    cd health-daily-link
+  ```
+
+4. Install dependencies:
+
+  ```bash
+    npm i
+  ```
+
+5. Start the development server:  
+
+  ```bash
+    npm run dev
+  ```
+
+6. Open your browser and navigate to the development server URL (usually `http://localhost:3000`) to view the application.
+7. Make changes to the code as needed, and watch for live updates.
+
+## How to Report an Issue
+
+We welcome contributions and feedback! To report a bug, suggest a feature, or request support:
+
+1. Go to the [Issues](https://github.com/health-daily-link/issues) tab of this repository.
+2. Click on **New Issue**.
+3. Select the appropriate issue template:
+
+   - **Bug Report**: If you found a bug or error in the app.
+   - **Feature Request**: If you have an idea for a new feature or improvement.
+
+4. Fill out the form with as much detail as possible.
+5. Submit the issue, and we’ll review it as soon as possible.
+
+## Technical Support
+
+If you encounter any issues, have questions, or want to suggest improvements, feel free to:
+
+1. Open an issue on the [GitHub repository](https://github.com/makkahwi/health-daily-link/issues).
+2. Reach out to the project maintainer via the contact information provided in the repository.
+3. Join the discussions on the repository to collaborate with other contributors.
+
+We appreciate your feedback and contributions to make the "Health Daily Link" better for everyone!
+
+## Meet the Developer
+
+This is **Suhaib Ahmad**, a software developer passionate about leveraging technology to improve health and wellness.
+
+- **Website:** [Suhaib.dev](https://www.suhaib.dev/)  
+- **GitHub:** [Makkahwi](https://github.com/makkahwi/)  
+- **Email**: [SuhaibAhmadAi@hotmail.com](mailto:SuhaibAhmadAi@hotmail.com)
+
+## Contact
+
+If you have any questions about the project, feel free to reach out the developer.
+
+Thank you for your interest in "Health Daily Link"! Together, we can make it the go-to solution for healthy-lifestyle enthusiasts worldwide.
