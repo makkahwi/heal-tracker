@@ -82,68 +82,7 @@ Welcome to [**Health Daily Link (HDL)**](https://health-daily-link.vercel.app/),
 
 Health Daily Link is already deployed, so you can simply sign up and start using it today! [Visit Health Daily Link](https://health-daily-link.vercel.app/)  
 
-## Developer Notes
-
-### Technology Stack
-
-- Frontend: React.Js
-- Backend: Firebase Realtime Database, Firebase Authentication
-- UI Framework: Bootstrap 5
-- Charts and Visualization: React-Vis
-- Development Tools: Yarn, ESLint, Prettier
-
-### Contribution Guidelines
-
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-To contribute:
-
-1. Fork the project.
-2. Create your feature branch: `git checkout -b feature/YourFeatureName`.
-3. Commit your changes: `git commit -m 'Add some YourFeatureName'`.
-4. Push to the branch: `git push origin feature/YourFeatureName`.
-5. Open a pull request.
-
-Please ensure your code adheres to the project's guidelines and is well-documented.
-
-### How to Start Development
-
-1. **Fork the repository** to your GitHub account.
-2. **Clone the forked repository** to your local machine.
-3. Navigate to the project root directory:
-
-  ```bash
-    cd health-daily-link
-  ```
-
-4. Install dependencies:
-
-  ```bash
-    npm i
-  ```
-
-5. Start the development server:  
-
-  ```bash
-    npm run dev
-  ```
-
-6. Open your browser and navigate to the development server URL (usually `http://localhost:3000`) to view the application.
-7. Make changes to the code as needed, and watch for live updates.
-
-### How to Report an Issue
-
-We welcome contributions and feedback! To report a bug, suggest a feature, or request support:
-
-1. Go to the [Issues](https://github.com/health-daily-link/issues) tab of this repository.
-2. Click on **New Issue**.
-3. Select the appropriate issue template:
-
-   - **Bug Report**: If you found a bug or error in the app.
-   - **Feature Request**: If you have an idea for a new feature or improvement.
-
-4. Fill out the form with as much detail as possible.
-5. Submit the issue, and we’ll review it as soon as possible.
+## [Developer Notes](./DeveloperNotes.md)
 
 ## Technical Support
 
