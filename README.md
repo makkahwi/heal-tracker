@@ -82,7 +82,7 @@ Welcome to [**Health Daily Link (HDL)**](https://health-daily-link.vercel.app/),
 
 Health Daily Link is already deployed, so you can simply sign up and start using it today! [Visit Health Daily Link](https://health-daily-link.vercel.app/)  
 
-## [Developer Notes](./DeveloperNotes.md)
+## [Developer Notes](./documentation/DeveloperNotes.md)
 
 ## Technical Support
 
