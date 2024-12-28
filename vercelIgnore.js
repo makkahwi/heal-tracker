@@ -8,6 +8,7 @@ const changedFiles = execSync("git diff --name-only HEAD^ HEAD")
 const ignoredFiles = [
   ".md",
   ".github/*",
+  "documentation/*",
   ".env.example",
   ".gitignore",
   "LICENSE",
