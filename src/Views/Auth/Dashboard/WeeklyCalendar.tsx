@@ -8,6 +8,7 @@ import { renderEvents } from "../../../Components/PageView/MonthlyCalendar";
 import { consumptionFullProps } from "../Diet/Consumption";
 import { renderWateringUI, wateringProps } from "../Diet/Watering";
 import { medicineProps, renderMedicineUI } from "../Medicine/Consumption";
+import { reliefProps, renderReliefUI } from "../Relief";
 import { renderSleepCycleUI, sleepCycleProps } from "../SleepCycles";
 import { renderExerciseUI, walkExerciseProps } from "../Sports";
 
@@ -22,6 +23,7 @@ export type comprehensiveProps = consumptionFullProps & {
   medicines: medicineProps[];
   sleeps: sleepCycleProps[];
   watering: wateringProps[];
+  reliefLogs: reliefProps[];
 };
 
 const WeeklyCalendar = ({
@@ -30,12 +32,14 @@ const WeeklyCalendar = ({
   medicineData,
   sleepCyclesData,
   watering,
+  reliefLogs,
 }: {
   consumptionData: consumptionFullProps[];
   walkExercisesData: walkExerciseProps[];
   medicineData: medicineProps[];
   sleepCyclesData: sleepCycleProps[];
   watering: wateringProps[];
+  reliefLogs: reliefProps[];
 }) => {
   const { t } = useTranslation();
 
@@ -108,6 +112,52 @@ const WeeklyCalendar = ({
             ({ endTime }) =>
               moment(data.timestamp).format("yyyy-MM-DD") ===
               moment(endTime).format("yyyy-MM-DD")
+          ),
+          reliefLogs: [
+            {
+              date: moment(data.timestamp).format("yyyy-MM-DD"),
+              time: moment(data.timestamp).format("yyyy-MM-DD"),
+              type: "1",
+              note: t("Services.Relief.Times", {
+                count: reliefLogs
+                  .filter(
+                    ({ type, time }) =>
+                      type == "1" &&
+                      moment(data.timestamp).format("yyyy-MM-DD") ===
+                        moment(time).format("yyyy-MM-DD")
+                  )
+                  .map(({ time, ...rest }) => ({
+                    ...rest,
+                    time,
+                    date: moment(time).format("yyyy-MM-DD"),
+                  })).length,
+              }),
+            },
+            {
+              date: moment(data.timestamp).format("yyyy-MM-DD"),
+              time: moment(data.timestamp).format("yyyy-MM-DD"),
+              type: "2",
+              note: t("Services.Relief.Times", {
+                count: reliefLogs
+                  .filter(
+                    ({ type, time }) =>
+                      type == "2" &&
+                      moment(data.timestamp).format("yyyy-MM-DD") ===
+                        moment(time).format("yyyy-MM-DD")
+                  )
+                  .map(({ time, ...rest }) => ({
+                    ...rest,
+                    time,
+                    date: moment(time).format("yyyy-MM-DD"),
+                  })).length,
+              }),
+            },
+          ].filter(
+            ({ note }) =>
+              note !==
+              t("Services.Relief.Times", {
+                count: 0,
+              })
           ),
         }))
     );
@@ -300,6 +350,33 @@ const WeeklyCalendar = ({
                     day.format("YYYY-MM-DD"),
                     renderWateringUI(),
                     theWalkExercises?.watering
+                  )}
+                </td>
+              );
+            })}
+          </tr>
+
+          <tr>
+            <th>{t("Services.Relief.Relief")}</th>
+
+            {currentWeek?.map((day, x) => {
+              const theWalkExercises: comprehensiveProps | undefined =
+                currentWeekData?.find(
+                  (dat) =>
+                    moment(dat.timestamp).format("yyyy-MM-DD") ===
+                    day.format("yyyy-MM-DD")
+                );
+
+              return (
+                <td className="text-start align-top" key={x}>
+                  {renderEvents(
+                    day.format("YYYY-MM-DD"),
+                    renderReliefUI(),
+                    theWalkExercises?.reliefLogs.map(({ time, ...rest }) => ({
+                      ...rest,
+                      date: moment(time).format("yyyy-MM-DD"),
+                      time,
+                    }))
                   )}
                 </td>
               );

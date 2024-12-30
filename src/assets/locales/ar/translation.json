@@ -367,6 +367,15 @@
       "Time": "الوقت",
       "Weekly": "أسبوعي"
     },
+    "Relief": {
+      "Notes": "ملاحظات",
+      "Number1": "خفيف",
+      "Number2": "ثقيل",
+      "Relief": "سجل الراحة",
+      "Time": "الوقت",
+      "Times": "{{count}} مرات",
+      "Type": "النوع"
+    },
     "SleepCycles": {
       "EndTime": "وقت الانتهاء",
       "Notes": "الملاحظات",

@@ -9,6 +9,7 @@ import { SchedulesMealProps } from "../Diet/Schedule/Meals";
 import { wateringProps } from "../Diet/Watering";
 import { medicineProps } from "../Medicine/Consumption";
 import { medicineScheduleProps } from "../Medicine/Schedule";
+import { reliefProps } from "../Relief";
 import ShortCuts from "../ShortCuts";
 import { sleepCycleProps } from "../SleepCycles";
 import { walkExerciseProps } from "../Sports";
@@ -29,6 +30,7 @@ const Dashboard = () => {
   const [sleepCyclesData, setSleepCyclesData] = useState<sleepCycleProps[]>([]);
   const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
   const [watering, setWatering] = useState<wateringProps[]>([]);
+  const [reliefLogs, setReliefLogs] = useState<reliefProps[]>([]);
 
   const getData = () => {
     BeAPI.getAll("scheduleMealElements")
@@ -121,6 +123,16 @@ const Dashboard = () => {
           .catch((err) => console.log({ err }));
       })
       .catch((err) => console.log({ err }));
+
+    BeAPI.getAll("relief")
+      .then((res: any) =>
+        setReliefLogs(
+          res?.sort((a: reliefProps, b: reliefProps) =>
+            a.time > b.time ? -1 : 1
+          )
+        )
+      )
+      .catch((err) => console.log({ err }));
   };
 
   useEffect(() => {
@@ -151,6 +163,7 @@ const Dashboard = () => {
           walkExercisesData={walkExercisesData}
           medicineData={medicineData}
           sleepCyclesData={sleepCyclesData}
+          reliefLogs={reliefLogs}
         />
       </PageSection>
     </Fragment>
