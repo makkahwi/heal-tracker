@@ -162,13 +162,13 @@
   "Layout": {
     "All Rights Reserved for": "جميع الحقوق محفوظة لـ",
     "App Manual": "دليل التطبيق",
+    "AppFullName": "HEAL | رابط الصحة اليومية",
     "Called": "استدعاء",
     "Consumption": "الاستهلاك",
     "Created": "إضافة",
     "Dashboard": "لوحة التحكم",
     "Deleted": "حذف",
     "Diet": "النظام الغذائي",
-    "AppFullName": "HEAL | رابط الصحة اليومية",
     "LabTests": "الفحوصات المخبرية",
     "Medicine": "الأدوية",
     "Schedule": "الجدول الزمني",
@@ -368,6 +368,7 @@
       "Weekly": "أسبوعي"
     },
     "Relief": {
+      "Desc": "تتبع زيارات الراحة طوال اليوم كمؤشر مهم لمستوى الصحة.",
       "Notes": "ملاحظات",
       "Number1": "خفيف",
       "Number2": "ثقيل",

@@ -13,6 +13,7 @@ import {
   faPills,
   faShield,
   faTint,
+  faToilet,
   faUserMd,
   faUsers,
   faUtensils,
@@ -38,6 +39,11 @@ const LandingPage = () => {
       title: t("Landing.HydrationLogging.Title"),
       icon: faTint,
       desc: t("Landing.HydrationLogging.Desc"),
+    },
+    {
+      title: t("Services.Relief.Relief"),
+      icon: faToilet,
+      desc: t("Services.Relief.Desc"),
     },
     {
       title: t("Landing.ExerciseTracking.Title"),

@@ -162,13 +162,13 @@
   "Layout": {
     "All Rights Reserved for": "All Rights Reserved for",
     "App Manual": "App Manual",
+    "AppFullName": "HEAL | Health Empowerment and Lifestyle",
     "Called": "Call",
     "Consumption": "Consumption",
     "Created": "Creation",
     "Dashboard": "Dashboard",
     "Deleted": "Deletion",
     "Diet": "Diet",
-    "AppFullName": "HEAL | Health Empowerment and Lifestyle",
     "LabTests": "Lab Tests",
     "Medicine": "Medicine",
     "Schedule": "Schedule",
@@ -368,6 +368,7 @@
       "Weekly": "Weekly"
     },
     "Relief": {
+      "Desc": "Document your relief exercises along the day as a health indicator.",
       "Notes": "Notes",
       "Number1": "Number 1",
       "Number2": "Number 2",
