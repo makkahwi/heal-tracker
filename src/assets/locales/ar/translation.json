@@ -64,12 +64,12 @@
     },
     "Contribute": "المساهمة على GitHub",
     "Contribution": {
-      "Content": "Health Daily Link مفتوح المصدر، ونحن متحمسون للترحيب بالمطورين والمصممين وعشاق الصحة للمساهمة. انضم إلينا على GitHub وكن جزءًا من رحلتنا لجعل تتبع الصحة متاحًا للجميع",
-      "Title": "المساهمة في Health Daily Link"
+      "Content": "Health Empowerment and Lifestyle مفتوح المصدر، ونحن متحمسون للترحيب بالمطورين والمصممين وعشاق الصحة للمساهمة. انضم إلينا على GitHub وكن جزءًا من رحلتنا لجعل تتبع الصحة متاحًا للجميع",
+      "Title": "المساهمة في Health Empowerment and Lifestyle"
     },
     "Desc": "رفيقك الشخصي لتتبع وتحسين رحلتك الصحية",
     "Developer": {
-      "Content": "تم تطوير Health Daily Link بواسطتي، صهيب أحمد، بشغف لتحسين الصحة عبر التكنولوجيا. هذا المشروع مفتوح المصدر، وأنا متحمس للترحيب بمساهمات المطورين والمصممين وعشاق الصحة من جميع أنحاء العالم",
+      "Content": "تم تطوير Health Empowerment and Lifestyle بواسطتي، صهيب أحمد، بشغف لتحسين الصحة عبر التكنولوجيا. هذا المشروع مفتوح المصدر، وأنا متحمس للترحيب بمساهمات المطورين والمصممين وعشاق الصحة من جميع أنحاء العالم",
       "Title": "قابل المطور"
     },
     "ExerciseTracking": {
@@ -78,14 +78,14 @@
     },
     "Firebase": "فايربيس",
     "Future": {
-      "Content": "Health Daily Link ينمو ولدينا خطط كبيرة لجعله أكثر قوة وسهولة في الاستخدام. بدعمك، نهدف إلى إضافة ميزات جديدة، تحسين الوصول، وبناء مجتمع حول الصحة. هذا جزء مما نخطط لتطويره في التوسعات المستقبلية",
+      "Content": "Health Empowerment and Lifestyle ينمو ولدينا خطط كبيرة لجعله أكثر قوة وسهولة في الاستخدام. بدعمك، نهدف إلى إضافة ميزات جديدة، تحسين الوصول، وبناء مجتمع حول الصحة. هذا جزء مما نخطط لتطويره في التوسعات المستقبلية",
       "Title": "رؤيتنا للمستقبل"
     },
     "GoalSetting": {
       "Desc": "أهداف صحية مخصصة وتتبع التقدم",
       "Title": "تحديد الأهداف"
     },
-    "Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience": "تم بناء Health Daily Link باستخدام تقنيات حديثة، مصممة لتقديم تجربة سلسة وآمنة",
+    "Health Empowerment and Lifestyle is built with a modern technology stack, designed to provide a smooth and secure experience": "تم بناء Health Empowerment and Lifestyle باستخدام تقنيات حديثة، مصممة لتقديم تجربة سلسة وآمنة",
     "HydrationLogging": {
       "Desc": "سجل استهلاكك للمياه للحفاظ على مستويات الترطيب المثلى",
       "Title": "تسجيل الترطيب"
@@ -137,8 +137,8 @@
       "Title": "مراقبة دورة النوم"
     },
     "StartUsing": {
-      "Content": "Health Daily Link جاهز للاستخدام، يمكنك ببساطة التسجيل من خلال الرابط أعلاه والبدء في استخدامه الآن!",
-      "Title": "ابدأ باستخدام HDL"
+      "Content": "Health Empowerment and Lifestyle جاهز للاستخدام، يمكنك ببساطة التسجيل من خلال الرابط أعلاه والبدء في استخدامه الآن!",
+      "Title": "ابدأ باستخدام HEAL"
     },
     "TechnicalSupport": {
       "Approach1": "أنشىء تذكرة على موقع GitHub من خلال الرابط أدناه.",
@@ -153,10 +153,10 @@
       "Desc": "سجل وتابع وزنك، بدعم من ميزان inBody أو أي مقدم لقراءات مفصلة",
       "Title": "تتبع الوزن"
     },
-    "Welcome": "مرحبًا بك في Health Daily Link (HDL)",
+    "Welcome": "مرحبًا بك في Health Empowerment and Lifestyle (HEAL)",
     "WhatIs": {
-      "Content": "Health Daily Link (HDL) هو تطبيق ويب شامل مصمم لمساعدة الأفراد على تتبع أنشطتهم المتعلقة بالصحة والالتزام بأهدافهم الصحية. من الروتين اليومي مثل الوجبات الغذائية وتتبع ساعات النوم، يجعل HDL من السهل تسجيل ومراقبة وتحليل تقدمك في تحقيق أهدافك الصحية.",
-      "Title": "ما هو Health Daily Link"
+      "Content": "Health Empowerment and Lifestyle (HEAL) هو تطبيق ويب شامل مصمم لمساعدة الأفراد على تتبع أنشطتهم المتعلقة بالصحة والالتزام بأهدافهم الصحية. من الروتين اليومي مثل الوجبات الغذائية وتتبع ساعات النوم، يجعل HEAL من السهل تسجيل ومراقبة وتحليل تقدمك في تحقيق أهدافك الصحية.",
+      "Title": "ما هو Health Empowerment and Lifestyle"
     }
   },
   "Layout": {
@@ -168,7 +168,7 @@
     "Dashboard": "لوحة التحكم",
     "Deleted": "حذف",
     "Diet": "النظام الغذائي",
-    "HDL | Health Daily Link": "HDL | رابط الصحة اليومية",
+    "AppFullName": "HEAL | رابط الصحة اليومية",
     "LabTests": "الفحوصات المخبرية",
     "Medicine": "الأدوية",
     "Schedule": "الجدول الزمني",
@@ -255,15 +255,18 @@
         "Consumed Meals": "الوجبات المستهلكة",
         "Date": "التاريخ",
         "Element": "العنصر",
+        "IsAnAlternative": "هل هي بديل؟",
         "Meal": "الوجبة",
         "Meal Contents": "محتويات الوجبة",
         "MealOfDay": "وجبة اليوم",
         "NextWeek": "الأسبوع القادم",
+        "No": "لا",
         "Note": "ملاحظة",
         "PreviousWeek": "الأسبوع السابق",
         "Quantity": "الكمية",
         "Time": "الوقت",
-        "Unit": "الوحدة"
+        "Unit": "الوحدة",
+        "Yes": "نعم"
       },
       "Schedule": {
         "Alternatives": "البدائل",
@@ -297,7 +300,7 @@
       "Bilirubin": "البيليروبين",
       "Calcium": "الكالسيوم",
       "Chloride": "الكلوريد",
-      "CholesterolHdl": "الكوليسترول الجيد (HDL)",
+      "CholesterolHdl": "الكوليسترول الجيد (HEAL)",
       "CholesterolLdl": "الكوليسترول السيئ (LDL)",
       "CholesterolTotal": "الكوليسترول الكلي",
       "CorrectedCalcium": "الكالسيوم المصحح",
@@ -363,6 +366,15 @@
       "Quantity": "الكمية",
       "Time": "الوقت",
       "Weekly": "أسبوعي"
+    },
+    "Relief": {
+      "Notes": "ملاحظات",
+      "Number1": "خفيف",
+      "Number2": "ثقيل",
+      "Relief": "سجل الراحة",
+      "Time": "الوقت",
+      "Times": "{{count}} مرات",
+      "Type": "النوع"
     },
     "SleepCycles": {
       "EndTime": "وقت الانتهاء",

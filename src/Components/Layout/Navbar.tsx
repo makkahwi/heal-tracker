@@ -43,7 +43,7 @@ const Navbar = () => {
             height={40}
             className="me-2"
           />
-          <span className="text-white fw-bold">HDL</span>
+          <span className="text-white fw-bold">HEAL</span>
 
           {!!loading.length && (
             <span

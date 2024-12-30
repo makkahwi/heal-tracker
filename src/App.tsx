@@ -4,12 +4,13 @@ import {
   faFileMedical,
   faPills,
   faRunning,
+  faToilet,
   faUtensils,
   faWater,
   faWeight,
 } from "@fortawesome/free-solid-svg-icons";
 import { Provider } from "react-redux";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import i18n from "./i18n";
 import Layout from "./Layout";
@@ -31,6 +32,7 @@ import Login from "./Views/Public/Login";
 import "./App.css";
 import "./index.css";
 import "./Style/custom.scss";
+import Relief from "./Views/Auth/Relief";
 
 export const routes = [
   {
@@ -57,6 +59,12 @@ export const routes = [
         Comp: <Watering />,
       },
     ],
+  },
+  {
+    name: i18n.t("Services.Relief.Relief"),
+    path: "relief",
+    icon: faToilet,
+    Comp: <Relief />,
   },
   {
     name: i18n.t("Layout.SportSessions"),
@@ -125,12 +133,14 @@ const App = () => {
               )}
 
               <Route path="manual" element={<Manual />} />
-              <Route path="*" element={<Dashboard />} />
+              <Route path="/" element={<Dashboard />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           ) : (
             <Routes>
               <Route path="login" element={<Login />} />
-              <Route path="*" element={<Landing />} />
+              <Route path="/" element={<Landing />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           )}
         </Layout>

@@ -29,7 +29,7 @@ Please ensure your code adheres to the project's guidelines and is well-document
 3. Navigate to the project root directory:
 
   ```bash
-    cd health-daily-link
+    cd health-empowerment-and-lifestyle
   ```
 
 4. Install dependencies:
@@ -51,7 +51,7 @@ Please ensure your code adheres to the project's guidelines and is well-document
 
 We welcome contributions and feedback! To report a bug, suggest a feature, or request support:
 
-1. Go to the [Issues](https://github.com/health-daily-link/issues) tab of this repository.
+1. Go to the [Issues](https://github.com/health-empowerment-and-lifestyle/issues) tab of this repository.
 2. Click on **New Issue**.
 3. Select the appropriate issue template:
 
@@ -65,11 +65,11 @@ We welcome contributions and feedback! To report a bug, suggest a feature, or re
 
 If you encounter any issues, have questions, or want to suggest improvements, feel free to:
 
-1. Open an issue on the [GitHub repository](https://github.com/makkahwi/health-daily-link/issues).
+1. Open an issue on the [GitHub repository](https://github.com/makkahwi/health-empowerment-and-lifestyle/issues).
 2. Reach out to the project maintainer via the contact information provided in the repository.
 3. Join the discussions on the repository to collaborate with other contributors.
 
-We appreciate your feedback and contributions to make the "Health Daily Link" better for everyone!
+We appreciate your feedback and contributions to make the "Health Empowerment and Lifestyle" better for everyone!
 
 ## Meet the Developer
 
@@ -83,4 +83,4 @@ This is **Suhaib Ahmad**, a software developer passionate about leveraging techn
 
 If you have any questions about the project, feel free to reach out the developer.
 
-Thank you for your interest in "Health Daily Link"! Together, we can make it the go-to solution for healthy-lifestyle enthusiasts worldwide.
+Thank you for your interest in "Health Empowerment and Lifestyle"! Together, we can make it the go-to solution for healthy-lifestyle enthusiasts worldwide.
