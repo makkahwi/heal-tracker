@@ -6,6 +6,7 @@ import PageSection from "../../Components/PageView/PageSection";
 import { wateringProps } from "./Diet/Watering";
 import { medicineProps } from "./Medicine/Consumption";
 import { medicineScheduleProps } from "./Medicine/Schedule";
+import { reliefProps } from "./Relief";
 
 const ShortCuts = () => {
   const { t } = useTranslation();
@@ -30,6 +31,14 @@ const ShortCuts = () => {
         getData();
       })
       .catch((err: any) => console.log({ err }));
+  };
+
+  const submitRelief = (values: reliefProps) => {
+    BeAPI.create("relief", values)
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
   };
 
   useEffect(() => {
@@ -80,6 +89,43 @@ const ShortCuts = () => {
               }
             >
               {t("Dashboard.ShortCuts.Cup", { quantity: 1 })}
+            </button>
+          </div>
+        </div>
+
+        <div className="row align-items-center">
+          {/* Relief Log Actions */}
+          <div className={`col-xs-12 col-lg-${2} my-4 text-start`}>
+            {t("Services.Relief.Relief")}
+          </div>
+
+          <div className={`col-xs-6 col-lg-${2} my-4`}>
+            <button
+              className="btn btn-primary text-white w-100"
+              type="button"
+              onClick={() =>
+                submitRelief({
+                  time: moment().format("yyyy-MM-DDTHH:mm"),
+                  type: "1",
+                })
+              }
+            >
+              {t("Services.Relief.Number1")}
+            </button>
+          </div>
+
+          <div className={`col-xs-6 col-lg-${2} my-4`}>
+            <button
+              className="btn btn-primary text-white w-100"
+              type="button"
+              onClick={() =>
+                submitRelief({
+                  time: moment().format("yyyy-MM-DDTHH:mm"),
+                  type: "2",
+                })
+              }
+            >
+              {t("Services.Relief.Number2")}
             </button>
           </div>
         </div>

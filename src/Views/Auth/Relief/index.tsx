@@ -8,14 +8,19 @@ import Form from "../../../Components/Form";
 import MonthlyCalendar from "../../../Components/PageView/MonthlyCalendar";
 import PageSection from "../../../Components/PageView/PageSection";
 import { dateTotTimeFormat } from "../../../Utils/consts";
-import { timeDifference } from "../../../Utils/functions";
+import i18n from "../../../i18n";
 
 export interface reliefProps {
   id?: string;
-  startTime: string;
-  endTime: string;
+  time: string;
+  type: string;
   note?: string;
 }
+
+const reliefOptions = [
+  { value: "1", label: i18n.t("Services.Relief.Number1") },
+  { value: "2", label: i18n.t("Services.Relief.Number2") },
+];
 
 export const renderReliefUI =
   (onDelete?: Function) => (event: reliefProps, date: string, id: string) =>
@@ -23,8 +28,7 @@ export const renderReliefUI =
       <div>
         {date ? (
           <span className="d-block bg-dark text-white p-2 my-2">
-            @ {dateTotTimeFormat(event.startTime)} -{" "}
-            {dateTotTimeFormat(event.endTime)}{" "}
+            @ {dateTotTimeFormat(event.time)}{" "}
             {onDelete && (
               <FontAwesomeIcon
                 icon={faTrashCan}
@@ -34,7 +38,7 @@ export const renderReliefUI =
               />
             )}
             <br />
-            {timeDifference(moment(event.startTime), moment(event.endTime))}
+            {reliefOptions.find(({ value }) => value == event.type)?.label}
           </span>
         ) : (
           ""
@@ -53,13 +57,13 @@ const Relief = () => {
       .then((res: reliefProps[]) =>
         setData(
           res
-            .map(({ endTime, ...rest }) => ({
+            .map(({ time, ...rest }) => ({
               ...rest,
-              endTime,
-              date: moment(endTime).format("yyyy-MM-DD"),
+              time,
+              date: moment(time).format("yyyy-MM-DD"),
             }))
             ?.sort((a: reliefProps, b: reliefProps) =>
-              a.startTime > b.startTime ? -1 : 1
+              a.time > b.time ? -1 : 1
             )
         )
       )
@@ -81,10 +85,7 @@ const Relief = () => {
       name: "type",
       label: t("Services.Relief.Type"),
       type: "select",
-      options: [
-        { value: "1", label: t("Services.Relief.Number1") },
-        { value: "2", label: t("Services.Relief.Number2") },
-      ],
+      options: reliefOptions,
       required: true,
     },
     {
