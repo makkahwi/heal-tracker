@@ -4,6 +4,7 @@ import {
   faFileMedical,
   faPills,
   faRunning,
+  faToilet,
   faUtensils,
   faWater,
   faWeight,
@@ -31,6 +32,7 @@ import Login from "./Views/Public/Login";
 import "./App.css";
 import "./index.css";
 import "./Style/custom.scss";
+import Relief from "./Views/Auth/Relief";
 
 export const routes = [
   {
@@ -57,6 +59,12 @@ export const routes = [
         Comp: <Watering />,
       },
     ],
+  },
+  {
+    name: i18n.t("Services.Relief.Relief"),
+    path: "relief",
+    icon: faToilet,
+    Comp: <Relief />,
   },
   {
     name: i18n.t("Layout.SportSessions"),

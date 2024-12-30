@@ -367,6 +367,14 @@
       "Time": "Time",
       "Weekly": "Weekly"
     },
+    "Relief": {
+      "Notes": "Notes",
+      "Number1": "Number 1",
+      "Number2": "Number 2",
+      "Relief": "Relief Records",
+      "Time": "Time",
+      "Type": "Type"
+    },
     "SleepCycles": {
       "EndTime": "End Time",
       "Notes": "Notes",
