@@ -65,24 +65,24 @@
     },
     "Contribute": "المساهمة على GitHub",
     "Contribution": {
-      "Content": "Health Empowerment and Lifestyle مفتوح المصدر، ونحن متحمسون للترحيب بالمطورين والمصممين وعشاق الصحة للمساهمة. انضم إلينا على GitHub وكن جزءًا من رحلتنا لجعل تتبع الصحة متاحًا للجميع",
-      "Title": "المساهمة في Health Empowerment and Lifestyle"
+      "Content": "HEAL مفتوح المصدر، ونحن متحمسون للترحيب بالمطورين والمصممين وعشاق الصحة للمساهمة. انضم إلينا على GitHub وكن جزءًا من رحلتنا لجعل تتبع الصحة متاحًا للجميع",
+      "Title": "المساهمة في HEAL"
     },
     "Desc": "رفيقك الشخصي لتتبع وتحسين رحلتك الصحية",
     "Developer": {
-      "Content": "تم تطوير Health Empowerment and Lifestyle بواسطتي، صهيب أحمد، بشغف لتحسين الصحة عبر التكنولوجيا. هذا المشروع مفتوح المصدر، وأنا متحمس للترحيب بمساهمات المطورين والمصممين وعشاق الصحة من جميع أنحاء العالم",
+      "Content": "تم تطوير HEAL بواسطتي، صهيب أحمد، بشغف لتحسين الصحة عبر التكنولوجيا. هذا المشروع مفتوح المصدر، وأنا متحمس للترحيب بمساهمات المطورين والمصممين وعشاق الصحة من جميع أنحاء العالم",
       "Title": "قابل المطور"
     },
     "Firebase": "فايربيس",
     "Future": {
-      "Content": "Health Empowerment and Lifestyle ينمو ولدينا خطط كبيرة لجعله أكثر قوة وسهولة في الاستخدام. بدعمك، نهدف إلى إضافة ميزات جديدة، تحسين الوصول، وبناء مجتمع حول الصحة. هذا جزء مما نخطط لتطويره في التوسعات المستقبلية",
+      "Content": "HEAL ينمو ولدينا خطط كبيرة لجعله أكثر قوة وسهولة في الاستخدام. بدعمك، نهدف إلى إضافة ميزات جديدة، تحسين الوصول، وبناء مجتمع حول الصحة. هذا جزء مما نخطط لتطويره في التوسعات المستقبلية",
       "Title": "رؤيتنا للمستقبل"
     },
     "GoalSetting": {
       "Desc": "أهداف صحية مخصصة وتتبع التقدم",
       "Title": "تحديد الأهداف"
     },
-    "Health Empowerment and Lifestyle is built with a modern technology stack, designed to provide a smooth and secure experience": "تم بناء Health Empowerment and Lifestyle باستخدام تقنيات حديثة، مصممة لتقديم تجربة سلسة وآمنة",
+    "Health Empowerment and Lifestyle is built with a modern technology stack, designed to provide a smooth and secure experience": "تم بناء HEAL باستخدام تقنيات حديثة، مصممة لتقديم تجربة سلسة وآمنة",
     "Localization": {
       "Desc": "دعم لعدة لغات، بما في ذلك العربية",
       "Title": "التوطين"
@@ -118,7 +118,7 @@
       "Title": "تعيين تذكيرات"
     },
     "StartUsing": {
-      "Content": "Health Empowerment and Lifestyle جاهز للاستخدام، يمكنك ببساطة التسجيل من خلال الرابط أعلاه والبدء في استخدامه الآن!",
+      "Content": "HEAL جاهز للاستخدام، يمكنك ببساطة التسجيل من خلال الرابط أعلاه والبدء في استخدامه الآن!",
       "Title": "ابدأ باستخدام HEAL"
     },
     "TechnicalSupport": {
@@ -133,7 +133,7 @@
     "Welcome": "مرحبًا بك في Health Empowerment and Lifestyle (HEAL)",
     "WhatIs": {
       "Content": "Health Empowerment and Lifestyle (HEAL) هو تطبيق ويب شامل مصمم لمساعدة الأفراد على تتبع أنشطتهم المتعلقة بالصحة والالتزام بأهدافهم الصحية. من الروتين اليومي مثل الوجبات الغذائية وتتبع ساعات النوم، يجعل HEAL من السهل تسجيل ومراقبة وتحليل تقدمك في تحقيق أهدافك الصحية.",
-      "Title": "ما هو Health Empowerment and Lifestyle"
+      "Title": "ما هو HEAL"
     }
   },
   "Layout": {

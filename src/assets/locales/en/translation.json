@@ -65,24 +65,24 @@
     },
     "Contribute": "Contribute on GitHub",
     "Contribution": {
-      "Content": "Health Empowerment and Lifestyle is open-source, and we’re thrilled to welcome developers, designers, and wellness enthusiasts to contribute. Join us on GitHub and be part of our journey to make health tracking accessible to all.",
-      "Title": "Contribute to Health Empowerment and Lifestyle"
+      "Content": "HEAL is open-source, and we’re thrilled to welcome developers, designers, and wellness enthusiasts to contribute. Join us on GitHub and be part of our journey to make health tracking accessible to all.",
+      "Title": "Contribute to HEAL"
     },
     "Desc": "Your personal companion for tracking and improving your health journey",
     "Developer": {
-      "Content": "Health Empowerment and Lifestyle is developed by me Suhaib Ahmad, a passionate about improving health through technology This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world",
+      "Content": "HEAL is developed by me Suhaib Ahmad, a passionate about improving health through technology This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world",
       "Title": "Meet the Developer"
     },
     "Firebase": "Firebase",
     "Future": {
-      "Content": "Health Empowerment and Lifestyle is growing, and we have big plans to make it even more powerful and user-friendly. With your support, we aim to add new features, improve accessibility, and build a community around wellness. This is part of what we have in mind to develop for future expansions.",
+      "Content": "HEAL is growing, and we have big plans to make it even more powerful and user-friendly. With your support, we aim to add new features, improve accessibility, and build a community around wellness. This is part of what we have in mind to develop for future expansions.",
       "Title": "Our Vision for the Future"
     },
     "GoalSetting": {
       "Desc": "Personalized health targets and progress tracking",
       "Title": "Goal Setting"
     },
-    "Health Empowerment and Lifestyle is built with a modern technology stack, designed to provide a smooth and secure experience": "Health Empowerment and Lifestyle is built with a modern technology stack, designed to provide a smooth and secure experience",
+    "Health Empowerment and Lifestyle is built with a modern technology stack, designed to provide a smooth and secure experience": "HEAL is built with a modern technology stack, designed to provide a smooth and secure experience",
     "Localization": {
       "Desc": "Support for multiple languages, including Arabic",
       "Title": "Localization"
@@ -118,14 +118,14 @@
       "Title": "Set Reminders"
     },
     "StartUsing": {
-      "Content": "Health Empowerment and Lifestyle is already deployed and ready to use, so you can simply sign up through the link above and start using it today!",
+      "Content": "HEAL is already deployed and ready to use, so you can simply sign up through the link above and start using it today!",
       "Title": "Start Using HEAL"
     },
     "TechnicalSupport": {
       "Approach1": "Open an issue on the GitHub repository through link below.",
       "Approach2": "Reach out to the project developer  via the contact information below.",
       "Approach3": "Join the discussions on the repository to collaborate with other contributors.",
-      "Conclusion": "We appreciate your feedback and contributions to make the 'Health Empowerment and Lifestyle' better for everyone!",
+      "Conclusion": "We appreciate your feedback and contributions to make the 'HEAL' better for everyone!",
       "Content": "If you encounter any issues, have questions, or want to suggest improvements, feel free to...",
       "Title": "Technical Support"
     },
@@ -133,7 +133,7 @@
     "Welcome": "Welcome to Health Empowerment and Lifestyle (HEAL)",
     "WhatIs": {
       "Content": "Health Empowerment and Lifestyle (HEAL) is a comprehensive web app designed to help individuals track their health-related activities and stay consistent with their wellness goals. From daily routines like diet and hydration to broader metrics like sleep and weight tracking, HEAL makes it simple to log, monitor, and analyze your progress.",
-      "Title": "What is Health Empowerment and Lifestyle"
+      "Title": "What is HEAL"
     }
   },
   "Layout": {
