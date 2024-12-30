@@ -29,6 +29,7 @@
   "Dashboard": {
     "Dashboard": "Dashboard",
     "Data": "Data",
+    "Desc": "View your weekly summary of all covered services data.",
     "GenerateSummary": "Generate Summary",
     "Medicines": "Medicines",
     "NextWeek": "Next Week",
@@ -165,6 +166,7 @@
       "Title": "Dashboard"
     },
     "Date": "Date",
+    "Desc": "A helping guideline to understand the purpose of services included and how to engage them.",
     "DietConsumption": "Diet Consumption",
     "DietConsumptionDesc": "Record actual consumption of foods and beverages, compare it with scheduled meal contents. Records are shown in a weekly-based view calendar.",
     "DietConsumptionHowItWorks1": "Pick a scheduled meal to auto-fill the supposed-to-consume elements.",
@@ -285,6 +287,7 @@
       "CorrectedCalcium": "Corrected Calcium",
       "Creatinine": "Creatinine",
       "Date": "Date",
+      "Desc": "Input and checkout the results of lab tests you conduct.",
       "Eosinophils": "Eosinophils",
       "FastingBloodSugar": "Fasting Blood Sugar",
       "FastingInsulin": "Fasting Insulin",
