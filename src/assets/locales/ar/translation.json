@@ -255,15 +255,18 @@
         "Consumed Meals": "الوجبات المستهلكة",
         "Date": "التاريخ",
         "Element": "العنصر",
+        "IsAnAlternative": "هل هي بديل؟",
         "Meal": "الوجبة",
         "Meal Contents": "محتويات الوجبة",
         "MealOfDay": "وجبة اليوم",
         "NextWeek": "الأسبوع القادم",
+        "No": "لا",
         "Note": "ملاحظة",
         "PreviousWeek": "الأسبوع السابق",
         "Quantity": "الكمية",
         "Time": "الوقت",
-        "Unit": "الوحدة"
+        "Unit": "الوحدة",
+        "Yes": "نعم"
       },
       "Schedule": {
         "Alternatives": "البدائل",
