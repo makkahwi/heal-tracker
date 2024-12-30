@@ -1,6 +1,7 @@
 import moment, { MomentInput } from "moment";
 import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+
 import * as BeAPI from "../../../../API";
 import Form from "../../../../Components/Form";
 import PageSection from "../../../../Components/PageView/PageSection";
@@ -127,13 +128,22 @@ const Consumption = () => {
                 alternatives
                   ? [
                       ...final,
-                      rest,
+                      {
+                        ...rest,
+                        alternative: t("Services.Diet.Consumption.No"),
+                      },
                       ...alternatives.map((x) => ({
                         ...x,
-                        note: "A",
+                        alternative: t("Services.Diet.Consumption.Yes"),
                       })),
                     ]
-                  : [...final, rest],
+                  : [
+                      ...final,
+                      {
+                        ...rest,
+                        alternative: t("Services.Diet.Consumption.No"),
+                      },
+                    ],
               []
             ),
         }));
@@ -175,6 +185,13 @@ const Consumption = () => {
         {
           name: "note",
           label: t("Services.Diet.Consumption.Note"),
+          required: false,
+        },
+        {
+          name: "alternative",
+          label: t("Services.Diet.Consumption.IsAnAlternative"),
+          type: "boolean",
+          disabled: true,
           required: false,
         },
       ],

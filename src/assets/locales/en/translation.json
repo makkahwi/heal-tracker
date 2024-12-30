@@ -255,15 +255,18 @@
         "Consumed Meals": "Consumed Meals",
         "Date": "Date",
         "Element": "Element",
+        "IsAnAlternative": "Is An Alternative?",
         "Meal": "Meal",
         "Meal Contents": "Meal Contents",
         "MealOfDay": "Meal of Day",
         "NextWeek": "Next Week",
+        "No": "No",
         "Note": "Note",
         "PreviousWeek": "Previous Week",
         "Quantity": "Quantity",
         "Time": "Time",
-        "Unit": "Unit"
+        "Unit": "Unit",
+        "Yes": "Yes"
       },
       "Schedule": {
         "Alternatives": "Alternatives",
