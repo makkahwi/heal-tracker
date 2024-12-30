@@ -31,14 +31,14 @@ const LandingPage = () => {
 
   const currentFeatures = [
     {
-      title: t("Landing.MealScheduling.Title"),
+      title: t("Services.Diet.Schedule.ScheduleMeals"),
       icon: faUtensils,
-      desc: t("Landing.MealScheduling.Desc"),
+      desc: t("Services.Diet.Schedule.Desc"),
     },
     {
-      title: t("Landing.HydrationLogging.Title"),
+      title: t("Services.Diet.Watering.Title"),
       icon: faTint,
-      desc: t("Landing.HydrationLogging.Desc"),
+      desc: t("Services.Diet.Watering.Desc"),
     },
     {
       title: t("Services.Relief.Relief"),
@@ -46,24 +46,24 @@ const LandingPage = () => {
       desc: t("Services.Relief.Desc"),
     },
     {
-      title: t("Landing.ExerciseTracking.Title"),
+      title: t("Services.Sports.Title"),
       icon: faDumbbell,
-      desc: t("Landing.ExerciseTracking.Desc"),
+      desc: t("Services.Sports.Desc"),
     },
     {
-      title: t("Landing.MedicationFollowUp.Title"),
+      title: t("Services.Medicine.Title"),
       icon: faPills,
-      desc: t("Landing.MedicationFollowUp.Desc"),
+      desc: t("Services.Medicine.Desc"),
     },
     {
-      title: t("Landing.SleepCycleMonitoring.Title"),
+      title: t("Services.SleepCycles.Title"),
       icon: faBed,
-      desc: t("Landing.SleepCycleMonitoring.Desc"),
+      desc: t("Services.SleepCycles.Desc"),
     },
     {
-      title: t("Landing.WeightTracking.Title"),
+      title: t("Services.WeightReadings.Title"),
       icon: faWeight,
-      desc: t("Landing.WeightTracking.Desc"),
+      desc: t("Services.WeightReadings.Desc"),
     },
     {
       icon: faShield,
