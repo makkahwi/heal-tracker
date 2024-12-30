@@ -246,6 +246,14 @@
         "Unit": "Unit",
         "Yes": "Yes"
       },
+      "Fasting": {
+        "Date": "Date",
+        "Desc": "Track your fasting days and length of fasting in hours.",
+        "FastBreakingTime": "Fast Breaking Time",
+        "Fasting": "Fasting",
+        "JustBrokeFasting": "Just Broke Fasting",
+        "Notes": "Notes"
+      },
       "Schedule": {
         "Alternatives": "Alternatives",
         "Desc": "Stay on track with your nutrition plan by logging and following scheduled meals",

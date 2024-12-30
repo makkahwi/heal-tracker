@@ -12,6 +12,7 @@ import {
   faMobileAlt,
   faPills,
   faShield,
+  faStarAndCrescent,
   faTint,
   faToilet,
   faUserMd,
@@ -59,6 +60,11 @@ const LandingPage = () => {
       title: t("Services.SleepCycles.Title"),
       icon: faBed,
       desc: t("Services.SleepCycles.Desc"),
+    },
+    {
+      title: t("Services.Diet.Fasting.Fasting"),
+      icon: faStarAndCrescent,
+      desc: t("Services.Diet.Fasting.Desc"),
     },
     {
       title: t("Services.WeightReadings.Title"),

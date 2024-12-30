@@ -76,7 +76,6 @@ const MedicineConsumption = () => {
   };
 
   useEffect(() => {
-    // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
     getData();
   }, []);
 
