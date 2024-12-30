@@ -23,7 +23,6 @@ const MedicineSchedule = () => {
       .catch((err) => console.log({ err }));
 
   useEffect(() => {
-    // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
     getData();
   }, []);
 

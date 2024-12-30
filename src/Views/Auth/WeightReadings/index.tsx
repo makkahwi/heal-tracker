@@ -444,7 +444,6 @@ const WeightReadings = () => {
   };
 
   useEffect(() => {
-    // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
     getData();
   }, []);
 
