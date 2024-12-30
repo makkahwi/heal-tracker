@@ -247,7 +247,7 @@
         "Yes": "Yes"
       },
       "Fasting": {
-        "Day": "Day",
+        "Date": "Date",
         "Desc": "Track your fasting days and length of fasting in hours.",
         "FastBreakingTime": "Fast Breaking Time",
         "Fasting": "Fasting",

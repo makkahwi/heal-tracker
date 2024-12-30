@@ -7,12 +7,12 @@ import * as BeAPI from "../../../../API";
 import Form from "../../../../Components/Form";
 import MonthlyCalendar from "../../../../Components/PageView/MonthlyCalendar";
 import PageSection from "../../../../Components/PageView/PageSection";
-import { dateTotTimeFormat } from "../../../../Utils/consts";
+import { dateTotTimeFormat, timeFormat } from "../../../../Utils/consts";
 import i18n from "../../../../i18n";
 
 export interface fastingProps {
   id?: string;
-  day: string;
+  date: string;
   breakTime: string;
   note?: string;
 }
@@ -24,7 +24,7 @@ export const renderFastingUI =
         {date ? (
           <span className="d-block bg-dark text-white p-2 my-2">
             {i18n.t("Services.Diet.Fasting.FastBreakingTime")} @{" "}
-            {dateTotTimeFormat(event.breakTime)}{" "}
+            {timeFormat(event.breakTime)}{" "}
             {onDelete && (
               <FontAwesomeIcon
                 icon={faTrashCan}
@@ -33,8 +33,6 @@ export const renderFastingUI =
                 onClick={() => onDelete(id)}
               />
             )}
-            <br />
-            {event.note}
           </span>
         ) : (
           ""
@@ -52,15 +50,9 @@ const Fasting = () => {
     BeAPI.getAll("fasting")
       .then((res: fastingProps[]) =>
         setData(
-          res
-            .map(({ breakTime, ...rest }) => ({
-              ...rest,
-              breakTime,
-              date: moment(breakTime).format("yyyy-MM-DD"),
-            }))
-            ?.sort((a: fastingProps, b: fastingProps) =>
-              a.breakTime > b.breakTime ? -1 : 1
-            )
+          res?.sort((a: fastingProps, b: fastingProps) =>
+            a.date > b.date ? -1 : 1
+          )
         )
       )
       .catch((err) => console.log({ err }));
@@ -71,8 +63,8 @@ const Fasting = () => {
 
   const formInputs = [
     {
-      name: "day",
-      label: t("Services.Diet.Fasting.Day"),
+      name: "date",
+      label: t("Services.Diet.Fasting.Date"),
       type: "date",
       required: true,
     },
