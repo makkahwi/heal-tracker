@@ -156,7 +156,11 @@ const WalkExercises = () => {
   };
 
   const onSportNoteSubmit = (values: submitSportNoteProps) => {
-    BeAPI.update({ table: "sportNote", id: sportNote.id, data: values.note })
+    BeAPI.update({
+      table: "sportNote",
+      id: sportNote.id || "x",
+      data: values.note,
+    })
       .then(() => {
         getData();
       })
