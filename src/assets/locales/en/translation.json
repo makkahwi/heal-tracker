@@ -251,6 +251,7 @@
         "Desc": "Track your fasting days and length of fasting in hours.",
         "FastBreakingTime": "Fast Breaking Time",
         "Fasting": "Fasting",
+        "JustBrokeFasting": "Just Broke Fasting",
         "Notes": "Notes"
       },
       "Schedule": {
