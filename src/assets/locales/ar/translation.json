@@ -373,6 +373,7 @@
       "Number2": "ثقيل",
       "Relief": "سجل الراحة",
       "Time": "الوقت",
+      "Times": "{{count}} مرات",
       "Type": "النوع"
     },
     "SleepCycles": {

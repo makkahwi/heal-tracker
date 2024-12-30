@@ -373,6 +373,7 @@
       "Number2": "Number 2",
       "Relief": "Relief Records",
       "Time": "Time",
+      "Times": "{{count}} Times",
       "Type": "Type"
     },
     "SleepCycles": {
