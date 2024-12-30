@@ -9,7 +9,7 @@ import {
   faWeight,
 } from "@fortawesome/free-solid-svg-icons";
 import { Provider } from "react-redux";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import i18n from "./i18n";
 import Layout from "./Layout";
@@ -125,12 +125,14 @@ const App = () => {
               )}
 
               <Route path="manual" element={<Manual />} />
-              <Route path="*" element={<Dashboard />} />
+              <Route path="/" element={<Dashboard />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           ) : (
             <Routes>
               <Route path="login" element={<Login />} />
-              <Route path="*" element={<Landing />} />
+              <Route path="/" element={<Landing />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           )}
         </Layout>
