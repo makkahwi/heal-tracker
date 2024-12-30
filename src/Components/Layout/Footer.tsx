@@ -62,7 +62,7 @@ const Footer = () => {
             <div className="col-xs-12 col-md-7 order-1 order-md-0">
               <h6 className="copyright text-center text-md-start">
                 <img src="/Logo-Only.png" alt="logo" height={100} />
-                {t("Layout.HDL | Health Daily Link")}
+                {t("Layout.AppFullName")}
               </h6>
             </div>
 

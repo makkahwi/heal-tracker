@@ -64,12 +64,12 @@
     },
     "Contribute": "Contribute on GitHub",
     "Contribution": {
-      "Content": "Health Daily Link is open-source, and we’re thrilled to welcome developers, designers, and wellness enthusiasts to contribute. Join us on GitHub and be part of our journey to make health tracking accessible to all.",
-      "Title": "Contribute to Health Daily Link"
+      "Content": "Health Empowerment and Lifestyle is open-source, and we’re thrilled to welcome developers, designers, and wellness enthusiasts to contribute. Join us on GitHub and be part of our journey to make health tracking accessible to all.",
+      "Title": "Contribute to Health Empowerment and Lifestyle"
     },
     "Desc": "Your personal companion for tracking and improving your health journey",
     "Developer": {
-      "Content": "Health Daily Link is developed by me Suhaib Ahmad, a passionate about improving health through technology This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world",
+      "Content": "Health Empowerment and Lifestyle is developed by me Suhaib Ahmad, a passionate about improving health through technology This project is open-source, and I am excited to welcome contributions from developers, designers, and wellness enthusiasts around the world",
       "Title": "Meet the Developer"
     },
     "ExerciseTracking": {
@@ -78,14 +78,14 @@
     },
     "Firebase": "Firebase",
     "Future": {
-      "Content": "Health Daily Link is growing, and we have big plans to make it even more powerful and user-friendly. With your support, we aim to add new features, improve accessibility, and build a community around wellness. This is part of what we have in mind to develop for future expansions.",
+      "Content": "Health Empowerment and Lifestyle is growing, and we have big plans to make it even more powerful and user-friendly. With your support, we aim to add new features, improve accessibility, and build a community around wellness. This is part of what we have in mind to develop for future expansions.",
       "Title": "Our Vision for the Future"
     },
     "GoalSetting": {
       "Desc": "Personalized health targets and progress tracking",
       "Title": "Goal Setting"
     },
-    "Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience": "Health Daily Link is built with a modern technology stack, designed to provide a smooth and secure experience",
+    "Health Empowerment and Lifestyle is built with a modern technology stack, designed to provide a smooth and secure experience": "Health Empowerment and Lifestyle is built with a modern technology stack, designed to provide a smooth and secure experience",
     "HydrationLogging": {
       "Desc": "Record your water intake to maintain optimal hydration levels",
       "Title": "Hydration Logging"
@@ -137,14 +137,14 @@
       "Title": "Sleep Cycle Monitoring"
     },
     "StartUsing": {
-      "Content": "Health Daily Link is already deployed and ready to use, so you can simply sign up through the link above and start using it today!",
-      "Title": "Start Using HDL"
+      "Content": "Health Empowerment and Lifestyle is already deployed and ready to use, so you can simply sign up through the link above and start using it today!",
+      "Title": "Start Using HEAL"
     },
     "TechnicalSupport": {
       "Approach1": "Open an issue on the GitHub repository through link below.",
       "Approach2": "Reach out to the project developer  via the contact information below.",
       "Approach3": "Join the discussions on the repository to collaborate with other contributors.",
-      "Conclusion": "We appreciate your feedback and contributions to make the 'Health Daily Link' better for everyone!",
+      "Conclusion": "We appreciate your feedback and contributions to make the 'Health Empowerment and Lifestyle' better for everyone!",
       "Content": "If you encounter any issues, have questions, or want to suggest improvements, feel free to...",
       "Title": "Technical Support"
     },
@@ -153,10 +153,10 @@
       "Desc": "Log and monitor your weight, with support for inBody scale or any detailed-reading providers",
       "Title": "Weight Tracking"
     },
-    "Welcome": "Welcome to Health Daily Link (HDL)",
+    "Welcome": "Welcome to Health Empowerment and Lifestyle (HEAL)",
     "WhatIs": {
-      "Content": "Health Daily Link (HDL) is a comprehensive web app designed to help individuals track their health-related activities and stay consistent with their wellness goals. From daily routines like diet and hydration to broader metrics like sleep and weight tracking, HDL makes it simple to log, monitor, and analyze your progress.",
-      "Title": "What is Health Daily Link"
+      "Content": "Health Empowerment and Lifestyle (HEAL) is a comprehensive web app designed to help individuals track their health-related activities and stay consistent with their wellness goals. From daily routines like diet and hydration to broader metrics like sleep and weight tracking, HEAL makes it simple to log, monitor, and analyze your progress.",
+      "Title": "What is Health Empowerment and Lifestyle"
     }
   },
   "Layout": {
@@ -168,7 +168,7 @@
     "Dashboard": "Dashboard",
     "Deleted": "Deletion",
     "Diet": "Diet",
-    "HDL | Health Daily Link": "HDL | Health Daily Link",
+    "AppFullName": "HEAL | Health Empowerment and Lifestyle",
     "LabTests": "Lab Tests",
     "Medicine": "Medicine",
     "Schedule": "Schedule",
@@ -209,7 +209,7 @@
     "Inputs": "Inputs",
     "LabTests": "Lab Tests",
     "LabTestsDesc": "Store results of blood tests with optional inputs based on the tests conducted.",
-    "LabTestsInputs2": "Test Indicators (e.g., HDL fats, LDL fats, etc...)",
+    "LabTestsInputs2": "Test Indicators (e.g., HEAL fats, LDL fats, etc...)",
     "MedicineConsumption": "Medicine Consumption",
     "MedicineConsumptionDesc": "Track medication intakes based on predefined schedules and view data in a monthly calendar.",
     "MedicineConsumptionInputs1": "Date & Time",
@@ -300,7 +300,7 @@
       "Bilirubin": "Bilirubin",
       "Calcium": "Calcium",
       "Chloride": "Chloride",
-      "CholesterolHdl": "Cholesterol HDL",
+      "CholesterolHdl": "Cholesterol HEAL",
       "CholesterolLdl": "Cholesterol LDL",
       "CholesterolTotal": "Cholesterol Total",
       "CorrectedCalcium": "Corrected Calcium",

@@ -191,7 +191,7 @@ const LandingPage = () => {
         <div className="text-center mt-5">
           <a
             className="btn btn-primary btn-lg shadow-sm text-white"
-            href="https://github.com/makkahwi/health-daily-link"
+            href="https://github.com/makkahwi/health-empowerment-and-lifestyle"
             target="_blank"
             rel="noopener noreferrer"
           >
