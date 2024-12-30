@@ -14,6 +14,7 @@ import ShortCuts from "../ShortCuts";
 import { sleepCycleProps } from "../SleepCycles";
 import { walkExerciseProps } from "../Sports";
 import WeeklyCalendar from "./WeeklyCalendar";
+import { fastingProps } from "../Diet/Fasting";
 
 const Dashboard = () => {
   const { t } = useTranslation();
@@ -31,6 +32,7 @@ const Dashboard = () => {
   const [meals, setMeals] = useState<SchedulesMealProps[]>([]);
   const [watering, setWatering] = useState<wateringProps[]>([]);
   const [reliefLogs, setReliefLogs] = useState<reliefProps[]>([]);
+  const [fasting, setFasting] = useState<fastingProps[]>([]);
 
   const getData = () => {
     BeAPI.getAll("scheduleMealElements")
@@ -133,6 +135,16 @@ const Dashboard = () => {
         )
       )
       .catch((err) => console.log({ err }));
+
+    BeAPI.getAll("fasting")
+      .then((res: any) =>
+        setFasting(
+          res?.sort((a: fastingProps, b: fastingProps) =>
+            a.date > b.date ? -1 : 1
+          )
+        )
+      )
+      .catch((err) => console.log({ err }));
   };
 
   useEffect(() => {
@@ -164,6 +176,7 @@ const Dashboard = () => {
           medicineData={medicineData}
           sleepCyclesData={sleepCyclesData}
           reliefLogs={reliefLogs}
+          fasting={fasting}
         />
       </PageSection>
     </Fragment>
