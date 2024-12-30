@@ -143,7 +143,7 @@ const Dashboard = () => {
     <Fragment>
       <ShortCuts />
 
-      <PageSection title={t("Dashboard.Dashboard")}>
+      <PageSection title={t("Dashboard.Dashboard")} desc={t("Dashboard.Desc")}>
         <WeeklyCalendar
           consumptionData={consumptionData.map((row) => {
             const mealId = meals.find(({ id }) => (id || "") === row.meal)?.id;

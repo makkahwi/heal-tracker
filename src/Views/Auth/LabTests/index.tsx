@@ -468,6 +468,7 @@ const LabTests = () => {
   return (
     <PageView
       title={t("Services.LabTests.LabTestsList")}
+      desc={t("Services.LabTests.Desc")}
       data={data}
       inputs={formInputs}
       onSubmit={onSubmit}

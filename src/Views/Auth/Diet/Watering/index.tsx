@@ -97,7 +97,10 @@ const Watering = () => {
       .catch((err: any) => console.log({ err }));
 
   return (
-    <PageSection title={t("Services.Diet.Watering.Watering")}>
+    <PageSection
+      title={t("Services.Diet.Watering.Watering")}
+      desc={t("Services.Diet.Watering.Desc")}
+    >
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 
