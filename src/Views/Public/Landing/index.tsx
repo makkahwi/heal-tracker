@@ -3,10 +3,12 @@ import {
   faBrain,
   faBullseye,
   faCalculator,
+  faCalendarDays,
   faChartLine,
   faChartPie,
   faClock,
   faDumbbell,
+  faFlask,
   faLanguage,
   faLaptopCode,
   faMobileAlt,
@@ -32,44 +34,59 @@ const LandingPage = () => {
 
   const currentFeatures = [
     {
-      title: t("Services.Diet.Schedule.ScheduleMeals"),
+      title: t("Services.Diet.Consumption.ConsumedMeals"),
+      desc: t("Services.Diet.Consumption.Desc.Landing"),
       icon: faUtensils,
-      desc: t("Services.Diet.Schedule.Desc"),
     },
     {
-      title: t("Services.Diet.Watering.Title"),
+      title: t("Services.Diet.Schedule.DietSchedules"),
+      desc: t("Services.Diet.Schedule.Desc.Landing"),
+      icon: faCalendarDays,
+    },
+    {
+      title: t("Services.Diet.Watering.Watering"),
+      desc: t("Services.Diet.Watering.Desc.Landing"),
       icon: faTint,
-      desc: t("Services.Diet.Watering.Desc"),
-    },
-    {
-      title: t("Services.Relief.Relief"),
-      icon: faToilet,
-      desc: t("Services.Relief.Desc"),
-    },
-    {
-      title: t("Services.Sports.Title"),
-      icon: faDumbbell,
-      desc: t("Services.Sports.Desc"),
-    },
-    {
-      title: t("Services.Medicine.Title"),
-      icon: faPills,
-      desc: t("Services.Medicine.Desc"),
-    },
-    {
-      title: t("Services.SleepCycles.Title"),
-      icon: faBed,
-      desc: t("Services.SleepCycles.Desc"),
     },
     {
       title: t("Services.Diet.Fasting.Fasting"),
+      desc: t("Services.Diet.Fasting.Desc.Landing"),
       icon: faStarAndCrescent,
-      desc: t("Services.Diet.Fasting.Desc"),
     },
     {
-      title: t("Services.WeightReadings.Title"),
+      title: t("Services.Relief.Relief"),
+      desc: t("Services.Relief.Desc.Landing"),
+      icon: faToilet,
+    },
+    {
+      title: t("Services.Sports.SportSessions"),
+      desc: t("Services.Sports.Desc.Landing"),
+      icon: faDumbbell,
+    },
+    {
+      title: t("Services.SleepCycles.SleepCycles"),
+      desc: t("Services.SleepCycles.Desc.Landing"),
+      icon: faBed,
+    },
+    {
+      title: t("Services.Medicine.ConsumedMedicines"),
+      desc: t("Services.Medicine.Consumption.Desc.Landing"),
+      icon: faPills,
+    },
+    {
+      title: t("Services.Medicine.MedicineSchedule"),
+      desc: t("Services.Medicine.Schedule.Desc.Landing"),
+      icon: faCalendarDays,
+    },
+    {
+      title: t("Services.WeightReadings.WeightReadings"),
+      desc: t("Services.WeightReadings.Desc.Landing"),
       icon: faWeight,
-      desc: t("Services.WeightReadings.Desc"),
+    },
+    {
+      title: t("Services.LabTests.LabTestsList"),
+      desc: t("Services.LabTests.Desc.Landing"),
+      icon: faFlask,
     },
     {
       icon: faShield,
