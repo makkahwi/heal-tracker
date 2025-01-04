@@ -29,7 +29,7 @@
   "Dashboard": {
     "Dashboard": "Dashboard",
     "Data": "Data",
-    "Desc": "The weekly summary of your tracked data, including diet consumption VS schedule, water consumption, sport sessions, sleep cycles, and medicine consumption.",
+    "Desc": "The weekly summary of your tracked data, including diet consumption VS schedule, water consumption, relief records, fasting, sport sessions, sleep cycles, and medicine consumption.",
     "GenerateSummary": "Generate Summary",
     "Medicines": "Medicines",
     "NextWeek": "Next Week",
@@ -200,7 +200,7 @@
         "Desc": {
           "Landing": "Track your fasting days and durations easily.",
           "Manual": "The Fasting service allows users to log the days they decide to fast, following the Muslim fasting practice. It calculates fasting duration automatically using wakeup time, dawn time, and the time of the first meal or water consumption.",
-          "Page": "Record your fasting days and calculate fasting durations based on wakeup and meal timings.",
+          "Page": "Record your fasting days and calculate fasting durations.",
           "Settings": "Enable this service to log fasting days and automatically calculate fasting durations."
         },
         "FastBreakingTime": "Fast Breaking Time",
@@ -272,7 +272,7 @@
       "Desc": {
         "Landing": "Store and track your lab test results for easy reference.",
         "Manual": "The Lab Tests service allows users to store results of blood and urine tests. Users can log the date of the test and record specific indicators, such as cholesterol levels or blood sugar readings. This data provides a comprehensive health record for future reference.",
-        "Page": "Record lab test results, including dates and specific test indicators.",
+        "Page": "Record fully detailed diet-related lab test results.",
         "Settings": "Enable this service to log results of blood and urine tests."
       },
       "Eosinophils": "Eosinophils",
@@ -330,7 +330,7 @@
         "Desc": {
           "Landing": "Track your medication intake easily.",
           "Manual": "The Medicine Consumption service allows users to track medications they consume. Users can select medicines from a predefined list, log the date and time of consumption, and specify quantities. This service integrates with the Medicine Schedule service for seamless tracking.",
-          "Page": "Log details of medication intake, including type, dosage, and time.",
+          "Page": "Log details of medication intake, like dosage, and time.",
           "Settings": "Enable this service to log your medication consumption."
         },
         "Manual": {
@@ -406,7 +406,7 @@
       "Desc": {
         "Landing": "Track your physical activities to maintain an active lifestyle.",
         "Manual": "The Sport service helps users monitor their physical activities, such as walking, swimming, or gym sessions. Users can log activity type, date, start and end times, and additional measurements (e.g., distance walked). Records are displayed in a monthly calendar view.",
-        "Page": "Log details of your physical activities, including type, duration, and optional notes.",
+        "Page": "Log details of your physical activities, like duration, measured achievement and so on.",
         "Settings": "Enable this service to log and monitor your sport sessions."
       },
       "EndTime": "End Time",
@@ -433,7 +433,7 @@
       "Desc": {
         "Landing": "Log detailed weight measurements to track progress.",
         "Manual": "The Weight Readings service allows users to log detailed weight measurements, including total weight, fat weight, muscle weight, and waist fat ratings. Users can also set target ranges for these metrics to monitor progress over time.",
-        "Page": "Record weekly weight readings, including fat mass, muscle mass, and more.",
+        "Page": "Record weekly weight detailed readings, like fat mass, muscle mass, and more.",
         "Settings": "Enable this service to record and monitor weight readings."
       },
       "FatWeight": "Fat Weight",
@@ -472,6 +472,7 @@
   },
   "Settings": {
     "ServicesActivation": {
+      "Desc": "You have the flexibility to choose which services you want to use. Enabling or disabling a service will not result in any data loss; it will simply hide or reveal the service in your account's user interface.",
       "Title": "Services Activation"
     },
     "Title": "Settings"

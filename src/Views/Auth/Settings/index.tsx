@@ -161,7 +161,10 @@ const Settings = () => {
 
   return (
     <PageSection title={t("Settings.Title")}>
-      <PageSection title={t("Settings.ServicesActivation.Title")}>
+      <PageSection
+        title={t("Settings.ServicesActivation.Title")}
+        desc={t("Settings.ServicesActivation.Desc")}
+      >
         <Form inputs={inputs} onSubmit={onSubmit} />
       </PageSection>
     </PageSection>
