@@ -45,19 +45,19 @@ export const routes = [
     icon: faUtensils,
     list: [
       {
-        name: i18n.t("Layout.Consumption"),
+        name: i18n.t("Services.Diet.Consumption.Consumed Meals"),
         path: "consumption",
         icon: faUtensils,
         Comp: <Consumption />,
       },
       {
-        name: i18n.t("Layout.Schedule"),
+        name: i18n.t("Services.Diet.Schedule.DietSchedules"),
         path: "schedule",
         icon: faCalendar,
         Comp: <Schedule />,
       },
       {
-        name: i18n.t("Layout.Watering"),
+        name: i18n.t("Services.Diet.Watering.Watering"),
         path: "watering",
         icon: faWater,
         Comp: <Watering />,
@@ -77,13 +77,13 @@ export const routes = [
     Comp: <Relief />,
   },
   {
-    name: i18n.t("Layout.SportSessions"),
+    name: i18n.t("Services.Sports.SportSessions"),
     path: "sport-sessions",
     icon: faRunning,
     Comp: <Sports />,
   },
   {
-    name: i18n.t("Layout.SleepCycles"),
+    name: i18n.t("Services.SleepCycles.SleepCycles"),
     path: "sleep-cycles",
     icon: faBed,
     Comp: <SleepCycles />,
@@ -94,13 +94,13 @@ export const routes = [
     icon: faPills,
     list: [
       {
-        name: i18n.t("Layout.Consumption"),
+        name: i18n.t("Services.Medicine.ConsumedMedicines"),
         path: "consumption",
         icon: faPills,
         Comp: <MedicineConsumption />,
       },
       {
-        name: i18n.t("Layout.Schedule"),
+        name: i18n.t("Services.Medicine.MedicineSchedule"),
         path: "schedule",
         icon: faCalendar,
         Comp: <MedicineSchedule />,
@@ -108,13 +108,13 @@ export const routes = [
     ],
   },
   {
-    name: i18n.t("Layout.WeightReadings"),
+    name: i18n.t("Services.WeightReadings.WeightReadings"),
     path: "weight-readings",
     icon: faWeight,
     Comp: <WeightReadings />,
   },
   {
-    name: i18n.t("Layout.LabTests"),
+    name: i18n.t("Services.LabTests.LabTestsList"),
     path: "lab-tests",
     icon: faFileMedical,
     Comp: <LabTests />,

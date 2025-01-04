@@ -42,7 +42,7 @@
     },
     "SleepCycles": "دورات النوم",
     "SportSessions": "جلسات الرياضة",
-    "Watering": "الري",
+    "Watering": "شرب المياه",
     "Weekly Calendar": "التقويم الأسبوعي"
   },
   "Landing": {
@@ -141,24 +141,17 @@
     "App Manual": "دليل التطبيق",
     "AppFullName": "HEAL | رابط الصحة اليومية",
     "Called": "استدعاء",
-    "Consumption": "الاستهلاك",
     "Created": "إضافة",
     "Dashboard": "لوحة التحكم",
     "Deleted": "حذف",
     "Diet": "النظام الغذائي",
-    "LabTests": "الفحوصات المخبرية",
     "Medicine": "الأدوية",
-    "Schedule": "الجدول الزمني",
     "Sign Out": "تسجيل الخروج",
     "SignIn/Register": "تسجيل الدخول / إنشاء حساب",
-    "SleepCycles": "دورات النوم",
-    "SportSessions": "جلسات الرياضة",
     "Successful": "{{method}} البيانات تم بنجاح.",
     "Suhaib Ahmad": "صهيب أحمد",
     "Unsuccessful": "{{method}} البيانات لم ينجح.",
-    "Updated": "تعديل",
-    "Watering": "الري",
-    "WeightReadings": "قراءات الوزن"
+    "Updated": "تعديل"
   },
   "Manual": {
     "Dashboard": {
@@ -214,7 +207,7 @@
     "SportSessionsInputs4": "القياسات (مثل المسافات المقطوعة، وقت السباحة)",
     "SportSessionsInputs5": "ملاحظات اختيارية",
     "UserManual": "دليل المستخدم",
-    "Watering": "الري",
+    "Watering": "شرب المياه",
     "WateringDesc": "تتبع استهلاكك للمياه لضمان تحقيق الحد الأدنى  المطلوب من الاستهلاك.",
     "WateringInputs1": "الكمية بالأكواب",
     "WateringInputs2": "تاريخ ووقت الاستهلاك",
@@ -275,11 +268,11 @@
         "Unit": "الوحدة"
       },
       "Watering": {
-        "Desc": "سجل استهلاكك للمياه للحفاظ على مستويات الترطيب المثلى",
+        "Desc": "سجل استهلاكك للمياه للحفاظ على مستويات شرب المياه المثلى",
         "Quantity": "الكمية بالأكواب",
         "Time": "الوقت",
-        "Title": "تسجيل الترطيب",
-        "Watering": "الري"
+        "Title": "تسجيل شرب المياه",
+        "Watering": "شرب المياه"
       }
     },
     "LabTests": {
@@ -421,5 +414,8 @@
       "WeightMinTarget": "هدف أدنى للوزن",
       "WeightReadings": "قراءات الوزن"
     }
+  },
+  "Settings": {
+    "Title": "الإعدادات"
   }
 }
