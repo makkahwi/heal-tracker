@@ -102,14 +102,14 @@ export const routes = [
     list: [
       {
         name: "medicine_consumption",
-        label: i18n.t("Layout.Consumption"),
+        label: i18n.t("Services.Medicine.ConsumedMedicines"),
         path: "consumption",
         icon: faPills,
         Comp: <MedicineConsumption />,
       },
       {
         name: "medicine_schedule",
-        label: i18n.t("Layout.Schedule"),
+        label: i18n.t("Services.Medicine.MedicineSchedule"),
         path: "schedule",
         icon: faCalendar,
         Comp: <MedicineSchedule />,
@@ -118,14 +118,14 @@ export const routes = [
   },
   {
     name: "weight_readings",
-    label: i18n.t("Layout.WeightReadings"),
+    label: i18n.t("Services.WeightReadings.WeightReadings"),
     path: "weight-readings",
     icon: faWeight,
     Comp: <WeightReadings />,
   },
   {
     name: "lab_tests",
-    label: i18n.t("Layout.LabTests"),
+    label: i18n.t("Services.LabTests.LabTestsList"),
     path: "lab-tests",
     icon: faFileMedical,
     Comp: <LabTests />,
