@@ -6,8 +6,8 @@ const ManualView = () => {
 
   const manualData = [
     {
-      title: t("Dashboard.Dashboard"),
-      description: t("Dashboard.Desc"),
+      title: t("WeeklySummary.Title"),
+      description: t("WeeklySummary.Desc"),
       details: [],
     },
     {

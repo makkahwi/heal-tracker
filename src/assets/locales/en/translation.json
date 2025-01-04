@@ -29,7 +29,6 @@
   "Dashboard": {
     "Dashboard": "Dashboard",
     "Data": "Data",
-    "Desc": "The weekly summary of your tracked data, including diet consumption VS schedule, water consumption, relief records, fasting, sport sessions, sleep cycles, and medicine consumption.",
     "GenerateSummary": "Generate Summary",
     "Medicines": "Medicines",
     "NextWeek": "Next Week",
@@ -476,5 +475,9 @@
       "Title": "Services Activation"
     },
     "Title": "Settings"
+  },
+  "WeeklySummary": {
+    "Desc": "The weekly summary of your tracked data, including diet consumption VS schedule, water consumption, relief records, fasting, sport sessions, sleep cycles, and medicine consumption.",
+    "Title": "Weekly Summary"
   }
 }

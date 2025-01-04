@@ -5,7 +5,6 @@ import {
   faPills,
   faRunning,
   faStarAndCrescent,
-  faSun,
   faToilet,
   faUtensils,
   faWater,
@@ -13,7 +12,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Provider } from "react-redux";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-
 import i18n from "./i18n";
 import Layout from "./Layout";
 import store from "./Store/store";
@@ -30,6 +28,7 @@ import Relief from "./Views/Auth/Relief";
 import Settings from "./Views/Auth/Settings";
 import SleepCycles from "./Views/Auth/SleepCycles";
 import Sports from "./Views/Auth/Sports";
+import WeeklySummary from "./Views/Auth/WeeklySummary";
 import WeightReadings from "./Views/Auth/WeightReadings";
 import Landing from "./Views/Public/Landing";
 import Login from "./Views/Public/Login";
@@ -174,6 +173,7 @@ const App = () => {
               <Route path="manual" element={<Manual />} />
               <Route path="settings" element={<Settings />} />
               <Route path="/" element={<Dashboard />} />
+              <Route path="summary" element={<WeeklySummary />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           ) : (

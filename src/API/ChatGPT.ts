@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { comprehensiveProps } from "../Views/Auth/Dashboard/WeeklyCalendar";
+import { comprehensiveProps } from "../Views/Auth/WeeklySummary/WeeklyCalendar";
 
 const service = axios.create({
   baseURL: "https://api.openai.com/v1/chat/completions",

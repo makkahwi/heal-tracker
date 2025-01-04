@@ -1,4 +1,5 @@
 import {
+  faCalendarWeek,
   faDashboard,
   faGear,
   faInfoCircle,
@@ -83,6 +84,24 @@ const Navbar = () => {
                   >
                     <FontAwesomeIcon icon={faDashboard} />
                     <span className="ms-2">{t("Dashboard.Dashboard")}</span>
+                  </span>
+                </li>
+
+                <li className="nav-item">
+                  <span
+                    className={`nav-link ${
+                      location.pathname === "/summary"
+                        ? "text-dark"
+                        : "text-white"
+                    }`}
+                    role="button"
+                    onClick={() => {
+                      navigate("/summary");
+                      closeNavbar();
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faCalendarWeek} />
+                    <span className="ms-2">{t("WeeklySummary.Title")}</span>
                   </span>
                 </li>
 
