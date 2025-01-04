@@ -1,4 +1,9 @@
-import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheckCircle,
+  faPlus,
+  faTrash,
+  faXmarkCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { useEffect, useState } from "react";
@@ -8,12 +13,12 @@ import { RootState } from "../../Store/store";
 
 interface dynamicObject {
   [key: string]: any;
-  // | number | object | string[] | number[] | object[];
 }
 
 export interface inputProps {
   name: string;
   label: string;
+  subLabel?: string;
   required?: boolean;
   fullWidth?: boolean;
   type?: string;
@@ -50,6 +55,8 @@ const Form = ({ inputs, onSubmit }: props) => {
           ? moment().format("HH:mm")
           : type === "datetime-local"
           ? moment().format("yyyy-MM-DDTHH:mm")
+          : type === "boolean"
+          ? false
           : undefined,
       }),
       {}
@@ -72,6 +79,7 @@ const Form = ({ inputs, onSubmit }: props) => {
           {
             name,
             label,
+            subLabel,
             type,
             options,
             inputs,
@@ -89,6 +97,12 @@ const Form = ({ inputs, onSubmit }: props) => {
               {label}
               {required ? <span className="ms-1 text-danger"> *</span> : ""}
             </label>
+
+            {subLabel && (
+              <div className="text-justify mt-1 mb-3 text-muted">
+                <small>{subLabel}</small>
+              </div>
+            )}
 
             <div className="input-group mb-3">
               {type === "select" ? (
@@ -115,6 +129,52 @@ const Form = ({ inputs, onSubmit }: props) => {
                     </option>
                   ))}
                 </select>
+              ) : type === "boolean" ? (
+                <div>
+                  <div className="form-check">
+                    <input
+                      name={name}
+                      className="form-check-input"
+                      checked={formValues[name]}
+                      onChange={(e) =>
+                        onChange
+                          ? onChange(e, setFormValues)
+                          : setFormValues((current) => ({
+                              ...current,
+                              [name]: true,
+                            }))
+                      }
+                      type="radio"
+                      {...rest}
+                    />
+
+                    <label className="form-check-label text-success">
+                      <FontAwesomeIcon icon={faCheckCircle} /> Active
+                    </label>
+                  </div>
+
+                  <div className="form-check">
+                    <input
+                      name={name}
+                      className="form-check-input"
+                      checked={!formValues[name]}
+                      onChange={(e) =>
+                        onChange
+                          ? onChange(e, setFormValues)
+                          : setFormValues((current) => ({
+                              ...current,
+                              [name]: false,
+                            }))
+                      }
+                      type="radio"
+                      {...rest}
+                    />
+
+                    <label className="form-check-label text-danger">
+                      <FontAwesomeIcon icon={faXmarkCircle} /> Inactive
+                    </label>
+                  </div>
+                </div>
               ) : type === "dynamicList" ? (
                 <table className="table table-bordered table-responsive">
                   <thead>

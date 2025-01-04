@@ -141,24 +141,17 @@
     "App Manual": "App Manual",
     "AppFullName": "HEAL | Health Empowerment and Lifestyle",
     "Called": "Call",
-    "Consumption": "Consumption",
     "Created": "Creation",
     "Dashboard": "Dashboard",
     "Deleted": "Deletion",
     "Diet": "Diet",
-    "LabTests": "Lab Tests",
     "Medicine": "Medicine",
-    "Schedule": "Schedule",
     "Sign Out": "Sign Out",
     "SignIn/Register": "Sign In / Register",
-    "SleepCycles": "Sleep Cycles",
-    "SportSessions": "Sport Sessions",
     "Successful": "Data {{method}} has been successful.",
     "Suhaib Ahmad": "Suhaib Ahmad",
     "Unsuccessful": "Data {{method}} has not been successful.",
-    "Updated": "Update",
-    "Watering": "Watering",
-    "WeightReadings": "Weight Readings"
+    "Updated": "Update"
   },
   "Manual": {
     "Dashboard": {
@@ -230,7 +223,7 @@
   "Services": {
     "Diet": {
       "Consumption": {
-        "Consumed Meals": "Consumed Meals",
+        "ConsumedMeals": "Consumed Meals",
         "Date": "Date",
         "Element": "Element",
         "IsAnAlternative": "Is An Alternative?",
@@ -421,5 +414,11 @@
       "WeightMinTarget": "Weight Min Target",
       "WeightReadings": "Weight Readings"
     }
+  },
+  "Settings": {
+    "ServicesActivation": {
+      "Title": "Services Activation"
+    },
+    "Title": "Settings"
   }
 }

@@ -1,14 +1,14 @@
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+
 import * as BeAPI from "../../../../API";
 import Form from "../../../../Components/Form";
 import MonthlyCalendar from "../../../../Components/PageView/MonthlyCalendar";
 import PageSection from "../../../../Components/PageView/PageSection";
-import { dateTotTimeFormat, timeFormat } from "../../../../Utils/consts";
 import i18n from "../../../../i18n";
+import { timeFormat } from "../../../../Utils/consts";
 
 export interface fastingProps {
   id?: string;
