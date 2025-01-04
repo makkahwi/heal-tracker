@@ -130,7 +130,25 @@ export const routes = [
     icon: faFileMedical,
     Comp: <LabTests />,
   },
-];
+]
+  .filter(({ name, list }) =>
+    list
+      ? list.map(
+          ({ name }) => (store.getState().settings.activation as any)[name]
+        )?.length
+      : (store.getState().settings.activation as any)[name]
+  )
+  .map(({ list, ...rest }) => {
+    if (list?.length)
+      return {
+        ...rest,
+        list: list.filter(
+          ({ name }) => (store.getState().settings.activation as any)[name]
+        ),
+      };
+
+    return { list, ...rest };
+  });
 
 const App = () => {
   return (
@@ -139,9 +157,9 @@ const App = () => {
         <Layout>
           {store.getState().auth.user ? (
             <Routes>
-              {routes.map(({ name, path, Comp, list }, i) =>
+              {routes.map(({ path, Comp, list }, i) =>
                 list ? (
-                  list.map(({ name, path: childPath, Comp }, x) => (
+                  list.map(({ path: childPath, Comp }, x) => (
                     <Route
                       path={path + "/" + childPath}
                       element={Comp}

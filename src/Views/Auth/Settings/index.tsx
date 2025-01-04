@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
 import PageSection from "../../../Components/PageView/PageSection";
+import { updateActivation } from "../../../Store/settings";
 import { AppDispatch } from "../../../Store/store";
 
 export interface settingProps {
@@ -22,27 +23,32 @@ export interface settingProps {
   lab_tests: boolean;
 }
 
+export const initialSettings = {
+  id: "x",
+  diet_consumption: false,
+  diet_schedule: false,
+  watering: false,
+  fasting: false,
+  relief: false,
+  sport: false,
+  sleep: false,
+  medicine_consumption: false,
+  medicine_schedule: false,
+  weight_readings: false,
+  lab_tests: false,
+};
+
 const Settings = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { t } = useTranslation();
-  const [data, setData] = useState<settingProps>({
-    id: "x",
-    diet_consumption: false,
-    diet_schedule: false,
-    watering: false,
-    fasting: false,
-    relief: false,
-    sport: false,
-    sleep: false,
-    medicine_consumption: false,
-    medicine_schedule: false,
-    weight_readings: false,
-    lab_tests: false,
-  });
+  const [data, setData] = useState<settingProps>(initialSettings);
 
   const getData = () =>
     BeAPI.get("settings")
-      .then((res: any) => setData(res.value))
+      .then((res: any) => {
+        dispatch(updateActivation(res.value));
+        setData(res.value);
+      })
       .catch((err) => console.log({ err }));
 
   useEffect(() => {
@@ -146,8 +152,9 @@ const Settings = () => {
       id: data.id || "x",
       data: values,
     })
-      .then(() => {
-        getData();
+      .then(async () => {
+        await getData();
+        window.location.reload();
       })
       .catch((err) => console.log({ err }));
   };

@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { initialSettings, settingProps } from "../Views/Auth/Settings";
 
 interface SettingsState {
-  activation: object;
+  activation: settingProps;
 }
 
 const initialState: SettingsState = {
-  activation: {},
+  activation: JSON.parse(
+    localStorage.getItem("activation") || JSON.stringify(initialSettings)
+  ),
 };
 
 const settingsSlice = createSlice({
@@ -13,10 +16,12 @@ const settingsSlice = createSlice({
   initialState,
   reducers: {
     updateActivation: (state, action) => {
+      localStorage.setItem("activation", JSON.stringify(action.payload));
+
       state.activation = action.payload;
     },
     resetActivation: (state) => {
-      state.activation = {};
+      state.activation = initialSettings;
     },
   },
 });
