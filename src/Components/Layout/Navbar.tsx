@@ -82,7 +82,7 @@ const Navbar = () => {
                     }}
                   >
                     <FontAwesomeIcon icon={faDashboard} />
-                    <span className="ms-2">{t("Layout.Dashboard")}</span>
+                    <span className="ms-2">{t("Dashboard.Dashboard")}</span>
                   </span>
                 </li>
 

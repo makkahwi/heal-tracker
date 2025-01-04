@@ -29,7 +29,7 @@
   "Dashboard": {
     "Dashboard": "Dashboard",
     "Data": "Data",
-    "Desc": "View your weekly summary of all covered services data.",
+    "Desc": "The weekly summary of your tracked data, including diet consumption VS schedule, water consumption, sport sessions, sleep cycles, and medicine consumption.",
     "GenerateSummary": "Generate Summary",
     "Medicines": "Medicines",
     "NextWeek": "Next Week",
@@ -140,7 +140,6 @@
     "AppFullName": "HEAL | Health Empowerment and Lifestyle",
     "Called": "Call",
     "Created": "Creation",
-    "Dashboard": "Dashboard",
     "Deleted": "Deletion",
     "Diet": "Diet",
     "Medicine": "Medicine",
@@ -153,10 +152,6 @@
     "Updated": "Update"
   },
   "Manual": {
-    "Dashboard": {
-      "Desc": "The weekly summary of your tracked data, including diet consumption VS schedule, water consumption, sport sessions, sleep cycles, and medicine consumption.",
-      "Title": "Dashboard"
-    },
     "Date": "Date",
     "Desc": "A helping guideline to understand the purpose of services included and how to engage them.",
     "HowItWorks": "How It Works",
