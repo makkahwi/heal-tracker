@@ -90,7 +90,9 @@ service.interceptors.response.use(
 
     if ([200, 201, 204].includes(res.status)) {
       const created = res.config.method?.toUpperCase() === "POST";
-      const updated = res.config.method?.toUpperCase() === "PUT";
+      const updated =
+        res.config.method?.toUpperCase() === "PUT" ||
+        res.config.method?.toUpperCase() === "PATCH";
       const deleted = res.config.method?.toUpperCase() === "DELETE";
 
       if (created || updated || deleted) {
