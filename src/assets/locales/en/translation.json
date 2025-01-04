@@ -159,46 +159,10 @@
     },
     "Date": "Date",
     "Desc": "A helping guideline to understand the purpose of services included and how to engage them.",
-    "DietConsumptionHowItWorks1": "Pick a scheduled meal to auto-fill the supposed-to-consume elements.",
-    "DietConsumptionHowItWorks2": "Add optional notes for the entire meal or individual elements.",
-    "DietConsumptionHowItWorks3": "Ensure exact spelling and formatting of element names for accurate comparison.",
-    "DietConsumptionHowItWorks4": "Scheduled meals data must be filled beforehand.",
-    "DietConsumptionInputs1": "Date & Time",
-    "DietConsumptionInputs2": "Scheduled Meal",
-    "DietConsumptionInputs3": "Consumed Elements (name, quantity, measurement unit, element optional note)",
-    "DietConsumptionInputs4": "Meal Optional Notes",
-    "DietScheduleHowItWorks1": "Upon adopting a new schedule, create a new schedule record with inputs of schedule order (1st, 2nd, ...etc) and schedule start date @ 'Schedule' service.",
-    "DietScheduleHowItWorks2": "Then in 'Schedule Meals' service, define the meals scheduled within the new schedule record you just created, specifying their names and supposed-to-consume times of the day.",
-    "DietScheduleHowItWorks3": "Last step is in 'Meal Elements' service, where you need to insert the elements to consume within the meal, listing their names, quantities, quantity measurement units, and element alternatives -if any is allowed-.",
-    "DietScheduleHowItWorks4": "Those records are the ones to be used for easy input process @ 'Diet Consumption' service, and they are to be engaged in commitment analysis & comparison between what's supposed to consume VS actually consumed. So for comparison sake, upon any modifications for the schedule, it's recommended to build a new schedule from bottom up, instead of updating existing one.",
     "HowItWorks": "How It Works",
     "Inputs": "Inputs",
-    "LabTestsInputs2": "Test Indicators (e.g., HEAL fats, LDL fats, etc...)",
-    "MedicineConsumptionInputs1": "Date & Time",
-    "MedicineConsumptionInputs2": "Quantity",
-    "MedicineConsumptionInputs3": "Medicine Selection (from predefined list)",
-    "MedicineScheduleInputs1": "Medicine Name",
-    "MedicineScheduleInputs2": "Per-Time Dose",
-    "MedicineScheduleInputs3": "Consumption Frequency (daily, weekly, monthly, ...etc)",
-    "MedicineScheduleInputs4": "Duration (e.g., number of weeks)",
-    "MedicineScheduleInputs5": "Doses Per Frequency",
     "Schedules": "Schedules",
-    "SleepCyclesInputs1": "Sleep Start & End Time",
-    "SleepCyclesInputs2": "Optional Note",
-    "SportSessionsInputs2": "Sport Type",
-    "SportSessionsInputs3": "Start & End Time",
-    "SportSessionsInputs4": "Measurements (e.g., walked distances, swimming time, ...etc)",
-    "SportSessionsInputs5": "Optional Notes",
-    "UserManual": "User Manual",
-    "WateringInputs1": "Quantity in cups",
-    "WateringInputs2": "Date & time of consumption",
-    "WeightReadingTargets": "Targets",
-    "WeightReadingTargetsDesc": "To input the targeted values of weight readings, but in a range of minimum & maximum.",
-    "WeightReadingsInputs2": "Water Reading (liters)",
-    "WeightReadingsInputs3": "Fat Weight (kg)",
-    "WeightReadingsInputs4": "Total Weight (kg)",
-    "WeightReadingsInputs5": "Muscle Weight (kg)",
-    "WeightReadingsInputs6": "Waist Fat Rating (numeric scale)"
+    "UserManual": "User Manual"
   },
   "OtherLang": "ع",
   "Services": {
@@ -214,6 +178,16 @@
         },
         "Element": "Element",
         "IsAnAlternative": "Alternative?",
+        "Manual": {
+          "HowItWorks1": "Pick a scheduled meal to auto-fill the supposed-to-consume elements.",
+          "HowItWorks2": "Add optional notes for the entire meal or individual elements.",
+          "HowItWorks3": "Ensure exact spelling and formatting of element names for accurate comparison.",
+          "HowItWorks4": "Scheduled meals data must be filled beforehand.",
+          "Inputs1": "Date & Time",
+          "Inputs2": "Scheduled Meal",
+          "Inputs3": "Consumed Elements (name, quantity, measurement unit, element optional note)",
+          "Inputs4": "Meal Optional Notes"
+        },
         "Meal": "Meal",
         "Meal Contents": "Meal Contents",
         "MealOfDay": "Meal of Day",
@@ -250,6 +224,12 @@
         "DietSchedules": "Diet Schedules",
         "Element": "Element",
         "GivingDate": "Giving Date",
+        "Manual": {
+          "HowItWorks1": "Upon adopting a new schedule, create a new schedule record with inputs of schedule order (1st, 2nd, ...etc) and schedule start date @ 'Schedule' service.",
+          "HowItWorks2": "Then in 'Schedule Meals' service, define the meals scheduled within the new schedule record you just created, specifying their names and supposed-to-consume times of the day.",
+          "HowItWorks3": "Last step is in 'Meal Elements' service, where you need to insert the elements to consume within the meal, listing their names, quantities, quantity measurement units, and element alternatives -if any is allowed-.",
+          "HowItWorks4": "Those records are the ones to be used for easy input process @ 'Diet Consumption' service, and they are to be engaged in commitment analysis & comparison between what's supposed to consume VS actually consumed. So for comparison sake, upon any modifications for the schedule, it's recommended to build a new schedule from bottom up, instead of updating existing one."
+        },
         "MealElements": "Meal Elements",
         "MealElementsList": "Meal Elements List",
         "MealName": "Meal Name",
@@ -270,6 +250,10 @@
           "Manual": "The Watering service helps users track their water consumption to ensure they stay hydrated. Users can log the amount of water consumed (in cups or liters), along with the date and time of consumption.",
           "Page": "Track your water consumption to ensure you meet the minimum required daily intake.",
           "Settings": "Enable this service to track your water consumption and maintain proper hydration."
+        },
+        "Manual": {
+          "Inputs1": "Quantity in cups",
+          "Inputs2": "Date & time of consumption"
         },
         "Quantity": "Quantity 'In Cup(s)'",
         "Time": "Time",
@@ -315,6 +299,9 @@
       "MCV": "MCV",
       "MPV": "MPV",
       "Magnesium": "Magnesium",
+      "Manual": {
+        "Inputs": "Test Indicators (e.g., HEAL fats, LDL fats, etc...)"
+      },
       "Monocytes": "Monocytes",
       "NeutrophilsSegmented": "Neutrophils Segmented",
       "Phosphatase": "Phosphatase",
@@ -350,6 +337,11 @@
           "Manual": "The Medicine Consumption service allows users to track medications they consume. Users can select medicines from a predefined list, log the date and time of consumption, and specify quantities. This service integrates with the Medicine Schedule service for seamless tracking.",
           "Page": "Log details of medication intake, including type, dosage, and time.",
           "Settings": "Enable this service to log your medication consumption."
+        },
+        "Manual": {
+          "Inputs1": "Date & Time",
+          "Inputs2": "Quantity",
+          "Inputs3": "Medicine Selection (from predefined list)"
         }
       },
       "ConsumptionFrequency": "Consumption Frequency",
@@ -369,6 +361,13 @@
           "Manual": "The Medicine Schedule service helps users define their medication plans, including per-time doses, frequency (daily, weekly, etc.), and duration. This service integrates with Medicine Consumption to provide a comparison between scheduled and consumed doses.",
           "Page": "Create detailed medication schedules to track adherence and ensure timely intake.",
           "Settings": "Enable this service to define your medication schedule."
+        },
+        "Manual": {
+          "Inputs1": "Medicine Name",
+          "Inputs2": "Per-Time Dose",
+          "Inputs3": "Consumption Frequency (daily, weekly, monthly, ...etc)",
+          "Inputs4": "Duration (e.g., number of weeks)",
+          "Inputs5": "Doses Per Frequency"
         }
       },
       "Time": "Time",
@@ -398,6 +397,10 @@
         "Settings": "Enable this service to log your daily sleep hours."
       },
       "EndTime": "End Time",
+      "Manual": {
+        "Inputs1": "Sleep Start & End Time",
+        "Inputs2": "Optional Note"
+      },
       "Notes": "Notes",
       "SleepCycles": "Sleep Cycles",
       "StartTime": "Start Time",
@@ -413,6 +416,12 @@
       },
       "EndTime": "End Time",
       "Jogging": "Jogging",
+      "Manual": {
+        "Inputs2": "Sport Type",
+        "Inputs3": "Start & End Time",
+        "Inputs4": "Measurements (e.g., walked distances, swimming time, ...etc)",
+        "Inputs5": "Optional Notes"
+      },
       "Measure (Walked Distance, Swimming Time, etc)": "Measure (Walked Distance, Swimming Time, ...etc)",
       "Notes": "Notes",
       "Sport Note": "Sport Note",
@@ -436,12 +445,20 @@
       "FatWeightMaxTarget": "Fat Weight Max Target",
       "FatWeightMinTarget": "Fat Weight Min Target",
       "Input": "Input",
+      "Manual": {
+        "Inputs2": "Water Reading (liters)",
+        "Inputs3": "Fat Weight (kg)",
+        "Inputs4": "Total Weight (kg)",
+        "Inputs5": "Muscle Weight (kg)",
+        "Inputs6": "Waist Fat Rating (numeric scale)"
+      },
       "Muscles": "Muscles",
       "MusclesMaxTarget": "Muscles Max Target",
       "MusclesMinTarget": "Muscles Min Target",
       "MusclesReading": "Muscles Reading",
       "NumberOfWeightReading": "Total Number of Weight Readings (Nutritionist Weekly Visits)",
       "Targets": "Targets",
+      "TargetsDesc": "To input the targeted values of weight readings, but in a range of minimum & maximum.",
       "Title": "Weight Tracking",
       "WaistFat": "Waist Fat",
       "WaistFat Reading": "Waist Fat Reading",

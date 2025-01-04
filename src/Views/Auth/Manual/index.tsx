@@ -12,24 +12,24 @@ const ManualView = () => {
     },
     {
       title: t("Services.Diet.Consumption.ConsumedMeals"),
-      description: t("Services.Diet.Schedule.Desc.Manual"),
+      description: t("Services.Diet.Consumption.Desc.Manual"),
       details: [
         {
           subtitle: t("Manual.HowItWorks"),
           content: [
-            t("Manual.DietConsumptionHowItWorks4"),
-            t("Manual.DietConsumptionHowItWorks1"),
-            t("Manual.DietConsumptionHowItWorks2"),
-            t("Manual.DietConsumptionHowItWorks3"),
+            t("Services.Diet.Consumption.Manual.HowItWorks4"),
+            t("Services.Diet.Consumption.Manual.HowItWorks1"),
+            t("Services.Diet.Consumption.Manual.HowItWorks2"),
+            t("Services.Diet.Consumption.Manual.HowItWorks3"),
           ],
         },
         {
           subtitle: t("Manual.Inputs"),
           content: [
-            t("Manual.DietConsumptionInputs2"),
-            t("Manual.DietConsumptionInputs1"),
-            t("Manual.DietConsumptionInputs3"),
-            t("Manual.DietConsumptionInputs4"),
+            t("Services.Diet.Consumption.Manual.Inputs2"),
+            t("Services.Diet.Consumption.Manual.Inputs1"),
+            t("Services.Diet.Consumption.Manual.Inputs3"),
+            t("Services.Diet.Consumption.Manual.Inputs4"),
           ],
         },
       ],
@@ -41,10 +41,10 @@ const ManualView = () => {
         {
           subtitle: t("Manual.HowItWorks"),
           content: [
-            t("Manual.DietScheduleHowItWorks1"),
-            t("Manual.DietScheduleHowItWorks2"),
-            t("Manual.DietScheduleHowItWorks3"),
-            t("Manual.DietScheduleHowItWorks4"),
+            t("Services.Diet.Schedule.HowItWorks1"),
+            t("Services.Diet.Schedule.HowItWorks2"),
+            t("Services.Diet.Schedule.HowItWorks3"),
+            t("Services.Diet.Schedule.HowItWorks4"),
           ],
         },
       ],
@@ -55,7 +55,10 @@ const ManualView = () => {
       details: [
         {
           subtitle: t("Manual.Inputs"),
-          content: [t("Manual.WateringInputs1"), t("Manual.WateringInputs2")],
+          content: [
+            t("Services.Diet.Watering.Manual.Inputs1"),
+            t("Services.Diet.Watering.Manual.Inputs2"),
+          ],
         },
       ],
     },
@@ -77,10 +80,10 @@ const ManualView = () => {
           subtitle: t("Manual.Inputs"),
           content: [
             t("Manual.Date"),
-            t("Manual.SportSessionsInputs2"),
-            t("Manual.SportSessionsInputs3"),
-            t("Manual.SportSessionsInputs4"),
-            t("Manual.SportSessionsInputs5"),
+            t("Services.Sports.Manual.Inputs2"),
+            t("Services.Sports.Manual.Inputs3"),
+            t("Services.Sports.Manual.Inputs4"),
+            t("Services.Sports.Manual.Inputs5"),
           ],
         },
       ],
@@ -92,8 +95,8 @@ const ManualView = () => {
         {
           subtitle: t("Manual.Inputs"),
           content: [
-            t("Manual.SleepCyclesInputs1"),
-            t("Manual.SleepCyclesInputs2"),
+            t("Services.SleepCycles.Manual.Inputs1"),
+            t("Services.SleepCycles.Manual.Inputs2"),
           ],
         },
       ],
@@ -105,9 +108,9 @@ const ManualView = () => {
         {
           subtitle: t("Manual.Inputs"),
           content: [
-            t("Manual.MedicineConsumptionInputs3"),
-            t("Manual.MedicineConsumptionInputs1"),
-            t("Manual.MedicineConsumptionInputs2"),
+            t("Services.Medicine.Consumption.Manual.Inputs3"),
+            t("Services.Medicine.Consumption.Manual.Inputs1"),
+            t("Services.Medicine.Consumption.Manual.Inputs2"),
           ],
         },
       ],
@@ -119,11 +122,11 @@ const ManualView = () => {
         {
           subtitle: t("Manual.Inputs"),
           content: [
-            t("Manual.MedicineScheduleInputs1"),
-            t("Manual.MedicineScheduleInputs2"),
-            t("Manual.MedicineScheduleInputs3"),
-            t("Manual.MedicineScheduleInputs4"),
-            t("Manual.MedicineScheduleInputs5"),
+            t("Services.Medicine.Schedule.Manual.Inputs1"),
+            t("Services.Medicine.Schedule.Manual.Inputs2"),
+            t("Services.Medicine.Schedule.Manual.Inputs3"),
+            t("Services.Medicine.Schedule.Manual.Inputs4"),
+            t("Services.Medicine.Schedule.Manual.Inputs5"),
           ],
         },
       ],
@@ -133,18 +136,18 @@ const ManualView = () => {
       description: t("Services.WeightReadings.Desc.Manual"),
       details: [
         {
-          subtitle: t("Manual.WeightReadingTargets"),
-          content: [t("Manual.WeightReadingTargetsDesc")],
+          subtitle: t("Services.WeightReadings.Targets"),
+          content: [t("Services.WeightReadings.TargetsDesc")],
         },
         {
           subtitle: t("Manual.Inputs"),
           content: [
             t("Manual.Date"),
-            t("Manual.WeightReadingsInputs2"),
-            t("Manual.WeightReadingsInputs3"),
-            t("Manual.WeightReadingsInputs4"),
-            t("Manual.WeightReadingsInputs5"),
-            t("Manual.WeightReadingsInputs6"),
+            t("Services.WeightReadings.Manual.Inputs2"),
+            t("Services.WeightReadings.Manual.Inputs3"),
+            t("Services.WeightReadings.Manual.Inputs4"),
+            t("Services.WeightReadings.Manual.Inputs5"),
+            t("Services.WeightReadings.Manual.Inputs6"),
           ],
         },
       ],
@@ -155,7 +158,7 @@ const ManualView = () => {
       details: [
         {
           subtitle: t("Manual.Inputs"),
-          content: [t("Manual.Date"), t("Manual.LabTestsInputs2")],
+          content: [t("Manual.Date"), t("Services.LabTests.Manual.Inputs")],
         },
       ],
     },
