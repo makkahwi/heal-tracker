@@ -13,12 +13,12 @@ import { RootState } from "../../Store/store";
 
 interface dynamicObject {
   [key: string]: any;
-  // | number | object | string[] | number[] | object[];
 }
 
 export interface inputProps {
   name: string;
   label: string;
+  subLabel?: string;
   required?: boolean;
   fullWidth?: boolean;
   type?: string;
@@ -79,6 +79,7 @@ const Form = ({ inputs, onSubmit }: props) => {
           {
             name,
             label,
+            subLabel,
             type,
             options,
             inputs,
@@ -96,6 +97,12 @@ const Form = ({ inputs, onSubmit }: props) => {
               {label}
               {required ? <span className="ms-1 text-danger"> *</span> : ""}
             </label>
+
+            {subLabel && (
+              <div className="text-justify mt-1 mb-3 text-muted">
+                <small>{subLabel}</small>
+              </div>
+            )}
 
             <div className="input-group mb-3">
               {type === "select" ? (

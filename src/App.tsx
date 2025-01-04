@@ -45,7 +45,7 @@ export const routes = [
     icon: faUtensils,
     list: [
       {
-        name: i18n.t("Services.Diet.Consumption.Consumed Meals"),
+        name: i18n.t("Services.Diet.Consumption.ConsumedMeals"),
         path: "consumption",
         icon: faUtensils,
         Comp: <Consumption />,

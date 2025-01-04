@@ -223,7 +223,7 @@
   "Services": {
     "Diet": {
       "Consumption": {
-        "Consumed Meals": "الوجبات المستهلكة",
+        "ConsumedMeals": "الوجبات المستهلكة",
         "Date": "التاريخ",
         "Element": "العنصر",
         "IsAnAlternative": "هل هي بديل؟",

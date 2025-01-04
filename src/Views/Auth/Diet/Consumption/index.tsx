@@ -238,7 +238,7 @@ const Consumption = () => {
 
   return (
     <PageSection
-      title={t("Services.Diet.Consumption.Consumed Meals")}
+      title={t("Services.Diet.Consumption.ConsumedMeals")}
       desc={t("Services.Diet.Schedule.Desc")}
     >
       <Fragment>

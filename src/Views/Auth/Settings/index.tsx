@@ -52,7 +52,8 @@ const Settings = () => {
   const inputs = [
     {
       name: "diet_consumption",
-      label: t("Services.Diet.Consumption.Consumed Meals"),
+      label: t("Services.Diet.Consumption.ConsumedMeals"),
+      subLabel: t("Services.Diet.Schedule.Desc"),
       type: "boolean",
       defaultValue: data.diet_consumption,
       required: true,
@@ -60,6 +61,7 @@ const Settings = () => {
     {
       name: "diet_schedule",
       label: t("Services.Diet.Schedule.DietSchedules"),
+      subLabel: t("Services.Diet.Schedule.Desc"),
       type: "boolean",
       defaultValue: data.diet_schedule,
       required: true,
@@ -67,6 +69,7 @@ const Settings = () => {
     {
       name: "watering",
       label: t("Services.Diet.Watering.Watering"),
+      subLabel: t("Services.Diet.Watering.Desc"),
       type: "boolean",
       defaultValue: data.watering,
       required: true,
@@ -74,6 +77,7 @@ const Settings = () => {
     {
       name: "fasting",
       label: t("Services.Diet.Fasting.Fasting"),
+      subLabel: t("Services.Diet.Fasting.Desc"),
       type: "boolean",
       defaultValue: data.fasting,
       required: true,
@@ -81,6 +85,7 @@ const Settings = () => {
     {
       name: "relief",
       label: t("Services.Relief.Relief"),
+      subLabel: t("Services.Relief.Desc"),
       type: "boolean",
       defaultValue: data.relief,
       required: true,
@@ -88,6 +93,7 @@ const Settings = () => {
     {
       name: "sport",
       label: t("Services.Sports.SportSessions"),
+      subLabel: t("Services.Sports.Desc"),
       type: "boolean",
       defaultValue: data.sport,
       required: true,
@@ -95,6 +101,7 @@ const Settings = () => {
     {
       name: "sleep",
       label: t("Services.SleepCycles.SleepCycles"),
+      subLabel: t("Services.SleepCycles.Desc"),
       type: "boolean",
       defaultValue: data.sleep,
       required: true,
@@ -102,6 +109,7 @@ const Settings = () => {
     {
       name: "medicine_consumption",
       label: t("Services.Medicine.ConsumedMedicines"),
+      subLabel: t("Services.Medicine.Desc"),
       type: "boolean",
       defaultValue: data.medicine_consumption,
       required: true,
@@ -109,6 +117,7 @@ const Settings = () => {
     {
       name: "medicine_schedule",
       label: t("Services.Medicine.MedicineSchedule"),
+      subLabel: t("Services.Medicine.Desc"),
       type: "boolean",
       defaultValue: data.medicine_schedule,
       required: true,
@@ -116,6 +125,7 @@ const Settings = () => {
     {
       name: "weight_readings",
       label: t("Services.WeightReadings.WeightReadings"),
+      subLabel: t("Services.WeightReadings.Desc"),
       type: "boolean",
       defaultValue: data.weight_readings,
       required: true,
@@ -123,6 +133,7 @@ const Settings = () => {
     {
       name: "lab_tests",
       label: t("Services.LabTests.LabTestsList"),
+      subLabel: t("Services.LabTests.Desc"),
       type: "boolean",
       defaultValue: data.lab_tests,
       required: true,
