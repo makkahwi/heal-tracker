@@ -8,6 +8,7 @@ import PageSection from "../../../Components/PageView/PageSection";
 import { AppDispatch } from "../../../Store/store";
 
 export interface settingProps {
+  id: string;
   diet_consumption: boolean;
   diet_schedule: boolean;
   watering: boolean;
@@ -15,8 +16,8 @@ export interface settingProps {
   relief: boolean;
   sport: boolean;
   sleep: boolean;
-  medicine_schedule: boolean;
   medicine_consumption: boolean;
+  medicine_schedule: boolean;
   weight_readings: boolean;
   lab_tests: boolean;
 }
@@ -25,6 +26,7 @@ const Settings = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { t } = useTranslation();
   const [data, setData] = useState<settingProps>({
+    id: "x",
     diet_consumption: false,
     diet_schedule: false,
     watering: false,
@@ -32,15 +34,15 @@ const Settings = () => {
     relief: false,
     sport: false,
     sleep: false,
-    medicine_schedule: false,
     medicine_consumption: false,
+    medicine_schedule: false,
     weight_readings: false,
     lab_tests: false,
   });
 
   const getData = () =>
     BeAPI.get("settings")
-      .then((res: any) => setData(res))
+      .then((res: any) => setData(res.value))
       .catch((err) => console.log({ err }));
 
   useEffect(() => {
@@ -128,16 +130,22 @@ const Settings = () => {
   ];
 
   const onSubmit = (values: settingProps) => {
-    // dispatch(signIn(values))
-    //   .then(() => {
-    //     getData();
-    //   })
-    //   .catch((err) => console.log(err));
+    BeAPI.update({
+      table: "settings",
+      id: data.id || "x",
+      data: values,
+    })
+      .then(() => {
+        getData();
+      })
+      .catch((err) => console.log({ err }));
   };
 
   return (
     <PageSection title={t("Settings.Title")}>
-      <Form inputs={inputs} onSubmit={onSubmit} />
+      <PageSection title={t("Settings.ServicesActivation.Title")}>
+        <Form inputs={inputs} onSubmit={onSubmit} />
+      </PageSection>
     </PageSection>
   );
 };

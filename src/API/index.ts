@@ -120,7 +120,9 @@ service.interceptors.response.use(
   (err) => {
     store.dispatch(removeLoading());
     const created = err.config.method?.toUpperCase() === "POST";
-    const updated = err.config.method?.toUpperCase() === "PUT";
+    const updated =
+      err.config.method?.toUpperCase() === "PUT" ||
+      err.config.method?.toUpperCase() === "PATCH";
     const deleted = err.config.method?.toUpperCase() === "DELETE";
 
     if (created || updated || deleted) {

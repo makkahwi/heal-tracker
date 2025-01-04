@@ -416,6 +416,9 @@
     }
   },
   "Settings": {
+    "ServicesActivation": {
+      "Title": "تفعيل الخدمات"
+    },
     "Title": "الإعدادات"
   }
 }
