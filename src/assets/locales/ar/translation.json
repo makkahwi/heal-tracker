@@ -137,7 +137,6 @@
     }
   },
   "Layout": {
-    "App Manual": "دليل التطبيق",
     "AppFullName": "HEAL | رابط الصحة اليومية",
     "Called": "استدعاء",
     "Created": "إضافة",
@@ -146,8 +145,8 @@
     "Diet": "النظام الغذائي",
     "Medicine": "الأدوية",
     "ReservedRights": "جميع الحقوق محفوظة لـ",
-    "Sign Out": "تسجيل الخروج",
     "SignIn/Register": "تسجيل الدخول / إنشاء حساب",
+    "SignOut": "تسجيل الخروج",
     "Successful": "{{method}} البيانات تم بنجاح.",
     "Suhaib": "صهيب أحمد",
     "Unsuccessful": "{{method}} البيانات لم ينجح.",

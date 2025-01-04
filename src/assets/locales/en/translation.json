@@ -137,7 +137,6 @@
     }
   },
   "Layout": {
-    "App Manual": "App Manual",
     "AppFullName": "HEAL | Health Empowerment and Lifestyle",
     "Called": "Call",
     "Created": "Creation",
@@ -146,8 +145,8 @@
     "Diet": "Diet",
     "Medicine": "Medicine",
     "ReservedRights": "All Rights Reserved for",
-    "Sign Out": "Sign Out",
     "SignIn/Register": "Sign In / Register",
+    "SignOut": "Sign Out",
     "Successful": "Data {{method}} has been successful.",
     "Suhaib": "Suhaib Ahmad",
     "Unsuccessful": "Data {{method}} has not been successful.",
