@@ -176,7 +176,7 @@ const WalkExercises = () => {
   return (
     <PageSection
       title={t("Services.Sports.SportSessions")}
-      desc={t("Services.Sports.Desc")}
+      desc={t("Services.Sports.Desc.Page")}
     >
       <Fragment>
         <Form

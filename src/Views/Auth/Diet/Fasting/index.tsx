@@ -98,7 +98,7 @@ const Fasting = () => {
   return (
     <PageSection
       title={t("Services.Diet.Fasting.Fasting")}
-      desc={t("Services.Diet.Fasting.Desc")}
+      desc={t("Services.Diet.Fasting.Desc.Page")}
     >
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />

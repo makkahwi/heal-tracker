@@ -130,7 +130,7 @@ const MedicineConsumption = () => {
   return (
     <PageSection
       title={t("Services.Medicine.ConsumedMedicines")}
-      desc={t("Services.Medicine.Desc")}
+      desc={t("Services.Medicine.Consumption.Desc.Page")}
     >
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />

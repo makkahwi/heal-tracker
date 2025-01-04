@@ -99,7 +99,7 @@ const Watering = () => {
   return (
     <PageSection
       title={t("Services.Diet.Watering.Watering")}
-      desc={t("Services.Diet.Watering.Desc")}
+      desc={t("Services.Diet.Watering.Desc.Page")}
     >
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />

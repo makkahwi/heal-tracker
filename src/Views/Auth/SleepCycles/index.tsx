@@ -106,7 +106,7 @@ const SleepCycles = () => {
   return (
     <PageSection
       title={t("Services.SleepCycles.SleepCycles")}
-      desc={t("Services.SleepCycles.Desc")}
+      desc={t("Services.SleepCycles.Desc.Page")}
     >
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />

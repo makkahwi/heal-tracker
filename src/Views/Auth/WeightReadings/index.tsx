@@ -624,7 +624,7 @@ const WeightReadings = () => {
   return (
     <PageSection
       title={t("Services.WeightReadings.WeightReadings")}
-      desc={t("Services.WeightReadings.Desc")}
+      desc={t("Services.WeightReadings.Desc.Page")}
     >
       <Fragment>
         <h4 className="my-3">
