@@ -1,5 +1,6 @@
 import {
   faDashboard,
+  faGear,
   faInfoCircle,
   faSignIn,
   faSignOut,
@@ -164,6 +165,26 @@ const Navbar = () => {
           <ul className="navbar-nav">
             {user ? (
               <Fragment>
+                <li className="nav-item">
+                  <span
+                    className={`nav-link ${
+                      location.pathname === "/settings"
+                        ? "text-dark"
+                        : "text-white"
+                    }`}
+                    role="button"
+                    onClick={() => {
+                      navigate("settings");
+                      closeNavbar();
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faGear} />
+                    <span className="ms-2 d-inline d-xl-none">
+                      {t("Settings.Title")}
+                    </span>
+                  </span>
+                </li>
+
                 <li className="nav-item">
                   <span
                     className={`nav-link ${

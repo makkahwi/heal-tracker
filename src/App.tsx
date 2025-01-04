@@ -19,12 +19,15 @@ import Layout from "./Layout";
 import store from "./Store/store";
 import Dashboard from "./Views/Auth/Dashboard";
 import Consumption from "./Views/Auth/Diet/Consumption";
+import Fasting from "./Views/Auth/Diet/Fasting";
 import Schedule from "./Views/Auth/Diet/Schedule";
 import Watering from "./Views/Auth/Diet/Watering";
 import LabTests from "./Views/Auth/LabTests";
 import Manual from "./Views/Auth/Manual";
 import MedicineConsumption from "./Views/Auth/Medicine/Consumption";
 import MedicineSchedule from "./Views/Auth/Medicine/Schedule";
+import Relief from "./Views/Auth/Relief";
+import Settings from "./Views/Auth/Settings";
 import SleepCycles from "./Views/Auth/SleepCycles";
 import Sports from "./Views/Auth/Sports";
 import WeightReadings from "./Views/Auth/WeightReadings";
@@ -34,8 +37,6 @@ import Login from "./Views/Public/Login";
 import "./App.css";
 import "./index.css";
 import "./Style/custom.scss";
-import Relief from "./Views/Auth/Relief";
-import Fasting from "./Views/Auth/Diet/Fasting";
 
 export const routes = [
   {
@@ -142,6 +143,7 @@ const App = () => {
               )}
 
               <Route path="manual" element={<Manual />} />
+              <Route path="settings" element={<Settings />} />
               <Route path="/" element={<Dashboard />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
