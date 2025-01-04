@@ -166,7 +166,7 @@
         "ConsumedMeals": "Consumed Meals",
         "Date": "Date",
         "Desc": {
-          "Landing": "Track your daily food consumption and compare it with your diet schedule to stay on track.",
+          "Landing": "Track your daily food consumption to stay on healthy track",
           "Manual": "The Diet Consumption service allows users to record their daily intake of food and beverages and compare it with their predefined diet schedule. Users can input details such as the date, time, type of food, quantities, units, and notes. This service provides a weekly calendar view for easy tracking and comparison.",
           "Page": "Log your food and beverage intake daily, with comparisons against your diet plan for better health management.",
           "Settings": "Enable this service to log your daily food intake and compare it with your planned diet schedule."
@@ -198,7 +198,7 @@
       "Fasting": {
         "Date": "Date",
         "Desc": {
-          "Landing": "Track your fasting days and durations easily.",
+          "Landing": "Track your fasting days and durations easily",
           "Manual": "The Fasting service allows users to log the days they decide to fast, following the Muslim fasting practice. It calculates fasting duration automatically using wakeup time, dawn time, and the time of the first meal or water consumption.",
           "Page": "Record your fasting days and calculate fasting durations.",
           "Settings": "Enable this service to log fasting days and automatically calculate fasting durations."
@@ -211,7 +211,7 @@
       "Schedule": {
         "Alternatives": "Alternatives",
         "Desc": {
-          "Landing": "Plan and organize your meals with detailed schedules for better dietary management.",
+          "Landing": "Plan and organize your meals with detailed schedules for better dietary management",
           "Manual": "The Diet Schedule service enables users to define their meal plans, including specific meal times and food elements. This service integrates seamlessly with the Diet Consumption service to provide a comparison between scheduled and consumed elements.",
           "Page": "Set up and manage your diet schedules to ensure a balanced meal plan.",
           "Settings": "Activate this service to create and manage your diet plans and integrate them into consumption tracking."
@@ -241,7 +241,7 @@
       },
       "Watering": {
         "Desc": {
-          "Landing": "Monitor your daily water intake to ensure adequate hydration.",
+          "Landing": "Monitor your daily water intake to ensure adequate hydration",
           "Manual": "The Watering service helps users track their water consumption to ensure they stay hydrated. Users can log the amount of water consumed (in cups or liters), along with the date and time of consumption.",
           "Page": "Track your water consumption to ensure you meet the minimum required daily intake.",
           "Settings": "Enable this service to track your water consumption and maintain proper hydration."
@@ -270,7 +270,7 @@
       "Creatinine": "Creatinine",
       "Date": "Date",
       "Desc": {
-        "Landing": "Store and track your lab test results for easy reference.",
+        "Landing": "Store and track your lab test results for easy reference",
         "Manual": "The Lab Tests service allows users to store results of blood and urine tests. Users can log the date of the test and record specific indicators, such as cholesterol levels or blood sugar readings. This data provides a comprehensive health record for future reference.",
         "Page": "Record fully detailed diet-related lab test results.",
         "Settings": "Enable this service to log results of blood and urine tests."
@@ -328,7 +328,7 @@
       "ConsumedMedicines": "Consumed Medicines",
       "Consumption": {
         "Desc": {
-          "Landing": "Track your medication intake easily.",
+          "Landing": "Track all your medication intake smoothly",
           "Manual": "The Medicine Consumption service allows users to track medications they consume. Users can select medicines from a predefined list, log the date and time of consumption, and specify quantities. This service integrates with the Medicine Schedule service for seamless tracking.",
           "Page": "Log details of medication intake, like dosage, and time.",
           "Settings": "Enable this service to log your medication consumption."
@@ -352,7 +352,7 @@
       "Quantity": "Quantity",
       "Schedule": {
         "Desc": {
-          "Landing": "Plan your medication schedule for better adherence.",
+          "Landing": "Plan your medication schedule for better adherence",
           "Manual": "The Medicine Schedule service helps users define their medication plans, including per-time doses, frequency (daily, weekly, etc.), and duration. This service integrates with Medicine Consumption to provide a comparison between scheduled and consumed doses.",
           "Page": "Create detailed medication schedules to track adherence and ensure timely intake.",
           "Settings": "Enable this service to define your medication schedule."
@@ -371,7 +371,7 @@
     },
     "Relief": {
       "Desc": {
-        "Landing": "Log your restroom visits for better health insights.",
+        "Landing": "Log your restroom visits for better health insights",
         "Manual": "The Relief service enables users to log their restroom visits and categorize outcomes (number 1 or 2) as indicators of health and hydration status. This data can provide valuable insights into digestive and overall health.",
         "Page": "Record details of restroom visits to monitor health indicators like hydration and digestion.",
         "Settings": "Enable this service to track restroom visits as a health indicator."
@@ -386,7 +386,7 @@
     },
     "SleepCycles": {
       "Desc": {
-        "Landing": "Monitor your sleep patterns to ensure sufficient rest.",
+        "Landing": "Monitor your sleep patterns to ensure sufficient rest",
         "Manual": "The Sleep service enables users to log their sleep hours by recording sleep start and end times. Users can also add optional notes for context, such as reasons for disrupted sleep. This data is displayed in a monthly calendar view for easy tracking.",
         "Page": "Track your sleep hours and patterns for better health management.",
         "Settings": "Enable this service to log your daily sleep hours."
@@ -404,7 +404,7 @@
     "Sports": {
       "Date": "Date",
       "Desc": {
-        "Landing": "Track your physical activities to maintain an active lifestyle.",
+        "Landing": "Track your physical activities to maintain an active lifestyle",
         "Manual": "The Sport service helps users monitor their physical activities, such as walking, swimming, or gym sessions. Users can log activity type, date, start and end times, and additional measurements (e.g., distance walked). Records are displayed in a monthly calendar view.",
         "Page": "Log details of your physical activities, like duration, measured achievement and so on.",
         "Settings": "Enable this service to log and monitor your sport sessions."
@@ -431,7 +431,7 @@
       "Actions": "Actions",
       "Date": "Date",
       "Desc": {
-        "Landing": "Log detailed weight measurements to track progress.",
+        "Landing": "Log detailed weight measurements to track progress",
         "Manual": "The Weight Readings service allows users to log detailed weight measurements, including total weight, fat weight, muscle weight, and waist fat ratings. Users can also set target ranges for these metrics to monitor progress over time.",
         "Page": "Record weekly weight detailed readings, like fat mass, muscle mass, and more.",
         "Settings": "Enable this service to record and monitor weight readings."
