@@ -1,25 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface SettingsState {
-  settings: { activation: object };
+  activation: object;
 }
 
 const initialState: SettingsState = {
-  settings: { activation: {} },
+  activation: {},
 };
 
 const settingsSlice = createSlice({
   name: "settings",
   initialState,
   reducers: {
-    addSettings: (state, action) => {
-      state.settings.activation = action.payload;
+    updateActivation: (state, action) => {
+      state.activation = action.payload;
     },
-    resetSettings: (state) => {
-      state.settings.activation = {};
+    resetActivation: (state) => {
+      state.activation = {};
     },
   },
 });
 
-export const { addSettings, resetSettings } = settingsSlice.actions;
+export const { updateActivation, resetActivation } = settingsSlice.actions;
 export default settingsSlice.reducer;
