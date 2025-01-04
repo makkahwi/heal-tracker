@@ -111,7 +111,7 @@ const Relief = () => {
   return (
     <PageSection
       title={t("Services.Relief.Relief")}
-      desc={t("Services.Relief.Desc")}
+      desc={t("Services.Relief.Desc.Page")}
     >
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />

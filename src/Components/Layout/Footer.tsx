@@ -68,14 +68,14 @@ const Footer = () => {
 
             <div className="col-xs-12 col-md-7 order-1 order-md-0">
               <div className="copyright text-center text-md-start">
-                {t("Layout.All Rights Reserved for")}{" "}
+                {t("Layout.ReservedRights")}{" "}
                 <a
                   href="https://suhaib.dev"
                   target="_blank"
                   rel="noreferrer"
                   className="text-decoration-none text-dark"
                 >
-                  {t("Layout.Suhaib Ahmad")}
+                  {t("Layout.Suhaib")}
                 </a>{" "}
                 &copy; {new Date().getFullYear()}
               </div>

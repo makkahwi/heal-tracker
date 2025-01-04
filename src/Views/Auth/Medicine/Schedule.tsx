@@ -88,7 +88,7 @@ const MedicineSchedule = () => {
   return (
     <PageView
       title={t("Services.Medicine.MedicineSchedule")}
-      desc={t("Services.Medicine.Desc")}
+      desc={t("Services.Medicine.Schedule.Desc.Page")}
       data={data}
       inputs={formInputs}
       onSubmit={onSubmit}

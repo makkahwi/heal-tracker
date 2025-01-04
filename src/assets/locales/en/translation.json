@@ -29,7 +29,7 @@
   "Dashboard": {
     "Dashboard": "Dashboard",
     "Data": "Data",
-    "Desc": "View your weekly summary of all covered services data.",
+    "Desc": "The weekly summary of your tracked data, including diet consumption VS schedule, water consumption, relief records, fasting, sport sessions, sleep cycles, and medicine consumption.",
     "GenerateSummary": "Generate Summary",
     "Medicines": "Medicines",
     "NextWeek": "Next Week",
@@ -137,87 +137,27 @@
     }
   },
   "Layout": {
-    "All Rights Reserved for": "All Rights Reserved for",
-    "App Manual": "App Manual",
     "AppFullName": "HEAL | Health Empowerment and Lifestyle",
     "Called": "Call",
     "Created": "Creation",
-    "Dashboard": "Dashboard",
     "Deleted": "Deletion",
     "Diet": "Diet",
     "Medicine": "Medicine",
-    "Sign Out": "Sign Out",
+    "ReservedRights": "All Rights Reserved for",
     "SignIn/Register": "Sign In / Register",
+    "SignOut": "Sign Out",
     "Successful": "Data {{method}} has been successful.",
-    "Suhaib Ahmad": "Suhaib Ahmad",
+    "Suhaib": "Suhaib Ahmad",
     "Unsuccessful": "Data {{method}} has not been successful.",
     "Updated": "Update"
   },
   "Manual": {
-    "Dashboard": {
-      "Desc": "The weekly summary of your tracked data, including diet consumption VS schedule, water consumption, sport sessions, sleep cycles, and medicine consumption.",
-      "Title": "Dashboard"
-    },
     "Date": "Date",
     "Desc": "A helping guideline to understand the purpose of services included and how to engage them.",
-    "DietConsumption": "Diet Consumption",
-    "DietConsumptionDesc": "Record actual consumption of foods and beverages, compare it with scheduled meal contents. Records are shown in a weekly-based view calendar.",
-    "DietConsumptionHowItWorks1": "Pick a scheduled meal to auto-fill the supposed-to-consume elements.",
-    "DietConsumptionHowItWorks2": "Add optional notes for the entire meal or individual elements.",
-    "DietConsumptionHowItWorks3": "Ensure exact spelling and formatting of element names for accurate comparison.",
-    "DietConsumptionHowItWorks4": "Scheduled meals data must be filled beforehand.",
-    "DietConsumptionInputs1": "Date & Time",
-    "DietConsumptionInputs2": "Scheduled Meal",
-    "DietConsumptionInputs3": "Consumed Elements (name, quantity, measurement unit, element optional note)",
-    "DietConsumptionInputs4": "Meal Optional Notes",
-    "DietSchedule": "Diet Schedule",
-    "DietScheduleDesc": "To define your diet plan with all details, including meals time and meal elements by quantity.",
-    "DietScheduleHowItWorks1": "Upon adopting a new schedule, create a new schedule record with inputs of schedule order (1st, 2nd, ...etc) and schedule start date @ 'Schedule' service.",
-    "DietScheduleHowItWorks2": "Then in 'Schedule Meals' service, define the meals scheduled within the new schedule record you just created, specifying their names and supposed-to-consume times of the day.",
-    "DietScheduleHowItWorks3": "Last step is in 'Meal Elements' service, where you need to insert the elements to consume within the meal, listing their names, quantities, quantity measurement units, and element alternatives -if any is allowed-.",
-    "DietScheduleHowItWorks4": "Those records are the ones to be used for easy input process @ 'Diet Consumption' service, and they are to be engaged in commitment analysis & comparison between what's supposed to consume VS actually consumed. So for comparison sake, upon any modifications for the schedule, it's recommended to build a new schedule from bottom up, instead of updating existing one.",
     "HowItWorks": "How It Works",
     "Inputs": "Inputs",
-    "LabTests": "Lab Tests",
-    "LabTestsDesc": "Store results of blood tests with optional inputs based on the tests conducted.",
-    "LabTestsInputs2": "Test Indicators (e.g., HEAL fats, LDL fats, etc...)",
-    "MedicineConsumption": "Medicine Consumption",
-    "MedicineConsumptionDesc": "Track medication intakes based on predefined schedules and view data in a monthly calendar.",
-    "MedicineConsumptionInputs1": "Date & Time",
-    "MedicineConsumptionInputs2": "Quantity",
-    "MedicineConsumptionInputs3": "Medicine Selection (from predefined list)",
-    "MedicineSchedule": "Medicine Schedule",
-    "MedicineScheduleDesc": "Define medication schedule with detailed consumption instructions.",
-    "MedicineScheduleInputs1": "Medicine Name",
-    "MedicineScheduleInputs2": "Per-Time Dose",
-    "MedicineScheduleInputs3": "Consumption Frequency (daily, weekly, monthly, ...etc)",
-    "MedicineScheduleInputs4": "Duration (e.g., number of weeks)",
-    "MedicineScheduleInputs5": "Doses Per Frequency",
-    "MedicineScheduleTargets": "Targets",
-    "MedicineScheduleTargetsDesc": "To input the targeted values of weight readings, but in a range of minimum & maximum.",
     "Schedules": "Schedules",
-    "SleepCycles": "Sleep Cycles",
-    "SleepCyclesDesc": "Track your daily sleep patterns and view records in a monthly calendar.",
-    "SleepCyclesInputs1": "Sleep Start & End Time",
-    "SleepCyclesInputs2": "Optional Note",
-    "SportSessions": "Sport Sessions",
-    "SportSessionsDesc": "Monitor your physical sport activities and view the records in a monthly calendar.",
-    "SportSessionsInputs2": "Sport Type",
-    "SportSessionsInputs3": "Start & End Time",
-    "SportSessionsInputs4": "Measurements (e.g., walked distances, swimming time, ...etc)",
-    "SportSessionsInputs5": "Optional Notes",
-    "UserManual": "User Manual",
-    "Watering": "Watering",
-    "WateringDesc": "Track your water consumption to ensure you meet the minimum consumption level required.",
-    "WateringInputs1": "Quantity in cups",
-    "WateringInputs2": "Date & time of consumption",
-    "WeightReadings": "Weight Readings",
-    "WeightReadingsDesc": "Record weekly weight readings, including detailed measurements specific to the InBody 120 scale.",
-    "WeightReadingsInputs2": "Water Reading (liters)",
-    "WeightReadingsInputs3": "Fat Weight (kg)",
-    "WeightReadingsInputs4": "Total Weight (kg)",
-    "WeightReadingsInputs5": "Muscle Weight (kg)",
-    "WeightReadingsInputs6": "Waist Fat Rating (numeric scale)"
+    "UserManual": "User Manual"
   },
   "OtherLang": "ع",
   "Services": {
@@ -225,8 +165,24 @@
       "Consumption": {
         "ConsumedMeals": "Consumed Meals",
         "Date": "Date",
+        "Desc": {
+          "Landing": "Track your daily food consumption to stay on healthy track",
+          "Manual": "The Diet Consumption service allows users to record their daily intake of food and beverages and compare it with their predefined diet schedule (if activated). This service provides a weekly calendar view for easy tracking and comparison.",
+          "Page": "Log your food and beverage intake daily, with comparisons against your diet plan for better health management.",
+          "Settings": "Enable this service to log your daily food intake and compare it with your planned diet schedule."
+        },
         "Element": "Element",
         "IsAnAlternative": "Alternative?",
+        "Manual": {
+          "HowItWorks1": "Pick a scheduled meal to auto-fill the supposed-to-consume elements.",
+          "HowItWorks2": "Add optional notes for the entire meal or individual elements.",
+          "HowItWorks3": "Ensure exact spelling and formatting of element names for accurate comparison.",
+          "HowItWorks4": "Scheduled meals data must be filled beforehand (if comparison is needed).",
+          "Inputs1": "Date & Time",
+          "Inputs2": "Scheduled Meal",
+          "Inputs3": "Consumed Elements (name, quantity, measurement unit, element optional note)",
+          "Inputs4": "Meal Optional Notes"
+        },
         "Meal": "Meal",
         "Meal Contents": "Meal Contents",
         "MealOfDay": "Meal of Day",
@@ -241,7 +197,12 @@
       },
       "Fasting": {
         "Date": "Date",
-        "Desc": "Track your fasting days and length of fasting in hours.",
+        "Desc": {
+          "Landing": "Track your fasting days and durations easily",
+          "Manual": "The Fasting service allows users to log the days they decide to fast, following the Muslim fasting practice. It calculates fasting duration automatically using wakeup time, dawn time, and the time of the first meal or water consumption.",
+          "Page": "Record your fasting days and calculate fasting durations.",
+          "Settings": "Enable this service to log fasting days and automatically calculate fasting durations."
+        },
         "FastBreakingTime": "Fast Breaking Time",
         "Fasting": "Fasting",
         "JustBrokeFasting": "Just Broke Fasting",
@@ -249,10 +210,21 @@
       },
       "Schedule": {
         "Alternatives": "Alternatives",
-        "Desc": "Stay on track with your nutrition plan by logging and following scheduled meals",
+        "Desc": {
+          "Landing": "Plan and organize your meals with detailed schedules for better dietary management",
+          "Manual": "The Diet Schedule service enables users to define their meal plans, including specific meal times and food elements. This service integrates seamlessly with the Diet Consumption service to provide a comparison between scheduled and consumed elements.",
+          "Page": "Set up and manage your diet schedules to ensure a balanced meal plan.",
+          "Settings": "Activate this service to create and manage your diet plans and integrate them into consumption tracking."
+        },
         "DietSchedules": "Diet Schedules",
         "Element": "Element",
         "GivingDate": "Giving Date",
+        "Manual": {
+          "HowItWorks1": "Upon adopting a new schedule, create a new schedule record with inputs of schedule order (1st, 2nd, ...etc) and schedule start date @ 'Schedule' service.",
+          "HowItWorks2": "Then in 'Schedule Meals' service, define the meals scheduled within the new schedule record you just created, specifying their names and supposed-to-consume times of the day.",
+          "HowItWorks3": "Last step is in 'Meal Elements' service, where you need to insert the elements to consume within the meal, listing their names, quantities, quantity measurement units, and element alternatives -if any-.",
+          "HowItWorks4": "Those records are the ones to be used for easy input process @ 'Diet Consumption' service, and they are to be engaged in commitment analysis & comparison between what's supposed to consume VS actually consumed. So for comparison sake, upon any modifications for the schedule, it's recommended to build a new schedule from bottom up, instead of updating existing one."
+        },
         "MealElements": "Meal Elements",
         "MealElementsList": "Meal Elements List",
         "MealName": "Meal Name",
@@ -268,7 +240,16 @@
         "Unit": "Unit"
       },
       "Watering": {
-        "Desc": "Record your water intake to maintain optimal hydration levels",
+        "Desc": {
+          "Landing": "Monitor your daily water intake to ensure adequate hydration",
+          "Manual": "The Watering service helps users track their water consumption to ensure they stay hydrated.",
+          "Page": "Track your water consumption to ensure you meet the minimum required daily intake.",
+          "Settings": "Enable this service to track your water consumption and maintain proper hydration."
+        },
+        "Manual": {
+          "Inputs1": "Quantity in cups",
+          "Inputs2": "Date & time of consumption"
+        },
         "Quantity": "Quantity 'In Cup(s)'",
         "Time": "Time",
         "Title": "Hydration Logging",
@@ -288,7 +269,12 @@
       "CorrectedCalcium": "Corrected Calcium",
       "Creatinine": "Creatinine",
       "Date": "Date",
-      "Desc": "Input and checkout the results of lab tests you conduct.",
+      "Desc": {
+        "Landing": "Store and track your lab test results for easy reference",
+        "Manual": "The Lab Tests service allows users to store results of blood and urine tests. This data provides a comprehensive health record for future reference.",
+        "Page": "Record fully detailed diet-related lab test results.",
+        "Settings": "Enable this service to log results of blood and urine tests."
+      },
       "Eosinophils": "Eosinophils",
       "FastingBloodSugar": "Fasting Blood Sugar",
       "FastingInsulin": "Fasting Insulin",
@@ -308,6 +294,9 @@
       "MCV": "MCV",
       "MPV": "MPV",
       "Magnesium": "Magnesium",
+      "Manual": {
+        "Inputs": "Test Indicators (e.g., HEAL fats, LDL fats, etc...)"
+      },
       "Monocytes": "Monocytes",
       "NeutrophilsSegmented": "Neutrophils Segmented",
       "Phosphatase": "Phosphatase",
@@ -337,6 +326,19 @@
       "Bi-Daily": "Bi-Daily",
       "Bi-Weekly": "Bi-Weekly",
       "ConsumedMedicines": "Consumed Medicines",
+      "Consumption": {
+        "Desc": {
+          "Landing": "Track all your medication intake smoothly",
+          "Manual": "The Medicine Consumption service allows users to track medications they consume. Users can select medicines from a predefined list, log the date and time of consumption, and specify quantities. This service integrates with the Medicine Schedule service for seamless tracking.",
+          "Page": "Log details of medication intake, like dosage, and time.",
+          "Settings": "Enable this service to log your medication consumption."
+        },
+        "Manual": {
+          "Inputs1": "Date & Time",
+          "Inputs2": "Quantity",
+          "Inputs3": "Medicine Selection (from predefined list)"
+        }
+      },
       "ConsumptionFrequency": "Consumption Frequency",
       "Daily": "Daily",
       "Date": "Date",
@@ -348,12 +350,32 @@
       "Monthly": "Monthly",
       "OccurrenceQuantity": "Per Frequency Occurrence Quantity",
       "Quantity": "Quantity",
+      "Schedule": {
+        "Desc": {
+          "Landing": "Plan your medication schedule for better adherence",
+          "Manual": "The Medicine Schedule service helps users define their medication plans. This service integrates with Medicine Consumption to provide a comparison between scheduled and consumed doses.",
+          "Page": "Create detailed medication schedules to track adherence and ensure timely intake.",
+          "Settings": "Enable this service to define your medication schedule."
+        },
+        "Manual": {
+          "Inputs1": "Medicine Name",
+          "Inputs2": "Per-Time Dose",
+          "Inputs3": "Consumption Frequency (daily, weekly, monthly, ...etc)",
+          "Inputs4": "Duration (e.g., number of weeks)",
+          "Inputs5": "Doses Per Frequency"
+        }
+      },
       "Time": "Time",
       "Title": "Medication Follow-Up",
       "Weekly": "Weekly"
     },
     "Relief": {
-      "Desc": "Document your relief exercises along the day as a health indicator.",
+      "Desc": {
+        "Landing": "Log your restroom visits for better health insights",
+        "Manual": "The Relief service enables users to log their restroom visits as an indicator of health and hydration status. This data can provide valuable insights into digestive and overall health.",
+        "Page": "Record details of restroom visits to monitor health indicators like hydration and digestion.",
+        "Settings": "Enable this service to track restroom visits as a health indicator."
+      },
       "Notes": "Notes",
       "Number1": "Number 1",
       "Number2": "Number 2",
@@ -363,8 +385,17 @@
       "Type": "Type"
     },
     "SleepCycles": {
-      "Desc": "Monitor and improve your sleep patterns for better rest and recovery",
+      "Desc": {
+        "Landing": "Monitor your sleep patterns to ensure sufficient rest",
+        "Manual": "The Sleep service enables users to log their sleep hours by recording sleep start and end times. Users can also add optional notes for context, such as reasons for disrupted sleep. This data is displayed in a monthly calendar view for easy tracking.",
+        "Page": "Track your sleep hours and patterns for better health management.",
+        "Settings": "Enable this service to log your daily sleep hours."
+      },
       "EndTime": "End Time",
+      "Manual": {
+        "Inputs1": "Sleep Start & End Time",
+        "Inputs2": "Optional Note"
+      },
       "Notes": "Notes",
       "SleepCycles": "Sleep Cycles",
       "StartTime": "Start Time",
@@ -372,9 +403,20 @@
     },
     "Sports": {
       "Date": "Date",
-      "Desc": "Log your physical activities, including sports, workouts, and walks",
+      "Desc": {
+        "Landing": "Track your physical activities to maintain an active lifestyle",
+        "Manual": "The Sport service helps users monitor their physical activities, such as walking, swimming, or gym sessions. Records are displayed in a monthly calendar view.",
+        "Page": "Log details of your physical activities, like duration, measured achievement and so on.",
+        "Settings": "Enable this service to log and monitor your sport sessions."
+      },
       "EndTime": "End Time",
       "Jogging": "Jogging",
+      "Manual": {
+        "Inputs2": "Sport Type",
+        "Inputs3": "Start & End Time",
+        "Inputs4": "Measurements (e.g., walked distances, swimming time, ...etc)",
+        "Inputs5": "Optional Notes"
+      },
       "Measure (Walked Distance, Swimming Time, etc)": "Measure (Walked Distance, Swimming Time, ...etc)",
       "Notes": "Notes",
       "Sport Note": "Sport Note",
@@ -388,17 +430,30 @@
     "WeightReadings": {
       "Actions": "Actions",
       "Date": "Date",
-      "Desc": "Log and monitor your weight, with support for inBody scale or any detailed-reading providers",
+      "Desc": {
+        "Landing": "Log detailed weight measurements to track progress",
+        "Manual": "The Weight Readings service allows users to log detailed weight measurements, like total weight, fat weight, muscle weight, and waist fat ratings. Users can also set target ranges for these metrics to monitor progress over time.",
+        "Page": "Record weekly weight detailed readings, like fat mass, muscle mass, and more.",
+        "Settings": "Enable this service to record and monitor weight readings."
+      },
       "FatWeight": "Fat Weight",
       "FatWeightMaxTarget": "Fat Weight Max Target",
       "FatWeightMinTarget": "Fat Weight Min Target",
       "Input": "Input",
+      "Manual": {
+        "Inputs2": "Water Reading (liters)",
+        "Inputs3": "Fat Weight (kg)",
+        "Inputs4": "Total Weight (kg)",
+        "Inputs5": "Muscle Weight (kg)",
+        "Inputs6": "Waist Fat Rating (numeric scale)"
+      },
       "Muscles": "Muscles",
       "MusclesMaxTarget": "Muscles Max Target",
       "MusclesMinTarget": "Muscles Min Target",
       "MusclesReading": "Muscles Reading",
       "NumberOfWeightReading": "Total Number of Weight Readings (Nutritionist Weekly Visits)",
       "Targets": "Targets",
+      "TargetsDesc": "To input the targeted values of weight readings, but in a range of minimum & maximum.",
       "Title": "Weight Tracking",
       "WaistFat": "Waist Fat",
       "WaistFat Reading": "Waist Fat Reading",
@@ -417,6 +472,7 @@
   },
   "Settings": {
     "ServicesActivation": {
+      "Desc": "You have the flexibility to choose which services you want to use. Enabling or disabling a service will not result in any data loss; it will simply hide or reveal the service in your account's user interface.",
       "Title": "Services Activation"
     },
     "Title": "Settings"

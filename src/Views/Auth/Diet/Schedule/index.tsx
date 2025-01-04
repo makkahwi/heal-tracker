@@ -56,7 +56,7 @@ const Schedule = () => {
   return (
     <PageSection
       title={t("Services.Diet.Schedule.DietSchedules")}
-      desc={t("Services.Diet.Schedule.Desc")}
+      desc={t("Services.Diet.Schedule.Desc.Page")}
     >
       <TabsView views={views} />
     </PageSection>

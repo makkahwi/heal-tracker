@@ -239,7 +239,7 @@ const Consumption = () => {
   return (
     <PageSection
       title={t("Services.Diet.Consumption.ConsumedMeals")}
-      desc={t("Services.Diet.Schedule.Desc")}
+      desc={t("Services.Diet.Consumption.Desc.Page")}
     >
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
