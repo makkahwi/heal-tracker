@@ -86,7 +86,7 @@ const Navbar = () => {
                   </span>
                 </li>
 
-                {routes.map(({ name, path, icon, list }, i) => (
+                {routes.map(({ label, path, icon, list }, i) => (
                   <li className="nav-item dropdown" key={i}>
                     {list ? (
                       <span
@@ -107,7 +107,7 @@ const Navbar = () => {
                         aria-expanded="false"
                       >
                         <FontAwesomeIcon icon={icon} />
-                        <span className="ms-2">{name}</span>
+                        <span className="ms-2">{label}</span>
                       </span>
                     ) : (
                       <span
@@ -123,7 +123,7 @@ const Navbar = () => {
                         }}
                       >
                         <FontAwesomeIcon icon={icon} />
-                        <span className="ms-2">{name}</span>
+                        <span className="ms-2">{label}</span>
                       </span>
                     )}
 
@@ -133,7 +133,7 @@ const Navbar = () => {
                         aria-labelledby={`navbarDropdown-${i}`}
                       >
                         {list.map(
-                          ({ name, path: childPath, icon }, subIndex) => (
+                          ({ label, path: childPath, icon }, subIndex) => (
                             <li key={subIndex}>
                               <span
                                 className={`dropdown-item ${
@@ -149,7 +149,7 @@ const Navbar = () => {
                                 }}
                               >
                                 <FontAwesomeIcon icon={icon} />
-                                <span className="ms-2">{name}</span>
+                                <span className="ms-2">{label}</span>
                               </span>
                             </li>
                           )
