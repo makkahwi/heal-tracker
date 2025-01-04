@@ -4,6 +4,32 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [v1.1.0] - Feature Update and Enhancements
+
+**Release Date:** January 4, 2025
+
+### Added
+
+- New Relief Tracking Service with dashboard integration and shortcuts.
+- Global Notifications System with auto-close functionality.
+- Localization support with Arabic translations.
+- Timestamps for key data entries.
+- Shortcuts for water consumption and medication tracking.
+
+### Enhanced
+
+- Updated brand logo, theme colors, and landing page content.
+- Improved navbar responsiveness and dropdown auto-close functionality.
+- Expanded user manual content for Weight Targets and Relief Tracking.
+
+### Fixed
+
+- Resolved sport note update issues.
+- Fixed Diet Consumption alternatives indication.
+- Addressed minor compiling warnings and redundant code.
+
+---
+
 ## [v1.0.0] - Initial Stable Release 🌟
 
 **Release Date:** November 19, 2024  
