@@ -41,10 +41,10 @@ const ManualView = () => {
         {
           subtitle: t("Manual.HowItWorks"),
           content: [
-            t("Services.Diet.Schedule.HowItWorks1"),
-            t("Services.Diet.Schedule.HowItWorks2"),
-            t("Services.Diet.Schedule.HowItWorks3"),
-            t("Services.Diet.Schedule.HowItWorks4"),
+            t("Services.Diet.Schedule.Manual.HowItWorks1"),
+            t("Services.Diet.Schedule.Manual.HowItWorks2"),
+            t("Services.Diet.Schedule.Manual.HowItWorks3"),
+            t("Services.Diet.Schedule.Manual.HowItWorks4"),
           ],
         },
       ],

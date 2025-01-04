@@ -167,7 +167,7 @@
         "Date": "Date",
         "Desc": {
           "Landing": "Track your daily food consumption to stay on healthy track",
-          "Manual": "The Diet Consumption service allows users to record their daily intake of food and beverages and compare it with their predefined diet schedule. Users can input details such as the date, time, type of food, quantities, units, and notes. This service provides a weekly calendar view for easy tracking and comparison.",
+          "Manual": "The Diet Consumption service allows users to record their daily intake of food and beverages and compare it with their predefined diet schedule (if activated). This service provides a weekly calendar view for easy tracking and comparison.",
           "Page": "Log your food and beverage intake daily, with comparisons against your diet plan for better health management.",
           "Settings": "Enable this service to log your daily food intake and compare it with your planned diet schedule."
         },
@@ -177,7 +177,7 @@
           "HowItWorks1": "Pick a scheduled meal to auto-fill the supposed-to-consume elements.",
           "HowItWorks2": "Add optional notes for the entire meal or individual elements.",
           "HowItWorks3": "Ensure exact spelling and formatting of element names for accurate comparison.",
-          "HowItWorks4": "Scheduled meals data must be filled beforehand.",
+          "HowItWorks4": "Scheduled meals data must be filled beforehand (if comparison is needed).",
           "Inputs1": "Date & Time",
           "Inputs2": "Scheduled Meal",
           "Inputs3": "Consumed Elements (name, quantity, measurement unit, element optional note)",
@@ -222,7 +222,7 @@
         "Manual": {
           "HowItWorks1": "Upon adopting a new schedule, create a new schedule record with inputs of schedule order (1st, 2nd, ...etc) and schedule start date @ 'Schedule' service.",
           "HowItWorks2": "Then in 'Schedule Meals' service, define the meals scheduled within the new schedule record you just created, specifying their names and supposed-to-consume times of the day.",
-          "HowItWorks3": "Last step is in 'Meal Elements' service, where you need to insert the elements to consume within the meal, listing their names, quantities, quantity measurement units, and element alternatives -if any is allowed-.",
+          "HowItWorks3": "Last step is in 'Meal Elements' service, where you need to insert the elements to consume within the meal, listing their names, quantities, quantity measurement units, and element alternatives -if any-.",
           "HowItWorks4": "Those records are the ones to be used for easy input process @ 'Diet Consumption' service, and they are to be engaged in commitment analysis & comparison between what's supposed to consume VS actually consumed. So for comparison sake, upon any modifications for the schedule, it's recommended to build a new schedule from bottom up, instead of updating existing one."
         },
         "MealElements": "Meal Elements",
@@ -242,7 +242,7 @@
       "Watering": {
         "Desc": {
           "Landing": "Monitor your daily water intake to ensure adequate hydration",
-          "Manual": "The Watering service helps users track their water consumption to ensure they stay hydrated. Users can log the amount of water consumed (in cups or liters), along with the date and time of consumption.",
+          "Manual": "The Watering service helps users track their water consumption to ensure they stay hydrated.",
           "Page": "Track your water consumption to ensure you meet the minimum required daily intake.",
           "Settings": "Enable this service to track your water consumption and maintain proper hydration."
         },
@@ -271,7 +271,7 @@
       "Date": "Date",
       "Desc": {
         "Landing": "Store and track your lab test results for easy reference",
-        "Manual": "The Lab Tests service allows users to store results of blood and urine tests. Users can log the date of the test and record specific indicators, such as cholesterol levels or blood sugar readings. This data provides a comprehensive health record for future reference.",
+        "Manual": "The Lab Tests service allows users to store results of blood and urine tests. This data provides a comprehensive health record for future reference.",
         "Page": "Record fully detailed diet-related lab test results.",
         "Settings": "Enable this service to log results of blood and urine tests."
       },
@@ -353,7 +353,7 @@
       "Schedule": {
         "Desc": {
           "Landing": "Plan your medication schedule for better adherence",
-          "Manual": "The Medicine Schedule service helps users define their medication plans, including per-time doses, frequency (daily, weekly, etc.), and duration. This service integrates with Medicine Consumption to provide a comparison between scheduled and consumed doses.",
+          "Manual": "The Medicine Schedule service helps users define their medication plans. This service integrates with Medicine Consumption to provide a comparison between scheduled and consumed doses.",
           "Page": "Create detailed medication schedules to track adherence and ensure timely intake.",
           "Settings": "Enable this service to define your medication schedule."
         },
@@ -372,7 +372,7 @@
     "Relief": {
       "Desc": {
         "Landing": "Log your restroom visits for better health insights",
-        "Manual": "The Relief service enables users to log their restroom visits and categorize outcomes (number 1 or 2) as indicators of health and hydration status. This data can provide valuable insights into digestive and overall health.",
+        "Manual": "The Relief service enables users to log their restroom visits as an indicator of health and hydration status. This data can provide valuable insights into digestive and overall health.",
         "Page": "Record details of restroom visits to monitor health indicators like hydration and digestion.",
         "Settings": "Enable this service to track restroom visits as a health indicator."
       },
@@ -405,7 +405,7 @@
       "Date": "Date",
       "Desc": {
         "Landing": "Track your physical activities to maintain an active lifestyle",
-        "Manual": "The Sport service helps users monitor their physical activities, such as walking, swimming, or gym sessions. Users can log activity type, date, start and end times, and additional measurements (e.g., distance walked). Records are displayed in a monthly calendar view.",
+        "Manual": "The Sport service helps users monitor their physical activities, such as walking, swimming, or gym sessions. Records are displayed in a monthly calendar view.",
         "Page": "Log details of your physical activities, like duration, measured achievement and so on.",
         "Settings": "Enable this service to log and monitor your sport sessions."
       },
@@ -432,7 +432,7 @@
       "Date": "Date",
       "Desc": {
         "Landing": "Log detailed weight measurements to track progress",
-        "Manual": "The Weight Readings service allows users to log detailed weight measurements, including total weight, fat weight, muscle weight, and waist fat ratings. Users can also set target ranges for these metrics to monitor progress over time.",
+        "Manual": "The Weight Readings service allows users to log detailed weight measurements, like total weight, fat weight, muscle weight, and waist fat ratings. Users can also set target ranges for these metrics to monitor progress over time.",
         "Page": "Record weekly weight detailed readings, like fat mass, muscle mass, and more.",
         "Settings": "Enable this service to record and monitor weight readings."
       },
