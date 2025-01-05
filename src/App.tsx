@@ -5,6 +5,7 @@ import {
   faPills,
   faRunning,
   faStarAndCrescent,
+  faTachometer,
   faToilet,
   faUtensils,
   faWater,
@@ -116,18 +117,25 @@ export const routes = [
     ],
   },
   {
-    name: "weight_readings",
-    label: i18n.t("Services.WeightReadings.WeightReadings"),
-    path: "weight-readings",
-    icon: faWeight,
-    Comp: <WeightReadings />,
-  },
-  {
-    name: "lab_tests",
-    label: i18n.t("Services.LabTests.LabTestsList"),
-    path: "lab-tests",
-    icon: faFileMedical,
-    Comp: <LabTests />,
+    label: i18n.t("Layout.Readings"),
+    path: "readings",
+    icon: faTachometer,
+    list: [
+      {
+        name: "weight_readings",
+        label: i18n.t("Services.WeightReadings.WeightReadings"),
+        path: "weight-readings",
+        icon: faWeight,
+        Comp: <WeightReadings />,
+      },
+      {
+        name: "lab_tests",
+        label: i18n.t("Services.LabTests.LabTestsList"),
+        path: "lab-tests",
+        icon: faFileMedical,
+        Comp: <LabTests />,
+      },
+    ],
   },
 ]
   .filter(({ name, list }) =>
