@@ -13,6 +13,7 @@ import {
 } from "react-vis";
 
 import { getAverage } from "../../Utils/functions";
+import { useComponentSize } from "../../Utils/hooks";
 import { changeCalculationProps } from "../../Views/Auth/WeightReadings";
 
 interface hoverProps {
@@ -48,6 +49,8 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
     changeAverage: data.map(() => false),
     targeted: data.map(() => false),
   });
+
+  const [ref, size] = useComponentSize();
 
   useEffect(() => {
     setHovered(initialHovered());
@@ -111,204 +114,211 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
             >
               <tbody>
                 <tr>
-                  <td colSpan={4} className="text-center py-3">
-                    <XYPlot
-                      xType="time"
-                      width={300}
-                      height={300}
-                      yDomain={[
-                        chartMin - chartMin * 0.02,
-                        chartMax + chartMax * 0.02,
-                      ]}
-                    >
-                      <VerticalGridLines />
-                      <HorizontalGridLines />
-                      <XAxis title="Date" />
-                      <YAxis
-                        title={"Reading" + (unit ? " ( " + unit + " )" : "")}
-                      />
+                  <td colSpan={4} className="text-center py-3 w-100">
+                    <div className="w-100" ref={ref}>
+                      <XYPlot
+                        xType="time"
+                        width={size.width * 0.975}
+                        height={300}
+                        yDomain={[
+                          chartMin - chartMin * 0.02,
+                          chartMax + chartMax * 0.02,
+                        ]}
+                      >
+                        <VerticalGridLines />
+                        <HorizontalGridLines />
+                        <XAxis
+                          title="Date"
+                          tickFormat={(v) => moment(v).format("MMM YY")}
+                        />
+                        <YAxis
+                          title={"Reading" + (unit ? " ( " + unit + " )" : "")}
+                        />
 
-                      <LineMarkSeries
-                        data={data?.map(({ x, y }) => ({
-                          x: moment(x).valueOf(),
-                          y,
-                        }))}
-                        color={colors[x % colors.length]}
-                        onValueMouseOver={(v) =>
-                          setHovered((current) =>
-                            current.map((c) =>
-                              c.title === title
-                                ? {
-                                    date: String(
-                                      moment(v.x).format("DD MMM yyyy")
-                                    ),
-                                    value: parseFloat(String(v.y)),
-                                    title,
-                                  }
-                                : c
-                            )
-                          )
-                        }
-                        onValueMouseOut={() => setHovered(initialHovered())}
-                      />
-                      {/* Values Average */}
-                      {show.average[x] && (
                         <LineMarkSeries
-                          data={[
-                            {
-                              x: moment(data[0]?.x).valueOf(),
-                              y: average,
-                            },
-                            {
+                          data={data?.map(({ x, y }) => ({
+                            x: moment(x).valueOf(),
+                            y,
+                          }))}
+                          color={colors[x % colors.length]}
+                          onValueMouseOver={(v) =>
+                            setHovered((current) =>
+                              current.map((c) =>
+                                c.title === title
+                                  ? {
+                                      date: String(
+                                        moment(v.x).format("DD MMM yyyy")
+                                      ),
+                                      value: parseFloat(String(v.y)),
+                                      title,
+                                    }
+                                  : c
+                              )
+                            )
+                          }
+                          onValueMouseOut={() => setHovered(initialHovered())}
+                        />
+                        {/* Values Average */}
+                        {show.average[x] && (
+                          <LineMarkSeries
+                            data={[
+                              {
+                                x: moment(data[0]?.x).valueOf(),
+                                y: average,
+                              },
+                              {
+                                x: moment(data[data?.length - 1]?.x).valueOf(),
+                                y: average,
+                              },
+                            ]}
+                            // opacity={0.5}
+                            color="red"
+                          />
+                        )}
+                        {show.average[x] && (
+                          <Hint
+                            value={{
                               x: moment(data[data?.length - 1]?.x).valueOf(),
                               y: average,
-                            },
-                          ]}
-                          // opacity={0.5}
-                          color="red"
-                        />
-                      )}
-                      {show.average[x] && (
-                        <Hint
-                          value={{
-                            x: moment(data[data?.length - 1]?.x).valueOf(),
-                            y: average,
-                          }}
-                          style={{
-                            fontSize: 12,
-                            value: {
-                              color: "red",
-                            },
+                            }}
+                            style={{
+                              fontSize: 12,
+                              value: {
+                                color: "red",
+                              },
+                              // opacity={0.5}
+                            }}
+                          >
+                            <div className="card bg-danger text-white p-1">
+                              Average ({average.toFixed(2)})
+                            </div>
+                          </Hint>
+                        )}
+                        {/* Change Average */}
+                        {show.changeAverage[x] && (
+                          <LineMarkSeries
+                            data={[
+                              {
+                                x: moment(data[0]?.x).valueOf(),
+                                y: data[0]?.y,
+                              },
+                              {
+                                x: moment(data[data.length - 1]?.x).valueOf(),
+                                y: data[data.length - 1]?.y,
+                              },
+                            ]}
+                            color="skyblue"
                             // opacity={0.5}
-                          }}
-                        >
-                          <div className="card bg-danger text-white p-1">
-                            Average ({average.toFixed(2)})
-                          </div>
-                        </Hint>
-                      )}
-                      {/* Change Average */}
-                      {show.changeAverage[x] && (
-                        <LineMarkSeries
-                          data={[
-                            {
+                          />
+                        )}
+                        {show.changeAverage[x] && (
+                          <Hint
+                            value={{
                               x: moment(data[0]?.x).valueOf(),
                               y: data[0]?.y,
-                            },
-                            {
-                              x: moment(data[data.length - 1]?.x).valueOf(),
-                              y: data[data.length - 1]?.y,
-                            },
-                          ]}
-                          color="skyblue"
-                          // opacity={0.5}
-                        />
-                      )}
-                      {show.changeAverage[x] && (
-                        <Hint
-                          value={{
-                            x: moment(data[0]?.x).valueOf(),
-                            y: data[0]?.y,
-                          }}
-                          style={{
-                            fontSize: 12,
-                            value: {
-                              color: "skyblue",
-                            },
-                            // opacity: 0.5,
-                          }}
-                        >
-                          <div className="card bg-info text-white p-1">
-                            Change Average
-                            <span>
-                              <FontAwesomeIcon
-                                icon={
-                                  data[0]?.y < data[data.length - 1]?.y
-                                    ? faArrowDown
-                                    : faArrowUp
-                                }
-                                className="me-1"
-                              />
-                              {(
-                                (data[0]?.y - data[data.length - 1]?.y) /
-                                data.length
-                              ).toFixed(2)}
-                            </span>
-                          </div>
-                        </Hint>
-                      )}
-                      {/* Targeted */}
-                      {show.targeted[x] && minTarget && (
-                        <Hint
-                          value={{
-                            x:
-                              moment(data[data.length - 1]?.x).valueOf() + 2000,
-                            y: minTarget,
-                          }}
-                        >
-                          <small
-                            className="bg-success text-white p-2"
-                            style={{ fontSize: 10 }}
+                            }}
+                            style={{
+                              fontSize: 12,
+                              value: {
+                                color: "skyblue",
+                              },
+                              // opacity: 0.5,
+                            }}
                           >
-                            {minTarget === maxTarget
-                              ? "Targeted Value"
-                              : "Targeted Min Value"}
-                            {": "}
-                            {minTarget} {unit}
-                          </small>
-                        </Hint>
-                      )}
-                      {show.targeted[x] && maxTarget && (
-                        <Hint
-                          value={{
-                            x:
-                              moment(data[data.length - 1]?.x).valueOf() + 2000,
-                            y: maxTarget,
-                          }}
-                        >
-                          <small
-                            className="bg-success text-white p-2"
-                            style={{ fontSize: 10 }}
+                            <div className="card bg-info text-white p-1">
+                              Change Average
+                              <span>
+                                <FontAwesomeIcon
+                                  icon={
+                                    data[0]?.y < data[data.length - 1]?.y
+                                      ? faArrowDown
+                                      : faArrowUp
+                                  }
+                                  className="me-1"
+                                />
+                                {(
+                                  (data[0]?.y - data[data.length - 1]?.y) /
+                                  data.length
+                                ).toFixed(2)}
+                              </span>
+                            </div>
+                          </Hint>
+                        )}
+                        {/* Targeted */}
+                        {show.targeted[x] && minTarget && (
+                          <Hint
+                            value={{
+                              x:
+                                moment(data[data.length - 1]?.x).valueOf() +
+                                2000,
+                              y: minTarget,
+                            }}
                           >
-                            {minTarget === maxTarget
-                              ? "Targeted Value"
-                              : "Targeted Max Value"}
-                            {": "}
-                            {maxTarget} {unit}
-                          </small>
-                        </Hint>
-                      )}
-                      {show.targeted[x] && minTarget && (
-                        <LineMarkSeries
-                          color="green"
-                          data={[
-                            {
-                              x: moment(data[0]?.x).valueOf(),
-                              y: minTarget,
-                            },
-                            {
-                              x: moment(data[data.length - 1]?.x).valueOf(),
-                              y: minTarget,
-                            },
-                          ]}
-                        />
-                      )}
-                      {show.targeted[x] && maxTarget && (
-                        <LineMarkSeries
-                          color="green"
-                          data={[
-                            {
-                              x: moment(data[0]?.x).valueOf(),
+                            <small
+                              className="bg-success text-white p-2"
+                              style={{ fontSize: 10 }}
+                            >
+                              {minTarget === maxTarget
+                                ? "Targeted Value"
+                                : "Targeted Min Value"}
+                              {": "}
+                              {minTarget} {unit}
+                            </small>
+                          </Hint>
+                        )}
+                        {show.targeted[x] && maxTarget && (
+                          <Hint
+                            value={{
+                              x:
+                                moment(data[data.length - 1]?.x).valueOf() +
+                                2000,
                               y: maxTarget,
-                            },
-                            {
-                              x: moment(data[data.length - 1]?.x).valueOf(),
-                              y: maxTarget,
-                            },
-                          ]}
-                        />
-                      )}
-                    </XYPlot>
+                            }}
+                          >
+                            <small
+                              className="bg-success text-white p-2"
+                              style={{ fontSize: 10 }}
+                            >
+                              {minTarget === maxTarget
+                                ? "Targeted Value"
+                                : "Targeted Max Value"}
+                              {": "}
+                              {maxTarget} {unit}
+                            </small>
+                          </Hint>
+                        )}
+                        {show.targeted[x] && minTarget && (
+                          <LineMarkSeries
+                            color="green"
+                            data={[
+                              {
+                                x: moment(data[0]?.x).valueOf(),
+                                y: minTarget,
+                              },
+                              {
+                                x: moment(data[data.length - 1]?.x).valueOf(),
+                                y: minTarget,
+                              },
+                            ]}
+                          />
+                        )}
+                        {show.targeted[x] && maxTarget && (
+                          <LineMarkSeries
+                            color="green"
+                            data={[
+                              {
+                                x: moment(data[0]?.x).valueOf(),
+                                y: maxTarget,
+                              },
+                              {
+                                x: moment(data[data.length - 1]?.x).valueOf(),
+                                y: maxTarget,
+                              },
+                            ]}
+                          />
+                        )}
+                      </XYPlot>
+                    </div>
                   </td>
                 </tr>
 
