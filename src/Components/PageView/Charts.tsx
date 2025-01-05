@@ -112,13 +112,13 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
               <tbody>
                 <tr>
                   <td colSpan={4} className="text-center py-3">
-                    {/* <XYPlot
+                    <XYPlot
                       xType="time"
                       width={300}
                       height={300}
                       yDomain={[
-                        chartMin - chartMin * 0.025,
-                        chartMax + chartMax * 0.025,
+                        chartMin - chartMin * 0.02,
+                        chartMax + chartMax * 0.02,
                       ]}
                     >
                       <VerticalGridLines />
@@ -151,8 +151,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         }
                         onValueMouseOut={() => setHovered(initialHovered())}
                       />
-
-                      {/* Values Average
+                      {/* Values Average */}
                       {show.average[x] && (
                         <LineMarkSeries
                           data={[
@@ -169,7 +168,6 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                           color="red"
                         />
                       )}
-
                       {show.average[x] && (
                         <Hint
                           value={{
@@ -189,8 +187,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                           </div>
                         </Hint>
                       )}
-
-                      {/* Change Average
+                      {/* Change Average */}
                       {show.changeAverage[x] && (
                         <LineMarkSeries
                           data={[
@@ -240,8 +237,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                           </div>
                         </Hint>
                       )}
-
-                      {/* Targeted
+                      {/* Targeted */}
                       {show.targeted[x] && minTarget && (
                         <Hint
                           value={{
@@ -262,7 +258,6 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                           </small>
                         </Hint>
                       )}
-
                       {show.targeted[x] && maxTarget && (
                         <Hint
                           value={{
@@ -283,7 +278,6 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                           </small>
                         </Hint>
                       )}
-
                       {show.targeted[x] && minTarget && (
                         <LineMarkSeries
                           color="green"
@@ -299,7 +293,6 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                           ]}
                         />
                       )}
-
                       {show.targeted[x] && maxTarget && (
                         <LineMarkSeries
                           color="green"
@@ -315,7 +308,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                           ]}
                         />
                       )}
-                    </XYPlot> */}
+                    </XYPlot>
                   </td>
                 </tr>
 

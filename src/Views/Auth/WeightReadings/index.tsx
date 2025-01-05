@@ -5,10 +5,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
 import TabsView from "../../../Components/Layout/TabsView";
 import PageSection from "../../../Components/PageView/PageSection";
+import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
 
 interface weightReadingTargetProps {
@@ -610,7 +612,7 @@ const WeightReadings = () => {
       .catch((err) => console.log({ err }));
 
   const views = [
-    // { title: "Analysis", view: <WeightReadingCharts data={data} /> },
+    { title: "Analysis", view: <WeightReadingCharts data={data} /> },
     {
       title: t("Services.WeightReadings.Input"),
       view: <Form inputs={formInputs} onSubmit={onSubmit} />,
