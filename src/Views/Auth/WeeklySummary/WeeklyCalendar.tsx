@@ -1,17 +1,20 @@
 import moment, { Moment } from "moment";
 import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+
 import * as BeAPI from "../../../API";
 import { getSummary } from "../../../API/ChatGPT";
 import MealView from "../../../Components/MealView";
 import { renderEvents } from "../../../Components/PageView/MonthlyCalendar";
+import { RootState } from "../../../Store/store";
 import { consumptionFullProps } from "../Diet/Consumption";
+import { fastingProps, renderFastingUI } from "../Diet/Fasting";
 import { renderWateringUI, wateringProps } from "../Diet/Watering";
 import { medicineProps, renderMedicineUI } from "../Medicine/Consumption";
 import { reliefProps, renderReliefUI } from "../Relief";
 import { renderSleepCycleUI, sleepCycleProps } from "../SleepCycles";
 import { renderExerciseUI, walkExerciseProps } from "../Sports";
-import { fastingProps, renderFastingUI } from "../Diet/Fasting";
 
 export interface SummaryProps {
   date: string;
@@ -46,6 +49,10 @@ const WeeklyCalendar = ({
   fasting: fastingProps[];
 }) => {
   const { t } = useTranslation();
+
+  const activation = useSelector(
+    (state: RootState) => state.settings.activation
+  );
 
   const [currentWeek, setCurrentWeek] = useState<Moment[]>([]);
   const [currentDate, setCurrentDate] = useState<Moment>(moment());
@@ -252,241 +259,266 @@ const WeeklyCalendar = ({
         </thead>
 
         <tbody>
-          {currentWeekData
-            ?.map(({ meal }) => meal)
-            ?.sort((a: any, b: any) => (a.time < b.time ? -1 : 1))
-            ?.map(({ meal }) => meal)
-            .reduce<string[]>(
-              (final, current) =>
-                final.includes(current) ? final : [...final, current],
-              []
-            )
-            ?.map((meal, i) => (
-              <tr key={i}>
-                <th className="text-start">
-                  {meal}
+          {activation.diet_consumption &&
+            currentWeekData
+              ?.map(({ meal }) => meal)
+              ?.sort((a: any, b: any) => (a.time < b.time ? -1 : 1))
+              ?.map(({ meal }) => meal)
+              .reduce<string[]>(
+                (final, current) =>
+                  final.includes(current) ? final : [...final, current],
+                []
+              )
+              ?.map((meal, i) => (
+                <tr key={i}>
+                  <th className="text-start">
+                    {meal}
 
-                  {currentWeekData
-                    .find((dat) => meal === dat.meal.meal)
-                    ?.supposed?.map(
-                      ({ element, count, note, unit, alternatives }, y) => (
-                        <MealView
-                          dark={y % 2 === 1}
-                          meal={meal}
-                          count={count}
-                          unit={unit}
-                          element={element}
-                          note={note}
-                          alternatives={alternatives}
-                          key={y}
-                        />
-                      )
-                    ) || ""}
-                </th>
-
-                {currentWeek?.map((day, x) => {
-                  const theMeals: consumptionFullProps[] | undefined =
-                    currentWeekData
-                      ?.filter(
-                        (dat) =>
-                          meal === dat.meal.meal &&
-                          moment(dat.timestamp).format("yyyy-MM-DD") ===
-                            day.format("yyyy-MM-DD")
-                      )
-                      ?.sort((a: any, b: any) =>
-                        a.timestamp < b.timestamp ? -1 : 1
-                      );
-
-                  return (
-                    <td className="text-start align-top" key={x}>
-                      {theMeals?.map(
-                        ({ timestamp, id, note, contents, supposed }) => (
-                          <Fragment>
-                            {timestamp ? (
-                              <span className="d-block bg-dark text-white px-2 py-1">
-                                {"@ " + moment(timestamp).format("h:mm a")}{" "}
-                                <br />
-                                {note ? "(" + note + ")" : ""}
-                              </span>
-                            ) : (
-                              ""
-                            )}
-
-                            {contents?.map(
-                              ({ element, count, unit, note }, y) => (
-                                <MealView
-                                  dark={y % 2 === 1}
-                                  meal={meal}
-                                  count={count}
-                                  unit={unit}
-                                  element={element}
-                                  note={note}
-                                  key={y}
-                                  supposed={supposed?.find(
-                                    (s) =>
-                                      s.element === element ||
-                                      s.alternatives?.find(
-                                        (a) => a.element === element
-                                      )
-                                  )}
-                                  compare
-                                />
-                              )
-                            )}
-                          </Fragment>
+                    {currentWeekData
+                      .find((dat) => meal === dat.meal.meal)
+                      ?.supposed?.map(
+                        ({ element, count, note, unit, alternatives }, y) => (
+                          <MealView
+                            dark={y % 2 === 1}
+                            meal={meal}
+                            count={count}
+                            unit={unit}
+                            element={element}
+                            note={note}
+                            alternatives={alternatives}
+                            key={y}
+                          />
                         )
-                      )}
-                    </td>
+                      ) || ""}
+                  </th>
+
+                  {currentWeek?.map((day, x) => {
+                    const theMeals: consumptionFullProps[] | undefined =
+                      currentWeekData
+                        ?.filter(
+                          (dat) =>
+                            meal === dat.meal.meal &&
+                            moment(dat.timestamp).format("yyyy-MM-DD") ===
+                              day.format("yyyy-MM-DD")
+                        )
+                        ?.sort((a: any, b: any) =>
+                          a.timestamp < b.timestamp ? -1 : 1
+                        );
+
+                    return (
+                      <td className="text-start align-top" key={x}>
+                        {theMeals?.map(
+                          ({ timestamp, id, note, contents, supposed }) => (
+                            <Fragment>
+                              {timestamp ? (
+                                <span className="d-block bg-dark text-white px-2 py-1">
+                                  {"@ " + moment(timestamp).format("h:mm a")}{" "}
+                                  <br />
+                                  {note ? "(" + note + ")" : ""}
+                                </span>
+                              ) : (
+                                ""
+                              )}
+
+                              {contents?.map(
+                                ({ element, count, unit, note }, y) => (
+                                  <MealView
+                                    dark={y % 2 === 1}
+                                    meal={meal}
+                                    count={count}
+                                    unit={unit}
+                                    element={element}
+                                    note={note}
+                                    key={y}
+                                    supposed={supposed?.find(
+                                      (s) =>
+                                        s.element === element ||
+                                        s.alternatives?.find(
+                                          (a) => a.element === element
+                                        )
+                                    )}
+                                    compare
+                                  />
+                                )
+                              )}
+                            </Fragment>
+                          )
+                        )}
+                      </td>
+                    );
+                  })}
+                </tr>
+              ))}
+
+          {activation.watering ? (
+            <tr>
+              <th>{t("Dashboard.Watering")}</th>
+
+              {currentWeek?.map((day, x) => {
+                const theRecord: comprehensiveProps | undefined =
+                  currentWeekData?.find(
+                    (dat) =>
+                      moment(dat.timestamp).format("yyyy-MM-DD") ===
+                      day.format("yyyy-MM-DD")
                   );
-                })}
-              </tr>
-            ))}
 
-          <tr>
-            <th>{t("Dashboard.Watering")}</th>
-
-            {currentWeek?.map((day, x) => {
-              const theRecord: comprehensiveProps | undefined =
-                currentWeekData?.find(
-                  (dat) =>
-                    moment(dat.timestamp).format("yyyy-MM-DD") ===
-                    day.format("yyyy-MM-DD")
+                return (
+                  <td className="text-start align-top" key={x}>
+                    {renderEvents(
+                      day.format("YYYY-MM-DD"),
+                      renderWateringUI(),
+                      theRecord?.watering
+                    )}
+                  </td>
                 );
+              })}
+            </tr>
+          ) : (
+            ""
+          )}
 
-              return (
-                <td className="text-start align-top" key={x}>
-                  {renderEvents(
-                    day.format("YYYY-MM-DD"),
-                    renderWateringUI(),
-                    theRecord?.watering
-                  )}
-                </td>
-              );
-            })}
-          </tr>
+          {activation.relief ? (
+            <tr>
+              <th>{t("Services.Relief.Relief")}</th>
 
-          <tr>
-            <th>{t("Services.Relief.Relief")}</th>
+              {currentWeek?.map((day, x) => {
+                const theRecord: comprehensiveProps | undefined =
+                  currentWeekData?.find(
+                    (dat) =>
+                      moment(dat.timestamp).format("yyyy-MM-DD") ===
+                      day.format("yyyy-MM-DD")
+                  );
 
-            {currentWeek?.map((day, x) => {
-              const theRecord: comprehensiveProps | undefined =
-                currentWeekData?.find(
-                  (dat) =>
-                    moment(dat.timestamp).format("yyyy-MM-DD") ===
-                    day.format("yyyy-MM-DD")
+                return (
+                  <td className="text-start align-top" key={x}>
+                    {renderEvents(
+                      day.format("YYYY-MM-DD"),
+                      renderReliefUI(),
+                      theRecord?.reliefLogs.map(({ time, ...rest }) => ({
+                        ...rest,
+                        date: moment(time).format("yyyy-MM-DD"),
+                        time,
+                      }))
+                    )}
+                  </td>
                 );
+              })}
+            </tr>
+          ) : (
+            ""
+          )}
 
-              return (
-                <td className="text-start align-top" key={x}>
-                  {renderEvents(
-                    day.format("YYYY-MM-DD"),
-                    renderReliefUI(),
-                    theRecord?.reliefLogs.map(({ time, ...rest }) => ({
-                      ...rest,
-                      date: moment(time).format("yyyy-MM-DD"),
-                      time,
-                    }))
-                  )}
-                </td>
-              );
-            })}
-          </tr>
+          {activation.fasting ? (
+            <tr>
+              <th>{t("Services.Diet.Fasting.Fasting")}</th>
 
-          <tr>
-            <th>{t("Services.Diet.Fasting.Fasting")}</th>
+              {currentWeek?.map((day, x) => {
+                const theRecord: comprehensiveProps | undefined =
+                  currentWeekData?.find(
+                    (dat) =>
+                      moment(dat.timestamp).format("yyyy-MM-DD") ===
+                      day.format("yyyy-MM-DD")
+                  );
 
-            {currentWeek?.map((day, x) => {
-              const theRecord: comprehensiveProps | undefined =
-                currentWeekData?.find(
-                  (dat) =>
-                    moment(dat.timestamp).format("yyyy-MM-DD") ===
-                    day.format("yyyy-MM-DD")
+                return (
+                  <td className="text-start align-top" key={x}>
+                    {renderEvents(
+                      day.format("YYYY-MM-DD"),
+                      renderFastingUI(),
+                      theRecord?.fasting
+                    )}
+                  </td>
                 );
+              })}
+            </tr>
+          ) : (
+            ""
+          )}
 
-              return (
-                <td className="text-start align-top" key={x}>
-                  {renderEvents(
-                    day.format("YYYY-MM-DD"),
-                    renderFastingUI(),
-                    theRecord?.fasting
-                  )}
-                </td>
-              );
-            })}
-          </tr>
+          {activation.sport ? (
+            <tr>
+              <th>{t("Dashboard.SportSessions")}</th>
 
-          <tr>
-            <th>{t("Dashboard.SportSessions")}</th>
+              {currentWeek?.map((day, x) => {
+                const theRecord: comprehensiveProps | undefined =
+                  currentWeekData?.find(
+                    (dat) =>
+                      moment(dat.timestamp).format("yyyy-MM-DD") ===
+                      day.format("yyyy-MM-DD")
+                  );
 
-            {currentWeek?.map((day, x) => {
-              const theRecord: comprehensiveProps | undefined =
-                currentWeekData?.find(
-                  (dat) =>
-                    moment(dat.timestamp).format("yyyy-MM-DD") ===
-                    day.format("yyyy-MM-DD")
+                return (
+                  <td className="text-start align-top" key={x}>
+                    {renderEvents(
+                      day.format("YYYY-MM-DD"),
+                      renderExerciseUI(),
+                      theRecord?.sports
+                    )}
+                  </td>
                 );
+              })}
+            </tr>
+          ) : (
+            ""
+          )}
 
-              return (
-                <td className="text-start align-top" key={x}>
-                  {renderEvents(
-                    day.format("YYYY-MM-DD"),
-                    renderExerciseUI(),
-                    theRecord?.sports
-                  )}
-                </td>
-              );
-            })}
-          </tr>
+          {activation.medicine_consumption ? (
+            <tr>
+              <th>{t("Dashboard.Medicines")}</th>
 
-          <tr>
-            <th>{t("Dashboard.Medicines")}</th>
+              {currentWeek?.map((day, x) => {
+                const theRecord: comprehensiveProps | undefined =
+                  currentWeekData?.find(
+                    (dat) =>
+                      moment(dat.timestamp).format("yyyy-MM-DD") ===
+                      day.format("yyyy-MM-DD")
+                  );
 
-            {currentWeek?.map((day, x) => {
-              const theRecord: comprehensiveProps | undefined =
-                currentWeekData?.find(
-                  (dat) =>
-                    moment(dat.timestamp).format("yyyy-MM-DD") ===
-                    day.format("yyyy-MM-DD")
+                return (
+                  <td className="text-start align-top" key={x}>
+                    {renderEvents(
+                      day.format("YYYY-MM-DD"),
+                      renderMedicineUI(),
+                      theRecord?.medicines
+                    )}
+                  </td>
                 );
+              })}
+            </tr>
+          ) : (
+            ""
+          )}
 
-              return (
-                <td className="text-start align-top" key={x}>
-                  {renderEvents(
-                    day.format("YYYY-MM-DD"),
-                    renderMedicineUI(),
-                    theRecord?.medicines
-                  )}
-                </td>
-              );
-            })}
-          </tr>
+          {activation.sleep ? (
+            <tr>
+              <th>{t("Dashboard.SleepCycles")}</th>
 
-          <tr>
-            <th>{t("Dashboard.SleepCycles")}</th>
+              {currentWeek?.map((day, x) => {
+                const theRecord: comprehensiveProps | undefined =
+                  currentWeekData?.find(
+                    (dat) =>
+                      moment(dat.timestamp).format("yyyy-MM-DD") ===
+                      day.format("yyyy-MM-DD")
+                  );
 
-            {currentWeek?.map((day, x) => {
-              const theRecord: comprehensiveProps | undefined =
-                currentWeekData?.find(
-                  (dat) =>
-                    moment(dat.timestamp).format("yyyy-MM-DD") ===
-                    day.format("yyyy-MM-DD")
+                return (
+                  <td className="text-start align-top" key={x}>
+                    {renderEvents(
+                      day.format("YYYY-MM-DD"),
+                      renderSleepCycleUI(),
+                      theRecord?.sleeps.map(({ endTime, ...rest }) => ({
+                        ...rest,
+                        date: moment(endTime).format("yyyy-MM-DD"),
+                        endTime,
+                      }))
+                    )}
+                  </td>
                 );
-
-              return (
-                <td className="text-start align-top" key={x}>
-                  {renderEvents(
-                    day.format("YYYY-MM-DD"),
-                    renderSleepCycleUI(),
-                    theRecord?.sleeps.map(({ endTime, ...rest }) => ({
-                      ...rest,
-                      date: moment(endTime).format("yyyy-MM-DD"),
-                      endTime,
-                    }))
-                  )}
-                </td>
-              );
-            })}
-          </tr>
+              })}
+            </tr>
+          ) : (
+            ""
+          )}
         </tbody>
 
         <tfoot>
