@@ -76,6 +76,7 @@ const Watering = () => {
     {
       name: "quantity",
       label: t("Services.Diet.Watering.Quantity"),
+      afterText: t("Services.Diet.Watering.Unit"),
       type: "number",
       step: 0.1,
     },

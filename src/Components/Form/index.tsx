@@ -19,6 +19,8 @@ export interface inputProps {
   name: string;
   label: string;
   subLabel?: string;
+  beforeText?: string;
+  afterText?: string;
   required?: boolean;
   fullWidth?: boolean;
   type?: string;
@@ -30,7 +32,6 @@ export interface inputProps {
   inputs?: inputProps[];
   render?: Function;
   total?: boolean;
-  unit?: string;
 }
 
 interface props {
@@ -80,6 +81,8 @@ const Form = ({ inputs, onSubmit }: props) => {
             name,
             label,
             subLabel,
+            beforeText,
+            afterText,
             type,
             options,
             inputs,
@@ -87,7 +90,6 @@ const Form = ({ inputs, onSubmit }: props) => {
             defaultValue,
             onChange,
             fullWidth,
-            unit,
             ...rest
           },
           i
@@ -99,6 +101,10 @@ const Form = ({ inputs, onSubmit }: props) => {
             </label>
 
             <div className="input-group mb-3">
+              {beforeText && (
+                <span className="input-group-text">{beforeText}</span>
+              )}
+
               {type === "select" ? (
                 <select
                   name={name}
@@ -275,10 +281,9 @@ const Form = ({ inputs, onSubmit }: props) => {
                   {...rest}
                 />
               )}
-              {unit && (
-                <div className="input-group-append">
-                  <span className="input-group-text">{unit}</span>
-                </div>
+
+              {afterText && (
+                <span className="input-group-text">{afterText}</span>
               )}
             </div>
 

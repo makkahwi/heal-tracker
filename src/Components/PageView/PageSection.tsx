@@ -3,7 +3,7 @@ const PageSection = ({ children = <></>, title = "", desc = "" }) => {
     <section className="my-5">
       <h3 className="mb-3 text-start">{title}</h3>
 
-      <h6 className="mb-5 text-start">{desc}</h6>
+      <h6 className="mb-5 text-start lh-lg">{desc}</h6>
 
       {children}
     </section>

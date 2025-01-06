@@ -246,9 +246,10 @@
           "Inputs1": "Quantity in cups",
           "Inputs2": "Date & time of consumption"
         },
-        "Quantity": "Quantity 'In Cup(s)'",
+        "Quantity": "Quantity",
         "Time": "Time",
         "Title": "Hydration Logging",
+        "Unit": "Cup(s)",
         "Watering": "Watering"
       }
     },
@@ -470,7 +471,7 @@
     "Profile": {
       "CM": "CM",
       "DOB": "DOB",
-      "Desc": "This is to insert your profile bio-data.",
+      "Desc": "This is to manage your profile bio-data.",
       "Email": "Email",
       "EmailCantBeChanged": "Email Can't Be Changed",
       "Gender": {

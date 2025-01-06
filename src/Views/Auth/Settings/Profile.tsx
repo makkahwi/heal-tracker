@@ -64,6 +64,7 @@ const Profile = () => {
     {
       name: "height",
       label: t("Settings.Profile.Height"),
+      afterText: t("Settings.Profile.CM"),
       type: "number",
       step: 0.1,
       defaultValue: data.height,
