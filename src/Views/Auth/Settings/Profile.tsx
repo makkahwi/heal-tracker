@@ -83,7 +83,7 @@ const Profile = () => {
     {
       name: "email",
       label: t("Settings.Profile.Email"),
-      subtitle: t("Settings.Profile.EmailCantBeChanged"),
+      subLabel: t("Settings.Profile.EmailCantBeChanged"),
       disabled: true,
       defaultValue: user.email,
       required: true,

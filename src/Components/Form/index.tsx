@@ -98,12 +98,6 @@ const Form = ({ inputs, onSubmit }: props) => {
               {required ? <span className="ms-1 text-danger"> *</span> : ""}
             </label>
 
-            {subLabel && (
-              <div className="text-justify mt-1 mb-3 text-muted">
-                <small>{subLabel}</small>
-              </div>
-            )}
-
             <div className="input-group mb-3">
               {type === "select" ? (
                 <select
@@ -287,6 +281,12 @@ const Form = ({ inputs, onSubmit }: props) => {
                 </div>
               )}
             </div>
+
+            {subLabel && (
+              <div className="text-justify mt-1 mb-3 text-muted">
+                <small>{subLabel}</small>
+              </div>
+            )}
           </div>
         )
       )}
