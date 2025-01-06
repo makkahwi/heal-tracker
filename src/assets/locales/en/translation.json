@@ -125,14 +125,14 @@
       "Content": "If you encounter any issues, have questions, or want to suggest improvements, feel free to...",
       "Title": "Technical Support"
     },
-    "Welcome": "Welcome to Health Empowerment and Lifestyle (HEAL)",
+    "Welcome": "Welcome to Healthy Eating And Lifestyle Tracker (HEAL)",
     "WhatIs": {
-      "Content": "Health Empowerment and Lifestyle (HEAL) is a comprehensive web app designed to help individuals track their health-related activities and stay consistent with their wellness goals. From daily routines like diet and hydration to broader metrics like sleep and weight tracking, HEAL makes it simple to log, monitor, and analyze your progress.",
+      "Content": "Healthy Eating And Lifestyle Tracker (HEAL) is a comprehensive web app designed to help individuals track their health-related activities and stay consistent with their wellness goals. From daily routines like diet and hydration to broader metrics like sleep and weight tracking, HEAL makes it simple to log, monitor, and analyze your progress.",
       "Title": "What is HEAL"
     }
   },
   "Layout": {
-    "AppFullName": "HEAL | Health Empowerment and Lifestyle",
+    "AppFullName": "HEAL | Healthy Eating And Lifestyle Tracker",
     "Called": "Call",
     "Created": "Creation",
     "Deleted": "Deletion",
@@ -260,7 +260,7 @@
       "Bilirubin": "Bilirubin",
       "Calcium": "Calcium",
       "Chloride": "Chloride",
-      "CholesterolHdl": "Cholesterol HEAL",
+      "CholesterolHdl": "Cholesterol HDL",
       "CholesterolLdl": "Cholesterol LDL",
       "CholesterolTotal": "Cholesterol Total",
       "CorrectedCalcium": "Corrected Calcium",

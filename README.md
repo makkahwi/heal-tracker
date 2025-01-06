@@ -1,12 +1,12 @@
-# Health Empowerment and Lifestyle (HEAL)
+# Healthy Eating And Lifestyle Tracker (HEAL)
 
 ![Logo](public/Logo.png)
 
-Welcome to [**Health Empowerment and Lifestyle (HEAL)**](https://health-empowerment-lifestyle.vercel.app/), your all-in-one platform for tracking and improving your health. Whether you're managing your daily wellness activities or looking for insights into your long-term progress, HEAL is your trusted companion. This open-source project invites contributions from the community to expand its features and impact.
+Welcome to [**Healthy Eating And Lifestyle Tracker (HEAL)**](https://heal-tracker.vercel.app/), your all-in-one platform for tracking and improving your health. Whether you're managing your daily wellness activities or looking for insights into your long-term progress, HEAL is your trusted companion. This open-source project invites contributions from the community to expand its features and impact.
 
-## What is Health Empowerment and Lifestyle?
+## What is Healthy Eating And Lifestyle Tracker?
 
-**Health Empowerment and Lifestyle (HEAL)** is a comprehensive web app designed to help individuals track their health-related activities and stay consistent with their wellness goals. From daily routines like diet and hydration to broader metrics like sleep and weight tracking, HEAL makes it simple to log, monitor, and analyze your progress.
+**Healthy Eating And Lifestyle Tracker (HEAL)** is a comprehensive web app designed to help individuals track their health-related activities and stay consistent with their wellness goals. From daily routines like diet and hydration to broader metrics like sleep and weight tracking, HEAL makes it simple to log, monitor, and analyze your progress.
 
 **The best part?** HEAL is completely open-source, making it customizable and community-driven.
 
@@ -95,7 +95,7 @@ Welcome to [**Health Empowerment and Lifestyle (HEAL)**](https://health-empowerm
 
 ## How to Start Using
 
-Health Empowerment and Lifestyle is already deployed, so you can simply sign up and start using it today! [Visit Health Empowerment and Lifestyle](https://health-empowerment-lifestyle.vercel.app/)
+Healthy Eating And Lifestyle Tracker is already deployed, so you can simply sign up and start using it today! [Visit Healthy Eating And Lifestyle Tracker](https://heal-tracker.vercel.app/)
 
 ## [Developer Notes](./documentation/DeveloperNotes.md)
 
@@ -103,15 +103,15 @@ Health Empowerment and Lifestyle is already deployed, so you can simply sign up 
 
 If you encounter any issues, have questions, or want to suggest improvements, feel free to:
 
-1. Open an issue on the [GitHub repository](https://github.com/makkahwi/health-empowerment-and-lifestyle/issues).
+1. Open an issue on the [GitHub repository](https://github.com/makkahwi/heal-tracker/issues).
 2. Reach out to the project maintainer via the contact information provided in the repository.
 3. Join the discussions on the repository to collaborate with other contributors.
 
-We appreciate your feedback and contributions to make the "Health Empowerment and Lifestyle" better for everyone!
+We appreciate your feedback and contributions to make the "Healthy Eating And Lifestyle Tracker" better for everyone!
 
 ## ⭐ Support the Project ⭐
 
-Your support is vital to making **Health Empowerment and Lifestyle** even better! Here’s how you can contribute and help spread the word:
+Your support is vital to making **Healthy Eating And Lifestyle Tracker** even better! Here’s how you can contribute and help spread the word:
 
 ### 🌟 As a Developer
 
@@ -121,26 +121,26 @@ Dive into the codebase, identify bugs, or build new features. Check out our [Dev
 
 Starring our repository is a quick and easy way to show your support and help others discover this project.
 
-👉 **[Click here to star the repo](https://github.com/makkahwi/health-empowerment-and-lifestyle/stargazers)** 👈
+👉 **[Click here to star the repo](https://github.com/makkahwi/heal-tracker/stargazers)** 👈
 
-[![GitHub stars](https://img.shields.io/github/stars/makkahwi/health-empowerment-and-lifestyle?style=social)](https://github.com/makkahwi/health-empowerment-and-lifestyle/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/makkahwi/heal-tracker?style=social)](https://github.com/makkahwi/heal-tracker/stargazers)
 
 ### ❤️ GitHub Sponsors
 
-Your financial support can accelerate the development of **Health Empowerment and Lifestyle** by covering costs like hosting, integrations, and feature enhancements.
+Your financial support can accelerate the development of **Healthy Eating And Lifestyle Tracker** by covering costs like hosting, integrations, and feature enhancements.
 
 👉 **[Become a Sponsor](https://github.com/sponsors/makkahwi)** 👈
 
 ### 📣 Spread the Word
 
-Help us reach more users and contributors by sharing the **Health Empowerment and Lifestyle** app with your network!
+Help us reach more users and contributors by sharing the **Healthy Eating And Lifestyle Tracker** app with your network!
 
 Click below to share on your favorite platform:
 
-- **[Share on Twitter (X)](https://twitter.com/intent/tweet?text=Check+out+this+open-source+project+to+track+your+health+journey!+Health+Empowerment+and+Lifestyle+is+a+React.js+and+Firebase-based+app+that+lets+you+monitor+diet%2C+hydration%2C+exercise%2C+sleep%2C+and+more.+%23OpenSource+%23HealthTracking&url=https://github.com/makkahwi/health-empowerment-and-lifestyle/)**
-- **[Share on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://github.com/makkahwi/health-empowerment-and-lifestyle/&title=Check+out+Health+Empowerment+and+Lifestyle!&summary=An+open-source+project+to+track+and+improve+your+health+journey.+Monitor+diet%2C+hydration%2C+exercise%2C+sleep%2C+and+more+with+this+React.js+and+Firebase-based+app.&source=)**
-- **[Share on Facebook](https://www.facebook.com/sharer/sharer.php?u=https://github.com/makkahwi/health-empowerment-and-lifestyle/)**
-- **[Share on Reddit](https://www.reddit.com/submit?url=https://github.com/makkahwi/health-empowerment-and-lifestyle/&title=Check+out+Health+Empowerment+and+Lifestyle%21)**
+- **[Share on Twitter (X)](https://twitter.com/intent/tweet?text=Check+out+this+open-source+project+to+track+your+health+journey!+Healthy+Eating+And+Lifestyle+Tracker+HEAL+is+a+React.js+and+Firebase-based+app+that+lets+you+monitor+diet%2C+hydration%2C+exercise%2C+sleep%2C+and+more.+%23OpenSource+%23HealthTracking&url=https://github.com/makkahwi/heal-tracker/)**
+- **[Share on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://github.com/makkahwi/heal-tracker/&title=Check+out+Healthy+Eating+And+Lifestyle+Tracker+HEAL!&summary=An+open-source+project+to+track+and+improve+your+health+journey.+Monitor+diet%2C+hydration%2C+exercise%2C+sleep%2C+and+more+with+this+React.js+and+Firebase-based+app.&source=)**
+- **[Share on Facebook](https://www.facebook.com/sharer/sharer.php?u=https://github.com/makkahwi/heal-tracker/)**
+- **[Share on Reddit](https://www.reddit.com/submit?url=https://github.com/makkahwi/heal-tracker/&title=Check+out+Healthy+Eating+And+Lifestyle+Tracker+HEAL%21)**
 
 ## License
 
@@ -165,4 +165,4 @@ This is **Suhaib Ahmad**, a software developer passionate about leveraging techn
 
 If you have any questions about the project, feel free to reach out the developer.
 
-Thank you for your interest in "Health Empowerment and Lifestyle"! Together, we can make it the go-to solution for healthy-lifestyle enthusiasts worldwide.
+Thank you for your interest in "Healthy Eating And Lifestyle Tracker"! Together, we can make it the go-to solution for healthy lifestyle enthusiasts worldwide.
