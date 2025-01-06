@@ -47,6 +47,21 @@ Please ensure your code adheres to the project's guidelines and is well-document
 6. Open your browser and navigate to the development server URL (usually `http://localhost:3000`) to view the application.
 7. Make changes to the code as needed, and watch for live updates.
 
+## How To Add a New Service
+
+- Build service UI component with all configs like...
+  - API integration.
+  - Localization.
+  - Add service data to weekly summary -if applicable-.
+- Add service to 'routes' constant @ App.tsx
+- Add service info to landing page features list.
+- Add service info to manual.
+- Add service shortcuts to dashboard -if applicable-.
+- Add service activation control option @ settings, and apply it to...
+  - Routes
+  - Shortcuts
+  - Weekly summary
+
 ## How to Report an Issue
 
 We welcome contributions and feedback! To report a bug, suggest a feature, or request support:
