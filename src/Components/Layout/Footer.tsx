@@ -17,6 +17,12 @@ const Footer = () => {
       key: "linkedin",
     },
     {
+      icon: "fab fa-github",
+      link: "https://github.com/makkahwi",
+      tooltip: "Makkahwi @ Github",
+      key: "github",
+    },
+    {
       icon: "fab fa-facebook",
       link: "https://facebook.com/makkahwi",
       tooltip: "Makkahwi @ Facebook",
@@ -33,12 +39,6 @@ const Footer = () => {
       link: "https://wasap.my/962788424973",
       tooltip: "+962788424973 @ Whatsapp",
       key: "whatsapp",
-    },
-    {
-      icon: "fab fa-telegram",
-      link: "https://t.me/makkahwi",
-      tooltip: "+962788424973 @ Telegram",
-      key: "telegram",
     },
     {
       icon: "fas fa-envelope",

@@ -137,10 +137,13 @@ Help us reach more users and contributors by sharing the **Healthy Eating And Li
 
 Click below to share on your favorite platform:
 
-- **[Share on Twitter (X)](https://twitter.com/intent/tweet?text=Check+out+this+open-source+project+to+track+your+health+journey!+Healthy+Eating+And+Lifestyle+Tracker+HEAL+is+a+React.js+and+Firebase-based+app+that+lets+you+monitor+diet%2C+hydration%2C+exercise%2C+sleep%2C+and+more.+%23OpenSource+%23HealthTracking&url=https://github.com/makkahwi/heal-tracker/)**
-- **[Share on LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://github.com/makkahwi/heal-tracker/&title=Check+out+Healthy+Eating+And+Lifestyle+Tracker+HEAL!&summary=An+open-source+project+to+track+and+improve+your+health+journey.+Monitor+diet%2C+hydration%2C+exercise%2C+sleep%2C+and+more+with+this+React.js+and+Firebase-based+app.&source=)**
-- **[Share on Facebook](https://www.facebook.com/sharer/sharer.php?u=https://github.com/makkahwi/heal-tracker/)**
-- **[Share on Reddit](https://www.reddit.com/submit?url=https://github.com/makkahwi/heal-tracker/&title=Check+out+Healthy+Eating+And+Lifestyle+Tracker+HEAL%21)**
+- **[Share on Facebook](https://www.facebook.com/sharer/sharer.php?u=https://heal-tracker.vercel.app/&quote=Track%20your%20health%20journey%20effortlessly%20with%20HEAL%20-%20Healthy%20Eating%20And%20Life%20Tracker.%20Start%20today!)**
+
+- **[Share on X (Twitter)](https://twitter.com/intent/tweet?url=https://heal-tracker.vercel.app/&text=Discover%20HEAL%20-%20Healthy%20Eating%20And%20Life%20Tracker.%20Track%20your%20meals,%20hydration,%20fitness,%20and%20more%20for%20a%20healthier%20lifestyle.%20Start%20today!%20%23Health%20%23Fitness)**
+
+- **[Share on LinkedIn](https://www.linkedin.com/sharing/share-offsite/?url=https://heal-tracker.vercel.app/&summary=HEAL%20-%20Healthy%20Eating%20And%20Life%20Tracker%20is%20your%20ultimate%20health%20companion.%20Track%20meals,%20hydration,%20fitness,%20and%20sleep%20effortlessly.%20Start%20your%20journey%20now!)**
+
+- **[Share on WhatsApp](https://api.whatsapp.com/send?text=Check%20out%20HEAL%20-%20Healthy%20Eating%20And%20Life%20Tracker!%20Track%20your%20meals,%20hydration,%20fitness,%20and%20sleep%20effortlessly.%20Start%20here:%20https://heal-tracker.vercel.app/)**
 
 ## License
 
