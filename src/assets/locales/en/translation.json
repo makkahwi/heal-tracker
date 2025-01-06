@@ -416,8 +416,8 @@
       "Measure": "Measure (Walked Distance, Swimming Time, ...etc)",
       "Notes": "Notes",
       "SportNote": "Sport Note",
-      "SportType": "Sport Type",
       "SportSessions": "Sport Sessions",
+      "SportType": "Sport Type",
       "StartTime": "Start Time",
       "Swimming": "Swimming",
       "Title": "Exercise Tracking",
@@ -452,14 +452,14 @@
       "TargetsDesc": "To input the targeted values of weight readings, but in a range of minimum & maximum.",
       "Title": "Weight Tracking",
       "WaistFat": "Waist Fat",
-      "WaistFatReading": "Waist Fat Reading",
       "WaistFatMaxTarget": "Waist Fat Max Target",
       "WaistFatMinTarget": "Waist Fat Min Target",
+      "WaistFatReading": "Waist Fat Reading",
       "Water": "Water",
-      "WaterVolume": "Water Volume",
       "WaterMaxTarget": "Water Max Target",
       "WaterMinTarget": "Water Min Target",
       "WaterReading": "Water Reading",
+      "WaterVolume": "Water Volume",
       "Weight": "Weight",
       "WeightMaxTarget": "Weight Max Target",
       "WeightMinTarget": "Weight Min Target",
@@ -467,6 +467,22 @@
     }
   },
   "Settings": {
+    "Profile": {
+      "CM": "CM",
+      "DOB": "DOB",
+      "Desc": "This is to insert your profile bio-data.",
+      "Email": "Email",
+      "EmailCantBeChanged": "Email Can't Be Changed",
+      "Gender": {
+        "Female": "Female",
+        "Male": "Male",
+        "Title": "Gender"
+      },
+      "Height": "Height",
+      "Name": "Name",
+      "Phone": "Phone",
+      "Title": "Profile"
+    },
     "ServicesActivation": {
       "Desc": "You have the flexibility to choose which services you want to use. Enabling or disabling a service will not result in any data loss; it will simply hide or reveal the service in your account's user interface.",
       "Title": "Services Activation"

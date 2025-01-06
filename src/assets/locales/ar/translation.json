@@ -416,8 +416,8 @@
       "Measure": "القياس (المسافات المقطوعة، وقت السباحة، إلخ)",
       "Notes": "الملاحظات",
       "SportNote": "ملاحظات الرياضة",
-      "SportType": "نوع الرياضة",
       "SportSessions": "جلسات الرياضة",
+      "SportType": "نوع الرياضة",
       "StartTime": "وقت البدء",
       "Swimming": "السباحة",
       "Title": "تتبع التمارين",
@@ -452,14 +452,14 @@
       "TargetsDesc": "لإدخال القيم المستهدفة لقراءة الوزن، على شكل نطاق من حد أدنى وحد أقصى.",
       "Title": "تتبع الوزن",
       "WaistFat": "دهون الخصر",
-      "WaistFatReading": "قراءة دهون الخصر",
       "WaistFatMaxTarget": "هدف أقصى لدهون الخصر",
       "WaistFatMinTarget": "هدف أدنى لدهون الخصر",
+      "WaistFatReading": "قراءة دهون الخصر",
       "Water": "الماء",
-      "WaterVolume": "حجم الماء",
       "WaterMaxTarget": "هدف أقصى للماء",
       "WaterMinTarget": "هدف أدنى للماء",
       "WaterReading": "قراءة الماء",
+      "WaterVolume": "حجم الماء",
       "Weight": "الوزن",
       "WeightMaxTarget": "هدف أقصى للوزن",
       "WeightMinTarget": "هدف أدنى للوزن",
@@ -467,6 +467,22 @@
     }
   },
   "Settings": {
+    "Profile": {
+      "CM": "CM",
+      "DOB": "DOB",
+      "Desc": "This is to insert your profile bio-data.",
+      "Email": "Email",
+      "EmailCantBeChanged": "Email Can't Be Changed",
+      "Gender": {
+        "Female": "Female",
+        "Male": "Male",
+        "Title": "Gender"
+      },
+      "Height": "Height",
+      "Name": "Name",
+      "Phone": "Phone",
+      "Title": "Profile"
+    },
     "ServicesActivation": {
       "Desc": "لديك الحرية في اختيار الخدمات التي ترغب في استخدامها. تفعيل أو تعطيل أي خدمة لن يؤدي إلى فقدان البيانات؛ بل سيؤدي فقط إلى إخفاء أو إظهار الخدمة في واجهة المستخدم لحسابك.",
       "Title": "تفعيل الخدمات"
