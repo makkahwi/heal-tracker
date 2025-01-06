@@ -60,7 +60,7 @@ Please ensure your code adheres to the project's guidelines and is well-document
 - Add service activation control option @ settings, and apply it to...
   - Routes
   - Shortcuts
-  - Weekly summary
+  - Weekly summary API call & data view
 
 ## How to Report an Issue
 
