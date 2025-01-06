@@ -1,5 +1,5 @@
 import { Fragment } from "react/jsx-runtime";
-import ShortCuts from "../ShortCuts";
+import ShortCuts from "./ShortCuts";
 
 const Dashboard = () => {
   return (

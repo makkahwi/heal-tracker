@@ -3,14 +3,14 @@ import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-import * as BeAPI from "../../API";
-import PageSection from "../../Components/PageView/PageSection";
-import { RootState } from "../../Store/store";
-import { fastingProps } from "./Diet/Fasting";
-import { wateringProps } from "./Diet/Watering";
-import { medicineProps } from "./Medicine/Consumption";
-import { medicineScheduleProps } from "./Medicine/Schedule";
-import { reliefProps } from "./Relief";
+import * as BeAPI from "../../../API";
+import PageSection from "../../../Components/PageView/PageSection";
+import { RootState } from "../../../Store/store";
+import { fastingProps } from "../Diet/Fasting";
+import { wateringProps } from "../Diet/Watering";
+import { medicineProps } from "../Medicine/Consumption";
+import { medicineScheduleProps } from "../Medicine/Schedule";
+import { reliefProps } from "../Relief";
 
 const ShortCuts = () => {
   const { t } = useTranslation();
