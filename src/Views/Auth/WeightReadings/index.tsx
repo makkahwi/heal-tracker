@@ -5,10 +5,12 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
 import TabsView from "../../../Components/Layout/TabsView";
 import PageSection from "../../../Components/PageView/PageSection";
+import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
 
 interface weightReadingTargetProps {
@@ -444,7 +446,6 @@ const WeightReadings = () => {
   };
 
   useEffect(() => {
-    // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
     getData();
   }, []);
 
@@ -460,7 +461,7 @@ const WeightReadings = () => {
       label: t("Services.WeightReadings.WaterReading"),
       type: "number",
       step: "0.1",
-      unit: t("Common.Labels.Litre"),
+      afterText: t("Common.Labels.Litre"),
       required: true,
     },
     {
@@ -468,7 +469,7 @@ const WeightReadings = () => {
       label: t("Services.WeightReadings.FatWeight"),
       type: "number",
       step: "0.1",
-      unit: t("Common.Labels.KG"),
+      afterText: t("Common.Labels.KG"),
       required: true,
     },
     {
@@ -476,7 +477,7 @@ const WeightReadings = () => {
       label: t("Services.WeightReadings.Weight"),
       type: "number",
       step: "0.1",
-      unit: t("Common.Labels.KG"),
+      afterText: t("Common.Labels.KG"),
       required: true,
     },
     {
@@ -484,12 +485,12 @@ const WeightReadings = () => {
       label: t("Services.WeightReadings.MusclesReading"),
       type: "number",
       step: "0.1",
-      unit: t("Common.Labels.KG"),
+      afterText: t("Common.Labels.KG"),
       required: true,
     },
     {
       name: "waist",
-      label: t("Services.WeightReadings.WaistFat Reading"),
+      label: t("Services.WeightReadings.WaistFatReading"),
       type: "number",
       step: "0.1",
       required: true,
@@ -502,7 +503,7 @@ const WeightReadings = () => {
       label: t("Services.WeightReadings.WaterMinTarget"),
       type: "number",
       step: "0.1",
-      unit: t("Common.Labels.Litre"),
+      afterText: t("Common.Labels.Litre"),
       defaultValue: targetsData?.waterMin,
       required: true,
     },
@@ -511,7 +512,7 @@ const WeightReadings = () => {
       label: t("Services.WeightReadings.WaterMaxTarget"),
       type: "number",
       step: "0.1",
-      unit: t("Common.Labels.Litre"),
+      afterText: t("Common.Labels.Litre"),
       defaultValue: targetsData?.waterMax,
       required: true,
     },
@@ -520,7 +521,7 @@ const WeightReadings = () => {
       label: t("Services.WeightReadings.FatWeightMinTarget"),
       type: "number",
       step: "0.1",
-      unit: t("Common.Labels.KG"),
+      afterText: t("Common.Labels.KG"),
       defaultValue: targetsData?.fatMin,
       required: true,
     },
@@ -529,7 +530,7 @@ const WeightReadings = () => {
       label: t("Services.WeightReadings.FatWeightMaxTarget"),
       type: "number",
       step: "0.1",
-      unit: t("Common.Labels.KG"),
+      afterText: t("Common.Labels.KG"),
       defaultValue: targetsData?.fatMax,
       required: true,
     },
@@ -538,7 +539,7 @@ const WeightReadings = () => {
       label: t("Services.WeightReadings.WeightMinTarget"),
       type: "number",
       step: "0.1",
-      unit: t("Common.Labels.KG"),
+      afterText: t("Common.Labels.KG"),
       defaultValue: targetsData?.weightMin,
       required: true,
     },
@@ -547,7 +548,7 @@ const WeightReadings = () => {
       label: t("Services.WeightReadings.WeightMaxTarget"),
       type: "number",
       step: "0.1",
-      unit: t("Common.Labels.KG"),
+      afterText: t("Common.Labels.KG"),
       defaultValue: targetsData?.weightMax,
       required: true,
     },
@@ -556,7 +557,7 @@ const WeightReadings = () => {
       label: t("Services.WeightReadings.MusclesMinTarget"),
       type: "number",
       step: "0.1",
-      unit: t("Common.Labels.KG"),
+      afterText: t("Common.Labels.KG"),
       defaultValue: targetsData?.musclesMin,
       required: true,
     },
@@ -565,7 +566,7 @@ const WeightReadings = () => {
       label: t("Services.WeightReadings.MusclesMaxTarget"),
       type: "number",
       step: "0.1",
-      unit: t("Common.Labels.KG"),
+      afterText: t("Common.Labels.KG"),
       defaultValue: targetsData?.musclesMax,
       required: true,
     },
@@ -611,7 +612,7 @@ const WeightReadings = () => {
       .catch((err) => console.log({ err }));
 
   const views = [
-    // { title: "Analysis", view: <WeightReadingCharts data={data} /> },
+    { title: "Analysis", view: <WeightReadingCharts data={data} /> },
     {
       title: t("Services.WeightReadings.Input"),
       view: <Form inputs={formInputs} onSubmit={onSubmit} />,
@@ -623,7 +624,10 @@ const WeightReadings = () => {
   ];
 
   return (
-    <PageSection title={t("Services.WeightReadings.WeightReadings")}>
+    <PageSection
+      title={t("Services.WeightReadings.WeightReadings")}
+      desc={t("Services.WeightReadings.Desc.Page")}
+    >
       <Fragment>
         <h4 className="my-3">
           {t("Services.WeightReadings.NumberOfWeightReading")}: {data.length}

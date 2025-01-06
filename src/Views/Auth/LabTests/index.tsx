@@ -21,7 +21,6 @@ const LabTests = () => {
       .catch((err) => console.log({ err }));
 
   useEffect(() => {
-    // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
     getData();
   }, []);
 
@@ -42,14 +41,14 @@ const LabTests = () => {
     },
     {
       name: "sgot",
-      label: t("Services.LabTests.SGOT (AST)"),
+      label: t("Services.LabTests.SGOT"),
       type: "number",
       step: "0.01",
       highEnd: 50,
     },
     {
       name: "sgpt",
-      label: t("Services.LabTests.SGPT (ALT)"),
+      label: t("Services.LabTests.SGPT"),
       type: "number",
       step: "0.01",
       highEnd: 50,
@@ -468,6 +467,7 @@ const LabTests = () => {
   return (
     <PageView
       title={t("Services.LabTests.LabTestsList")}
+      desc={t("Services.LabTests.Desc.Page")}
       data={data}
       inputs={formInputs}
       onSubmit={onSubmit}

@@ -48,7 +48,16 @@ const PageTable = ({ data, inputs, onDelete }: props) => {
               <tr className="align-middle" key={i}>
                 {inputs.map(
                   (
-                    { name, render, lowEnd, highEnd, type, unit, options },
+                    {
+                      name,
+                      render,
+                      lowEnd,
+                      highEnd,
+                      type,
+                      beforeText,
+                      afterText,
+                      options,
+                    },
                     x
                   ) => (
                     <td
@@ -80,7 +89,9 @@ const PageTable = ({ data, inputs, onDelete }: props) => {
                         ? options?.find(
                             ({ value }) => value === (row as any)[name]
                           )?.label || (row as any)[name]
-                        : (row as any)[name] + (unit ? " " + unit : "")}
+                        : (beforeText ? " " + beforeText : "") +
+                          (row as any)[name] +
+                          (afterText ? " " + afterText : "")}
 
                       {(lowEnd || highEnd) && (row as any)[name] ? (
                         <FontAwesomeIcon
@@ -152,7 +163,16 @@ const PageTable = ({ data, inputs, onDelete }: props) => {
                   )
                   .map(
                     (
-                      { label, name, render, lowEnd, highEnd, type, unit },
+                      {
+                        label,
+                        name,
+                        render,
+                        lowEnd,
+                        highEnd,
+                        type,
+                        beforeText,
+                        afterText,
+                      },
                       x
                     ) => (
                       <tr className="align-middle" key={x}>
@@ -190,7 +210,9 @@ const PageTable = ({ data, inputs, onDelete }: props) => {
                             ? dayDateFormat((row as any)[name])
                             : type === "time"
                             ? timeFormat((row as any)[name])
-                            : (row as any)[name] + (unit ? " " + unit : "")}
+                            : (beforeText ? " " + beforeText : "") +
+                              (row as any)[name] +
+                              (afterText ? " " + afterText : "")}
 
                           {(lowEnd || highEnd) && (row as any)[name] ? (
                             <FontAwesomeIcon

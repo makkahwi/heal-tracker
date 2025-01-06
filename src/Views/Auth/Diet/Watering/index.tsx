@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+
 import * as BeAPI from "../../../../API";
 import Form from "../../../../Components/Form";
 import MonthlyCalendar from "../../../../Components/PageView/MonthlyCalendar";
@@ -62,7 +63,6 @@ const Watering = () => {
       .catch((err) => console.log({ err }));
 
   useEffect(() => {
-    // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
     getData();
   }, []);
 
@@ -76,6 +76,7 @@ const Watering = () => {
     {
       name: "quantity",
       label: t("Services.Diet.Watering.Quantity"),
+      afterText: t("Services.Diet.Watering.Unit"),
       type: "number",
       step: 0.1,
     },
@@ -97,7 +98,10 @@ const Watering = () => {
       .catch((err: any) => console.log({ err }));
 
   return (
-    <PageSection title={t("Services.Diet.Watering.Watering")}>
+    <PageSection
+      title={t("Services.Diet.Watering.Watering")}
+      desc={t("Services.Diet.Watering.Desc.Page")}
+    >
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 

@@ -84,7 +84,6 @@ const WalkExercises = () => {
   };
 
   useEffect(() => {
-    // scheduleAPI.getAll().then((res: MealViewProps[][]) => setData(res));
     getData();
   }, []);
 
@@ -97,7 +96,7 @@ const WalkExercises = () => {
     },
     {
       name: "type",
-      label: t("Services.Sports.Sport Type"),
+      label: t("Services.Sports.SportType"),
       type: "select",
       options: [
         {
@@ -130,7 +129,7 @@ const WalkExercises = () => {
     },
     {
       name: "measure",
-      label: t("Services.Sports.Measure (Walked Distance, Swimming Time, etc)"),
+      label: t("Services.Sports.Measure"),
       type: "text",
       defaultValue: sportNote.value,
       step: "0.1",
@@ -175,13 +174,16 @@ const WalkExercises = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title={t("Services.Sports.SportSessions")}>
+    <PageSection
+      title={t("Services.Sports.SportSessions")}
+      desc={t("Services.Sports.Desc.Page")}
+    >
       <Fragment>
         <Form
           inputs={[
             {
               name: "note",
-              label: t("Services.Sports.Sport Note"),
+              label: t("Services.Sports.SportNote"),
               defaultValue: sportNote.value,
               fullWidth: true,
               required: true,

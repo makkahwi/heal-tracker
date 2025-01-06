@@ -1,4 +1,9 @@
-import { faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCheckCircle,
+  faPlus,
+  faTrash,
+  faXmarkCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { useEffect, useState } from "react";
@@ -8,12 +13,14 @@ import { RootState } from "../../Store/store";
 
 interface dynamicObject {
   [key: string]: any;
-  // | number | object | string[] | number[] | object[];
 }
 
 export interface inputProps {
   name: string;
   label: string;
+  subLabel?: string;
+  beforeText?: string;
+  afterText?: string;
   required?: boolean;
   fullWidth?: boolean;
   type?: string;
@@ -25,7 +32,6 @@ export interface inputProps {
   inputs?: inputProps[];
   render?: Function;
   total?: boolean;
-  unit?: string;
 }
 
 interface props {
@@ -50,6 +56,8 @@ const Form = ({ inputs, onSubmit }: props) => {
           ? moment().format("HH:mm")
           : type === "datetime-local"
           ? moment().format("yyyy-MM-DDTHH:mm")
+          : type === "boolean"
+          ? false
           : undefined,
       }),
       {}
@@ -72,6 +80,9 @@ const Form = ({ inputs, onSubmit }: props) => {
           {
             name,
             label,
+            subLabel,
+            beforeText,
+            afterText,
             type,
             options,
             inputs,
@@ -79,7 +90,6 @@ const Form = ({ inputs, onSubmit }: props) => {
             defaultValue,
             onChange,
             fullWidth,
-            unit,
             ...rest
           },
           i
@@ -91,6 +101,10 @@ const Form = ({ inputs, onSubmit }: props) => {
             </label>
 
             <div className="input-group mb-3">
+              {beforeText && (
+                <span className="input-group-text">{beforeText}</span>
+              )}
+
               {type === "select" ? (
                 <select
                   name={name}
@@ -115,87 +129,140 @@ const Form = ({ inputs, onSubmit }: props) => {
                     </option>
                   ))}
                 </select>
-              ) : type === "dynamicList" ? (
-                <table className="table table-bordered table-responsive">
-                  <thead>
-                    <tr>
-                      {inputs?.map((input, x) => (
-                        <th key={x}>
-                          {input.label}
-                          {input.required ? (
-                            <span className="ms-1 text-danger"> *</span>
-                          ) : (
-                            ""
-                          )}
-                        </th>
-                      ))}
-
-                      <th
-                        role="button"
-                        onClick={() =>
-                          setFormValues((current) => ({
-                            ...current,
-                            [name]: formValues[name]
-                              ? [...formValues[name], {}]
-                              : [{}],
-                          }))
-                        }
-                        className="text-success"
-                      >
-                        <FontAwesomeIcon icon={faPlus} />
-                      </th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    {formValues[name]?.map((value: dynamicObject, x = 0) => (
-                      <tr key={x}>
-                        {inputs?.map((input, y) => (
-                          <td key={y}>
-                            <input
-                              {...input}
-                              name={input.name}
-                              value={value[input.name]}
-                              onChange={(e) =>
-                                onChange
-                                  ? onChange(e, setFormValues)
-                                  : setFormValues((current) => ({
-                                      ...current,
-                                      [name]: current[name].map(
-                                        (ele = {}, z = 0) =>
-                                          z === x
-                                            ? {
-                                                ...ele,
-                                                [input.name]: e.target.value,
-                                              }
-                                            : ele
-                                      ),
-                                    }))
-                              }
-                              required={input.required}
-                              className="form-control"
-                            />
-                          </td>
-                        ))}
-
-                        <td
-                          role="button"
-                          onClick={() =>
-                            setFormValues((current) => ({
+              ) : type === "boolean" ? (
+                <div>
+                  <div className="form-check">
+                    <input
+                      name={name}
+                      className="form-check-input"
+                      checked={formValues[name]}
+                      onChange={(e) =>
+                        onChange
+                          ? onChange(e, setFormValues)
+                          : setFormValues((current) => ({
                               ...current,
-                              [name]: current[name].filter(
-                                (_ = {}, z = 0) => z !== x
-                              ),
+                              [name]: true,
                             }))
-                          }
-                          className="text-danger"
-                        >
-                          <FontAwesomeIcon icon={faTrash} />
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                      }
+                      type="radio"
+                      {...rest}
+                    />
+
+                    <label className="form-check-label text-success">
+                      <FontAwesomeIcon icon={faCheckCircle} /> Active
+                    </label>
+                  </div>
+
+                  <div className="form-check">
+                    <input
+                      name={name}
+                      className="form-check-input"
+                      checked={!formValues[name]}
+                      onChange={(e) =>
+                        onChange
+                          ? onChange(e, setFormValues)
+                          : setFormValues((current) => ({
+                              ...current,
+                              [name]: false,
+                            }))
+                      }
+                      type="radio"
+                      {...rest}
+                    />
+
+                    <label className="form-check-label text-danger">
+                      <FontAwesomeIcon icon={faXmarkCircle} /> Inactive
+                    </label>
+                  </div>
+                </div>
+              ) : type === "dynamicList" ? (
+                <div className="w-100">
+                  <div className="overflow-auto">
+                    <table className="table table-bordered table-responsive">
+                      <thead>
+                        <tr>
+                          {inputs?.map((input, x) => (
+                            <th key={x}>
+                              {input.label}
+                              {input.required ? (
+                                <span className="ms-1 text-danger"> *</span>
+                              ) : (
+                                ""
+                              )}
+                            </th>
+                          ))}
+
+                          <th
+                            role="button"
+                            onClick={() =>
+                              setFormValues((current) => ({
+                                ...current,
+                                [name]: formValues[name]
+                                  ? [...formValues[name], {}]
+                                  : [{}],
+                              }))
+                            }
+                            className="text-success"
+                          >
+                            <FontAwesomeIcon icon={faPlus} />
+                          </th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        {formValues[name]?.map(
+                          (value: dynamicObject, x = 0) => (
+                            <tr key={x}>
+                              {inputs?.map((input, y) => (
+                                <td key={y}>
+                                  <input
+                                    {...input}
+                                    name={input.name}
+                                    value={value[input.name]}
+                                    onChange={(e) =>
+                                      onChange
+                                        ? onChange(e, setFormValues)
+                                        : setFormValues((current) => ({
+                                            ...current,
+                                            [name]: current[name].map(
+                                              (ele = {}, z = 0) =>
+                                                z === x
+                                                  ? {
+                                                      ...ele,
+                                                      [input.name]:
+                                                        e.target.value,
+                                                    }
+                                                  : ele
+                                            ),
+                                          }))
+                                    }
+                                    required={input.required}
+                                    className="form-control"
+                                  />
+                                </td>
+                              ))}
+
+                              <td
+                                role="button"
+                                onClick={() =>
+                                  setFormValues((current) => ({
+                                    ...current,
+                                    [name]: current[name].filter(
+                                      (_ = {}, z = 0) => z !== x
+                                    ),
+                                  }))
+                                }
+                                className="text-danger"
+                              >
+                                <FontAwesomeIcon icon={faTrash} />
+                              </td>
+                            </tr>
+                          )
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               ) : (
                 <input
                   name={name}
@@ -214,12 +281,17 @@ const Form = ({ inputs, onSubmit }: props) => {
                   {...rest}
                 />
               )}
-              {unit && (
-                <div className="input-group-append">
-                  <span className="input-group-text">{unit}</span>
-                </div>
+
+              {afterText && (
+                <span className="input-group-text">{afterText}</span>
               )}
             </div>
+
+            {subLabel && (
+              <div className="text-justify mt-1 mb-3 text-muted">
+                <small>{subLabel}</small>
+              </div>
+            )}
           </div>
         )
       )}

@@ -4,6 +4,36 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [v1.2.0] - Feature Update and Enhancements
+
+**Release Date:** January 7, 2025
+
+### Added
+
+- **Fasting Tracking Service**: Track fasting habit and durations with dashboard integration.
+- **User Profile Service**: Add user profile bio-data management service.
+- **Services Activation Module**: Enable or disable specific services from user settings.
+
+### Enhanced
+
+- UI Updates:
+  - Improved navbar labels and descriptions.
+  - Split `Weekly Summary` from the dashboard.
+  - Resolved `diet consumption table` overflow issues.
+  - Add before & after text options for form inputs.
+- Descriptions for service pages, settings, landing page and manual.
+- Rebrand HEAL => HEAL Tracker
+
+### Fixed
+
+- Resolve minor bugs in settings, labels, and descriptions.
+- Fix missed localization keys and mapping issues.
+- Downgrade React.Js to v18.
+- Fix charts width to be responsive.
+- Fix notification response handling and services activation API.
+
+---
+
 ## [v1.1.0] - Feature Update and Enhancements
 
 **Release Date:** January 4, 2025
@@ -34,7 +64,7 @@ All notable changes to this project will be documented in this file.
 
 **Release Date:** November 19, 2024  
 **Released by:** @makkahwi
-**Commit Reference:** [4fce38b](https://github.com/health-empowerment-and-lifestyle/commit/4fce38be0e16be492e1ff33d7e042172667b7626)  
+**Commit Reference:** [4fce38b](https://github.com/makkahwi/heal-tracker/commit/4fce38be0e16be492e1ff33d7e042172667b7626)  
 **Commits to Main Since Release:** 385  
 
 ### 🎉 Introduction

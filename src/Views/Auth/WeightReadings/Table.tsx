@@ -94,7 +94,7 @@ const WeightReadingsTable = ({
                   </tr> */}
 
                 <tr className="align-middle">
-                  <th>{t("Services.WeightReadings.Water Volume")}</th>
+                  <th>{t("Services.WeightReadings.WaterVolume")}</th>
                   <td>{water}</td>
                 </tr>
 

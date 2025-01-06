@@ -1,5 +1,7 @@
 import {
+  faCalendarWeek,
   faDashboard,
+  faGear,
   faInfoCircle,
   faSignIn,
   faSignOut,
@@ -81,11 +83,29 @@ const Navbar = () => {
                     }}
                   >
                     <FontAwesomeIcon icon={faDashboard} />
-                    <span className="ms-2">{t("Layout.Dashboard")}</span>
+                    <span className="ms-2">{t("Dashboard.Dashboard")}</span>
                   </span>
                 </li>
 
-                {routes.map(({ name, path, icon, list }, i) => (
+                <li className="nav-item">
+                  <span
+                    className={`nav-link ${
+                      location.pathname === "/summary"
+                        ? "text-dark"
+                        : "text-white"
+                    }`}
+                    role="button"
+                    onClick={() => {
+                      navigate("/summary");
+                      closeNavbar();
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faCalendarWeek} />
+                    <span className="ms-2">{t("WeeklySummary.Title")}</span>
+                  </span>
+                </li>
+
+                {routes.map(({ label, path, icon, list }, i) => (
                   <li className="nav-item dropdown" key={i}>
                     {list ? (
                       <span
@@ -106,7 +126,7 @@ const Navbar = () => {
                         aria-expanded="false"
                       >
                         <FontAwesomeIcon icon={icon} />
-                        <span className="ms-2">{name}</span>
+                        <span className="ms-2">{label}</span>
                       </span>
                     ) : (
                       <span
@@ -122,7 +142,7 @@ const Navbar = () => {
                         }}
                       >
                         <FontAwesomeIcon icon={icon} />
-                        <span className="ms-2">{name}</span>
+                        <span className="ms-2">{label}</span>
                       </span>
                     )}
 
@@ -132,7 +152,7 @@ const Navbar = () => {
                         aria-labelledby={`navbarDropdown-${i}`}
                       >
                         {list.map(
-                          ({ name, path: childPath, icon }, subIndex) => (
+                          ({ label, path: childPath, icon }, subIndex) => (
                             <li key={subIndex}>
                               <span
                                 className={`dropdown-item ${
@@ -148,7 +168,7 @@ const Navbar = () => {
                                 }}
                               >
                                 <FontAwesomeIcon icon={icon} />
-                                <span className="ms-2">{name}</span>
+                                <span className="ms-2">{label}</span>
                               </span>
                             </li>
                           )
@@ -167,6 +187,26 @@ const Navbar = () => {
                 <li className="nav-item">
                   <span
                     className={`nav-link ${
+                      location.pathname === "/settings"
+                        ? "text-dark"
+                        : "text-white"
+                    }`}
+                    role="button"
+                    onClick={() => {
+                      navigate("settings");
+                      closeNavbar();
+                    }}
+                  >
+                    <FontAwesomeIcon icon={faGear} />
+                    <span className="ms-2 d-inline d-xl-none">
+                      {t("Settings.Title")}
+                    </span>
+                  </span>
+                </li>
+
+                <li className="nav-item">
+                  <span
+                    className={`nav-link ${
                       location.pathname === "/manual"
                         ? "text-dark"
                         : "text-white"
@@ -179,7 +219,7 @@ const Navbar = () => {
                   >
                     <FontAwesomeIcon icon={faInfoCircle} />
                     <span className="ms-2 d-inline d-xl-none">
-                      {t("Layout.App Manual")}
+                      {t("Manual.UserManual")}
                     </span>
                   </span>
                 </li>
@@ -195,7 +235,7 @@ const Navbar = () => {
                   >
                     <FontAwesomeIcon icon={faSignOut} />
                     <span className="ms-2 d-inline d-xl-none">
-                      {t("Layout.Sign Out")}
+                      {t("Layout.SignOut")}
                     </span>
                   </span>
                 </li>
@@ -211,7 +251,7 @@ const Navbar = () => {
                   }}
                 >
                   <FontAwesomeIcon icon={faSignIn} />
-                  <span className="ms-2">{t("Layout.SignIn/Register")}</span>
+                  <span className="ms-2">{t("Layout.SignInRegister")}</span>
                 </span>
               </li>
             )}

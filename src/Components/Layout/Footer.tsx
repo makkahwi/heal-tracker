@@ -17,6 +17,12 @@ const Footer = () => {
       key: "linkedin",
     },
     {
+      icon: "fab fa-github",
+      link: "https://github.com/makkahwi",
+      tooltip: "Makkahwi @ Github",
+      key: "github",
+    },
+    {
       icon: "fab fa-facebook",
       link: "https://facebook.com/makkahwi",
       tooltip: "Makkahwi @ Facebook",
@@ -33,12 +39,6 @@ const Footer = () => {
       link: "https://wasap.my/962788424973",
       tooltip: "+962788424973 @ Whatsapp",
       key: "whatsapp",
-    },
-    {
-      icon: "fab fa-telegram",
-      link: "https://t.me/makkahwi",
-      tooltip: "+962788424973 @ Telegram",
-      key: "telegram",
     },
     {
       icon: "fas fa-envelope",
@@ -68,14 +68,14 @@ const Footer = () => {
 
             <div className="col-xs-12 col-md-7 order-1 order-md-0">
               <div className="copyright text-center text-md-start">
-                {t("Layout.All Rights Reserved for")}{" "}
+                {t("Layout.ReservedRights")}{" "}
                 <a
                   href="https://suhaib.dev"
                   target="_blank"
                   rel="noreferrer"
                   className="text-decoration-none text-dark"
                 >
-                  {t("Layout.Suhaib Ahmad")}
+                  {t("Layout.Suhaib")}
                 </a>{" "}
                 &copy; {new Date().getFullYear()}
               </div>

@@ -3,16 +3,20 @@ import {
   faBrain,
   faBullseye,
   faCalculator,
+  faCalendarDays,
   faChartLine,
   faChartPie,
   faClock,
   faDumbbell,
+  faFlask,
   faLanguage,
   faLaptopCode,
   faMobileAlt,
   faPills,
   faShield,
+  faStarAndCrescent,
   faTint,
+  faToilet,
   faUserMd,
   faUsers,
   faUtensils,
@@ -30,34 +34,59 @@ const LandingPage = () => {
 
   const currentFeatures = [
     {
-      title: t("Landing.MealScheduling.Title"),
+      title: t("Services.Diet.Consumption.ConsumedMeals"),
+      desc: t("Services.Diet.Consumption.Desc.Landing"),
       icon: faUtensils,
-      desc: t("Landing.MealScheduling.Desc"),
     },
     {
-      title: t("Landing.HydrationLogging.Title"),
+      title: t("Services.Diet.Schedule.DietSchedules"),
+      desc: t("Services.Diet.Schedule.Desc.Landing"),
+      icon: faCalendarDays,
+    },
+    {
+      title: t("Services.Diet.Watering.Watering"),
+      desc: t("Services.Diet.Watering.Desc.Landing"),
       icon: faTint,
-      desc: t("Landing.HydrationLogging.Desc"),
     },
     {
-      title: t("Landing.ExerciseTracking.Title"),
+      title: t("Services.Diet.Fasting.Fasting"),
+      desc: t("Services.Diet.Fasting.Desc.Landing"),
+      icon: faStarAndCrescent,
+    },
+    {
+      title: t("Services.Relief.Relief"),
+      desc: t("Services.Relief.Desc.Landing"),
+      icon: faToilet,
+    },
+    {
+      title: t("Services.Sports.SportSessions"),
+      desc: t("Services.Sports.Desc.Landing"),
       icon: faDumbbell,
-      desc: t("Landing.ExerciseTracking.Desc"),
     },
     {
-      title: t("Landing.MedicationFollowUp.Title"),
-      icon: faPills,
-      desc: t("Landing.MedicationFollowUp.Desc"),
-    },
-    {
-      title: t("Landing.SleepCycleMonitoring.Title"),
+      title: t("Services.SleepCycles.SleepCycles"),
+      desc: t("Services.SleepCycles.Desc.Landing"),
       icon: faBed,
-      desc: t("Landing.SleepCycleMonitoring.Desc"),
     },
     {
-      title: t("Landing.WeightTracking.Title"),
+      title: t("Services.Medicine.ConsumedMedicines"),
+      desc: t("Services.Medicine.Consumption.Desc.Landing"),
+      icon: faPills,
+    },
+    {
+      title: t("Services.Medicine.MedicineSchedule"),
+      desc: t("Services.Medicine.Schedule.Desc.Landing"),
+      icon: faCalendarDays,
+    },
+    {
+      title: t("Services.WeightReadings.WeightReadings"),
+      desc: t("Services.WeightReadings.Desc.Landing"),
       icon: faWeight,
-      desc: t("Landing.WeightTracking.Desc"),
+    },
+    {
+      title: t("Services.LabTests.LabTestsList"),
+      desc: t("Services.LabTests.Desc.Landing"),
+      icon: faFlask,
     },
     {
       icon: faShield,
@@ -191,7 +220,7 @@ const LandingPage = () => {
         <div className="text-center mt-5">
           <a
             className="btn btn-primary btn-lg shadow-sm text-white"
-            href="https://github.com/makkahwi/health-empowerment-and-lifestyle"
+            href="https://github.com/makkahwi/heal-tracker"
             target="_blank"
             rel="noopener noreferrer"
           >

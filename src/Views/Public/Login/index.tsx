@@ -1,9 +1,12 @@
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+
+import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
 import PageSection from "../../../Components/PageView/PageSection";
 import { signIn, signUp } from "../../../Store/authSlice";
+import { updateActivation } from "../../../Store/settings";
 import { AppDispatch } from "../../../Store/store";
 
 interface props {
@@ -62,6 +65,13 @@ const Login = () => {
     dispatch(signIn({ email, password }))
       .then(() => {
         navigate("/");
+
+        BeAPI.get("settings")
+          .then((res: any) => {
+            dispatch(updateActivation(res.value));
+          })
+          .catch((err: any) => console.log({ err }));
+
         window.location.reload();
       })
       .catch((err) => console.log(err));

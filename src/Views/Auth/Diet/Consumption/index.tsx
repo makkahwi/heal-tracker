@@ -157,7 +157,7 @@ const Consumption = () => {
     },
     {
       name: "contents",
-      label: t("Services.Diet.Consumption.Meal Contents"),
+      label: t("Services.Diet.Consumption.MealContents"),
       helpTip:
         "Ensure the name matches the scheduled element exactly for accurate comparisons.",
       type: "dynamicList",
@@ -237,7 +237,10 @@ const Consumption = () => {
       .catch((err) => console.log({ err }));
 
   return (
-    <PageSection title={t("Services.Diet.Consumption.Consumed Meals")}>
+    <PageSection
+      title={t("Services.Diet.Consumption.ConsumedMeals")}
+      desc={t("Services.Diet.Consumption.Desc.Page")}
+    >
       <Fragment>
         <Form inputs={formInputs} onSubmit={onSubmit} />
 

@@ -29,7 +29,7 @@ Please ensure your code adheres to the project's guidelines and is well-document
 3. Navigate to the project root directory:
 
   ```bash
-    cd health-empowerment-and-lifestyle
+    cd heal-tracker
   ```
 
 4. Install dependencies:
@@ -47,11 +47,26 @@ Please ensure your code adheres to the project's guidelines and is well-document
 6. Open your browser and navigate to the development server URL (usually `http://localhost:3000`) to view the application.
 7. Make changes to the code as needed, and watch for live updates.
 
+## How To Add a New Service
+
+- Build service UI component with all configs like...
+  - API integration.
+  - Localization.
+  - Add service data to weekly summary -if applicable-.
+- Add service to 'routes' constant @ App.tsx
+- Add service info to landing page features list.
+- Add service info to manual.
+- Add service shortcuts to dashboard -if applicable-.
+- Add service activation control option @ settings, and apply it to...
+  - Routes
+  - Shortcuts
+  - Weekly summary API call & data view
+
 ## How to Report an Issue
 
 We welcome contributions and feedback! To report a bug, suggest a feature, or request support:
 
-1. Go to the [Issues](https://github.com/health-empowerment-and-lifestyle/issues) tab of this repository.
+1. Go to the [Issues](https://github.com/makkahwi/heal-tracker/issues) tab of this repository.
 2. Click on **New Issue**.
 3. Select the appropriate issue template:
 
@@ -65,11 +80,11 @@ We welcome contributions and feedback! To report a bug, suggest a feature, or re
 
 If you encounter any issues, have questions, or want to suggest improvements, feel free to:
 
-1. Open an issue on the [GitHub repository](https://github.com/makkahwi/health-empowerment-and-lifestyle/issues).
+1. Open an issue on the [GitHub repository](https://github.com/makkahwi/heal-tracker/issues).
 2. Reach out to the project maintainer via the contact information provided in the repository.
 3. Join the discussions on the repository to collaborate with other contributors.
 
-We appreciate your feedback and contributions to make the "Health Empowerment and Lifestyle" better for everyone!
+We appreciate your feedback and contributions to make the "Healthy Eating And Lifestyle Tracker" better for everyone!
 
 ## Meet the Developer
 
@@ -83,4 +98,4 @@ This is **Suhaib Ahmad**, a software developer passionate about leveraging techn
 
 If you have any questions about the project, feel free to reach out the developer.
 
-Thank you for your interest in "Health Empowerment and Lifestyle"! Together, we can make it the go-to solution for healthy-lifestyle enthusiasts worldwide.
+Thank you for your interest in "Healthy Eating And Lifestyle Tracker"! Together, we can make it the go-to solution for healthy lifestyle enthusiasts worldwide.
