@@ -19,29 +19,38 @@ Welcome to [**Health Empowerment and Lifestyle (HEAL)**](https://health-empowerm
 
 ## Features
 
-- **Meal Scheduling**
-  Stay on track with your nutrition plan by logging and following scheduled meals.
+- **Consumed Meals**
+  Track your daily food consumption to stay on healthy track.
 
-- **Hydration Logging**
-  Record your water intake to maintain optimal hydration levels.
+- **Diet Schedules**
+  Plan and organize your meals with detailed schedules for better dietary management.
+
+- **Water Logging**
+  Monitor your daily water intake to ensure adequate hydration.
+
+- **Fasting**
+  Track your fasting days and durations easily.
 
 - **Relief Records**
-  Document your relief exercises along the day as a health indicator.
+  Log your restroom visits for better health insights.
 
-- **Exercise Tracking**
-  Log your physical activities, including sports, workouts, and walks.
+- **Sport Sessions**
+  Track your physical activities to maintain an active lifestyle.
 
-- **Medication Follow-Up**
-  Never miss a dose by keeping track of your medications and supplements.
+- **Sleep Cycles**
+  Monitor your sleep patterns to ensure sufficient rest.
 
-- **Sleep Cycle Monitoring**
-  Monitor and improve your sleep patterns for better rest and recovery.
+- **Consumed Medicines**
+  Track all your medication intake smoothly.
 
-- **Fasting Tracker**
-  Track your fasting days and length of fasting in hours.
+- **Medicine Schedule**
+  Plan your medication schedule for better adherence.
 
-- **Weight Tracking**
-  Log and monitor your weight, with support for inBody scale or any detailed-reading providers.
+- **Weight Readings**
+  Log detailed weight measurements to track progress.
+
+- **Lab Tests**
+  Store and track your lab test results for easy reference.
 
 - **Secured Access**
   User-only access for own data view & manipulation with Firebase authentication.
