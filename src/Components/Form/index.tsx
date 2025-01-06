@@ -176,87 +176,92 @@ const Form = ({ inputs, onSubmit }: props) => {
                   </div>
                 </div>
               ) : type === "dynamicList" ? (
-                <div className="overflow-auto">
-                  <table className="table table-bordered table-responsive">
-                    <thead>
-                      <tr>
-                        {inputs?.map((input, x) => (
-                          <th key={x}>
-                            {input.label}
-                            {input.required ? (
-                              <span className="ms-1 text-danger"> *</span>
-                            ) : (
-                              ""
-                            )}
-                          </th>
-                        ))}
-
-                        <th
-                          role="button"
-                          onClick={() =>
-                            setFormValues((current) => ({
-                              ...current,
-                              [name]: formValues[name]
-                                ? [...formValues[name], {}]
-                                : [{}],
-                            }))
-                          }
-                          className="text-success"
-                        >
-                          <FontAwesomeIcon icon={faPlus} />
-                        </th>
-                      </tr>
-                    </thead>
-
-                    <tbody>
-                      {formValues[name]?.map((value: dynamicObject, x = 0) => (
-                        <tr key={x}>
-                          {inputs?.map((input, y) => (
-                            <td key={y}>
-                              <input
-                                {...input}
-                                name={input.name}
-                                value={value[input.name]}
-                                onChange={(e) =>
-                                  onChange
-                                    ? onChange(e, setFormValues)
-                                    : setFormValues((current) => ({
-                                        ...current,
-                                        [name]: current[name].map(
-                                          (ele = {}, z = 0) =>
-                                            z === x
-                                              ? {
-                                                  ...ele,
-                                                  [input.name]: e.target.value,
-                                                }
-                                              : ele
-                                        ),
-                                      }))
-                                }
-                                required={input.required}
-                                className="form-control"
-                              />
-                            </td>
+                <div className="w-100">
+                  <div className="overflow-auto">
+                    <table className="table table-bordered table-responsive">
+                      <thead>
+                        <tr>
+                          {inputs?.map((input, x) => (
+                            <th key={x}>
+                              {input.label}
+                              {input.required ? (
+                                <span className="ms-1 text-danger"> *</span>
+                              ) : (
+                                ""
+                              )}
+                            </th>
                           ))}
 
-                          <td
+                          <th
                             role="button"
                             onClick={() =>
                               setFormValues((current) => ({
                                 ...current,
-                                [name]: current[name].filter(
-                                  (_ = {}, z = 0) => z !== x
-                                ),
+                                [name]: formValues[name]
+                                  ? [...formValues[name], {}]
+                                  : [{}],
                               }))
                             }
-                            className="text-danger"
+                            className="text-success"
                           >
-                            <FontAwesomeIcon icon={faTrash} />
-                          </td>
+                            <FontAwesomeIcon icon={faPlus} />
+                          </th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+
+                      <tbody>
+                        {formValues[name]?.map(
+                          (value: dynamicObject, x = 0) => (
+                            <tr key={x}>
+                              {inputs?.map((input, y) => (
+                                <td key={y}>
+                                  <input
+                                    {...input}
+                                    name={input.name}
+                                    value={value[input.name]}
+                                    onChange={(e) =>
+                                      onChange
+                                        ? onChange(e, setFormValues)
+                                        : setFormValues((current) => ({
+                                            ...current,
+                                            [name]: current[name].map(
+                                              (ele = {}, z = 0) =>
+                                                z === x
+                                                  ? {
+                                                      ...ele,
+                                                      [input.name]:
+                                                        e.target.value,
+                                                    }
+                                                  : ele
+                                            ),
+                                          }))
+                                    }
+                                    required={input.required}
+                                    className="form-control"
+                                  />
+                                </td>
+                              ))}
+
+                              <td
+                                role="button"
+                                onClick={() =>
+                                  setFormValues((current) => ({
+                                    ...current,
+                                    [name]: current[name].filter(
+                                      (_ = {}, z = 0) => z !== x
+                                    ),
+                                  }))
+                                }
+                                className="text-danger"
+                              >
+                                <FontAwesomeIcon icon={faTrash} />
+                              </td>
+                            </tr>
+                          )
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               ) : (
                 <input
