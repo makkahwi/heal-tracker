@@ -70,13 +70,13 @@ const ShortCuts = () => {
   ];
 
   return (
-    <PageSection title={t("Dashboard.ShortCuts.Just-Consumed Shortcuts")}>
+    <PageSection title={t("Dashboard.ShortCuts.JustConsumedShortcuts")}>
       <Fragment>
         {/* Water Consumption Actions */}
         {activation.watering ? (
           <div className="row align-items-center">
             <div className={`col-xs-12 col-lg-${2} my-4 text-start`}>
-              {t("Dashboard.ShortCuts.Water Consumption")}
+              {t("Dashboard.ShortCuts.WaterConsumption")}
             </div>
 
             <div className={`col-xs-6 col-lg-${2} my-4`}>

@@ -157,7 +157,7 @@ const Consumption = () => {
     },
     {
       name: "contents",
-      label: t("Services.Diet.Consumption.Meal Contents"),
+      label: t("Services.Diet.Consumption.MealContents"),
       helpTip:
         "Ensure the name matches the scheduled element exactly for accurate comparisons.",
       type: "dynamicList",

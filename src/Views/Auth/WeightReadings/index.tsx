@@ -490,7 +490,7 @@ const WeightReadings = () => {
     },
     {
       name: "waist",
-      label: t("Services.WeightReadings.WaistFat Reading"),
+      label: t("Services.WeightReadings.WaistFatReading"),
       type: "number",
       step: "0.1",
       required: true,

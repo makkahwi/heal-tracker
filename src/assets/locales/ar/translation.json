@@ -35,17 +35,16 @@
     "PreviousWeek": "الأسبوع السابق",
     "ShortCuts": {
       "Cup": "{{quantity}} كوب",
-      "Just-Consumed Shortcuts": "الاختصارات للاستهلاك الحالي",
+      "JustConsumedShortcuts": "الاختصارات للاستهلاك الحالي",
       "MedicineConsumption": "استهلاك الأدوية",
-      "Water Consumption": "استهلاك المياه"
+      "WaterConsumption": "استهلاك المياه"
     },
     "SleepCycles": "دورات النوم",
     "SportSessions": "جلسات الرياضة",
     "Watering": "شرب المياه",
-    "Weekly Calendar": "التقويم الأسبوعي"
+    "WeeklyCalendar": "التقويم الأسبوعي"
   },
   "Landing": {
-    "A reliable backend solution for data storage, real-time syncing, and user authentication, ensuring security and scalability": "حل موثوق للواجهة الخلفية لتخزين البيانات والمزامنة الفورية والمصادقة، لضمان الأمان وقابلية التوسع",
     "AdvancedAnalytics": {
       "Desc": "إنشاء ملخصات وتصويرات للحصول على رؤى أعمق حول عاداتك",
       "Title": "تحليلات متقدمة"
@@ -81,7 +80,6 @@
       "Desc": "أهداف صحية مخصصة وتتبع التقدم",
       "Title": "تحديد الأهداف"
     },
-    "Health Empowerment and Lifestyle is built with a modern technology stack, designed to provide a smooth and secure experience": "تم بناء HEAL باستخدام تقنيات حديثة، مصممة لتقديم تجربة سلسة وآمنة",
     "Localization": {
       "Desc": "دعم لعدة لغات، بما في ذلك العربية",
       "Title": "التوطين"
@@ -106,7 +104,6 @@
       "Desc": "الشفافية الكاملة والقدرة لأي مطور ويب على المساهمة والتحسين",
       "Title": "مفتوح المصدر"
     },
-    "Our front-end framework for building interactive and responsive user interfaces, delivering a seamless user experience": "إطار العمل الأمامي الخاص بنا لبناء واجهات مستخدم تفاعلية ومتجاوبة، مما يوفر تجربة مستخدم سلسة",
     "ReactJs": "React.Js",
     "SecuredAccess": {
       "Desc": "وصول خاص بالمستخدم فقط لعرض البيانات الخاصة به والتلاعب بها باستخدام مصادقة Firebase",
@@ -128,7 +125,6 @@
       "Content": "إذا واجهت أي مشاكل، أو كانت لديك أسئلة، أو كنت تريد اقتراح تحسينات، فلا تتردد في...",
       "Title": "الدعم الفني"
     },
-    "Technology Stack": "التقنيات المستخدمة",
     "Welcome": "مرحبًا بك في Health Empowerment and Lifestyle (HEAL)",
     "WhatIs": {
       "Content": "Health Empowerment and Lifestyle (HEAL) هو تطبيق ويب شامل مصمم لمساعدة الأفراد على تتبع أنشطتهم المتعلقة بالصحة والالتزام بأهدافهم الصحية. من الروتين اليومي مثل الوجبات الغذائية وتتبع ساعات النوم، يجعل HEAL من السهل تسجيل ومراقبة وتحليل تقدمك في تحقيق أهدافك الصحية.",
@@ -144,7 +140,7 @@
     "Medicine": "الأدوية",
     "Readings": "قراءات",
     "ReservedRights": "جميع الحقوق محفوظة لـ",
-    "SignIn/Register": "تسجيل الدخول / إنشاء حساب",
+    "SignInRegister": "تسجيل الدخول / إنشاء حساب",
     "SignOut": "تسجيل الخروج",
     "Successful": "{{method}} البيانات تم بنجاح.",
     "Suhaib": "صهيب أحمد",
@@ -184,7 +180,7 @@
           "Inputs4": "ملاحظات اختيارية على الوجبة"
         },
         "Meal": "الوجبة",
-        "Meal Contents": "محتويات الوجبة",
+        "MealContents": "محتويات الوجبة",
         "MealOfDay": "وجبة اليوم",
         "NextWeek": "الأسبوع القادم",
         "No": "لا",
@@ -307,8 +303,8 @@
       "RDW-CV": "RDW-CV",
       "RDW-SD": "RDW-SD",
       "RedCellCount": "عدد خلايا الدم الحمراء",
-      "SGOT (AST)": "SGOT (AST)",
-      "SGPT (ALT)": "SGPT (ALT)",
+      "SGOT": "SGOT (AST)",
+      "SGPT": "SGPT (ALT)",
       "Serum": "المصل",
       "Sodium": "الصوديوم",
       "TIBC": "TIBC",
@@ -417,10 +413,10 @@
         "Inputs4": "القياسات (مثل المسافات المقطوعة، وقت السباحة)",
         "Inputs5": "ملاحظات اختيارية"
       },
-      "Measure (Walked Distance, Swimming Time, etc)": "القياس (المسافات المقطوعة، وقت السباحة، إلخ)",
+      "Measure": "القياس (المسافات المقطوعة، وقت السباحة، إلخ)",
       "Notes": "الملاحظات",
-      "Sport Note": "ملاحظات الرياضة",
-      "Sport Type": "نوع الرياضة",
+      "SportNote": "ملاحظات الرياضة",
+      "SportType": "نوع الرياضة",
       "SportSessions": "جلسات الرياضة",
       "StartTime": "وقت البدء",
       "Swimming": "السباحة",
@@ -456,11 +452,11 @@
       "TargetsDesc": "لإدخال القيم المستهدفة لقراءة الوزن، على شكل نطاق من حد أدنى وحد أقصى.",
       "Title": "تتبع الوزن",
       "WaistFat": "دهون الخصر",
-      "WaistFat Reading": "قراءة دهون الخصر",
+      "WaistFatReading": "قراءة دهون الخصر",
       "WaistFatMaxTarget": "هدف أقصى لدهون الخصر",
       "WaistFatMinTarget": "هدف أدنى لدهون الخصر",
       "Water": "الماء",
-      "Water Volume": "حجم الماء",
+      "WaterVolume": "حجم الماء",
       "WaterMaxTarget": "هدف أقصى للماء",
       "WaterMinTarget": "هدف أدنى للماء",
       "WaterReading": "قراءة الماء",

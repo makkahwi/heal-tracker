@@ -35,17 +35,16 @@
     "PreviousWeek": "Previous Week",
     "ShortCuts": {
       "Cup": "{{quantity}} Cup",
-      "Just-Consumed Shortcuts": "Just-Consumed Shortcuts",
+      "JustConsumedShortcuts": "Just-Consumed Shortcuts",
       "MedicineConsumption": "Medicine Consumption",
-      "Water Consumption": "Water Consumption"
+      "WaterConsumption": "Water Consumption"
     },
     "SleepCycles": "Sleep Cycles",
     "SportSessions": "Sport Sessions",
     "Watering": "Watering",
-    "Weekly Calendar": "Weekly Calendar"
+    "WeeklyCalendar": "Weekly Calendar"
   },
   "Landing": {
-    "A reliable backend solution for data storage, real-time syncing, and user authentication, ensuring security and scalability": "A reliable backend solution for data storage, real-time syncing, and user authentication, ensuring security and scalability",
     "AdvancedAnalytics": {
       "Desc": "Generate summaries and visualizations for deeper insights into your habits",
       "Title": "Advanced Analytics"
@@ -81,7 +80,6 @@
       "Desc": "Personalized health targets and progress tracking",
       "Title": "Goal Setting"
     },
-    "Health Empowerment and Lifestyle is built with a modern technology stack, designed to provide a smooth and secure experience": "HEAL is built with a modern technology stack, designed to provide a smooth and secure experience",
     "Localization": {
       "Desc": "Support for multiple languages, including Arabic",
       "Title": "Localization"
@@ -106,7 +104,6 @@
       "Desc": "Totally transparency and ability for any web developer to contribute and enhance",
       "Title": "Open-Source"
     },
-    "Our front-end framework for building interactive and responsive user interfaces, delivering a seamless user experience": "Our front-end framework for building interactive and responsive user interfaces, delivering a seamless user experience",
     "ReactJs": "React.Js",
     "SecuredAccess": {
       "Desc": "User-only access for own data view & manipulation with Firebase authentication",
@@ -128,7 +125,6 @@
       "Content": "If you encounter any issues, have questions, or want to suggest improvements, feel free to...",
       "Title": "Technical Support"
     },
-    "Technology Stack": "Technology Stack",
     "Welcome": "Welcome to Health Empowerment and Lifestyle (HEAL)",
     "WhatIs": {
       "Content": "Health Empowerment and Lifestyle (HEAL) is a comprehensive web app designed to help individuals track their health-related activities and stay consistent with their wellness goals. From daily routines like diet and hydration to broader metrics like sleep and weight tracking, HEAL makes it simple to log, monitor, and analyze your progress.",
@@ -144,7 +140,7 @@
     "Medicine": "Medicine",
     "Readings": "Readings",
     "ReservedRights": "All Rights Reserved for",
-    "SignIn/Register": "Sign In / Register",
+    "SignInRegister": "Sign In / Register",
     "SignOut": "Sign Out",
     "Successful": "Data {{method}} has been successful.",
     "Suhaib": "Suhaib Ahmad",
@@ -184,7 +180,7 @@
           "Inputs4": "Meal Optional Notes"
         },
         "Meal": "Meal",
-        "Meal Contents": "Meal Contents",
+        "MealContents": "Meal Contents",
         "MealOfDay": "Meal of Day",
         "NextWeek": "Next Week",
         "No": "No",
@@ -307,8 +303,8 @@
       "RDW-CV": "RDW-CV",
       "RDW-SD": "RDW-SD",
       "RedCellCount": "Red Cell Count",
-      "SGOT (AST)": "SGOT (AST)",
-      "SGPT (ALT)": "SGPT (ALT)",
+      "SGOT": "SGOT (AST)",
+      "SGPT": "SGPT (ALT)",
       "Serum": "Serum",
       "Sodium": "Sodium",
       "TIBC": "TIBC",
@@ -417,10 +413,10 @@
         "Inputs4": "Measurements (e.g., walked distances, swimming time, ...etc)",
         "Inputs5": "Optional Notes"
       },
-      "Measure (Walked Distance, Swimming Time, etc)": "Measure (Walked Distance, Swimming Time, ...etc)",
+      "Measure": "Measure (Walked Distance, Swimming Time, ...etc)",
       "Notes": "Notes",
-      "Sport Note": "Sport Note",
-      "Sport Type": "Sport Type",
+      "SportNote": "Sport Note",
+      "SportType": "Sport Type",
       "SportSessions": "Sport Sessions",
       "StartTime": "Start Time",
       "Swimming": "Swimming",
@@ -456,11 +452,11 @@
       "TargetsDesc": "To input the targeted values of weight readings, but in a range of minimum & maximum.",
       "Title": "Weight Tracking",
       "WaistFat": "Waist Fat",
-      "WaistFat Reading": "Waist Fat Reading",
+      "WaistFatReading": "Waist Fat Reading",
       "WaistFatMaxTarget": "Waist Fat Max Target",
       "WaistFatMinTarget": "Waist Fat Min Target",
       "Water": "Water",
-      "Water Volume": "Water Volume",
+      "WaterVolume": "Water Volume",
       "WaterMaxTarget": "Water Max Target",
       "WaterMinTarget": "Water Min Target",
       "WaterReading": "Water Reading",

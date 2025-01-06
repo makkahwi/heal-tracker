@@ -41,14 +41,14 @@ const LabTests = () => {
     },
     {
       name: "sgot",
-      label: t("Services.LabTests.SGOT (AST)"),
+      label: t("Services.LabTests.SGOT"),
       type: "number",
       step: "0.01",
       highEnd: 50,
     },
     {
       name: "sgpt",
-      label: t("Services.LabTests.SGPT (ALT)"),
+      label: t("Services.LabTests.SGPT"),
       type: "number",
       step: "0.01",
       highEnd: 50,

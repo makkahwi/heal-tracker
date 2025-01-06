@@ -65,7 +65,7 @@ const WeeklyCalendar = ({
           {t("Services.Diet.Consumption.PreviousWeek")}
         </button>
 
-        <h2 className="text-center">{t("Dashboard.Weekly Calendar")}</h2>
+        <h2 className="text-center">{t("Dashboard.WeeklyCalendar")}</h2>
 
         <button className="btn btn-primary" onClick={handleNextWeek}>
           {t("Services.Diet.Consumption.NextWeek")}
