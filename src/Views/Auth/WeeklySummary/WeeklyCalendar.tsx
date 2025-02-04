@@ -339,7 +339,10 @@ const WeeklyCalendar = ({
                           ({ timestamp, id, note, contents, supposed }) => (
                             <Fragment>
                               {timestamp ? (
-                                <span className="d-block bg-dark text-white px-2 py-1">
+                                <span
+                                  style={{ minWidth: "max-content" }}
+                                  className="d-block bg-dark text-white px-2 py-1"
+                                >
                                   {"@ " + moment(timestamp).format("h:mm a")}{" "}
                                   <br />
                                   {note ? "(" + note + ")" : ""}

@@ -32,7 +32,10 @@ export const renderExerciseUI =
     (
       <div>
         {date ? (
-          <span className="d-block bg-dark text-white p-2 my-2">
+          <span
+            style={{ minWidth: "max-content" }}
+            className="d-block bg-dark text-white p-2 my-2"
+          >
             @ {timeFormat(event.startTime)} - {timeFormat(event.endTime)}{" "}
             {onDelete && (
               <FontAwesomeIcon

@@ -22,7 +22,10 @@ export const renderSleepCycleUI =
     (
       <div>
         {date ? (
-          <span className="d-block bg-dark text-white p-2 my-2">
+          <span
+            style={{ minWidth: "max-content" }}
+            className="d-block bg-dark text-white p-2 my-2"
+          >
             @ {dateTotTimeFormat(event.startTime)} -{" "}
             {dateTotTimeFormat(event.endTime)}{" "}
             {onDelete && (

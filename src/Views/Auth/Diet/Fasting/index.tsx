@@ -22,7 +22,10 @@ export const renderFastingUI =
     (
       <div>
         {date ? (
-          <span className="d-block bg-dark text-white p-2 my-2">
+          <span
+            style={{ minWidth: "max-content" }}
+            className="d-block bg-dark text-white p-2 my-2"
+          >
             {i18n.t("Services.Diet.Fasting.FastBreakingTime")} @{" "}
             {timeFormat(event.breakTime)}{" "}
             {onDelete && (
