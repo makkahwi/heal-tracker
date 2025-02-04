@@ -20,6 +20,7 @@
     "@types/bootstrap": "^5.2.10",
     "axios": "^1.7.9",
     "bootstrap": "^5.3.3",
+    "html-to-image": "^1.11.11",
     "i18next": "^24.1.2",
     "i18next-browser-languagedetector": "^8.0.2",
     "i18next-http-backend": "^3.0.1",

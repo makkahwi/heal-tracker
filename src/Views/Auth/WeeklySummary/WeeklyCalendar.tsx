@@ -1,5 +1,5 @@
 import moment, { Moment } from "moment";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
@@ -8,6 +8,7 @@ import { getSummary } from "../../../API/ChatGPT";
 import MealView from "../../../Components/MealView";
 import { renderEvents } from "../../../Components/PageView/MonthlyCalendar";
 import { RootState } from "../../../Store/store";
+import { elementToImage } from "../../../Utils/functions";
 import { consumptionFullProps } from "../Diet/Consumption";
 import { fastingProps, renderFastingUI } from "../Diet/Fasting";
 import { renderWateringUI, wateringProps } from "../Diet/Watering";
@@ -49,6 +50,7 @@ const WeeklyCalendar = ({
   fasting: fastingProps[];
 }) => {
   const { t } = useTranslation();
+  const element = useRef(null);
 
   const activation = useSelector(
     (state: RootState) => state.settings.activation
@@ -222,25 +224,51 @@ const WeeklyCalendar = ({
 
   return (
     <div className="overflow-auto">
-      <div className="d-flex justify-content-between mb-2">
-        <button className="btn btn-primary" onClick={handlePreviousWeek}>
-          {t("Dashboard.PreviousWeek")}
-        </button>
+      <div className="row mb-2">
+        <div className="order-2 order-sm-1 col-6 col-sm-2">
+          <button
+            className="btn btn-primary text-white w-100 h-100"
+            onClick={handlePreviousWeek}
+          >
+            {t("Dashboard.PreviousWeek")}
+          </button>
+        </div>
 
-        <h2 className="text-center">{t("Dashboard.WeeklyCalendar")}</h2>
+        <div className="order-1 order-sm-2 col-12 col-sm-8 my-3">
+          <h2 className="text-center">{t("Dashboard.WeeklyCalendar")}</h2>
+        </div>
 
-        <button className="btn btn-primary" onClick={handleNextWeek}>
-          {t("Dashboard.NextWeek")}
-        </button>
+        <div className="order-3 col-6 col-sm-2">
+          <button
+            className="btn btn-primary text-white w-100 h-100"
+            onClick={handleNextWeek}
+          >
+            {t("Dashboard.NextWeek")}
+          </button>
+        </div>
       </div>
 
       <table
+        ref={element}
         className="table table-bordered table-striped bg-white"
         style={{
           minWidth: "1000px",
         }}
       >
         <thead>
+          <tr>
+            <th colSpan={currentWeek?.length + 1}>
+              <button
+                className="btn btn-primary text-white float-end"
+                onClick={() =>
+                  elementToImage({ element: element.current || undefined })
+                }
+              >
+                {t("Dashboard.ExportTableAsImage")}
+              </button>
+            </th>
+          </tr>
+
           <tr>
             <th rowSpan={2} className="align-middle" style={{ width: "20%" }}>
               {t("Dashboard.Data")}
