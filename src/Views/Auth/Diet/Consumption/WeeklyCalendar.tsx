@@ -61,13 +61,16 @@ const WeeklyCalendar = ({
   return (
     <div className="overflow-auto">
       <div className="d-flex justify-content-between mb-2">
-        <button className="btn btn-primary" onClick={handlePreviousWeek}>
+        <button
+          className="btn btn-primary text-white"
+          onClick={handlePreviousWeek}
+        >
           {t("Services.Diet.Consumption.PreviousWeek")}
         </button>
 
         <h2 className="text-center">{t("Dashboard.WeeklyCalendar")}</h2>
 
-        <button className="btn btn-primary" onClick={handleNextWeek}>
+        <button className="btn btn-primary text-white" onClick={handleNextWeek}>
           {t("Services.Diet.Consumption.NextWeek")}
         </button>
       </div>
