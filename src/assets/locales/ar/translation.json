@@ -29,6 +29,7 @@
   "Dashboard": {
     "Dashboard": "لوحة التحكم",
     "Data": "البيانات",
+    "ExportTableAsImage": "تصدير الجدول كملف صورة",
     "GenerateSummary": "إنشاء ملخص",
     "Medicines": "الأدوية",
     "NextWeek": "الأسبوع القادم",

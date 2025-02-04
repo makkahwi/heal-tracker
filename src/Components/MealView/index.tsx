@@ -1,4 +1,11 @@
-import { faArrowDown, faArrowUp, faCheck, faMinus, faPlus, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowDown,
+  faArrowUp,
+  faCheck,
+  faMinus,
+  faPlus,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment } from "react/jsx-runtime";
 
@@ -68,6 +75,7 @@ const MealView = ({
     return compare ? (
       <div
         className={match ? "text-success" : "text-white bg-danger py-2 px-1"}
+        style={{ minWidth: "max-content" }}
       >
         <FontAwesomeIcon
           icon={match ? faCheck : elementMatch ? countIcon : faPlus}
@@ -81,6 +89,7 @@ const MealView = ({
         >
           {count} {unit}
         </span>
+
         <span
           className={
             elementMatch ? "text-decoration-none" : "text-decoration-underline"
@@ -88,6 +97,7 @@ const MealView = ({
         >
           {" of "}
         </span>
+
         <span
           className={
             elementMatch ? "text-decoration-none" : "text-decoration-underline"
@@ -95,7 +105,9 @@ const MealView = ({
         >
           {element}
         </span>
+
         {note ? " (" + note + ")" : ""}
+
         {children}
       </div>
     ) : (
@@ -103,6 +115,7 @@ const MealView = ({
         className={
           "text-start " + (dark && onDelete ? "bg-light p-2" : " py-1 px-2")
         }
+        style={{ minWidth: "max-content" }}
       >
         {count +
           " " +

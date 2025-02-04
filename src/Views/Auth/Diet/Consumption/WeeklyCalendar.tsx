@@ -61,13 +61,16 @@ const WeeklyCalendar = ({
   return (
     <div className="overflow-auto">
       <div className="d-flex justify-content-between mb-2">
-        <button className="btn btn-primary" onClick={handlePreviousWeek}>
+        <button
+          className="btn btn-primary text-white"
+          onClick={handlePreviousWeek}
+        >
           {t("Services.Diet.Consumption.PreviousWeek")}
         </button>
 
         <h2 className="text-center">{t("Dashboard.WeeklyCalendar")}</h2>
 
-        <button className="btn btn-primary" onClick={handleNextWeek}>
+        <button className="btn btn-primary text-white" onClick={handleNextWeek}>
           {t("Services.Diet.Consumption.NextWeek")}
         </button>
       </div>
@@ -150,7 +153,10 @@ const WeeklyCalendar = ({
                         ({ timestamp, id, note, contents, supposed }) => (
                           <Fragment>
                             {timestamp ? (
-                              <span className="d-block bg-dark text-white px-2 py-1">
+                              <span
+                                style={{ minWidth: "max-content" }}
+                                className="d-block bg-dark text-white px-2 py-1"
+                              >
                                 {"@ " + moment(timestamp).format("h:mm a")}{" "}
                                 <FontAwesomeIcon
                                   icon={faTrashCan}

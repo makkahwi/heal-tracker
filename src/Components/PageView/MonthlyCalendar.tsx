@@ -63,13 +63,19 @@ const MonthlyCalendar = ({ data, renderEvent }: props) => {
   return (
     <div className="overflow-auto">
       <div className="d-flex justify-content-between mb-2">
-        <button className="btn btn-primary" onClick={handlePreviousMonth}>
+        <button
+          className="btn btn-primary text-white"
+          onClick={handlePreviousMonth}
+        >
           {t("Comp.Calendar.PreviousMonth")}
         </button>
 
         <h2 className="text-center">{currentMonth.format("MMMM YYYY")}</h2>
 
-        <button className="btn btn-primary" onClick={handleNextMonth}>
+        <button
+          className="btn btn-primary text-white"
+          onClick={handleNextMonth}
+        >
           {t("Comp.Calendar.NextMonth")}
         </button>
       </div>
