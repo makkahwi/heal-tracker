@@ -224,7 +224,7 @@ const WeeklyCalendar = ({
 
   return (
     <div className="overflow-auto">
-      <div className="row mb-2">
+      <div className="row mb-2 w-100">
         <div className="order-2 order-sm-1 col-6 col-sm-2">
           <button
             className="btn btn-primary text-white w-100 h-100"
