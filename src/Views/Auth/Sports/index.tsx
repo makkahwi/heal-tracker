@@ -114,6 +114,10 @@ const WalkExercises = () => {
           value: "Walking",
           label: t("Services.Sports.Walking"),
         },
+        {
+          value: "Other",
+          label: t("Services.Sports.Other"),
+        },
       ],
       required: true,
       defaultValue: "Swimming",
