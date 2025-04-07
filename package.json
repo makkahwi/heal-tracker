@@ -13,6 +13,8 @@
     "email": "SuhaibAhmadAi@hotmail.com"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.782.0",
+    "@aws-sdk/client-textract": "^3.782.0",
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
     "@fortawesome/react-fontawesome": "^0.2.2",
@@ -35,6 +37,7 @@
     "redux": "^5.0.1",
     "sass": "^1.83.0",
     "typescript": "^5.7.2",
+    "uuid": "^11.1.0",
     "web-vitals": "^4.2.4"
   },
   "scripts": {

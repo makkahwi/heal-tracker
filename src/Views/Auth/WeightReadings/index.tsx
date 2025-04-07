@@ -12,6 +12,7 @@ import TabsView from "../../../Components/Layout/TabsView";
 import PageSection from "../../../Components/PageView/PageSection";
 import WeightReadingCharts from "./Charts";
 import WeightReadingsTable from "./Table";
+import FileUploadComponent from "./FileUpload";
 
 interface weightReadingTargetProps {
   id?: string;
@@ -614,9 +615,13 @@ const WeightReadings = () => {
   const views = [
     { title: "Analysis", view: <WeightReadingCharts data={data} /> },
     {
-      title: t("Services.WeightReadings.Input"),
+      title: t("Services.WeightReadings.ManualInput"),
       view: <Form inputs={formInputs} onSubmit={onSubmit} />,
     },
+    {
+      title: t("Services.WeightReadings.PdfInput"),
+      view:<div><FileUploadComponent/></div>,
+    },   
     {
       title: t("Services.WeightReadings.Targets"),
       view: <Form inputs={targetsFormInputs} onSubmit={onTargetsSubmit} />,
