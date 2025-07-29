@@ -12,7 +12,7 @@ const Footer = () => {
     },
     {
       icon: "fab fa-linkedin",
-      link: "https://linkedin.com/in/makkahwi/",
+      link: "https://linkedin.com/in/SuhaibAhmadAi/",
       tooltip: "Makkahwi @ Linkedin",
       key: "linkedin",
     },
