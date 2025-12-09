@@ -1,4 +1,10 @@
-import { faArrowDown, faArrowUp } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowAltCircleDown,
+  faArrowAltCircleUp,
+  faArrowDown,
+  faArrowUp,
+  faMinusCircle,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
@@ -425,6 +431,93 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                     {changeUI(changes?.sinceBest)}
                   </tr>
                 )}
+
+                <tr className="text-start">
+                  <th>Best Point Reading</th>
+                  {changeUI({
+                    changeAmount: ["Weight", "Fat Weight", "Waist"].includes(
+                      title
+                    )
+                      ? chartMin
+                      : chartMax,
+                    unit,
+                    color: (
+                      ["Weight", "Fat Weight", "Waist"].includes(title)
+                        ? chartMin < values[values.length - 1]
+                        : chartMax > values[values.length - 1]
+                    )
+                      ? "success"
+                      : "dark",
+                    changePercentage: String(
+                      Math.abs(
+                        100 -
+                          ((["Weight", "Fat Weight", "Waist"].includes(title)
+                            ? chartMin
+                            : chartMax) /
+                            values[values.length - 1]) *
+                            100
+                      ).toFixed(2)
+                    ),
+                    icon: (
+                      ["Weight", "Fat Weight", "Waist"].includes(title)
+                        ? chartMin < values[values.length - 1]
+                        : chartMax > values[values.length - 1]
+                    )
+                      ? ["Weight", "Fat Weight", "Waist"].includes(title)
+                        ? faArrowAltCircleDown
+                        : faArrowAltCircleUp
+                      : faMinusCircle,
+                  })}
+                </tr>
+
+                <tr className="text-start">
+                  <th>Start Point Reading</th>
+                  {changeUI({
+                    changeAmount: values[values.length - 1],
+                    unit,
+                    color: "dark",
+                    changePercentage: "0.00",
+                    icon: faMinusCircle,
+                  })}
+                </tr>
+
+                <tr className="text-start">
+                  <th>Worst Point Reading</th>
+                  {changeUI({
+                    changeAmount: ["Weight", "Fat Weight", "Waist"].includes(
+                      title
+                    )
+                      ? chartMax
+                      : chartMin,
+                    unit,
+                    color: (
+                      ["Weight", "Fat Weight", "Waist"].includes(title)
+                        ? chartMax > values[values.length - 1]
+                        : chartMin < values[values.length - 1]
+                    )
+                      ? "danger"
+                      : "dark",
+                    changePercentage: String(
+                      (
+                        100 -
+                        ((["Weight", "Fat Weight", "Waist"].includes(title)
+                          ? chartMax
+                          : chartMin) /
+                          values[values.length - 1]) *
+                          100
+                      ).toFixed(2)
+                    ),
+                    icon: (
+                      ["Weight", "Fat Weight", "Waist"].includes(title)
+                        ? chartMax > values[values.length - 1]
+                        : chartMin < values[values.length - 1]
+                    )
+                      ? ["Weight", "Fat Weight", "Waist"].includes(title)
+                        ? faArrowAltCircleUp
+                        : faArrowAltCircleDown
+                      : faMinusCircle,
+                  })}
+                </tr>
               </tbody>
             </table>
           </div>
