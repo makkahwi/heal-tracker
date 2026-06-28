@@ -439,6 +439,8 @@
       "FatWeightMaxTarget": "هدف أقصى لوزن الدهون",
       "FatWeightMinTarget": "هدف أدنى لوزن الدهون",
       "Input": "الإدخال",
+      "ManualInput": "الإدخال اليدوي",
+      "PdfInput": "الإدخال الآلي (PDF)",
       "Manual": {
         "Inputs2": "قراءة المياه (باللترات)",
         "Inputs3": "وزن الدهون (كجم)",

@@ -439,6 +439,8 @@
       "FatWeightMaxTarget": "Fat Weight Max Target",
       "FatWeightMinTarget": "Fat Weight Min Target",
       "Input": "Input",
+      "ManualInput": "Manual Input",
+      "PdfInput": "Auto Input (PDF)",
       "Manual": {
         "Inputs2": "Water Reading (liters)",
         "Inputs3": "Fat Weight (kg)",
