@@ -1,25 +1,24 @@
 import {
-  faArrowAltCircleDown,
-  faArrowAltCircleUp,
-  faArrowDown,
-  faArrowUp,
+  faCircleDown,
+  faCircleUp,
   faMinusCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
 import { Fragment, useEffect, useState } from "react";
 import {
-  Hint,
-  HorizontalGridLines,
-  LineMarkSeries,
-  VerticalGridLines,
+  CartesianGrid,
+  Label,
+  Line,
+  LineChart,
+  ReferenceLine,
+  ResponsiveContainer,
+  Tooltip,
   XAxis,
-  XYPlot,
   YAxis,
-} from "react-vis";
+} from "recharts";
 
 import { getAverage } from "../../Utils/functions";
-import { useComponentSize } from "../../Utils/hooks";
 import { changeCalculationProps } from "../../Views/Auth/WeightReadings";
 
 interface hoverProps {
@@ -55,8 +54,6 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
     changeAverage: data.map(() => false),
     targeted: data.map(() => false),
   });
-
-  const [ref, size] = useComponentSize();
 
   useEffect(() => {
     setHovered(initialHovered());
@@ -100,7 +97,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
         const changes = data?.find(
           ({ x, y }) =>
             String(moment(x).format("DD MMM yyyy")) === rowData?.date &&
-            parseFloat(String(y)) === rowData?.value
+            parseFloat(String(y)) === rowData?.value,
         );
 
         const values =
@@ -110,7 +107,12 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
 
         const chartMin = Math.min.apply(Math, values);
         const chartMax = Math.max.apply(Math, values);
+        const yPadding = Math.max((chartMax - chartMin) * 0.02, 0.5);
         const average = getAverage(data?.map(({ y }) => parseFloat(String(y))));
+        const chartData = data.map((point) => ({
+          ...point,
+          dateLabel: moment(point.x).format("DD MMM yyyy"),
+        }));
 
         return (
           <div className="col-md-6 col-lg-4 my-3 justify-center" key={x}>
@@ -121,209 +123,144 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
               <tbody>
                 <tr>
                   <td colSpan={4} className="text-center py-3 w-100">
-                    <div className="w-100" ref={ref}>
-                      <XYPlot
-                        xType="time"
-                        width={size.width * 0.975}
-                        height={300}
-                        yDomain={[
-                          chartMin - chartMin * 0.02,
-                          chartMax + chartMax * 0.02,
-                        ]}
-                      >
-                        <VerticalGridLines />
-                        <HorizontalGridLines />
-                        <XAxis
-                          title="Date"
-                          tickFormat={(v) => moment(v).format("MMM YY")}
-                        />
-                        <YAxis
-                          title={"Reading" + (unit ? " ( " + unit + " )" : "")}
-                        />
+                    <div className="w-100" style={{ height: 300 }}>
+                      <ResponsiveContainer width="100%" height="100%">
+                        <LineChart
+                          data={chartData}
+                          margin={{ top: 10, right: 20, bottom: 10, left: 0 }}
+                          onMouseMove={(state: any) => {
+                            const point = state?.activePayload?.[0]?.payload;
+                            if (!point) {
+                              return;
+                            }
 
-                        <LineMarkSeries
-                          data={data?.map(({ x, y }) => ({
-                            x: moment(x).valueOf(),
-                            y,
-                          }))}
-                          color={colors[x % colors.length]}
-                          onValueMouseOver={(v) =>
                             setHovered((current) =>
                               current.map((c) =>
                                 c.title === title
                                   ? {
-                                      date: String(
-                                        moment(v.x).format("DD MMM yyyy")
-                                      ),
-                                      value: parseFloat(String(v.y)),
+                                      date: point.dateLabel,
+                                      value: parseFloat(String(point.y)),
                                       title,
                                     }
-                                  : c
-                              )
-                            )
-                          }
-                          onValueMouseOut={() => setHovered(initialHovered())}
-                        />
-                        {/* Values Average */}
-                        {show.average[x] && (
-                          <LineMarkSeries
-                            data={[
-                              {
-                                x: moment(data[0]?.x).valueOf(),
-                                y: average,
-                              },
-                              {
-                                x: moment(data[data?.length - 1]?.x).valueOf(),
-                                y: average,
-                              },
-                            ]}
-                            // opacity={0.5}
-                            color="red"
-                          />
-                        )}
-                        {show.average[x] && (
-                          <Hint
-                            value={{
-                              x: moment(data[data?.length - 1]?.x).valueOf(),
-                              y: average,
-                            }}
-                            style={{
-                              fontSize: 12,
-                              value: {
-                                color: "red",
-                              },
-                              // opacity={0.5}
-                            }}
+                                  : c,
+                              ),
+                            );
+                          }}
+                          onMouseLeave={() => setHovered(initialHovered())}
+                        >
+                          <CartesianGrid strokeDasharray="3 3" />
+                          <XAxis
+                            dataKey="x"
+                            tickFormatter={(v) => moment(v).format("MMM YY")}
                           >
-                            <div className="card bg-danger text-white p-1">
-                              Average ({average.toFixed(2)})
-                            </div>
-                          </Hint>
-                        )}
-                        {/* Change Average */}
-                        {show.changeAverage[x] && (
-                          <LineMarkSeries
-                            data={[
-                              {
-                                x: moment(data[0]?.x).valueOf(),
-                                y: data[0]?.y,
-                              },
-                              {
-                                x: moment(data[data.length - 1]?.x).valueOf(),
-                                y: data[data.length - 1]?.y,
-                              },
-                            ]}
-                            color="skyblue"
-                            // opacity={0.5}
-                          />
-                        )}
-                        {show.changeAverage[x] && (
-                          <Hint
-                            value={{
-                              x: moment(data[0]?.x).valueOf(),
-                              y: data[0]?.y,
-                            }}
-                            style={{
-                              fontSize: 12,
-                              value: {
-                                color: "skyblue",
-                              },
-                              // opacity: 0.5,
-                            }}
+                            <Label
+                              position="insideBottom"
+                              offset={-5}
+                              value="Date"
+                            />
+                          </XAxis>
+                          <YAxis
+                            domain={[chartMin - yPadding, chartMax + yPadding]}
                           >
-                            <div className="card bg-info text-white p-1">
-                              Change Average
-                              <span>
-                                <FontAwesomeIcon
-                                  icon={
-                                    data[0]?.y < data[data.length - 1]?.y
-                                      ? faArrowDown
-                                      : faArrowUp
-                                  }
-                                  className="me-1"
+                            <Label
+                              value={
+                                "Reading" + (unit ? " ( " + unit + " )" : "")
+                              }
+                              angle={-90}
+                              position="insideLeft"
+                              style={{ textAnchor: "middle" }}
+                            />
+                          </YAxis>
+                          <Tooltip content={() => null} />
+
+                          {show.data[x] && (
+                            <Line
+                              type="monotone"
+                              dataKey="y"
+                              stroke={colors[x % colors.length]}
+                              strokeWidth={2}
+                              dot={{ r: 3 }}
+                              activeDot={{ r: 5 }}
+                            />
+                          )}
+
+                          {show.average[x] && (
+                            <ReferenceLine
+                              y={average}
+                              stroke="red"
+                              strokeDasharray="4 4"
+                            >
+                              <Label
+                                value={`Average (${average.toFixed(2)})`}
+                                position="insideTopRight"
+                                fill="red"
+                                fontSize={11}
+                              />
+                            </ReferenceLine>
+                          )}
+
+                          {show.changeAverage[x] && (
+                            <ReferenceLine
+                              segment={[
+                                { x: data[0]?.x, y: data[0]?.y },
+                                {
+                                  x: data[data.length - 1]?.x,
+                                  y: data[data.length - 1]?.y,
+                                },
+                              ]}
+                              stroke="skyblue"
+                              strokeWidth={2}
+                            >
+                              <Label
+                                value={`Change Avg ${
+                                  data[0]?.y < data[data.length - 1]?.y
+                                    ? "▼"
+                                    : "▲"
+                                } ${((data[0]?.y - data[data.length - 1]?.y) / data.length).toFixed(2)}`}
+                                position="insideTopLeft"
+                                fill="skyblue"
+                                fontSize={11}
+                              />
+                            </ReferenceLine>
+                          )}
+
+                          {show.targeted[x] && minTarget !== undefined && (
+                            <ReferenceLine
+                              y={minTarget}
+                              stroke="green"
+                              strokeDasharray="4 4"
+                            >
+                              <Label
+                                value={`${
+                                  minTarget === maxTarget
+                                    ? "Targeted Value"
+                                    : "Targeted Min Value"
+                                }: ${minTarget} ${unit || ""}`}
+                                position="insideBottomLeft"
+                                fill="green"
+                                fontSize={10}
+                              />
+                            </ReferenceLine>
+                          )}
+
+                          {show.targeted[x] &&
+                            maxTarget !== undefined &&
+                            maxTarget !== minTarget && (
+                              <ReferenceLine
+                                y={maxTarget}
+                                stroke="green"
+                                strokeDasharray="4 4"
+                              >
+                                <Label
+                                  value={`Targeted Max Value: ${maxTarget} ${unit || ""}`}
+                                  position="insideTopLeft"
+                                  fill="green"
+                                  fontSize={10}
                                 />
-                                {(
-                                  (data[0]?.y - data[data.length - 1]?.y) /
-                                  data.length
-                                ).toFixed(2)}
-                              </span>
-                            </div>
-                          </Hint>
-                        )}
-                        {/* Targeted */}
-                        {show.targeted[x] && minTarget && (
-                          <Hint
-                            value={{
-                              x:
-                                moment(data[data.length - 1]?.x).valueOf() +
-                                2000,
-                              y: minTarget,
-                            }}
-                          >
-                            <small
-                              className="bg-success text-white p-2"
-                              style={{ fontSize: 10 }}
-                            >
-                              {minTarget === maxTarget
-                                ? "Targeted Value"
-                                : "Targeted Min Value"}
-                              {": "}
-                              {minTarget} {unit}
-                            </small>
-                          </Hint>
-                        )}
-                        {show.targeted[x] && maxTarget && (
-                          <Hint
-                            value={{
-                              x:
-                                moment(data[data.length - 1]?.x).valueOf() +
-                                2000,
-                              y: maxTarget,
-                            }}
-                          >
-                            <small
-                              className="bg-success text-white p-2"
-                              style={{ fontSize: 10 }}
-                            >
-                              {minTarget === maxTarget
-                                ? "Targeted Value"
-                                : "Targeted Max Value"}
-                              {": "}
-                              {maxTarget} {unit}
-                            </small>
-                          </Hint>
-                        )}
-                        {show.targeted[x] && minTarget && (
-                          <LineMarkSeries
-                            color="green"
-                            data={[
-                              {
-                                x: moment(data[0]?.x).valueOf(),
-                                y: minTarget,
-                              },
-                              {
-                                x: moment(data[data.length - 1]?.x).valueOf(),
-                                y: minTarget,
-                              },
-                            ]}
-                          />
-                        )}
-                        {show.targeted[x] && maxTarget && (
-                          <LineMarkSeries
-                            color="green"
-                            data={[
-                              {
-                                x: moment(data[0]?.x).valueOf(),
-                                y: maxTarget,
-                              },
-                              {
-                                x: moment(data[data.length - 1]?.x).valueOf(),
-                                y: maxTarget,
-                              },
-                            ]}
-                          />
-                        )}
-                      </XYPlot>
+                              </ReferenceLine>
+                            )}
+                        </LineChart>
+                      </ResponsiveContainer>
                     </div>
                   </td>
                 </tr>
@@ -340,7 +277,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                           setShow((current) => ({
                             ...current,
                             average: current.average.map((v, y) =>
-                              y === x ? !v : v
+                              y === x ? !v : v,
                             ),
                           }))
                         }
@@ -357,7 +294,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                           setShow((current) => ({
                             ...current,
                             changeAverage: current.changeAverage.map((v, y) =>
-                              y === x ? !v : v
+                              y === x ? !v : v,
                             ),
                           }))
                         }
@@ -375,7 +312,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                             setShow((current) => ({
                               ...current,
                               targeted: current.targeted.map((v, y) =>
-                                y === x ? !v : v
+                                y === x ? !v : v,
                               ),
                             }))
                           }
@@ -436,7 +373,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                   <th>Best Point Reading</th>
                   {changeUI({
                     changeAmount: ["Weight", "Fat Weight", "Waist"].includes(
-                      title
+                      title,
                     )
                       ? chartMin
                       : chartMax,
@@ -455,8 +392,8 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                             ? chartMin
                             : chartMax) /
                             values[values.length - 1]) *
-                            100
-                      ).toFixed(2)
+                            100,
+                      ).toFixed(2),
                     ),
                     icon: (
                       ["Weight", "Fat Weight", "Waist"].includes(title)
@@ -464,8 +401,8 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         : chartMax > values[values.length - 1]
                     )
                       ? ["Weight", "Fat Weight", "Waist"].includes(title)
-                        ? faArrowAltCircleDown
-                        : faArrowAltCircleUp
+                        ? faCircleDown
+                        : faCircleUp
                       : faMinusCircle,
                   })}
                 </tr>
@@ -485,7 +422,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                   <th>Worst Point Reading</th>
                   {changeUI({
                     changeAmount: ["Weight", "Fat Weight", "Waist"].includes(
-                      title
+                      title,
                     )
                       ? chartMax
                       : chartMin,
@@ -505,7 +442,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                           : chartMin) /
                           values[values.length - 1]) *
                           100
-                      ).toFixed(2)
+                      ).toFixed(2),
                     ),
                     icon: (
                       ["Weight", "Fat Weight", "Waist"].includes(title)
@@ -513,8 +450,8 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
                         : chartMin < values[values.length - 1]
                     )
                       ? ["Weight", "Fat Weight", "Waist"].includes(title)
-                        ? faArrowAltCircleUp
-                        : faArrowAltCircleDown
+                        ? faCircleUp
+                        : faCircleDown
                       : faMinusCircle,
                   })}
                 </tr>

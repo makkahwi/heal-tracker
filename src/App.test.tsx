@@ -1,9 +1,13 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import App from "./App";
 
-test("renders learn react link", async () => {
-  const { findByText } = render(<App />);
-  const linkElement = await findByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test("renders HEAL landing title", async () => {
+  render(<App />);
+
+  const heading = await screen.findByRole("heading", {
+    name: /welcome to healthy eating and lifestyle tracker/i,
+  });
+
+  expect(heading).toBeInTheDocument();
 });
