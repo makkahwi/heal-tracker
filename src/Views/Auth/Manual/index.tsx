@@ -50,6 +50,27 @@ const ManualView = () => {
       ],
     },
     {
+      title: t("Services.Diet.AiSchedule.Title"),
+      description: t("Services.Diet.AiSchedule.Desc.Manual"),
+      details: [
+        {
+          subtitle: t("Manual.HowItWorks"),
+          content: [
+            t("Services.Diet.AiSchedule.Manual.HowItWorks1"),
+            t("Services.Diet.AiSchedule.Manual.HowItWorks2"),
+            t("Services.Diet.AiSchedule.Manual.HowItWorks3"),
+          ],
+        },
+        {
+          subtitle: t("Manual.Inputs"),
+          content: [
+            t("Services.Diet.AiSchedule.Manual.Inputs1"),
+            t("Services.Diet.AiSchedule.Manual.Inputs2"),
+          ],
+        },
+      ],
+    },
+    {
       title: t("Services.Diet.Watering.Watering"),
       description: t("Services.Diet.Watering.Desc.Manual"),
       details: [

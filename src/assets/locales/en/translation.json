@@ -159,6 +159,28 @@
   "OtherLang": "ع",
   "Services": {
     "Diet": {
+      "AiSchedule": {
+        "Analysis": "Last Week Analysis",
+        "CreatedNote": "A new schedule and meal elements were created successfully as Schedule {{order}}.",
+        "CreatedSchedule": "Created Schedule",
+        "Decision": "Decision",
+        "Desc": {
+          "Manual": "The AI Next Week Plan analyzes the latest week of weight readings, consumed meals, and activity, then either keeps your current schedule unchanged or creates a new schedule in your database using the existing schedule structure.",
+          "Page": "Generate your next-week diet schedule from last-week consumption and weight readings, then save it directly into the database."
+        },
+        "Generate": "Generate Next Week Plan",
+        "MaintainNote": "Recommendation is to keep the current schedule as is. No new schedule table was created.",
+        "Manual": {
+          "HowItWorks1": "Press Generate Next Week Plan to analyze last-week data from Firebase tables.",
+          "HowItWorks2": "If recommendation is maintain_schedule, no new schedule is created and a keep-as-is note is shown.",
+          "HowItWorks3": "If recommendation is adjust_schedule, a new schedule with meals and meal elements is created in schedules, scheduleMeals, and scheduleMealElements.",
+          "Inputs1": "No manual meal input is required.",
+          "Inputs2": "Ensure Weight Readings and Consumed Meals are up to date before generating."
+        },
+        "Period": "Period",
+        "Running": "Generating...",
+        "Title": "AI Next Week Plan"
+      },
       "Consumption": {
         "ConsumedMeals": "Consumed Meals",
         "Date": "Date",
@@ -439,8 +461,6 @@
       "FatWeightMaxTarget": "Fat Weight Max Target",
       "FatWeightMinTarget": "Fat Weight Min Target",
       "Input": "Input",
-      "ManualInput": "Manual Input",
-      "PdfInput": "Auto Input (PDF)",
       "Manual": {
         "Inputs2": "Water Reading (liters)",
         "Inputs3": "Fat Weight (kg)",
@@ -448,11 +468,13 @@
         "Inputs5": "Muscle Weight (kg)",
         "Inputs6": "Waist Fat Rating (numeric scale)"
       },
+      "ManualInput": "Manual Input",
       "Muscles": "Muscles",
       "MusclesMaxTarget": "Muscles Max Target",
       "MusclesMinTarget": "Muscles Min Target",
       "MusclesReading": "Muscles Reading",
       "NumberOfWeightReading": "Total Number of Weight Readings (Nutritionist Weekly Visits)",
+      "PdfInput": "Auto Input (PDF)",
       "Targets": "Targets",
       "TargetsDesc": "To input the targeted values of weight readings, but in a range of minimum & maximum.",
       "Title": "Weight Tracking",
