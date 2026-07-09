@@ -159,6 +159,28 @@
   "OtherLang": "En",
   "Services": {
     "Diet": {
+      "AiSchedule": {
+        "Analysis": "تحليل الأسبوع السابق",
+        "CreatedNote": "تم إنشاء جدول جديد وعناصر الوجبات بنجاح كجدول رقم {{order}}.",
+        "CreatedSchedule": "الجدول الذي تم إنشاؤه",
+        "Decision": "القرار",
+        "Desc": {
+          "Manual": "تقوم خدمة خطة الأسبوع القادم بالذكاء الاصطناعي بتحليل آخر أسبوع من قراءات الوزن والوجبات المستهلكة والنشاط، ثم إما تُبقي الجدول الحالي كما هو أو تنشئ جدولاً جديداً في قاعدة البيانات باستخدام نفس بنية الجداول الحالية.",
+          "Page": "قم بتوليد جدول نظام غذائي للأسبوع القادم من بيانات الاستهلاك وقراءات الوزن للأسبوع السابق، ثم احفظه مباشرة في قاعدة البيانات."
+        },
+        "Generate": "توليد خطة الأسبوع القادم",
+        "MaintainNote": "التوصية هي الإبقاء على الجدول الحالي كما هو. لم يتم إنشاء جدول جديد.",
+        "Manual": {
+          "HowItWorks1": "اضغط على توليد خطة الأسبوع القادم لتحليل بيانات الأسبوع السابق من جداول Firebase.",
+          "HowItWorks2": "إذا كانت التوصية هي maintain_schedule فلن يتم إنشاء جدول جديد وستظهر ملاحظة بالإبقاء على الجدول كما هو.",
+          "HowItWorks3": "إذا كانت التوصية هي adjust_schedule فسيتم إنشاء جدول جديد مع الوجبات وعناصرها داخل جداول schedules وscheduleMeals وscheduleMealElements.",
+          "Inputs1": "لا يلزم إدخال يدوي للوجبات.",
+          "Inputs2": "تأكد من تحديث قراءات الوزن والوجبات المستهلكة قبل التوليد."
+        },
+        "Period": "الفترة",
+        "Running": "جاري التوليد...",
+        "Title": "خطة الأسبوع القادم بالذكاء الاصطناعي"
+      },
       "Consumption": {
         "ConsumedMeals": "الوجبات المستهلكة",
         "Date": "التاريخ",
@@ -287,15 +309,15 @@
       "LdlRiskRatioI": "نسبة مخاطر LDL I",
       "LdlRiskRatioII": "نسبة مخاطر LDL II",
       "Lymphocytes": "الخلايا الليمفاوية",
+      "MCH": "MCH",
+      "MCHC": "MCHC",
+      "MCV": "MCV",
+      "MPV": "MPV",
       "Magnesium": "المغنيسيوم",
       "Manual": {
         "Inputs": "مؤشرات الفحص (مثل الدهون الثلاثية, مستوى السكر في الدم, ...إلخ)"
       },
-      "MCH": "MCH",
-      "MCHC": "MCHC",
-      "MCV": "MCV",
       "Monocytes": "الخلايا الوحيدة",
-      "MPV": "MPV",
       "NeutrophilsSegmented": "الخلايا المتعادلة المجزأة",
       "Phosphatase": "الفوسفاتاز",
       "Phosphorus": "الفوسفور",
@@ -305,19 +327,19 @@
       "RDW-CV": "RDW-CV",
       "RDW-SD": "RDW-SD",
       "RedCellCount": "عدد خلايا الدم الحمراء",
-      "Serum": "المصل",
       "SGOT": "SGOT (AST)",
       "SGPT": "SGPT (ALT)",
+      "Serum": "المصل",
       "Sodium": "الصوديوم",
       "TIBC": "TIBC",
+      "TSH": "TSH",
       "Transferrin": "الترانسفيرين",
       "Triglycerides": "الدهون الثلاثية",
-      "TSH": "TSH",
       "Urea": "اليوريا",
       "UricAcid": "حمض اليوريك",
+      "VLDL": "VLDL",
       "VitamineB12": "فيتامين B12",
       "VitamineD": "فيتامين D",
-      "VLDL": "VLDL",
       "WhiteCellCount": "عدد خلايا الدم البيضاء"
     },
     "Medicine": {
@@ -439,8 +461,6 @@
       "FatWeightMaxTarget": "هدف أقصى لوزن الدهون",
       "FatWeightMinTarget": "هدف أدنى لوزن الدهون",
       "Input": "الإدخال",
-      "ManualInput": "الإدخال اليدوي",
-      "PdfInput": "الإدخال الآلي (PDF)",
       "Manual": {
         "Inputs2": "قراءة المياه (باللترات)",
         "Inputs3": "وزن الدهون (كجم)",
@@ -448,11 +468,13 @@
         "Inputs5": "وزن العضلات (كجم)",
         "Inputs6": "تقييم دهون الخصر (مقياس عددي)"
       },
+      "ManualInput": "الإدخال اليدوي",
       "Muscles": "العضلات",
       "MusclesMaxTarget": "هدف أقصى للعضلات",
       "MusclesMinTarget": "هدف أدنى للعضلات",
       "MusclesReading": "قراءة العضلات",
       "NumberOfWeightReading": "إجمالي عدد قراءات الوزن (زيارات أسبوعية للتغذية)",
+      "PdfInput": "الإدخال الآلي (PDF)",
       "Targets": "الأهداف",
       "TargetsDesc": "لإدخال القيم المستهدفة لقراءة الوزن، على شكل نطاق من حد أدنى وحد أقصى.",
       "Title": "تتبع الوزن",
@@ -474,8 +496,8 @@
   "Settings": {
     "Profile": {
       "CM": "CM",
-      "Desc": "This is to insert your profile bio-data.",
       "DOB": "DOB",
+      "Desc": "This is to insert your profile bio-data.",
       "Email": "Email",
       "EmailCantBeChanged": "Email Can't Be Changed",
       "Gender": {

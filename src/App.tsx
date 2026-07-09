@@ -19,6 +19,7 @@ import store from "./Store/store";
 import Dashboard from "./Views/Auth/Dashboard";
 import Consumption from "./Views/Auth/Diet/Consumption";
 import Fasting from "./Views/Auth/Diet/Fasting";
+import AiSchedule from "./Views/Auth/Diet/AiSchedule";
 import Schedule from "./Views/Auth/Diet/Schedule";
 import Watering from "./Views/Auth/Diet/Watering";
 import LabTests from "./Views/Auth/LabTests";
@@ -57,6 +58,13 @@ export const routes = [
         path: "schedule",
         icon: faCalendar,
         Comp: <Schedule />,
+      },
+      {
+        name: "diet_schedule",
+        label: i18n.t("Services.Diet.AiSchedule.Title"),
+        path: "ai-schedule",
+        icon: faCalendar,
+        Comp: <AiSchedule />,
       },
       {
         name: "watering",
@@ -141,16 +149,16 @@ export const routes = [
   .filter(({ name, list }) =>
     list
       ? list.map(
-          ({ name }) => (store.getState().settings.activation as any)[name]
+          ({ name }) => (store.getState().settings.activation as any)[name],
         )?.length
-      : (store.getState().settings.activation as any)[name]
+      : (store.getState().settings.activation as any)[name],
   )
   .map(({ list, ...rest }) => {
     if (list?.length)
       return {
         ...rest,
         list: list.filter(
-          ({ name }) => (store.getState().settings.activation as any)[name]
+          ({ name }) => (store.getState().settings.activation as any)[name],
         ),
       };
 
@@ -175,7 +183,7 @@ const App = () => {
                   ))
                 ) : (
                   <Route path={path} element={Comp} key={i} />
-                )
+                ),
               )}
 
               <Route path="manual" element={<Manual />} />
