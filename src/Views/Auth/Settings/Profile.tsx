@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -35,17 +35,20 @@ const Profile = () => {
   const { user } = useSelector((state: RootState) => state.auth);
   const [data, setData] = useState<profileProps>(initialProfileState);
 
-  const getData = () =>
-    BeAPI.get("profile")
-      .then((res: any) => {
-        dispatch(updateActivation(res.value));
-        setData(res.value);
-      })
-      .catch((err) => console.log({ err }));
+  const getData = useCallback(
+    () =>
+      BeAPI.get("profile")
+        .then((res: any) => {
+          dispatch(updateActivation(res.value));
+          setData(res.value);
+        })
+        .catch((err) => console.log({ err })),
+    [dispatch],
+  );
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
 
   const inputs = [
     {

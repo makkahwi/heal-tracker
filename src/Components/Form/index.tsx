@@ -6,7 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { RootState } from "../../Store/store";
@@ -44,28 +44,31 @@ const Form = ({ inputs, onSubmit }: props) => {
 
   const { loading } = useSelector((state: RootState) => state.loading);
 
-  const formValuesSet = () =>
-    inputs.reduce(
-      (final, { defaultValue, type, name }) => ({
-        ...final,
-        [name]: defaultValue
-          ? defaultValue
-          : type === "date"
-          ? moment().format("yyyy-MM-DD")
-          : type === "time"
-          ? moment().format("HH:mm")
-          : type === "datetime-local"
-          ? moment().format("yyyy-MM-DDTHH:mm")
-          : type === "boolean"
-          ? false
-          : undefined,
-      }),
-      {}
-    );
+  const formValuesSet = useCallback(
+    () =>
+      inputs.reduce(
+        (final, { defaultValue, type, name }) => ({
+          ...final,
+          [name]: defaultValue
+            ? defaultValue
+            : type === "date"
+              ? moment().format("yyyy-MM-DD")
+              : type === "time"
+                ? moment().format("HH:mm")
+                : type === "datetime-local"
+                  ? moment().format("yyyy-MM-DDTHH:mm")
+                  : type === "boolean"
+                    ? false
+                    : undefined,
+        }),
+        {},
+      ),
+    [inputs],
+  );
 
   const [formValues, setFormValues] = useState<dynamicObject>(formValuesSet());
 
-  useEffect(() => setFormValues(formValuesSet()), [inputs]);
+  useEffect(() => setFormValues(formValuesSet()), [formValuesSet]);
 
   return (
     <form
@@ -92,7 +95,7 @@ const Form = ({ inputs, onSubmit }: props) => {
             fullWidth,
             ...rest
           },
-          i
+          i,
         ) => (
           <div className={fullWidth ? "col-12" : "col-md-6 col-lg-3"} key={i}>
             <label className="form-label text-start w-100 mt-4">
@@ -232,7 +235,7 @@ const Form = ({ inputs, onSubmit }: props) => {
                                                       [input.name]:
                                                         e.target.value,
                                                     }
-                                                  : ele
+                                                  : ele,
                                             ),
                                           }))
                                     }
@@ -248,7 +251,7 @@ const Form = ({ inputs, onSubmit }: props) => {
                                   setFormValues((current) => ({
                                     ...current,
                                     [name]: current[name].filter(
-                                      (_ = {}, z = 0) => z !== x
+                                      (_ = {}, z = 0) => z !== x,
                                     ),
                                   }))
                                 }
@@ -257,7 +260,7 @@ const Form = ({ inputs, onSubmit }: props) => {
                                 <FontAwesomeIcon icon={faTrash} />
                               </td>
                             </tr>
-                          )
+                          ),
                         )}
                       </tbody>
                     </table>
@@ -293,7 +296,7 @@ const Form = ({ inputs, onSubmit }: props) => {
               </div>
             )}
           </div>
-        )
+        ),
       )}
 
       <div className="col-xs-12">

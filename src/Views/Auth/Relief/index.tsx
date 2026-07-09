@@ -1,7 +1,7 @@
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import moment from "moment";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
@@ -23,58 +23,60 @@ const reliefOptions = [
 ];
 
 export const renderReliefUI =
-  (onDelete?: Function) => (event: reliefProps, date: string, id: string) =>
-    (
-      <div>
-        {date ? (
-          <span
-            style={{ minWidth: "max-content" }}
-            className="d-block bg-dark text-white p-2 my-2"
-          >
-            @ {dateTotTimeFormat(event.time)}{" "}
-            {onDelete && (
-              <FontAwesomeIcon
-                icon={faTrashCan}
-                className="mt-1 text-danger"
-                role="button"
-                onClick={() => onDelete(id)}
-              />
-            )}
-            <br />
-            {reliefOptions.find(({ value }) => value == event.type)?.label}
-          </span>
-        ) : (
-          ""
-        )}
-        <small>{event.note}</small>
-      </div>
-    );
+  (onDelete?: Function) => (event: reliefProps, date: string, id: string) => (
+    <div>
+      {date ? (
+        <span
+          style={{ minWidth: "max-content" }}
+          className="d-block bg-dark text-white p-2 my-2"
+        >
+          @ {dateTotTimeFormat(event.time)}{" "}
+          {onDelete && (
+            <FontAwesomeIcon
+              icon={faTrashCan}
+              className="mt-1 text-danger"
+              role="button"
+              onClick={() => onDelete(id)}
+            />
+          )}
+          <br />
+          {reliefOptions.find(({ value }) => value === event.type)?.label}
+        </span>
+      ) : (
+        ""
+      )}
+      <small>{event.note}</small>
+    </div>
+  );
 
 const Relief = () => {
   const { t } = useTranslation();
 
   const [data, setData] = useState<reliefProps[]>([]);
 
-  const getData = () =>
-    BeAPI.getAll("relief")
-      .then((res: reliefProps[]) =>
-        setData(
-          res
-            .map(({ time, ...rest }) => ({
-              ...rest,
-              time,
-              date: moment(time).format("yyyy-MM-DD"),
-            }))
-            ?.sort((a: reliefProps, b: reliefProps) =>
-              a.time > b.time ? -1 : 1
-            )
+  const getData = useCallback(
+    () =>
+      BeAPI.getAll("relief")
+        .then((res: reliefProps[]) =>
+          setData(
+            res
+              .map(({ time, ...rest }) => ({
+                ...rest,
+                time,
+                date: moment(time).format("yyyy-MM-DD"),
+              }))
+              ?.sort((a: reliefProps, b: reliefProps) =>
+                a.time > b.time ? -1 : 1,
+              ),
+          ),
         )
-      )
-      .catch((err) => console.log({ err }));
+        .catch((err) => console.log({ err })),
+    [],
+  );
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
 
   const formInputs = [
     {

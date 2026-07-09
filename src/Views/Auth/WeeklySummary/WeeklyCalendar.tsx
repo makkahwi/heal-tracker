@@ -53,13 +53,13 @@ const WeeklyCalendar = ({
   const element = useRef(null);
 
   const activation = useSelector(
-    (state: RootState) => state.settings.activation
+    (state: RootState) => state.settings.activation,
   );
 
   const [currentWeek, setCurrentWeek] = useState<Moment[]>([]);
   const [currentDate, setCurrentDate] = useState<Moment>(moment());
   const [currentWeekData, setCurrentWeekData] = useState<comprehensiveProps[]>(
-    []
+    [],
   );
   const [currentWeekSummary, setCurrentWeekSummary] = useState<SummaryProps>({
     week: "",
@@ -87,16 +87,16 @@ const WeeklyCalendar = ({
             moment(currentWeek[0]),
             moment(currentWeek[6]).add(1, "day"),
             undefined,
-            "[]"
-          )
+            "[]",
+          ),
         )
         .map(({ ...data }) => ({
           ...data,
           sports: walkExercisesData.filter(
-            ({ date }) => moment(data.timestamp).format("yyyy-MM-DD") === date
+            ({ date }) => moment(data.timestamp).format("yyyy-MM-DD") === date,
           ),
           medicines: medicineData.filter(
-            ({ date }) => moment(data.timestamp).format("yyyy-MM-DD") === date
+            ({ date }) => moment(data.timestamp).format("yyyy-MM-DD") === date,
           ),
           watering: [
             {
@@ -106,7 +106,7 @@ const WeeklyCalendar = ({
                 .filter(
                   ({ timestamp }) =>
                     moment(data.timestamp).format("yyyy-MM-DD") ===
-                    moment(timestamp).format("yyyy-MM-DD")
+                    moment(timestamp).format("yyyy-MM-DD"),
                 )
                 .map(({ timestamp, ...rest }) => ({
                   ...rest,
@@ -116,7 +116,7 @@ const WeeklyCalendar = ({
                 .reduce(
                   (final, { quantity }) =>
                     (final += parseFloat(String(quantity))),
-                  0
+                  0,
                 ),
             },
           ],
@@ -124,12 +124,12 @@ const WeeklyCalendar = ({
           sleeps: sleepCyclesData.filter(
             ({ endTime }) =>
               moment(data.timestamp).format("yyyy-MM-DD") ===
-              moment(endTime).format("yyyy-MM-DD")
+              moment(endTime).format("yyyy-MM-DD"),
           ),
           fasting: fasting.filter(
             ({ date }) =>
               moment(data.timestamp).format("yyyy-MM-DD") ===
-              moment(date).format("yyyy-MM-DD")
+              moment(date).format("yyyy-MM-DD"),
           ),
           reliefLogs: [
             {
@@ -140,9 +140,9 @@ const WeeklyCalendar = ({
                 count: reliefLogs
                   .filter(
                     ({ type, time }) =>
-                      type == "1" &&
+                      type === "1" &&
                       moment(data.timestamp).format("yyyy-MM-DD") ===
-                        moment(time).format("yyyy-MM-DD")
+                        moment(time).format("yyyy-MM-DD"),
                   )
                   .map(({ time, ...rest }) => ({
                     ...rest,
@@ -159,9 +159,9 @@ const WeeklyCalendar = ({
                 count: reliefLogs
                   .filter(
                     ({ type, time }) =>
-                      type == "2" &&
+                      type === "2" &&
                       moment(data.timestamp).format("yyyy-MM-DD") ===
-                        moment(time).format("yyyy-MM-DD")
+                        moment(time).format("yyyy-MM-DD"),
                   )
                   .map(({ time, ...rest }) => ({
                     ...rest,
@@ -175,9 +175,9 @@ const WeeklyCalendar = ({
               note !==
               t("Services.Relief.Times", {
                 count: 0,
-              })
+              }),
           ),
-        }))
+        })),
     );
   }, [
     currentWeek,
@@ -185,6 +185,10 @@ const WeeklyCalendar = ({
     walkExercisesData,
     medicineData,
     sleepCyclesData,
+    watering,
+    reliefLogs,
+    fasting,
+    t,
   ]);
 
   const generateSummary = () =>
@@ -207,7 +211,7 @@ const WeeklyCalendar = ({
 
     BeAPI.getAll("summaries")
       .then((res) =>
-        setCurrentWeekSummary(res.find(({ date }) => date === firstDay))
+        setCurrentWeekSummary(res.find(({ date }) => date === firstDay)),
       )
       .catch((err) => console.log({ err }));
 
@@ -295,7 +299,7 @@ const WeeklyCalendar = ({
               .reduce<string[]>(
                 (final, current) =>
                   final.includes(current) ? final : [...final, current],
-                []
+                [],
               )
               ?.map((meal, i) => (
                 <tr key={i}>
@@ -316,7 +320,7 @@ const WeeklyCalendar = ({
                             alternatives={alternatives}
                             key={y}
                           />
-                        )
+                        ),
                       ) || ""}
                   </th>
 
@@ -327,10 +331,10 @@ const WeeklyCalendar = ({
                           (dat) =>
                             meal === dat.meal.meal &&
                             moment(dat.timestamp).format("yyyy-MM-DD") ===
-                              day.format("yyyy-MM-DD")
+                              day.format("yyyy-MM-DD"),
                         )
                         ?.sort((a: any, b: any) =>
-                          a.timestamp < b.timestamp ? -1 : 1
+                          a.timestamp < b.timestamp ? -1 : 1,
                         );
 
                     return (
@@ -365,15 +369,15 @@ const WeeklyCalendar = ({
                                       (s) =>
                                         s.element === element ||
                                         s.alternatives?.find(
-                                          (a) => a.element === element
-                                        )
+                                          (a) => a.element === element,
+                                        ),
                                     )}
                                     compare
                                   />
-                                )
+                                ),
                               )}
                             </Fragment>
-                          )
+                          ),
                         )}
                       </td>
                     );
@@ -390,7 +394,7 @@ const WeeklyCalendar = ({
                   currentWeekData?.find(
                     (dat) =>
                       moment(dat.timestamp).format("yyyy-MM-DD") ===
-                      day.format("yyyy-MM-DD")
+                      day.format("yyyy-MM-DD"),
                   );
 
                 return (
@@ -398,7 +402,7 @@ const WeeklyCalendar = ({
                     {renderEvents(
                       day.format("YYYY-MM-DD"),
                       renderWateringUI(),
-                      theRecord?.watering
+                      theRecord?.watering,
                     )}
                   </td>
                 );
@@ -417,7 +421,7 @@ const WeeklyCalendar = ({
                   currentWeekData?.find(
                     (dat) =>
                       moment(dat.timestamp).format("yyyy-MM-DD") ===
-                      day.format("yyyy-MM-DD")
+                      day.format("yyyy-MM-DD"),
                   );
 
                 return (
@@ -429,7 +433,7 @@ const WeeklyCalendar = ({
                         ...rest,
                         date: moment(time).format("yyyy-MM-DD"),
                         time,
-                      }))
+                      })),
                     )}
                   </td>
                 );
@@ -448,7 +452,7 @@ const WeeklyCalendar = ({
                   currentWeekData?.find(
                     (dat) =>
                       moment(dat.timestamp).format("yyyy-MM-DD") ===
-                      day.format("yyyy-MM-DD")
+                      day.format("yyyy-MM-DD"),
                   );
 
                 return (
@@ -456,7 +460,7 @@ const WeeklyCalendar = ({
                     {renderEvents(
                       day.format("YYYY-MM-DD"),
                       renderFastingUI(),
-                      theRecord?.fasting
+                      theRecord?.fasting,
                     )}
                   </td>
                 );
@@ -475,7 +479,7 @@ const WeeklyCalendar = ({
                   currentWeekData?.find(
                     (dat) =>
                       moment(dat.timestamp).format("yyyy-MM-DD") ===
-                      day.format("yyyy-MM-DD")
+                      day.format("yyyy-MM-DD"),
                   );
 
                 return (
@@ -483,7 +487,7 @@ const WeeklyCalendar = ({
                     {renderEvents(
                       day.format("YYYY-MM-DD"),
                       renderExerciseUI(),
-                      theRecord?.sports
+                      theRecord?.sports,
                     )}
                   </td>
                 );
@@ -502,7 +506,7 @@ const WeeklyCalendar = ({
                   currentWeekData?.find(
                     (dat) =>
                       moment(dat.timestamp).format("yyyy-MM-DD") ===
-                      day.format("yyyy-MM-DD")
+                      day.format("yyyy-MM-DD"),
                   );
 
                 return (
@@ -510,7 +514,7 @@ const WeeklyCalendar = ({
                     {renderEvents(
                       day.format("YYYY-MM-DD"),
                       renderMedicineUI(),
-                      theRecord?.medicines
+                      theRecord?.medicines,
                     )}
                   </td>
                 );
@@ -529,7 +533,7 @@ const WeeklyCalendar = ({
                   currentWeekData?.find(
                     (dat) =>
                       moment(dat.timestamp).format("yyyy-MM-DD") ===
-                      day.format("yyyy-MM-DD")
+                      day.format("yyyy-MM-DD"),
                   );
 
                 return (
@@ -541,7 +545,7 @@ const WeeklyCalendar = ({
                         ...rest,
                         date: moment(endTime).format("yyyy-MM-DD"),
                         endTime,
-                      }))
+                      })),
                     )}
                   </td>
                 );
@@ -567,7 +571,8 @@ const WeeklyCalendar = ({
             {currentWeek?.map((day, x) => {
               const data = currentWeekSummary?.daily.find(
                 ({ date }) =>
-                  moment(date).format("yyyy-MM-DD") === day.format("yyyy-MM-DD")
+                  moment(date).format("yyyy-MM-DD") ===
+                  day.format("yyyy-MM-DD"),
               );
 
               return <th key={x}>{data?.content}</th>;

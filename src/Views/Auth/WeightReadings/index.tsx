@@ -1,18 +1,17 @@
-import {
-  faArrowCircleDown,
-  faArrowCircleUp,
-  faMinusCircle,
-} from "@fortawesome/free-solid-svg-icons";
-import { Fragment, useEffect, useState } from "react";
-import { useTranslation } from "react-i18next";
-
 import * as BeAPI from "../../../API";
 import Form from "../../../Components/Form";
 import TabsView from "../../../Components/Layout/TabsView";
 import PageSection from "../../../Components/PageView/PageSection";
 import WeightReadingCharts from "./Charts";
-import WeightReadingsTable from "./Table";
 import FileUploadComponent from "./FileUpload";
+import WeightReadingsTable from "./Table";
+import {
+  faArrowCircleDown,
+  faArrowCircleUp,
+  faMinusCircle,
+} from "@fortawesome/free-solid-svg-icons";
+import { Fragment, useCallback, useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 interface weightReadingTargetProps {
   id?: string;
@@ -103,7 +102,7 @@ const WeightReadings = () => {
     first: number,
     second: number,
     flip: boolean,
-    unit?: string
+    unit?: string,
   ) => {
     let icon = faMinusCircle;
     let color = "secondary";
@@ -117,7 +116,7 @@ const WeightReadings = () => {
     }
 
     const changeAmount = parseFloat(
-      (parseFloat(String(second)) - parseFloat(String(first))).toFixed(2)
+      (parseFloat(String(second)) - parseFloat(String(first))).toFixed(2),
     );
     const changePercentage = ((changeAmount / first) * 100).toFixed(2);
 
@@ -130,14 +129,17 @@ const WeightReadings = () => {
     };
   };
 
-  const emptyCalculations = {
-    color: "",
-    changeAmount: "",
-    changePercentage: "",
-    icon: "",
-  };
+  const emptyCalculations = useMemo(
+    () => ({
+      color: "",
+      changeAmount: "",
+      changePercentage: "",
+      icon: "",
+    }),
+    [],
+  );
 
-  const getData = () => {
+  const getData = useCallback(() => {
     BeAPI.get("WeightReadingTargets")
       .then((resp: any) => {
         setTargetsData(resp.value);
@@ -146,7 +148,7 @@ const WeightReadings = () => {
           .then((res: weightReadingProps[]) => {
             const sortedRes = res?.sort(
               (a: weightReadingProps, b: weightReadingProps) =>
-                a.date < b.date ? 1 : -1
+                a.date < b.date ? 1 : -1,
             );
 
             setData(
@@ -159,69 +161,69 @@ const WeightReadings = () => {
                     Math,
                     sortedRes
                       .filter((_, y) => y > i)
-                      .map(({ weight }) => weight)
+                      .map(({ weight }) => weight),
                   );
                   const bestWeight = Math.min.apply(
                     Math,
                     sortedRes
                       .filter((_, y) => y > i)
-                      .map(({ weight }) => weight)
+                      .map(({ weight }) => weight),
                   );
                   const worstFat = Math.max.apply(
                     Math,
-                    sortedRes.filter((_, y) => y > i).map(({ fat }) => fat)
+                    sortedRes.filter((_, y) => y > i).map(({ fat }) => fat),
                   );
                   const bestFat = Math.min.apply(
                     Math,
-                    sortedRes.filter((_, y) => y > i).map(({ fat }) => fat)
+                    sortedRes.filter((_, y) => y > i).map(({ fat }) => fat),
                   );
                   const worstWater = Math.min.apply(
                     Math,
-                    sortedRes.filter((_, y) => y > i).map(({ water }) => water)
+                    sortedRes.filter((_, y) => y > i).map(({ water }) => water),
                   );
                   const bestWater = Math.max.apply(
                     Math,
-                    sortedRes.filter((_, y) => y > i).map(({ water }) => water)
+                    sortedRes.filter((_, y) => y > i).map(({ water }) => water),
                   );
                   const worstWaist = Math.max.apply(
                     Math,
-                    sortedRes.filter((_, y) => y > i).map(({ waist }) => waist)
+                    sortedRes.filter((_, y) => y > i).map(({ waist }) => waist),
                   );
                   const bestWaist = Math.min.apply(
                     Math,
-                    sortedRes.filter((_, y) => y > i).map(({ waist }) => waist)
+                    sortedRes.filter((_, y) => y > i).map(({ waist }) => waist),
                   );
                   const worstMuscles = Math.min.apply(
                     Math,
                     sortedRes
                       .filter((_, y) => y > i)
-                      .map(({ muscles }) => muscles)
+                      .map(({ muscles }) => muscles),
                   );
                   const bestMuscles = Math.max.apply(
                     Math,
                     sortedRes
                       .filter((_, y) => y > i)
-                      .map(({ muscles }) => muscles)
+                      .map(({ muscles }) => muscles),
                   );
                   const worstMusclesPercentage = Math.min.apply(
                     Math,
                     sortedRes
                       .filter((_, y) => y > i)
                       .map(({ muscles, weight }) =>
-                        parseFloat(((muscles / weight) * 100).toFixed(2))
-                      )
+                        parseFloat(((muscles / weight) * 100).toFixed(2)),
+                      ),
                   );
                   const bestMusclesPercentage = Math.max.apply(
                     Math,
                     sortedRes
                       .filter((_, y) => y > i)
                       .map(({ muscles, weight }) =>
-                        parseFloat(((muscles / weight) * 100).toFixed(2))
-                      )
+                        parseFloat(((muscles / weight) * 100).toFixed(2)),
+                      ),
                   );
 
                   const musclesPercentage = parseFloat(
-                    ((muscles / weight) * 100).toFixed(2)
+                    ((muscles / weight) * 100).toFixed(2),
                   );
 
                   return {
@@ -240,7 +242,7 @@ const WeightReadings = () => {
                             previousRecord?.weight,
                             weight,
                             false,
-                            " " + t("Common.Labels.KG")
+                            " " + t("Common.Labels.KG"),
                           )
                         : emptyCalculations,
                     fatWeeklyChange:
@@ -249,7 +251,7 @@ const WeightReadings = () => {
                             previousRecord?.fat,
                             fat,
                             false,
-                            t("Common.Labels.KG")
+                            t("Common.Labels.KG"),
                           )
                         : emptyCalculations,
                     waterWeeklyChange:
@@ -258,7 +260,7 @@ const WeightReadings = () => {
                             previousRecord?.water,
                             water,
                             true,
-                            t("Common.Labels.Litre")
+                            t("Common.Labels.Litre"),
                           )
                         : emptyCalculations,
                     waistWeeklyChange:
@@ -271,7 +273,7 @@ const WeightReadings = () => {
                             previousRecord?.muscles,
                             muscles,
                             true,
-                            " " + t("Common.Labels.KG")
+                            " " + t("Common.Labels.KG"),
                           )
                         : emptyCalculations,
                     musclesPercentageWeeklyChange:
@@ -282,11 +284,11 @@ const WeightReadings = () => {
                                 (previousRecord?.muscles /
                                   previousRecord?.weight) *
                                 100
-                              ).toFixed(2)
+                              ).toFixed(2),
                             ),
                             parseFloat(((muscles / weight) * 100).toFixed(2)),
                             true,
-                            " %"
+                            " %",
                           )
                         : emptyCalculations,
                     weightSinceWorstChange:
@@ -295,7 +297,7 @@ const WeightReadings = () => {
                             worstWeight,
                             weight,
                             false,
-                            " " + t("Common.Labels.KG")
+                            " " + t("Common.Labels.KG"),
                           )
                         : emptyCalculations,
                     fatSinceWorstChange:
@@ -304,7 +306,7 @@ const WeightReadings = () => {
                             worstFat,
                             fat,
                             false,
-                            t("Common.Labels.KG")
+                            t("Common.Labels.KG"),
                           )
                         : emptyCalculations,
                     waterSinceWorstChange:
@@ -313,7 +315,7 @@ const WeightReadings = () => {
                             worstWater,
                             water,
                             true,
-                            t("Common.Labels.Litre")
+                            t("Common.Labels.Litre"),
                           )
                         : emptyCalculations,
                     waistSinceWorstChange:
@@ -326,7 +328,7 @@ const WeightReadings = () => {
                             worstMuscles,
                             muscles,
                             true,
-                            " " + t("Common.Labels.KG")
+                            " " + t("Common.Labels.KG"),
                           )
                         : emptyCalculations,
                     musclesPercentageSinceWorstChange:
@@ -335,7 +337,7 @@ const WeightReadings = () => {
                             worstMusclesPercentage,
                             musclesPercentage,
                             true,
-                            " %"
+                            " %",
                           )
                         : emptyCalculations,
                     weightSinceBestChange:
@@ -344,7 +346,7 @@ const WeightReadings = () => {
                             bestWeight,
                             weight,
                             false,
-                            " " + t("Common.Labels.KG")
+                            " " + t("Common.Labels.KG"),
                           )
                         : emptyCalculations,
                     fatSinceBestChange:
@@ -353,7 +355,7 @@ const WeightReadings = () => {
                             bestFat,
                             fat,
                             false,
-                            t("Common.Labels.KG")
+                            t("Common.Labels.KG"),
                           )
                         : emptyCalculations,
                     waterSinceBestChange:
@@ -362,7 +364,7 @@ const WeightReadings = () => {
                             bestWater,
                             water,
                             true,
-                            t("Common.Labels.Litre")
+                            t("Common.Labels.Litre"),
                           )
                         : emptyCalculations,
                     waistSinceBestChange:
@@ -375,7 +377,7 @@ const WeightReadings = () => {
                             bestMuscles,
                             muscles,
                             true,
-                            " " + t("Common.Labels.KG")
+                            " " + t("Common.Labels.KG"),
                           )
                         : emptyCalculations,
                     musclesPercentageSinceBestChange:
@@ -384,7 +386,7 @@ const WeightReadings = () => {
                             bestMusclesPercentage,
                             musclesPercentage,
                             true,
-                            " %"
+                            " %",
                           )
                         : emptyCalculations,
                     weightSinceStartChange:
@@ -393,7 +395,7 @@ const WeightReadings = () => {
                             firstRecord?.weight,
                             weight,
                             false,
-                            " " + t("Common.Labels.KG")
+                            " " + t("Common.Labels.KG"),
                           )
                         : emptyCalculations,
                     fatSinceStartChange:
@@ -402,7 +404,7 @@ const WeightReadings = () => {
                             firstRecord?.fat,
                             fat,
                             false,
-                            t("Common.Labels.KG")
+                            t("Common.Labels.KG"),
                           )
                         : emptyCalculations,
                     waterSinceStartChange:
@@ -411,7 +413,7 @@ const WeightReadings = () => {
                             firstRecord?.water,
                             water,
                             true,
-                            t("Common.Labels.Litre")
+                            t("Common.Labels.Litre"),
                           )
                         : emptyCalculations,
                     waistSinceStartChange:
@@ -424,7 +426,7 @@ const WeightReadings = () => {
                             firstRecord?.muscles,
                             muscles,
                             true,
-                            " " + t("Common.Labels.KG")
+                            " " + t("Common.Labels.KG"),
                           )
                         : emptyCalculations,
                     musclesPercentageSinceStartChange:
@@ -433,22 +435,22 @@ const WeightReadings = () => {
                             (firstRecord?.muscles / firstRecord?.weight) * 100,
                             musclesPercentage,
                             true,
-                            " %"
+                            " %",
                           )
                         : emptyCalculations,
                   };
-                }
-              )
+                },
+              ),
             );
           })
           .catch((err) => console.log({ err }));
       })
       .catch((err) => console.log({ err }));
-  };
+  }, [t, emptyCalculations]);
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
 
   const formInputs = [
     {
@@ -620,8 +622,12 @@ const WeightReadings = () => {
     },
     {
       title: t("Services.WeightReadings.PdfInput"),
-      view:<div><FileUploadComponent/></div>,
-    },   
+      view: (
+        <div>
+          <FileUploadComponent />
+        </div>
+      ),
+    },
     {
       title: t("Services.WeightReadings.Targets"),
       view: <Form inputs={targetsFormInputs} onSubmit={onTargetsSubmit} />,

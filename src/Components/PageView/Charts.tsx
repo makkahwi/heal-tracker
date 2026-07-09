@@ -63,7 +63,7 @@ const AnalysisCharts = ({ charts, initialHovered, data }: props) => {
       changeAverage: data.map(() => false),
       targeted: data.map(() => false),
     });
-  }, [data]);
+  }, [data, initialHovered]);
 
   const colors = [
     "#184e77",

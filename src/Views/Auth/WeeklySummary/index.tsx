@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
@@ -21,11 +21,11 @@ const WeeklySummary = () => {
   const { t } = useTranslation();
 
   const activation = useSelector(
-    (state: RootState) => state.settings.activation
+    (state: RootState) => state.settings.activation,
   );
 
   const [consumptionData, setConsumptionData] = useState<consumptionProps[]>(
-    []
+    [],
   );
   const [walkExercisesData, setWalkExercisesData] = useState<
     walkExerciseProps[]
@@ -39,11 +39,11 @@ const WeeklySummary = () => {
   const [reliefLogs, setReliefLogs] = useState<reliefProps[]>([]);
   const [fasting, setFasting] = useState<fastingProps[]>([]);
 
-  const getData = () => {
+  const getData = useCallback(() => {
     if (activation.diet_consumption && activation.diet_schedule) {
       BeAPI.getAll("scheduleMealElements")
         .then((res: SchedulesMealElementProps[]) =>
-          setScheduled(res?.sort((a, b) => (a.element > b.element ? 1 : -1)))
+          setScheduled(res?.sort((a, b) => (a.element > b.element ? 1 : -1))),
         )
         .catch((err) => console.log({ err }));
 
@@ -52,12 +52,12 @@ const WeeklySummary = () => {
           setMeals(
             res
               .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
-                a.time < b.time ? -1 : 1
+                a.time < b.time ? -1 : 1,
               )
               .sort((a: SchedulesMealProps, b: SchedulesMealProps) =>
-                a.schedule < b.schedule ? 1 : -1
-              )
-          )
+                a.schedule < b.schedule ? 1 : -1,
+              ),
+          ),
         )
         .catch((err) => console.log({ err }));
     }
@@ -71,13 +71,13 @@ const WeeklySummary = () => {
               ?.map(({ contents, supposed, ...rest }) => ({
                 ...rest,
                 contents: contents?.sort((a, b) =>
-                  a.element > b.element ? 1 : -1
+                  a.element > b.element ? 1 : -1,
                 ),
                 supposed: supposed?.sort((a, b) =>
-                  a.element > b.element ? 1 : -1
+                  a.element > b.element ? 1 : -1,
                 ),
-              }))
-          )
+              })),
+          ),
         )
         .catch((err) => console.log({ err }));
     }
@@ -87,9 +87,9 @@ const WeeklySummary = () => {
         .then((res: wateringProps[]) =>
           setWatering(
             res?.sort((a: wateringProps, b: wateringProps) =>
-              a.timestamp > b.timestamp ? -1 : 1
-            )
-          )
+              a.timestamp > b.timestamp ? -1 : 1,
+            ),
+          ),
         )
         .catch((err) => console.log({ err }));
     }
@@ -99,9 +99,9 @@ const WeeklySummary = () => {
         .then((res: any) =>
           setWalkExercisesData(
             res?.sort((a: walkExerciseProps, b: walkExerciseProps) =>
-              a.date > b.date ? -1 : 1
-            )
-          )
+              a.date > b.date ? -1 : 1,
+            ),
+          ),
         )
         .catch((err) => console.log({ err }));
     }
@@ -111,9 +111,9 @@ const WeeklySummary = () => {
         .then((res: any) =>
           setSleepCyclesData(
             res?.sort((a: sleepCycleProps, b: sleepCycleProps) =>
-              a.startTime > b.startTime ? -1 : 1
-            )
-          )
+              a.startTime > b.startTime ? -1 : 1,
+            ),
+          ),
         )
         .catch((err) => console.log({ err }));
     }
@@ -126,7 +126,7 @@ const WeeklySummary = () => {
               setMedicineData(
                 resp
                   ?.sort((a: medicineProps, b: medicineProps) =>
-                    a.date > b.date ? -1 : 1
+                    a.date > b.date ? -1 : 1,
                   )
                   .map(({ medicine, ...rest }) => {
                     const med = res.find(({ id }) => id === medicine);
@@ -135,8 +135,8 @@ const WeeklySummary = () => {
                       ...rest,
                       medicine: med?.medicine + " (" + med?.specs + ")" || "",
                     };
-                  })
-              )
+                  }),
+              ),
             )
             .catch((err) => console.log({ err }));
         })
@@ -148,9 +148,9 @@ const WeeklySummary = () => {
         .then((res: any) =>
           setReliefLogs(
             res?.sort((a: reliefProps, b: reliefProps) =>
-              a.time > b.time ? -1 : 1
-            )
-          )
+              a.time > b.time ? -1 : 1,
+            ),
+          ),
         )
         .catch((err) => console.log({ err }));
     }
@@ -160,17 +160,17 @@ const WeeklySummary = () => {
         .then((res: any) =>
           setFasting(
             res?.sort((a: fastingProps, b: fastingProps) =>
-              a.date > b.date ? -1 : 1
-            )
-          )
+              a.date > b.date ? -1 : 1,
+            ),
+          ),
         )
         .catch((err) => console.log({ err }));
     }
-  };
+  }, [activation]);
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
 
   return (
     <PageSection

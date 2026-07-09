@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch } from "react-redux";
 
@@ -42,20 +42,23 @@ const ServicesActivation = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { t } = useTranslation();
   const [data, setData] = useState<serviceActivationProps>(
-    initialServiceActivationState
+    initialServiceActivationState,
   );
 
-  const getData = () =>
-    BeAPI.get("settings")
-      .then((res: any) => {
-        dispatch(updateActivation(res.value));
-        setData(res.value);
-      })
-      .catch((err) => console.log({ err }));
+  const getData = useCallback(
+    () =>
+      BeAPI.get("settings")
+        .then((res: any) => {
+          dispatch(updateActivation(res.value));
+          setData(res.value);
+        })
+        .catch((err) => console.log({ err })),
+    [dispatch],
+  );
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
 
   const inputs = [
     {

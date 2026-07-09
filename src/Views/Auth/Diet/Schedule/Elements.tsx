@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import * as BeAPI from "../../../../API";
 import MealView from "../../../../Components/MealView";
@@ -27,7 +27,7 @@ const Elements = ({ meals, schedules }: props) => {
 
   const [data, setData] = useState<SchedulesMealElementProps[]>([]);
 
-  const getData = () => {
+  const getData = useCallback(() => {
     BeAPI.getAll("scheduleMealElements")
       .then((res: SchedulesMealElementProps[]) =>
         setData(
@@ -38,15 +38,15 @@ const Elements = ({ meals, schedules }: props) => {
                   return a?.meal < b?.meal ? 1 : -1;
                 }
                 return 1;
-              }
+              },
             )
             .sort(
               (a: SchedulesMealElementProps, b: SchedulesMealElementProps) => {
                 const firstMealTime = meals.find(
-                  (meal) => meal.meal === a.meal
+                  (meal) => meal.meal === a.meal,
                 )?.time;
                 const secondMealTime = meals.find(
-                  (meal) => meal.meal === b.meal
+                  (meal) => meal.meal === b.meal,
                 )?.time;
 
                 if (firstMealTime && secondMealTime) {
@@ -54,17 +54,17 @@ const Elements = ({ meals, schedules }: props) => {
                 }
 
                 return 1;
-              }
-            )
-        )
+              },
+            ),
+        ),
       )
       .catch((err) => console.log({ err }));
-  };
+  }, [meals]);
 
   useEffect(() => {
     // BeAPI.getAll().then((res: SchedulesMealElementProps[][]) => setData(res));
     getData();
-  }, []);
+  }, [getData]);
 
   const formInputs = [
     {
@@ -81,7 +81,7 @@ const Elements = ({ meals, schedules }: props) => {
       render: (row: SchedulesMealElementProps, i: number) => {
         const meal = meals.find(({ id }) => id === String(row.meal));
         const schedule = schedules.find(
-          ({ id }) => id === String(meal?.schedule)
+          ({ id }) => id === String(meal?.schedule),
         );
 
         return i > 0 && row.meal === data[i - 1].meal
