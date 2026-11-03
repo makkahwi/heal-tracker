@@ -1,5 +1,5 @@
 import moment from "moment";
-import { Fragment, useState } from "react";
+import { FormEvent, Fragment, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import * as BeAPI from "../../../../API";
@@ -7,6 +7,7 @@ import PageSection from "../../../../Components/PageView/PageSection";
 import {
   mapElementToScheduleElement,
   Model2Recommendation,
+  PlanningPreferences,
   recommendWeeklyHealthModel2,
 } from "../../../../Utils/weeklyHealthModel2";
 import { walkExerciseProps } from "../../Sports";
@@ -38,6 +39,15 @@ const AiSchedule = () => {
   const [statusNote, setStatusNote] = useState("");
   const [recommendation, setRecommendation] = useState<Model2Recommendation>();
   const [createdSchedule, setCreatedSchedule] = useState<CreatedScheduleView>();
+  const [preferences, setPreferences] = useState<PlanningPreferences>({
+    plannedExercise: false,
+    wakeTime: "07:00",
+    sleepTime: "23:00",
+    lunchTime: "13:00",
+    notes: "",
+  });
+  const [exerciseAnswer, setExerciseAnswer] = useState("");
+  const [saving, setSaving] = useState(false);
 
   const loadCreatedScheduleView = async (
     scheduleId: string,
@@ -74,91 +84,76 @@ const AiSchedule = () => {
     };
   };
 
-  const runAiPlanner = async () => {
+  const runAiPlanner = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setLoading(true);
     setError("");
     setStatusNote("");
+    setRecommendation(undefined);
     setCreatedSchedule(undefined);
 
     try {
-      const [weightReadings, consumed, sportSessions, schedules] =
-        await Promise.all([
-          BeAPI.getAll("WeightReadings"),
-          BeAPI.getAll("consumed"),
-          BeAPI.getAll("sportSessions"),
-          BeAPI.getAll("schedules"),
-        ]);
-
+      const [weightReadings, consumed, sportSessions] = await Promise.all([
+        BeAPI.getAll("WeightReadings"),
+        BeAPI.getAll("consumed"),
+        BeAPI.getAll("sportSessions"),
+      ]);
       const modelOutput = recommendWeeklyHealthModel2({
         weightReadings: weightReadings as weightReadingProps[],
         consumed: consumed as consumptionProps[],
         sportSessions: sportSessions as walkExerciseProps[],
+        preferences: { ...preferences, plannedExercise: exerciseAnswer === "yes" },
       });
-
       setRecommendation(modelOutput);
-
       if (modelOutput.decision === "maintain_schedule") {
         setStatusNote(t("Services.Diet.AiSchedule.MaintainNote"));
-        return;
       }
-
-      const currentSchedules = schedules as ScheduleProps[];
-      const maxOrder = currentSchedules.reduce(
-        (max, schedule) => (schedule.order > max ? schedule.order : max),
-        0,
-      );
-
-      const newOrder = maxOrder + 1;
-      const newDate = moment().format("YYYY-MM-DD");
-
-      const createdScheduleResp = await BeAPI.create("schedules", {
-        order: newOrder,
-        date: newDate,
-      });
-
-      const scheduleId = (createdScheduleResp as any)?.name;
-
-      if (!scheduleId) {
-        throw new Error("Failed to create schedule record");
-      }
-
-      for (const meal of modelOutput.nextWeekSchedule) {
-        const createdMealResp = await BeAPI.create("scheduleMeals", {
-          schedule: scheduleId,
-          meal: meal.meal,
-          time: meal.time,
-        });
-
-        const mealId = (createdMealResp as any)?.name;
-
-        if (!mealId) {
-          throw new Error(`Failed to create schedule meal for ${meal.meal}`);
-        }
-
-        for (const item of meal.items) {
-          await BeAPI.create(
-            "scheduleMealElements",
-            mapElementToScheduleElement(mealId, item),
-          );
-        }
-      }
-
-      const created = await loadCreatedScheduleView(
-        scheduleId,
-        newOrder,
-        newDate,
-      );
-      setCreatedSchedule(created);
-      setStatusNote(
-        t("Services.Diet.AiSchedule.CreatedNote", { order: newOrder }),
-      );
     } catch (err: unknown) {
-      setError(
-        (err as Error)?.message ||
-          "Unexpected error while generating AI schedule.",
-      );
+      setError((err as Error)?.message || t("Services.Diet.AiSchedule.GenerateError"));
     } finally {
       setLoading(false);
+    }
+  };
+
+  const saveSchedule = async () => {
+    if (!recommendation || saving || createdSchedule) return;
+    setSaving(true);
+    setError("");
+    const created: { table: string; id: string }[] = [];
+    try {
+      const schedules = (await BeAPI.getAll("schedules")) as ScheduleProps[];
+      const newOrder = Math.max(0, ...schedules.map(({ order }) => Number(order) || 0)) + 1;
+      const newDate = moment().format("YYYY-MM-DD");
+      const scheduleResponse = await BeAPI.create("schedules", { order: newOrder, date: newDate });
+      const scheduleId = scheduleResponse?.data?.name;
+      if (!scheduleId) throw new Error("Failed to create schedule record");
+      created.push({ table: "schedules", id: scheduleId });
+
+      for (const meal of recommendation.nextWeekSchedule) {
+        const mealResponse = await BeAPI.create("scheduleMeals", {
+          schedule: scheduleId, meal: meal.meal, time: meal.time,
+        });
+        const mealId = mealResponse?.data?.name;
+        if (!mealId) throw new Error(`Failed to create schedule meal for ${meal.meal}`);
+        created.push({ table: "scheduleMeals", id: mealId });
+        for (const item of meal.items) {
+          const elementResponse = await BeAPI.create(
+            "scheduleMealElements", mapElementToScheduleElement(mealId, item),
+          );
+          const elementId = elementResponse?.data?.name;
+          if (!elementId) throw new Error("Failed to create meal element");
+          created.push({ table: "scheduleMealElements", id: elementId });
+        }
+      }
+      setCreatedSchedule(await loadCreatedScheduleView(scheduleId, newOrder, newDate));
+      setStatusNote(t("Services.Diet.AiSchedule.CreatedNote", { order: newOrder }));
+    } catch (err: unknown) {
+      for (const record of created.reverse()) {
+        try { await BeAPI.remove(record.table, record.id); } catch (_) { /* Keep original error. */ }
+      }
+      setError((err as Error)?.message || t("Services.Diet.AiSchedule.SaveError"));
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -168,16 +163,33 @@ const AiSchedule = () => {
       desc={t("Services.Diet.AiSchedule.Desc.Page")}
     >
       <Fragment>
-        <button
-          className="btn btn-primary p-3 text-white"
-          onClick={runAiPlanner}
-          disabled={loading}
-          type="button"
-        >
-          {loading
-            ? t("Services.Diet.AiSchedule.Running")
-            : t("Services.Diet.AiSchedule.Generate")}
-        </button>
+        <form onSubmit={runAiPlanner} className="text-start">
+          <div className="row g-3">
+            <div className="col-md-6">
+              <label className="form-label" htmlFor="planned-exercise">{t("Services.Diet.AiSchedule.PlannedExercise")}</label>
+              <select id="planned-exercise" className="form-select" value={exerciseAnswer} onChange={(event) => setExerciseAnswer(event.target.value)} required>
+                <option value="">{t("Services.Diet.AiSchedule.Choose")}</option>
+                <option value="yes">{t("Services.Diet.AiSchedule.Yes")}</option>
+                <option value="no">{t("Services.Diet.AiSchedule.No")}</option>
+              </select>
+            </div>
+            {(["wakeTime", "sleepTime", "lunchTime"] as const).map((field) => (
+              <div className="col-md-6" key={field}>
+                <label className="form-label" htmlFor={field}>{t(`Services.Diet.AiSchedule.${field}`)}</label>
+                <input id={field} className="form-control" type="time" value={preferences[field]} required
+                  onChange={(event) => setPreferences({ ...preferences, [field]: event.target.value })} />
+              </div>
+            ))}
+            <div className="col-12">
+              <label className="form-label" htmlFor="planning-notes">{t("Services.Diet.AiSchedule.Notes")}</label>
+              <textarea id="planning-notes" className="form-control" value={preferences.notes}
+                onChange={(event) => setPreferences({ ...preferences, notes: event.target.value })} />
+            </div>
+          </div>
+          <button className="btn btn-primary mt-3" disabled={loading || saving} type="submit">
+            {loading ? t("Services.Diet.AiSchedule.Running") : t("Services.Diet.AiSchedule.Generate")}
+          </button>
+        </form>
 
         {statusNote ? (
           <div className="alert alert-info mt-4" role="alert">
@@ -208,6 +220,23 @@ const AiSchedule = () => {
               <strong>{recommendation.decision}</strong>
             </div>
 
+            <h5 className="mt-4">{t("Services.Diet.AiSchedule.Preview")}</h5>
+            {recommendation.nextWeekSchedule.map((meal, index) => (
+              <div className="card mt-2 text-start" key={`${meal.meal}-${index}`}>
+                <div className="card-body">
+                  <strong>{meal.meal} ({meal.time})</strong>
+                  <ul className="mb-0">{meal.items.map((item, itemIndex) => (
+                    <li key={itemIndex}>{item.count} {item.unit} {item.element}</li>
+                  ))}</ul>
+                  {meal.note && <div className="small text-muted">{meal.note}</div>}
+                </div>
+              </div>
+            ))}
+            {!createdSchedule && (
+              <button className="btn btn-success mt-3" type="button" disabled={saving} onClick={saveSchedule}>
+                {saving ? t("Services.Diet.AiSchedule.Saving") : t("Services.Diet.AiSchedule.Save")}
+              </button>
+            )}
             <ul className="list-group mt-2">
               {recommendation.reasons.map((reason) => (
                 <li className="list-group-item text-start" key={reason}>
