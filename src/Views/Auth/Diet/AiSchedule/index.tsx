@@ -3,6 +3,7 @@ import { FormEvent, Fragment, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import * as BeAPI from "../../../../API";
+import { generateWeeklySchedule } from "../../../../API/ChatGPT";
 import PageSection from "../../../../Components/PageView/PageSection";
 import {
   mapElementToScheduleElement,
@@ -102,14 +103,23 @@ const AiSchedule = () => {
         weightReadings: weightReadings as weightReadingProps[],
         consumed: consumed as consumptionProps[],
         sportSessions: sportSessions as walkExerciseProps[],
-        preferences: { ...preferences, plannedExercise: exerciseAnswer === "yes" },
+        preferences: {
+          ...preferences,
+          plannedExercise: exerciseAnswer === "yes",
+        },
       });
-      setRecommendation(modelOutput);
+      const generatedMeals = await generateWeeklySchedule(modelOutput, {
+        ...preferences,
+        plannedExercise: exerciseAnswer === "yes",
+      });
+      setRecommendation({ ...modelOutput, nextWeekSchedule: generatedMeals });
       if (modelOutput.decision === "maintain_schedule") {
         setStatusNote(t("Services.Diet.AiSchedule.MaintainNote"));
       }
     } catch (err: unknown) {
-      setError((err as Error)?.message || t("Services.Diet.AiSchedule.GenerateError"));
+      setError(
+        (err as Error)?.message || t("Services.Diet.AiSchedule.GenerateError"),
+      );
     } finally {
       setLoading(false);
     }
@@ -122,36 +132,54 @@ const AiSchedule = () => {
     const created: { table: string; id: string }[] = [];
     try {
       const schedules = (await BeAPI.getAll("schedules")) as ScheduleProps[];
-      const newOrder = Math.max(0, ...schedules.map(({ order }) => Number(order) || 0)) + 1;
+      const newOrder =
+        Math.max(0, ...schedules.map(({ order }) => Number(order) || 0)) + 1;
       const newDate = moment().format("YYYY-MM-DD");
-      const scheduleResponse = await BeAPI.create("schedules", { order: newOrder, date: newDate });
+      const scheduleResponse = await BeAPI.create("schedules", {
+        order: newOrder,
+        date: newDate,
+      });
       const scheduleId = scheduleResponse?.data?.name;
       if (!scheduleId) throw new Error("Failed to create schedule record");
       created.push({ table: "schedules", id: scheduleId });
 
       for (const meal of recommendation.nextWeekSchedule) {
         const mealResponse = await BeAPI.create("scheduleMeals", {
-          schedule: scheduleId, meal: meal.meal, time: meal.time,
+          schedule: scheduleId,
+          meal: meal.meal,
+          time: meal.time,
         });
         const mealId = mealResponse?.data?.name;
-        if (!mealId) throw new Error(`Failed to create schedule meal for ${meal.meal}`);
+        if (!mealId)
+          throw new Error(`Failed to create schedule meal for ${meal.meal}`);
         created.push({ table: "scheduleMeals", id: mealId });
         for (const item of meal.items) {
           const elementResponse = await BeAPI.create(
-            "scheduleMealElements", mapElementToScheduleElement(mealId, item),
+            "scheduleMealElements",
+            mapElementToScheduleElement(mealId, item),
           );
           const elementId = elementResponse?.data?.name;
           if (!elementId) throw new Error("Failed to create meal element");
           created.push({ table: "scheduleMealElements", id: elementId });
         }
       }
-      setCreatedSchedule(await loadCreatedScheduleView(scheduleId, newOrder, newDate));
-      setStatusNote(t("Services.Diet.AiSchedule.CreatedNote", { order: newOrder }));
+      setCreatedSchedule(
+        await loadCreatedScheduleView(scheduleId, newOrder, newDate),
+      );
+      setStatusNote(
+        t("Services.Diet.AiSchedule.CreatedNote", { order: newOrder }),
+      );
     } catch (err: unknown) {
       for (const record of created.reverse()) {
-        try { await BeAPI.remove(record.table, record.id); } catch (_) { /* Keep original error. */ }
+        try {
+          await BeAPI.remove(record.table, record.id);
+        } catch (_) {
+          /* Keep original error. */
+        }
       }
-      setError((err as Error)?.message || t("Services.Diet.AiSchedule.SaveError"));
+      setError(
+        (err as Error)?.message || t("Services.Diet.AiSchedule.SaveError"),
+      );
     } finally {
       setSaving(false);
     }
@@ -166,28 +194,73 @@ const AiSchedule = () => {
         <form onSubmit={runAiPlanner} className="text-start">
           <div className="row g-3">
             <div className="col-md-6">
-              <label className="form-label" htmlFor="planned-exercise">{t("Services.Diet.AiSchedule.PlannedExercise")}</label>
-              <select id="planned-exercise" className="form-select" value={exerciseAnswer} onChange={(event) => setExerciseAnswer(event.target.value)} required>
+              <label className="form-label" htmlFor="planned-exercise">
+                {t("Services.Diet.AiSchedule.PlannedExercise")}
+              </label>
+              <select
+                id="planned-exercise"
+                className="form-select"
+                value={exerciseAnswer}
+                onChange={(event) => setExerciseAnswer(event.target.value)}
+                required
+                defaultValue="yes"
+              >
                 <option value="">{t("Services.Diet.AiSchedule.Choose")}</option>
                 <option value="yes">{t("Services.Diet.AiSchedule.Yes")}</option>
                 <option value="no">{t("Services.Diet.AiSchedule.No")}</option>
               </select>
             </div>
-            {(["wakeTime", "sleepTime", "lunchTime"] as const).map((field) => (
-              <div className="col-md-6" key={field}>
-                <label className="form-label" htmlFor={field}>{t(`Services.Diet.AiSchedule.${field}`)}</label>
-                <input id={field} className="form-control" type="time" value={preferences[field]} required
-                  onChange={(event) => setPreferences({ ...preferences, [field]: event.target.value })} />
+
+            {(
+              [
+                { label: "wakeTime", default: "05:00" },
+                { label: "sleepTime", default: "21:00" },
+                { label: "lunchTime", default: "13:00" },
+              ] as const
+            ).map((field) => (
+              <div className="col-md-6" key={field.label}>
+                <label className="form-label" htmlFor={field.label}>
+                  {t(`Services.Diet.AiSchedule.${field.label}`)}
+                </label>
+
+                <input
+                  id={field.label}
+                  className="form-control"
+                  type="time"
+                  value={preferences[field.label]}
+                  required
+                  defaultValue={field.default}
+                  onChange={(event) =>
+                    setPreferences({
+                      ...preferences,
+                      [field.label]: event.target.value,
+                    })
+                  }
+                />
               </div>
             ))}
             <div className="col-12">
-              <label className="form-label" htmlFor="planning-notes">{t("Services.Diet.AiSchedule.Notes")}</label>
-              <textarea id="planning-notes" className="form-control" value={preferences.notes}
-                onChange={(event) => setPreferences({ ...preferences, notes: event.target.value })} />
+              <label className="form-label" htmlFor="planning-notes">
+                {t("Services.Diet.AiSchedule.Notes")}
+              </label>
+              <textarea
+                id="planning-notes"
+                className="form-control"
+                value={preferences.notes}
+                onChange={(event) =>
+                  setPreferences({ ...preferences, notes: event.target.value })
+                }
+              />
             </div>
           </div>
-          <button className="btn btn-primary mt-3" disabled={loading || saving} type="submit">
-            {loading ? t("Services.Diet.AiSchedule.Running") : t("Services.Diet.AiSchedule.Generate")}
+          <button
+            className="btn btn-primary mt-3"
+            disabled={loading || saving}
+            type="submit"
+          >
+            {loading
+              ? t("Services.Diet.AiSchedule.Running")
+              : t("Services.Diet.AiSchedule.Generate")}
           </button>
         </form>
 
@@ -222,19 +295,37 @@ const AiSchedule = () => {
 
             <h5 className="mt-4">{t("Services.Diet.AiSchedule.Preview")}</h5>
             {recommendation.nextWeekSchedule.map((meal, index) => (
-              <div className="card mt-2 text-start" key={`${meal.meal}-${index}`}>
+              <div
+                className="card mt-2 text-start"
+                key={`${meal.meal}-${index}`}
+              >
                 <div className="card-body">
-                  <strong>{meal.meal} ({meal.time})</strong>
-                  <ul className="mb-0">{meal.items.map((item, itemIndex) => (
-                    <li key={itemIndex}>{item.count} {item.unit} {item.element}</li>
-                  ))}</ul>
-                  {meal.note && <div className="small text-muted">{meal.note}</div>}
+                  <strong>
+                    {meal.meal} ({meal.time})
+                  </strong>
+                  <ul className="mb-0">
+                    {meal.items.map((item, itemIndex) => (
+                      <li key={itemIndex}>
+                        {item.count} {item.unit} {item.element}
+                      </li>
+                    ))}
+                  </ul>
+                  {meal.note && (
+                    <div className="small text-muted">{meal.note}</div>
+                  )}
                 </div>
               </div>
             ))}
             {!createdSchedule && (
-              <button className="btn btn-success mt-3" type="button" disabled={saving} onClick={saveSchedule}>
-                {saving ? t("Services.Diet.AiSchedule.Saving") : t("Services.Diet.AiSchedule.Save")}
+              <button
+                className="btn btn-success mt-3"
+                type="button"
+                disabled={saving}
+                onClick={saveSchedule}
+              >
+                {saving
+                  ? t("Services.Diet.AiSchedule.Saving")
+                  : t("Services.Diet.AiSchedule.Save")}
               </button>
             )}
             <ul className="list-group mt-2">
