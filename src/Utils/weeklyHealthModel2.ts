@@ -134,18 +134,44 @@ function normalizeDate(value: unknown): string {
   return parsed.isValid() ? parsed.format("YYYY-MM-DD") : "";
 }
 
+export interface PlanningPreferences {
+  plannedExercise: boolean;
+  wakeTime: string;
+  sleepTime: string;
+  lunchTime: string;
+  notes?: string;
+}
+
+function minutes(time: string): number {
+  const [hours, mins] = time.split(":").map(Number);
+  return hours * 60 + mins;
+}
+
+function clock(value: number): string {
+  const normalized = ((value % 1440) + 1440) % 1440;
+  return `${String(Math.floor(normalized / 60)).padStart(2, "0")}:${String(normalized % 60).padStart(2, "0")}`;
+}
+
 function buildNextWeekSchedule(
   adjust: boolean,
+  preferences: PlanningPreferences,
 ): Model2Recommendation["nextWeekSchedule"] {
   const riceLunch = adjust ? 120 : 150;
   const riceDinner = adjust ? 80 : 120;
   const lunchProtein = adjust ? 170 : 150;
   const dinnerProtein = adjust ? 160 : 140;
 
+  const wake = minutes(preferences.wakeTime);
+  const lunch = minutes(preferences.lunchTime);
+  const sleep = minutes(preferences.sleepTime);
+  const bedtime = sleep <= wake ? sleep + 1440 : sleep;
+  const breakfast = wake + 60;
+  const dinner = Math.max(lunch + 180, bedtime - 120);
+
   return [
     {
       meal: "Breakfast",
-      time: "08:00",
+      time: clock(breakfast),
       items: [
         { element: "Egg", count: 2, unit: "Piece(s)" },
         {
@@ -160,7 +186,7 @@ function buildNextWeekSchedule(
     },
     {
       meal: "Snack Meal 1",
-      time: "11:30",
+      time: clock(Math.max(breakfast + 120, lunch - 120)),
       items: [
         { element: "Yogurt", count: 1, unit: "Cup(s)" },
         {
@@ -173,7 +199,7 @@ function buildNextWeekSchedule(
     },
     {
       meal: "Lunch",
-      time: "15:30",
+      time: clock(lunch),
       items: [
         {
           element: "Chicken Breast",
@@ -196,7 +222,7 @@ function buildNextWeekSchedule(
     },
     {
       meal: "Snack Meal 2",
-      time: "18:30",
+      time: clock(Math.min(lunch + 180, dinner - 90)),
       items: [
         { element: "Various Vegetables", count: 1, unit: "Cup(s)" },
         {
@@ -209,7 +235,7 @@ function buildNextWeekSchedule(
     },
     {
       meal: "Dinner",
-      time: "21:00",
+      time: clock(dinner),
       items: [
         {
           element: "Chicken Breast",
@@ -224,7 +250,7 @@ function buildNextWeekSchedule(
           element: "Rice",
           count: riceDinner,
           unit: "gm",
-          note: "skip rice if no walking or late dinner",
+          note: preferences.plannedExercise ? "Adjust around exercise as needed" : "Reduce or skip if inactive or eating late",
         },
         { element: "Various Vegetables", count: 2, unit: "Cup(s)" },
       ],
@@ -236,12 +262,14 @@ interface Model2Input {
   weightReadings: weightReadingProps[];
   consumed: consumptionProps[];
   sportSessions: walkExerciseProps[];
+  preferences: PlanningPreferences;
 }
 
 export function recommendWeeklyHealthModel2({
   weightReadings,
   consumed,
   sportSessions,
+  preferences,
 }: Model2Input): Model2Recommendation {
   const sortedWeights = [...weightReadings].sort((a, b) =>
     a.date < b.date ? -1 : 1,
@@ -314,7 +342,7 @@ export function recommendWeeklyHealthModel2({
   }
 
   if (
-    weeklySports.filter((s) => (s.type || "").toLowerCase().includes("walk"))
+    preferences.plannedExercise && weeklySports.filter((s) => (s.type || "").toLowerCase().includes("walk"))
       .length < 3
   ) {
     reasons.push("Walking/activity sessions were low this week.");
@@ -338,7 +366,10 @@ export function recommendWeeklyHealthModel2({
     weeklyChange,
     decision: adjust ? "adjust_schedule" : "maintain_schedule",
     reasons,
-    nextWeekSchedule: buildNextWeekSchedule(adjust),
+    nextWeekSchedule: buildNextWeekSchedule(adjust, preferences).map((meal) => ({
+      ...meal,
+      note: preferences.notes?.trim() || undefined,
+    })),
   };
 }
 

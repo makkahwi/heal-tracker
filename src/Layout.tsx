@@ -8,7 +8,6 @@ import ScrollToTop from "./Components/Layout/ScrollToTop";
 import { removeNotifications } from "./Store/notifications";
 import { RootState } from "./Store/store";
 
-import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap/dist/js/bootstrap.min.js";
 
